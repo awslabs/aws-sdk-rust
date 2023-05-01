@@ -9,7 +9,7 @@ use crate::endpoint::error::InvalidEndpointError;
 use crate::operation::error::BuildError;
 use http::uri::{Authority, Uri};
 use std::borrow::Cow;
-use std::fmt::Debug;
+use std::fmt::{Debug, Formatter};
 use std::result::Result as StdResult;
 use std::str::FromStr;
 use std::sync::Arc;
@@ -23,7 +23,7 @@ pub use error::ResolveEndpointError;
 pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;
 
 /// Implementors of this trait can resolve an endpoint that will be applied to a request.
-pub trait ResolveEndpoint<Params>: Debug + Send + Sync {
+pub trait ResolveEndpoint<Params>: Send + Sync {
     /// Given some endpoint parameters, resolve an endpoint or return an error when resolution is
     /// impossible.
     fn resolve_endpoint(&self, params: &Params) -> Result;
@@ -38,8 +38,14 @@ impl<T> ResolveEndpoint<T> for &'static str {
 }
 
 /// Endpoint Resolver wrapper that may be shared
-#[derive(Clone, Debug)]
+#[derive(Clone)]
 pub struct SharedEndpointResolver<T>(Arc<dyn ResolveEndpoint<T>>);
+
+impl<T> Debug for SharedEndpointResolver<T> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("SharedEndpointResolver").finish()
+    }
+}
 
 impl<T> SharedEndpointResolver<T> {
     /// Create a new `SharedEndpointResolver` from `ResolveEndpoint`
@@ -60,7 +66,7 @@ impl<T> From<Arc<dyn ResolveEndpoint<T>>> for SharedEndpointResolver<T> {
     }
 }
 
-impl<T: Debug> ResolveEndpoint<T> for SharedEndpointResolver<T> {
+impl<T> ResolveEndpoint<T> for SharedEndpointResolver<T> {
     fn resolve_endpoint(&self, params: &T) -> Result {
         self.0.resolve_endpoint(params)
     }

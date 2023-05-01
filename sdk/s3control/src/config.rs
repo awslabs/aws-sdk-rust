@@ -108,7 +108,7 @@ impl Config {
     }
 }
 /// Builder for creating a `Config`.
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Default)]
 pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
     use_arn_region: std::option::Option<bool>,
@@ -126,6 +126,12 @@ pub struct Builder {
     region: Option<aws_types::region::Region>,
     credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
     credentials_cache: Option<aws_credential_types::cache::CredentialsCache>,
+}
+impl std::fmt::Debug for Builder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut config = f.debug_struct("Builder");
+        config.finish()
+    }
 }
 impl Builder {
     /// Constructs a config builder.
