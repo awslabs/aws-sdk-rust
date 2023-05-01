@@ -1,4 +1,4 @@
-smithy_rs_revision = '7dae0f8eea98756a3c86a5124dbdab2e4b42ca70'
+smithy_rs_revision = '705d71cd8af9cdc7533653a3a57a835eac8451aa'
 aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
 
 [manual_interventions]
@@ -803,7 +803,7 @@ model_hash = '7ae0f1710b29329b6b41ac88493aa503942fc0b307f14ff2c00022798947d832'
 [crates.aws-sdk-forecastquery]
 category = 'AwsSdk'
 version = '0.27.0'
-source_hash = 'df924fd1c88bcf8bcbb4eff8d790f309ea22bbf7d2ca35485623448884fb7303'
+source_hash = '39d51b3ffed9472963ef6885586a7a0518eb684c2f7238cf141b28d6d5a07111'
 model_hash = '02cada1d3b7b8fd51e360a019d239cd15f3fa98b751614bdee094d8b00b61b54'
 
 [crates.aws-sdk-frauddetector]
