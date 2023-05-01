@@ -3,25 +3,25 @@
 /// <p>A complex type that contains <code>Tag</code> key and <code>Tag</code> value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
-    /// <p>A string that contains <code>Tag</code> key.</p>
+pub struct Tag  {
+    /// <p>A string that contains <code>Tag</code> key.</p> 
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p>A string that contains an optional <code>Tag</code> value.</p>
+    /// <p>A string that contains an optional <code>Tag</code> value.</p> 
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>A string that contains <code>Tag</code> key.</p>
+    /// <p>A string that contains <code>Tag</code> key.</p> 
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
-    /// <p>A string that contains an optional <code>Tag</code> value.</p>
+    /// <p>A string that contains an optional <code>Tag</code> value.</p> 
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -40,35 +40,36 @@ pub struct TagBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl TagBuilder {
-    /// <p>A string that contains <code>Tag</code> key.</p>
+    /// <p>A string that contains <code>Tag</code> key.</p> 
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
         self.key = Some(input.into());
         self
     }
-    /// <p>A string that contains <code>Tag</code> key.</p>
+    /// <p>A string that contains <code>Tag</code> key.</p> 
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
-    /// <p>A string that contains an optional <code>Tag</code> value.</p>
+    /// <p>A string that contains an optional <code>Tag</code> value.</p> 
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>A string that contains an optional <code>Tag</code> value.</p>
+    /// <p>A string that contains an optional <code>Tag</code> value.</p> 
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

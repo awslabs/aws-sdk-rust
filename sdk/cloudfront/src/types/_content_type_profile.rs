@@ -3,7 +3,7 @@
 /// <p>A field-level encryption content type profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentTypeProfile {
+pub struct ContentTypeProfile  {
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::Format>,
@@ -16,15 +16,15 @@ pub struct ContentTypeProfile {
 }
 impl ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ContentTypeProfileBuilder {
     }
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
     pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ContentTypeProfileBuilder {
     }
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
     pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ContentTypeProfileBuilder {
     }
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// Consumes the builder and constructs a [`ContentTypeProfile`](crate::types::ContentTypeProfile).
     pub fn build(self) -> crate::types::ContentTypeProfile {
         crate::types::ContentTypeProfile {
-            format: self.format,
-            profile_id: self.profile_id,
-            content_type: self.content_type,
+            format: self.format
+            ,
+            profile_id: self.profile_id
+            ,
+            content_type: self.content_type
+            ,
         }
     }
 }
+

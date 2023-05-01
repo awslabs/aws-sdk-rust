@@ -3,16 +3,14 @@
 /// <p>A summary of the information about your continuous deployment policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousDeploymentPolicySummary {
+pub struct ContinuousDeploymentPolicySummary  {
     /// <p>The continuous deployment policy.</p>
     #[doc(hidden)]
     pub continuous_deployment_policy: std::option::Option<crate::types::ContinuousDeploymentPolicy>,
 }
 impl ContinuousDeploymentPolicySummary {
     /// <p>The continuous deployment policy.</p>
-    pub fn continuous_deployment_policy(
-        &self,
-    ) -> std::option::Option<&crate::types::ContinuousDeploymentPolicy> {
+    pub fn continuous_deployment_policy(&self) -> std::option::Option<& crate::types::ContinuousDeploymentPolicy> {
         self.continuous_deployment_policy.as_ref()
     }
 }
@@ -27,30 +25,24 @@ impl ContinuousDeploymentPolicySummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicySummaryBuilder {
-    pub(crate) continuous_deployment_policy:
-        std::option::Option<crate::types::ContinuousDeploymentPolicy>,
+    pub(crate) continuous_deployment_policy: std::option::Option<crate::types::ContinuousDeploymentPolicy>,
 }
 impl ContinuousDeploymentPolicySummaryBuilder {
     /// <p>The continuous deployment policy.</p>
-    pub fn continuous_deployment_policy(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicy,
-    ) -> Self {
+    pub fn continuous_deployment_policy(mut self, input: crate::types::ContinuousDeploymentPolicy) -> Self {
         self.continuous_deployment_policy = Some(input);
         self
     }
     /// <p>The continuous deployment policy.</p>
-    pub fn set_continuous_deployment_policy(
-        mut self,
-        input: std::option::Option<crate::types::ContinuousDeploymentPolicy>,
-    ) -> Self {
-        self.continuous_deployment_policy = input;
-        self
+    pub fn set_continuous_deployment_policy(mut self, input: std::option::Option<crate::types::ContinuousDeploymentPolicy>) -> Self {
+        self.continuous_deployment_policy = input; self
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicySummary`](crate::types::ContinuousDeploymentPolicySummary).
     pub fn build(self) -> crate::types::ContinuousDeploymentPolicySummary {
         crate::types::ContinuousDeploymentPolicySummary {
-            continuous_deployment_policy: self.continuous_deployment_policy,
+            continuous_deployment_policy: self.continuous_deployment_policy
+            ,
         }
     }
 }
+

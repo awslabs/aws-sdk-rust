@@ -3,7 +3,7 @@
 /// <p>A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatusCodes {
+pub struct StatusCodes  {
     /// <p>The number of status codes.</p>
     #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl StatusCodes {
         self.quantity
     }
     /// <p>The items (status codes) for an origin group.</p>
-    pub fn items(&self) -> std::option::Option<&[i32]> {
+    pub fn items(&self) -> std::option::Option<& [i32]> {
         self.items.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl StatusCodesBuilder {
     }
     /// <p>The number of status codes.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -53,20 +52,22 @@ impl StatusCodesBuilder {
     /// <p>The items (status codes) for an origin group.</p>
     pub fn items(mut self, input: i32) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The items (status codes) for an origin group.</p>
     pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.items = input;
-        self
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`StatusCodes`](crate::types::StatusCodes).
     pub fn build(self) -> crate::types::StatusCodes {
         crate::types::StatusCodes {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

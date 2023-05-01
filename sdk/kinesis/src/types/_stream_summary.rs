@@ -3,7 +3,7 @@
 /// <p>The summary of a stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSummary {
+pub struct StreamSummary  {
     /// <p>The name of a stream.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct StreamSummary {
 }
 impl StreamSummary {
     /// <p>The name of a stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The status of the stream.</p>
-    pub fn stream_status(&self) -> std::option::Option<&crate::types::StreamStatus> {
+    pub fn stream_status(&self) -> std::option::Option<& crate::types::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn stream_mode_details(&self) -> std::option::Option<&crate::types::StreamModeDetails> {
+    pub fn stream_mode_details(&self) -> std::option::Option<& crate::types::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
     /// <p>The timestamp at which the stream was created.</p>
-    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl StreamSummaryBuilder {
     }
     /// <p>The name of a stream.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl StreamSummaryBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The status of the stream.</p>
     pub fn stream_status(mut self, input: crate::types::StreamStatus) -> Self {
@@ -86,12 +84,8 @@ impl StreamSummaryBuilder {
         self
     }
     /// <p>The status of the stream.</p>
-    pub fn set_stream_status(
-        mut self,
-        input: std::option::Option<crate::types::StreamStatus>,
-    ) -> Self {
-        self.stream_status = input;
-        self
+    pub fn set_stream_status(mut self, input: std::option::Option<crate::types::StreamStatus>) -> Self {
+        self.stream_status = input; self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     pub fn stream_mode_details(mut self, input: crate::types::StreamModeDetails) -> Self {
@@ -99,12 +93,8 @@ impl StreamSummaryBuilder {
         self
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn set_stream_mode_details(
-        mut self,
-        input: std::option::Option<crate::types::StreamModeDetails>,
-    ) -> Self {
-        self.stream_mode_details = input;
-        self
+    pub fn set_stream_mode_details(mut self, input: std::option::Option<crate::types::StreamModeDetails>) -> Self {
+        self.stream_mode_details = input; self
     }
     /// <p>The timestamp at which the stream was created.</p>
     pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -112,21 +102,23 @@ impl StreamSummaryBuilder {
         self
     }
     /// <p>The timestamp at which the stream was created.</p>
-    pub fn set_stream_creation_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.stream_creation_timestamp = input;
-        self
+    pub fn set_stream_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.stream_creation_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`StreamSummary`](crate::types::StreamSummary).
     pub fn build(self) -> crate::types::StreamSummary {
         crate::types::StreamSummary {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            stream_status: self.stream_status,
-            stream_mode_details: self.stream_mode_details,
-            stream_creation_timestamp: self.stream_creation_timestamp,
+            stream_name: self.stream_name
+            ,
+            stream_arn: self.stream_arn
+            ,
+            stream_status: self.stream_status
+            ,
+            stream_mode_details: self.stream_mode_details
+            ,
+            stream_creation_timestamp: self.stream_creation_timestamp
+            ,
         }
     }
 }
+

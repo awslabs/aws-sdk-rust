@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionsByKeyGroupOutput {
+pub struct ListDistributionsByKeyGroupOutput  {
     /// <p>A list of distribution IDs.</p>
     #[doc(hidden)]
     pub distribution_id_list: std::option::Option<crate::types::DistributionIdList>,
@@ -10,18 +10,18 @@ pub struct ListDistributionsByKeyGroupOutput {
 }
 impl ListDistributionsByKeyGroupOutput {
     /// <p>A list of distribution IDs.</p>
-    pub fn distribution_id_list(&self) -> std::option::Option<&crate::types::DistributionIdList> {
+    pub fn distribution_id_list(&self) -> std::option::Option<& crate::types::DistributionIdList> {
         self.distribution_id_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListDistributionsByKeyGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDistributionsByKeyGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByKeyGroupOutput`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput).
-    pub fn builder() -> crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupOutputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupOutputBuilder {
         crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl ListDistributionsByKeyGroupOutputBuilder {
         self
     }
     /// <p>A list of distribution IDs.</p>
-    pub fn set_distribution_id_list(
-        mut self,
-        input: std::option::Option<crate::types::DistributionIdList>,
-    ) -> Self {
-        self.distribution_id_list = input;
-        self
+    pub fn set_distribution_id_list(mut self, input: std::option::Option<crate::types::DistributionIdList>) -> Self {
+        self.distribution_id_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDistributionsByKeyGroupOutput`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput {
+    pub fn build(self) -> crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput {
         crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput {
-            distribution_id_list: self.distribution_id_list,
+            distribution_id_list: self.distribution_id_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

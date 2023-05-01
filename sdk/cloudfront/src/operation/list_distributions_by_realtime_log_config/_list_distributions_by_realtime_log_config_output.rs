@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionsByRealtimeLogConfigOutput {
+pub struct ListDistributionsByRealtimeLogConfigOutput  {
     /// <p>A distribution list.</p>
     #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::types::DistributionList>,
@@ -10,18 +10,18 @@ pub struct ListDistributionsByRealtimeLogConfigOutput {
 }
 impl ListDistributionsByRealtimeLogConfigOutput {
     /// <p>A distribution list.</p>
-    pub fn distribution_list(&self) -> std::option::Option<&crate::types::DistributionList> {
+    pub fn distribution_list(&self) -> std::option::Option<& crate::types::DistributionList> {
         self.distribution_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListDistributionsByRealtimeLogConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDistributionsByRealtimeLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByRealtimeLogConfigOutput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput).
-    pub fn builder() -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigOutputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigOutputBuilder {
         crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl ListDistributionsByRealtimeLogConfigOutputBuilder {
         self
     }
     /// <p>A distribution list.</p>
-    pub fn set_distribution_list(
-        mut self,
-        input: std::option::Option<crate::types::DistributionList>,
-    ) -> Self {
-        self.distribution_list = input;
-        self
+    pub fn set_distribution_list(mut self, input: std::option::Option<crate::types::DistributionList>) -> Self {
+        self.distribution_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDistributionsByRealtimeLogConfigOutput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput).
-    pub fn build(self) -> crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput{
+    pub fn build(self) -> crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput {
         crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput {
             distribution_list: self.distribution_list
             ,
@@ -65,3 +61,4 @@ impl ListDistributionsByRealtimeLogConfigOutputBuilder {
         }
     }
 }
+

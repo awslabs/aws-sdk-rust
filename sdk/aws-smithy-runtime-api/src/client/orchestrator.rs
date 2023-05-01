@@ -174,7 +174,7 @@ pub trait HttpRequestSigner: Send + Sync + Debug {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
-        cfg: &ConfigBag,
+        signing_properties: &PropertyBag,
     ) -> Result<(), BoxError>;
 }
 

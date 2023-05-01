@@ -3,7 +3,7 @@
 /// <p>The response to a request to list the distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionsByWebAclIdOutput {
+pub struct ListDistributionsByWebAclIdOutput  {
     /// <p>The <code>DistributionList</code> type.</p>
     #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::types::DistributionList>,
@@ -11,18 +11,18 @@ pub struct ListDistributionsByWebAclIdOutput {
 }
 impl ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn distribution_list(&self) -> std::option::Option<&crate::types::DistributionList> {
+    pub fn distribution_list(&self) -> std::option::Option<& crate::types::DistributionList> {
         self.distribution_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListDistributionsByWebAclIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDistributionsByWebAclIdOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
-    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder {
         crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder::default()
     }
 }
@@ -41,29 +41,25 @@ impl ListDistributionsByWebAclIdOutputBuilder {
         self
     }
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn set_distribution_list(
-        mut self,
-        input: std::option::Option<crate::types::DistributionList>,
-    ) -> Self {
-        self.distribution_list = input;
-        self
+    pub fn set_distribution_list(mut self, input: std::option::Option<crate::types::DistributionList>) -> Self {
+        self.distribution_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput {
+    pub fn build(self) -> crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput {
         crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput {
-            distribution_list: self.distribution_list,
+            distribution_list: self.distribution_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

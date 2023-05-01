@@ -3,14 +3,14 @@
 /// <p>The name of an HTTP header that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseHeadersPolicyRemoveHeader {
+pub struct ResponseHeadersPolicyRemoveHeader  {
     /// <p>The HTTP header name.</p>
     #[doc(hidden)]
     pub header: std::option::Option<std::string::String>,
 }
 impl ResponseHeadersPolicyRemoveHeader {
     /// <p>The HTTP header name.</p>
-    pub fn header(&self) -> std::option::Option<&str> {
+    pub fn header(&self) -> std::option::Option<& str> {
         self.header.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ResponseHeadersPolicyRemoveHeaderBuilder {
     }
     /// <p>The HTTP header name.</p>
     pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyRemoveHeader`](crate::types::ResponseHeadersPolicyRemoveHeader).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyRemoveHeader {
         crate::types::ResponseHeadersPolicyRemoveHeader {
-            header: self.header,
+            header: self.header
+            ,
         }
     }
 }
+

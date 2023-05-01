@@ -3,7 +3,7 @@
 /// <p>A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OriginCustomHeader {
+pub struct OriginCustomHeader  {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
     pub header_name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct OriginCustomHeader {
 }
 impl OriginCustomHeader {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn header_name(&self) -> std::option::Option<&str> {
+    pub fn header_name(&self) -> std::option::Option<& str> {
         self.header_name.as_deref()
     }
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
-    pub fn header_value(&self) -> std::option::Option<&str> {
+    pub fn header_value(&self) -> std::option::Option<& str> {
         self.header_value.as_deref()
     }
 }
-impl std::fmt::Debug for OriginCustomHeader {
+impl  std::fmt::Debug for OriginCustomHeader  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OriginCustomHeader");
         formatter.field("header_name", &self.header_name);
@@ -51,8 +51,7 @@ impl OriginCustomHeaderBuilder {
     }
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.header_name = input;
-        self
+        self.header_name = input; self
     }
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
     pub fn header_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl OriginCustomHeaderBuilder {
     }
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
     pub fn set_header_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.header_value = input;
-        self
+        self.header_value = input; self
     }
     /// Consumes the builder and constructs a [`OriginCustomHeader`](crate::types::OriginCustomHeader).
     pub fn build(self) -> crate::types::OriginCustomHeader {
         crate::types::OriginCustomHeader {
-            header_name: self.header_name,
-            header_value: self.header_value,
+            header_name: self.header_name
+            ,
+            header_value: self.header_value
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for OriginCustomHeaderBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains a list of query string names.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryStringNames {
+pub struct QueryStringNames  {
     /// <p>The number of query string names in the <code>Items</code> list.</p>
     #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl QueryStringNames {
         self.quantity
     }
     /// <p>A list of query string names.</p>
-    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn items(&self) -> std::option::Option<& [std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl QueryStringNamesBuilder {
     }
     /// <p>The number of query string names in the <code>Items</code> list.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -53,23 +52,22 @@ impl QueryStringNamesBuilder {
     /// <p>A list of query string names.</p>
     pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = Some(v);
-        self
+                        v.push(input.into());
+                        self.items = Some(v);
+                        self
     }
     /// <p>A list of query string names.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`QueryStringNames`](crate::types::QueryStringNames).
     pub fn build(self) -> crate::types::QueryStringNames {
         crate::types::QueryStringNames {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

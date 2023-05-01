@@ -3,7 +3,7 @@
 /// <p>Contains configuration information about a CloudFront function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionConfig {
+pub struct FunctionConfig  {
     /// <p>A comment to describe the function.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FunctionConfig {
 }
 impl FunctionConfig {
     /// <p>A comment to describe the function.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::types::FunctionRuntime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::types::FunctionRuntime> {
         self.runtime.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl FunctionConfigBuilder {
     }
     /// <p>A comment to describe the function.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
     pub fn runtime(mut self, input: crate::types::FunctionRuntime) -> Self {
@@ -52,18 +51,17 @@ impl FunctionConfigBuilder {
         self
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
-    pub fn set_runtime(
-        mut self,
-        input: std::option::Option<crate::types::FunctionRuntime>,
-    ) -> Self {
-        self.runtime = input;
-        self
+    pub fn set_runtime(mut self, input: std::option::Option<crate::types::FunctionRuntime>) -> Self {
+        self.runtime = input; self
     }
     /// Consumes the builder and constructs a [`FunctionConfig`](crate::types::FunctionConfig).
     pub fn build(self) -> crate::types::FunctionConfig {
         crate::types::FunctionConfig {
-            comment: self.comment,
-            runtime: self.runtime,
+            comment: self.comment
+            ,
+            runtime: self.runtime
+            ,
         }
     }
 }
+

@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPublicKeyConfigInput {
+pub struct GetPublicKeyConfigInput  {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetPublicKeyConfigInput {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetPublicKeyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyConfigInput`](crate::operation::get_public_key_config::GetPublicKeyConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_public_key_config::builders::GetPublicKeyConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_public_key_config::builders::GetPublicKeyConfigInputBuilder {
         crate::operation::get_public_key_config::builders::GetPublicKeyConfigInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetPublicKeyConfigInputBuilder {
     }
     /// <p>The identifier of the public key whose configuration you are getting.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetPublicKeyConfigInput`](crate::operation::get_public_key_config::GetPublicKeyConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_public_key_config::GetPublicKeyConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_public_key_config::GetPublicKeyConfigInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::get_public_key_config::GetPublicKeyConfigInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_public_key_config::GetPublicKeyConfigInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

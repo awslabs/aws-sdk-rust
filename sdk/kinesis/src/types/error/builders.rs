@@ -28,3 +28,4 @@ pub use crate::types::error::_provisioned_throughput_exceeded_exception::Provisi
 pub use crate::types::error::_expired_next_token_exception::ExpiredNextTokenExceptionBuilder;
 
 pub use crate::types::error::_expired_iterator_exception::ExpiredIteratorExceptionBuilder;
+

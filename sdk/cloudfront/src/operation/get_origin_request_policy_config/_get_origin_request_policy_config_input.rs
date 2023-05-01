@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOriginRequestPolicyConfigInput {
+pub struct GetOriginRequestPolicyConfigInput  {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyConfigInput {
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetOriginRequestPolicyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyConfigInput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput).
-    pub fn builder() -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigInputBuilder{
+    pub fn builder() -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigInputBuilder {
         crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl GetOriginRequestPolicyConfigInputBuilder {
     }
     /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetOriginRequestPolicyConfigInput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

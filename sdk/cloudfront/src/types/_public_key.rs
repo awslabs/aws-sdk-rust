@@ -3,7 +3,7 @@
 /// <p>A public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublicKey {
+pub struct PublicKey  {
     /// <p>The identifier of the public key.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct PublicKey {
 }
 impl PublicKey {
     /// <p>The identifier of the public key.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    pub fn public_key_config(&self) -> std::option::Option<&crate::types::PublicKeyConfig> {
+    pub fn public_key_config(&self) -> std::option::Option<& crate::types::PublicKeyConfig> {
         self.public_key_config.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl PublicKeyBuilder {
     }
     /// <p>The identifier of the public key.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The date and time when the public key was uploaded.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -60,12 +59,8 @@ impl PublicKeyBuilder {
         self
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn public_key_config(mut self, input: crate::types::PublicKeyConfig) -> Self {
@@ -73,19 +68,19 @@ impl PublicKeyBuilder {
         self
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    pub fn set_public_key_config(
-        mut self,
-        input: std::option::Option<crate::types::PublicKeyConfig>,
-    ) -> Self {
-        self.public_key_config = input;
-        self
+    pub fn set_public_key_config(mut self, input: std::option::Option<crate::types::PublicKeyConfig>) -> Self {
+        self.public_key_config = input; self
     }
     /// Consumes the builder and constructs a [`PublicKey`](crate::types::PublicKey).
     pub fn build(self) -> crate::types::PublicKey {
         crate::types::PublicKey {
-            id: self.id,
-            created_time: self.created_time,
-            public_key_config: self.public_key_config,
+            id: self.id
+            ,
+            created_time: self.created_time
+            ,
+            public_key_config: self.public_key_config
+            ,
         }
     }
 }
+

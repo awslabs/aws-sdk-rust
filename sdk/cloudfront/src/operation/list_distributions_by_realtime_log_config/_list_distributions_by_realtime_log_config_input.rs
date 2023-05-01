@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionsByRealtimeLogConfigInput {
+pub struct ListDistributionsByRealtimeLogConfigInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListDistributionsByRealtimeLogConfigInput {
 }
 impl ListDistributionsByRealtimeLogConfigInput {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of distributions that you want in the response.</p>
@@ -26,17 +26,17 @@ impl ListDistributionsByRealtimeLogConfigInput {
         self.max_items
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_name(&self) -> std::option::Option<&str> {
+    pub fn realtime_log_config_name(&self) -> std::option::Option<& str> {
         self.realtime_log_config_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_arn(&self) -> std::option::Option<&str> {
+    pub fn realtime_log_config_arn(&self) -> std::option::Option<& str> {
         self.realtime_log_config_arn.as_deref()
     }
 }
 impl ListDistributionsByRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
-    pub fn builder() -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder {
         crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -68,8 +67,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     }
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +75,8 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         self
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn set_realtime_log_config_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.realtime_log_config_name = input;
-        self
+    pub fn set_realtime_log_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.realtime_log_config_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,15 +84,11 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn set_realtime_log_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.realtime_log_config_arn = input;
-        self
+    pub fn set_realtime_log_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.realtime_log_config_arn = input; self
     }
     /// Consumes the builder and constructs a [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
-    pub fn build(self) -> Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput {
                 marker: self.marker
@@ -113,3 +103,4 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         )
     }
 }
+

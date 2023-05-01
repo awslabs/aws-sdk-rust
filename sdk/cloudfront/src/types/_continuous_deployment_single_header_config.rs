@@ -3,7 +3,7 @@
 /// <p>This configuration determines which HTTP requests are sent to the staging distribution. If the HTTP request contains a header and value that matches what you specify here, the request is sent to the staging distribution. Otherwise the request is sent to the primary distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousDeploymentSingleHeaderConfig {
+pub struct ContinuousDeploymentSingleHeaderConfig  {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
     #[doc(hidden)]
     pub header: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ContinuousDeploymentSingleHeaderConfig {
 }
 impl ContinuousDeploymentSingleHeaderConfig {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub fn header(&self) -> std::option::Option<&str> {
+    pub fn header(&self) -> std::option::Option<& str> {
         self.header.as_deref()
     }
     /// <p>The request header value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
     }
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
     pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>The request header value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
     }
     /// <p>The request header value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentSingleHeaderConfig`](crate::types::ContinuousDeploymentSingleHeaderConfig).
     pub fn build(self) -> crate::types::ContinuousDeploymentSingleHeaderConfig {
         crate::types::ContinuousDeploymentSingleHeaderConfig {
-            header: self.header,
-            value: self.value,
+            header: self.header
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

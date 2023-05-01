@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionOutput {
+pub struct GetDistributionOutput  {
     /// <p>The distribution's information.</p>
     #[doc(hidden)]
     pub distribution: std::option::Option<crate::types::Distribution>,
@@ -14,19 +14,19 @@ pub struct GetDistributionOutput {
 }
 impl GetDistributionOutput {
     /// <p>The distribution's information.</p>
-    pub fn distribution(&self) -> std::option::Option<&crate::types::Distribution> {
+    pub fn distribution(&self) -> std::option::Option<& crate::types::Distribution> {
         self.distribution.as_ref()
     }
     /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDistributionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDistributionOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionOutput`](crate::operation::get_distribution::GetDistributionOutput).
     pub fn builder() -> crate::operation::get_distribution::builders::GetDistributionOutputBuilder {
@@ -49,12 +49,8 @@ impl GetDistributionOutputBuilder {
         self
     }
     /// <p>The distribution's information.</p>
-    pub fn set_distribution(
-        mut self,
-        input: std::option::Option<crate::types::Distribution>,
-    ) -> Self {
-        self.distribution = input;
-        self
+    pub fn set_distribution(mut self, input: std::option::Option<crate::types::Distribution>) -> Self {
+        self.distribution = input; self
     }
     /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,24 +59,26 @@ impl GetDistributionOutputBuilder {
     }
     /// <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDistributionOutput`](crate::operation::get_distribution::GetDistributionOutput).
     pub fn build(self) -> crate::operation::get_distribution::GetDistributionOutput {
         crate::operation::get_distribution::GetDistributionOutput {
-            distribution: self.distribution,
-            e_tag: self.e_tag,
+            distribution: self.distribution
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

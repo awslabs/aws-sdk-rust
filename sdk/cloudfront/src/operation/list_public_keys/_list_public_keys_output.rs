@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPublicKeysOutput {
+pub struct ListPublicKeysOutput  {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
     #[doc(hidden)]
     pub public_key_list: std::option::Option<crate::types::PublicKeyList>,
@@ -10,15 +10,15 @@ pub struct ListPublicKeysOutput {
 }
 impl ListPublicKeysOutput {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
-    pub fn public_key_list(&self) -> std::option::Option<&crate::types::PublicKeyList> {
+    pub fn public_key_list(&self) -> std::option::Option<& crate::types::PublicKeyList> {
         self.public_key_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListPublicKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPublicKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput).
     pub fn builder() -> crate::operation::list_public_keys::builders::ListPublicKeysOutputBuilder {
@@ -40,27 +40,25 @@ impl ListPublicKeysOutputBuilder {
         self
     }
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
-    pub fn set_public_key_list(
-        mut self,
-        input: std::option::Option<crate::types::PublicKeyList>,
-    ) -> Self {
-        self.public_key_list = input;
-        self
+    pub fn set_public_key_list(mut self, input: std::option::Option<crate::types::PublicKeyList>) -> Self {
+        self.public_key_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput).
     pub fn build(self) -> crate::operation::list_public_keys::ListPublicKeysOutput {
         crate::operation::list_public_keys::ListPublicKeysOutput {
-            public_key_list: self.public_key_list,
+            public_key_list: self.public_key_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

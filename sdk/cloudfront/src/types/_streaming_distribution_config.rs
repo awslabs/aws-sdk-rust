@@ -3,9 +3,9 @@
 /// <p>The RTMP distribution's configuration information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingDistributionConfig {
-    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
-    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
+pub struct StreamingDistributionConfig  {
+    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p> 
+    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p> 
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
     #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
@@ -32,34 +32,34 @@ pub struct StreamingDistributionConfig {
     pub enabled: std::option::Option<bool>,
 }
 impl StreamingDistributionConfig {
-    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
-    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
+    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p> 
+    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p> 
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn caller_reference(&self) -> std::option::Option<&str> {
+    pub fn caller_reference(&self) -> std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
-    pub fn s3_origin(&self) -> std::option::Option<&crate::types::S3Origin> {
+    pub fn s3_origin(&self) -> std::option::Option<& crate::types::S3Origin> {
         self.s3_origin.as_ref()
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
-    pub fn aliases(&self) -> std::option::Option<&crate::types::Aliases> {
+    pub fn aliases(&self) -> std::option::Option<& crate::types::Aliases> {
         self.aliases.as_ref()
     }
     /// <p>Any comments you want to include about the streaming distribution.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::types::StreamingLoggingConfig> {
+    pub fn logging(&self) -> std::option::Option<& crate::types::StreamingLoggingConfig> {
         self.logging.as_ref()
     }
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn trusted_signers(&self) -> std::option::Option<&crate::types::TrustedSigners> {
+    pub fn trusted_signers(&self) -> std::option::Option<& crate::types::TrustedSigners> {
         self.trusted_signers.as_ref()
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub fn price_class(&self) -> std::option::Option<&crate::types::PriceClass> {
+    pub fn price_class(&self) -> std::option::Option<& crate::types::PriceClass> {
         self.price_class.as_ref()
     }
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
@@ -88,19 +88,18 @@ pub struct StreamingDistributionConfigBuilder {
     pub(crate) enabled: std::option::Option<bool>,
 }
 impl StreamingDistributionConfigBuilder {
-    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
-    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
+    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p> 
+    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p> 
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
     pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
         self.caller_reference = Some(input.into());
         self
     }
-    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
-    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
+    /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p> 
+    /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p> 
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
     pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub fn s3_origin(mut self, input: crate::types::S3Origin) -> Self {
@@ -109,8 +108,7 @@ impl StreamingDistributionConfigBuilder {
     }
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
     pub fn set_s3_origin(mut self, input: std::option::Option<crate::types::S3Origin>) -> Self {
-        self.s3_origin = input;
-        self
+        self.s3_origin = input; self
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
     pub fn aliases(mut self, input: crate::types::Aliases) -> Self {
@@ -119,8 +117,7 @@ impl StreamingDistributionConfigBuilder {
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
     pub fn set_aliases(mut self, input: std::option::Option<crate::types::Aliases>) -> Self {
-        self.aliases = input;
-        self
+        self.aliases = input; self
     }
     /// <p>Any comments you want to include about the streaming distribution.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +126,7 @@ impl StreamingDistributionConfigBuilder {
     }
     /// <p>Any comments you want to include about the streaming distribution.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
     pub fn logging(mut self, input: crate::types::StreamingLoggingConfig) -> Self {
@@ -138,12 +134,8 @@ impl StreamingDistributionConfigBuilder {
         self
     }
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
-    pub fn set_logging(
-        mut self,
-        input: std::option::Option<crate::types::StreamingLoggingConfig>,
-    ) -> Self {
-        self.logging = input;
-        self
+    pub fn set_logging(mut self, input: std::option::Option<crate::types::StreamingLoggingConfig>) -> Self {
+        self.logging = input; self
     }
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn trusted_signers(mut self, input: crate::types::TrustedSigners) -> Self {
@@ -151,12 +143,8 @@ impl StreamingDistributionConfigBuilder {
         self
     }
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_trusted_signers(
-        mut self,
-        input: std::option::Option<crate::types::TrustedSigners>,
-    ) -> Self {
-        self.trusted_signers = input;
-        self
+    pub fn set_trusted_signers(mut self, input: std::option::Option<crate::types::TrustedSigners>) -> Self {
+        self.trusted_signers = input; self
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
@@ -165,8 +153,7 @@ impl StreamingDistributionConfigBuilder {
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn set_price_class(mut self, input: std::option::Option<crate::types::PriceClass>) -> Self {
-        self.price_class = input;
-        self
+        self.price_class = input; self
     }
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -175,20 +162,28 @@ impl StreamingDistributionConfigBuilder {
     }
     /// <p>Whether the streaming distribution is enabled to accept user requests for content.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`StreamingDistributionConfig`](crate::types::StreamingDistributionConfig).
     pub fn build(self) -> crate::types::StreamingDistributionConfig {
         crate::types::StreamingDistributionConfig {
-            caller_reference: self.caller_reference,
-            s3_origin: self.s3_origin,
-            aliases: self.aliases,
-            comment: self.comment,
-            logging: self.logging,
-            trusted_signers: self.trusted_signers,
-            price_class: self.price_class,
-            enabled: self.enabled,
+            caller_reference: self.caller_reference
+            ,
+            s3_origin: self.s3_origin
+            ,
+            aliases: self.aliases
+            ,
+            comment: self.comment
+            ,
+            logging: self.logging
+            ,
+            trusted_signers: self.trusted_signers
+            ,
+            price_class: self.price_class
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

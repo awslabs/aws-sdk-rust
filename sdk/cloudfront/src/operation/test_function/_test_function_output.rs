@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestFunctionOutput {
+pub struct TestFunctionOutput  {
     /// <p>An object that represents the result of running the function with the provided event object.</p>
     #[doc(hidden)]
     pub test_result: std::option::Option<crate::types::TestResult>,
@@ -10,15 +10,15 @@ pub struct TestFunctionOutput {
 }
 impl TestFunctionOutput {
     /// <p>An object that represents the result of running the function with the provided event object.</p>
-    pub fn test_result(&self) -> std::option::Option<&crate::types::TestResult> {
+    pub fn test_result(&self) -> std::option::Option<& crate::types::TestResult> {
         self.test_result.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for TestFunctionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TestFunctionOutput {
     /// Creates a new builder-style object to manufacture [`TestFunctionOutput`](crate::operation::test_function::TestFunctionOutput).
     pub fn builder() -> crate::operation::test_function::builders::TestFunctionOutputBuilder {
@@ -41,23 +41,24 @@ impl TestFunctionOutputBuilder {
     }
     /// <p>An object that represents the result of running the function with the provided event object.</p>
     pub fn set_test_result(mut self, input: std::option::Option<crate::types::TestResult>) -> Self {
-        self.test_result = input;
-        self
+        self.test_result = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TestFunctionOutput`](crate::operation::test_function::TestFunctionOutput).
     pub fn build(self) -> crate::operation::test_function::TestFunctionOutput {
         crate::operation::test_function::TestFunctionOutput {
-            test_result: self.test_result,
+            test_result: self.test_result
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

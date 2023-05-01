@@ -3,7 +3,7 @@
 /// <p>A continuous deployment policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousDeploymentPolicy {
+pub struct ContinuousDeploymentPolicy  {
     /// <p>The identifier of the continuous deployment policy.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,22 +12,19 @@ pub struct ContinuousDeploymentPolicy {
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Contains the configuration for a continuous deployment policy.</p>
     #[doc(hidden)]
-    pub continuous_deployment_policy_config:
-        std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
+    pub continuous_deployment_policy_config: std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
 }
 impl ContinuousDeploymentPolicy {
     /// <p>The identifier of the continuous deployment policy.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time the continuous deployment policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn continuous_deployment_policy_config(
-        &self,
-    ) -> std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn continuous_deployment_policy_config(&self) -> std::option::Option<& crate::types::ContinuousDeploymentPolicyConfig> {
         self.continuous_deployment_policy_config.as_ref()
     }
 }
@@ -44,8 +41,7 @@ impl ContinuousDeploymentPolicy {
 pub struct ContinuousDeploymentPolicyBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) continuous_deployment_policy_config:
-        std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
+    pub(crate) continuous_deployment_policy_config: std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
 }
 impl ContinuousDeploymentPolicyBuilder {
     /// <p>The identifier of the continuous deployment policy.</p>
@@ -55,8 +51,7 @@ impl ContinuousDeploymentPolicyBuilder {
     }
     /// <p>The identifier of the continuous deployment policy.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The date and time the continuous deployment policy was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -64,35 +59,28 @@ impl ContinuousDeploymentPolicyBuilder {
         self
     }
     /// <p>The date and time the continuous deployment policy was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn continuous_deployment_policy_config(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicyConfig,
-    ) -> Self {
+    pub fn continuous_deployment_policy_config(mut self, input: crate::types::ContinuousDeploymentPolicyConfig) -> Self {
         self.continuous_deployment_policy_config = Some(input);
         self
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn set_continuous_deployment_policy_config(
-        mut self,
-        input: std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
-    ) -> Self {
-        self.continuous_deployment_policy_config = input;
-        self
+    pub fn set_continuous_deployment_policy_config(mut self, input: std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>) -> Self {
+        self.continuous_deployment_policy_config = input; self
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicy`](crate::types::ContinuousDeploymentPolicy).
     pub fn build(self) -> crate::types::ContinuousDeploymentPolicy {
         crate::types::ContinuousDeploymentPolicy {
-            id: self.id,
-            last_modified_time: self.last_modified_time,
-            continuous_deployment_policy_config: self.continuous_deployment_policy_config,
+            id: self.id
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            continuous_deployment_policy_config: self.continuous_deployment_policy_config
+            ,
         }
     }
 }
+

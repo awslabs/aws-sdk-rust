@@ -11,12 +11,12 @@ pub mod sigv4 {
         SignableRequest, SignatureLocation, SigningParams, SigningSettings,
         UriPathNormalizationMode,
     };
+    use aws_smithy_http::property_bag::PropertyBag;
     use aws_smithy_runtime_api::client::identity::Identity;
     use aws_smithy_runtime_api::client::orchestrator::{
         BoxError, HttpAuthScheme, HttpRequest, HttpRequestSigner, IdentityResolver,
         IdentityResolvers,
     };
-    use aws_smithy_runtime_api::config_bag::ConfigBag;
     use aws_types::region::SigningRegion;
     use aws_types::SigningService;
     use std::time::{Duration, SystemTime};
@@ -197,9 +197,9 @@ pub mod sigv4 {
             &self,
             request: &mut HttpRequest,
             identity: &Identity,
-            cfg: &ConfigBag,
+            signing_properties: &PropertyBag,
         ) -> Result<(), BoxError> {
-            let operation_config = cfg
+            let operation_config = signing_properties
                 .get::<SigV4OperationSigningConfig>()
                 .ok_or("missing operation signing config for SigV4")?;
 

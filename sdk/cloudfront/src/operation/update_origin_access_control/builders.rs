@@ -4,84 +4,56 @@ pub use crate::operation::update_origin_access_control::_update_origin_access_co
 pub use crate::operation::update_origin_access_control::_update_origin_access_control_input::UpdateOriginAccessControlInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateOriginAccessControl`.
-///
+/// 
 /// <p>Updates a CloudFront origin access control.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOriginAccessControlFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlInputBuilder
             }
-impl UpdateOriginAccessControlFluentBuilder {
+impl UpdateOriginAccessControlFluentBuilder  {
     /// Creates a new `UpdateOriginAccessControl`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControl,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_origin_access_control::UpdateOriginAccessControl, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput, aws_smithy_http::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>An origin access control.</p>
-    pub fn origin_access_control_config(
-        mut self,
-        input: crate::types::OriginAccessControlConfig,
-    ) -> Self {
+    pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.inner = self.inner.origin_access_control_config(input);
         self
     }
     /// <p>An origin access control.</p>
-    pub fn set_origin_access_control_config(
-        mut self,
-        input: std::option::Option<crate::types::OriginAccessControlConfig>,
-    ) -> Self {
+    pub fn set_origin_access_control_config(mut self, input: std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
         self.inner = self.inner.set_origin_access_control_config(input);
         self
     }
@@ -106,3 +78,4 @@ impl UpdateOriginAccessControlFluentBuilder {
         self
     }
 }
+
