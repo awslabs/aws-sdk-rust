@@ -8,10 +8,10 @@ pub fn ser_register_instance_input(input: &crate::operation::register_instance::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::register_instance::RegisterInstanceOutput, crate::operation::register_instance::RegisterInstanceError> {
+pub fn de_register_instance_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_instance::RegisterInstanceOutput, crate::operation::register_instance::RegisterInstanceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DuplicateRequestBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_request::de_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_request::de_duplicate_request_json_err(_response_body, output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(_response_body, output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use::de_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use::de_resource_in_use_json_err(_response_body, output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_limit_exceeded::de_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_limit_exceeded::de_resource_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_not_found::de_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_not_found::de_service_not_found_json_err(_response_body, output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_register_instance_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_register_instance_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::register_instance::RegisterInstanceOutput, crate::operation::register_instance::RegisterInstanceError> {
+pub fn de_register_instance_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_instance::RegisterInstanceOutput, crate::operation::register_instance::RegisterInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::register_instance::builders::RegisterInstanceOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_register_instance::de_register_instance(response.body().as_ref(), output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_register_instance::de_register_instance(_response_body, output).map_err(crate::operation::register_instance::RegisterInstanceError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

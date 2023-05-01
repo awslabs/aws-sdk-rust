@@ -8,10 +8,10 @@ pub fn ser_stop_replication_task_input(input: &crate::operation::stop_replicatio
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_stop_replication_task_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskOutput, crate::operation::stop_replication_task::StopReplicationTaskError> {
+pub fn de_stop_replication_task_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskOutput, crate::operation::stop_replication_task::StopReplicationTaskError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_stop_replication_task_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResourceStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(_response_body, output).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_stop_replication_task_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(_response_body, output).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_stop_replication_task_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_stop_replication_task_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskOutput, crate::operation::stop_replication_task::StopReplicationTaskError> {
+pub fn de_stop_replication_task_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskOutput, crate::operation::stop_replication_task::StopReplicationTaskError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::stop_replication_task::builders::StopReplicationTaskOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_stop_replication_task::de_stop_replication_task(response.body().as_ref(), output).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_stop_replication_task::de_stop_replication_task(_response_body, output).map_err(crate::operation::stop_replication_task::StopReplicationTaskError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

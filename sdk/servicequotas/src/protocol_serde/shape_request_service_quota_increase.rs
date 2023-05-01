@@ -8,10 +8,10 @@ pub fn ser_request_service_quota_increase_input(input: &crate::operation::reques
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_request_service_quota_increase_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput, crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError> {
+pub fn de_request_service_quota_increase_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput, crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DependencyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_dependency_access_denied_exception::de_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependency_access_denied_exception::de_dependency_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IllegalArgumentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResourceStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_resource_state_exception::de_invalid_resource_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_resource_state_exception::de_invalid_resource_state_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchResourceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_resource_exception::de_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_resource_exception::de_no_such_resource_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::QuotaExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_quota_exceeded_exception::de_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_quota_exceeded_exception::de_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,13 +169,12 @@ pub fn de_request_service_quota_increase_http_error(response: &http::Response<by
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_request_service_quota_increase_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput, crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError> {
+pub fn de_request_service_quota_increase_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput, crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase(response.body().as_ref(), output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase(_response_body, output).map_err(crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

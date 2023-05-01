@@ -8,10 +8,10 @@ pub fn ser_batch_meter_usage_input(input: &crate::operation::batch_meter_usage::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageOutput, crate::operation::batch_meter_usage::BatchMeterUsageError> {
+pub fn de_batch_meter_usage_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageOutput, crate::operation::batch_meter_usage::BatchMeterUsageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DisabledApiExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_disabled_api_exception::de_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_api_exception::de_disabled_api_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCustomerIdentifierExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_customer_identifier_exception::de_invalid_customer_identifier_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_customer_identifier_exception::de_invalid_customer_identifier_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidProductCodeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_product_code_exception::de_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_product_code_exception::de_invalid_product_code_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTagExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_exception::de_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_exception::de_invalid_tag_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidUsageAllocationsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_usage_allocations_exception::de_invalid_usage_allocations_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_usage_allocations_exception::de_invalid_usage_allocations_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidUsageDimensionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_usage_dimension_exception::de_invalid_usage_dimension_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_usage_dimension_exception::de_invalid_usage_dimension_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TimestampOutOfBoundsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_timestamp_out_of_bounds_exception::de_timestamp_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_timestamp_out_of_bounds_exception::de_timestamp_out_of_bounds_exception_json_err(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,13 +169,12 @@ pub fn de_batch_meter_usage_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_meter_usage_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageOutput, crate::operation::batch_meter_usage::BatchMeterUsageError> {
+pub fn de_batch_meter_usage_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageOutput, crate::operation::batch_meter_usage::BatchMeterUsageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_meter_usage::builders::BatchMeterUsageOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_batch_meter_usage::de_batch_meter_usage(response.body().as_ref(), output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_batch_meter_usage::de_batch_meter_usage(_response_body, output).map_err(crate::operation::batch_meter_usage::BatchMeterUsageError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

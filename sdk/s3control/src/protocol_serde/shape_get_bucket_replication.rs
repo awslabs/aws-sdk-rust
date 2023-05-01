@@ -21,22 +21,21 @@ pub fn ser_get_bucket_replication_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_bucket_replication_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationOutput, crate::operation::get_bucket_replication::GetBucketReplicationError> {
+pub fn de_get_bucket_replication_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationOutput, crate::operation::get_bucket_replication::GetBucketReplicationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_bucket_replication::GetBucketReplicationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_bucket_replication::GetBucketReplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_bucket_replication::GetBucketReplicationError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_bucket_replication_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationOutput, crate::operation::get_bucket_replication::GetBucketReplicationError> {
+pub fn de_get_bucket_replication_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_bucket_replication::GetBucketReplicationOutput, crate::operation::get_bucket_replication::GetBucketReplicationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_bucket_replication::builders::GetBucketReplicationOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_bucket_replication::de_get_bucket_replication(response.body().as_ref(), output).map_err(crate::operation::get_bucket_replication::GetBucketReplicationError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_bucket_replication::de_get_bucket_replication(_response_body, output).map_err(crate::operation::get_bucket_replication::GetBucketReplicationError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

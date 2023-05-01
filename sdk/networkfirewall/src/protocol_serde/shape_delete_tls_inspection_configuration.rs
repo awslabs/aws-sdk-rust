@@ -8,10 +8,10 @@ pub fn ser_delete_tls_inspection_configuration_input(input: &crate::operation::d
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput, crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError> {
+pub fn de_delete_tls_inspection_configuration_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput, crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_json_err(_response_body, output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_delete_tls_inspection_configuration_http_error(response: &http::Respon
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_tls_inspection_configuration_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput, crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError> {
+pub fn de_delete_tls_inspection_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput, crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_tls_inspection_configuration::builders::DeleteTlsInspectionConfigurationOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_delete_tls_inspection_configuration::de_delete_tls_inspection_configuration(response.body().as_ref(), output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_delete_tls_inspection_configuration::de_delete_tls_inspection_configuration(_response_body, output).map_err(crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_put_organization_conformance_pack_input(input: &crate::operation::put
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_organization_conformance_pack_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError> {
+pub fn de_put_organization_conformance_pack_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientPermissionsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_permissions_exception::de_insufficient_permissions_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_permissions_exception::de_insufficient_permissions_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxNumberOfOrganizationConformancePacksExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_number_of_organization_conformance_packs_exceeded_exception::de_max_number_of_organization_conformance_packs_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_number_of_organization_conformance_packs_exceeded_exception::de_max_number_of_organization_conformance_packs_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoAvailableOrganizationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_available_organization_exception::de_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_available_organization_exception::de_no_available_organization_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_access_denied_exception::de_organization_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_access_denied_exception::de_organization_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationAllFeaturesNotEnabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_all_features_not_enabled_exception::de_organization_all_features_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_all_features_not_enabled_exception::de_organization_all_features_not_enabled_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationConformancePackTemplateValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_conformance_pack_template_validation_exception::de_organization_conformance_pack_template_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_conformance_pack_template_validation_exception::de_organization_conformance_pack_template_validation_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_put_organization_conformance_pack_http_error(response: &http::Response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_organization_conformance_pack_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError> {
+pub fn de_put_organization_conformance_pack_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_organization_conformance_pack::de_put_organization_conformance_pack(response.body().as_ref(), output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_organization_conformance_pack::de_put_organization_conformance_pack(_response_body, output).map_err(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

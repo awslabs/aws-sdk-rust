@@ -8,10 +8,10 @@ pub fn ser_send_serial_console_ssh_public_key_input(input: &crate::operation::se
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError> {
+pub fn de_send_serial_console_ssh_public_key_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AuthExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_auth_exception::de_auth_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_auth_exception::de_auth_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::Ec2InstanceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ec2_instance_not_found_exception::de_ec2_instance_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_ec2_instance_not_found_exception::de_ec2_instance_not_found_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::Ec2InstanceStateInvalidExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ec2_instance_state_invalid_exception::de_ec2_instance_state_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_ec2_instance_state_invalid_exception::de_ec2_instance_state_invalid_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::Ec2InstanceTypeInvalidExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ec2_instance_type_invalid_exception::de_ec2_instance_type_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_ec2_instance_type_invalid_exception::de_ec2_instance_type_invalid_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::Ec2InstanceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ec2_instance_unavailable_exception::de_ec2_instance_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_ec2_instance_unavailable_exception::de_ec2_instance_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_args_exception::de_invalid_args_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_args_exception::de_invalid_args_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SerialConsoleAccessDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_serial_console_access_disabled_exception::de_serial_console_access_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_serial_console_access_disabled_exception::de_serial_console_access_disabled_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SerialConsoleSessionLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_serial_console_session_limit_exceeded_exception::de_serial_console_session_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_serial_console_session_limit_exceeded_exception::de_serial_console_session_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SerialConsoleSessionUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_serial_console_session_unavailable_exception::de_serial_console_session_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_serial_console_session_unavailable_exception::de_serial_console_session_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -212,13 +201,12 @@ pub fn de_send_serial_console_ssh_public_key_http_error(response: &http::Respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_send_serial_console_ssh_public_key_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError> {
+pub fn de_send_serial_console_ssh_public_key_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key(response.body().as_ref(), output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

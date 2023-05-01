@@ -8,10 +8,10 @@ pub fn ser_describe_app_image_config_input(input: &crate::operation::describe_ap
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_app_image_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_app_image_config::DescribeAppImageConfigOutput, crate::operation::describe_app_image_config::DescribeAppImageConfigError> {
+pub fn de_describe_app_image_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_app_image_config::DescribeAppImageConfigOutput, crate::operation::describe_app_image_config::DescribeAppImageConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_app_image_config::DescribeAppImageConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_app_image_config::DescribeAppImageConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_app_image_config_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_image_config::DescribeAppImageConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(_response_body, output).map_err(crate::operation::describe_app_image_config::DescribeAppImageConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -42,13 +41,12 @@ pub fn de_describe_app_image_config_http_error(response: &http::Response<bytes::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_app_image_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_app_image_config::DescribeAppImageConfigOutput, crate::operation::describe_app_image_config::DescribeAppImageConfigError> {
+pub fn de_describe_app_image_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_app_image_config::DescribeAppImageConfigOutput, crate::operation::describe_app_image_config::DescribeAppImageConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_app_image_config::builders::DescribeAppImageConfigOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_app_image_config::de_describe_app_image_config(response.body().as_ref(), output).map_err(crate::operation::describe_app_image_config::DescribeAppImageConfigError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_app_image_config::de_describe_app_image_config(_response_body, output).map_err(crate::operation::describe_app_image_config::DescribeAppImageConfigError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

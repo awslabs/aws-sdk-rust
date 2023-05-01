@@ -11,10 +11,10 @@ pub fn ser_create_key_signing_key_op_input(input: &crate::operation::create_key_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, crate::operation::create_key_signing_key::CreateKeySigningKeyError> {
+pub fn de_create_key_signing_key_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, crate::operation::create_key_signing_key::CreateKeySigningKeyError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -80,8 +77,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKeySigningKeyNameBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_signing_key_name::de_invalid_key_signing_key_name_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_key_signing_key_name::de_invalid_key_signing_key_name_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -97,8 +93,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKeySigningKeyStatusBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_signing_key_status::de_invalid_key_signing_key_status_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_key_signing_key_status::de_invalid_key_signing_key_status_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -114,8 +109,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKmsArnBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_kms_arn::de_invalid_kms_arn_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_kms_arn::de_invalid_kms_arn_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -131,8 +125,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSigningStatusBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_signing_status::de_invalid_signing_status_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_signing_status::de_invalid_signing_status_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -148,8 +141,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KeySigningKeyAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_key_signing_key_already_exists::de_key_signing_key_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_key_signing_key_already_exists::de_key_signing_key_already_exists_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -165,8 +157,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchHostedZoneBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -182,8 +173,7 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyKeySigningKeysBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_key_signing_keys::de_too_many_key_signing_keys_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_key_signing_keys::de_too_many_key_signing_keys_xml_err(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -198,17 +188,16 @@ pub fn de_create_key_signing_key_http_error(response: &http::Response<bytes::Byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_key_signing_key_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, crate::operation::create_key_signing_key::CreateKeySigningKeyError> {
+pub fn de_create_key_signing_key_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, crate::operation::create_key_signing_key::CreateKeySigningKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_key_signing_key::de_create_key_signing_key(response.body().as_ref(), output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
+        output = crate::protocol_serde::shape_create_key_signing_key::de_create_key_signing_key(_response_body, output).map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?;
         output = output.set_location(
-            crate::protocol_serde::shape_create_key_signing_key_output::de_location_header(response.headers())
+            crate::protocol_serde::shape_create_key_signing_key_output::de_location_header(_response_headers)
                                     .map_err(|_|crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled("Failed to parse Location from header `Location"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

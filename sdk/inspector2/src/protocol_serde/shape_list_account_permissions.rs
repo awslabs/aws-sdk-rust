@@ -8,10 +8,10 @@ pub fn ser_list_account_permissions_input(input: &crate::operation::list_account
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_account_permissions_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_account_permissions::ListAccountPermissionsOutput, crate::operation::list_account_permissions::ListAccountPermissionsError> {
+pub fn de_list_account_permissions_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_account_permissions::ListAccountPermissionsOutput, crate::operation::list_account_permissions::ListAccountPermissionsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_account_permissions_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,10 +42,9 @@ pub fn de_list_account_permissions_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -64,10 +62,9 @@ pub fn de_list_account_permissions_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -85,8 +82,7 @@ pub fn de_list_account_permissions_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -101,13 +97,12 @@ pub fn de_list_account_permissions_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_account_permissions_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_account_permissions::ListAccountPermissionsOutput, crate::operation::list_account_permissions::ListAccountPermissionsError> {
+pub fn de_list_account_permissions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_account_permissions::ListAccountPermissionsOutput, crate::operation::list_account_permissions::ListAccountPermissionsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_account_permissions::de_list_account_permissions(response.body().as_ref(), output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_account_permissions::de_list_account_permissions(_response_body, output).map_err(crate::operation::list_account_permissions::ListAccountPermissionsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

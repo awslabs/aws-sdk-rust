@@ -8,10 +8,10 @@ pub fn ser_describe_effective_patches_for_patch_baseline_input(input: &crate::op
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_effective_patches_for_patch_baseline_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError> {
+pub fn de_describe_effective_patches_for_patch_baseline_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_effective_patches_for_patch_baseline_http_error(response: &ht
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_does_not_exist_exception::de_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
+                    output = crate::protocol_serde::shape_does_not_exist_exception::de_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_effective_patches_for_patch_baseline_http_error(response: &ht
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_describe_effective_patches_for_patch_baseline_http_error(response: &ht
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResourceIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_resource_id::de_invalid_resource_id_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_resource_id::de_invalid_resource_id_json_err(_response_body, output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_describe_effective_patches_for_patch_baseline_http_error(response: &ht
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperatingSystemBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operating_system::de_unsupported_operating_system_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operating_system::de_unsupported_operating_system_json_err(_response_body, output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_describe_effective_patches_for_patch_baseline_http_error(response: &ht
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_effective_patches_for_patch_baseline_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError> {
+pub fn de_describe_effective_patches_for_patch_baseline_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_effective_patches_for_patch_baseline::de_describe_effective_patches_for_patch_baseline(response.body().as_ref(), output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_effective_patches_for_patch_baseline::de_describe_effective_patches_for_patch_baseline(_response_body, output).map_err(crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

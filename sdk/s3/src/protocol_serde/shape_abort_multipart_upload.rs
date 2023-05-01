@@ -35,11 +35,11 @@ pub fn ser_abort_multipart_upload_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_abort_multipart_upload_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadOutput, crate::operation::abort_multipart_upload::AbortMultipartUploadError> {
+pub fn de_abort_multipart_upload_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadOutput, crate::operation::abort_multipart_upload::AbortMultipartUploadError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -54,8 +54,7 @@ pub fn de_abort_multipart_upload_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchUploadBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_upload::de_no_such_upload_xml_err(response.body().as_ref(), output).map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_upload::de_no_such_upload_xml_err(_response_body, output).map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -70,17 +69,16 @@ pub fn de_abort_multipart_upload_http_error(response: &http::Response<bytes::Byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_abort_multipart_upload_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadOutput, crate::operation::abort_multipart_upload::AbortMultipartUploadError> {
+pub fn de_abort_multipart_upload_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadOutput, crate::operation::abort_multipart_upload::AbortMultipartUploadError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::abort_multipart_upload::builders::AbortMultipartUploadOutputBuilder::default();
-        let _ = response;
         output = output.set_request_charged(
-            crate::protocol_serde::shape_abort_multipart_upload_output::de_request_charged_header(response.headers())
+            crate::protocol_serde::shape_abort_multipart_upload_output::de_request_charged_header(_response_headers)
                                     .map_err(|_|crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
-        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string));
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

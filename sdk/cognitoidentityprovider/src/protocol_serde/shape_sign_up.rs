@@ -8,10 +8,10 @@ pub fn ser_sign_up_input(input: &crate::operation::sign_up::SignUpInput) -> Resu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::sign_up::SignUpOutput, crate::operation::sign_up::SignUpError> {
+pub fn de_sign_up_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::sign_up::SignUpOutput, crate::operation::sign_up::SignUpError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CodeDeliveryFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_code_delivery_failure_exception::de_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_code_delivery_failure_exception::de_code_delivery_failure_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEmailRoleAccessPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_email_role_access_policy_exception::de_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_email_role_access_policy_exception::de_invalid_email_role_access_policy_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLambdaResponseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lambda_response_exception::de_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lambda_response_exception::de_invalid_lambda_response_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPasswordExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSmsRoleAccessPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sms_role_access_policy_exception::de_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sms_role_access_policy_exception::de_invalid_sms_role_access_policy_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSmsRoleTrustRelationshipExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sms_role_trust_relationship_exception::de_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sms_role_trust_relationship_exception::de_invalid_sms_role_trust_relationship_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnexpectedLambdaExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unexpected_lambda_exception::de_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_unexpected_lambda_exception::de_unexpected_lambda_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UserLambdaValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_user_lambda_validation_exception::de_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_user_lambda_validation_exception::de_user_lambda_validation_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UsernameExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_username_exists_exception::de_username_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                    output = crate::protocol_serde::shape_username_exists_exception::de_username_exists_exception_json_err(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -280,13 +265,12 @@ pub fn de_sign_up_http_error(response: &http::Response<bytes::Bytes>) -> std::re
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_sign_up_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::sign_up::SignUpOutput, crate::operation::sign_up::SignUpError> {
+pub fn de_sign_up_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::sign_up::SignUpOutput, crate::operation::sign_up::SignUpError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::sign_up::builders::SignUpOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_sign_up::de_sign_up(response.body().as_ref(), output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_sign_up::de_sign_up(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_delete_organization_conformance_pack_input(input: &crate::operation::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_organization_conformance_pack_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput, crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError> {
+pub fn de_delete_organization_conformance_pack_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput, crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_delete_organization_conformance_pack_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchOrganizationConformancePackExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_organization_conformance_pack_exception::de_no_such_organization_conformance_pack_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_organization_conformance_pack_exception::de_no_such_organization_conformance_pack_exception_json_err(_response_body, output).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_delete_organization_conformance_pack_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_access_denied_exception::de_organization_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_access_denied_exception::de_organization_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_delete_organization_conformance_pack_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,12 +73,11 @@ pub fn de_delete_organization_conformance_pack_http_error(response: &http::Respo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_organization_conformance_pack_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput, crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError> {
+pub fn de_delete_organization_conformance_pack_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput, crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

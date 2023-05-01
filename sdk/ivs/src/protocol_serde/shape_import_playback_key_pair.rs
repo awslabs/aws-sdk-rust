@@ -8,10 +8,10 @@ pub fn ser_import_playback_key_pair_input(input: &crate::operation::import_playb
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput, crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError> {
+pub fn de_import_playback_key_pair_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput, crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PendingVerificationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pending_verification::de_pending_verification_json_err(response.body().as_ref(), output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+                    output = crate::protocol_serde::shape_pending_verification::de_pending_verification_json_err(_response_body, output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_import_playback_key_pair_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_playback_key_pair_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput, crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError> {
+pub fn de_import_playback_key_pair_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput, crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_import_playback_key_pair::de_import_playback_key_pair(response.body().as_ref(), output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_import_playback_key_pair::de_import_playback_key_pair(_response_body, output).map_err(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

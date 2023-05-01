@@ -88,11 +88,14 @@ impl DescribeCrossAccountAccessRole {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCrossAccountAccessRole {
                 type Output = std::result::Result<crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput, crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_describe_cross_account_access_role::de_describe_cross_account_access_role_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_describe_cross_account_access_role::de_describe_cross_account_access_role_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_describe_cross_account_access_role::de_describe_cross_account_access_role_http_response(response)
+                        crate::protocol_serde::shape_describe_cross_account_access_role::de_describe_cross_account_access_role_http_response(status, headers, body)
                      }
                 }
             }

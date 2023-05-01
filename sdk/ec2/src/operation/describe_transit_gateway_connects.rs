@@ -86,11 +86,14 @@ impl DescribeTransitGatewayConnects {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayConnects {
                 type Output = std::result::Result<crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput, crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_describe_transit_gateway_connects::de_describe_transit_gateway_connects_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_describe_transit_gateway_connects::de_describe_transit_gateway_connects_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_describe_transit_gateway_connects::de_describe_transit_gateway_connects_http_response(response)
+                        crate::protocol_serde::shape_describe_transit_gateway_connects::de_describe_transit_gateway_connects_http_response(status, headers, body)
                      }
                 }
             }

@@ -21,10 +21,10 @@ pub fn ser_delete_function_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_function::DeleteFunctionOutput, crate::operation::delete_function::DeleteFunctionError> {
+pub fn de_delete_function_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_function::DeleteFunctionOutput, crate::operation::delete_function::DeleteFunctionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -39,8 +39,7 @@ pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FunctionInUseBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_function_in_use::de_function_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_function_in_use::de_function_in_use_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,8 +55,7 @@ pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,8 +71,7 @@ pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchFunctionExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,8 +87,7 @@ pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -107,8 +103,7 @@ pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -123,12 +118,11 @@ pub fn de_delete_function_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_function_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_function::DeleteFunctionOutput, crate::operation::delete_function::DeleteFunctionError> {
+pub fn de_delete_function_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_function::DeleteFunctionOutput, crate::operation::delete_function::DeleteFunctionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_function::builders::DeleteFunctionOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

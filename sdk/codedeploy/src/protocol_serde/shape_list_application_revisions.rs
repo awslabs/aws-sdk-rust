@@ -8,10 +8,10 @@ pub fn ser_list_application_revisions_input(input: &crate::operation::list_appli
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_application_revisions_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_application_revisions::ListApplicationRevisionsOutput, crate::operation::list_application_revisions::ListApplicationRevisionsError> {
+pub fn de_list_application_revisions_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_application_revisions::ListApplicationRevisionsOutput, crate::operation::list_application_revisions::ListApplicationRevisionsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApplicationDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_application_does_not_exist_exception::de_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_application_does_not_exist_exception::de_application_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApplicationNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_application_name_required_exception::de_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_application_name_required_exception::de_application_name_required_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BucketNameFilterRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bucket_name_filter_required_exception::de_bucket_name_filter_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bucket_name_filter_required_exception::de_bucket_name_filter_required_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApplicationNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_application_name_exception::de_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_application_name_exception::de_invalid_application_name_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidBucketNameFilterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_bucket_name_filter_exception::de_invalid_bucket_name_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_bucket_name_filter_exception::de_invalid_bucket_name_filter_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeployedStateFilterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployed_state_filter_exception::de_invalid_deployed_state_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployed_state_filter_exception::de_invalid_deployed_state_filter_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKeyPrefixFilterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_prefix_filter_exception::de_invalid_key_prefix_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_key_prefix_filter_exception::de_invalid_key_prefix_filter_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSortByExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sort_by_exception::de_invalid_sort_by_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sort_by_exception::de_invalid_sort_by_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSortOrderExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sort_order_exception::de_invalid_sort_order_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sort_order_exception::de_invalid_sort_order_exception_json_err(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -195,13 +185,12 @@ pub fn de_list_application_revisions_http_error(response: &http::Response<bytes:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_application_revisions_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_application_revisions::ListApplicationRevisionsOutput, crate::operation::list_application_revisions::ListApplicationRevisionsError> {
+pub fn de_list_application_revisions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_application_revisions::ListApplicationRevisionsOutput, crate::operation::list_application_revisions::ListApplicationRevisionsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_application_revisions::de_list_application_revisions(response.body().as_ref(), output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_application_revisions::de_list_application_revisions(_response_body, output).map_err(crate::operation::list_application_revisions::ListApplicationRevisionsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

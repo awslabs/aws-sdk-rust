@@ -86,11 +86,14 @@ impl SetIdentityHeadersInNotificationsEnabled {
 impl aws_smithy_http::response::ParseStrictResponse for SetIdentityHeadersInNotificationsEnabled {
                 type Output = std::result::Result<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput, crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_set_identity_headers_in_notifications_enabled::de_set_identity_headers_in_notifications_enabled_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_set_identity_headers_in_notifications_enabled::de_set_identity_headers_in_notifications_enabled_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_set_identity_headers_in_notifications_enabled::de_set_identity_headers_in_notifications_enabled_http_response(response)
+                        crate::protocol_serde::shape_set_identity_headers_in_notifications_enabled::de_set_identity_headers_in_notifications_enabled_http_response(status, headers, body)
                      }
                 }
             }

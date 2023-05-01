@@ -8,10 +8,10 @@ pub fn ser_put_workflow_run_properties_input(input: &crate::operation::put_workf
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput, crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError> {
+pub fn de_put_workflow_run_properties_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput, crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationTimeoutExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_timeout_exception::de_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_timeout_exception::de_operation_timeout_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNumberLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_number_limit_exceeded_exception::de_resource_number_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_number_limit_exceeded_exception::de_resource_number_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,12 +137,11 @@ pub fn de_put_workflow_run_properties_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_workflow_run_properties_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput, crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError> {
+pub fn de_put_workflow_run_properties_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput, crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

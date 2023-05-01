@@ -95,11 +95,14 @@ impl CreateAlertManagerDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAlertManagerDefinition {
                 type Output = std::result::Result<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput, crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_error(response)
+                     if !success && status != 202 {
+                        crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_response(response)
+                        crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_response(status, headers, body)
                      }
                 }
             }

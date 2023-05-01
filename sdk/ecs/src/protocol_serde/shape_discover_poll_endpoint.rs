@@ -8,10 +8,10 @@ pub fn ser_discover_poll_endpoint_input(input: &crate::operation::discover_poll_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_discover_poll_endpoint_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput, crate::operation::discover_poll_endpoint::DiscoverPollEndpointError> {
+pub fn de_discover_poll_endpoint_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput, crate::operation::discover_poll_endpoint::DiscoverPollEndpointError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_discover_poll_endpoint_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_discover_poll_endpoint_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_discover_poll_endpoint_http_error(response: &http::Response<bytes::Byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_discover_poll_endpoint_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput, crate::operation::discover_poll_endpoint::DiscoverPollEndpointError> {
+pub fn de_discover_poll_endpoint_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput, crate::operation::discover_poll_endpoint::DiscoverPollEndpointError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_discover_poll_endpoint::de_discover_poll_endpoint(response.body().as_ref(), output).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_discover_poll_endpoint::de_discover_poll_endpoint(_response_body, output).map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

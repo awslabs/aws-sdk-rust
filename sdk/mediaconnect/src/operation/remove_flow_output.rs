@@ -94,11 +94,14 @@ impl RemoveFlowOutput {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowOutput {
                 type Output = std::result::Result<crate::operation::remove_flow_output::RemoveFlowOutputOutput, crate::operation::remove_flow_output::RemoveFlowOutputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::protocol_serde::shape_remove_flow_output::de_remove_flow_output_http_error(response)
+                     if !success && status != 202 {
+                        crate::protocol_serde::shape_remove_flow_output::de_remove_flow_output_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_remove_flow_output::de_remove_flow_output_http_response(response)
+                        crate::protocol_serde::shape_remove_flow_output::de_remove_flow_output_http_response(status, headers, body)
                      }
                 }
             }

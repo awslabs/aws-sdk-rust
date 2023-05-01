@@ -8,10 +8,10 @@ pub fn ser_list_tags_for_project_input(input: &crate::operation::list_tags_for_p
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_tags_for_project_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectOutput, crate::operation::list_tags_for_project::ListTagsForProjectError> {
+pub fn de_list_tags_for_project_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectOutput, crate::operation::list_tags_for_project::ListTagsForProjectError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_tags_for_project_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_tags_for_project_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProjectNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_project_not_found_exception::de_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_project_not_found_exception::de_project_not_found_exception_json_err(_response_body, output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_list_tags_for_project_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_list_tags_for_project_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_tags_for_project_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectOutput, crate::operation::list_tags_for_project::ListTagsForProjectError> {
+pub fn de_list_tags_for_project_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_tags_for_project::ListTagsForProjectOutput, crate::operation::list_tags_for_project::ListTagsForProjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_tags_for_project::builders::ListTagsForProjectOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_tags_for_project::de_list_tags_for_project(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_tags_for_project::de_list_tags_for_project(_response_body, output).map_err(crate::operation::list_tags_for_project::ListTagsForProjectError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

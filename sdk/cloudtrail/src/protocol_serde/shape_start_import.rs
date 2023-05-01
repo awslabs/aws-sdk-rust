@@ -8,10 +8,10 @@ pub fn ser_start_import_input(input: &crate::operation::start_import::StartImpor
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_import::StartImportOutput, crate::operation::start_import::StartImportError> {
+pub fn de_start_import_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_import::StartImportOutput, crate::operation::start_import::StartImportError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_import::StartImportError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccountHasOngoingImportExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_account_has_ongoing_import_exception::de_account_has_ongoing_import_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_has_ongoing_import_exception::de_account_has_ongoing_import_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EventDataStoreArnInvalidExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_event_data_store_arn_invalid_exception::de_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_event_data_store_arn_invalid_exception::de_event_data_store_arn_invalid_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EventDataStoreNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_event_data_store_not_found_exception::de_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_event_data_store_not_found_exception::de_event_data_store_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ImportNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_import_not_found_exception::de_import_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_import_not_found_exception::de_import_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InactiveEventDataStoreExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_inactive_event_data_store_exception::de_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_inactive_event_data_store_exception::de_inactive_event_data_store_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientEncryptionPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEventDataStoreCategoryExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_event_data_store_category_exception::de_invalid_event_data_store_category_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_event_data_store_category_exception::de_invalid_event_data_store_category_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEventDataStoreStatusExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_event_data_store_status_exception::de_invalid_event_data_store_status_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_event_data_store_status_exception::de_invalid_event_data_store_status_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidImportSourceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_import_source_exception::de_invalid_import_source_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_import_source_exception::de_invalid_import_source_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -229,13 +217,12 @@ pub fn de_start_import_http_error(response: &http::Response<bytes::Bytes>) -> st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_import_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_import::StartImportOutput, crate::operation::start_import::StartImportError> {
+pub fn de_start_import_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_import::StartImportOutput, crate::operation::start_import::StartImportError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_import::builders::StartImportOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_import::de_start_import(response.body().as_ref(), output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_import::de_start_import(_response_body, output).map_err(crate::operation::start_import::StartImportError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

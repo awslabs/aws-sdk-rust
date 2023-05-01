@@ -47,10 +47,10 @@ pub fn ser_copy_distribution_op_input(input: &crate::operation::copy_distributio
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::copy_distribution::CopyDistributionOutput, crate::operation::copy_distribution::CopyDistributionError> {
+pub fn de_copy_distribution_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::copy_distribution::CopyDistributionOutput, crate::operation::copy_distribution::CopyDistributionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -65,8 +65,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -82,8 +81,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CnameAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -99,8 +97,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DistributionAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_distribution_already_exists::de_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_distribution_already_exists::de_distribution_already_exists_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -116,8 +113,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_illegal_field_level_encryption_config_association_with_cache_behavior::de_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_illegal_field_level_encryption_config_association_with_cache_behavior::de_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -133,8 +129,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -150,8 +145,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -167,8 +161,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDefaultRootObjectBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_default_root_object::de_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_default_root_object::de_invalid_default_root_object_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -184,8 +177,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidErrorCodeBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_error_code::de_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_error_code::de_invalid_error_code_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -201,8 +193,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidForwardCookiesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_forward_cookies::de_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_forward_cookies::de_invalid_forward_cookies_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -218,8 +209,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFunctionAssociationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_function_association::de_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_function_association::de_invalid_function_association_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -235,8 +225,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidGeoRestrictionParameterBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_geo_restriction_parameter::de_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_geo_restriction_parameter::de_invalid_geo_restriction_parameter_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -252,8 +241,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidHeadersForS3OriginBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_headers_for_s3_origin::de_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_headers_for_s3_origin::de_invalid_headers_for_s3_origin_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -269,8 +257,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -286,8 +273,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLambdaFunctionAssociationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lambda_function_association::de_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lambda_function_association::de_invalid_lambda_function_association_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -303,8 +289,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLocationCodeBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_location_code::de_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_location_code::de_invalid_location_code_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -320,8 +305,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidMinimumProtocolVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_minimum_protocol_version::de_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_minimum_protocol_version::de_invalid_minimum_protocol_version_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -337,8 +321,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -354,8 +337,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginAccessControlBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -371,8 +353,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginAccessIdentityBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -388,8 +369,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginKeepaliveTimeoutBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_keepalive_timeout::de_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_keepalive_timeout::de_invalid_origin_keepalive_timeout_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -405,8 +385,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginReadTimeoutBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_read_timeout::de_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_read_timeout::de_invalid_origin_read_timeout_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -422,8 +401,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidProtocolSettingsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_protocol_settings::de_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_protocol_settings::de_invalid_protocol_settings_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -439,8 +417,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidQueryStringParametersBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_query_string_parameters::de_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_query_string_parameters::de_invalid_query_string_parameters_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -456,8 +433,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRelativePathBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_relative_path::de_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_relative_path::de_invalid_relative_path_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -473,8 +449,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequiredProtocolBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_required_protocol::de_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_required_protocol::de_invalid_required_protocol_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -490,8 +465,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResponseCodeBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_response_code::de_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_response_code::de_invalid_response_code_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -507,8 +481,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTtlOrderBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_ttl_order::de_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_ttl_order::de_invalid_ttl_order_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -524,8 +497,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidViewerCertificateBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_viewer_certificate::de_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_viewer_certificate::de_invalid_viewer_certificate_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -541,8 +513,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidWebAclIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -558,8 +529,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingBodyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -575,8 +545,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchCachePolicyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -592,8 +561,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -609,8 +577,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -626,8 +593,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchOriginBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_origin::de_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_origin::de_no_such_origin_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -643,8 +609,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchOriginRequestPolicyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -660,8 +625,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -677,8 +641,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchResponseHeadersPolicyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_response_headers_policy::de_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_response_headers_policy::de_no_such_response_headers_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -694,8 +657,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -711,8 +673,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_realtime_log_config_owner_mismatch::de_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_realtime_log_config_owner_mismatch::de_realtime_log_config_owner_mismatch_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -728,8 +689,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyCacheBehaviorsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_cache_behaviors::de_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_cache_behaviors::de_too_many_cache_behaviors_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -745,8 +705,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyCertificatesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_certificates::de_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_certificates::de_too_many_certificates_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -762,8 +721,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyCookieNamesInWhiteListBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_cookie_names_in_white_list::de_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_cookie_names_in_white_list::de_too_many_cookie_names_in_white_list_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -779,8 +737,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -796,8 +753,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions::de_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions::de_too_many_distributions_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -813,8 +769,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToCachePolicyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_cache_policy::de_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_cache_policy::de_too_many_distributions_associated_to_cache_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -830,8 +785,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_field_level_encryption_config::de_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_field_level_encryption_config::de_too_many_distributions_associated_to_field_level_encryption_config_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -847,8 +801,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToKeyGroupBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_key_group::de_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_key_group::de_too_many_distributions_associated_to_key_group_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -864,8 +817,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToOriginRequestPolicyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_request_policy::de_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_request_policy::de_too_many_distributions_associated_to_origin_request_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -881,8 +833,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_response_headers_policy::de_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_response_headers_policy::de_too_many_distributions_associated_to_response_headers_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -898,8 +849,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsWithFunctionAssociationsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_with_function_associations::de_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_with_function_associations::de_too_many_distributions_with_function_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -915,8 +865,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsWithLambdaAssociationsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_with_lambda_associations::de_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_with_lambda_associations::de_too_many_distributions_with_lambda_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -932,8 +881,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_with_single_function_arn::de_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_with_single_function_arn::de_too_many_distributions_with_single_function_arn_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -949,8 +897,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyFunctionAssociationsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_function_associations::de_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_function_associations::de_too_many_function_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -966,8 +913,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyHeadersInForwardedValuesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_headers_in_forwarded_values::de_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_headers_in_forwarded_values::de_too_many_headers_in_forwarded_values_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -983,8 +929,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_key_groups_associated_to_distribution::de_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_key_groups_associated_to_distribution::de_too_many_key_groups_associated_to_distribution_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1000,8 +945,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyLambdaFunctionAssociationsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_lambda_function_associations::de_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_lambda_function_associations::de_too_many_lambda_function_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1017,8 +961,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyOriginCustomHeadersBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_origin_custom_headers::de_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_origin_custom_headers::de_too_many_origin_custom_headers_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1034,8 +977,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_origin_groups_per_distribution::de_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_origin_groups_per_distribution::de_too_many_origin_groups_per_distribution_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1051,8 +993,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyOriginsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_origins::de_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_origins::de_too_many_origins_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1068,8 +1009,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyQueryStringParametersBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_query_string_parameters::de_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_query_string_parameters::de_too_many_query_string_parameters_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1085,8 +1025,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyTrustedSignersBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1102,8 +1041,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrustedKeyGroupDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trusted_key_group_does_not_exist::de_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_trusted_key_group_does_not_exist::de_trusted_key_group_does_not_exist_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1119,8 +1057,7 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrustedSignerDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1135,23 +1072,22 @@ pub fn de_copy_distribution_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_copy_distribution_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::copy_distribution::CopyDistributionOutput, crate::operation::copy_distribution::CopyDistributionError> {
+pub fn de_copy_distribution_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::copy_distribution::CopyDistributionOutput, crate::operation::copy_distribution::CopyDistributionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::copy_distribution::builders::CopyDistributionOutputBuilder::default();
-        let _ = response;
         output = output.set_distribution(
-            crate::protocol_serde::shape_copy_distribution_output::de_distribution_payload(response.body().as_ref())?
+            crate::protocol_serde::shape_copy_distribution_output::de_distribution_payload(_response_body)?
         );
         output = output.set_e_tag(
-            crate::protocol_serde::shape_copy_distribution_output::de_e_tag_header(response.headers())
+            crate::protocol_serde::shape_copy_distribution_output::de_e_tag_header(_response_headers)
                                     .map_err(|_|crate::operation::copy_distribution::CopyDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
-            crate::protocol_serde::shape_copy_distribution_output::de_location_header(response.headers())
+            crate::protocol_serde::shape_copy_distribution_output::de_location_header(_response_headers)
                                     .map_err(|_|crate::operation::copy_distribution::CopyDistributionError::unhandled("Failed to parse Location from header `Location"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

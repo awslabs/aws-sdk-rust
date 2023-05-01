@@ -8,10 +8,10 @@ pub fn ser_describe_association_input(input: &crate::operation::describe_associa
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_association::DescribeAssociationOutput, crate::operation::describe_association::DescribeAssociationError> {
+pub fn de_describe_association_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_association::DescribeAssociationOutput, crate::operation::describe_association::DescribeAssociationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AssociationDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_association_does_not_exist::de_association_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_association_does_not_exist::de_association_does_not_exist_json_err(_response_body, output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAssociationVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_association_version::de_invalid_association_version_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_association_version::de_invalid_association_version_json_err(_response_body, output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document::de_invalid_document_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document::de_invalid_document_json_err(_response_body, output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInstanceIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_instance_id::de_invalid_instance_id_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_instance_id::de_invalid_instance_id_json_err(_response_body, output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_describe_association_http_error(response: &http::Response<bytes::Bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_association_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_association::DescribeAssociationOutput, crate::operation::describe_association::DescribeAssociationError> {
+pub fn de_describe_association_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_association::DescribeAssociationOutput, crate::operation::describe_association::DescribeAssociationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_association::builders::DescribeAssociationOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_association::de_describe_association(response.body().as_ref(), output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_association::de_describe_association(_response_body, output).map_err(crate::operation::describe_association::DescribeAssociationError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

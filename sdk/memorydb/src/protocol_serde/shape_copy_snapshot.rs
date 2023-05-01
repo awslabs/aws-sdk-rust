@@ -8,10 +8,10 @@ pub fn ser_copy_snapshot_input(input: &crate::operation::copy_snapshot::CopySnap
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::copy_snapshot::CopySnapshotOutput, crate::operation::copy_snapshot::CopySnapshotError> {
+pub fn de_copy_snapshot_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::copy_snapshot::CopySnapshotOutput, crate::operation::copy_snapshot::CopySnapshotError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSnapshotStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_snapshot_state_fault::de_invalid_snapshot_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_snapshot_state_fault::de_invalid_snapshot_state_fault_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnapshotAlreadyExistsFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_already_exists_fault::de_snapshot_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_already_exists_fault::de_snapshot_already_exists_fault_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnapshotNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_not_found_fault::de_snapshot_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_not_found_fault::de_snapshot_not_found_fault_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_json_err(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_copy_snapshot_http_error(response: &http::Response<bytes::Bytes>) -> s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_copy_snapshot_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::copy_snapshot::CopySnapshotOutput, crate::operation::copy_snapshot::CopySnapshotError> {
+pub fn de_copy_snapshot_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::copy_snapshot::CopySnapshotOutput, crate::operation::copy_snapshot::CopySnapshotError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::copy_snapshot::builders::CopySnapshotOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_copy_snapshot::de_copy_snapshot(response.body().as_ref(), output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_copy_snapshot::de_copy_snapshot(_response_body, output).map_err(crate::operation::copy_snapshot::CopySnapshotError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

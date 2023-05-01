@@ -8,10 +8,10 @@ pub fn ser_get_records_input(input: &crate::operation::get_records::GetRecordsIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_records::GetRecordsOutput, crate::operation::get_records::GetRecordsError> {
+pub fn de_get_records_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_records::GetRecordsOutput, crate::operation::get_records::GetRecordsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExpiredIteratorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_expired_iterator_exception::de_expired_iterator_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_expired_iterator_exception::de_expired_iterator_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -212,13 +201,12 @@ pub fn de_get_records_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_records_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_records::GetRecordsOutput, crate::operation::get_records::GetRecordsError> {
+pub fn de_get_records_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_records::GetRecordsOutput, crate::operation::get_records::GetRecordsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_records::builders::GetRecordsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_records::de_get_records(response.body().as_ref(), output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_records::de_get_records(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

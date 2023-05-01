@@ -8,10 +8,10 @@ pub fn ser_describe_automation_step_executions_input(input: &crate::operation::d
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_automation_step_executions_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput, crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError> {
+pub fn de_describe_automation_step_executions_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput, crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_automation_step_executions_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AutomationExecutionNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_automation_execution_not_found_exception::de_automation_execution_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_automation_execution_not_found_exception::de_automation_execution_not_found_exception_json_err(_response_body, output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_automation_step_executions_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_describe_automation_step_executions_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilterKeyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_filter_key::de_invalid_filter_key_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_filter_key::de_invalid_filter_key_json_err(_response_body, output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_describe_automation_step_executions_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilterValueBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_filter_value::de_invalid_filter_value_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_filter_value::de_invalid_filter_value_json_err(_response_body, output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_describe_automation_step_executions_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_json_err(_response_body, output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_describe_automation_step_executions_http_error(response: &http::Respon
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_automation_step_executions_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput, crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError> {
+pub fn de_describe_automation_step_executions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput, crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_automation_step_executions::de_describe_automation_step_executions(response.body().as_ref(), output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_automation_step_executions::de_describe_automation_step_executions(_response_body, output).map_err(crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

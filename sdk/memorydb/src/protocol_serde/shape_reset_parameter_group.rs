@@ -8,10 +8,10 @@ pub fn ser_reset_parameter_group_input(input: &crate::operation::reset_parameter
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::reset_parameter_group::ResetParameterGroupOutput, crate::operation::reset_parameter_group::ResetParameterGroupError> {
+pub fn de_reset_parameter_group_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reset_parameter_group::ResetParameterGroupOutput, crate::operation::reset_parameter_group::ResetParameterGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(_response_body, output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterGroupStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_group_state_fault::de_invalid_parameter_group_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_group_state_fault::de_invalid_parameter_group_state_fault_json_err(_response_body, output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParameterGroupNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parameter_group_not_found_fault::de_parameter_group_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_parameter_group_not_found_fault::de_parameter_group_not_found_fault_json_err(_response_body, output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(_response_body, output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_reset_parameter_group_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reset_parameter_group_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::reset_parameter_group::ResetParameterGroupOutput, crate::operation::reset_parameter_group::ResetParameterGroupError> {
+pub fn de_reset_parameter_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reset_parameter_group::ResetParameterGroupOutput, crate::operation::reset_parameter_group::ResetParameterGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reset_parameter_group::builders::ResetParameterGroupOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_reset_parameter_group::de_reset_parameter_group(response.body().as_ref(), output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_reset_parameter_group::de_reset_parameter_group(_response_body, output).map_err(crate::operation::reset_parameter_group::ResetParameterGroupError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

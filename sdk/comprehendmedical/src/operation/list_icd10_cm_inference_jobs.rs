@@ -91,11 +91,14 @@ impl ListICD10CMInferenceJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListICD10CMInferenceJobs {
                 type Output = std::result::Result<crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput, crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_icd10_cm_inference_jobs::de_list_icd10_cm_inference_jobs_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_icd10_cm_inference_jobs::de_list_icd10_cm_inference_jobs_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_icd10_cm_inference_jobs::de_list_icd10_cm_inference_jobs_http_response(response)
+                        crate::protocol_serde::shape_list_icd10_cm_inference_jobs::de_list_icd10_cm_inference_jobs_http_response(status, headers, body)
                      }
                 }
             }

@@ -88,11 +88,14 @@ impl DeleteEventStream {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEventStream {
                 type Output = std::result::Result<crate::operation::delete_event_stream::DeleteEventStreamOutput, crate::operation::delete_event_stream::DeleteEventStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_delete_event_stream::de_delete_event_stream_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_delete_event_stream::de_delete_event_stream_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_delete_event_stream::de_delete_event_stream_http_response(response)
+                        crate::protocol_serde::shape_delete_event_stream::de_delete_event_stream_http_response(status, headers, body)
                      }
                 }
             }

@@ -100,11 +100,14 @@ impl SendChannelMessage {
 impl aws_smithy_http::response::ParseStrictResponse for SendChannelMessage {
                 type Output = std::result::Result<crate::operation::send_channel_message::SendChannelMessageOutput, crate::operation::send_channel_message::SendChannelMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::protocol_serde::shape_send_channel_message::de_send_channel_message_http_error(response)
+                     if !success && status != 201 {
+                        crate::protocol_serde::shape_send_channel_message::de_send_channel_message_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_send_channel_message::de_send_channel_message_http_response(response)
+                        crate::protocol_serde::shape_send_channel_message::de_send_channel_message_http_response(status, headers, body)
                      }
                 }
             }

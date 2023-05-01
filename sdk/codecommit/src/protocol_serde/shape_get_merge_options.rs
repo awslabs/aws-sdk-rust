@@ -8,10 +8,10 @@ pub fn ser_get_merge_options_input(input: &crate::operation::get_merge_options::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, crate::operation::get_merge_options::GetMergeOptionsError> {
+pub fn de_get_merge_options_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, crate::operation::get_merge_options::GetMergeOptionsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommitDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_commit_does_not_exist_exception::de_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_commit_does_not_exist_exception::de_commit_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommitRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_commit_required_exception::de_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_commit_required_exception::de_commit_required_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCommitExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_commit_exception::de_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_commit_exception::de_invalid_commit_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidConflictDetailLevelExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_conflict_detail_level_exception::de_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_conflict_detail_level_exception::de_invalid_conflict_detail_level_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidConflictResolutionStrategyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_conflict_resolution_strategy_exception::de_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_conflict_resolution_strategy_exception::de_invalid_conflict_resolution_strategy_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRepositoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaximumFileContentToLoadExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_maximum_file_content_to_load_exceeded_exception::de_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_maximum_file_content_to_load_exceeded_exception::de_maximum_file_content_to_load_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaximumItemsToCompareExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_maximum_items_to_compare_exceeded_exception::de_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_maximum_items_to_compare_exceeded_exception::de_maximum_items_to_compare_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TipsDivergenceExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tips_divergence_exceeded_exception::de_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_tips_divergence_exceeded_exception::de_tips_divergence_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -297,13 +281,12 @@ pub fn de_get_merge_options_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_merge_options_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, crate::operation::get_merge_options::GetMergeOptionsError> {
+pub fn de_get_merge_options_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, crate::operation::get_merge_options::GetMergeOptionsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_merge_options::de_get_merge_options(response.body().as_ref(), output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_merge_options::de_get_merge_options(_response_body, output).map_err(crate::operation::get_merge_options::GetMergeOptionsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

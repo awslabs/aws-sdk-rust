@@ -8,10 +8,10 @@ pub fn ser_update_document_input(input: &crate::operation::update_document::Upda
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_document::UpdateDocumentOutput, crate::operation::update_document::UpdateDocumentError> {
+pub fn de_update_document_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_document::UpdateDocumentOutput, crate::operation::update_document::UpdateDocumentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DocumentVersionLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_document_version_limit_exceeded::de_document_version_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_document_version_limit_exceeded::de_document_version_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DuplicateDocumentContentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_document_content::de_duplicate_document_content_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_document_content::de_duplicate_document_content_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DuplicateDocumentVersionNameBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_document_version_name::de_duplicate_document_version_name_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_document_version_name::de_duplicate_document_version_name_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document::de_invalid_document_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document::de_invalid_document_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentContentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document_content::de_invalid_document_content_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document_content::de_invalid_document_content_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentOperationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document_operation::de_invalid_document_operation_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document_operation::de_invalid_document_operation_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentSchemaVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document_schema_version::de_invalid_document_schema_version_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document_schema_version::de_invalid_document_schema_version_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document_version::de_invalid_document_version_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document_version::de_invalid_document_version_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxDocumentSizeExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_document_size_exceeded::de_max_document_size_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_document_size_exceeded::de_max_document_size_exceeded_json_err(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -195,13 +185,12 @@ pub fn de_update_document_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_document_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_document::UpdateDocumentOutput, crate::operation::update_document::UpdateDocumentError> {
+pub fn de_update_document_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_document::UpdateDocumentOutput, crate::operation::update_document::UpdateDocumentError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_document::builders::UpdateDocumentOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_document::de_update_document(response.body().as_ref(), output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_document::de_update_document(_response_body, output).map_err(crate::operation::update_document::UpdateDocumentError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

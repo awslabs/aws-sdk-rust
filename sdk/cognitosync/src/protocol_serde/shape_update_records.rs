@@ -29,10 +29,10 @@ pub fn ser_update_records_input(input: &crate::operation::update_records::Update
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_records::UpdateRecordsOutput, crate::operation::update_records::UpdateRecordsError> {
+pub fn de_update_records_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_records::UpdateRecordsOutput, crate::operation::update_records::UpdateRecordsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -47,8 +47,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -64,8 +63,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLambdaFunctionOutputExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lambda_function_output_exception::de_invalid_lambda_function_output_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lambda_function_output_exception::de_invalid_lambda_function_output_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -81,8 +79,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -98,8 +95,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LambdaThrottledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_lambda_throttled_exception::de_lambda_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_lambda_throttled_exception::de_lambda_throttled_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -115,8 +111,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -132,8 +127,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -149,8 +143,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -166,8 +159,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -183,8 +175,7 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -199,13 +190,12 @@ pub fn de_update_records_http_error(response: &http::Response<bytes::Bytes>) -> 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_records_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_records::UpdateRecordsOutput, crate::operation::update_records::UpdateRecordsError> {
+pub fn de_update_records_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_records::UpdateRecordsOutput, crate::operation::update_records::UpdateRecordsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_records::builders::UpdateRecordsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_records::de_update_records(response.body().as_ref(), output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_records::de_update_records(_response_body, output).map_err(crate::operation::update_records::UpdateRecordsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

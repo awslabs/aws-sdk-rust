@@ -8,10 +8,10 @@ pub fn ser_associate_delegation_signer_to_domain_input(input: &crate::operation:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError> {
+pub fn de_associate_delegation_signer_to_domain_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DnssecLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_dnssec_limit_exceeded::de_dnssec_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_dnssec_limit_exceeded::de_dnssec_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DuplicateRequestBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_request::de_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_request::de_duplicate_request_json_err(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_limit_exceeded::de_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_limit_exceeded::de_operation_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TldRulesViolationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tld_rules_violation::de_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_tld_rules_violation::de_tld_rules_violation_json_err(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedTldBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_tld::de_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_tld::de_unsupported_tld_json_err(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_associate_delegation_signer_to_domain_http_error(response: &http::Resp
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_delegation_signer_to_domain_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError> {
+pub fn de_associate_delegation_signer_to_domain_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_associate_delegation_signer_to_domain::de_associate_delegation_signer_to_domain(response.body().as_ref(), output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_associate_delegation_signer_to_domain::de_associate_delegation_signer_to_domain(_response_body, output).map_err(crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

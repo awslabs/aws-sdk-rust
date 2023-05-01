@@ -165,74 +165,79 @@ pub fn ser_start_medical_stream_transcription_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_medical_stream_transcription_http_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError> {
+pub fn de_start_medical_stream_transcription_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionOutputBuilder::default();
-        let _ = response;
         output = output.set_content_identification_type(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_content_identification_type_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_content_identification_type_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
         );
         output = output.set_enable_channel_identification(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_enable_channel_identification_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_enable_channel_identification_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
         );
         output = output.set_language_code(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_language_code_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_language_code_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
         );
         output = output.set_media_encoding(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_encoding_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_encoding_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
         );
         output = output.set_media_sample_rate_hertz(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_sample_rate_hertz_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_sample_rate_hertz_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
         );
         output = output.set_number_of_channels(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_number_of_channels_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_number_of_channels_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
         );
         output = output.set_request_id(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_request_id_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_request_id_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_session_id_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_session_id_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
         );
         output = output.set_show_speaker_label(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_show_speaker_label_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_show_speaker_label_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
         );
         output = output.set_specialty(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_specialty_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_specialty_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Specialty from header `x-amzn-transcribe-specialty"))?
         );
         output = output.set_transcript_result_stream(
-            Some(crate::protocol_serde::shape_start_medical_stream_transcription_output::de_transcript_result_stream_payload(response.body_mut())?)
+            Some(crate::protocol_serde::shape_start_medical_stream_transcription_output::de_transcript_result_stream_payload(_response_body)?)
         );
         output = output.set_type(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_type_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_type_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Type from header `x-amzn-transcribe-type"))?
         );
         output = output.set_vocabulary_name(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_vocabulary_name_header(response.headers())
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_vocabulary_name_header(_response_headers)
                                     .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build().map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_medical_stream_transcription_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError> {
+pub fn de_start_medical_stream_transcription_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -247,8 +252,7 @@ pub fn de_start_medical_stream_transcription_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +268,7 @@ pub fn de_start_medical_stream_transcription_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +284,7 @@ pub fn de_start_medical_stream_transcription_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +300,7 @@ pub fn de_start_medical_stream_transcription_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +316,7 @@ pub fn de_start_medical_stream_transcription_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

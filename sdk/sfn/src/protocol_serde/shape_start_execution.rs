@@ -8,10 +8,10 @@ pub fn ser_start_execution_input(input: &crate::operation::start_execution::Star
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_execution::StartExecutionOutput, crate::operation::start_execution::StartExecutionError> {
+pub fn de_start_execution_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_execution::StartExecutionOutput, crate::operation::start_execution::StartExecutionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExecutionAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_execution_already_exists::de_execution_already_exists_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_execution_already_exists::de_execution_already_exists_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExecutionLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_execution_limit_exceeded::de_execution_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_execution_limit_exceeded::de_execution_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArnBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_arn::de_invalid_arn_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_arn::de_invalid_arn_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidExecutionInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_execution_input::de_invalid_execution_input_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_execution_input::de_invalid_execution_input_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNameBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_name::de_invalid_name_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_name::de_invalid_name_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StateMachineDeletingBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_state_machine_deleting::de_state_machine_deleting_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_state_machine_deleting::de_state_machine_deleting_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StateMachineDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_state_machine_does_not_exist::de_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_state_machine_does_not_exist::de_state_machine_does_not_exist_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_start_execution_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_execution_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_execution::StartExecutionOutput, crate::operation::start_execution::StartExecutionError> {
+pub fn de_start_execution_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_execution::StartExecutionOutput, crate::operation::start_execution::StartExecutionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_execution::builders::StartExecutionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_execution::de_start_execution(response.body().as_ref(), output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_execution::de_start_execution(_response_body, output).map_err(crate::operation::start_execution::StartExecutionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

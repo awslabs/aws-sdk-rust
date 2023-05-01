@@ -8,10 +8,10 @@ pub fn ser_run_task_input(input: &crate::operation::run_task::RunTaskInput) -> R
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError> {
+pub fn de_run_task_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BlockedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_blocked_exception::de_blocked_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_blocked_exception::de_blocked_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PlatformTaskDefinitionIncompatibilityExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_platform_task_definition_incompatibility_exception::de_platform_task_definition_incompatibility_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_platform_task_definition_incompatibility_exception::de_platform_task_definition_incompatibility_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PlatformUnknownExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_platform_unknown_exception::de_platform_unknown_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_platform_unknown_exception::de_platform_unknown_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedFeatureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,13 +169,12 @@ pub fn de_run_task_http_error(response: &http::Response<bytes::Bytes>) -> std::r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_run_task_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError> {
+pub fn de_run_task_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::run_task::builders::RunTaskOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_run_task::de_run_task(response.body().as_ref(), output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_run_task::de_run_task(_response_body, output).map_err(crate::operation::run_task::RunTaskError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

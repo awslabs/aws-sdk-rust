@@ -8,10 +8,10 @@ pub fn ser_disassociate_approval_rule_template_from_repository_input(input: &cra
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_approval_rule_template_from_repository_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput, crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError> {
+pub fn de_disassociate_approval_rule_template_from_repository_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput, crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApprovalRuleTemplateDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_approval_rule_template_does_not_exist_exception::de_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_approval_rule_template_does_not_exist_exception::de_approval_rule_template_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApprovalRuleTemplateNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_approval_rule_template_name_required_exception::de_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_approval_rule_template_name_required_exception::de_approval_rule_template_name_required_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApprovalRuleTemplateNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_approval_rule_template_name_exception::de_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_approval_rule_template_name_exception::de_invalid_approval_rule_template_name_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRepositoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -212,12 +201,11 @@ pub fn de_disassociate_approval_rule_template_from_repository_http_error(respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_approval_rule_template_from_repository_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput, crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError> {
+pub fn de_disassociate_approval_rule_template_from_repository_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput, crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

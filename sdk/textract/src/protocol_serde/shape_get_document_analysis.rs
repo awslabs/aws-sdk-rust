@@ -8,10 +8,10 @@ pub fn ser_get_document_analysis_input(input: &crate::operation::get_document_an
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisOutput, crate::operation::get_document_analysis::GetDocumentAnalysisError> {
+pub fn de_get_document_analysis_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisOutput, crate::operation::get_document_analysis::GetDocumentAnalysisError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidJobIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_job_id_exception::de_invalid_job_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_job_id_exception::de_invalid_job_id_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKmsKeyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_kms_key_exception::de_invalid_kms_key_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_kms_key_exception::de_invalid_kms_key_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3ObjectExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_object_exception::de_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_object_exception::de_invalid_s3_object_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_get_document_analysis_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_document_analysis_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisOutput, crate::operation::get_document_analysis::GetDocumentAnalysisError> {
+pub fn de_get_document_analysis_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisOutput, crate::operation::get_document_analysis::GetDocumentAnalysisError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_document_analysis::builders::GetDocumentAnalysisOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_document_analysis::de_get_document_analysis(response.body().as_ref(), output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_document_analysis::de_get_document_analysis(_response_body, output).map_err(crate::operation::get_document_analysis::GetDocumentAnalysisError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

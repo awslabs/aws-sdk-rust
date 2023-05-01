@@ -8,10 +8,10 @@ pub fn ser_copy_image_input(input: &crate::operation::copy_image::CopyImageInput
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::copy_image::CopyImageOutput, crate::operation::copy_image::CopyImageError> {
+pub fn de_copy_image_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::copy_image::CopyImageOutput, crate::operation::copy_image::CopyImageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IncompatibleImageExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_image_exception::de_incompatible_image_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+                    output = crate::protocol_serde::shape_incompatible_image_exception::de_incompatible_image_exception_json_err(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAccountStatusExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_account_status_exception::de_invalid_account_status_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_account_status_exception::de_invalid_account_status_exception_json_err(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotAvailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_available_exception::de_resource_not_available_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_available_exception::de_resource_not_available_exception_json_err(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_copy_image_http_error(response: &http::Response<bytes::Bytes>) -> std:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_copy_image_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::copy_image::CopyImageOutput, crate::operation::copy_image::CopyImageError> {
+pub fn de_copy_image_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::copy_image::CopyImageOutput, crate::operation::copy_image::CopyImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::copy_image::builders::CopyImageOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_copy_image::de_copy_image(response.body().as_ref(), output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_copy_image::de_copy_image(_response_body, output).map_err(crate::operation::copy_image::CopyImageError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

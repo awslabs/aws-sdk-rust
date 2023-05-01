@@ -190,16 +190,16 @@ impl InterceptorError {
         }
     }
     /// Create a new error indicating that an interceptor tried to access the tx_request out of turn
-    pub fn invalid_tx_request_access() -> Self {
+    pub fn invalid_request_access() -> Self {
         Self {
-            kind: ErrorKind::InvalidTxRequestAccess,
+            kind: ErrorKind::InvalidRequestAccess,
             source: None,
         }
     }
     /// Create a new error indicating that an interceptor tried to access the tx_response out of turn
-    pub fn invalid_tx_response_access() -> Self {
+    pub fn invalid_response_access() -> Self {
         Self {
-            kind: ErrorKind::InvalidTxResponseAccess,
+            kind: ErrorKind::InvalidResponseAccess,
             source: None,
         }
     }
@@ -253,10 +253,10 @@ enum ErrorKind {
     /// An error occurred within the read_after_execution interceptor
     ReadAfterExecution,
     // There is no InvalidModeledRequestAccess because it's always accessible
-    /// An interceptor tried to access the tx_request out of turn
-    InvalidTxRequestAccess,
-    /// An interceptor tried to access the tx_response out of turn
-    InvalidTxResponseAccess,
+    /// An interceptor tried to access the request out of turn
+    InvalidRequestAccess,
+    /// An interceptor tried to access the response out of turn
+    InvalidResponseAccess,
     /// An interceptor tried to access the modeled_response out of turn
     InvalidModeledResponseAccess,
 }
@@ -321,13 +321,12 @@ impl fmt::Display for InterceptorError {
             ReadAfterExecution => {
                 write!(f, "read_after_execution interceptor encountered an error")
             }
-            InvalidTxRequestAccess => {
-                write!(f, "tried to access tx_request before request serialization")
+            InvalidRequestAccess => {
+                write!(f, "tried to access request before request serialization")
             }
-            InvalidTxResponseAccess => write!(
-                f,
-                "tried to access tx_response before transmitting a request"
-            ),
+            InvalidResponseAccess => {
+                write!(f, "tried to access response before transmitting a request")
+            }
             InvalidModeledResponseAccess => write!(
                 f,
                 "tried to access modeled_response before response deserialization"

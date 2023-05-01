@@ -8,10 +8,10 @@ pub fn ser_list_application_states_input(input: &crate::operation::list_applicat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_application_states_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_application_states::ListApplicationStatesOutput, crate::operation::list_application_states::ListApplicationStatesError> {
+pub fn de_list_application_states_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_application_states::ListApplicationStatesOutput, crate::operation::list_application_states::ListApplicationStatesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HomeRegionNotSetExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_home_region_not_set_exception::de_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_home_region_not_set_exception::de_home_region_not_set_exception_json_err(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_list_application_states_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_application_states_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_application_states::ListApplicationStatesOutput, crate::operation::list_application_states::ListApplicationStatesError> {
+pub fn de_list_application_states_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_application_states::ListApplicationStatesOutput, crate::operation::list_application_states::ListApplicationStatesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_application_states::builders::ListApplicationStatesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_application_states::de_list_application_states(response.body().as_ref(), output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_application_states::de_list_application_states(_response_body, output).map_err(crate::operation::list_application_states::ListApplicationStatesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

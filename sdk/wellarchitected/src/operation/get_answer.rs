@@ -110,11 +110,14 @@ impl GetAnswer {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnswer {
                 type Output = std::result::Result<crate::operation::get_answer::GetAnswerOutput, crate::operation::get_answer::GetAnswerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_answer::de_get_answer_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_answer::de_get_answer_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_answer::de_get_answer_http_response(response)
+                        crate::protocol_serde::shape_get_answer::de_get_answer_http_response(status, headers, body)
                      }
                 }
             }

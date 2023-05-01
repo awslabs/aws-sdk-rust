@@ -8,10 +8,10 @@ pub fn ser_create_sol_network_package_input(input: &crate::operation::create_sol
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput, crate::operation::create_sol_network_package::CreateSolNetworkPackageError> {
+pub fn de_create_sol_network_package_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput, crate::operation::create_sol_network_package::CreateSolNetworkPackageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_create_sol_network_package_http_error(response: &http::Response<bytes:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_sol_network_package_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput, crate::operation::create_sol_network_package::CreateSolNetworkPackageError> {
+pub fn de_create_sol_network_package_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput, crate::operation::create_sol_network_package::CreateSolNetworkPackageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_sol_network_package::de_create_sol_network_package(response.body().as_ref(), output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_sol_network_package::de_create_sol_network_package(_response_body, output).map_err(crate::operation::create_sol_network_package::CreateSolNetworkPackageError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

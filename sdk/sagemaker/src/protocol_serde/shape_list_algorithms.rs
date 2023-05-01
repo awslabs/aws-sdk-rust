@@ -8,22 +8,21 @@ pub fn ser_list_algorithms_input(input: &crate::operation::list_algorithms::List
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_algorithms_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_algorithms::ListAlgorithmsOutput, crate::operation::list_algorithms::ListAlgorithmsError> {
+pub fn de_list_algorithms_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_algorithms::ListAlgorithmsOutput, crate::operation::list_algorithms::ListAlgorithmsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_algorithms::ListAlgorithmsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_algorithms::ListAlgorithmsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_algorithms::ListAlgorithmsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_algorithms_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_algorithms::ListAlgorithmsOutput, crate::operation::list_algorithms::ListAlgorithmsError> {
+pub fn de_list_algorithms_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_algorithms::ListAlgorithmsOutput, crate::operation::list_algorithms::ListAlgorithmsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_algorithms::builders::ListAlgorithmsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_algorithms::de_list_algorithms(response.body().as_ref(), output).map_err(crate::operation::list_algorithms::ListAlgorithmsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_algorithms::de_list_algorithms(_response_body, output).map_err(crate::operation::list_algorithms::ListAlgorithmsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

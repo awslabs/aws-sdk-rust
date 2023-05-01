@@ -8,10 +8,10 @@ pub fn ser_put_event_selectors_input(input: &crate::operation::put_event_selecto
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_event_selectors::PutEventSelectorsOutput, crate::operation::put_event_selectors::PutEventSelectorsError> {
+pub fn de_put_event_selectors_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_event_selectors::PutEventSelectorsOutput, crate::operation::put_event_selectors::PutEventSelectorsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailArnInvalidExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_arn_invalid_exception::de_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_arn_invalid_exception::de_cloud_trail_arn_invalid_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEventSelectorsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_event_selectors_exception::de_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_event_selectors_exception::de_invalid_event_selectors_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidHomeRegionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_home_region_exception::de_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_home_region_exception::de_invalid_home_region_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoManagementAccountSlrExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotOrganizationMasterAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrailNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trail_not_found_exception::de_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_trail_not_found_exception::de_trail_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -195,13 +185,12 @@ pub fn de_put_event_selectors_http_error(response: &http::Response<bytes::Bytes>
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_event_selectors_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_event_selectors::PutEventSelectorsOutput, crate::operation::put_event_selectors::PutEventSelectorsError> {
+pub fn de_put_event_selectors_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_event_selectors::PutEventSelectorsOutput, crate::operation::put_event_selectors::PutEventSelectorsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_event_selectors::builders::PutEventSelectorsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_event_selectors::de_put_event_selectors(response.body().as_ref(), output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_event_selectors::de_put_event_selectors(_response_body, output).map_err(crate::operation::put_event_selectors::PutEventSelectorsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

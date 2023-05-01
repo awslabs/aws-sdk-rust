@@ -21,10 +21,10 @@ pub fn ser_get_profile_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_profile_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_profile::GetProfileOutput, crate::operation::get_profile::GetProfileError> {
+pub fn de_get_profile_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_profile::GetProfileOutput, crate::operation::get_profile::GetProfileError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -39,8 +39,7 @@ pub fn de_get_profile_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,8 +55,7 @@ pub fn de_get_profile_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,8 +71,7 @@ pub fn de_get_profile_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,8 +87,7 @@ pub fn de_get_profile_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_profile::GetProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -106,23 +102,22 @@ pub fn de_get_profile_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_profile_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_profile::GetProfileOutput, crate::operation::get_profile::GetProfileError> {
+pub fn de_get_profile_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_profile::GetProfileOutput, crate::operation::get_profile::GetProfileError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_profile::builders::GetProfileOutputBuilder::default();
-        let _ = response;
         output = output.set_content_encoding(
-            crate::protocol_serde::shape_get_profile_output::de_content_encoding_header(response.headers())
+            crate::protocol_serde::shape_get_profile_output::de_content_encoding_header(_response_headers)
                                     .map_err(|_|crate::operation::get_profile::GetProfileError::unhandled("Failed to parse contentEncoding from header `Content-Encoding"))?
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_profile_output::de_content_type_header(response.headers())
+            crate::protocol_serde::shape_get_profile_output::de_content_type_header(_response_headers)
                                     .map_err(|_|crate::operation::get_profile::GetProfileError::unhandled("Failed to parse contentType from header `Content-Type"))?
         );
         output = output.set_profile(
-            crate::protocol_serde::shape_get_profile_output::de_profile_payload(response.body().as_ref())?
+            crate::protocol_serde::shape_get_profile_output::de_profile_payload(_response_body)?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_create_hyper_parameter_tuning_job_input(input: &crate::operation::cre
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_hyper_parameter_tuning_job_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput, crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError> {
+pub fn de_create_hyper_parameter_tuning_job_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput, crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_hyper_parameter_tuning_job_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use::de_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use::de_resource_in_use_json_err(_response_body, output).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_hyper_parameter_tuning_job_http_error(response: &http::Response
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_limit_exceeded::de_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_limit_exceeded::de_resource_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_create_hyper_parameter_tuning_job_http_error(response: &http::Response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_hyper_parameter_tuning_job_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput, crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError> {
+pub fn de_create_hyper_parameter_tuning_job_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput, crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_hyper_parameter_tuning_job::de_create_hyper_parameter_tuning_job(response.body().as_ref(), output).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_hyper_parameter_tuning_job::de_create_hyper_parameter_tuning_job(_response_body, output).map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

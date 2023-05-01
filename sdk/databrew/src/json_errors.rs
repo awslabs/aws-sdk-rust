@@ -7,7 +7,6 @@
 use aws_smithy_json::deserialize::token::skip_value;
 use aws_smithy_json::deserialize::{error::DeserializeError, json_token_iter, Token};
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
-use bytes::Bytes;
 use http::header::ToStrError;
 use http::{HeaderMap, HeaderValue};
 use std::borrow::Cow;
@@ -84,10 +83,10 @@ fn error_type_from_header(headers: &HeaderMap<HeaderValue>) -> Result<Option<&st
 }
 
 pub fn parse_error_metadata(
-    payload: &Bytes,
+    payload: &[u8],
     headers: &HeaderMap<HeaderValue>,
 ) -> Result<ErrorMetadataBuilder, DeserializeError> {
-    let ErrorBody { code, message } = parse_error_body(payload.as_ref())?;
+    let ErrorBody { code, message } = parse_error_body(payload)?;
 
     let mut err_builder = ErrorMetadata::builder();
     if let Some(code) = error_type_from_header(headers)

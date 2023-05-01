@@ -86,11 +86,14 @@ impl RestoreImageFromRecycleBin {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreImageFromRecycleBin {
                 type Output = std::result::Result<crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput, crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_restore_image_from_recycle_bin::de_restore_image_from_recycle_bin_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_restore_image_from_recycle_bin::de_restore_image_from_recycle_bin_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_restore_image_from_recycle_bin::de_restore_image_from_recycle_bin_http_response(response)
+                        crate::protocol_serde::shape_restore_image_from_recycle_bin::de_restore_image_from_recycle_bin_http_response(status, headers, body)
                      }
                 }
             }

@@ -1,3 +1,7 @@
 allowed_external_types = [
     "aws_smithy_types::*",
+    "aws_smithy_http::*",
+
+    "http::request::Request",
+    "http::response::Response",
 ]

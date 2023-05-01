@@ -8,10 +8,10 @@ pub fn ser_create_voice_profile_domain_input(input: &crate::operation::create_vo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput, crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError> {
+pub fn de_create_voice_profile_domain_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput, crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottledClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,13 +169,12 @@ pub fn de_create_voice_profile_domain_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_voice_profile_domain_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput, crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError> {
+pub fn de_create_voice_profile_domain_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput, crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_voice_profile_domain::de_create_voice_profile_domain(response.body().as_ref(), output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_voice_profile_domain::de_create_voice_profile_domain(_response_body, output).map_err(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

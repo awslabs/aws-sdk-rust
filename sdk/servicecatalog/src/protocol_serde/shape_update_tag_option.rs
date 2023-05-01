@@ -8,10 +8,10 @@ pub fn ser_update_tag_option_input(input: &crate::operation::update_tag_option::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_tag_option_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_tag_option::UpdateTagOptionOutput, crate::operation::update_tag_option::UpdateTagOptionError> {
+pub fn de_update_tag_option_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_tag_option::UpdateTagOptionOutput, crate::operation::update_tag_option::UpdateTagOptionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_tag_option_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DuplicateResourceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_resource_exception::de_duplicate_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_resource_exception::de_duplicate_resource_exception_json_err(_response_body, output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_tag_option_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParametersExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(_response_body, output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_tag_option_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_tag_option_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TagOptionNotMigratedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tag_option_not_migrated_exception::de_tag_option_not_migrated_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_option_not_migrated_exception::de_tag_option_not_migrated_exception_json_err(_response_body, output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_update_tag_option_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_tag_option_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_tag_option::UpdateTagOptionOutput, crate::operation::update_tag_option::UpdateTagOptionError> {
+pub fn de_update_tag_option_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_tag_option::UpdateTagOptionOutput, crate::operation::update_tag_option::UpdateTagOptionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_tag_option::builders::UpdateTagOptionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_tag_option::de_update_tag_option(response.body().as_ref(), output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_tag_option::de_update_tag_option(_response_body, output).map_err(crate::operation::update_tag_option::UpdateTagOptionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

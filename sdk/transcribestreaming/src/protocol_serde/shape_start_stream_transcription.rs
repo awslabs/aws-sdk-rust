@@ -307,114 +307,119 @@ pub fn ser_start_stream_transcription_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_stream_transcription_http_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, crate::operation::start_stream_transcription::StartStreamTranscriptionError> {
+pub fn de_start_stream_transcription_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, crate::operation::start_stream_transcription::StartStreamTranscriptionError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_stream_transcription::builders::StartStreamTranscriptionOutputBuilder::default();
-        let _ = response;
         output = output.set_content_identification_type(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_content_identification_type_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_content_identification_type_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
         );
         output = output.set_content_redaction_type(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_content_redaction_type_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_content_redaction_type_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse ContentRedactionType from header `x-amzn-transcribe-content-redaction-type"))?
         );
         output = output.set_enable_channel_identification(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_enable_channel_identification_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_enable_channel_identification_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
         );
         output = output.set_enable_partial_results_stabilization(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_enable_partial_results_stabilization_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_enable_partial_results_stabilization_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization"))?
         );
         output = output.set_identify_language(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_identify_language_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_identify_language_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse IdentifyLanguage from header `x-amzn-transcribe-identify-language"))?
         );
         output = output.set_language_code(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_language_code_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_language_code_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
         );
         output = output.set_language_model_name(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_language_model_name_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_language_model_name_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse LanguageModelName from header `x-amzn-transcribe-language-model-name"))?
         );
         output = output.set_language_options(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_language_options_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_language_options_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse LanguageOptions from header `x-amzn-transcribe-language-options"))?
         );
         output = output.set_media_encoding(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_media_encoding_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_media_encoding_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
         );
         output = output.set_media_sample_rate_hertz(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_media_sample_rate_hertz_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_media_sample_rate_hertz_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
         );
         output = output.set_number_of_channels(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_number_of_channels_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_number_of_channels_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
         );
         output = output.set_partial_results_stability(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_partial_results_stability_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_partial_results_stability_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse PartialResultsStability from header `x-amzn-transcribe-partial-results-stability"))?
         );
         output = output.set_pii_entity_types(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_pii_entity_types_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_pii_entity_types_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types"))?
         );
         output = output.set_preferred_language(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_preferred_language_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_preferred_language_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse PreferredLanguage from header `x-amzn-transcribe-preferred-language"))?
         );
         output = output.set_request_id(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_request_id_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_request_id_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_session_id_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_session_id_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
         );
         output = output.set_show_speaker_label(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_show_speaker_label_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_show_speaker_label_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
         );
         output = output.set_transcript_result_stream(
-            Some(crate::protocol_serde::shape_start_stream_transcription_output::de_transcript_result_stream_payload(response.body_mut())?)
+            Some(crate::protocol_serde::shape_start_stream_transcription_output::de_transcript_result_stream_payload(_response_body)?)
         );
         output = output.set_vocabulary_filter_method(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_filter_method_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_filter_method_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterMethod from header `x-amzn-transcribe-vocabulary-filter-method"))?
         );
         output = output.set_vocabulary_filter_name(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_filter_name_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_filter_name_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterName from header `x-amzn-transcribe-vocabulary-filter-name"))?
         );
         output = output.set_vocabulary_filter_names(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_filter_names_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_filter_names_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterNames from header `x-amzn-transcribe-vocabulary-filter-names"))?
         );
         output = output.set_vocabulary_name(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_name_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_name_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
         );
         output = output.set_vocabulary_names(
-            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_names_header(response.headers())
+            crate::protocol_serde::shape_start_stream_transcription_output::de_vocabulary_names_header(_response_headers)
                                     .map_err(|_|crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyNames from header `x-amzn-transcribe-vocabulary-names"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build().map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_stream_transcription_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, crate::operation::start_stream_transcription::StartStreamTranscriptionError> {
+pub fn de_start_stream_transcription_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, crate::operation::start_stream_transcription::StartStreamTranscriptionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -429,8 +434,7 @@ pub fn de_start_stream_transcription_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -446,8 +450,7 @@ pub fn de_start_stream_transcription_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -463,8 +466,7 @@ pub fn de_start_stream_transcription_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -480,8 +482,7 @@ pub fn de_start_stream_transcription_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -497,8 +498,7 @@ pub fn de_start_stream_transcription_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

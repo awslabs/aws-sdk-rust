@@ -8,10 +8,10 @@ pub fn ser_batch_update_attendee_capabilities_except_input(input: &crate::operat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput, crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError> {
+pub fn de_batch_update_attendee_capabilities_except_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput, crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,10 +90,9 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_service_unavailable_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_service_unavailable_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -115,8 +110,7 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -131,12 +125,11 @@ pub fn de_batch_update_attendee_capabilities_except_http_error(response: &http::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_update_attendee_capabilities_except_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput, crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError> {
+pub fn de_batch_update_attendee_capabilities_except_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput, crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

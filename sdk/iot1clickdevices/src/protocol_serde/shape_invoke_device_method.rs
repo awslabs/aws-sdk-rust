@@ -8,10 +8,10 @@ pub fn ser_invoke_device_method_input(input: &crate::operation::invoke_device_me
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodOutput, crate::operation::invoke_device_method::InvokeDeviceMethodError> {
+pub fn de_invoke_device_method_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodOutput, crate::operation::invoke_device_method::InvokeDeviceMethodError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RangeNotSatisfiableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_range_not_satisfiable_exception::de_range_not_satisfiable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+                    output = crate::protocol_serde::shape_range_not_satisfiable_exception::de_range_not_satisfiable_exception_json_err(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_invoke_device_method_http_error(response: &http::Response<bytes::Bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_invoke_device_method_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodOutput, crate::operation::invoke_device_method::InvokeDeviceMethodError> {
+pub fn de_invoke_device_method_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodOutput, crate::operation::invoke_device_method::InvokeDeviceMethodError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke_device_method::builders::InvokeDeviceMethodOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_invoke_device_method::de_invoke_device_method(response.body().as_ref(), output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_invoke_device_method::de_invoke_device_method(_response_body, output).map_err(crate::operation::invoke_device_method::InvokeDeviceMethodError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

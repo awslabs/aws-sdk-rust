@@ -8,10 +8,10 @@ pub fn ser_update_instance_custom_health_status_input(input: &crate::operation::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_instance_custom_health_status_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError> {
+pub fn de_update_instance_custom_health_status_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_instance_custom_health_status_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomHealthNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_health_not_found::de_custom_health_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_health_not_found::de_custom_health_not_found_json_err(_response_body, output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_instance_custom_health_status_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InstanceNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_instance_not_found::de_instance_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                    output = crate::protocol_serde::shape_instance_not_found::de_instance_not_found_json_err(_response_body, output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_instance_custom_health_status_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(_response_body, output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_instance_custom_health_status_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_not_found::de_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_not_found::de_service_not_found_json_err(_response_body, output).map_err(crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,12 +89,11 @@ pub fn de_update_instance_custom_health_status_http_error(response: &http::Respo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_instance_custom_health_status_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError> {
+pub fn de_update_instance_custom_health_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

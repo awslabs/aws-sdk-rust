@@ -8,10 +8,10 @@ pub fn ser_execute_statement_input(input: &crate::operation::execute_statement::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_execute_statement_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::execute_statement::ExecuteStatementOutput, crate::operation::execute_statement::ExecuteStatementError> {
+pub fn de_execute_statement_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::execute_statement::ExecuteStatementOutput, crate::operation::execute_statement::ExecuteStatementError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_execute_statement_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ActiveStatementsExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_active_statements_exceeded_exception::de_active_statements_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+                    output = crate::protocol_serde::shape_active_statements_exceeded_exception::de_active_statements_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_execute_statement_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExecuteStatementExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_execute_statement_exception::de_execute_statement_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+                    output = crate::protocol_serde::shape_execute_statement_exception::de_execute_statement_exception_json_err(_response_body, output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_execute_statement_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_execute_statement_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_execute_statement_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::execute_statement::ExecuteStatementOutput, crate::operation::execute_statement::ExecuteStatementError> {
+pub fn de_execute_statement_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::execute_statement::ExecuteStatementOutput, crate::operation::execute_statement::ExecuteStatementError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_execute_statement::de_execute_statement(response.body().as_ref(), output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_execute_statement::de_execute_statement(_response_body, output).map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

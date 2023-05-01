@@ -8,10 +8,10 @@ pub fn ser_create_resource_input(input: &crate::operation::create_resource::Crea
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
+pub fn de_create_resource_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_directory_service_authentication_failed_exception::de_directory_service_authentication_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_directory_service_authentication_failed_exception::de_directory_service_authentication_failed_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectoryUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NameAvailabilityExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_name_availability_exception::de_name_availability_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_name_availability_exception::de_name_availability_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_not_found_exception::de_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_not_found_exception::de_organization_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_state_exception::de_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_state_exception::de_organization_state_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReservedNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_reserved_name_exception::de_reserved_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_name_exception::de_reserved_name_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,13 +137,12 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_resource_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
+pub fn de_create_resource_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_resource::builders::CreateResourceOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_resource::de_create_resource(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_resource::de_create_resource(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_update_approval_rule_template_content_input(input: &crate::operation:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_approval_rule_template_content_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput, crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError> {
+pub fn de_update_approval_rule_template_content_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput, crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApprovalRuleTemplateContentRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_approval_rule_template_content_required_exception::de_approval_rule_template_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_approval_rule_template_content_required_exception::de_approval_rule_template_content_required_exception_json_err(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApprovalRuleTemplateDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_approval_rule_template_does_not_exist_exception::de_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_approval_rule_template_does_not_exist_exception::de_approval_rule_template_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApprovalRuleTemplateNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_approval_rule_template_name_required_exception::de_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_approval_rule_template_name_required_exception::de_approval_rule_template_name_required_exception_json_err(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApprovalRuleTemplateContentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_approval_rule_template_content_exception::de_invalid_approval_rule_template_content_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_approval_rule_template_content_exception::de_invalid_approval_rule_template_content_exception_json_err(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApprovalRuleTemplateNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_approval_rule_template_name_exception::de_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_approval_rule_template_name_exception::de_invalid_approval_rule_template_name_exception_json_err(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRuleContentSha256ExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_rule_content_sha256_exception::de_invalid_rule_content_sha256_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_rule_content_sha256_exception::de_invalid_rule_content_sha256_exception_json_err(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_update_approval_rule_template_content_http_error(response: &http::Resp
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_approval_rule_template_content_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput, crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError> {
+pub fn de_update_approval_rule_template_content_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput, crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_approval_rule_template_content::de_update_approval_rule_template_content(response.body().as_ref(), output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_approval_rule_template_content::de_update_approval_rule_template_content(_response_body, output).map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

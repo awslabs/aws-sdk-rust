@@ -8,10 +8,10 @@ pub fn ser_get_blob_input(input: &crate::operation::get_blob::GetBlobInput) -> R
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_blob::GetBlobOutput, crate::operation::get_blob::GetBlobError> {
+pub fn de_get_blob_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_blob::GetBlobOutput, crate::operation::get_blob::GetBlobError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BlobIdDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_blob_id_does_not_exist_exception::de_blob_id_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_blob_id_does_not_exist_exception::de_blob_id_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BlobIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_blob_id_required_exception::de_blob_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_blob_id_required_exception::de_blob_id_required_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileTooLargeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_too_large_exception::de_file_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_too_large_exception::de_file_too_large_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidBlobIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_blob_id_exception::de_invalid_blob_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_blob_id_exception::de_invalid_blob_id_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRepositoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -229,13 +217,12 @@ pub fn de_get_blob_http_error(response: &http::Response<bytes::Bytes>) -> std::r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_blob_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_blob::GetBlobOutput, crate::operation::get_blob::GetBlobError> {
+pub fn de_get_blob_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_blob::GetBlobOutput, crate::operation::get_blob::GetBlobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_blob::builders::GetBlobOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_blob::de_get_blob(response.body().as_ref(), output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_blob::de_get_blob(_response_body, output).map_err(crate::operation::get_blob::GetBlobError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

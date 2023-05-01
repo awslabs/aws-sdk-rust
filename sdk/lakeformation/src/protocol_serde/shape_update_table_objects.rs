@@ -8,10 +8,10 @@ pub fn ser_update_table_objects_input(input: &crate::operation::update_table_obj
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsOutput, crate::operation::update_table_objects::UpdateTableObjectsError> {
+pub fn de_update_table_objects_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsOutput, crate::operation::update_table_objects::UpdateTableObjectsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationTimeoutExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_timeout_exception::de_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_timeout_exception::de_operation_timeout_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotReadyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_ready_exception::de_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_ready_exception::de_resource_not_ready_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TransactionCanceledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_transaction_canceled_exception::de_transaction_canceled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_transaction_canceled_exception::de_transaction_canceled_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TransactionCommitInProgressExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_transaction_commit_in_progress_exception::de_transaction_commit_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_transaction_commit_in_progress_exception::de_transaction_commit_in_progress_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TransactionCommittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_transaction_committed_exception::de_transaction_committed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
+                    output = crate::protocol_serde::shape_transaction_committed_exception::de_transaction_committed_exception_json_err(_response_body, output).map_err(crate::operation::update_table_objects::UpdateTableObjectsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,12 +169,11 @@ pub fn de_update_table_objects_http_error(response: &http::Response<bytes::Bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_table_objects_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsOutput, crate::operation::update_table_objects::UpdateTableObjectsError> {
+pub fn de_update_table_objects_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsOutput, crate::operation::update_table_objects::UpdateTableObjectsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_table_objects::builders::UpdateTableObjectsOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_cancel_resource_request_input(input: &crate::operation::cancel_resour
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_cancel_resource_request_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestOutput, crate::operation::cancel_resource_request::CancelResourceRequestError> {
+pub fn de_cancel_resource_request_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestOutput, crate::operation::cancel_resource_request::CancelResourceRequestError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_cancel_resource_request_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_cancel_resource_request_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RequestTokenNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_request_token_not_found_exception::de_request_token_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
+                    output = crate::protocol_serde::shape_request_token_not_found_exception::de_request_token_not_found_exception_json_err(_response_body, output).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_cancel_resource_request_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_cancel_resource_request_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestOutput, crate::operation::cancel_resource_request::CancelResourceRequestError> {
+pub fn de_cancel_resource_request_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestOutput, crate::operation::cancel_resource_request::CancelResourceRequestError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::cancel_resource_request::builders::CancelResourceRequestOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_cancel_resource_request::de_cancel_resource_request(response.body().as_ref(), output).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_cancel_resource_request::de_cancel_resource_request(_response_body, output).map_err(crate::operation::cancel_resource_request::CancelResourceRequestError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -11,10 +11,10 @@ pub fn ser_create_health_check_op_input(input: &crate::operation::create_health_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_health_check_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, crate::operation::create_health_check::CreateHealthCheckError> {
+pub fn de_create_health_check_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, crate::operation::create_health_check::CreateHealthCheckError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_create_health_check_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HealthCheckAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_health_check_already_exists::de_health_check_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
+                    output = crate::protocol_serde::shape_health_check_already_exists::de_health_check_already_exists_xml_err(_response_body, output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_create_health_check_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_create_health_check_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyHealthChecksBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_health_checks::de_too_many_health_checks_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_health_checks::de_too_many_health_checks_xml_err(_response_body, output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -79,17 +76,16 @@ pub fn de_create_health_check_http_error(response: &http::Response<bytes::Bytes>
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_health_check_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, crate::operation::create_health_check::CreateHealthCheckError> {
+pub fn de_create_health_check_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, crate::operation::create_health_check::CreateHealthCheckError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_health_check::builders::CreateHealthCheckOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_health_check::de_create_health_check(response.body().as_ref(), output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
+        output = crate::protocol_serde::shape_create_health_check::de_create_health_check(_response_body, output).map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?;
         output = output.set_location(
-            crate::protocol_serde::shape_create_health_check_output::de_location_header(response.headers())
+            crate::protocol_serde::shape_create_health_check_output::de_location_header(_response_headers)
                                     .map_err(|_|crate::operation::create_health_check::CreateHealthCheckError::unhandled("Failed to parse Location from header `Location"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

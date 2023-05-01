@@ -91,11 +91,14 @@ impl DisassociateResolverEndpointIpAddress {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverEndpointIpAddress {
                 type Output = std::result::Result<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput, crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_disassociate_resolver_endpoint_ip_address::de_disassociate_resolver_endpoint_ip_address_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_disassociate_resolver_endpoint_ip_address::de_disassociate_resolver_endpoint_ip_address_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_disassociate_resolver_endpoint_ip_address::de_disassociate_resolver_endpoint_ip_address_http_response(response)
+                        crate::protocol_serde::shape_disassociate_resolver_endpoint_ip_address::de_disassociate_resolver_endpoint_ip_address_http_response(status, headers, body)
                      }
                 }
             }

@@ -97,11 +97,14 @@ impl ListReportPlans {
 impl aws_smithy_http::response::ParseStrictResponse for ListReportPlans {
                 type Output = std::result::Result<crate::operation::list_report_plans::ListReportPlansOutput, crate::operation::list_report_plans::ListReportPlansError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_report_plans::de_list_report_plans_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_report_plans::de_list_report_plans_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_report_plans::de_list_report_plans_http_response(response)
+                        crate::protocol_serde::shape_list_report_plans::de_list_report_plans_http_response(status, headers, body)
                      }
                 }
             }

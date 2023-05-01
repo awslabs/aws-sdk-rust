@@ -8,10 +8,10 @@ pub fn ser_create_trail_input(input: &crate::operation::create_trail::CreateTrai
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_trail::CreateTrailOutput, crate::operation::create_trail::CreateTrailError> {
+pub fn de_create_trail_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_trail::CreateTrailOutput, crate::operation::create_trail::CreateTrailError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailAccessNotEnabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_access_not_enabled_exception::de_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_access_not_enabled_exception::de_cloud_trail_access_not_enabled_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailInvalidClientTokenIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_invalid_client_token_id_exception::de_cloud_trail_invalid_client_token_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_invalid_client_token_id_exception::de_cloud_trail_invalid_client_token_id_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudWatchLogsDeliveryUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_watch_logs_delivery_unavailable_exception::de_cloud_watch_logs_delivery_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_watch_logs_delivery_unavailable_exception::de_cloud_watch_logs_delivery_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientEncryptionPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientS3BucketPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_s3_bucket_policy_exception::de_insufficient_s3_bucket_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_s3_bucket_policy_exception::de_insufficient_s3_bucket_policy_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientSnsTopicPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_sns_topic_policy_exception::de_insufficient_sns_topic_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_sns_topic_policy_exception::de_insufficient_sns_topic_policy_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCloudWatchLogsLogGroupArnExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cloud_watch_logs_log_group_arn_exception::de_invalid_cloud_watch_logs_log_group_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cloud_watch_logs_log_group_arn_exception::de_invalid_cloud_watch_logs_log_group_arn_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCloudWatchLogsRoleArnExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cloud_watch_logs_role_arn_exception::de_invalid_cloud_watch_logs_role_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cloud_watch_logs_role_arn_exception::de_invalid_cloud_watch_logs_role_arn_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKmsKeyIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_kms_key_id_exception::de_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_kms_key_id_exception::de_invalid_kms_key_id_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3BucketNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_bucket_name_exception::de_invalid_s3_bucket_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_bucket_name_exception::de_invalid_s3_bucket_name_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3PrefixExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_prefix_exception::de_invalid_s3_prefix_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_prefix_exception::de_invalid_s3_prefix_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSnsTopicNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sns_topic_name_exception::de_invalid_sns_topic_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sns_topic_name_exception::de_invalid_sns_topic_name_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTagParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_exception::de_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_exception::de_kms_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -332,8 +314,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_disabled_exception::de_kms_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_key_disabled_exception::de_kms_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -349,8 +330,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_found_exception::de_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_key_not_found_exception::de_kms_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -366,8 +346,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaximumNumberOfTrailsExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_maximum_number_of_trails_exceeded_exception::de_maximum_number_of_trails_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_maximum_number_of_trails_exceeded_exception::de_maximum_number_of_trails_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -383,8 +362,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoManagementAccountSlrExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -400,8 +378,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotOrganizationMasterAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -417,8 +394,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -434,8 +410,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationNotInAllFeaturesModeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_not_in_all_features_mode_exception::de_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_not_in_all_features_mode_exception::de_organization_not_in_all_features_mode_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -451,8 +426,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationsNotInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organizations_not_in_use_exception::de_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_organizations_not_in_use_exception::de_organizations_not_in_use_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -468,8 +442,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::S3BucketDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_s3_bucket_does_not_exist_exception::de_s3_bucket_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_s3_bucket_does_not_exist_exception::de_s3_bucket_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -485,8 +458,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TagsLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tags_limit_exceeded_exception::de_tags_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_tags_limit_exceeded_exception::de_tags_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -502,8 +474,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrailAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trail_already_exists_exception::de_trail_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_trail_already_exists_exception::de_trail_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -519,8 +490,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrailNotProvidedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trail_not_provided_exception::de_trail_not_provided_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_trail_not_provided_exception::de_trail_not_provided_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -536,8 +506,7 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -552,13 +521,12 @@ pub fn de_create_trail_http_error(response: &http::Response<bytes::Bytes>) -> st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_trail_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_trail::CreateTrailOutput, crate::operation::create_trail::CreateTrailError> {
+pub fn de_create_trail_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_trail::CreateTrailOutput, crate::operation::create_trail::CreateTrailError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_trail::builders::CreateTrailOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_trail::de_create_trail(response.body().as_ref(), output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_trail::de_create_trail(_response_body, output).map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

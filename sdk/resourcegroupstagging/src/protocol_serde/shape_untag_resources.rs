@@ -8,10 +8,10 @@ pub fn ser_untag_resources_input(input: &crate::operation::untag_resources::Unta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_untag_resources_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::untag_resources::UntagResourcesOutput, crate::operation::untag_resources::UntagResourcesError> {
+pub fn de_untag_resources_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::untag_resources::UntagResourcesOutput, crate::operation::untag_resources::UntagResourcesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_untag_resources_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_untag_resources_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_untag_resources_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(_response_body, output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_untag_resources_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_untag_resources_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::untag_resources::UntagResourcesOutput, crate::operation::untag_resources::UntagResourcesError> {
+pub fn de_untag_resources_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::untag_resources::UntagResourcesOutput, crate::operation::untag_resources::UntagResourcesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::untag_resources::builders::UntagResourcesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_untag_resources::de_untag_resources(response.body().as_ref(), output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_untag_resources::de_untag_resources(_response_body, output).map_err(crate::operation::untag_resources::UntagResourcesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

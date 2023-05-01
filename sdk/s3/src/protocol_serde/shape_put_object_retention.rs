@@ -78,27 +78,26 @@ pub fn ser_put_object_retention_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_object_retention_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_object_retention::PutObjectRetentionOutput, crate::operation::put_object_retention::PutObjectRetentionError> {
+pub fn de_put_object_retention_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_object_retention::PutObjectRetentionOutput, crate::operation::put_object_retention::PutObjectRetentionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_object_retention::PutObjectRetentionError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_object_retention::PutObjectRetentionError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::put_object_retention::PutObjectRetentionError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_object_retention_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_object_retention::PutObjectRetentionOutput, crate::operation::put_object_retention::PutObjectRetentionError> {
+pub fn de_put_object_retention_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_object_retention::PutObjectRetentionOutput, crate::operation::put_object_retention::PutObjectRetentionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_object_retention::builders::PutObjectRetentionOutputBuilder::default();
-        let _ = response;
         output = output.set_request_charged(
-            crate::protocol_serde::shape_put_object_retention_output::de_request_charged_header(response.headers())
+            crate::protocol_serde::shape_put_object_retention_output::de_request_charged_header(_response_headers)
                                     .map_err(|_|crate::operation::put_object_retention::PutObjectRetentionError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
-        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string));
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

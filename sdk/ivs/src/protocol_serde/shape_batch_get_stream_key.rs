@@ -8,22 +8,21 @@ pub fn ser_batch_get_stream_key_input(input: &crate::operation::batch_get_stream
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_stream_key_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput, crate::operation::batch_get_stream_key::BatchGetStreamKeyError> {
+pub fn de_batch_get_stream_key_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput, crate::operation::batch_get_stream_key::BatchGetStreamKeyError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_get_stream_key::BatchGetStreamKeyError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_get_stream_key::BatchGetStreamKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::batch_get_stream_key::BatchGetStreamKeyError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_stream_key_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput, crate::operation::batch_get_stream_key::BatchGetStreamKeyError> {
+pub fn de_batch_get_stream_key_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput, crate::operation::batch_get_stream_key::BatchGetStreamKeyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_batch_get_stream_key::de_batch_get_stream_key(response.body().as_ref(), output).map_err(crate::operation::batch_get_stream_key::BatchGetStreamKeyError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_batch_get_stream_key::de_batch_get_stream_key(_response_body, output).map_err(crate::operation::batch_get_stream_key::BatchGetStreamKeyError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

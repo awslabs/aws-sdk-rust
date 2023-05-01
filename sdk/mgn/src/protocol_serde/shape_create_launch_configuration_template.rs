@@ -8,10 +8,10 @@ pub fn ser_create_launch_configuration_template_input(input: &crate::operation::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_launch_configuration_template_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput, crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError> {
+pub fn de_create_launch_configuration_template_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput, crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_launch_configuration_template_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_launch_configuration_template_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UninitializedAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_uninitialized_account_exception::de_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_uninitialized_account_exception::de_uninitialized_account_exception_json_err(_response_body, output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_launch_configuration_template_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_create_launch_configuration_template_http_error(response: &http::Respo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_launch_configuration_template_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput, crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError> {
+pub fn de_create_launch_configuration_template_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput, crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_launch_configuration_template::de_create_launch_configuration_template(response.body().as_ref(), output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_launch_configuration_template::de_create_launch_configuration_template(_response_body, output).map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

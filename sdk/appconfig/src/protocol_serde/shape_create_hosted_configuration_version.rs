@@ -64,10 +64,10 @@ pub fn ser_create_hosted_configuration_version_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_hosted_configuration_version_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError> {
+pub fn de_create_hosted_configuration_version_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -82,8 +82,7 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -99,8 +98,7 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -116,8 +114,7 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -133,8 +130,7 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(_response_body, output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -150,8 +146,7 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -167,8 +162,7 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -183,39 +177,38 @@ pub fn de_create_hosted_configuration_version_http_error(response: &http::Respon
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_hosted_configuration_version_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError> {
+pub fn de_create_hosted_configuration_version_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder::default();
-        let _ = response;
         output = output.set_application_id(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_application_id_header(response.headers())
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_application_id_header(_response_headers)
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse ApplicationId from header `Application-Id"))?
         );
         output = output.set_configuration_profile_id(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_configuration_profile_id_header(response.headers())
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_configuration_profile_id_header(_response_headers)
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id"))?
         );
         output = output.set_content(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_payload(response.body().as_ref())?
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_payload(_response_body)?
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_type_header(response.headers())
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_type_header(_response_headers)
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_description(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_description_header(response.headers())
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_description_header(_response_headers)
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse Description from header `Description"))?
         );
         output = output.set_version_label(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_label_header(response.headers())
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_label_header(_response_headers)
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse VersionLabel from header `VersionLabel"))?
         );
         output = output.set_version_number(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_number_header(response.headers())
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_number_header(_response_headers)
                                     .map_err(|_|crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled("Failed to parse VersionNumber from header `Version-Number"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

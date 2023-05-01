@@ -8,10 +8,10 @@ pub fn ser_start_inference_experiment_input(input: &crate::operation::start_infe
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_inference_experiment_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_inference_experiment::StartInferenceExperimentOutput, crate::operation::start_inference_experiment::StartInferenceExperimentError> {
+pub fn de_start_inference_experiment_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_inference_experiment::StartInferenceExperimentOutput, crate::operation::start_inference_experiment::StartInferenceExperimentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_inference_experiment_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_inference_experiment_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(_response_body, output).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_start_inference_experiment_http_error(response: &http::Response<bytes:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_inference_experiment_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_inference_experiment::StartInferenceExperimentOutput, crate::operation::start_inference_experiment::StartInferenceExperimentError> {
+pub fn de_start_inference_experiment_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_inference_experiment::StartInferenceExperimentOutput, crate::operation::start_inference_experiment::StartInferenceExperimentError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_inference_experiment::builders::StartInferenceExperimentOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_inference_experiment::de_start_inference_experiment(response.body().as_ref(), output).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_inference_experiment::de_start_inference_experiment(_response_body, output).map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

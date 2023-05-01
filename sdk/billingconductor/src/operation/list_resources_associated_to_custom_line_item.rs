@@ -86,11 +86,14 @@ impl ListResourcesAssociatedToCustomLineItem {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourcesAssociatedToCustomLineItem {
                 type Output = std::result::Result<crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput, crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::de_list_resources_associated_to_custom_line_item_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::de_list_resources_associated_to_custom_line_item_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::de_list_resources_associated_to_custom_line_item_http_response(response)
+                        crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::de_list_resources_associated_to_custom_line_item_http_response(status, headers, body)
                      }
                 }
             }

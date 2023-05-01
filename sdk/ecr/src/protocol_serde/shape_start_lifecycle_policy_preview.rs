@@ -8,10 +8,10 @@ pub fn ser_start_lifecycle_policy_preview_input(input: &crate::operation::start_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput, crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError> {
+pub fn de_start_lifecycle_policy_preview_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput, crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LifecyclePolicyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_lifecycle_policy_not_found_exception::de_lifecycle_policy_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+                    output = crate::protocol_serde::shape_lifecycle_policy_not_found_exception::de_lifecycle_policy_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LifecyclePolicyPreviewInProgressExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_lifecycle_policy_preview_in_progress_exception::de_lifecycle_policy_preview_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+                    output = crate::protocol_serde::shape_lifecycle_policy_preview_in_progress_exception::de_lifecycle_policy_preview_in_progress_exception_json_err(_response_body, output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_not_found_exception::de_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_not_found_exception::de_repository_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_start_lifecycle_policy_preview_http_error(response: &http::Response<by
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_lifecycle_policy_preview_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput, crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError> {
+pub fn de_start_lifecycle_policy_preview_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput, crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_lifecycle_policy_preview::de_start_lifecycle_policy_preview(response.body().as_ref(), output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_lifecycle_policy_preview::de_start_lifecycle_policy_preview(_response_body, output).map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

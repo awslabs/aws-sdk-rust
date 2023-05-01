@@ -105,11 +105,14 @@ impl DeleteAsset {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAsset {
                 type Output = std::result::Result<crate::operation::delete_asset::DeleteAssetOutput, crate::operation::delete_asset::DeleteAssetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::protocol_serde::shape_delete_asset::de_delete_asset_http_error(response)
+                     if !success && status != 202 {
+                        crate::protocol_serde::shape_delete_asset::de_delete_asset_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_delete_asset::de_delete_asset_http_response(response)
+                        crate::protocol_serde::shape_delete_asset::de_delete_asset_http_response(status, headers, body)
                      }
                 }
             }

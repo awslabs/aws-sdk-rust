@@ -8,10 +8,10 @@ pub fn ser_commit_transaction_input(input: &crate::operation::commit_transaction
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::commit_transaction::CommitTransactionOutput, crate::operation::commit_transaction::CommitTransactionError> {
+pub fn de_commit_transaction_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::commit_transaction::CommitTransactionOutput, crate::operation::commit_transaction::CommitTransactionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_error::de_service_unavailable_error_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_error::de_service_unavailable_error_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StatementTimeoutExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_statement_timeout_exception::de_statement_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                    output = crate::protocol_serde::shape_statement_timeout_exception::de_statement_timeout_exception_json_err(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,13 +137,12 @@ pub fn de_commit_transaction_http_error(response: &http::Response<bytes::Bytes>)
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_commit_transaction_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::commit_transaction::CommitTransactionOutput, crate::operation::commit_transaction::CommitTransactionError> {
+pub fn de_commit_transaction_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::commit_transaction::CommitTransactionOutput, crate::operation::commit_transaction::CommitTransactionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_commit_transaction::de_commit_transaction(response.body().as_ref(), output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_commit_transaction::de_commit_transaction(_response_body, output).map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

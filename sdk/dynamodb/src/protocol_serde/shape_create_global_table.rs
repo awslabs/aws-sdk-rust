@@ -8,10 +8,10 @@ pub fn ser_create_global_table_input(input: &crate::operation::create_global_tab
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_global_table::CreateGlobalTableOutput, crate::operation::create_global_table::CreateGlobalTableError> {
+pub fn de_create_global_table_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_global_table::CreateGlobalTableOutput, crate::operation::create_global_table::CreateGlobalTableError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::GlobalTableAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_global_table_already_exists_exception::de_global_table_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+                    output = crate::protocol_serde::shape_global_table_already_exists_exception::de_global_table_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEndpointExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_endpoint_exception::de_invalid_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_endpoint_exception::de_invalid_endpoint_exception_json_err(_response_body, output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TableNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_table_not_found_exception::de_table_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+                    output = crate::protocol_serde::shape_table_not_found_exception::de_table_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_create_global_table_http_error(response: &http::Response<bytes::Bytes>
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_global_table_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_global_table::CreateGlobalTableOutput, crate::operation::create_global_table::CreateGlobalTableError> {
+pub fn de_create_global_table_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_global_table::CreateGlobalTableOutput, crate::operation::create_global_table::CreateGlobalTableError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_global_table::builders::CreateGlobalTableOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_global_table::de_create_global_table(response.body().as_ref(), output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_global_table::de_create_global_table(_response_body, output).map_err(crate::operation::create_global_table::CreateGlobalTableError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

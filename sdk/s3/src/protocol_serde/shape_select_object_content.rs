@@ -74,28 +74,33 @@ pub fn ser_select_object_content_op_input(input: &crate::operation::select_objec
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_select_object_content_http_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, crate::operation::select_object_content::SelectObjectContentError> {
+pub fn de_select_object_content_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, crate::operation::select_object_content::SelectObjectContentError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder::default();
-        let _ = response;
         output = output.set_payload(
-            Some(crate::protocol_serde::shape_select_object_content_output::de_payload_payload(response.body_mut())?)
+            Some(crate::protocol_serde::shape_select_object_content_output::de_payload_payload(_response_body)?)
         );
-        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string));
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build().map_err(crate::operation::select_object_content::SelectObjectContentError::unhandled)?
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_select_object_content_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, crate::operation::select_object_content::SelectObjectContentError> {
+pub fn de_select_object_content_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, crate::operation::select_object_content::SelectObjectContentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::select_object_content::SelectObjectContentError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::select_object_content::SelectObjectContentError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::select_object_content::SelectObjectContentError::generic(generic))
 }

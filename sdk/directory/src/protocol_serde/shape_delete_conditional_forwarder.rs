@@ -8,10 +8,10 @@ pub fn ser_delete_conditional_forwarder_input(input: &crate::operation::delete_c
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput, crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError> {
+pub fn de_delete_conditional_forwarder_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput, crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectoryUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_entity_does_not_exist_exception::de_entity_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_does_not_exist_exception::de_entity_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,12 +121,11 @@ pub fn de_delete_conditional_forwarder_http_error(response: &http::Response<byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_conditional_forwarder_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput, crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError> {
+pub fn de_delete_conditional_forwarder_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput, crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_update_elasticsearch_domain_config_input(input: &crate::operation::up
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError> {
+pub fn de_update_elasticsearch_domain_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTypeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_json_err(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_update_elasticsearch_domain_config_http_error(response: &http::Respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_elasticsearch_domain_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError> {
+pub fn de_update_elasticsearch_domain_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_elasticsearch_domain_config::de_update_elasticsearch_domain_config(response.body().as_ref(), output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_elasticsearch_domain_config::de_update_elasticsearch_domain_config(_response_body, output).map_err(crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

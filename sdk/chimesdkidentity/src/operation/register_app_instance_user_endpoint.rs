@@ -95,11 +95,14 @@ impl RegisterAppInstanceUserEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterAppInstanceUserEndpoint {
                 type Output = std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::protocol_serde::shape_register_app_instance_user_endpoint::de_register_app_instance_user_endpoint_http_error(response)
+                     if !success && status != 201 {
+                        crate::protocol_serde::shape_register_app_instance_user_endpoint::de_register_app_instance_user_endpoint_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_register_app_instance_user_endpoint::de_register_app_instance_user_endpoint_http_response(response)
+                        crate::protocol_serde::shape_register_app_instance_user_endpoint::de_register_app_instance_user_endpoint_http_response(status, headers, body)
                      }
                 }
             }

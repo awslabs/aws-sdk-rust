@@ -91,11 +91,14 @@ impl CreateFleetAdvisorCollector {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFleetAdvisorCollector {
                 type Output = std::result::Result<crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput, crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_create_fleet_advisor_collector::de_create_fleet_advisor_collector_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_create_fleet_advisor_collector::de_create_fleet_advisor_collector_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_create_fleet_advisor_collector::de_create_fleet_advisor_collector_http_response(response)
+                        crate::protocol_serde::shape_create_fleet_advisor_collector::de_create_fleet_advisor_collector_http_response(status, headers, body)
                      }
                 }
             }

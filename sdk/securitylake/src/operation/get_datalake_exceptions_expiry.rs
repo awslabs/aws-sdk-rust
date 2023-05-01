@@ -82,11 +82,14 @@ impl GetDatalakeExceptionsExpiry {
 impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeExceptionsExpiry {
                 type Output = std::result::Result<crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryOutput, crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_datalake_exceptions_expiry::de_get_datalake_exceptions_expiry_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_datalake_exceptions_expiry::de_get_datalake_exceptions_expiry_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_datalake_exceptions_expiry::de_get_datalake_exceptions_expiry_http_response(response)
+                        crate::protocol_serde::shape_get_datalake_exceptions_expiry::de_get_datalake_exceptions_expiry_http_response(status, headers, body)
                      }
                 }
             }

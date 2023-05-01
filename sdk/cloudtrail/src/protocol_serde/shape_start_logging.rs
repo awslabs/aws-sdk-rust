@@ -8,10 +8,10 @@ pub fn ser_start_logging_input(input: &crate::operation::start_logging::StartLog
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_logging::StartLoggingOutput, crate::operation::start_logging::StartLoggingError> {
+pub fn de_start_logging_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_logging::StartLoggingOutput, crate::operation::start_logging::StartLoggingError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailArnInvalidExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_arn_invalid_exception::de_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_arn_invalid_exception::de_cloud_trail_arn_invalid_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidHomeRegionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_home_region_exception::de_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_home_region_exception::de_invalid_home_region_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoManagementAccountSlrExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotOrganizationMasterAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrailNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trail_not_found_exception::de_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_trail_not_found_exception::de_trail_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -195,12 +185,11 @@ pub fn de_start_logging_http_error(response: &http::Response<bytes::Bytes>) -> s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_logging_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_logging::StartLoggingOutput, crate::operation::start_logging::StartLoggingError> {
+pub fn de_start_logging_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_logging::StartLoggingOutput, crate::operation::start_logging::StartLoggingError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_logging::builders::StartLoggingOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

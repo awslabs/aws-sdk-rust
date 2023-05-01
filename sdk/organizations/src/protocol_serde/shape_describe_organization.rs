@@ -4,10 +4,10 @@ pub fn ser_describe_organization_input(_input: &crate::operation::describe_organ
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_organization_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_organization::DescribeOrganizationOutput, crate::operation::describe_organization::DescribeOrganizationError> {
+pub fn de_describe_organization_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_organization::DescribeOrganizationOutput, crate::operation::describe_organization::DescribeOrganizationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -22,8 +22,7 @@ pub fn de_describe_organization_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -39,8 +38,7 @@ pub fn de_describe_organization_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AwsOrganizationsNotInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_aws_organizations_not_in_use_exception::de_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_aws_organizations_not_in_use_exception::de_aws_organizations_not_in_use_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,8 +54,7 @@ pub fn de_describe_organization_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,8 +70,7 @@ pub fn de_describe_organization_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,8 +86,7 @@ pub fn de_describe_organization_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -106,13 +101,12 @@ pub fn de_describe_organization_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_organization_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_organization::DescribeOrganizationOutput, crate::operation::describe_organization::DescribeOrganizationError> {
+pub fn de_describe_organization_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_organization::DescribeOrganizationOutput, crate::operation::describe_organization::DescribeOrganizationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_organization::de_describe_organization(response.body().as_ref(), output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_organization::de_describe_organization(_response_body, output).map_err(crate::operation::describe_organization::DescribeOrganizationError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_get_dimension_key_details_input(input: &crate::operation::get_dimensi
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_dimension_key_details_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput, crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError> {
+pub fn de_get_dimension_key_details_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput, crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_dimension_key_details_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_dimension_key_details_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_dimension_key_details_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_get_dimension_key_details_http_error(response: &http::Response<bytes::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_dimension_key_details_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput, crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError> {
+pub fn de_get_dimension_key_details_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput, crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_dimension_key_details::de_get_dimension_key_details(response.body().as_ref(), output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_dimension_key_details::de_get_dimension_key_details(_response_body, output).map_err(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

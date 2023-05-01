@@ -8,10 +8,10 @@ pub fn ser_import_certificate_input(input: &crate::operation::import_certificate
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_certificate_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_certificate::ImportCertificateOutput, crate::operation::import_certificate::ImportCertificateError> {
+pub fn de_import_certificate_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_certificate::ImportCertificateOutput, crate::operation::import_certificate::ImportCertificateError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_import_certificate_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCertificateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_certificate_fault::de_invalid_certificate_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_certificate_fault::de_invalid_certificate_fault_json_err(_response_body, output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_import_certificate_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceAlreadyExistsFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_already_exists_fault::de_resource_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_already_exists_fault::de_resource_already_exists_fault_json_err(_response_body, output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_import_certificate_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceQuotaExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_quota_exceeded_fault::de_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_quota_exceeded_fault::de_resource_quota_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_import_certificate_http_error(response: &http::Response<bytes::Bytes>)
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_certificate_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_certificate::ImportCertificateOutput, crate::operation::import_certificate::ImportCertificateError> {
+pub fn de_import_certificate_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_certificate::ImportCertificateOutput, crate::operation::import_certificate::ImportCertificateError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::import_certificate::builders::ImportCertificateOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_import_certificate::de_import_certificate(response.body().as_ref(), output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_import_certificate::de_import_certificate(_response_body, output).map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

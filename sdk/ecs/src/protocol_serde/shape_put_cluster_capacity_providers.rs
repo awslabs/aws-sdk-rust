@@ -8,10 +8,10 @@ pub fn ser_put_cluster_capacity_providers_input(input: &crate::operation::put_cl
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput, crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError> {
+pub fn de_put_cluster_capacity_providers_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput, crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UpdateInProgressExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_update_in_progress_exception::de_update_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+                    output = crate::protocol_serde::shape_update_in_progress_exception::de_update_in_progress_exception_json_err(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_put_cluster_capacity_providers_http_error(response: &http::Response<by
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_cluster_capacity_providers_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput, crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError> {
+pub fn de_put_cluster_capacity_providers_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput, crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_cluster_capacity_providers::de_put_cluster_capacity_providers(response.body().as_ref(), output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_cluster_capacity_providers::de_put_cluster_capacity_providers(_response_body, output).map_err(crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

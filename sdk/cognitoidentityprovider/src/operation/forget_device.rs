@@ -91,11 +91,14 @@ impl ForgetDevice {
 impl aws_smithy_http::response::ParseStrictResponse for ForgetDevice {
                 type Output = std::result::Result<crate::operation::forget_device::ForgetDeviceOutput, crate::operation::forget_device::ForgetDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_forget_device::de_forget_device_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_forget_device::de_forget_device_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_forget_device::de_forget_device_http_response(response)
+                        crate::protocol_serde::shape_forget_device::de_forget_device_http_response(status, headers, body)
                      }
                 }
             }

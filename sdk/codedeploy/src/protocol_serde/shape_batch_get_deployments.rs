@@ -8,10 +8,10 @@ pub fn ser_batch_get_deployments_input(input: &crate::operation::batch_get_deplo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_deployments_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsOutput, crate::operation::batch_get_deployments::BatchGetDeploymentsError> {
+pub fn de_batch_get_deployments_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsOutput, crate::operation::batch_get_deployments::BatchGetDeploymentsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_batch_get_deployments_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BatchLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_batch_limit_exceeded_exception::de_batch_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_batch_limit_exceeded_exception::de_batch_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_batch_get_deployments_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_id_required_exception::de_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_id_required_exception::de_deployment_id_required_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_batch_get_deployments_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_id_exception::de_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_id_exception::de_invalid_deployment_id_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_batch_get_deployments_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_deployments_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsOutput, crate::operation::batch_get_deployments::BatchGetDeploymentsError> {
+pub fn de_batch_get_deployments_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsOutput, crate::operation::batch_get_deployments::BatchGetDeploymentsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_get_deployments::builders::BatchGetDeploymentsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_batch_get_deployments::de_batch_get_deployments(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_batch_get_deployments::de_batch_get_deployments(_response_body, output).map_err(crate::operation::batch_get_deployments::BatchGetDeploymentsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

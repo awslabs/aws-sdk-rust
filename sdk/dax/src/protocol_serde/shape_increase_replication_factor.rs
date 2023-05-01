@@ -8,10 +8,10 @@ pub fn ser_increase_replication_factor_input(input: &crate::operation::increase_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput, crate::operation::increase_replication_factor::IncreaseReplicationFactorError> {
+pub fn de_increase_replication_factor_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput, crate::operation::increase_replication_factor::IncreaseReplicationFactorError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientClusterCapacityFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NodeQuotaForClusterExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NodeQuotaForCustomerExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,13 +169,12 @@ pub fn de_increase_replication_factor_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_increase_replication_factor_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput, crate::operation::increase_replication_factor::IncreaseReplicationFactorError> {
+pub fn de_increase_replication_factor_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput, crate::operation::increase_replication_factor::IncreaseReplicationFactorError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_increase_replication_factor::de_increase_replication_factor(response.body().as_ref(), output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_increase_replication_factor::de_increase_replication_factor(_response_body, output).map_err(crate::operation::increase_replication_factor::IncreaseReplicationFactorError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

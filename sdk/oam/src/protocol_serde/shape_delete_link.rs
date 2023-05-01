@@ -8,10 +8,10 @@ pub fn ser_delete_link_input(input: &crate::operation::delete_link::DeleteLinkIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_link_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_link::DeleteLinkOutput, crate::operation::delete_link::DeleteLinkError> {
+pub fn de_delete_link_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_link::DeleteLinkOutput, crate::operation::delete_link::DeleteLinkError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,10 +26,9 @@ pub fn de_delete_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_json_err(_response_body, output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_internal_service_fault::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_internal_service_fault::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::delete_link::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -47,10 +46,9 @@ pub fn de_delete_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_invalid_parameter_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_invalid_parameter_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::delete_link::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -68,10 +66,9 @@ pub fn de_delete_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(_response_body, output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_missing_required_parameter_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_missing_required_parameter_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::delete_link::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -89,10 +86,9 @@ pub fn de_delete_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_link::DeleteLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_resource_not_found_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_resource_not_found_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::delete_link::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -109,12 +105,11 @@ pub fn de_delete_link_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_link_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_link::DeleteLinkOutput, crate::operation::delete_link::DeleteLinkError> {
+pub fn de_delete_link_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_link::DeleteLinkOutput, crate::operation::delete_link::DeleteLinkError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_link::builders::DeleteLinkOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

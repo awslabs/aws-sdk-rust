@@ -97,11 +97,14 @@ impl ListCidrCollections {
 impl aws_smithy_http::response::ParseStrictResponse for ListCidrCollections {
                 type Output = std::result::Result<crate::operation::list_cidr_collections::ListCidrCollectionsOutput, crate::operation::list_cidr_collections::ListCidrCollectionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_cidr_collections::de_list_cidr_collections_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_cidr_collections::de_list_cidr_collections_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_cidr_collections::de_list_cidr_collections_http_response(response)
+                        crate::protocol_serde::shape_list_cidr_collections::de_list_cidr_collections_http_response(status, headers, body)
                      }
                 }
             }

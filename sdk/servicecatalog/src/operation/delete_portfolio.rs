@@ -91,11 +91,14 @@ impl DeletePortfolio {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePortfolio {
                 type Output = std::result::Result<crate::operation::delete_portfolio::DeletePortfolioOutput, crate::operation::delete_portfolio::DeletePortfolioError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_delete_portfolio::de_delete_portfolio_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_delete_portfolio::de_delete_portfolio_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_delete_portfolio::de_delete_portfolio_http_response(response)
+                        crate::protocol_serde::shape_delete_portfolio::de_delete_portfolio_http_response(status, headers, body)
                      }
                 }
             }

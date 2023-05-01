@@ -8,10 +8,10 @@ pub fn ser_import_component_input(input: &crate::operation::import_component::Im
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_component::ImportComponentOutput, crate::operation::import_component::ImportComponentError> {
+pub fn de_import_component_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_component::ImportComponentOutput, crate::operation::import_component::ImportComponentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CallRateLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IdempotentParameterMismatchExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidVersionNumberExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_version_number_exception::de_invalid_version_number_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_version_number_exception::de_invalid_version_number_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -195,13 +185,12 @@ pub fn de_import_component_http_error(response: &http::Response<bytes::Bytes>) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_component_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_component::ImportComponentOutput, crate::operation::import_component::ImportComponentError> {
+pub fn de_import_component_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_component::ImportComponentOutput, crate::operation::import_component::ImportComponentError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::import_component::builders::ImportComponentOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_import_component::de_import_component(response.body().as_ref(), output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_import_component::de_import_component(_response_body, output).map_err(crate::operation::import_component::ImportComponentError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

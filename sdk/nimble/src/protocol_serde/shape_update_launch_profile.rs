@@ -29,10 +29,10 @@ pub fn ser_update_launch_profile_input(input: &crate::operation::update_launch_p
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileOutput, crate::operation::update_launch_profile::UpdateLaunchProfileError> {
+pub fn de_update_launch_profile_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileOutput, crate::operation::update_launch_profile::UpdateLaunchProfileError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -47,8 +47,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -64,8 +63,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -81,8 +79,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -98,8 +95,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -115,8 +111,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -132,8 +127,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -149,8 +143,7 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -165,13 +158,12 @@ pub fn de_update_launch_profile_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_launch_profile_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileOutput, crate::operation::update_launch_profile::UpdateLaunchProfileError> {
+pub fn de_update_launch_profile_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileOutput, crate::operation::update_launch_profile::UpdateLaunchProfileError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_launch_profile::builders::UpdateLaunchProfileOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_launch_profile::de_update_launch_profile(response.body().as_ref(), output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_launch_profile::de_update_launch_profile(_response_body, output).map_err(crate::operation::update_launch_profile::UpdateLaunchProfileError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

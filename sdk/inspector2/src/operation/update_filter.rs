@@ -86,11 +86,14 @@ impl UpdateFilter {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFilter {
                 type Output = std::result::Result<crate::operation::update_filter::UpdateFilterOutput, crate::operation::update_filter::UpdateFilterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_update_filter::de_update_filter_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_update_filter::de_update_filter_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_update_filter::de_update_filter_http_response(response)
+                        crate::protocol_serde::shape_update_filter::de_update_filter_http_response(status, headers, body)
                      }
                 }
             }

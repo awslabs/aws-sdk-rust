@@ -8,10 +8,10 @@ pub fn ser_create_link_input(input: &crate::operation::create_link::CreateLinkIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_link::CreateLinkOutput, crate::operation::create_link::CreateLinkError> {
+pub fn de_create_link_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_link::CreateLinkOutput, crate::operation::create_link::CreateLinkError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,10 +26,9 @@ pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_conflict_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_conflict_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::create_link::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -47,10 +46,9 @@ pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_json_err(_response_body, output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_internal_service_fault::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_internal_service_fault::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::create_link::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -68,10 +66,9 @@ pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_invalid_parameter_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_invalid_parameter_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::create_link::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -89,10 +86,9 @@ pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_missing_required_parameter_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_missing_required_parameter_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::create_link::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -110,10 +106,9 @@ pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
                     output = output.set_amzn_error_type(
-                        crate::protocol_serde::shape_service_quota_exceeded_exception::de_amzn_error_type_header(response.headers())
+                        crate::protocol_serde::shape_service_quota_exceeded_exception::de_amzn_error_type_header(_response_headers)
                                                 .map_err(|_|crate::operation::create_link::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
@@ -130,13 +125,12 @@ pub fn de_create_link_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_link_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_link::CreateLinkOutput, crate::operation::create_link::CreateLinkError> {
+pub fn de_create_link_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_link::CreateLinkOutput, crate::operation::create_link::CreateLinkError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_link::builders::CreateLinkOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_link::de_create_link(response.body().as_ref(), output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_link::de_create_link(_response_body, output).map_err(crate::operation::create_link::CreateLinkError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -14,8 +14,8 @@ impl DeleteBucketInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -94,11 +94,14 @@ impl DeleteBucket {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
                 type Output = std::result::Result<crate::operation::delete_bucket::DeleteBucketOutput, crate::operation::delete_bucket::DeleteBucketError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_response(response)
+                        crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_response(status, headers, body)
                      }
                 }
             }

@@ -8,10 +8,10 @@ pub fn ser_create_deployment_config_input(input: &crate::operation::create_deplo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_deployment_config::CreateDeploymentConfigOutput, crate::operation::create_deployment_config::CreateDeploymentConfigError> {
+pub fn de_create_deployment_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_deployment_config::CreateDeploymentConfigOutput, crate::operation::create_deployment_config::CreateDeploymentConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentConfigAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_config_already_exists_exception::de_deployment_config_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_config_already_exists_exception::de_deployment_config_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentConfigLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_config_limit_exceeded_exception::de_deployment_config_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_config_limit_exceeded_exception::de_deployment_config_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentConfigNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_config_name_required_exception::de_deployment_config_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_config_name_required_exception::de_deployment_config_name_required_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidComputePlatformExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_compute_platform_exception::de_invalid_compute_platform_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_compute_platform_exception::de_invalid_compute_platform_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentConfigNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_config_name_exception::de_invalid_deployment_config_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_config_name_exception::de_invalid_deployment_config_name_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidMinimumHealthyHostValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_minimum_healthy_host_value_exception::de_invalid_minimum_healthy_host_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_minimum_healthy_host_value_exception::de_invalid_minimum_healthy_host_value_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrafficRoutingConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_traffic_routing_configuration_exception::de_invalid_traffic_routing_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_traffic_routing_configuration_exception::de_invalid_traffic_routing_configuration_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,13 +137,12 @@ pub fn de_create_deployment_config_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_deployment_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_deployment_config::CreateDeploymentConfigOutput, crate::operation::create_deployment_config::CreateDeploymentConfigError> {
+pub fn de_create_deployment_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_deployment_config::CreateDeploymentConfigOutput, crate::operation::create_deployment_config::CreateDeploymentConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_deployment_config::builders::CreateDeploymentConfigOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_deployment_config::de_create_deployment_config(response.body().as_ref(), output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_deployment_config::de_create_deployment_config(_response_body, output).map_err(crate::operation::create_deployment_config::CreateDeploymentConfigError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

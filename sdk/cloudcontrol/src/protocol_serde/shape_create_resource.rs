@@ -8,10 +8,10 @@ pub fn ser_create_resource_input(input: &crate::operation::create_resource::Crea
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
+pub fn de_create_resource_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientTokenConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_token_conflict_exception::de_client_token_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_token_conflict_exception::de_client_token_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_operation_exception::de_concurrent_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_operation_exception::de_concurrent_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::GeneralServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_general_service_exception::de_general_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_general_service_exception::de_general_service_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HandlerFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_handler_failure_exception::de_handler_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_handler_failure_exception::de_handler_failure_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HandlerInternalFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_handler_internal_failure_exception::de_handler_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_handler_internal_failure_exception::de_handler_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCredentialsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_credentials_exception::de_invalid_credentials_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_credentials_exception::de_invalid_credentials_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NetworkFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_network_failure_exception::de_network_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_network_failure_exception::de_network_failure_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotStabilizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_stabilized_exception::de_not_stabilized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_stabilized_exception::de_not_stabilized_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotUpdatableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_updatable_exception::de_not_updatable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_updatable_exception::de_not_updatable_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PrivateTypeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_private_type_exception::de_private_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_private_type_exception::de_private_type_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceInternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_internal_error_exception::de_service_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_internal_error_exception::de_service_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_limit_exceeded_exception::de_service_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_limit_exceeded_exception::de_service_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -332,8 +314,7 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedActionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_action_exception::de_unsupported_action_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_action_exception::de_unsupported_action_exception_json_err(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -348,13 +329,12 @@ pub fn de_create_resource_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_resource_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
+pub fn de_create_resource_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_resource::CreateResourceOutput, crate::operation::create_resource::CreateResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_resource::builders::CreateResourceOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_resource::de_create_resource(response.body().as_ref(), output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_resource::de_create_resource(_response_body, output).map_err(crate::operation::create_resource::CreateResourceError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

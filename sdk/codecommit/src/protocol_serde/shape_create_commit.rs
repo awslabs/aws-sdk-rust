@@ -8,10 +8,10 @@ pub fn ser_create_commit_input(input: &crate::operation::create_commit::CreateCo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_commit::CreateCommitOutput, crate::operation::create_commit::CreateCommitError> {
+pub fn de_create_commit_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_commit::CreateCommitOutput, crate::operation::create_commit::CreateCommitError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BranchDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_branch_does_not_exist_exception::de_branch_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_branch_does_not_exist_exception::de_branch_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BranchNameIsTagNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_branch_name_is_tag_name_exception::de_branch_name_is_tag_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_branch_name_is_tag_name_exception::de_branch_name_is_tag_name_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BranchNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_branch_name_required_exception::de_branch_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_branch_name_required_exception::de_branch_name_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommitMessageLengthExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_commit_message_length_exceeded_exception::de_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_commit_message_length_exceeded_exception::de_commit_message_length_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectoryNameConflictsWithFileNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_directory_name_conflicts_with_file_name_exception::de_directory_name_conflicts_with_file_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_directory_name_conflicts_with_file_name_exception::de_directory_name_conflicts_with_file_name_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileContentAndSourceFileSpecifiedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_content_and_source_file_specified_exception::de_file_content_and_source_file_specified_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_content_and_source_file_specified_exception::de_file_content_and_source_file_specified_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileContentSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_content_size_limit_exceeded_exception::de_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_content_size_limit_exceeded_exception::de_file_content_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_does_not_exist_exception::de_file_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_does_not_exist_exception::de_file_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileEntryRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_entry_required_exception::de_file_entry_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_entry_required_exception::de_file_entry_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileModeRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_mode_required_exception::de_file_mode_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_mode_required_exception::de_file_mode_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileNameConflictsWithDirectoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_name_conflicts_with_directory_name_exception::de_file_name_conflicts_with_directory_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_name_conflicts_with_directory_name_exception::de_file_name_conflicts_with_directory_name_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FilePathConflictsWithSubmodulePathExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_path_conflicts_with_submodule_path_exception::de_file_path_conflicts_with_submodule_path_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_path_conflicts_with_submodule_path_exception::de_file_path_conflicts_with_submodule_path_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FolderContentSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_folder_content_size_limit_exceeded_exception::de_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_folder_content_size_limit_exceeded_exception::de_folder_content_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -332,8 +314,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidBranchNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_branch_name_exception::de_invalid_branch_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_branch_name_exception::de_invalid_branch_name_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -349,8 +330,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeletionParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deletion_parameter_exception::de_invalid_deletion_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deletion_parameter_exception::de_invalid_deletion_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -366,8 +346,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEmailExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_email_exception::de_invalid_email_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_email_exception::de_invalid_email_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -383,8 +362,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFileModeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_file_mode_exception::de_invalid_file_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_file_mode_exception::de_invalid_file_mode_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -400,8 +378,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParentCommitIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parent_commit_id_exception::de_invalid_parent_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parent_commit_id_exception::de_invalid_parent_commit_id_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -417,8 +394,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPathExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_path_exception::de_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_path_exception::de_invalid_path_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -434,8 +410,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRepositoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -451,8 +426,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaximumFileEntriesExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_maximum_file_entries_exceeded_exception::de_maximum_file_entries_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_maximum_file_entries_exceeded_exception::de_maximum_file_entries_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -468,8 +442,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NameLengthExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_name_length_exceeded_exception::de_name_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_name_length_exceeded_exception::de_name_length_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -485,8 +458,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoChangeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_change_exception::de_no_change_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_change_exception::de_no_change_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -502,8 +474,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParentCommitDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parent_commit_does_not_exist_exception::de_parent_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_parent_commit_does_not_exist_exception::de_parent_commit_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -519,8 +490,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParentCommitIdOutdatedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parent_commit_id_outdated_exception::de_parent_commit_id_outdated_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_parent_commit_id_outdated_exception::de_parent_commit_id_outdated_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -536,8 +506,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParentCommitIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parent_commit_id_required_exception::de_parent_commit_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_parent_commit_id_required_exception::de_parent_commit_id_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -553,8 +522,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PathRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_path_required_exception::de_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_path_required_exception::de_path_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -570,8 +538,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PutFileEntryConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_put_file_entry_conflict_exception::de_put_file_entry_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_put_file_entry_conflict_exception::de_put_file_entry_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -587,8 +554,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -604,8 +570,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -621,8 +586,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RestrictedSourceFileExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_restricted_source_file_exception::de_restricted_source_file_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_restricted_source_file_exception::de_restricted_source_file_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -638,8 +602,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SamePathRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_same_path_request_exception::de_same_path_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_same_path_request_exception::de_same_path_request_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -655,8 +618,7 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SourceFileOrContentRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_source_file_or_content_required_exception::de_source_file_or_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_source_file_or_content_required_exception::de_source_file_or_content_required_exception_json_err(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -671,13 +633,12 @@ pub fn de_create_commit_http_error(response: &http::Response<bytes::Bytes>) -> s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_commit_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_commit::CreateCommitOutput, crate::operation::create_commit::CreateCommitError> {
+pub fn de_create_commit_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_commit::CreateCommitOutput, crate::operation::create_commit::CreateCommitError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_commit::builders::CreateCommitOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_commit::de_create_commit(response.body().as_ref(), output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_commit::de_create_commit(_response_body, output).map_err(crate::operation::create_commit::CreateCommitError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

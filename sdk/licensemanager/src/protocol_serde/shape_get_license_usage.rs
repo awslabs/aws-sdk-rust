@@ -8,10 +8,10 @@ pub fn ser_get_license_usage_input(input: &crate::operation::get_license_usage::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_license_usage::GetLicenseUsageOutput, crate::operation::get_license_usage::GetLicenseUsageError> {
+pub fn de_get_license_usage_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_license_usage::GetLicenseUsageOutput, crate::operation::get_license_usage::GetLicenseUsageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AuthorizationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_authorization_exception::de_authorization_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_exception::de_authorization_exception_json_err(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RateLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_rate_limit_exceeded_exception::de_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_rate_limit_exceeded_exception::de_rate_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServerInternalExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_get_license_usage_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_license_usage_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_license_usage::GetLicenseUsageOutput, crate::operation::get_license_usage::GetLicenseUsageError> {
+pub fn de_get_license_usage_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_license_usage::GetLicenseUsageOutput, crate::operation::get_license_usage::GetLicenseUsageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_license_usage::builders::GetLicenseUsageOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_license_usage::de_get_license_usage(response.body().as_ref(), output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_license_usage::de_get_license_usage(_response_body, output).map_err(crate::operation::get_license_usage::GetLicenseUsageError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

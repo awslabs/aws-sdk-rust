@@ -88,11 +88,14 @@ impl GetGcmChannel {
 impl aws_smithy_http::response::ParseStrictResponse for GetGcmChannel {
                 type Output = std::result::Result<crate::operation::get_gcm_channel::GetGcmChannelOutput, crate::operation::get_gcm_channel::GetGcmChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_gcm_channel::de_get_gcm_channel_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_gcm_channel::de_get_gcm_channel_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_gcm_channel::de_get_gcm_channel_http_response(response)
+                        crate::protocol_serde::shape_get_gcm_channel::de_get_gcm_channel_http_response(status, headers, body)
                      }
                 }
             }

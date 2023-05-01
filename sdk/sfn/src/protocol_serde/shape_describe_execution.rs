@@ -8,10 +8,10 @@ pub fn ser_describe_execution_input(input: &crate::operation::describe_execution
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_execution_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, crate::operation::describe_execution::DescribeExecutionError> {
+pub fn de_describe_execution_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, crate::operation::describe_execution::DescribeExecutionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_execution_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExecutionDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_execution_does_not_exist::de_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_execution_does_not_exist::de_execution_does_not_exist_json_err(_response_body, output).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_execution_http_error(response: &http::Response<bytes::Bytes>)
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArnBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_arn::de_invalid_arn_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_arn::de_invalid_arn_json_err(_response_body, output).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_describe_execution_http_error(response: &http::Response<bytes::Bytes>)
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_execution_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, crate::operation::describe_execution::DescribeExecutionError> {
+pub fn de_describe_execution_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, crate::operation::describe_execution::DescribeExecutionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_execution::de_describe_execution(response.body().as_ref(), output).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_execution::de_describe_execution(_response_body, output).map_err(crate::operation::describe_execution::DescribeExecutionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

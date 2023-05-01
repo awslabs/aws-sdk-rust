@@ -8,10 +8,10 @@ pub fn ser_put_configuration_recorder_input(input: &crate::operation::put_config
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_configuration_recorder_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput, crate::operation::put_configuration_recorder::PutConfigurationRecorderError> {
+pub fn de_put_configuration_recorder_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput, crate::operation::put_configuration_recorder::PutConfigurationRecorderError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_configuration_recorder_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidConfigurationRecorderNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_recorder_name_exception::de_invalid_configuration_recorder_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_recorder_name_exception::de_invalid_configuration_recorder_name_exception_json_err(_response_body, output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_configuration_recorder_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRecordingGroupExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_recording_group_exception::de_invalid_recording_group_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_recording_group_exception::de_invalid_recording_group_exception_json_err(_response_body, output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_configuration_recorder_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRoleExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_role_exception::de_invalid_role_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_role_exception::de_invalid_role_exception_json_err(_response_body, output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_configuration_recorder_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxNumberOfConfigurationRecordersExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_number_of_configuration_recorders_exceeded_exception::de_max_number_of_configuration_recorders_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_number_of_configuration_recorders_exceeded_exception::de_max_number_of_configuration_recorders_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_configuration_recorder::PutConfigurationRecorderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,12 +89,11 @@ pub fn de_put_configuration_recorder_http_error(response: &http::Response<bytes:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_configuration_recorder_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput, crate::operation::put_configuration_recorder::PutConfigurationRecorderError> {
+pub fn de_put_configuration_recorder_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput, crate::operation::put_configuration_recorder::PutConfigurationRecorderError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_cancel_handshake_input(input: &crate::operation::cancel_handshake::Ca
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::cancel_handshake::CancelHandshakeOutput, crate::operation::cancel_handshake::CancelHandshakeError> {
+pub fn de_cancel_handshake_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_handshake::CancelHandshakeOutput, crate::operation::cancel_handshake::CancelHandshakeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HandshakeAlreadyInStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_handshake_already_in_state_exception::de_handshake_already_in_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_handshake_already_in_state_exception::de_handshake_already_in_state_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HandshakeNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_handshake_not_found_exception::de_handshake_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_handshake_not_found_exception::de_handshake_not_found_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidHandshakeTransitionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_handshake_transition_exception::de_invalid_handshake_transition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_handshake_transition_exception::de_invalid_handshake_transition_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_cancel_handshake_http_error(response: &http::Response<bytes::Bytes>) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_cancel_handshake_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::cancel_handshake::CancelHandshakeOutput, crate::operation::cancel_handshake::CancelHandshakeError> {
+pub fn de_cancel_handshake_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_handshake::CancelHandshakeOutput, crate::operation::cancel_handshake::CancelHandshakeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::cancel_handshake::builders::CancelHandshakeOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_cancel_handshake::de_cancel_handshake(response.body().as_ref(), output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_cancel_handshake::de_cancel_handshake(_response_body, output).map_err(crate::operation::cancel_handshake::CancelHandshakeError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

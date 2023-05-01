@@ -8,10 +8,10 @@ pub fn ser_batch_disassociate_service_action_from_provisioning_artifact_input(in
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError> {
+pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_erro
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParametersExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(_response_body, output).map_err(crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -42,13 +41,12 @@ pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_erro
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError> {
+pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_batch_disassociate_service_action_from_provisioning_artifact::de_batch_disassociate_service_action_from_provisioning_artifact(response.body().as_ref(), output).map_err(crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_batch_disassociate_service_action_from_provisioning_artifact::de_batch_disassociate_service_action_from_provisioning_artifact(_response_body, output).map_err(crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

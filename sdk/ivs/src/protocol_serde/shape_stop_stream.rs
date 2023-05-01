@@ -8,10 +8,10 @@ pub fn ser_stop_stream_input(input: &crate::operation::stop_stream::StopStreamIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::stop_stream::StopStreamOutput, crate::operation::stop_stream::StopStreamError> {
+pub fn de_stop_stream_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::stop_stream::StopStreamOutput, crate::operation::stop_stream::StopStreamError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ChannelNotBroadcastingBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_channel_not_broadcasting::de_channel_not_broadcasting_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_channel_not_broadcasting::de_channel_not_broadcasting_json_err(_response_body, output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StreamUnavailableBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_stream_unavailable::de_stream_unavailable_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_stream_unavailable::de_stream_unavailable_json_err(_response_body, output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::stop_stream::StopStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,12 +105,11 @@ pub fn de_stop_stream_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_stop_stream_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::stop_stream::StopStreamOutput, crate::operation::stop_stream::StopStreamError> {
+pub fn de_stop_stream_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::stop_stream::StopStreamOutput, crate::operation::stop_stream::StopStreamError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::stop_stream::builders::StopStreamOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

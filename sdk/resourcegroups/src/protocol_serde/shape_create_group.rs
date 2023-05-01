@@ -8,10 +8,10 @@ pub fn ser_create_group_input(input: &crate::operation::create_group::CreateGrou
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_group::CreateGroupOutput, crate::operation::create_group::CreateGroupError> {
+pub fn de_create_group_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_group::CreateGroupOutput, crate::operation::create_group::CreateGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_create_group_http_error(response: &http::Response<bytes::Bytes>) -> st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_group_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_group::CreateGroupOutput, crate::operation::create_group::CreateGroupError> {
+pub fn de_create_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_group::CreateGroupOutput, crate::operation::create_group::CreateGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_group::builders::CreateGroupOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_group::de_create_group(response.body().as_ref(), output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_group::de_create_group(_response_body, output).map_err(crate::operation::create_group::CreateGroupError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

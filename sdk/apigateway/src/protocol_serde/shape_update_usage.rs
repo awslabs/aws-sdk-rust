@@ -8,10 +8,10 @@ pub fn ser_update_usage_input(input: &crate::operation::update_usage::UpdateUsag
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_usage::UpdateUsageOutput, crate::operation::update_usage::UpdateUsageError> {
+pub fn de_update_usage_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_usage::UpdateUsageOutput, crate::operation::update_usage::UpdateUsageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,10 +58,9 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::update_usage::UpdateUsageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -81,8 +78,7 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -98,10 +94,9 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::update_usage::UpdateUsageError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -119,8 +114,7 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -135,13 +129,12 @@ pub fn de_update_usage_http_error(response: &http::Response<bytes::Bytes>) -> st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_usage_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_usage::UpdateUsageOutput, crate::operation::update_usage::UpdateUsageError> {
+pub fn de_update_usage_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_usage::UpdateUsageOutput, crate::operation::update_usage::UpdateUsageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_usage::builders::UpdateUsageOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_usage::de_update_usage(response.body().as_ref(), output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_usage::de_update_usage(_response_body, output).map_err(crate::operation::update_usage::UpdateUsageError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

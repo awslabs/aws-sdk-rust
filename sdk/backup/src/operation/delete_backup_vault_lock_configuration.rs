@@ -88,11 +88,14 @@ impl DeleteBackupVaultLockConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultLockConfiguration {
                 type Output = std::result::Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput, crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_delete_backup_vault_lock_configuration::de_delete_backup_vault_lock_configuration_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_delete_backup_vault_lock_configuration::de_delete_backup_vault_lock_configuration_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_delete_backup_vault_lock_configuration::de_delete_backup_vault_lock_configuration_http_response(response)
+                        crate::protocol_serde::shape_delete_backup_vault_lock_configuration::de_delete_backup_vault_lock_configuration_http_response(status, headers, body)
                      }
                 }
             }

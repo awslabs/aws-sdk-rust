@@ -8,22 +8,21 @@ pub fn ser_list_code_repositories_input(input: &crate::operation::list_code_repo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_code_repositories_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesOutput, crate::operation::list_code_repositories::ListCodeRepositoriesError> {
+pub fn de_list_code_repositories_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesOutput, crate::operation::list_code_repositories::ListCodeRepositoriesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_code_repositories::ListCodeRepositoriesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_code_repositories::ListCodeRepositoriesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_code_repositories::ListCodeRepositoriesError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_code_repositories_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesOutput, crate::operation::list_code_repositories::ListCodeRepositoriesError> {
+pub fn de_list_code_repositories_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesOutput, crate::operation::list_code_repositories::ListCodeRepositoriesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_code_repositories::de_list_code_repositories(response.body().as_ref(), output).map_err(crate::operation::list_code_repositories::ListCodeRepositoriesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_code_repositories::de_list_code_repositories(_response_body, output).map_err(crate::operation::list_code_repositories::ListCodeRepositoriesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

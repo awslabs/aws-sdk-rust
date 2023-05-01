@@ -8,10 +8,10 @@ pub fn ser_put_lexicon_input(input: &crate::operation::put_lexicon::PutLexiconIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_lexicon::PutLexiconOutput, crate::operation::put_lexicon::PutLexiconError> {
+pub fn de_put_lexicon_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_lexicon::PutLexiconOutput, crate::operation::put_lexicon::PutLexiconError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLexiconExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lexicon_exception::de_invalid_lexicon_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lexicon_exception::de_invalid_lexicon_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LexiconSizeExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_lexicon_size_exceeded_exception::de_lexicon_size_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_lexicon_size_exceeded_exception::de_lexicon_size_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxLexemeLengthExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_lexeme_length_exceeded_exception::de_max_lexeme_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_lexeme_length_exceeded_exception::de_max_lexeme_length_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxLexiconsNumberExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_lexicons_number_exceeded_exception::de_max_lexicons_number_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_lexicons_number_exceeded_exception::de_max_lexicons_number_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedPlsAlphabetExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_pls_alphabet_exception::de_unsupported_pls_alphabet_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_pls_alphabet_exception::de_unsupported_pls_alphabet_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedPlsLanguageExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_pls_language_exception::de_unsupported_pls_language_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_pls_language_exception::de_unsupported_pls_language_exception_json_err(_response_body, output).map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,12 +137,11 @@ pub fn de_put_lexicon_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_lexicon_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_lexicon::PutLexiconOutput, crate::operation::put_lexicon::PutLexiconError> {
+pub fn de_put_lexicon_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_lexicon::PutLexiconOutput, crate::operation::put_lexicon::PutLexiconError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_lexicon::builders::PutLexiconOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

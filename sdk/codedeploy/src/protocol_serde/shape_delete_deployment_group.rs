@@ -8,10 +8,10 @@ pub fn ser_delete_deployment_group_input(input: &crate::operation::delete_deploy
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput, crate::operation::delete_deployment_group::DeleteDeploymentGroupError> {
+pub fn de_delete_deployment_group_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput, crate::operation::delete_deployment_group::DeleteDeploymentGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApplicationNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_application_name_required_exception::de_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_application_name_required_exception::de_application_name_required_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentGroupNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_group_name_required_exception::de_deployment_group_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_group_name_required_exception::de_deployment_group_name_required_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApplicationNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_application_name_exception::de_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_application_name_exception::de_invalid_application_name_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentGroupNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_group_name_exception::de_invalid_deployment_group_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_group_name_exception::de_invalid_deployment_group_name_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRoleExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_role_exception::de_invalid_role_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_role_exception::de_invalid_role_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_delete_deployment_group_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_deployment_group_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput, crate::operation::delete_deployment_group::DeleteDeploymentGroupError> {
+pub fn de_delete_deployment_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput, crate::operation::delete_deployment_group::DeleteDeploymentGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_delete_deployment_group::de_delete_deployment_group(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_delete_deployment_group::de_delete_deployment_group(_response_body, output).map_err(crate::operation::delete_deployment_group::DeleteDeploymentGroupError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_list_principals_input(input: &crate::operation::list_principals::List
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_principals::ListPrincipalsOutput, crate::operation::list_principals::ListPrincipalsError> {
+pub fn de_list_principals_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_principals::ListPrincipalsOutput, crate::operation::list_principals::ListPrincipalsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MalformedArnExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+                    output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServerInternalExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnknownResourceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_list_principals_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_principals_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_principals::ListPrincipalsOutput, crate::operation::list_principals::ListPrincipalsError> {
+pub fn de_list_principals_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_principals::ListPrincipalsOutput, crate::operation::list_principals::ListPrincipalsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_principals::builders::ListPrincipalsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_principals::de_list_principals(response.body().as_ref(), output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_principals::de_list_principals(_response_body, output).map_err(crate::operation::list_principals::ListPrincipalsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

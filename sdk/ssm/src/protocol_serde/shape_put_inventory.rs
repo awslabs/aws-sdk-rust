@@ -8,10 +8,10 @@ pub fn ser_put_inventory_input(input: &crate::operation::put_inventory::PutInven
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_inventory::PutInventoryOutput, crate::operation::put_inventory::PutInventoryError> {
+pub fn de_put_inventory_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_inventory::PutInventoryOutput, crate::operation::put_inventory::PutInventoryError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomSchemaCountLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_schema_count_limit_exceeded_exception::de_custom_schema_count_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_schema_count_limit_exceeded_exception::de_custom_schema_count_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInstanceIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_instance_id::de_invalid_instance_id_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_instance_id::de_invalid_instance_id_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInventoryItemContextExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_inventory_item_context_exception::de_invalid_inventory_item_context_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_inventory_item_context_exception::de_invalid_inventory_item_context_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidItemContentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_item_content_exception::de_invalid_item_content_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_item_content_exception::de_invalid_item_content_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTypeNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_type_name_exception::de_invalid_type_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_type_name_exception::de_invalid_type_name_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ItemContentMismatchExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_item_content_mismatch_exception::de_item_content_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_item_content_mismatch_exception::de_item_content_mismatch_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ItemSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_item_size_limit_exceeded_exception::de_item_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_item_size_limit_exceeded_exception::de_item_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SubTypeCountLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_sub_type_count_limit_exceeded_exception::de_sub_type_count_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_sub_type_count_limit_exceeded_exception::de_sub_type_count_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TotalSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_total_size_limit_exceeded_exception::de_total_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_total_size_limit_exceeded_exception::de_total_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedInventoryItemContextExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_inventory_item_context_exception::de_unsupported_inventory_item_context_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_inventory_item_context_exception::de_unsupported_inventory_item_context_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedInventorySchemaVersionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_inventory_schema_version_exception::de_unsupported_inventory_schema_version_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_inventory_schema_version_exception::de_unsupported_inventory_schema_version_exception_json_err(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -229,13 +217,12 @@ pub fn de_put_inventory_http_error(response: &http::Response<bytes::Bytes>) -> s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_inventory_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_inventory::PutInventoryOutput, crate::operation::put_inventory::PutInventoryError> {
+pub fn de_put_inventory_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_inventory::PutInventoryOutput, crate::operation::put_inventory::PutInventoryError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_inventory::builders::PutInventoryOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_inventory::de_put_inventory(response.body().as_ref(), output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_inventory::de_put_inventory(_response_body, output).map_err(crate::operation::put_inventory::PutInventoryError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

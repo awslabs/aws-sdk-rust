@@ -8,10 +8,10 @@ pub fn ser_create_event_data_store_input(input: &crate::operation::create_event_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_event_data_store::CreateEventDataStoreOutput, crate::operation::create_event_data_store::CreateEventDataStoreError> {
+pub fn de_create_event_data_store_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_event_data_store::CreateEventDataStoreOutput, crate::operation::create_event_data_store::CreateEventDataStoreError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailAccessNotEnabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_access_not_enabled_exception::de_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_access_not_enabled_exception::de_cloud_trail_access_not_enabled_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EventDataStoreAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_event_data_store_already_exists_exception::de_event_data_store_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_event_data_store_already_exists_exception::de_event_data_store_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EventDataStoreMaxLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_event_data_store_max_limit_exceeded_exception::de_event_data_store_max_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_event_data_store_max_limit_exceeded_exception::de_event_data_store_max_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientEncryptionPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_encryption_policy_exception::de_insufficient_encryption_policy_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEventSelectorsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_event_selectors_exception::de_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_event_selectors_exception::de_invalid_event_selectors_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKmsKeyIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_kms_key_id_exception::de_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_kms_key_id_exception::de_invalid_kms_key_id_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTagParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_exception::de_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_exception::de_kms_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_found_exception::de_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_key_not_found_exception::de_kms_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoManagementAccountSlrExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotOrganizationMasterAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationNotInAllFeaturesModeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_not_in_all_features_mode_exception::de_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_not_in_all_features_mode_exception::de_organization_not_in_all_features_mode_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationsNotInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organizations_not_in_use_exception::de_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_organizations_not_in_use_exception::de_organizations_not_in_use_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -331,13 +313,12 @@ pub fn de_create_event_data_store_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_event_data_store_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_event_data_store::CreateEventDataStoreOutput, crate::operation::create_event_data_store::CreateEventDataStoreError> {
+pub fn de_create_event_data_store_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_event_data_store::CreateEventDataStoreOutput, crate::operation::create_event_data_store::CreateEventDataStoreError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_event_data_store::builders::CreateEventDataStoreOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_event_data_store::de_create_event_data_store(response.body().as_ref(), output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_event_data_store::de_create_event_data_store(_response_body, output).map_err(crate::operation::create_event_data_store::CreateEventDataStoreError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

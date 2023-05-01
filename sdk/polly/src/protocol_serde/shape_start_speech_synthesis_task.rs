@@ -8,10 +8,10 @@ pub fn ser_start_speech_synthesis_task_input(input: &crate::operation::start_spe
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput, crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError> {
+pub fn de_start_speech_synthesis_task_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput, crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EngineNotSupportedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_engine_not_supported_exception::de_engine_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_engine_not_supported_exception::de_engine_not_supported_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3BucketExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_bucket_exception::de_invalid_s3_bucket_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_bucket_exception::de_invalid_s3_bucket_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3KeyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_key_exception::de_invalid_s3_key_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_key_exception::de_invalid_s3_key_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSampleRateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sample_rate_exception::de_invalid_sample_rate_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sample_rate_exception::de_invalid_sample_rate_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSnsTopicArnExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sns_topic_arn_exception::de_invalid_sns_topic_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sns_topic_arn_exception::de_invalid_sns_topic_arn_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSsmlExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_ssml_exception::de_invalid_ssml_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_ssml_exception::de_invalid_ssml_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LanguageNotSupportedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_language_not_supported_exception::de_language_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_language_not_supported_exception::de_language_not_supported_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LexiconNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_lexicon_not_found_exception::de_lexicon_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_lexicon_not_found_exception::de_lexicon_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MarksNotSupportedForFormatExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_marks_not_supported_for_format_exception::de_marks_not_supported_for_format_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_marks_not_supported_for_format_exception::de_marks_not_supported_for_format_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SsmlMarksNotSupportedForTextTypeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ssml_marks_not_supported_for_text_type_exception::de_ssml_marks_not_supported_for_text_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_ssml_marks_not_supported_for_text_type_exception::de_ssml_marks_not_supported_for_text_type_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TextLengthExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_text_length_exceeded_exception::de_text_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_text_length_exceeded_exception::de_text_length_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -229,13 +217,12 @@ pub fn de_start_speech_synthesis_task_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_speech_synthesis_task_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput, crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError> {
+pub fn de_start_speech_synthesis_task_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput, crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_speech_synthesis_task::de_start_speech_synthesis_task(response.body().as_ref(), output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_speech_synthesis_task::de_start_speech_synthesis_task(_response_body, output).map_err(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

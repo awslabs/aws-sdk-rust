@@ -91,11 +91,14 @@ impl ImportMigrationTask {
 impl aws_smithy_http::response::ParseStrictResponse for ImportMigrationTask {
                 type Output = std::result::Result<crate::operation::import_migration_task::ImportMigrationTaskOutput, crate::operation::import_migration_task::ImportMigrationTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_import_migration_task::de_import_migration_task_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_import_migration_task::de_import_migration_task_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_import_migration_task::de_import_migration_task_http_response(response)
+                        crate::protocol_serde::shape_import_migration_task::de_import_migration_task_http_response(status, headers, body)
                      }
                 }
             }

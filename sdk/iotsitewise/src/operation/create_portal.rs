@@ -93,11 +93,14 @@ impl CreatePortal {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePortal {
                 type Output = std::result::Result<crate::operation::create_portal::CreatePortalOutput, crate::operation::create_portal::CreatePortalError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::protocol_serde::shape_create_portal::de_create_portal_http_error(response)
+                     if !success && status != 202 {
+                        crate::protocol_serde::shape_create_portal::de_create_portal_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_create_portal::de_create_portal_http_response(response)
+                        crate::protocol_serde::shape_create_portal::de_create_portal_http_response(status, headers, body)
                      }
                 }
             }

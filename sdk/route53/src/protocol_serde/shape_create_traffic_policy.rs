@@ -11,10 +11,10 @@ pub fn ser_create_traffic_policy_op_input(input: &crate::operation::create_traff
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_traffic_policy_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyOutput, crate::operation::create_traffic_policy::CreateTrafficPolicyError> {
+pub fn de_create_traffic_policy_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyOutput, crate::operation::create_traffic_policy::CreateTrafficPolicyError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_create_traffic_policy_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_create_traffic_policy_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrafficPolicyDocumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_traffic_policy_document::de_invalid_traffic_policy_document_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_traffic_policy_document::de_invalid_traffic_policy_document_xml_err(_response_body, output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_create_traffic_policy_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyTrafficPoliciesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_traffic_policies::de_too_many_traffic_policies_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_traffic_policies::de_too_many_traffic_policies_xml_err(_response_body, output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -80,8 +77,7 @@ pub fn de_create_traffic_policy_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrafficPolicyAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_traffic_policy_already_exists::de_traffic_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_traffic_policy_already_exists::de_traffic_policy_already_exists_xml_err(_response_body, output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -96,17 +92,16 @@ pub fn de_create_traffic_policy_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_traffic_policy_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyOutput, crate::operation::create_traffic_policy::CreateTrafficPolicyError> {
+pub fn de_create_traffic_policy_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyOutput, crate::operation::create_traffic_policy::CreateTrafficPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_traffic_policy::builders::CreateTrafficPolicyOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_traffic_policy::de_create_traffic_policy(response.body().as_ref(), output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
+        output = crate::protocol_serde::shape_create_traffic_policy::de_create_traffic_policy(_response_body, output).map_err(crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled)?;
         output = output.set_location(
-            crate::protocol_serde::shape_create_traffic_policy_output::de_location_header(response.headers())
+            crate::protocol_serde::shape_create_traffic_policy_output::de_location_header(_response_headers)
                                     .map_err(|_|crate::operation::create_traffic_policy::CreateTrafficPolicyError::unhandled("Failed to parse Location from header `Location"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

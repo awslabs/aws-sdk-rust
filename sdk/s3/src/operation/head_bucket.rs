@@ -91,12 +91,15 @@ impl HeadBucket {
 impl aws_smithy_http::response::ParseStrictResponse for HeadBucket {
                 type Output = std::result::Result<crate::operation::head_bucket::HeadBucketOutput, crate::operation::head_bucket::HeadBucketError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
 tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_head_bucket::de_head_bucket_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_head_bucket::de_head_bucket_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_head_bucket::de_head_bucket_http_response(response)
+                        crate::protocol_serde::shape_head_bucket::de_head_bucket_http_response(status, headers, body)
                      }
                 }
             }

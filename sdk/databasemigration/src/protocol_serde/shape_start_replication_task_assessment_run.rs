@@ -8,10 +8,10 @@ pub fn ser_start_replication_task_assessment_run_input(input: &crate::operation:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_replication_task_assessment_run_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput, crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError> {
+pub fn de_start_replication_task_assessment_run_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput, crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResourceStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsAccessDeniedFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_access_denied_fault::de_kms_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_access_denied_fault::de_kms_access_denied_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsDisabledFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_disabled_fault::de_kms_disabled_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_disabled_fault::de_kms_disabled_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_fault::de_kms_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_fault::de_kms_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsInvalidStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_state_fault::de_kms_invalid_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_invalid_state_fault::de_kms_invalid_state_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_not_found_fault::de_kms_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_not_found_fault::de_kms_not_found_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceAlreadyExistsFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_already_exists_fault::de_resource_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_already_exists_fault::de_resource_already_exists_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::S3AccessDeniedFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_s3_access_denied_fault::de_s3_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_s3_access_denied_fault::de_s3_access_denied_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::S3ResourceNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_s3_resource_not_found_fault::de_s3_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_s3_resource_not_found_fault::de_s3_resource_not_found_fault_json_err(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -229,13 +217,12 @@ pub fn de_start_replication_task_assessment_run_http_error(response: &http::Resp
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_replication_task_assessment_run_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput, crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError> {
+pub fn de_start_replication_task_assessment_run_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput, crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_replication_task_assessment_run::de_start_replication_task_assessment_run(response.body().as_ref(), output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_replication_task_assessment_run::de_start_replication_task_assessment_run(_response_body, output).map_err(crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -55,11 +55,11 @@ impl Token for Standard {
 #[cfg(test)]
 mod tests {
     use super::Standard as Token;
-    use crate::retries::rate_limiting::token_bucket::Standard as TokenBucket;
+    use crate::client::retries::rate_limiting::token_bucket::Standard as TokenBucket;
 
     #[test]
     fn token_bucket_trait_is_dyn_safe() {
-        let _tb: Box<dyn crate::retries::rate_limiting::TokenBucket<Token = Token>> =
+        let _tb: Box<dyn crate::client::retries::rate_limiting::TokenBucket<Token = Token>> =
             Box::new(TokenBucket::builder().build());
     }
 }

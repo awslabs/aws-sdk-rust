@@ -8,10 +8,10 @@ pub fn ser_create_regex_pattern_set_input(input: &crate::operation::create_regex
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_regex_pattern_set_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput, crate::operation::create_regex_pattern_set::CreateRegexPatternSetError> {
+pub fn de_create_regex_pattern_set_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput, crate::operation::create_regex_pattern_set::CreateRegexPatternSetError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_regex_pattern_set_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafDisallowedNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_disallowed_name_exception::de_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_disallowed_name_exception::de_waf_disallowed_name_exception_json_err(_response_body, output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_regex_pattern_set_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafInternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_internal_error_exception::de_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_internal_error_exception::de_waf_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_regex_pattern_set_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafLimitsExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_limits_exceeded_exception::de_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_limits_exceeded_exception::de_waf_limits_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_regex_pattern_set_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafStaleDataExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_stale_data_exception::de_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_stale_data_exception::de_waf_stale_data_exception_json_err(_response_body, output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_create_regex_pattern_set_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_regex_pattern_set_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput, crate::operation::create_regex_pattern_set::CreateRegexPatternSetError> {
+pub fn de_create_regex_pattern_set_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput, crate::operation::create_regex_pattern_set::CreateRegexPatternSetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_regex_pattern_set::de_create_regex_pattern_set(response.body().as_ref(), output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_regex_pattern_set::de_create_regex_pattern_set(_response_body, output).map_err(crate::operation::create_regex_pattern_set::CreateRegexPatternSetError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

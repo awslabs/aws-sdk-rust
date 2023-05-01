@@ -91,11 +91,14 @@ impl GetDeleteEventsByEventTypeStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetDeleteEventsByEventTypeStatus {
                 type Output = std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_response(response)
+                        crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_response(status, headers, body)
                      }
                 }
             }

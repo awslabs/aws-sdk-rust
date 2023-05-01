@@ -8,10 +8,10 @@ pub fn ser_describe_instance_patch_states_for_patch_group_input(input: &crate::o
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_instance_patch_states_for_patch_group_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput, crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError> {
+pub fn de_describe_instance_patch_states_for_patch_group_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput, crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_instance_patch_states_for_patch_group_http_error(response: &h
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_instance_patch_states_for_patch_group_http_error(response: &h
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilterBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_filter::de_invalid_filter_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_filter::de_invalid_filter_json_err(_response_body, output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_describe_instance_patch_states_for_patch_group_http_error(response: &h
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_json_err(_response_body, output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_describe_instance_patch_states_for_patch_group_http_error(response: &h
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_instance_patch_states_for_patch_group_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput, crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError> {
+pub fn de_describe_instance_patch_states_for_patch_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput, crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_instance_patch_states_for_patch_group::de_describe_instance_patch_states_for_patch_group(response.body().as_ref(), output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_instance_patch_states_for_patch_group::de_describe_instance_patch_states_for_patch_group(_response_body, output).map_err(crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

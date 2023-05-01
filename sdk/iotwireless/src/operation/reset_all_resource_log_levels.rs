@@ -82,11 +82,14 @@ impl ResetAllResourceLogLevels {
 impl aws_smithy_http::response::ParseStrictResponse for ResetAllResourceLogLevels {
                 type Output = std::result::Result<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsOutput, crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 204 {
-                        crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_error(response)
+                     if !success && status != 204 {
+                        crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_response(response)
+                        crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_response(status, headers, body)
                      }
                 }
             }

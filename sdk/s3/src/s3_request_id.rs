@@ -60,6 +60,12 @@ impl<B> RequestIdExt for http::Response<B> {
     }
 }
 
+impl RequestIdExt for HeaderMap {
+    fn extended_request_id(&self) -> Option<&str> {
+        extract_extended_request_id(self)
+    }
+}
+
 impl<O, E> RequestIdExt for Result<O, E>
 where
     O: RequestIdExt,

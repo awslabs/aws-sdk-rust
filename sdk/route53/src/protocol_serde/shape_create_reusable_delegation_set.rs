@@ -11,10 +11,10 @@ pub fn ser_create_reusable_delegation_set_op_input(input: &crate::operation::cre
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput, crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError> {
+pub fn de_create_reusable_delegation_set_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput, crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DelegationSetAlreadyCreatedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_delegation_set_already_created::de_delegation_set_already_created_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_delegation_set_already_created::de_delegation_set_already_created_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DelegationSetAlreadyReusableBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_delegation_set_already_reusable::de_delegation_set_already_reusable_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_delegation_set_already_reusable::de_delegation_set_already_reusable_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DelegationSetNotAvailableBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_delegation_set_not_available::de_delegation_set_not_available_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_delegation_set_not_available::de_delegation_set_not_available_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -80,8 +77,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HostedZoneNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_hosted_zone_not_found::de_hosted_zone_not_found_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_hosted_zone_not_found::de_hosted_zone_not_found_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -97,8 +93,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -114,8 +109,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -131,8 +125,7 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitsExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limits_exceeded::de_limits_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_limits_exceeded::de_limits_exceeded_xml_err(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -147,17 +140,16 @@ pub fn de_create_reusable_delegation_set_http_error(response: &http::Response<by
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_reusable_delegation_set_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput, crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError> {
+pub fn de_create_reusable_delegation_set_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput, crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_reusable_delegation_set::de_create_reusable_delegation_set(response.body().as_ref(), output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
+        output = crate::protocol_serde::shape_create_reusable_delegation_set::de_create_reusable_delegation_set(_response_body, output).map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
         output = output.set_location(
-            crate::protocol_serde::shape_create_reusable_delegation_set_output::de_location_header(response.headers())
+            crate::protocol_serde::shape_create_reusable_delegation_set_output::de_location_header(_response_headers)
                                     .map_err(|_|crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled("Failed to parse Location from header `Location"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_post_comment_for_compared_commit_input(input: &crate::operation::post
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput, crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError> {
+pub fn de_post_comment_for_compared_commit_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput, crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BeforeCommitIdAndAfterCommitIdAreSameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_before_commit_id_and_after_commit_id_are_same_exception::de_before_commit_id_and_after_commit_id_are_same_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_before_commit_id_and_after_commit_id_are_same_exception::de_before_commit_id_and_after_commit_id_are_same_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientRequestTokenRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_request_token_required_exception::de_client_request_token_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_request_token_required_exception::de_client_request_token_required_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentContentRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_content_required_exception::de_comment_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_content_required_exception::de_comment_content_required_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentContentSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_content_size_limit_exceeded_exception::de_comment_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_content_size_limit_exceeded_exception::de_comment_content_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommitDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_commit_does_not_exist_exception::de_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_commit_does_not_exist_exception::de_commit_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommitIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_commit_id_required_exception::de_commit_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_commit_id_required_exception::de_commit_id_required_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_idempotency_parameter_mismatch_exception::de_idempotency_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_idempotency_parameter_mismatch_exception::de_idempotency_parameter_mismatch_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClientRequestTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_client_request_token_exception::de_invalid_client_request_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_client_request_token_exception::de_invalid_client_request_token_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCommitIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_commit_id_exception::de_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_commit_id_exception::de_invalid_commit_id_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFileLocationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_file_location_exception::de_invalid_file_location_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_file_location_exception::de_invalid_file_location_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilePositionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_file_position_exception::de_invalid_file_position_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_file_position_exception::de_invalid_file_position_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPathExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_path_exception::de_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_path_exception::de_invalid_path_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRelativeFileVersionEnumExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_relative_file_version_enum_exception::de_invalid_relative_file_version_enum_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_relative_file_version_enum_exception::de_invalid_relative_file_version_enum_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -332,8 +314,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRepositoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -349,8 +330,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PathDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_path_does_not_exist_exception::de_path_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_path_does_not_exist_exception::de_path_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -366,8 +346,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PathRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_path_required_exception::de_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_path_required_exception::de_path_required_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -383,8 +362,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -400,8 +378,7 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -416,13 +393,12 @@ pub fn de_post_comment_for_compared_commit_http_error(response: &http::Response<
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_post_comment_for_compared_commit_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput, crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError> {
+pub fn de_post_comment_for_compared_commit_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput, crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_post_comment_for_compared_commit::de_post_comment_for_compared_commit(response.body().as_ref(), output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_post_comment_for_compared_commit::de_post_comment_for_compared_commit(_response_body, output).map_err(crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

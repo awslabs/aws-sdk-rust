@@ -58,6 +58,12 @@ impl<B> RequestId for http::Response<B> {
     }
 }
 
+impl RequestId for HeaderMap {
+    fn request_id(&self) -> Option<&str> {
+        extract_request_id(self)
+    }
+}
+
 impl<O, E> RequestId for Result<O, E>
 where
     O: RequestId,

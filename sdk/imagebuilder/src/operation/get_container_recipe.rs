@@ -93,11 +93,14 @@ impl GetContainerRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for GetContainerRecipe {
                 type Output = std::result::Result<crate::operation::get_container_recipe::GetContainerRecipeOutput, crate::operation::get_container_recipe::GetContainerRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_container_recipe::de_get_container_recipe_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_container_recipe::de_get_container_recipe_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_container_recipe::de_get_container_recipe_http_response(response)
+                        crate::protocol_serde::shape_get_container_recipe::de_get_container_recipe_http_response(status, headers, body)
                      }
                 }
             }

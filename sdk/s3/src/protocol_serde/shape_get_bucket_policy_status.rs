@@ -21,26 +21,25 @@ pub fn ser_get_bucket_policy_status_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_bucket_policy_status_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput, crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError> {
+pub fn de_get_bucket_policy_status_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput, crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_bucket_policy_status_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput, crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError> {
+pub fn de_get_bucket_policy_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput, crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_bucket_policy_status::builders::GetBucketPolicyStatusOutputBuilder::default();
-        let _ = response;
         output = output.set_policy_status(
-            crate::protocol_serde::shape_get_bucket_policy_status_output::de_policy_status_payload(response.body().as_ref())?
+            crate::protocol_serde::shape_get_bucket_policy_status_output::de_policy_status_payload(_response_body)?
         );
-        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string));
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_get_identity_pool_roles_input(input: &crate::operation::get_identity_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput, crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError> {
+pub fn de_get_identity_pool_roles_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput, crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_get_identity_pool_roles_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_identity_pool_roles_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput, crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError> {
+pub fn de_get_identity_pool_roles_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput, crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_identity_pool_roles::de_get_identity_pool_roles(response.body().as_ref(), output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_identity_pool_roles::de_get_identity_pool_roles(_response_body, output).map_err(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

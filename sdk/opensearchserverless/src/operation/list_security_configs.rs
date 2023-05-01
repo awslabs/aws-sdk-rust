@@ -91,11 +91,14 @@ impl ListSecurityConfigs {
 impl aws_smithy_http::response::ParseStrictResponse for ListSecurityConfigs {
                 type Output = std::result::Result<crate::operation::list_security_configs::ListSecurityConfigsOutput, crate::operation::list_security_configs::ListSecurityConfigsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_security_configs::de_list_security_configs_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_security_configs::de_list_security_configs_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_security_configs::de_list_security_configs_http_response(response)
+                        crate::protocol_serde::shape_list_security_configs::de_list_security_configs_http_response(status, headers, body)
                      }
                 }
             }

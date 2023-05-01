@@ -11,10 +11,10 @@ pub fn ser_get_realtime_log_config_op_input(input: &crate::operation::get_realti
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_realtime_log_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput, crate::operation::get_realtime_log_config::GetRealtimeLogConfigError> {
+pub fn de_get_realtime_log_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput, crate::operation::get_realtime_log_config::GetRealtimeLogConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_get_realtime_log_config_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_get_realtime_log_config_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_get_realtime_log_config_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -79,13 +76,12 @@ pub fn de_get_realtime_log_config_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_realtime_log_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput, crate::operation::get_realtime_log_config::GetRealtimeLogConfigError> {
+pub fn de_get_realtime_log_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput, crate::operation::get_realtime_log_config::GetRealtimeLogConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_realtime_log_config::de_get_realtime_log_config(response.body().as_ref(), output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_realtime_log_config::de_get_realtime_log_config(_response_body, output).map_err(crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

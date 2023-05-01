@@ -8,10 +8,10 @@ pub fn ser_update_document_default_version_input(input: &crate::operation::updat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_document_default_version_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput, crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError> {
+pub fn de_update_document_default_version_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput, crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_document_default_version_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_document_default_version_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document::de_invalid_document_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document::de_invalid_document_json_err(_response_body, output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_document_default_version_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentSchemaVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document_schema_version::de_invalid_document_schema_version_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document_schema_version::de_invalid_document_schema_version_json_err(_response_body, output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_document_default_version_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDocumentVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_document_version::de_invalid_document_version_json_err(response.body().as_ref(), output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_document_version::de_invalid_document_version_json_err(_response_body, output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_update_document_default_version_http_error(response: &http::Response<b
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_document_default_version_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput, crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError> {
+pub fn de_update_document_default_version_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput, crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_document_default_version::de_update_document_default_version(response.body().as_ref(), output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_document_default_version::de_update_document_default_version(_response_body, output).map_err(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

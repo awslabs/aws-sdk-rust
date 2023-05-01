@@ -8,10 +8,10 @@ pub fn ser_put_delivery_channel_input(input: &crate::operation::put_delivery_cha
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_delivery_channel::PutDeliveryChannelOutput, crate::operation::put_delivery_channel::PutDeliveryChannelError> {
+pub fn de_put_delivery_channel_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_delivery_channel::PutDeliveryChannelOutput, crate::operation::put_delivery_channel::PutDeliveryChannelError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDeliveryPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_delivery_policy_exception::de_insufficient_delivery_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_delivery_policy_exception::de_insufficient_delivery_policy_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeliveryChannelNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_delivery_channel_name_exception::de_invalid_delivery_channel_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_delivery_channel_name_exception::de_invalid_delivery_channel_name_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3KeyPrefixExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_key_prefix_exception::de_invalid_s3_key_prefix_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_key_prefix_exception::de_invalid_s3_key_prefix_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidS3KmsKeyArnExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_kms_key_arn_exception::de_invalid_s3_kms_key_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_kms_key_arn_exception::de_invalid_s3_kms_key_arn_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSnsTopicArnExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sns_topic_arn_exception::de_invalid_sns_topic_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sns_topic_arn_exception::de_invalid_sns_topic_arn_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxNumberOfDeliveryChannelsExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_number_of_delivery_channels_exceeded_exception::de_max_number_of_delivery_channels_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_number_of_delivery_channels_exceeded_exception::de_max_number_of_delivery_channels_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoAvailableConfigurationRecorderExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_available_configuration_recorder_exception::de_no_available_configuration_recorder_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_available_configuration_recorder_exception::de_no_available_configuration_recorder_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchBucketExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_bucket_exception::de_no_such_bucket_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_bucket_exception::de_no_such_bucket_exception_json_err(_response_body, output).map_err(crate::operation::put_delivery_channel::PutDeliveryChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,12 +153,11 @@ pub fn de_put_delivery_channel_http_error(response: &http::Response<bytes::Bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_delivery_channel_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_delivery_channel::PutDeliveryChannelOutput, crate::operation::put_delivery_channel::PutDeliveryChannelError> {
+pub fn de_put_delivery_channel_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_delivery_channel::PutDeliveryChannelOutput, crate::operation::put_delivery_channel::PutDeliveryChannelError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_delivery_channel::builders::PutDeliveryChannelOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

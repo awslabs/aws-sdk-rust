@@ -91,11 +91,14 @@ impl ListS3Resources {
 impl aws_smithy_http::response::ParseStrictResponse for ListS3Resources {
                 type Output = std::result::Result<crate::operation::list_s3_resources::ListS3ResourcesOutput, crate::operation::list_s3_resources::ListS3ResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_s3_resources::de_list_s3_resources_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_s3_resources::de_list_s3_resources_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_s3_resources::de_list_s3_resources_http_response(response)
+                        crate::protocol_serde::shape_list_s3_resources::de_list_s3_resources_http_response(status, headers, body)
                      }
                 }
             }

@@ -8,10 +8,10 @@ pub fn ser_list_image_packages_input(input: &crate::operation::list_image_packag
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_image_packages::ListImagePackagesOutput, crate::operation::list_image_packages::ListImagePackagesError> {
+pub fn de_list_image_packages_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_image_packages::ListImagePackagesOutput, crate::operation::list_image_packages::ListImagePackagesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CallRateLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPaginationTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_pagination_token_exception::de_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_pagination_token_exception::de_invalid_pagination_token_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_list_image_packages_http_error(response: &http::Response<bytes::Bytes>
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_image_packages_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_image_packages::ListImagePackagesOutput, crate::operation::list_image_packages::ListImagePackagesError> {
+pub fn de_list_image_packages_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_image_packages::ListImagePackagesOutput, crate::operation::list_image_packages::ListImagePackagesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_image_packages::builders::ListImagePackagesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_image_packages::de_list_image_packages(response.body().as_ref(), output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_image_packages::de_list_image_packages(_response_body, output).map_err(crate::operation::list_image_packages::ListImagePackagesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

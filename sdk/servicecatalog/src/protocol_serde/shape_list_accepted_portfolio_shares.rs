@@ -8,10 +8,10 @@ pub fn ser_list_accepted_portfolio_shares_input(input: &crate::operation::list_a
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_accepted_portfolio_shares_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput, crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError> {
+pub fn de_list_accepted_portfolio_shares_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput, crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_accepted_portfolio_shares_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParametersExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(_response_body, output).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_accepted_portfolio_shares_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotSupportedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_json_err(_response_body, output).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_list_accepted_portfolio_shares_http_error(response: &http::Response<by
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_accepted_portfolio_shares_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput, crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError> {
+pub fn de_list_accepted_portfolio_shares_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput, crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_accepted_portfolio_shares::de_list_accepted_portfolio_shares(response.body().as_ref(), output).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_accepted_portfolio_shares::de_list_accepted_portfolio_shares(_response_body, output).map_err(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -89,11 +89,14 @@ impl AllocateIpamPoolCidr {
 impl aws_smithy_http::response::ParseStrictResponse for AllocateIpamPoolCidr {
                 type Output = std::result::Result<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput, crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_allocate_ipam_pool_cidr::de_allocate_ipam_pool_cidr_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_allocate_ipam_pool_cidr::de_allocate_ipam_pool_cidr_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_allocate_ipam_pool_cidr::de_allocate_ipam_pool_cidr_http_response(response)
+                        crate::protocol_serde::shape_allocate_ipam_pool_cidr::de_allocate_ipam_pool_cidr_http_response(status, headers, body)
                      }
                 }
             }

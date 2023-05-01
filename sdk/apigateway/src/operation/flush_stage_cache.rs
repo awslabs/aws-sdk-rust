@@ -98,11 +98,14 @@ impl FlushStageCache {
 impl aws_smithy_http::response::ParseStrictResponse for FlushStageCache {
                 type Output = std::result::Result<crate::operation::flush_stage_cache::FlushStageCacheOutput, crate::operation::flush_stage_cache::FlushStageCacheError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 202 {
-                        crate::protocol_serde::shape_flush_stage_cache::de_flush_stage_cache_http_error(response)
+                     if !success && status != 202 {
+                        crate::protocol_serde::shape_flush_stage_cache::de_flush_stage_cache_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_flush_stage_cache::de_flush_stage_cache_http_response(response)
+                        crate::protocol_serde::shape_flush_stage_cache::de_flush_stage_cache_http_response(status, headers, body)
                      }
                 }
             }

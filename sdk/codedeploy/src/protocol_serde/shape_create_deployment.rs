@@ -8,10 +8,10 @@ pub fn ser_create_deployment_input(input: &crate::operation::create_deployment::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, crate::operation::create_deployment::CreateDeploymentError> {
+pub fn de_create_deployment_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, crate::operation::create_deployment::CreateDeploymentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AlarmsLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_alarms_limit_exceeded_exception::de_alarms_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_alarms_limit_exceeded_exception::de_alarms_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApplicationDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_application_does_not_exist_exception::de_application_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_application_does_not_exist_exception::de_application_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApplicationNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_application_name_required_exception::de_application_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_application_name_required_exception::de_application_name_required_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentConfigDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_config_does_not_exist_exception::de_deployment_config_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_config_does_not_exist_exception::de_deployment_config_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentGroupDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_group_does_not_exist_exception::de_deployment_group_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_group_does_not_exist_exception::de_deployment_group_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentGroupNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_group_name_required_exception::de_deployment_group_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_group_name_required_exception::de_deployment_group_name_required_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_limit_exceeded_exception::de_deployment_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_limit_exceeded_exception::de_deployment_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DescriptionTooLongExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_description_too_long_exception::de_description_too_long_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_description_too_long_exception::de_description_too_long_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAlarmConfigExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_alarm_config_exception::de_invalid_alarm_config_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_alarm_config_exception::de_invalid_alarm_config_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApplicationNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_application_name_exception::de_invalid_application_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_application_name_exception::de_invalid_application_name_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAutoRollbackConfigExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_auto_rollback_config_exception::de_invalid_auto_rollback_config_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_auto_rollback_config_exception::de_invalid_auto_rollback_config_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAutoScalingGroupExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_auto_scaling_group_exception::de_invalid_auto_scaling_group_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_auto_scaling_group_exception::de_invalid_auto_scaling_group_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentConfigNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_config_name_exception::de_invalid_deployment_config_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_config_name_exception::de_invalid_deployment_config_name_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentGroupNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_group_name_exception::de_invalid_deployment_group_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_group_name_exception::de_invalid_deployment_group_name_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFileExistsBehaviorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_file_exists_behavior_exception::de_invalid_file_exists_behavior_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_file_exists_behavior_exception::de_invalid_file_exists_behavior_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidGitHubAccountTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_git_hub_account_token_exception::de_invalid_git_hub_account_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_git_hub_account_token_exception::de_invalid_git_hub_account_token_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidIgnoreApplicationStopFailuresValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_ignore_application_stop_failures_value_exception::de_invalid_ignore_application_stop_failures_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_ignore_application_stop_failures_value_exception::de_invalid_ignore_application_stop_failures_value_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLoadBalancerInfoExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_load_balancer_info_exception::de_invalid_load_balancer_info_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_load_balancer_info_exception::de_invalid_load_balancer_info_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -332,8 +314,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRevisionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_revision_exception::de_invalid_revision_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_revision_exception::de_invalid_revision_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -349,8 +330,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRoleExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_role_exception::de_invalid_role_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_role_exception::de_invalid_role_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -366,8 +346,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTargetInstancesExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_target_instances_exception::de_invalid_target_instances_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_target_instances_exception::de_invalid_target_instances_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -383,8 +362,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrafficRoutingConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_traffic_routing_configuration_exception::de_invalid_traffic_routing_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_traffic_routing_configuration_exception::de_invalid_traffic_routing_configuration_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -400,8 +378,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidUpdateOutdatedInstancesOnlyValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_update_outdated_instances_only_value_exception::de_invalid_update_outdated_instances_only_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_update_outdated_instances_only_value_exception::de_invalid_update_outdated_instances_only_value_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -417,8 +394,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RevisionDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_revision_does_not_exist_exception::de_revision_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_revision_does_not_exist_exception::de_revision_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -434,8 +410,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RevisionRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_revision_required_exception::de_revision_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_revision_required_exception::de_revision_required_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -451,8 +426,7 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -467,13 +441,12 @@ pub fn de_create_deployment_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_deployment_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, crate::operation::create_deployment::CreateDeploymentError> {
+pub fn de_create_deployment_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, crate::operation::create_deployment::CreateDeploymentError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_deployment::de_create_deployment(response.body().as_ref(), output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_deployment::de_create_deployment(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

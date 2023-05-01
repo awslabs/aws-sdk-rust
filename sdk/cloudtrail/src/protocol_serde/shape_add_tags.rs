@@ -8,10 +8,10 @@ pub fn ser_add_tags_input(input: &crate::operation::add_tags::AddTagsInput) -> R
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::add_tags::AddTagsOutput, crate::operation::add_tags::AddTagsError> {
+pub fn de_add_tags_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_tags::AddTagsOutput, crate::operation::add_tags::AddTagsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ChannelNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_channel_not_found_exception::de_channel_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_channel_not_found_exception::de_channel_not_found_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailArnInvalidExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_arn_invalid_exception::de_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_arn_invalid_exception::de_cloud_trail_arn_invalid_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EventDataStoreNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_event_data_store_not_found_exception::de_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_event_data_store_not_found_exception::de_event_data_store_not_found_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InactiveEventDataStoreExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_inactive_event_data_store_exception::de_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_inactive_event_data_store_exception::de_inactive_event_data_store_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTagParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoManagementAccountSlrExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_management_account_slr_exists_exception::de_no_management_account_slr_exists_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotOrganizationMasterAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_organization_master_account_exception::de_not_organization_master_account_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceTypeNotSupportedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_type_not_supported_exception::de_resource_type_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_type_not_supported_exception::de_resource_type_not_supported_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TagsLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tags_limit_exceeded_exception::de_tags_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_tags_limit_exceeded_exception::de_tags_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -263,12 +249,11 @@ pub fn de_add_tags_http_error(response: &http::Response<bytes::Bytes>) -> std::r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_add_tags_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::add_tags::AddTagsOutput, crate::operation::add_tags::AddTagsError> {
+pub fn de_add_tags_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_tags::AddTagsOutput, crate::operation::add_tags::AddTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::add_tags::builders::AddTagsOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

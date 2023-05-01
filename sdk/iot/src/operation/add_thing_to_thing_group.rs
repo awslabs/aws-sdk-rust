@@ -86,11 +86,14 @@ impl AddThingToThingGroup {
 impl aws_smithy_http::response::ParseStrictResponse for AddThingToThingGroup {
                 type Output = std::result::Result<crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput, crate::operation::add_thing_to_thing_group::AddThingToThingGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_add_thing_to_thing_group::de_add_thing_to_thing_group_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_add_thing_to_thing_group::de_add_thing_to_thing_group_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_add_thing_to_thing_group::de_add_thing_to_thing_group_http_response(response)
+                        crate::protocol_serde::shape_add_thing_to_thing_group::de_add_thing_to_thing_group_http_response(status, headers, body)
                      }
                 }
             }

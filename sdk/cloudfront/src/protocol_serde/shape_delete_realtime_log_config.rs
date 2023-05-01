@@ -11,10 +11,10 @@ pub fn ser_delete_realtime_log_config_op_input(input: &crate::operation::delete_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_realtime_log_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput, crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError> {
+pub fn de_delete_realtime_log_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput, crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_delete_realtime_log_config_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_delete_realtime_log_config_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_delete_realtime_log_config_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -80,8 +77,7 @@ pub fn de_delete_realtime_log_config_http_error(response: &http::Response<bytes:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RealtimeLogConfigInUseBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_realtime_log_config_in_use::de_realtime_log_config_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_realtime_log_config_in_use::de_realtime_log_config_in_use_xml_err(_response_body, output).map_err(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -96,12 +92,11 @@ pub fn de_delete_realtime_log_config_http_error(response: &http::Response<bytes:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_realtime_log_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput, crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError> {
+pub fn de_delete_realtime_log_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput, crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -88,11 +88,14 @@ impl DisassociateFromAdministratorAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateFromAdministratorAccount {
                 type Output = std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput, crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_disassociate_from_administrator_account::de_disassociate_from_administrator_account_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_disassociate_from_administrator_account::de_disassociate_from_administrator_account_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_disassociate_from_administrator_account::de_disassociate_from_administrator_account_http_response(response)
+                        crate::protocol_serde::shape_disassociate_from_administrator_account::de_disassociate_from_administrator_account_http_response(status, headers, body)
                      }
                 }
             }

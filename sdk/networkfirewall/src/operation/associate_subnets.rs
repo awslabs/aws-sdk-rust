@@ -91,11 +91,14 @@ impl AssociateSubnets {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateSubnets {
                 type Output = std::result::Result<crate::operation::associate_subnets::AssociateSubnetsOutput, crate::operation::associate_subnets::AssociateSubnetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_associate_subnets::de_associate_subnets_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_associate_subnets::de_associate_subnets_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_associate_subnets::de_associate_subnets_http_response(response)
+                        crate::protocol_serde::shape_associate_subnets::de_associate_subnets_http_response(status, headers, body)
                      }
                 }
             }

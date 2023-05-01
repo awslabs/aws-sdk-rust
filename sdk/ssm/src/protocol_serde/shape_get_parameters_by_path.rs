@@ -8,10 +8,10 @@ pub fn ser_get_parameters_by_path_input(input: &crate::operation::get_parameters
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathOutput, crate::operation::get_parameters_by_path::GetParametersByPathError> {
+pub fn de_get_parameters_by_path_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathOutput, crate::operation::get_parameters_by_path::GetParametersByPathError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilterKeyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_filter_key::de_invalid_filter_key_json_err(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_filter_key::de_invalid_filter_key_json_err(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilterOptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_filter_option::de_invalid_filter_option_json_err(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_filter_option::de_invalid_filter_option_json_err(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidFilterValueBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_filter_value::de_invalid_filter_value_json_err(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_filter_value::de_invalid_filter_value_json_err(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKeyIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_id::de_invalid_key_id_json_err(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_key_id::de_invalid_key_id_json_err(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_json_err(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_json_err(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_get_parameters_by_path_http_error(response: &http::Response<bytes::Byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_parameters_by_path_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathOutput, crate::operation::get_parameters_by_path::GetParametersByPathError> {
+pub fn de_get_parameters_by_path_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathOutput, crate::operation::get_parameters_by_path::GetParametersByPathError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_parameters_by_path::builders::GetParametersByPathOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_parameters_by_path::de_get_parameters_by_path(response.body().as_ref(), output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_parameters_by_path::de_get_parameters_by_path(_response_body, output).map_err(crate::operation::get_parameters_by_path::GetParametersByPathError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

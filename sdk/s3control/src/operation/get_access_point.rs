@@ -14,8 +14,8 @@ impl GetAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -94,11 +94,14 @@ impl GetAccessPoint {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccessPoint {
                 type Output = std::result::Result<crate::operation::get_access_point::GetAccessPointOutput, crate::operation::get_access_point::GetAccessPointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_access_point::de_get_access_point_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_access_point::de_get_access_point_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_access_point::de_get_access_point_http_response(response)
+                        crate::protocol_serde::shape_get_access_point::de_get_access_point_http_response(status, headers, body)
                      }
                 }
             }

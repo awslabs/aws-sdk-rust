@@ -21,10 +21,10 @@ pub fn ser_update_key_group_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_key_group::UpdateKeyGroupOutput, crate::operation::update_key_group::UpdateKeyGroupError> {
+pub fn de_update_key_group_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_key_group::UpdateKeyGroupOutput, crate::operation::update_key_group::UpdateKeyGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -39,8 +39,7 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,8 +55,7 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,8 +71,7 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KeyGroupAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_key_group_already_exists::de_key_group_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_key_group_already_exists::de_key_group_already_exists_xml_err(_response_body, output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,8 +87,7 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchResourceBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(_response_body, output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -107,8 +103,7 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -124,8 +119,7 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyPublicKeysInKeyGroupBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_public_keys_in_key_group::de_too_many_public_keys_in_key_group_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_public_keys_in_key_group::de_too_many_public_keys_in_key_group_xml_err(_response_body, output).map_err(crate::operation::update_key_group::UpdateKeyGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -140,19 +134,18 @@ pub fn de_update_key_group_http_error(response: &http::Response<bytes::Bytes>) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_key_group_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_key_group::UpdateKeyGroupOutput, crate::operation::update_key_group::UpdateKeyGroupError> {
+pub fn de_update_key_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_key_group::UpdateKeyGroupOutput, crate::operation::update_key_group::UpdateKeyGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_key_group::builders::UpdateKeyGroupOutputBuilder::default();
-        let _ = response;
         output = output.set_e_tag(
-            crate::protocol_serde::shape_update_key_group_output::de_e_tag_header(response.headers())
+            crate::protocol_serde::shape_update_key_group_output::de_e_tag_header(_response_headers)
                                     .map_err(|_|crate::operation::update_key_group::UpdateKeyGroupError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_key_group(
-            crate::protocol_serde::shape_update_key_group_output::de_key_group_payload(response.body().as_ref())?
+            crate::protocol_serde::shape_update_key_group_output::de_key_group_payload(_response_body)?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

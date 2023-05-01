@@ -8,10 +8,10 @@ pub fn ser_get_deployable_patch_snapshot_for_instance_input(input: &crate::opera
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_deployable_patch_snapshot_for_instance_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError> {
+pub fn de_get_deployable_patch_snapshot_for_instance_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(response: &http:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(response: &http:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedFeatureRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_feature_required_exception::de_unsupported_feature_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_feature_required_exception::de_unsupported_feature_required_exception_json_err(_response_body, output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(response: &http:
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperatingSystemBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operating_system::de_unsupported_operating_system_json_err(response.body().as_ref(), output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operating_system::de_unsupported_operating_system_json_err(_response_body, output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(response: &http:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_deployable_patch_snapshot_for_instance_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError> {
+pub fn de_get_deployable_patch_snapshot_for_instance_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_deployable_patch_snapshot_for_instance::de_get_deployable_patch_snapshot_for_instance(response.body().as_ref(), output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_deployable_patch_snapshot_for_instance::de_get_deployable_patch_snapshot_for_instance(_response_body, output).map_err(crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

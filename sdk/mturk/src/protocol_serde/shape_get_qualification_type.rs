@@ -8,10 +8,10 @@ pub fn ser_get_qualification_type_input(input: &crate::operation::get_qualificat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_qualification_type_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_qualification_type::GetQualificationTypeOutput, crate::operation::get_qualification_type::GetQualificationTypeError> {
+pub fn de_get_qualification_type_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_qualification_type::GetQualificationTypeOutput, crate::operation::get_qualification_type::GetQualificationTypeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_qualification_type_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RequestErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_request_error::de_request_error_json_err(response.body().as_ref(), output).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
+                    output = crate::protocol_serde::shape_request_error::de_request_error_json_err(_response_body, output).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_qualification_type_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_fault::de_service_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_fault::de_service_fault_json_err(_response_body, output).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_get_qualification_type_http_error(response: &http::Response<bytes::Byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_qualification_type_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_qualification_type::GetQualificationTypeOutput, crate::operation::get_qualification_type::GetQualificationTypeError> {
+pub fn de_get_qualification_type_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_qualification_type::GetQualificationTypeOutput, crate::operation::get_qualification_type::GetQualificationTypeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_qualification_type::builders::GetQualificationTypeOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_qualification_type::de_get_qualification_type(response.body().as_ref(), output).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_qualification_type::de_get_qualification_type(_response_body, output).map_err(crate::operation::get_qualification_type::GetQualificationTypeError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

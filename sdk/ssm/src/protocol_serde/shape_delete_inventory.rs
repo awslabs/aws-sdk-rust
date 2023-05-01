@@ -8,10 +8,10 @@ pub fn ser_delete_inventory_input(input: &crate::operation::delete_inventory::De
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_inventory::DeleteInventoryOutput, crate::operation::delete_inventory::DeleteInventoryError> {
+pub fn de_delete_inventory_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_inventory::DeleteInventoryOutput, crate::operation::delete_inventory::DeleteInventoryError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeleteInventoryParametersExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_delete_inventory_parameters_exception::de_invalid_delete_inventory_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_delete_inventory_parameters_exception::de_invalid_delete_inventory_parameters_exception_json_err(_response_body, output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInventoryRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_inventory_request_exception::de_invalid_inventory_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_inventory_request_exception::de_invalid_inventory_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOptionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_option_exception::de_invalid_option_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_option_exception::de_invalid_option_exception_json_err(_response_body, output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTypeNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_type_name_exception::de_invalid_type_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_type_name_exception::de_invalid_type_name_exception_json_err(_response_body, output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_delete_inventory_http_error(response: &http::Response<bytes::Bytes>) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_inventory_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_inventory::DeleteInventoryOutput, crate::operation::delete_inventory::DeleteInventoryError> {
+pub fn de_delete_inventory_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_inventory::DeleteInventoryOutput, crate::operation::delete_inventory::DeleteInventoryError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_inventory::builders::DeleteInventoryOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_delete_inventory::de_delete_inventory(response.body().as_ref(), output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_delete_inventory::de_delete_inventory(_response_body, output).map_err(crate::operation::delete_inventory::DeleteInventoryError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

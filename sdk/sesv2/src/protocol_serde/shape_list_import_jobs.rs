@@ -8,10 +8,10 @@ pub fn ser_list_import_jobs_input(input: &crate::operation::list_import_jobs::Li
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_import_jobs_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_import_jobs::ListImportJobsOutput, crate::operation::list_import_jobs::ListImportJobsError> {
+pub fn de_list_import_jobs_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_import_jobs::ListImportJobsOutput, crate::operation::list_import_jobs::ListImportJobsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_import_jobs_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_import_jobs_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_list_import_jobs_http_error(response: &http::Response<bytes::Bytes>) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_import_jobs_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_import_jobs::ListImportJobsOutput, crate::operation::list_import_jobs::ListImportJobsError> {
+pub fn de_list_import_jobs_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_import_jobs::ListImportJobsOutput, crate::operation::list_import_jobs::ListImportJobsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_import_jobs::builders::ListImportJobsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_import_jobs::de_list_import_jobs(response.body().as_ref(), output).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_import_jobs::de_list_import_jobs(_response_body, output).map_err(crate::operation::list_import_jobs::ListImportJobsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

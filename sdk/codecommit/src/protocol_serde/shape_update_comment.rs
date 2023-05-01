@@ -8,10 +8,10 @@ pub fn ser_update_comment_input(input: &crate::operation::update_comment::Update
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_comment::UpdateCommentOutput, crate::operation::update_comment::UpdateCommentError> {
+pub fn de_update_comment_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_comment::UpdateCommentOutput, crate::operation::update_comment::UpdateCommentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentContentRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_content_required_exception::de_comment_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_content_required_exception::de_comment_content_required_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentContentSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_content_size_limit_exceeded_exception::de_comment_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_content_size_limit_exceeded_exception::de_comment_content_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentDeletedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_deleted_exception::de_comment_deleted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_deleted_exception::de_comment_deleted_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_does_not_exist_exception::de_comment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_does_not_exist_exception::de_comment_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_id_required_exception::de_comment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_id_required_exception::de_comment_id_required_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CommentNotCreatedByCallerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_comment_not_created_by_caller_exception::de_comment_not_created_by_caller_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_comment_not_created_by_caller_exception::de_comment_not_created_by_caller_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCommentIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_comment_id_exception::de_invalid_comment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_comment_id_exception::de_invalid_comment_id_exception_json_err(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,13 +137,12 @@ pub fn de_update_comment_http_error(response: &http::Response<bytes::Bytes>) -> 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_comment_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_comment::UpdateCommentOutput, crate::operation::update_comment::UpdateCommentError> {
+pub fn de_update_comment_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_comment::UpdateCommentOutput, crate::operation::update_comment::UpdateCommentError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_comment::builders::UpdateCommentOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_update_comment::de_update_comment(response.body().as_ref(), output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_update_comment::de_update_comment(_response_body, output).map_err(crate::operation::update_comment::UpdateCommentError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

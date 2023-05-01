@@ -8,10 +8,10 @@ pub fn ser_batch_get_record_input(input: &crate::operation::batch_get_record::Ba
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_record_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_record::BatchGetRecordOutput, crate::operation::batch_get_record::BatchGetRecordError> {
+pub fn de_batch_get_record_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_record::BatchGetRecordOutput, crate::operation::batch_get_record::BatchGetRecordError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_batch_get_record_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessForbiddenBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_forbidden::de_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_forbidden::de_access_forbidden_json_err(_response_body, output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_batch_get_record_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_batch_get_record_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_batch_get_record_http_error(response: &http::Response<bytes::Bytes>) -
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_batch_get_record_http_error(response: &http::Response<bytes::Bytes>) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_record_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_record::BatchGetRecordOutput, crate::operation::batch_get_record::BatchGetRecordError> {
+pub fn de_batch_get_record_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_record::BatchGetRecordOutput, crate::operation::batch_get_record::BatchGetRecordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_get_record::builders::BatchGetRecordOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_batch_get_record::de_batch_get_record(response.body().as_ref(), output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_batch_get_record::de_batch_get_record(_response_body, output).map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

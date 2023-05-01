@@ -8,10 +8,10 @@ pub fn ser_query_assistant_input(input: &crate::operation::query_assistant::Quer
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_query_assistant_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::query_assistant::QueryAssistantOutput, crate::operation::query_assistant::QueryAssistantError> {
+pub fn de_query_assistant_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::query_assistant::QueryAssistantOutput, crate::operation::query_assistant::QueryAssistantError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_query_assistant_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_query_assistant_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_query_assistant_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_query_assistant_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_query_assistant_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::query_assistant::QueryAssistantOutput, crate::operation::query_assistant::QueryAssistantError> {
+pub fn de_query_assistant_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::query_assistant::QueryAssistantOutput, crate::operation::query_assistant::QueryAssistantError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::query_assistant::builders::QueryAssistantOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_query_assistant::de_query_assistant(response.body().as_ref(), output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_query_assistant::de_query_assistant(_response_body, output).map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

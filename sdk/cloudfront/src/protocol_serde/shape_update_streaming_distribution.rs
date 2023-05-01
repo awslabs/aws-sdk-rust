@@ -21,10 +21,10 @@ pub fn ser_update_streaming_distribution_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_streaming_distribution_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput, crate::operation::update_streaming_distribution::UpdateStreamingDistributionError> {
+pub fn de_update_streaming_distribution_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput, crate::operation::update_streaming_distribution::UpdateStreamingDistributionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -39,8 +39,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,8 +55,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CnameAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,8 +71,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IllegalUpdateBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_illegal_update::de_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_illegal_update::de_illegal_update_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,8 +87,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -107,8 +103,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -124,8 +119,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -141,8 +135,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginAccessControlBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -158,8 +151,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOriginAccessIdentityBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -175,8 +167,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingBodyBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -192,8 +183,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchStreamingDistributionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_streaming_distribution::de_no_such_streaming_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_streaming_distribution::de_no_such_streaming_distribution_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -209,8 +199,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -226,8 +215,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyStreamingDistributionCnamEsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_streaming_distribution_cnam_es::de_too_many_streaming_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_streaming_distribution_cnam_es::de_too_many_streaming_distribution_cnam_es_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -243,8 +231,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyTrustedSignersBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -260,8 +247,7 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TrustedSignerDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(_response_body, output).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -276,19 +262,18 @@ pub fn de_update_streaming_distribution_http_error(response: &http::Response<byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_streaming_distribution_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput, crate::operation::update_streaming_distribution::UpdateStreamingDistributionError> {
+pub fn de_update_streaming_distribution_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput, crate::operation::update_streaming_distribution::UpdateStreamingDistributionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionOutputBuilder::default();
-        let _ = response;
         output = output.set_e_tag(
-            crate::protocol_serde::shape_update_streaming_distribution_output::de_e_tag_header(response.headers())
+            crate::protocol_serde::shape_update_streaming_distribution_output::de_e_tag_header(_response_headers)
                                     .map_err(|_|crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_streaming_distribution(
-            crate::protocol_serde::shape_update_streaming_distribution_output::de_streaming_distribution_payload(response.body().as_ref())?
+            crate::protocol_serde::shape_update_streaming_distribution_output::de_streaming_distribution_payload(_response_body)?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

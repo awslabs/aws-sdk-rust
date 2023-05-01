@@ -89,11 +89,14 @@ impl CreateMediaInsightsPipelineConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMediaInsightsPipelineConfiguration {
                 type Output = std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput, crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 201 {
-                        crate::protocol_serde::shape_create_media_insights_pipeline_configuration::de_create_media_insights_pipeline_configuration_http_error(response)
+                     if !success && status != 201 {
+                        crate::protocol_serde::shape_create_media_insights_pipeline_configuration::de_create_media_insights_pipeline_configuration_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_create_media_insights_pipeline_configuration::de_create_media_insights_pipeline_configuration_http_response(response)
+                        crate::protocol_serde::shape_create_media_insights_pipeline_configuration::de_create_media_insights_pipeline_configuration_http_response(status, headers, body)
                      }
                 }
             }

@@ -8,10 +8,10 @@ pub fn ser_put_parameter_input(input: &crate::operation::put_parameter::PutParam
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_parameter::PutParameterOutput, crate::operation::put_parameter::PutParameterError> {
+pub fn de_put_parameter_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_parameter::PutParameterOutput, crate::operation::put_parameter::PutParameterError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HierarchyLevelLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_hierarchy_level_limit_exceeded_exception::de_hierarchy_level_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_hierarchy_level_limit_exceeded_exception::de_hierarchy_level_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::HierarchyTypeMismatchExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_hierarchy_type_mismatch_exception::de_hierarchy_type_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_hierarchy_type_mismatch_exception::de_hierarchy_type_mismatch_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IncompatiblePolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_policy_exception::de_incompatible_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_incompatible_policy_exception::de_incompatible_policy_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAllowedPatternExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_allowed_pattern_exception::de_invalid_allowed_pattern_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_allowed_pattern_exception::de_invalid_allowed_pattern_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidKeyIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_id::de_invalid_key_id_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_key_id::de_invalid_key_id_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPolicyAttributeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_policy_attribute_exception::de_invalid_policy_attribute_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_policy_attribute_exception::de_invalid_policy_attribute_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPolicyTypeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_policy_type_exception::de_invalid_policy_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_policy_type_exception::de_invalid_policy_type_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParameterAlreadyExistsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parameter_already_exists::de_parameter_already_exists_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_parameter_already_exists::de_parameter_already_exists_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParameterLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parameter_limit_exceeded::de_parameter_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_parameter_limit_exceeded::de_parameter_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParameterMaxVersionLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parameter_max_version_limit_exceeded::de_parameter_max_version_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_parameter_max_version_limit_exceeded::de_parameter_max_version_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ParameterPatternMismatchExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_parameter_pattern_mismatch_exception::de_parameter_pattern_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_parameter_pattern_mismatch_exception::de_parameter_pattern_mismatch_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PoliciesLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_policies_limit_exceeded_exception::de_policies_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_policies_limit_exceeded_exception::de_policies_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyUpdatesBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_updates::de_too_many_updates_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_updates::de_too_many_updates_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedParameterTypeBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_parameter_type::de_unsupported_parameter_type_json_err(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_parameter_type::de_unsupported_parameter_type_json_err(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -280,13 +265,12 @@ pub fn de_put_parameter_http_error(response: &http::Response<bytes::Bytes>) -> s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_parameter_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_parameter::PutParameterOutput, crate::operation::put_parameter::PutParameterError> {
+pub fn de_put_parameter_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_parameter::PutParameterOutput, crate::operation::put_parameter::PutParameterError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_parameter::builders::PutParameterOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_parameter::de_put_parameter(response.body().as_ref(), output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_parameter::de_put_parameter(_response_body, output).map_err(crate::operation::put_parameter::PutParameterError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

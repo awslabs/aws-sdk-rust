@@ -8,10 +8,10 @@ pub fn ser_create_rule_group_input(input: &crate::operation::create_rule_group::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, crate::operation::create_rule_group::CreateRuleGroupError> {
+pub fn de_create_rule_group_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, crate::operation::create_rule_group::CreateRuleGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafDuplicateItemExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_duplicate_item_exception::de_waf_duplicate_item_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_duplicate_item_exception::de_waf_duplicate_item_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafInternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_internal_error_exception::de_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_internal_error_exception::de_waf_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafInvalidOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_invalid_operation_exception::de_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_invalid_operation_exception::de_waf_invalid_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafInvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_invalid_parameter_exception::de_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_invalid_parameter_exception::de_waf_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafLimitsExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_limits_exceeded_exception::de_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_limits_exceeded_exception::de_waf_limits_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafNonexistentItemExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_nonexistent_item_exception::de_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_nonexistent_item_exception::de_waf_nonexistent_item_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafOptimisticLockExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_optimistic_lock_exception::de_waf_optimistic_lock_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_optimistic_lock_exception::de_waf_optimistic_lock_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafSubscriptionNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_subscription_not_found_exception::de_waf_subscription_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_subscription_not_found_exception::de_waf_subscription_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafTagOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_tag_operation_exception::de_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_tag_operation_exception::de_waf_tag_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafTagOperationInternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_tag_operation_internal_error_exception::de_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_tag_operation_internal_error_exception::de_waf_tag_operation_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::WafUnavailableEntityExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_waf_unavailable_entity_exception::de_waf_unavailable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_waf_unavailable_entity_exception::de_waf_unavailable_entity_exception_json_err(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -212,13 +201,12 @@ pub fn de_create_rule_group_http_error(response: &http::Response<bytes::Bytes>) 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_rule_group_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, crate::operation::create_rule_group::CreateRuleGroupError> {
+pub fn de_create_rule_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, crate::operation::create_rule_group::CreateRuleGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_rule_group::de_create_rule_group(response.body().as_ref(), output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_rule_group::de_create_rule_group(_response_body, output).map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

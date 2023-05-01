@@ -8,10 +8,10 @@ pub fn ser_start_on_demand_replication_run_input(input: &crate::operation::start
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput, crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError> {
+pub fn de_start_on_demand_replication_run_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput, crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DryRunOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReplicationRunLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_replication_run_limit_exceeded_exception::de_replication_run_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_run_limit_exceeded_exception::de_replication_run_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_start_on_demand_replication_run_http_error(response: &http::Response<b
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_on_demand_replication_run_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput, crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError> {
+pub fn de_start_on_demand_replication_run_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput, crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_start_on_demand_replication_run::de_start_on_demand_replication_run(response.body().as_ref(), output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_start_on_demand_replication_run::de_start_on_demand_replication_run(_response_body, output).map_err(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

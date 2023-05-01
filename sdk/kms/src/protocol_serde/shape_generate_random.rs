@@ -8,10 +8,10 @@ pub fn ser_generate_random_input(input: &crate::operation::generate_random::Gene
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::generate_random::GenerateRandomOutput, crate::operation::generate_random::GenerateRandomError> {
+pub fn de_generate_random_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::generate_random::GenerateRandomOutput, crate::operation::generate_random::GenerateRandomError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomKeyStoreInvalidStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_key_store_invalid_state_exception::de_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_key_store_invalid_state_exception::de_custom_key_store_invalid_state_exception_json_err(_response_body, output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomKeyStoreNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_key_store_not_found_exception::de_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_key_store_not_found_exception::de_custom_key_store_not_found_exception_json_err(_response_body, output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DependencyTimeoutExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_dependency_timeout_exception::de_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependency_timeout_exception::de_dependency_timeout_exception_json_err(_response_body, output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsInternalExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_internal_exception::de_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_internal_exception::de_kms_internal_exception_json_err(_response_body, output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_generate_random_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_generate_random_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::generate_random::GenerateRandomOutput, crate::operation::generate_random::GenerateRandomError> {
+pub fn de_generate_random_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::generate_random::GenerateRandomOutput, crate::operation::generate_random::GenerateRandomError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::generate_random::builders::GenerateRandomOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_generate_random::de_generate_random(response.body().as_ref(), output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_generate_random::de_generate_random(_response_body, output).map_err(crate::operation::generate_random::GenerateRandomError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

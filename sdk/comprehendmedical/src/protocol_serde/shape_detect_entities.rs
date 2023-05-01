@@ -8,10 +8,10 @@ pub fn ser_detect_entities_input(input: &crate::operation::detect_entities::Dete
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::detect_entities::DetectEntitiesOutput, crate::operation::detect_entities::DetectEntitiesError> {
+pub fn de_detect_entities_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::detect_entities::DetectEntitiesOutput, crate::operation::detect_entities::DetectEntitiesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidEncodingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_encoding_exception::de_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_encoding_exception::de_invalid_encoding_exception_json_err(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TextSizeLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_text_size_limit_exceeded_exception::de_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_text_size_limit_exceeded_exception::de_text_size_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_detect_entities_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_detect_entities_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::detect_entities::DetectEntitiesOutput, crate::operation::detect_entities::DetectEntitiesError> {
+pub fn de_detect_entities_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::detect_entities::DetectEntitiesOutput, crate::operation::detect_entities::DetectEntitiesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_detect_entities::de_detect_entities(response.body().as_ref(), output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_detect_entities::de_detect_entities(_response_body, output).map_err(crate::operation::detect_entities::DetectEntitiesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

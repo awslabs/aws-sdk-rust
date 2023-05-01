@@ -8,10 +8,10 @@ pub fn ser_report_task_runner_heartbeat_input(input: &crate::operation::report_t
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_report_task_runner_heartbeat_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput, crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError> {
+pub fn de_report_task_runner_heartbeat_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput, crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_report_task_runner_heartbeat_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(response.body().as_ref(), output).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_report_task_runner_heartbeat_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_report_task_runner_heartbeat_http_error(response: &http::Response<byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_report_task_runner_heartbeat_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput, crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError> {
+pub fn de_report_task_runner_heartbeat_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput, crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_report_task_runner_heartbeat::de_report_task_runner_heartbeat(response.body().as_ref(), output).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_report_task_runner_heartbeat::de_report_task_runner_heartbeat(_response_body, output).map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

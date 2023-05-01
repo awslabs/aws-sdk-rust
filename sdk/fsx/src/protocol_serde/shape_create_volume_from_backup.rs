@@ -8,10 +8,10 @@ pub fn ser_create_volume_from_backup_input(input: &crate::operation::create_volu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput, crate::operation::create_volume_from_backup::CreateVolumeFromBackupError> {
+pub fn de_create_volume_from_backup_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput, crate::operation::create_volume_from_backup::CreateVolumeFromBackupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BackupNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_backup_not_found::de_backup_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_backup_not_found::de_backup_not_found_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FileSystemNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IncompatibleParameterErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_parameter_error::de_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_incompatible_parameter_error::de_incompatible_parameter_error_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingVolumeConfigurationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_volume_configuration::de_missing_volume_configuration_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_volume_configuration::de_missing_volume_configuration_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceLimitExceededBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_limit_exceeded::de_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_limit_exceeded::de_service_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StorageVirtualMachineNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_storage_virtual_machine_not_found::de_storage_virtual_machine_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+                    output = crate::protocol_serde::shape_storage_virtual_machine_not_found::de_storage_virtual_machine_not_found_json_err(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_create_volume_from_backup_http_error(response: &http::Response<bytes::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_volume_from_backup_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput, crate::operation::create_volume_from_backup::CreateVolumeFromBackupError> {
+pub fn de_create_volume_from_backup_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput, crate::operation::create_volume_from_backup::CreateVolumeFromBackupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_volume_from_backup::de_create_volume_from_backup(response.body().as_ref(), output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_volume_from_backup::de_create_volume_from_backup(_response_body, output).map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

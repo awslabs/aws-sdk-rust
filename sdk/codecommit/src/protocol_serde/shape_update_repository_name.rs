@@ -8,10 +8,10 @@ pub fn ser_update_repository_name_input(input: &crate::operation::update_reposit
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_repository_name_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameOutput, crate::operation::update_repository_name::UpdateRepositoryNameError> {
+pub fn de_update_repository_name_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameOutput, crate::operation::update_repository_name::UpdateRepositoryNameError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_repository_name_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRepositoryNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_repository_name_exception::de_invalid_repository_name_exception_json_err(_response_body, output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_repository_name_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_does_not_exist_exception::de_repository_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_repository_name_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_exists_exception::de_repository_name_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_exists_exception::de_repository_name_exists_exception_json_err(_response_body, output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_repository_name_http_error(response: &http::Response<bytes::Byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RepositoryNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
+                    output = crate::protocol_serde::shape_repository_name_required_exception::de_repository_name_required_exception_json_err(_response_body, output).map_err(crate::operation::update_repository_name::UpdateRepositoryNameError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,12 +89,11 @@ pub fn de_update_repository_name_http_error(response: &http::Response<bytes::Byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_repository_name_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameOutput, crate::operation::update_repository_name::UpdateRepositoryNameError> {
+pub fn de_update_repository_name_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameOutput, crate::operation::update_repository_name::UpdateRepositoryNameError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_repository_name::builders::UpdateRepositoryNameOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,22 +8,21 @@ pub fn ser_get_device_fleet_report_input(input: &crate::operation::get_device_fl
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_device_fleet_report_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput, crate::operation::get_device_fleet_report::GetDeviceFleetReportError> {
+pub fn de_get_device_fleet_report_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput, crate::operation::get_device_fleet_report::GetDeviceFleetReportError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_device_fleet_report::GetDeviceFleetReportError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_device_fleet_report::GetDeviceFleetReportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_device_fleet_report::GetDeviceFleetReportError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_device_fleet_report_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput, crate::operation::get_device_fleet_report::GetDeviceFleetReportError> {
+pub fn de_get_device_fleet_report_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput, crate::operation::get_device_fleet_report::GetDeviceFleetReportError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_device_fleet_report::de_get_device_fleet_report(response.body().as_ref(), output).map_err(crate::operation::get_device_fleet_report::GetDeviceFleetReportError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_device_fleet_report::de_get_device_fleet_report(_response_body, output).map_err(crate::operation::get_device_fleet_report::GetDeviceFleetReportError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

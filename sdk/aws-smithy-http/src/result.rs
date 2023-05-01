@@ -433,6 +433,21 @@ impl<E, R> SdkError<E, R> {
             ServiceError(context) => Ok(context.source.into()),
         }
     }
+
+    /// Maps the service error type in `SdkError::ServiceError`
+    #[doc(hidden)]
+    pub fn map_service_error<E2>(self, map: impl FnOnce(E) -> E2) -> SdkError<E2, R> {
+        match self {
+            Self::ServiceError(context) => SdkError::<E2, R>::ServiceError(ServiceError {
+                source: map(context.source),
+                raw: context.raw,
+            }),
+            Self::ConstructionFailure(context) => SdkError::<E2, R>::ConstructionFailure(context),
+            Self::DispatchFailure(context) => SdkError::<E2, R>::DispatchFailure(context),
+            Self::ResponseError(context) => SdkError::<E2, R>::ResponseError(context),
+            Self::TimeoutError(context) => SdkError::<E2, R>::TimeoutError(context),
+        }
+    }
 }
 
 impl<E, R> Display for SdkError<E, R> {

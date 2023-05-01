@@ -11,10 +11,10 @@ pub fn ser_delete_vpc_association_authorization_op_input(input: &crate::operatio
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_vpc_association_authorization_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError> {
+pub fn de_delete_vpc_association_authorization_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -29,8 +29,7 @@ pub fn de_delete_vpc_association_authorization_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(_response_body, output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -46,8 +45,7 @@ pub fn de_delete_vpc_association_authorization_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -63,8 +61,7 @@ pub fn de_delete_vpc_association_authorization_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidVpcIdBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_id::de_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_id::de_invalid_vpc_id_xml_err(_response_body, output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -80,8 +77,7 @@ pub fn de_delete_vpc_association_authorization_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchHostedZoneBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(_response_body, output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -97,8 +93,7 @@ pub fn de_delete_vpc_association_authorization_http_error(response: &http::Respo
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::VpcAssociationAuthorizationNotFoundBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_vpc_association_authorization_not_found::de_vpc_association_authorization_not_found_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_vpc_association_authorization_not_found::de_vpc_association_authorization_not_found_xml_err(_response_body, output).map_err(crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -113,12 +108,11 @@ pub fn de_delete_vpc_association_authorization_http_error(response: &http::Respo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_vpc_association_authorization_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError> {
+pub fn de_delete_vpc_association_authorization_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

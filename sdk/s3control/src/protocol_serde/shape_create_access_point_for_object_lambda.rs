@@ -32,22 +32,21 @@ pub fn ser_create_access_point_for_object_lambda_op_input(input: &crate::operati
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_access_point_for_object_lambda_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput, crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError> {
+pub fn de_create_access_point_for_object_lambda_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput, crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_access_point_for_object_lambda_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput, crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError> {
+pub fn de_create_access_point_for_object_lambda_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput, crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_access_point_for_object_lambda::de_create_access_point_for_object_lambda(response.body().as_ref(), output).map_err(crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_access_point_for_object_lambda::de_create_access_point_for_object_lambda(_response_body, output).map_err(crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

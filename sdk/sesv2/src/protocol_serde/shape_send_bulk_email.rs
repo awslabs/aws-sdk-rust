@@ -8,10 +8,10 @@ pub fn ser_send_bulk_email_input(input: &crate::operation::send_bulk_email::Send
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, crate::operation::send_bulk_email::SendBulkEmailError> {
+pub fn de_send_bulk_email_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, crate::operation::send_bulk_email::SendBulkEmailError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccountSuspendedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_account_suspended_exception::de_account_suspended_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_suspended_exception::de_account_suspended_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_mail_from_domain_not_verified_exception::de_mail_from_domain_not_verified_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_mail_from_domain_not_verified_exception::de_mail_from_domain_not_verified_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MessageRejectedBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_message_rejected::de_message_rejected_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_message_rejected::de_message_rejected_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SendingPausedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_sending_paused_exception::de_sending_paused_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_sending_paused_exception::de_sending_paused_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,13 +153,12 @@ pub fn de_send_bulk_email_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_send_bulk_email_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, crate::operation::send_bulk_email::SendBulkEmailError> {
+pub fn de_send_bulk_email_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, crate::operation::send_bulk_email::SendBulkEmailError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::send_bulk_email::builders::SendBulkEmailOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_send_bulk_email::de_send_bulk_email(response.body().as_ref(), output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_send_bulk_email::de_send_bulk_email(_response_body, output).map_err(crate::operation::send_bulk_email::SendBulkEmailError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

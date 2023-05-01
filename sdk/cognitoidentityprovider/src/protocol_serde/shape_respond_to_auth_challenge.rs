@@ -8,10 +8,10 @@ pub fn ser_respond_to_auth_challenge_input(input: &crate::operation::respond_to_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput, crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError> {
+pub fn de_respond_to_auth_challenge_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput, crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AliasExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_alias_exists_exception::de_alias_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_alias_exists_exception::de_alias_exists_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CodeMismatchExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_code_mismatch_exception::de_code_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_code_mismatch_exception::de_code_mismatch_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExpiredCodeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_expired_code_exception::de_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_expired_code_exception::de_expired_code_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidLambdaResponseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lambda_response_exception::de_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lambda_response_exception::de_invalid_lambda_response_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPasswordExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSmsRoleAccessPolicyExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sms_role_access_policy_exception::de_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sms_role_access_policy_exception::de_invalid_sms_role_access_policy_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSmsRoleTrustRelationshipExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sms_role_trust_relationship_exception::de_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sms_role_trust_relationship_exception::de_invalid_sms_role_trust_relationship_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidUserPoolConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_user_pool_configuration_exception::de_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_user_pool_configuration_exception::de_invalid_user_pool_configuration_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MfaMethodNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_mfa_method_not_found_exception::de_mfa_method_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_mfa_method_not_found_exception::de_mfa_method_not_found_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PasswordResetRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_password_reset_required_exception::de_password_reset_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_password_reset_required_exception::de_password_reset_required_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SoftwareTokenMfaNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_software_token_mfa_not_found_exception::de_software_token_mfa_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_software_token_mfa_not_found_exception::de_software_token_mfa_not_found_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -315,8 +298,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnexpectedLambdaExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unexpected_lambda_exception::de_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_unexpected_lambda_exception::de_unexpected_lambda_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -332,8 +314,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UserLambdaValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_user_lambda_validation_exception::de_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_user_lambda_validation_exception::de_user_lambda_validation_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -349,8 +330,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UserNotConfirmedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_user_not_confirmed_exception::de_user_not_confirmed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_user_not_confirmed_exception::de_user_not_confirmed_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -366,8 +346,7 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UserNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_user_not_found_exception::de_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+                    output = crate::protocol_serde::shape_user_not_found_exception::de_user_not_found_exception_json_err(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -382,13 +361,12 @@ pub fn de_respond_to_auth_challenge_http_error(response: &http::Response<bytes::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_respond_to_auth_challenge_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput, crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError> {
+pub fn de_respond_to_auth_challenge_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput, crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_respond_to_auth_challenge::de_respond_to_auth_challenge(response.body().as_ref(), output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_respond_to_auth_challenge::de_respond_to_auth_challenge(_response_body, output).map_err(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

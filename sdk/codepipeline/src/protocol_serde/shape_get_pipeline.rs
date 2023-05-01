@@ -8,10 +8,10 @@ pub fn ser_get_pipeline_input(input: &crate::operation::get_pipeline::GetPipelin
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_pipeline_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_pipeline::GetPipelineOutput, crate::operation::get_pipeline::GetPipelineError> {
+pub fn de_get_pipeline_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_pipeline::GetPipelineOutput, crate::operation::get_pipeline::GetPipelineError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_pipeline_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PipelineNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pipeline_not_found_exception::de_pipeline_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_pipeline_not_found_exception::de_pipeline_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_pipeline_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PipelineVersionNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pipeline_version_not_found_exception::de_pipeline_version_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_pipeline_version_not_found_exception::de_pipeline_version_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_pipeline_http_error(response: &http::Response<bytes::Bytes>) -> st
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,13 +73,12 @@ pub fn de_get_pipeline_http_error(response: &http::Response<bytes::Bytes>) -> st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_pipeline_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_pipeline::GetPipelineOutput, crate::operation::get_pipeline::GetPipelineError> {
+pub fn de_get_pipeline_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_pipeline::GetPipelineOutput, crate::operation::get_pipeline::GetPipelineError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_pipeline::builders::GetPipelineOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_pipeline::de_get_pipeline(response.body().as_ref(), output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_pipeline::de_get_pipeline(_response_body, output).map_err(crate::operation::get_pipeline::GetPipelineError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_describe_direct_connect_gateway_associations_input(input: &crate::ope
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_direct_connect_gateway_associations_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput, crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError> {
+pub fn de_describe_direct_connect_gateway_associations_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput, crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_direct_connect_gateway_associations_http_error(response: &htt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectConnectClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_direct_connect_client_exception::de_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_direct_connect_client_exception::de_direct_connect_client_exception_json_err(_response_body, output).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_direct_connect_gateway_associations_http_error(response: &htt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectConnectServerExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_direct_connect_server_exception::de_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_direct_connect_server_exception::de_direct_connect_server_exception_json_err(_response_body, output).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_describe_direct_connect_gateway_associations_http_error(response: &htt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_direct_connect_gateway_associations_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput, crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError> {
+pub fn de_describe_direct_connect_gateway_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput, crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_direct_connect_gateway_associations::de_describe_direct_connect_gateway_associations(response.body().as_ref(), output).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_direct_connect_gateway_associations::de_describe_direct_connect_gateway_associations(_response_body, output).map_err(crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

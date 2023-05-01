@@ -8,10 +8,10 @@ pub fn ser_describe_recommendations_input(input: &crate::operation::describe_rec
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_recommendations_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_recommendations::DescribeRecommendationsOutput, crate::operation::describe_recommendations::DescribeRecommendationsError> {
+pub fn de_describe_recommendations_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_recommendations::DescribeRecommendationsOutput, crate::operation::describe_recommendations::DescribeRecommendationsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_describe_recommendations_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(_response_body, output).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_describe_recommendations_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResourceStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(_response_body, output).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_describe_recommendations_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_recommendations_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::describe_recommendations::DescribeRecommendationsOutput, crate::operation::describe_recommendations::DescribeRecommendationsError> {
+pub fn de_describe_recommendations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_recommendations::DescribeRecommendationsOutput, crate::operation::describe_recommendations::DescribeRecommendationsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_describe_recommendations::de_describe_recommendations(response.body().as_ref(), output).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_describe_recommendations::de_describe_recommendations(_response_body, output).map_err(crate::operation::describe_recommendations::DescribeRecommendationsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

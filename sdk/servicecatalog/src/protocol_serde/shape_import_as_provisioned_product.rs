@@ -8,10 +8,10 @@ pub fn ser_import_as_provisioned_product_input(input: &crate::operation::import_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_as_provisioned_product_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput, crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError> {
+pub fn de_import_as_provisioned_product_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput, crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_import_as_provisioned_product_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DuplicateResourceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_resource_exception::de_duplicate_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_resource_exception::de_duplicate_resource_exception_json_err(_response_body, output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_import_as_provisioned_product_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParametersExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(_response_body, output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_import_as_provisioned_product_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_json_err(_response_body, output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_import_as_provisioned_product_http_error(response: &http::Response<byt
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_import_as_provisioned_product_http_error(response: &http::Response<byt
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_import_as_provisioned_product_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput, crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError> {
+pub fn de_import_as_provisioned_product_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput, crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_import_as_provisioned_product::de_import_as_provisioned_product(response.body().as_ref(), output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_import_as_provisioned_product::de_import_as_provisioned_product(_response_body, output).map_err(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

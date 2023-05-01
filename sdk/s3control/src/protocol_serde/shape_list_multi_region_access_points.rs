@@ -21,22 +21,21 @@ pub fn ser_list_multi_region_access_points_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_multi_region_access_points_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput, crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError> {
+pub fn de_list_multi_region_access_points_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput, crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_multi_region_access_points_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput, crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError> {
+pub fn de_list_multi_region_access_points_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput, crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points(response.body().as_ref(), output).map_err(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points(_response_body, output).map_err(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

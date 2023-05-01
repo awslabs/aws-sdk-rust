@@ -88,11 +88,14 @@ impl GetAssociationForServiceQuotaTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssociationForServiceQuotaTemplate {
                 type Output = std::result::Result<crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput, crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_response(response)
+                        crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_response(status, headers, body)
                      }
                 }
             }

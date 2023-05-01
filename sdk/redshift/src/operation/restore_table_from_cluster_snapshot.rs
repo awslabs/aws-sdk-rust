@@ -86,11 +86,14 @@ impl RestoreTableFromClusterSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreTableFromClusterSnapshot {
                 type Output = std::result::Result<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput, crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_restore_table_from_cluster_snapshot::de_restore_table_from_cluster_snapshot_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_restore_table_from_cluster_snapshot::de_restore_table_from_cluster_snapshot_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_restore_table_from_cluster_snapshot::de_restore_table_from_cluster_snapshot_http_response(response)
+                        crate::protocol_serde::shape_restore_table_from_cluster_snapshot::de_restore_table_from_cluster_snapshot_http_response(status, headers, body)
                      }
                 }
             }

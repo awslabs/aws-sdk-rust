@@ -8,10 +8,10 @@ pub fn ser_create_signaling_channel_input(input: &crate::operation::create_signa
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelOutput, crate::operation::create_signaling_channel::CreateSignalingChannelError> {
+pub fn de_create_signaling_channel_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelOutput, crate::operation::create_signaling_channel::CreateSignalingChannelError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccountChannelLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_account_channel_limit_exceeded_exception::de_account_channel_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_channel_limit_exceeded_exception::de_account_channel_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_limit_exceeded_exception::de_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_limit_exceeded_exception::de_client_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TagsPerResourceExceededLimitExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tags_per_resource_exceeded_limit_exception::de_tags_per_resource_exceeded_limit_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_tags_per_resource_exceeded_limit_exception::de_tags_per_resource_exceeded_limit_exception_json_err(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_create_signaling_channel_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_signaling_channel_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelOutput, crate::operation::create_signaling_channel::CreateSignalingChannelError> {
+pub fn de_create_signaling_channel_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelOutput, crate::operation::create_signaling_channel::CreateSignalingChannelError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_signaling_channel::builders::CreateSignalingChannelOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_signaling_channel::de_create_signaling_channel(response.body().as_ref(), output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_signaling_channel::de_create_signaling_channel(_response_body, output).map_err(crate::operation::create_signaling_channel::CreateSignalingChannelError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_send_task_heartbeat_input(input: &crate::operation::send_task_heartbe
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_send_task_heartbeat_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput, crate::operation::send_task_heartbeat::SendTaskHeartbeatError> {
+pub fn de_send_task_heartbeat_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput, crate::operation::send_task_heartbeat::SendTaskHeartbeatError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_send_task_heartbeat_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidTokenBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_token::de_invalid_token_json_err(response.body().as_ref(), output).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_token::de_invalid_token_json_err(_response_body, output).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_send_task_heartbeat_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TaskDoesNotExistBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_task_does_not_exist::de_task_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
+                    output = crate::protocol_serde::shape_task_does_not_exist::de_task_does_not_exist_json_err(_response_body, output).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_send_task_heartbeat_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TaskTimedOutBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_task_timed_out::de_task_timed_out_json_err(response.body().as_ref(), output).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
+                    output = crate::protocol_serde::shape_task_timed_out::de_task_timed_out_json_err(_response_body, output).map_err(crate::operation::send_task_heartbeat::SendTaskHeartbeatError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,12 +73,11 @@ pub fn de_send_task_heartbeat_http_error(response: &http::Response<bytes::Bytes>
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_send_task_heartbeat_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput, crate::operation::send_task_heartbeat::SendTaskHeartbeatError> {
+pub fn de_send_task_heartbeat_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput, crate::operation::send_task_heartbeat::SendTaskHeartbeatError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

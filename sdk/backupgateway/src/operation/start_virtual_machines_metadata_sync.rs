@@ -91,11 +91,14 @@ impl StartVirtualMachinesMetadataSync {
 impl aws_smithy_http::response::ParseStrictResponse for StartVirtualMachinesMetadataSync {
                 type Output = std::result::Result<crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput, crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_response(response)
+                        crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_response(status, headers, body)
                      }
                 }
             }

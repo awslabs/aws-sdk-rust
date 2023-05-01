@@ -86,11 +86,14 @@ impl DisableFastSnapshotRestores {
 impl aws_smithy_http::response::ParseStrictResponse for DisableFastSnapshotRestores {
                 type Output = std::result::Result<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresOutput, crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_response(response)
+                        crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_response(status, headers, body)
                      }
                 }
             }

@@ -8,10 +8,10 @@ pub fn ser_reset_user_password_input(input: &crate::operation::reset_user_passwo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::reset_user_password::ResetUserPasswordOutput, crate::operation::reset_user_password::ResetUserPasswordError> {
+pub fn de_reset_user_password_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reset_user_password::ResetUserPasswordOutput, crate::operation::reset_user_password::ResetUserPasswordError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectoryUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_entity_does_not_exist_exception::de_entity_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_does_not_exist_exception::de_entity_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPasswordExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UserDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_user_does_not_exist_exception::de_user_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
+                    output = crate::protocol_serde::shape_user_does_not_exist_exception::de_user_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::reset_user_password::ResetUserPasswordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,12 +137,11 @@ pub fn de_reset_user_password_http_error(response: &http::Response<bytes::Bytes>
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reset_user_password_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::reset_user_password::ResetUserPasswordOutput, crate::operation::reset_user_password::ResetUserPasswordError> {
+pub fn de_reset_user_password_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reset_user_password::ResetUserPasswordOutput, crate::operation::reset_user_password::ResetUserPasswordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

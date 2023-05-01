@@ -49,11 +49,11 @@ pub fn ser_restore_object_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_restore_object_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::restore_object::RestoreObjectOutput, crate::operation::restore_object::RestoreObjectError> {
+pub fn de_restore_object_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::restore_object::RestoreObjectOutput, crate::operation::restore_object::RestoreObjectError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::restore_object::RestoreObjectError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::restore_object::RestoreObjectError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -68,8 +68,7 @@ pub fn de_restore_object_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ObjectAlreadyInActiveTierErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_object_already_in_active_tier_error::de_object_already_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_object::RestoreObjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_object_already_in_active_tier_error::de_object_already_in_active_tier_error_xml_err(_response_body, output).map_err(crate::operation::restore_object::RestoreObjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -84,21 +83,20 @@ pub fn de_restore_object_http_error(response: &http::Response<bytes::Bytes>) -> 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_restore_object_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::restore_object::RestoreObjectOutput, crate::operation::restore_object::RestoreObjectError> {
+pub fn de_restore_object_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::restore_object::RestoreObjectOutput, crate::operation::restore_object::RestoreObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::restore_object::builders::RestoreObjectOutputBuilder::default();
-        let _ = response;
         output = output.set_request_charged(
-            crate::protocol_serde::shape_restore_object_output::de_request_charged_header(response.headers())
+            crate::protocol_serde::shape_restore_object_output::de_request_charged_header(_response_headers)
                                     .map_err(|_|crate::operation::restore_object::RestoreObjectError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output = output.set_restore_output_path(
-            crate::protocol_serde::shape_restore_object_output::de_restore_output_path_header(response.headers())
+            crate::protocol_serde::shape_restore_object_output::de_restore_output_path_header(_response_headers)
                                     .map_err(|_|crate::operation::restore_object::RestoreObjectError::unhandled("Failed to parse RestoreOutputPath from header `x-amz-restore-output-path"))?
         );
-        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string));
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

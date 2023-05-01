@@ -8,34 +8,39 @@ pub fn ser_synthesize_speech_input(input: &crate::operation::synthesize_speech::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_synthesize_speech_http_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechOutput, crate::operation::synthesize_speech::SynthesizeSpeechError> {
+pub fn de_synthesize_speech_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechOutput, crate::operation::synthesize_speech::SynthesizeSpeechError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::synthesize_speech::builders::SynthesizeSpeechOutputBuilder::default();
-        let _ = response;
         output = output.set_audio_stream(
-            Some(crate::protocol_serde::shape_synthesize_speech_output::de_audio_stream_payload(response.body_mut())?)
+            Some(crate::protocol_serde::shape_synthesize_speech_output::de_audio_stream_payload(_response_body)?)
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_synthesize_speech_output::de_content_type_header(response.headers())
+            crate::protocol_serde::shape_synthesize_speech_output::de_content_type_header(_response_headers)
                                     .map_err(|_|crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_request_characters(
-            crate::protocol_serde::shape_synthesize_speech_output::de_request_characters_header(response.headers())
+            crate::protocol_serde::shape_synthesize_speech_output::de_request_characters_header(_response_headers)
                                     .map_err(|_|crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled("Failed to parse RequestCharacters from header `x-amzn-RequestCharacters"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechOutput, crate::operation::synthesize_speech::SynthesizeSpeechError> {
+pub fn de_synthesize_speech_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechOutput, crate::operation::synthesize_speech::SynthesizeSpeechError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -50,8 +55,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EngineNotSupportedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_engine_not_supported_exception::de_engine_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_engine_not_supported_exception::de_engine_not_supported_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -67,8 +71,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSampleRateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_sample_rate_exception::de_invalid_sample_rate_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sample_rate_exception::de_invalid_sample_rate_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -84,8 +87,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSsmlExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_ssml_exception::de_invalid_ssml_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_ssml_exception::de_invalid_ssml_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -101,8 +103,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LanguageNotSupportedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_language_not_supported_exception::de_language_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_language_not_supported_exception::de_language_not_supported_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -118,8 +119,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LexiconNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_lexicon_not_found_exception::de_lexicon_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_lexicon_not_found_exception::de_lexicon_not_found_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -135,8 +135,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MarksNotSupportedForFormatExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_marks_not_supported_for_format_exception::de_marks_not_supported_for_format_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_marks_not_supported_for_format_exception::de_marks_not_supported_for_format_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -152,8 +151,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -169,8 +167,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SsmlMarksNotSupportedForTextTypeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_ssml_marks_not_supported_for_text_type_exception::de_ssml_marks_not_supported_for_text_type_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_ssml_marks_not_supported_for_text_type_exception::de_ssml_marks_not_supported_for_text_type_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -186,8 +183,7 @@ pub fn de_synthesize_speech_http_error(response: &http::Response<bytes::Bytes>) 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TextLengthExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_text_length_exceeded_exception::de_text_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                    output = crate::protocol_serde::shape_text_length_exceeded_exception::de_text_length_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

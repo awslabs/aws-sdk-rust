@@ -8,10 +8,10 @@ pub fn ser_list_phone_numbers_v2_input(input: &crate::operation::list_phone_numb
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output, crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error> {
+pub fn de_list_phone_numbers_v2_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output, crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_list_phone_numbers_v2_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_phone_numbers_v2_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output, crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error> {
+pub fn de_list_phone_numbers_v2_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output, crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2OutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_list_phone_numbers_v2::de_list_phone_numbers_v2(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_list_phone_numbers_v2::de_list_phone_numbers_v2(_response_body, output).map_err(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

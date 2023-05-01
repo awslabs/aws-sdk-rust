@@ -29,10 +29,10 @@ pub fn ser_search_channels_input(input: &crate::operation::search_channels::Sear
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::search_channels::SearchChannelsOutput, crate::operation::search_channels::SearchChannelsError> {
+pub fn de_search_channels_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::search_channels::SearchChannelsOutput, crate::operation::search_channels::SearchChannelsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -47,8 +47,7 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -64,8 +63,7 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -81,8 +79,7 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -98,8 +95,7 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -115,8 +111,7 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottledClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -132,8 +127,7 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -148,13 +142,12 @@ pub fn de_search_channels_http_error(response: &http::Response<bytes::Bytes>) ->
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_search_channels_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::search_channels::SearchChannelsOutput, crate::operation::search_channels::SearchChannelsError> {
+pub fn de_search_channels_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::search_channels::SearchChannelsOutput, crate::operation::search_channels::SearchChannelsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::search_channels::builders::SearchChannelsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_search_channels::de_search_channels(response.body().as_ref(), output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_search_channels::de_search_channels(_response_body, output).map_err(crate::operation::search_channels::SearchChannelsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

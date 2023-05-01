@@ -8,10 +8,10 @@ pub fn ser_create_resource_data_sync_input(input: &crate::operation::create_reso
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_resource_data_sync_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput, crate::operation::create_resource_data_sync::CreateResourceDataSyncError> {
+pub fn de_create_resource_data_sync_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput, crate::operation::create_resource_data_sync::CreateResourceDataSyncError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_resource_data_sync_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_resource_data_sync_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceDataSyncAlreadyExistsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_data_sync_already_exists_exception::de_resource_data_sync_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_data_sync_already_exists_exception::de_resource_data_sync_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_resource_data_sync_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceDataSyncCountExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_data_sync_count_exceeded_exception::de_resource_data_sync_count_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_data_sync_count_exceeded_exception::de_resource_data_sync_count_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_resource_data_sync_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceDataSyncInvalidConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_data_sync_invalid_configuration_exception::de_resource_data_sync_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_data_sync_invalid_configuration_exception::de_resource_data_sync_invalid_configuration_exception_json_err(_response_body, output).map_err(crate::operation::create_resource_data_sync::CreateResourceDataSyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,12 +89,11 @@ pub fn de_create_resource_data_sync_http_error(response: &http::Response<bytes::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_resource_data_sync_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput, crate::operation::create_resource_data_sync::CreateResourceDataSyncError> {
+pub fn de_create_resource_data_sync_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput, crate::operation::create_resource_data_sync::CreateResourceDataSyncError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

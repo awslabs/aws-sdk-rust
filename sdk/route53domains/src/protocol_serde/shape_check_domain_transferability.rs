@@ -8,10 +8,10 @@ pub fn ser_check_domain_transferability_input(input: &crate::operation::check_do
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_check_domain_transferability_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput, crate::operation::check_domain_transferability::CheckDomainTransferabilityError> {
+pub fn de_check_domain_transferability_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput, crate::operation::check_domain_transferability::CheckDomainTransferabilityError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_check_domain_transferability_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_json_err(_response_body, output).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_check_domain_transferability_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedTldBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_tld::de_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_tld::de_unsupported_tld_json_err(_response_body, output).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,13 +57,12 @@ pub fn de_check_domain_transferability_http_error(response: &http::Response<byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_check_domain_transferability_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput, crate::operation::check_domain_transferability::CheckDomainTransferabilityError> {
+pub fn de_check_domain_transferability_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput, crate::operation::check_domain_transferability::CheckDomainTransferabilityError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_check_domain_transferability::de_check_domain_transferability(response.body().as_ref(), output).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_check_domain_transferability::de_check_domain_transferability(_response_body, output).map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

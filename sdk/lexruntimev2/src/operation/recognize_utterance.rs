@@ -119,11 +119,11 @@ impl aws_smithy_http::response::ParseHttpResponse for RecognizeUtterance {
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
                     }
-                    Some(crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_http_response(response))
+                    Some(crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_http_response_(response))
                 }
                 fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
                     // if streaming, we only hit this case if its an error
-                    crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_http_error(response)
+                    crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_http_error(response.status().as_u16(), response.headers(), response.body().as_ref())
                 }
             }
 

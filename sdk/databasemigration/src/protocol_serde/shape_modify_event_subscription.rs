@@ -8,10 +8,10 @@ pub fn ser_modify_event_subscription_input(input: &crate::operation::modify_even
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput, crate::operation::modify_event_subscription::ModifyEventSubscriptionError> {
+pub fn de_modify_event_subscription_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput, crate::operation::modify_event_subscription::ModifyEventSubscriptionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsAccessDeniedFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_access_denied_fault::de_kms_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_access_denied_fault::de_kms_access_denied_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsDisabledFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_disabled_fault::de_kms_disabled_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_disabled_fault::de_kms_disabled_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsInvalidStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_state_fault::de_kms_invalid_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_invalid_state_fault::de_kms_invalid_state_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_not_found_fault::de_kms_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_not_found_fault::de_kms_not_found_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsThrottlingFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_throttling_fault::de_kms_throttling_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_throttling_fault::de_kms_throttling_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceQuotaExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_quota_exceeded_fault::de_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_quota_exceeded_fault::de_resource_quota_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnsInvalidTopicFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_sns_invalid_topic_fault::de_sns_invalid_topic_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_sns_invalid_topic_fault::de_sns_invalid_topic_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SnsNoAuthorizationFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_sns_no_authorization_fault::de_sns_no_authorization_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_sns_no_authorization_fault::de_sns_no_authorization_fault_json_err(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -178,13 +169,12 @@ pub fn de_modify_event_subscription_http_error(response: &http::Response<bytes::
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_modify_event_subscription_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput, crate::operation::modify_event_subscription::ModifyEventSubscriptionError> {
+pub fn de_modify_event_subscription_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput, crate::operation::modify_event_subscription::ModifyEventSubscriptionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_modify_event_subscription::de_modify_event_subscription(response.body().as_ref(), output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_modify_event_subscription::de_modify_event_subscription(_response_body, output).map_err(crate::operation::modify_event_subscription::ModifyEventSubscriptionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_add_layer_version_permission_input(input: &crate::operation::add_laye
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_add_layer_version_permission_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput, crate::operation::add_layer_version_permission::AddLayerVersionPermissionError> {
+pub fn de_add_layer_version_permission_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput, crate::operation::add_layer_version_permission::AddLayerVersionPermissionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,10 +58,9 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -81,8 +78,7 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -98,8 +94,7 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -115,8 +110,7 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PolicyLengthExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_policy_length_exceeded_exception::de_policy_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_policy_length_exceeded_exception::de_policy_length_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -132,8 +126,7 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -148,13 +141,12 @@ pub fn de_add_layer_version_permission_http_error(response: &http::Response<byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_add_layer_version_permission_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput, crate::operation::add_layer_version_permission::AddLayerVersionPermissionError> {
+pub fn de_add_layer_version_permission_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput, crate::operation::add_layer_version_permission::AddLayerVersionPermissionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_add_layer_version_permission::de_add_layer_version_permission(response.body().as_ref(), output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_add_layer_version_permission::de_add_layer_version_permission(_response_body, output).map_err(crate::operation::add_layer_version_permission::AddLayerVersionPermissionError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

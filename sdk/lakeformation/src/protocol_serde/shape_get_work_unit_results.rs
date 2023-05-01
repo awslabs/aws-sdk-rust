@@ -8,26 +8,31 @@ pub fn ser_get_work_unit_results_input(input: &crate::operation::get_work_unit_r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_work_unit_results_http_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
+pub fn de_get_work_unit_results_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder::default();
-        let _ = response;
         output = output.set_result_stream(
-            Some(crate::protocol_serde::shape_get_work_unit_results_output::de_result_stream_payload(response.body_mut())?)
+            Some(crate::protocol_serde::shape_get_work_unit_results_output::de_result_stream_payload(_response_body)?)
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_work_unit_results_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
+pub fn de_get_work_unit_results_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -42,8 +47,7 @@ pub fn de_get_work_unit_results_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -59,8 +63,7 @@ pub fn de_get_work_unit_results_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ExpiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_expired_exception::de_expired_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
+                    output = crate::protocol_serde::shape_expired_exception::de_expired_exception_json_err(_response_body, output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -76,8 +79,7 @@ pub fn de_get_work_unit_results_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,8 +95,7 @@ pub fn de_get_work_unit_results_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,8 +111,7 @@ pub fn de_get_work_unit_results_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(_response_body, output).map_err(crate::operation::get_work_unit_results::GetWorkUnitResultsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

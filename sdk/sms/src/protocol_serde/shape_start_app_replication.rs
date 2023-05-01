@@ -8,10 +8,10 @@ pub fn ser_start_app_replication_input(input: &crate::operation::start_app_repli
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_app_replication::StartAppReplicationOutput, crate::operation::start_app_replication::StartAppReplicationError> {
+pub fn de_start_app_replication_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_app_replication::StartAppReplicationOutput, crate::operation::start_app_replication::StartAppReplicationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_error::de_internal_error_json_err(response.body().as_ref(), output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error::de_internal_error_json_err(_response_body, output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_json_err(_response_body, output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::start_app_replication::StartAppReplicationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,12 +105,11 @@ pub fn de_start_app_replication_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_app_replication_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::start_app_replication::StartAppReplicationOutput, crate::operation::start_app_replication::StartAppReplicationError> {
+pub fn de_start_app_replication_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_app_replication::StartAppReplicationOutput, crate::operation::start_app_replication::StartAppReplicationError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_app_replication::builders::StartAppReplicationOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

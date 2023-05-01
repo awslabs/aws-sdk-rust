@@ -91,11 +91,14 @@ impl ListDistributedGrants {
 impl aws_smithy_http::response::ParseStrictResponse for ListDistributedGrants {
                 type Output = std::result::Result<crate::operation::list_distributed_grants::ListDistributedGrantsOutput, crate::operation::list_distributed_grants::ListDistributedGrantsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_response(response)
+                        crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_response(status, headers, body)
                      }
                 }
             }

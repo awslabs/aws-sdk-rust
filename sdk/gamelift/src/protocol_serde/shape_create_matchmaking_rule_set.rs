@@ -8,10 +8,10 @@ pub fn ser_create_matchmaking_rule_set_input(input: &crate::operation::create_ma
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput, crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError> {
+pub fn de_create_matchmaking_rule_set_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput, crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TaggingFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_tagging_failed_exception::de_tagging_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_tagging_failed_exception::de_tagging_failed_exception_json_err(_response_body, output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedRegionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_json_err(_response_body, output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_create_matchmaking_rule_set_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_matchmaking_rule_set_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput, crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError> {
+pub fn de_create_matchmaking_rule_set_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput, crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_matchmaking_rule_set::de_create_matchmaking_rule_set(response.body().as_ref(), output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_matchmaking_rule_set::de_create_matchmaking_rule_set(_response_body, output).map_err(crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

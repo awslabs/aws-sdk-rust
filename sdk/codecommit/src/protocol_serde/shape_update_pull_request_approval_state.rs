@@ -8,10 +8,10 @@ pub fn ser_update_pull_request_approval_state_input(input: &crate::operation::up
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_pull_request_approval_state_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError> {
+pub fn de_update_pull_request_approval_state_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ApprovalStateRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_approval_state_required_exception::de_approval_state_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_approval_state_required_exception::de_approval_state_required_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_integrity_checks_failed_exception::de_encryption_integrity_checks_failed_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_access_denied_exception::de_encryption_key_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_disabled_exception::de_encryption_key_disabled_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_not_found_exception::de_encryption_key_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_encryption_key_unavailable_exception::de_encryption_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidApprovalStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_approval_state_exception::de_invalid_approval_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_approval_state_exception::de_invalid_approval_state_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPullRequestIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_pull_request_id_exception::de_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_pull_request_id_exception::de_invalid_pull_request_id_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRevisionIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_revision_id_exception::de_invalid_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_revision_id_exception::de_invalid_revision_id_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaximumNumberOfApprovalsExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_maximum_number_of_approvals_exceeded_exception::de_maximum_number_of_approvals_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_maximum_number_of_approvals_exceeded_exception::de_maximum_number_of_approvals_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PullRequestAlreadyClosedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pull_request_already_closed_exception::de_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_pull_request_already_closed_exception::de_pull_request_already_closed_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PullRequestCannotBeApprovedByAuthorExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pull_request_cannot_be_approved_by_author_exception::de_pull_request_cannot_be_approved_by_author_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_pull_request_cannot_be_approved_by_author_exception::de_pull_request_cannot_be_approved_by_author_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PullRequestDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pull_request_does_not_exist_exception::de_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_pull_request_does_not_exist_exception::de_pull_request_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PullRequestIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_pull_request_id_required_exception::de_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_pull_request_id_required_exception::de_pull_request_id_required_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RevisionIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_revision_id_required_exception::de_revision_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_revision_id_required_exception::de_revision_id_required_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RevisionNotCurrentExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_revision_not_current_exception::de_revision_not_current_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_revision_not_current_exception::de_revision_not_current_exception_json_err(_response_body, output).map_err(crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -297,12 +281,11 @@ pub fn de_update_pull_request_approval_state_http_error(response: &http::Respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_pull_request_approval_state_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError> {
+pub fn de_update_pull_request_approval_state_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

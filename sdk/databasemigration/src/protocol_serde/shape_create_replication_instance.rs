@@ -8,10 +8,10 @@ pub fn ser_create_replication_instance_input(input: &crate::operation::create_re
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_replication_instance_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_replication_instance::CreateReplicationInstanceOutput, crate::operation::create_replication_instance::CreateReplicationInstanceError> {
+pub fn de_create_replication_instance_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_replication_instance::CreateReplicationInstanceOutput, crate::operation::create_replication_instance::CreateReplicationInstanceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientResourceCapacityFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_resource_capacity_fault::de_insufficient_resource_capacity_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_resource_capacity_fault::de_insufficient_resource_capacity_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidResourceStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_resource_state_fault::de_invalid_resource_state_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReplicationSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_replication_subnet_group_does_not_cover_enough_a_zs::de_replication_subnet_group_does_not_cover_enough_a_zs_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_subnet_group_does_not_cover_enough_a_zs::de_replication_subnet_group_does_not_cover_enough_a_zs_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceAlreadyExistsFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_already_exists_fault::de_resource_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_already_exists_fault::de_resource_already_exists_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceQuotaExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_quota_exceeded_fault::de_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_quota_exceeded_fault::de_resource_quota_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_json_err(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -195,13 +185,12 @@ pub fn de_create_replication_instance_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_replication_instance_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::create_replication_instance::CreateReplicationInstanceOutput, crate::operation::create_replication_instance::CreateReplicationInstanceError> {
+pub fn de_create_replication_instance_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_replication_instance::CreateReplicationInstanceOutput, crate::operation::create_replication_instance::CreateReplicationInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_replication_instance::builders::CreateReplicationInstanceOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_create_replication_instance::de_create_replication_instance(response.body().as_ref(), output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_create_replication_instance::de_create_replication_instance(_response_body, output).map_err(crate::operation::create_replication_instance::CreateReplicationInstanceError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -8,10 +8,10 @@ pub fn ser_deregister_organization_delegated_admin_input(input: &crate::operatio
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError> {
+pub fn de_deregister_organization_delegated_admin_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccountNotRegisteredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_account_not_registered_exception::de_account_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_not_registered_exception::de_account_not_registered_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudTrailAccessNotEnabledExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_trail_access_not_enabled_exception::de_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_trail_access_not_enabled_exception::de_cloud_trail_access_not_enabled_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_dependency_service_access_permission_exception::de_insufficient_dependency_service_access_permission_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NotOrganizationManagementAccountExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_organization_management_account_exception::de_not_organization_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_organization_management_account_exception::de_not_organization_management_account_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationNotInAllFeaturesModeExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organization_not_in_all_features_mode_exception::de_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_organization_not_in_all_features_mode_exception::de_organization_not_in_all_features_mode_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OrganizationsNotInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_organizations_not_in_use_exception::de_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_organizations_not_in_use_exception::de_organizations_not_in_use_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output).map_err(crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -212,12 +201,11 @@ pub fn de_deregister_organization_delegated_admin_http_error(response: &http::Re
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_deregister_organization_delegated_admin_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError> {
+pub fn de_deregister_organization_delegated_admin_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

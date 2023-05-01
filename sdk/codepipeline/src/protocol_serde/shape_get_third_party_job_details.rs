@@ -8,10 +8,10 @@ pub fn ser_get_third_party_job_details_input(input: &crate::operation::get_third
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_third_party_job_details_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput, crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError> {
+pub fn de_get_third_party_job_details_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput, crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_get_third_party_job_details_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClientTokenExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(_response_body, output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_get_third_party_job_details_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidJobExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_job_exception::de_invalid_job_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_job_exception::de_invalid_job_exception_json_err(_response_body, output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_get_third_party_job_details_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::JobNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_job_not_found_exception::de_job_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_job_not_found_exception::de_job_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_get_third_party_job_details_http_error(response: &http::Response<bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,13 +89,12 @@ pub fn de_get_third_party_job_details_http_error(response: &http::Response<bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_third_party_job_details_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput, crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError> {
+pub fn de_get_third_party_job_details_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput, crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_get_third_party_job_details::de_get_third_party_job_details(response.body().as_ref(), output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_get_third_party_job_details::de_get_third_party_job_details(_response_body, output).map_err(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

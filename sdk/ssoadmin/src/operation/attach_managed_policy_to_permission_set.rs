@@ -91,11 +91,14 @@ impl AttachManagedPolicyToPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPermissionSet {
                 type Output = std::result::Result<crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput, crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_response(response)
+                        crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_response(status, headers, body)
                      }
                 }
             }

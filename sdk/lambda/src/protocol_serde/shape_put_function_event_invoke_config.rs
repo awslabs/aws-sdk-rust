@@ -8,10 +8,10 @@ pub fn ser_put_function_event_invoke_config_input(input: &crate::operation::put_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput, crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError> {
+pub fn de_put_function_event_invoke_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput, crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,10 +42,9 @@ pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
@@ -64,8 +62,7 @@ pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -81,8 +78,7 @@ pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -98,8 +94,7 @@ pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -114,13 +109,12 @@ pub fn de_put_function_event_invoke_config_http_error(response: &http::Response<
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_function_event_invoke_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput, crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError> {
+pub fn de_put_function_event_invoke_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput, crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_function_event_invoke_config::de_put_function_event_invoke_config(response.body().as_ref(), output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_function_event_invoke_config::de_put_function_event_invoke_config(_response_body, output).map_err(crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

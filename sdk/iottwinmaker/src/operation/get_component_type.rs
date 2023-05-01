@@ -98,11 +98,14 @@ impl GetComponentType {
 impl aws_smithy_http::response::ParseStrictResponse for GetComponentType {
                 type Output = std::result::Result<crate::operation::get_component_type::GetComponentTypeOutput, crate::operation::get_component_type::GetComponentTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_get_component_type::de_get_component_type_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_get_component_type::de_get_component_type_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_get_component_type::de_get_component_type_http_response(response)
+                        crate::protocol_serde::shape_get_component_type::de_get_component_type_http_response(status, headers, body)
                      }
                 }
             }

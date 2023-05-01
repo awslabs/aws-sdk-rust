@@ -107,10 +107,10 @@ pub fn ser_invoke_endpoint_async_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_invoke_endpoint_async_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput, crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> {
+pub fn de_invoke_endpoint_async_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput, crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -125,8 +125,7 @@ pub fn de_invoke_endpoint_async_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -142,8 +141,7 @@ pub fn de_invoke_endpoint_async_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -159,8 +157,7 @@ pub fn de_invoke_endpoint_async_http_error(response: &http::Response<bytes::Byte
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -175,21 +172,20 @@ pub fn de_invoke_endpoint_async_http_error(response: &http::Response<bytes::Byte
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_invoke_endpoint_async_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput, crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> {
+pub fn de_invoke_endpoint_async_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput, crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async(response.body().as_ref(), output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+        output = crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
         output = output.set_failure_location(
-            crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(response.headers())
+            crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(_response_headers)
                                     .map_err(|_|crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled("Failed to parse FailureLocation from header `X-Amzn-SageMaker-FailureLocation"))?
         );
         output = output.set_output_location(
-            crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(response.headers())
+            crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(_response_headers)
                                     .map_err(|_|crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled("Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

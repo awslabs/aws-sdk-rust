@@ -8,10 +8,10 @@ pub fn ser_put_conformance_pack_input(input: &crate::operation::put_conformance_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_conformance_pack::PutConformancePackOutput, crate::operation::put_conformance_pack::PutConformancePackError> {
+pub fn de_put_conformance_pack_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_conformance_pack::PutConformancePackOutput, crate::operation::put_conformance_pack::PutConformancePackError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConformancePackTemplateValidationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_conformance_pack_template_validation_exception::de_conformance_pack_template_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_conformance_pack_template_validation_exception::de_conformance_pack_template_validation_exception_json_err(_response_body, output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientPermissionsExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_permissions_exception::de_insufficient_permissions_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_permissions_exception::de_insufficient_permissions_exception_json_err(_response_body, output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MaxNumberOfConformancePacksExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_max_number_of_conformance_packs_exceeded_exception::de_max_number_of_conformance_packs_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_max_number_of_conformance_packs_exceeded_exception::de_max_number_of_conformance_packs_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -110,13 +105,12 @@ pub fn de_put_conformance_pack_http_error(response: &http::Response<bytes::Bytes
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_conformance_pack_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::put_conformance_pack::PutConformancePackOutput, crate::operation::put_conformance_pack::PutConformancePackError> {
+pub fn de_put_conformance_pack_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_conformance_pack::PutConformancePackOutput, crate::operation::put_conformance_pack::PutConformancePackError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_conformance_pack::builders::PutConformancePackOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_put_conformance_pack::de_put_conformance_pack(response.body().as_ref(), output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_put_conformance_pack::de_put_conformance_pack(_response_body, output).map_err(crate::operation::put_conformance_pack::PutConformancePackError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

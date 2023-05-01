@@ -8,10 +8,10 @@ pub fn ser_update_custom_key_store_input(input: &crate::operation::update_custom
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput, crate::operation::update_custom_key_store::UpdateCustomKeyStoreError> {
+pub fn de_update_custom_key_store_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput, crate::operation::update_custom_key_store::UpdateCustomKeyStoreError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudHsmClusterInvalidConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_hsm_cluster_invalid_configuration_exception::de_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_hsm_cluster_invalid_configuration_exception::de_cloud_hsm_cluster_invalid_configuration_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudHsmClusterNotActiveExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_hsm_cluster_not_active_exception::de_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_hsm_cluster_not_active_exception::de_cloud_hsm_cluster_not_active_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudHsmClusterNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_hsm_cluster_not_found_exception::de_cloud_hsm_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_hsm_cluster_not_found_exception::de_cloud_hsm_cluster_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CloudHsmClusterNotRelatedExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cloud_hsm_cluster_not_related_exception::de_cloud_hsm_cluster_not_related_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_cloud_hsm_cluster_not_related_exception::de_cloud_hsm_cluster_not_related_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomKeyStoreInvalidStateExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_key_store_invalid_state_exception::de_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_key_store_invalid_state_exception::de_custom_key_store_invalid_state_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomKeyStoreNameInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_key_store_name_in_use_exception::de_custom_key_store_name_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_key_store_name_in_use_exception::de_custom_key_store_name_in_use_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomKeyStoreNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_custom_key_store_not_found_exception::de_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_key_store_not_found_exception::de_custom_key_store_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -145,8 +138,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsInternalExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_internal_exception::de_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_internal_exception::de_kms_internal_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -162,8 +154,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyIncorrectAuthenticationCredentialExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_incorrect_authentication_credential_exception::de_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_incorrect_authentication_credential_exception::de_xks_proxy_incorrect_authentication_credential_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -179,8 +170,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyInvalidConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_invalid_configuration_exception::de_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_invalid_configuration_exception::de_xks_proxy_invalid_configuration_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -196,8 +186,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyInvalidResponseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_invalid_response_exception::de_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_invalid_response_exception::de_xks_proxy_invalid_response_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -213,8 +202,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyUriEndpointInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_uri_endpoint_in_use_exception::de_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_uri_endpoint_in_use_exception::de_xks_proxy_uri_endpoint_in_use_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -230,8 +218,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyUriInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_uri_in_use_exception::de_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_uri_in_use_exception::de_xks_proxy_uri_in_use_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -247,8 +234,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyUriUnreachableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_uri_unreachable_exception::de_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_uri_unreachable_exception::de_xks_proxy_uri_unreachable_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -264,8 +250,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyVpcEndpointServiceInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_vpc_endpoint_service_in_use_exception::de_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_vpc_endpoint_service_in_use_exception::de_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -281,8 +266,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_vpc_endpoint_service_invalid_configuration_exception::de_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_vpc_endpoint_service_invalid_configuration_exception::de_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -298,8 +282,7 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::XksProxyVpcEndpointServiceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_xks_proxy_vpc_endpoint_service_not_found_exception::de_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_xks_proxy_vpc_endpoint_service_not_found_exception::de_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_custom_key_store::UpdateCustomKeyStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -314,12 +297,11 @@ pub fn de_update_custom_key_store_http_error(response: &http::Response<bytes::By
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_custom_key_store_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput, crate::operation::update_custom_key_store::UpdateCustomKeyStoreError> {
+pub fn de_update_custom_key_store_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput, crate::operation::update_custom_key_store::UpdateCustomKeyStoreError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

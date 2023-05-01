@@ -8,10 +8,10 @@ pub fn ser_batch_get_deployment_instances_input(input: &crate::operation::batch_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput, crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError> {
+pub fn de_batch_get_deployment_instances_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput, crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BatchLimitExceededExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_batch_limit_exceeded_exception::de_batch_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_batch_limit_exceeded_exception::de_batch_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentDoesNotExistExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_does_not_exist_exception::de_deployment_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_does_not_exist_exception::de_deployment_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_id_required_exception::de_deployment_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_id_required_exception::de_deployment_id_required_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InstanceIdRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_instance_id_required_exception::de_instance_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_instance_id_required_exception::de_instance_id_required_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidComputePlatformExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_compute_platform_exception::de_invalid_compute_platform_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_compute_platform_exception::de_invalid_compute_platform_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentIdExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_id_exception::de_invalid_deployment_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_id_exception::de_invalid_deployment_id_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -128,8 +122,7 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInstanceNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_instance_name_exception::de_invalid_instance_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_instance_name_exception::de_invalid_instance_name_exception_json_err(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -144,13 +137,12 @@ pub fn de_batch_get_deployment_instances_http_error(response: &http::Response<by
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_deployment_instances_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput, crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError> {
+pub fn de_batch_get_deployment_instances_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput, crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_batch_get_deployment_instances::de_batch_get_deployment_instances(response.body().as_ref(), output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_batch_get_deployment_instances::de_batch_get_deployment_instances(_response_body, output).map_err(crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

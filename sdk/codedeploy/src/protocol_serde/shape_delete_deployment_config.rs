@@ -8,10 +8,10 @@ pub fn ser_delete_deployment_config_input(input: &crate::operation::delete_deplo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_deployment_config_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput, crate::operation::delete_deployment_config::DeleteDeploymentConfigError> {
+pub fn de_delete_deployment_config_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput, crate::operation::delete_deployment_config::DeleteDeploymentConfigError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_delete_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentConfigInUseExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_config_in_use_exception::de_deployment_config_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_config_in_use_exception::de_deployment_config_in_use_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_delete_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeploymentConfigNameRequiredExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_deployment_config_name_required_exception::de_deployment_config_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_deployment_config_name_required_exception::de_deployment_config_name_required_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_delete_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDeploymentConfigNameExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_deployment_config_name_exception::de_invalid_deployment_config_name_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_deployment_config_name_exception::de_invalid_deployment_config_name_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_delete_deployment_config_http_error(response: &http::Response<bytes::B
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_json_err(_response_body, output).map_err(crate::operation::delete_deployment_config::DeleteDeploymentConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -93,12 +89,11 @@ pub fn de_delete_deployment_config_http_error(response: &http::Response<bytes::B
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_deployment_config_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput, crate::operation::delete_deployment_config::DeleteDeploymentConfigError> {
+pub fn de_delete_deployment_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput, crate::operation::delete_deployment_config::DeleteDeploymentConfigError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigOutputBuilder::default();
-        let _ = response;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

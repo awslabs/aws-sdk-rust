@@ -35,10 +35,10 @@ pub fn ser_upload_archive_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::upload_archive::UploadArchiveOutput, crate::operation::upload_archive::UploadArchiveError> {
+pub fn de_upload_archive_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::upload_archive::UploadArchiveOutput, crate::operation::upload_archive::UploadArchiveError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -53,8 +53,7 @@ pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -70,8 +69,7 @@ pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -87,8 +85,7 @@ pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
+                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -104,8 +101,7 @@ pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -121,8 +117,7 @@ pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> 
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::upload_archive::UploadArchiveError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -137,24 +132,23 @@ pub fn de_upload_archive_http_error(response: &http::Response<bytes::Bytes>) -> 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_upload_archive_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::upload_archive::UploadArchiveOutput, crate::operation::upload_archive::UploadArchiveError> {
+pub fn de_upload_archive_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::upload_archive::UploadArchiveOutput, crate::operation::upload_archive::UploadArchiveError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::upload_archive::builders::UploadArchiveOutputBuilder::default();
-        let _ = response;
         output = output.set_archive_id(
-            crate::protocol_serde::shape_upload_archive_output::de_archive_id_header(response.headers())
+            crate::protocol_serde::shape_upload_archive_output::de_archive_id_header(_response_headers)
                                     .map_err(|_|crate::operation::upload_archive::UploadArchiveError::unhandled("Failed to parse archiveId from header `x-amz-archive-id"))?
         );
         output = output.set_checksum(
-            crate::protocol_serde::shape_upload_archive_output::de_checksum_header(response.headers())
+            crate::protocol_serde::shape_upload_archive_output::de_checksum_header(_response_headers)
                                     .map_err(|_|crate::operation::upload_archive::UploadArchiveError::unhandled("Failed to parse checksum from header `x-amz-sha256-tree-hash"))?
         );
         output = output.set_location(
-            crate::protocol_serde::shape_upload_archive_output::de_location_header(response.headers())
+            crate::protocol_serde::shape_upload_archive_output::de_location_header(_response_headers)
                                     .map_err(|_|crate::operation::upload_archive::UploadArchiveError::unhandled("Failed to parse location from header `Location"))?
         );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

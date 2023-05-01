@@ -120,11 +120,14 @@ impl ListJobRuns {
 impl aws_smithy_http::response::ParseStrictResponse for ListJobRuns {
                 type Output = std::result::Result<crate::operation::list_job_runs::ListJobRunsOutput, crate::operation::list_job_runs::ListJobRunsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     let (success, status) = (response.status().is_success(), response.status().as_u16());
+                     let headers = response.headers();
+                     let body = response.body().as_ref();
                      tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !response.status().is_success() && response.status().as_u16() != 200 {
-                        crate::protocol_serde::shape_list_job_runs::de_list_job_runs_http_error(response)
+                     if !success && status != 200 {
+                        crate::protocol_serde::shape_list_job_runs::de_list_job_runs_http_error(status, headers, body)
                      } else {
-                        crate::protocol_serde::shape_list_job_runs::de_list_job_runs_http_response(response)
+                        crate::protocol_serde::shape_list_job_runs::de_list_job_runs_http_response(status, headers, body)
                      }
                 }
             }

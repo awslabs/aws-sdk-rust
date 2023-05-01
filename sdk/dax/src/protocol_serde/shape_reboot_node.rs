@@ -8,10 +8,10 @@ pub fn ser_reboot_node_input(input: &crate::operation::reboot_node::RebootNodeIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::reboot_node::RebootNodeOutput, crate::operation::reboot_node::RebootNodeError> {
+pub fn de_reboot_node_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reboot_node::RebootNodeOutput, crate::operation::reboot_node::RebootNodeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -26,8 +26,7 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_json_err(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -43,8 +42,7 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_json_err(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -60,8 +58,7 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -77,8 +74,7 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -94,8 +90,7 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NodeNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_node_not_found_fault::de_node_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_not_found_fault::de_node_not_found_fault_json_err(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,8 +106,7 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_json_err(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -127,13 +121,12 @@ pub fn de_reboot_node_http_error(response: &http::Response<bytes::Bytes>) -> std
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reboot_node_http_response(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::operation::reboot_node::RebootNodeOutput, crate::operation::reboot_node::RebootNodeError> {
+pub fn de_reboot_node_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reboot_node::RebootNodeOutput, crate::operation::reboot_node::RebootNodeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reboot_node::builders::RebootNodeOutputBuilder::default();
-        let _ = response;
-        output = crate::protocol_serde::shape_reboot_node::de_reboot_node(response.body().as_ref(), output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
-        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
+        output = crate::protocol_serde::shape_reboot_node::de_reboot_node(_response_body, output).map_err(crate::operation::reboot_node::RebootNodeError::unhandled)?;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
