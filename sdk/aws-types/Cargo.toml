@@ -13,7 +13,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-examples = ["aws-smithy-client/client-hyper", "aws-smithy-client/rustls", "hyper-rustls"]
+examples = ["dep:hyper-rustls", "aws-smithy-client/client-hyper", "aws-smithy-client/rustls"]
 
 [dependencies]
 tracing = "0.1"

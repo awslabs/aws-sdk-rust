@@ -298,7 +298,9 @@ mod test {
     make_test!(ecs_credentials);
     make_test!(ecs_credentials_invalid_profile);
 
+    #[cfg(feature = "credentials-sso")]
     make_test!(sso_assume_role);
+    #[cfg(feature = "credentials-sso")]
     make_test!(sso_no_token_file);
 
     #[tokio::test]

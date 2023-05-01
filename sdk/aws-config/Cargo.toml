@@ -18,12 +18,10 @@ client-hyper = ["aws-smithy-client/client-hyper"]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-async/rt-tokio", "tokio/rt"]
-default = ["client-hyper", "rustls", "rt-tokio"]
+credentials-sso = ["dep:aws-sdk-sso", "dep:ring", "dep:hex", "dep:zeroize"]
+default = ["client-hyper", "rustls", "rt-tokio", "credentials-sso"]
 
 [dependencies]
-ring = "0.16"
-hex = "0.4.3"
-zeroize = "1"
 fastrand = "1"
 bytes = "1.1.0"
 http = "0.2.4"
@@ -35,11 +33,6 @@ version = "0.55.1"
 [dependencies.aws-http]
 path = "../aws-http"
 version = "0.55.1"
-
-[dependencies.aws-sdk-sso]
-path = "../sso"
-default-features = false
-version = "0.27.0"
 
 [dependencies.aws-sdk-sts]
 path = "../sts"
@@ -92,6 +85,24 @@ version = "0.1"
 
 [dependencies.tower]
 version = "0.4.8"
+
+[dependencies.aws-sdk-sso]
+path = "../sso"
+default-features = false
+optional = true
+version = "0.27.0"
+
+[dependencies.ring]
+version = "0.16"
+optional = true
+
+[dependencies.hex]
+version = "0.4.3"
+optional = true
+
+[dependencies.zeroize]
+version = "1"
+optional = true
 
 [dev-dependencies]
 tracing-test = "0.2.1"

@@ -57,6 +57,7 @@ exclude = [
     "examples/medialive",
     "examples/testing",
     "tests/no-default-features",
+    "tests/webassembly",
     "tests/using-native-tls-instead-of-rustls"
 ]
 members = [

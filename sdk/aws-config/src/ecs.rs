@@ -418,7 +418,7 @@ async fn validate_full_uri(
     }
 }
 
-#[cfg(not(feature = "rt-tokio"))]
+#[cfg(any(not(feature = "rt-tokio"), target_family = "wasm"))]
 fn tokio_dns() -> Option<DnsService> {
     None
 }
@@ -426,7 +426,7 @@ fn tokio_dns() -> Option<DnsService> {
 /// DNS resolver that uses tokio::spawn_blocking
 ///
 /// DNS resolution is required to validate that provided URIs point to the loopback interface
-#[cfg(feature = "rt-tokio")]
+#[cfg(all(feature = "rt-tokio", not(target_family = "wasm")))]
 fn tokio_dns() -> Option<DnsService> {
     use aws_smithy_client::erase::boxclone::BoxFuture;
     use std::io::ErrorKind;

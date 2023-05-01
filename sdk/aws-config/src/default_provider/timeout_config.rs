@@ -4,7 +4,7 @@
  */
 
 use crate::provider_config::ProviderConfig;
-use aws_sdk_sso::config::timeout::TimeoutConfig;
+use aws_smithy_types::timeout::TimeoutConfig;
 use std::time::Duration;
 
 const SDK_DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_millis(3100);
