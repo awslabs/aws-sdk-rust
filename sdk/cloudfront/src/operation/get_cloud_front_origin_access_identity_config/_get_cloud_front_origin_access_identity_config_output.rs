@@ -3,10 +3,11 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCloudFrontOriginAccessIdentityConfigOutput  {
+pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information.</p>
     #[doc(hidden)]
-    pub cloud_front_origin_access_identity_config: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub cloud_front_origin_access_identity_config:
+        std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
@@ -14,22 +15,24 @@ pub struct GetCloudFrontOriginAccessIdentityConfigOutput  {
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information.</p>
-    pub fn cloud_front_origin_access_identity_config(&self) -> std::option::Option<& crate::types::CloudFrontOriginAccessIdentityConfig> {
+    pub fn cloud_front_origin_access_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCloudFrontOriginAccessIdentityConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCloudFrontOriginAccessIdentityConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetCloudFrontOriginAccessIdentityConfigOutput`](crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput).
-    pub fn builder() -> crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigOutputBuilder{
         crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigOutputBuilder::default()
     }
 }
@@ -38,19 +41,27 @@ impl GetCloudFrontOriginAccessIdentityConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
-    pub(crate) cloud_front_origin_access_identity_config: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub(crate) cloud_front_origin_access_identity_config:
+        std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
     pub(crate) e_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
     /// <p>The origin access identity's configuration information.</p>
-    pub fn cloud_front_origin_access_identity_config(mut self, input: crate::types::CloudFrontOriginAccessIdentityConfig) -> Self {
+    pub fn cloud_front_origin_access_identity_config(
+        mut self,
+        input: crate::types::CloudFrontOriginAccessIdentityConfig,
+    ) -> Self {
         self.cloud_front_origin_access_identity_config = Some(input);
         self
     }
     /// <p>The origin access identity's configuration information.</p>
-    pub fn set_cloud_front_origin_access_identity_config(mut self, input: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>) -> Self {
-        self.cloud_front_origin_access_identity_config = input; self
+    pub fn set_cloud_front_origin_access_identity_config(
+        mut self,
+        input: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    ) -> Self {
+        self.cloud_front_origin_access_identity_config = input;
+        self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,19 +70,20 @@ impl GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCloudFrontOriginAccessIdentityConfigOutput`](crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput).
-    pub fn build(self) -> crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput {
+    pub fn build(self) -> crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput{
         crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput {
             cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config
             ,
@@ -81,4 +93,3 @@ impl GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
         }
     }
 }
-

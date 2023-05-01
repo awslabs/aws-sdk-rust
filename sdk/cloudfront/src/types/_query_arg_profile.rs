@@ -3,7 +3,7 @@
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryArgProfile  {
+pub struct QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     #[doc(hidden)]
     pub query_arg: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct QueryArgProfile  {
 }
 impl QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
-    pub fn query_arg(&self) -> std::option::Option<& str> {
+    pub fn query_arg(&self) -> std::option::Option<&str> {
         self.query_arg.as_deref()
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
-    pub fn profile_id(&self) -> std::option::Option<& str> {
+    pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl QueryArgProfileBuilder {
     }
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     pub fn set_query_arg(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_arg = input; self
+        self.query_arg = input;
+        self
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl QueryArgProfileBuilder {
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_id = input; self
+        self.profile_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryArgProfile`](crate::types::QueryArgProfile).
     pub fn build(self) -> crate::types::QueryArgProfile {
         crate::types::QueryArgProfile {
-            query_arg: self.query_arg
-            ,
-            profile_id: self.profile_id
-            ,
+            query_arg: self.query_arg,
+            profile_id: self.profile_id,
         }
     }
 }
-

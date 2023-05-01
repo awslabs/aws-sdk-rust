@@ -3,7 +3,7 @@
 /// <p>Includes the error code and error message for events that could not be ingested by CloudTrail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultErrorEntry  {
+pub struct ResultErrorEntry {
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResultErrorEntry  {
 }
 impl ResultErrorEntry {
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ResultErrorEntryBuilder {
     }
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ResultErrorEntryBuilder {
     }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ResultErrorEntryBuilder {
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResultErrorEntry`](crate::types::ResultErrorEntry).
     pub fn build(self) -> crate::types::ResultErrorEntry {
         crate::types::ResultErrorEntry {
-            id: self.id
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            id: self.id,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
-

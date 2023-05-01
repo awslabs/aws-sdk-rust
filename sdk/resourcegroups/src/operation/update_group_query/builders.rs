@@ -4,54 +4,76 @@ pub use crate::operation::update_group_query::_update_group_query_output::Update
 pub use crate::operation::update_group_query::_update_group_query_input::UpdateGroupQueryInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateGroupQuery`.
-/// 
-/// <p>Updates the resource query of a group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p> 
-/// <p> <b>Minimum permissions</b> </p> 
-/// <p>To run this command, you must have the following permissions:</p> 
-/// <ul> 
-/// <li> <p> <code>resource-groups:UpdateGroupQuery</code> </p> </li> 
+///
+/// <p>Updates the resource query of a group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
+/// <p> <b>Minimum permissions</b> </p>
+/// <p>To run this command, you must have the following permissions:</p>
+/// <ul>
+/// <li> <p> <code>resource-groups:UpdateGroupQuery</code> </p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGroupQueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder
-            }
-impl UpdateGroupQueryFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder,
+}
+impl UpdateGroupQueryFluentBuilder {
     /// Creates a new `UpdateGroupQuery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_group_query::UpdateGroupQuery, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_group_query::UpdateGroupQueryOutput, aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_group_query::UpdateGroupQuery,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_group_query::UpdateGroupQueryError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_group_query::UpdateGroupQueryOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_group_query::UpdateGroupQueryError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,19 +96,21 @@ impl UpdateGroupQueryFluentBuilder  {
         self.inner = self.inner.set_group(input);
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note> 
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.inner = self.inner.resource_query(input);
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note> 
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn set_resource_query(mut self, input: std::option::Option<crate::types::ResourceQuery>) -> Self {
+    pub fn set_resource_query(
+        mut self,
+        input: std::option::Option<crate::types::ResourceQuery>,
+    ) -> Self {
         self.inner = self.inner.set_resource_query(input);
         self
     }
 }
-

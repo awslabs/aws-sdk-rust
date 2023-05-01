@@ -4,87 +4,108 @@ pub use crate::operation::list_groups::_list_groups_output::ListGroupsOutputBuil
 pub use crate::operation::list_groups::_list_groups_input::ListGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `ListGroups`.
-/// 
-/// <p>Returns a list of existing Resource Groups in your account.</p> 
-/// <p> <b>Minimum permissions</b> </p> 
-/// <p>To run this command, you must have the following permissions:</p> 
-/// <ul> 
-/// <li> <p> <code>resource-groups:ListGroups</code> </p> </li> 
+///
+/// <p>Returns a list of existing Resource Groups in your account.</p>
+/// <p> <b>Minimum permissions</b> </p>
+/// <p>To run this command, you must have the following permissions:</p>
+/// <ul>
+/// <li> <p> <code>resource-groups:ListGroups</code> </p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_groups::builders::ListGroupsInputBuilder
-            }
-impl ListGroupsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_groups::builders::ListGroupsInputBuilder,
+}
+impl ListGroupsFluentBuilder {
     /// Creates a new `ListGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_groups::ListGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_groups::ListGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_groups::ListGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_groups::ListGroupsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_groups::paginator::ListGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_groups::paginator::ListGroupsPaginator {
-                            crate::operation::list_groups::paginator::ListGroupsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_groups::paginator::ListGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_groups::paginator::ListGroupsPaginator {
+        crate::operation::list_groups::paginator::ListGroupsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p> 
-    /// <ul> 
-    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> 
-    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li> 
-    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li> 
-    /// </ul> </li> 
+    /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
+    /// <ul>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::GroupFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p> 
-    /// <ul> 
-    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> 
-    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li> 
-    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li> 
-    /// </ul> </li> 
+    /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
+    /// <ul>
+    /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+    /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GroupFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -109,4 +130,3 @@ impl ListGroupsFluentBuilder  {
         self
     }
 }
-

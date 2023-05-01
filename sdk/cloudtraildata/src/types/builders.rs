@@ -4,4 +4,3 @@ pub use crate::types::_result_error_entry::ResultErrorEntryBuilder;
 pub use crate::types::_audit_event_result_entry::AuditEventResultEntryBuilder;
 
 pub use crate::types::_audit_event::AuditEventBuilder;
-

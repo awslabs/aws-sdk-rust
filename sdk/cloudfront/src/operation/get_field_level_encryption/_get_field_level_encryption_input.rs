@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFieldLevelEncryptionInput  {
+pub struct GetFieldLevelEncryptionInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFieldLevelEncryptionInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl GetFieldLevelEncryptionInput {
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionInput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput).
-    pub fn builder() -> crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder
+    {
         crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetFieldLevelEncryptionInputBuilder {
     }
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionInput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput).
-    pub fn build(self) -> Result<crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

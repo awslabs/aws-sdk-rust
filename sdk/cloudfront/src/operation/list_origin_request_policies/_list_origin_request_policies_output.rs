@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOriginRequestPoliciesOutput  {
+pub struct ListOriginRequestPoliciesOutput {
     /// <p>A list of origin request policies.</p>
     #[doc(hidden)]
     pub origin_request_policy_list: std::option::Option<crate::types::OriginRequestPolicyList>,
@@ -10,18 +10,20 @@ pub struct ListOriginRequestPoliciesOutput  {
 }
 impl ListOriginRequestPoliciesOutput {
     /// <p>A list of origin request policies.</p>
-    pub fn origin_request_policy_list(&self) -> std::option::Option<& crate::types::OriginRequestPolicyList> {
+    pub fn origin_request_policy_list(
+        &self,
+    ) -> std::option::Option<&crate::types::OriginRequestPolicyList> {
         self.origin_request_policy_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListOriginRequestPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListOriginRequestPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginRequestPoliciesOutput`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput).
-    pub fn builder() -> crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesOutputBuilder{
         crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesOutputBuilder::default()
     }
 }
@@ -30,35 +32,43 @@ impl ListOriginRequestPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListOriginRequestPoliciesOutputBuilder {
-    pub(crate) origin_request_policy_list: std::option::Option<crate::types::OriginRequestPolicyList>,
+    pub(crate) origin_request_policy_list:
+        std::option::Option<crate::types::OriginRequestPolicyList>,
     _request_id: Option<String>,
 }
 impl ListOriginRequestPoliciesOutputBuilder {
     /// <p>A list of origin request policies.</p>
-    pub fn origin_request_policy_list(mut self, input: crate::types::OriginRequestPolicyList) -> Self {
+    pub fn origin_request_policy_list(
+        mut self,
+        input: crate::types::OriginRequestPolicyList,
+    ) -> Self {
         self.origin_request_policy_list = Some(input);
         self
     }
     /// <p>A list of origin request policies.</p>
-    pub fn set_origin_request_policy_list(mut self, input: std::option::Option<crate::types::OriginRequestPolicyList>) -> Self {
-        self.origin_request_policy_list = input; self
+    pub fn set_origin_request_policy_list(
+        mut self,
+        input: std::option::Option<crate::types::OriginRequestPolicyList>,
+    ) -> Self {
+        self.origin_request_policy_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListOriginRequestPoliciesOutput`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput).
-    pub fn build(self) -> crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput {
         crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput {
-            origin_request_policy_list: self.origin_request_policy_list
-            ,
+            origin_request_policy_list: self.origin_request_policy_list,
             _request_id: self._request_id,
         }
     }
 }
-

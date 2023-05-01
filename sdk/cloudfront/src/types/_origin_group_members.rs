@@ -3,7 +3,7 @@
 /// <p>A complex data type for the origins included in an origin group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginGroupMembers  {
+pub struct OriginGroupMembers {
     /// <p>The number of origins in an origin group.</p>
     #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl OriginGroupMembers {
         self.quantity
     }
     /// <p>Items (origins) in an origin group.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::OriginGroupMember]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::OriginGroupMember]> {
         self.items.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl OriginGroupMembersBuilder {
     }
     /// <p>The number of origins in an origin group.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Appends an item to `items`.
     ///
@@ -52,22 +53,23 @@ impl OriginGroupMembersBuilder {
     /// <p>Items (origins) in an origin group.</p>
     pub fn items(mut self, input: crate::types::OriginGroupMember) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>Items (origins) in an origin group.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::OriginGroupMember>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OriginGroupMember>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`OriginGroupMembers`](crate::types::OriginGroupMembers).
     pub fn build(self) -> crate::types::OriginGroupMembers {
         crate::types::OriginGroupMembers {
-            quantity: self.quantity
-            ,
-            items: self.items
-            ,
+            quantity: self.quantity,
+            items: self.items,
         }
     }
 }
-

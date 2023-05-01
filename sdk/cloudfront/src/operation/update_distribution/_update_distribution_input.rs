@@ -3,7 +3,7 @@
 /// <p>The request to update a distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDistributionInput  {
+pub struct UpdateDistributionInput {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::types::DistributionConfig>,
@@ -16,21 +16,22 @@ pub struct UpdateDistributionInput  {
 }
 impl UpdateDistributionInput {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config(&self) -> std::option::Option<& crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> std::option::Option<&crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
     /// <p>The distribution's id.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> std::option::Option<& str> {
+    pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
 }
 impl UpdateDistributionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
-    pub fn builder() -> crate::operation::update_distribution::builders::UpdateDistributionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_distribution::builders::UpdateDistributionInputBuilder {
         crate::operation::update_distribution::builders::UpdateDistributionInputBuilder::default()
     }
 }
@@ -50,8 +51,12 @@ impl UpdateDistributionInputBuilder {
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config(mut self, input: std::option::Option<crate::types::DistributionConfig>) -> Self {
-        self.distribution_config = input; self
+    pub fn set_distribution_config(
+        mut self,
+        input: std::option::Option<crate::types::DistributionConfig>,
+    ) -> Self {
+        self.distribution_config = input;
+        self
     }
     /// <p>The distribution's id.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +65,8 @@ impl UpdateDistributionInputBuilder {
     }
     /// <p>The distribution's id.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +75,22 @@ impl UpdateDistributionInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_match = input; self
+        self.if_match = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
-    pub fn build(self) -> Result<crate::operation::update_distribution::UpdateDistributionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_distribution::UpdateDistributionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_distribution::UpdateDistributionInput {
-                distribution_config: self.distribution_config
-                ,
-                id: self.id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                distribution_config: self.distribution_config,
+                id: self.id,
+                if_match: self.if_match,
+            },
         )
     }
 }
-

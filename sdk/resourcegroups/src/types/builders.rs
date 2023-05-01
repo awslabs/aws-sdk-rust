@@ -30,4 +30,3 @@ pub use crate::types::_resource_status::ResourceStatusBuilder;
 pub use crate::types::_resource_filter::ResourceFilterBuilder;
 
 pub use crate::types::_group_configuration::GroupConfigurationBuilder;
-

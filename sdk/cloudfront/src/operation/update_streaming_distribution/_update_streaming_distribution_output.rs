@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStreamingDistributionOutput  {
+pub struct UpdateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
     pub streaming_distribution: std::option::Option<crate::types::StreamingDistribution>,
@@ -14,22 +14,24 @@ pub struct UpdateStreamingDistributionOutput  {
 }
 impl UpdateStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
-    pub fn streaming_distribution(&self) -> std::option::Option<& crate::types::StreamingDistribution> {
+    pub fn streaming_distribution(
+        &self,
+    ) -> std::option::Option<&crate::types::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateStreamingDistributionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateStreamingDistributionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamingDistributionOutput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput).
-    pub fn builder() -> crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionOutputBuilder {
+    pub fn builder() -> crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionOutputBuilder{
         crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionOutputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl UpdateStreamingDistributionOutputBuilder {
         self
     }
     /// <p>The streaming distribution's information.</p>
-    pub fn set_streaming_distribution(mut self, input: std::option::Option<crate::types::StreamingDistribution>) -> Self {
-        self.streaming_distribution = input; self
+    pub fn set_streaming_distribution(
+        mut self,
+        input: std::option::Option<crate::types::StreamingDistribution>,
+    ) -> Self {
+        self.streaming_distribution = input;
+        self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +65,26 @@ impl UpdateStreamingDistributionOutputBuilder {
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateStreamingDistributionOutput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput).
-    pub fn build(self) -> crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput {
         crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput {
-            streaming_distribution: self.streaming_distribution
-            ,
-            e_tag: self.e_tag
-            ,
+            streaming_distribution: self.streaming_distribution,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }
 }
-

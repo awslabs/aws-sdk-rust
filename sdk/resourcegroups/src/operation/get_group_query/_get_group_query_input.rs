@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupQueryInput  {
+pub struct GetGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     #[doc(hidden)]
@@ -14,11 +14,11 @@ pub struct GetGroupQueryInput  {
 impl GetGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The name or the ARN of the resource group to query.</p>
-    pub fn group(&self) -> std::option::Option<& str> {
+    pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
     }
 }
@@ -46,7 +46,8 @@ impl GetGroupQueryInputBuilder {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The name or the ARN of the resource group to query.</p>
     pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +56,19 @@ impl GetGroupQueryInputBuilder {
     }
     /// <p>The name or the ARN of the resource group to query.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input; self
+        self.group = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetGroupQueryInput`](crate::operation::get_group_query::GetGroupQueryInput).
-    pub fn build(self) -> Result<crate::operation::get_group_query::GetGroupQueryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_group_query::GetGroupQueryInput {
-                group_name: self.group_name
-                ,
-                group: self.group
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_group_query::GetGroupQueryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_group_query::GetGroupQueryInput {
+            group_name: self.group_name,
+            group: self.group,
+        })
     }
 }
-

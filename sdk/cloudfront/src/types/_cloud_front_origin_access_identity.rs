@@ -3,7 +3,7 @@
 /// <p>CloudFront origin access identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudFrontOriginAccessIdentity  {
+pub struct CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,19 +12,22 @@ pub struct CloudFrontOriginAccessIdentity  {
     pub s3_canonical_user_id: std::option::Option<std::string::String>,
     /// <p>The current configuration information for the identity.</p>
     #[doc(hidden)]
-    pub cloud_front_origin_access_identity_config: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub cloud_front_origin_access_identity_config:
+        std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn s3_canonical_user_id(&self) -> std::option::Option<& str> {
+    pub fn s3_canonical_user_id(&self) -> std::option::Option<&str> {
         self.s3_canonical_user_id.as_deref()
     }
     /// <p>The current configuration information for the identity.</p>
-    pub fn cloud_front_origin_access_identity_config(&self) -> std::option::Option<& crate::types::CloudFrontOriginAccessIdentityConfig> {
+    pub fn cloud_front_origin_access_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
 }
@@ -41,7 +44,8 @@ impl CloudFrontOriginAccessIdentity {
 pub struct CloudFrontOriginAccessIdentityBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) s3_canonical_user_id: std::option::Option<std::string::String>,
-    pub(crate) cloud_front_origin_access_identity_config: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub(crate) cloud_front_origin_access_identity_config:
+        std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CloudFrontOriginAccessIdentityBuilder {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
@@ -51,7 +55,8 @@ impl CloudFrontOriginAccessIdentityBuilder {
     }
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub fn s3_canonical_user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,28 +64,36 @@ impl CloudFrontOriginAccessIdentityBuilder {
         self
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn set_s3_canonical_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_canonical_user_id = input; self
+    pub fn set_s3_canonical_user_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.s3_canonical_user_id = input;
+        self
     }
     /// <p>The current configuration information for the identity.</p>
-    pub fn cloud_front_origin_access_identity_config(mut self, input: crate::types::CloudFrontOriginAccessIdentityConfig) -> Self {
+    pub fn cloud_front_origin_access_identity_config(
+        mut self,
+        input: crate::types::CloudFrontOriginAccessIdentityConfig,
+    ) -> Self {
         self.cloud_front_origin_access_identity_config = Some(input);
         self
     }
     /// <p>The current configuration information for the identity.</p>
-    pub fn set_cloud_front_origin_access_identity_config(mut self, input: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>) -> Self {
-        self.cloud_front_origin_access_identity_config = input; self
+    pub fn set_cloud_front_origin_access_identity_config(
+        mut self,
+        input: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    ) -> Self {
+        self.cloud_front_origin_access_identity_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentity`](crate::types::CloudFrontOriginAccessIdentity).
     pub fn build(self) -> crate::types::CloudFrontOriginAccessIdentity {
         crate::types::CloudFrontOriginAccessIdentity {
-            id: self.id
-            ,
-            s3_canonical_user_id: self.s3_canonical_user_id
-            ,
-            cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config
-            ,
+            id: self.id,
+            s3_canonical_user_id: self.s3_canonical_user_id,
+            cloud_front_origin_access_identity_config: self
+                .cloud_front_origin_access_identity_config,
         }
     }
 }
-

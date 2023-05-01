@@ -4,70 +4,96 @@ pub use crate::operation::search_resources::_search_resources_output::SearchReso
 pub use crate::operation::search_resources::_search_resources_input::SearchResourcesInputBuilder;
 
 /// Fluent builder constructing a request to `SearchResources`.
-/// 
-/// <p>Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a <code>CreateGroup</code> or <code>UpdateGroupQuery</code> operation.</p> 
-/// <p> <b>Minimum permissions</b> </p> 
-/// <p>To run this command, you must have the following permissions:</p> 
-/// <ul> 
-/// <li> <p> <code>resource-groups:SearchResources</code> </p> </li> 
-/// <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li> 
-/// <li> <p> <code>cloudformation:ListStackResources</code> </p> </li> 
-/// <li> <p> <code>tag:GetResources</code> </p> </li> 
+///
+/// <p>Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a <code>CreateGroup</code> or <code>UpdateGroupQuery</code> operation.</p>
+/// <p> <b>Minimum permissions</b> </p>
+/// <p>To run this command, you must have the following permissions:</p>
+/// <ul>
+/// <li> <p> <code>resource-groups:SearchResources</code> </p> </li>
+/// <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li>
+/// <li> <p> <code>cloudformation:ListStackResources</code> </p> </li>
+/// <li> <p> <code>tag:GetResources</code> </p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_resources::builders::SearchResourcesInputBuilder
-            }
-impl SearchResourcesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::search_resources::builders::SearchResourcesInputBuilder,
+}
+impl SearchResourcesFluentBuilder {
     /// Creates a new `SearchResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_resources::SearchResources, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_resources::SearchResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_resources::SearchResources,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_resources::SearchResourcesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_resources::paginator::SearchResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
-                            crate::operation::search_resources::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_resources::paginator::SearchResourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
+        crate::operation::search_resources::paginator::SearchResourcesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.inner = self.inner.resource_query(input);
         self
     }
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
-    pub fn set_resource_query(mut self, input: std::option::Option<crate::types::ResourceQuery>) -> Self {
+    pub fn set_resource_query(
+        mut self,
+        input: std::option::Option<crate::types::ResourceQuery>,
+    ) -> Self {
         self.inner = self.inner.set_resource_query(input);
         self
     }
@@ -92,4 +118,3 @@ impl SearchResourcesFluentBuilder  {
         self
     }
 }
-

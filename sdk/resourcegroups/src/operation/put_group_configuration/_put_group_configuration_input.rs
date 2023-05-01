@@ -2,33 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutGroupConfigurationInput  {
+pub struct PutGroupConfigurationInput {
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
-    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p> 
-    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note> 
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
+    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInput {
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
-    pub fn group(&self) -> std::option::Option<& str> {
+    pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p> 
-    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note> 
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
+    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn configuration(&self) -> std::option::Option<& [crate::types::GroupConfigurationItem]> {
+    pub fn configuration(&self) -> std::option::Option<&[crate::types::GroupConfigurationItem]> {
         self.configuration.as_deref()
     }
 }
 impl PutGroupConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
-    pub fn builder() -> crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder
+    {
         crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder::default()
     }
 }
@@ -38,7 +40,8 @@ impl PutGroupConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutGroupConfigurationInputBuilder {
     pub(crate) group: std::option::Option<std::string::String>,
-    pub(crate) configuration: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    pub(crate) configuration:
+        std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInputBuilder {
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
@@ -48,39 +51,46 @@ impl PutGroupConfigurationInputBuilder {
     }
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input; self
+        self.group = input;
+        self
     }
     /// Appends an item to `configuration`.
     ///
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
     ///
-    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p> 
-    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note> 
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
+    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn configuration(mut self, input: crate::types::GroupConfigurationItem) -> Self {
         let mut v = self.configuration.unwrap_or_default();
-                        v.push(input);
-                        self.configuration = Some(v);
-                        self
+        v.push(input);
+        self.configuration = Some(v);
+        self
     }
-    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p> 
-    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note> 
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
+    /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn set_configuration(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>) -> Self {
-        self.configuration = input; self
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    ) -> Self {
+        self.configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_group_configuration::PutGroupConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_group_configuration::PutGroupConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_group_configuration::PutGroupConfigurationInput {
-                group: self.group
-                ,
-                configuration: self.configuration
-                ,
-            }
+                group: self.group,
+                configuration: self.configuration,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFieldLevelEncryptionConfigInput  {
+pub struct DeleteFieldLevelEncryptionConfigInput {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteFieldLevelEncryptionConfigInput  {
 }
 impl DeleteFieldLevelEncryptionConfigInput {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> std::option::Option<& str> {
+    pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
 }
 impl DeleteFieldLevelEncryptionConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionConfigInput`](crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput).
-    pub fn builder() -> crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigInputBuilder {
+    pub fn builder() -> crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigInputBuilder{
         crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DeleteFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_match = input; self
+        self.if_match = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFieldLevelEncryptionConfigInput`](crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput).
-    pub fn build(self) -> Result<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput {
                 id: self.id
@@ -65,4 +67,3 @@ impl DeleteFieldLevelEncryptionConfigInputBuilder {
         )
     }
 }
-
