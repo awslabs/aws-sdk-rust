@@ -477,6 +477,11 @@ impl AggregatedBytes {
         self.0.copy_to_bytes(self.0.remaining())
     }
 
+    /// Convert this buffer into an [`Iterator`] of underlying non-contiguous segments of [`Bytes`]
+    pub fn into_segments(self) -> impl Iterator<Item = Bytes> {
+        self.0.into_inner().into_iter()
+    }
+
     /// Convert this buffer into a `Vec<u8>`
     pub fn to_vec(self) -> Vec<u8> {
         self.0
