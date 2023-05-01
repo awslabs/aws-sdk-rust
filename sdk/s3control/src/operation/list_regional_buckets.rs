@@ -14,8 +14,8 @@ impl ListRegionalBucketsInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_outpost_id(self.outpost_id.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_outpost_id(self.outpost_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
