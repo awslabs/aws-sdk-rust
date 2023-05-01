@@ -7,7 +7,6 @@
 //! Functions for modifying requests and responses for the purposes of checksum validation
 
 use aws_smithy_http::operation::error::BuildError;
-use http::header::HeaderName;
 
 /// Errors related to constructing checksum-validated HTTP requests
 #[derive(Debug)]
@@ -186,15 +185,32 @@ pub(crate) fn check_headers_for_precalculated_checksum(
         let checksum_algorithm: aws_smithy_checksums::ChecksumAlgorithm = checksum_algorithm.parse().expect(
             "CHECKSUM_ALGORITHMS_IN_PRIORITY_ORDER only contains valid checksum algorithm names",
         );
-        if let Some(precalculated_checksum) = headers.get(HeaderName::from(checksum_algorithm)) {
+        if let Some(precalculated_checksum) =
+            headers.get(http::HeaderName::from(checksum_algorithm))
+        {
             let base64_encoded_precalculated_checksum = precalculated_checksum
                 .to_str()
                 .expect("base64 uses ASCII characters");
 
-            let precalculated_checksum: bytes::Bytes =
-                aws_smithy_types::base64::decode(base64_encoded_precalculated_checksum)
-                    .expect("services will always base64 encode the checksum value per the spec")
-                    .into();
+            // S3 needs special handling for checksums of objects uploaded with `MultiPartUpload`.
+            if is_part_level_checksum(base64_encoded_precalculated_checksum) {
+                tracing::warn!(
+                    more_info = "See https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums for more information.",
+                    "This checksum is a part-level checksum which can't be validated by the Rust SDK. Disable checksum validation for this request to fix this warning.",
+                );
+
+                return None;
+            }
+
+            let precalculated_checksum = match aws_smithy_types::base64::decode(
+                base64_encoded_precalculated_checksum,
+            ) {
+                Ok(decoded_checksum) => decoded_checksum.into(),
+                Err(_) => {
+                    tracing::error!("Checksum received from server could not be base64 decoded. No checksum validation will be performed.");
+                    return None;
+                }
+            };
 
             return Some((checksum_algorithm, precalculated_checksum));
         }
@@ -203,9 +219,38 @@ pub(crate) fn check_headers_for_precalculated_checksum(
     None
 }
 
+fn is_part_level_checksum(checksum: &str) -> bool {
+    let mut found_number = false;
+    let mut found_dash = false;
+
+    for ch in checksum.chars().rev() {
+        // this could be bad
+        if ch.is_ascii_digit() {
+            found_number = true;
+            continue;
+        }
+
+        // Yup, it's a part-level checksum
+        if ch == '-' {
+            if found_dash {
+                // Found a second dash?? This isn't a part-level checksum.
+                return false;
+            }
+
+            found_dash = true;
+            continue;
+        }
+
+        break;
+    }
+
+    found_number && found_dash
+}
+
 #[cfg(test)]
 mod tests {
     use super::wrap_body_with_checksum_validator;
+    use crate::http_body_checksum::is_part_level_checksum;
     use aws_smithy_checksums::ChecksumAlgorithm;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::byte_stream::ByteStream;
@@ -347,6 +392,29 @@ mod tests {
         let body = std::str::from_utf8(&validated_body).unwrap();
 
         assert_eq!(input_text, body);
+    }
+
+    #[test]
+    fn test_is_multipart_object_checksum() {
+        // These ARE NOT part-level checksums
+        assert!(!is_part_level_checksum("abcd"));
+        assert!(!is_part_level_checksum("abcd="));
+        assert!(!is_part_level_checksum("abcd=="));
+        assert!(!is_part_level_checksum("1234"));
+        assert!(!is_part_level_checksum("1234="));
+        assert!(!is_part_level_checksum("1234=="));
+        // These ARE part-level checksums
+        assert!(is_part_level_checksum("abcd-1"));
+        assert!(is_part_level_checksum("abcd=-12"));
+        assert!(is_part_level_checksum("abcd12-134"));
+        assert!(is_part_level_checksum("abcd==-10000"));
+        // These are gibberish and shouldn't be regarded as a part-level checksum
+        assert!(!is_part_level_checksum(""));
+        assert!(!is_part_level_checksum("Spaces? In my header values?"));
+        assert!(!is_part_level_checksum("abcd==-134!#{!#"));
+        assert!(!is_part_level_checksum("abcd==-"));
+        assert!(!is_part_level_checksum("abcd==--11"));
+        assert!(!is_part_level_checksum("abcd==-AA"));
     }
 }
 

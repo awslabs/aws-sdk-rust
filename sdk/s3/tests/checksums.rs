@@ -7,6 +7,7 @@ use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::types::ChecksumMode;
 use aws_sdk_s3::Client;
 use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
 use aws_smithy_client::test_connection::{capture_request, TestConnection};
@@ -17,6 +18,7 @@ use std::{
     convert::Infallible,
     time::{Duration, UNIX_EPOCH},
 };
+use tracing_test::traced_test;
 
 /// Test connection for the movies IT
 /// headers are signed with actual creds, at some point we could replace them with verifiable test
@@ -338,4 +340,96 @@ async fn collect_body_into_string(mut body: aws_smithy_http::body::SdkBody) -> S
         .expect("Doesn't cause IO errors");
 
     output_text
+}
+
+#[tokio::test]
+#[traced_test]
+async fn test_get_multipart_upload_part_checksum_validation() {
+    let expected_checksum = "cpjwid==-12";
+    let (conn, rcvr) = capture_request(Some(
+        http::Response::builder()
+            .header("etag", "\"3e25960a79dbc69b674cd4ec67a72c62\"")
+            .header("x-amz-checksum-crc32", expected_checksum)
+            .body(SdkBody::empty())
+            .unwrap(),
+    ));
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
+        .build();
+    let client = Client::new(&sdk_config);
+
+    // The response from the fake connection won't return the expected XML but we don't care about
+    // that error in this test
+    let res = client
+        .get_object()
+        .bucket("test-bucket")
+        .key("test.txt")
+        .checksum_mode(ChecksumMode::Enabled)
+        .send()
+        .await
+        .expect("request should succeed, despite the non-base64-decodable checksum");
+
+    let _req = rcvr.expect_request();
+
+    let actual_checksum = res.checksum_crc32().unwrap();
+    assert_eq!(expected_checksum, actual_checksum);
+
+    logs_assert(|lines: &[&str]| {
+        let checksum_warning = lines.iter().find(|&&line| {
+            line.contains("This checksum is a part-level checksum which can't be validated by the Rust SDK. Disable checksum validation for this request to fix this warning.")
+        });
+
+        match checksum_warning {
+            Some(_) => Ok(()),
+            None => Err("Checksum warning was not issued".to_string()),
+        }
+    });
+}
+
+#[tokio::test]
+#[traced_test]
+async fn test_response_checksum_ignores_invalid_base64() {
+    let expected_checksum = "{}{!!#{})!{)@$(}";
+    let (conn, rcvr) = capture_request(Some(
+        http::Response::builder()
+            .header("etag", "\"3e25960a79dbc69b674cd4ec67a72c62\"")
+            .header("x-amz-checksum-crc32", expected_checksum)
+            .body(SdkBody::empty())
+            .unwrap(),
+    ));
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
+        .build();
+    let client = Client::new(&sdk_config);
+
+    // The response from the fake connection won't return the expected XML but we don't care about
+    // that error in this test
+    let res = client
+        .get_object()
+        .bucket("test-bucket")
+        .key("test.txt")
+        .checksum_mode(ChecksumMode::Enabled)
+        .send()
+        .await
+        .expect("request should succeed, despite the non-base64-decodable checksum");
+
+    let _req = rcvr.expect_request();
+
+    let actual_checksum = res.checksum_crc32().unwrap();
+    assert_eq!(expected_checksum, actual_checksum);
+
+    logs_assert(|lines: &[&str]| {
+        let checksum_warning = lines.iter().find(|&&line| {
+            line.contains("Checksum received from server could not be base64 decoded. No checksum validation will be performed.")
+        });
+
+        match checksum_warning {
+            Some(_) => Ok(()),
+            None => Err("Checksum error was not issued".to_string()),
+        }
+    });
 }

@@ -79,7 +79,7 @@ version = "0.55.1"
 version = "1.0.0"
 
 [dependencies.http]
-version = "0.2.0"
+version = "0.2.9"
 
 [dependencies.http-body]
 version = "0.4.4"
@@ -164,6 +164,10 @@ version = "0.2.2"
 [dev-dependencies.tracing-subscriber]
 version = "0.3.16"
 features = ["env-filter", "json"]
+
+[dev-dependencies.tracing-test]
+version = "0.2.4"
+features = ["no-env-filter"]
 
 [features]
 rustls = ["aws-smithy-client/rustls"]
