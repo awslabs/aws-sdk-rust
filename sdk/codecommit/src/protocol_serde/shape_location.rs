@@ -50,7 +50,10 @@ pub(crate) fn de_location<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<
     }
 }
 
-pub fn ser_location(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Location) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_location(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Location,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.file_path {
         object.key("filePath").string(var_1.as_str());
     }

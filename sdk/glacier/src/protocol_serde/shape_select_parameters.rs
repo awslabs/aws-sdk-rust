@@ -53,7 +53,10 @@ pub(crate) fn de_select_parameters<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_select_parameters(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SelectParameters) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_select_parameters(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SelectParameters,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.input_serialization {
         #[allow(unused_mut)]
         let mut object_2 = object.key("InputSerialization").start_object();

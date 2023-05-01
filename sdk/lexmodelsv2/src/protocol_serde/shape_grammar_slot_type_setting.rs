@@ -30,7 +30,10 @@ pub(crate) fn de_grammar_slot_type_setting<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_grammar_slot_type_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::GrammarSlotTypeSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_grammar_slot_type_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::GrammarSlotTypeSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("source").start_object();

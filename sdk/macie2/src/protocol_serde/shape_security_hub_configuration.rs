@@ -35,7 +35,10 @@ pub(crate) fn de_security_hub_configuration<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_security_hub_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SecurityHubConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_security_hub_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SecurityHubConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("publishClassificationFindings").boolean(input.publish_classification_findings);
     }

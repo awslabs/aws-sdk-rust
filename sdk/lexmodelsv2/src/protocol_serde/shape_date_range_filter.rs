@@ -35,7 +35,10 @@ pub(crate) fn de_date_range_filter<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_date_range_filter(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DateRangeFilter) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_date_range_filter(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DateRangeFilter,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.start_date_time {
         object.key("startDateTime").date_time(var_1, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }

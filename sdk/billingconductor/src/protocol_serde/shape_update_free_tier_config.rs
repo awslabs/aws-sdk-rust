@@ -30,7 +30,10 @@ pub(crate) fn de_update_free_tier_config<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_update_free_tier_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::UpdateFreeTierConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_update_free_tier_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::UpdateFreeTierConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.activated {
         object.key("Activated").boolean(*var_1);
     }

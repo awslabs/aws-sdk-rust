@@ -39,7 +39,10 @@ pub(crate) fn de_replay_destination<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_replay_destination(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ReplayDestination) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_replay_destination(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ReplayDestination,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }

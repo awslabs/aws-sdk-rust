@@ -44,7 +44,10 @@ pub(crate) fn de_source_schema<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_source_schema(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SourceSchema) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_source_schema(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SourceSchema,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.record_format {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RecordFormat").start_object();

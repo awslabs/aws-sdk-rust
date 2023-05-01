@@ -34,7 +34,10 @@ pub(crate) fn de_sidewalk_event_notification_configurations<'a, I>(tokens: &mut 
     }
 }
 
-pub fn ser_sidewalk_event_notification_configurations(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SidewalkEventNotificationConfigurations) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sidewalk_event_notification_configurations(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SidewalkEventNotificationConfigurations,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.amazon_id_event_topic {
         object.key("AmazonIdEventTopic").string(var_1.as_str());
     }

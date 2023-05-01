@@ -35,7 +35,10 @@ pub(crate) fn de_retention_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_retention_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RetentionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_retention_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RetentionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.room_retention_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RoomRetentionSettings").start_object();

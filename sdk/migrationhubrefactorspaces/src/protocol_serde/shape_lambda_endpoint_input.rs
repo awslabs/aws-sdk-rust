@@ -34,7 +34,10 @@ pub(crate) fn de_lambda_endpoint_input<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_lambda_endpoint_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LambdaEndpointInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lambda_endpoint_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LambdaEndpointInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }

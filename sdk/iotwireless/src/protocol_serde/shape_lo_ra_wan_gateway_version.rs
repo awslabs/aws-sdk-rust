@@ -52,7 +52,10 @@ pub(crate) fn de_lo_ra_wan_gateway_version<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_lo_ra_wan_gateway_version(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LoRaWanGatewayVersion) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lo_ra_wan_gateway_version(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LoRaWanGatewayVersion,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.package_version {
         object.key("PackageVersion").string(var_1.as_str());
     }

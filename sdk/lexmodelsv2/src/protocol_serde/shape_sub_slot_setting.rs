@@ -39,7 +39,10 @@ pub(crate) fn de_sub_slot_setting<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_sub_slot_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SubSlotSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sub_slot_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SubSlotSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.expression {
         object.key("expression").string(var_1.as_str());
     }

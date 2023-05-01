@@ -52,7 +52,10 @@ pub(crate) fn de_core_network_segment_edge_identifier<'a, I>(tokens: &mut std::i
     }
 }
 
-pub fn ser_core_network_segment_edge_identifier(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CoreNetworkSegmentEdgeIdentifier) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_core_network_segment_edge_identifier(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CoreNetworkSegmentEdgeIdentifier,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.core_network_id {
         object.key("CoreNetworkId").string(var_1.as_str());
     }

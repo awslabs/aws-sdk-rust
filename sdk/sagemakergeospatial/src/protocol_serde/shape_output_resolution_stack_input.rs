@@ -39,7 +39,10 @@ pub(crate) fn de_output_resolution_stack_input<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_output_resolution_stack_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::OutputResolutionStackInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_output_resolution_stack_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::OutputResolutionStackInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.predefined {
         object.key("Predefined").string(var_1.as_str());
     }

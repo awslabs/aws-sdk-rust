@@ -50,7 +50,10 @@ pub(crate) fn de_rotation_rules_type<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_rotation_rules_type(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RotationRulesType) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_rotation_rules_type(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RotationRulesType,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.automatically_after_days {
         object.key("AutomaticallyAfterDays").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

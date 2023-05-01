@@ -35,7 +35,10 @@ pub(crate) fn de_account_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_account_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AccountSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_account_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AccountSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.disable_remote_control {
         object.key("DisableRemoteControl").boolean(*var_1);
     }

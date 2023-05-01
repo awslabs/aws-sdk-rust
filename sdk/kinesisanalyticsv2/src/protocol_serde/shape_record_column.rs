@@ -52,7 +52,10 @@ pub(crate) fn de_record_column<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_record_column(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RecordColumn) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_record_column(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RecordColumn,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }

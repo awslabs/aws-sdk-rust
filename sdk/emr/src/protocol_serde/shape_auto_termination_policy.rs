@@ -32,7 +32,10 @@ pub(crate) fn de_auto_termination_policy<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_auto_termination_policy(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AutoTerminationPolicy) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_auto_termination_policy(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AutoTerminationPolicy,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.idle_timeout != 0 {
         object.key("IdleTimeout").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.idle_timeout).into()));
     }

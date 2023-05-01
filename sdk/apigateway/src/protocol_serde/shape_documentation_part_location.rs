@@ -70,7 +70,10 @@ pub(crate) fn de_documentation_part_location<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_documentation_part_location(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DocumentationPartLocation) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_documentation_part_location(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DocumentationPartLocation,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }

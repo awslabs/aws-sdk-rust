@@ -34,7 +34,10 @@ pub(crate) fn de_conference_preference<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_conference_preference(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ConferencePreference) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_conference_preference(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ConferencePreference,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.default_conference_provider_arn {
         object.key("DefaultConferenceProviderArn").string(var_1.as_str());
     }

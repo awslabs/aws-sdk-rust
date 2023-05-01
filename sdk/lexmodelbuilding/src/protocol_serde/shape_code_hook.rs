@@ -43,7 +43,10 @@ pub(crate) fn de_code_hook<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result
     }
 }
 
-pub fn ser_code_hook(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CodeHook) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_code_hook(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CodeHook,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.uri {
         object.key("uri").string(var_1.as_str());
     }

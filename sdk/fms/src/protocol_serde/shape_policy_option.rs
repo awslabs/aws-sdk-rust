@@ -35,7 +35,10 @@ pub(crate) fn de_policy_option<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_policy_option(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PolicyOption) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_policy_option(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PolicyOption,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.network_firewall_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NetworkFirewallPolicy").start_object();

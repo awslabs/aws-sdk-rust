@@ -40,7 +40,10 @@ pub(crate) fn de_connection_http_parameters<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_connection_http_parameters(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ConnectionHttpParameters) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_connection_http_parameters(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ConnectionHttpParameters,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.header_parameters {
         let mut array_2 = object.key("HeaderParameters").start_array();
         for item_3 in var_1 {

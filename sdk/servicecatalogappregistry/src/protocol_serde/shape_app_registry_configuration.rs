@@ -30,7 +30,10 @@ pub(crate) fn de_app_registry_configuration<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_app_registry_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AppRegistryConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_app_registry_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AppRegistryConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tag_query_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("tagQueryConfiguration").start_object();

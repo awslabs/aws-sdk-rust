@@ -32,7 +32,10 @@ pub(crate) fn de_channel_retention_settings<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_channel_retention_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ChannelRetentionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_channel_retention_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ChannelRetentionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.retention_days {
         object.key("RetentionDays").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

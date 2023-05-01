@@ -30,7 +30,10 @@ pub(crate) fn de_output_config_input<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_output_config_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::OutputConfigInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_output_config_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::OutputConfigInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Data").start_object();

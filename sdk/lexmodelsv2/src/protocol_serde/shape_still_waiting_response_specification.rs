@@ -49,7 +49,10 @@ pub(crate) fn de_still_waiting_response_specification<'a, I>(tokens: &mut std::i
     }
 }
 
-pub fn ser_still_waiting_response_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StillWaitingResponseSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_still_waiting_response_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StillWaitingResponseSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.message_groups {
         let mut array_2 = object.key("messageGroups").start_array();
         for item_3 in var_1 {

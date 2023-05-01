@@ -48,7 +48,10 @@ pub(crate) fn de_launch_template_disk_conf<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_launch_template_disk_conf(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LaunchTemplateDiskConf) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_launch_template_disk_conf(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LaunchTemplateDiskConf,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.volume_type {
         object.key("volumeType").string(var_1.as_str());
     }

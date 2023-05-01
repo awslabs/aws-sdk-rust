@@ -65,7 +65,10 @@ pub(crate) fn de_slot_capture_setting<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_slot_capture_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SlotCaptureSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_slot_capture_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SlotCaptureSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.capture_response {
         #[allow(unused_mut)]
         let mut object_2 = object.key("captureResponse").start_object();

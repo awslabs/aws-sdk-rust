@@ -34,7 +34,10 @@ pub(crate) fn de_lo_ra_wan_connection_status_resource_type_event_configuration<'
     }
 }
 
-pub fn ser_lo_ra_wan_connection_status_resource_type_event_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lo_ra_wan_connection_status_resource_type_event_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.wireless_gateway_event_topic {
         object.key("WirelessGatewayEventTopic").string(var_1.as_str());
     }

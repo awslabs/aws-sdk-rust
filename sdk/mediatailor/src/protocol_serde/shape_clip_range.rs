@@ -32,7 +32,10 @@ pub(crate) fn de_clip_range<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_clip_range(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ClipRange) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_clip_range(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ClipRange,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("EndOffsetMillis").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.end_offset_millis).into()));
     }

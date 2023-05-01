@@ -57,7 +57,10 @@ pub(crate) fn de_iot_events_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_iot_events_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::IotEventsAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_iot_events_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::IotEventsAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.input_name {
         object.key("inputName").string(var_1.as_str());
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_sentiment_analysis_settings<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_sentiment_analysis_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SentimentAnalysisSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sentiment_analysis_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SentimentAnalysisSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("detectSentiment").boolean(input.detect_sentiment);
     }

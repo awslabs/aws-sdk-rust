@@ -39,7 +39,10 @@ pub(crate) fn de_sip_media_application_alexa_skill_configuration<'a, I>(tokens: 
     }
 }
 
-pub fn ser_sip_media_application_alexa_skill_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SipMediaApplicationAlexaSkillConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sip_media_application_alexa_skill_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SipMediaApplicationAlexaSkillConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.alexa_skill_status {
         object.key("AlexaSkillStatus").string(var_1.as_str());
     }

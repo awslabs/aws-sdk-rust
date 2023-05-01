@@ -30,7 +30,10 @@ pub(crate) fn de_self_managed_event_source<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_self_managed_event_source(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SelfManagedEventSource) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_self_managed_event_source(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SelfManagedEventSource,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.endpoints {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Endpoints").start_object();

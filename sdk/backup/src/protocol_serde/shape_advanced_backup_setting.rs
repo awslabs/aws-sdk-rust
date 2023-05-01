@@ -39,7 +39,10 @@ pub(crate) fn de_advanced_backup_setting<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_advanced_backup_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AdvancedBackupSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_advanced_backup_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AdvancedBackupSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.resource_type {
         object.key("ResourceType").string(var_1.as_str());
     }

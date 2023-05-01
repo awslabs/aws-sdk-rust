@@ -39,7 +39,10 @@ pub(crate) fn de_lifecycle<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result
     }
 }
 
-pub fn ser_lifecycle(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Lifecycle) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lifecycle(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Lifecycle,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.move_to_cold_storage_after_days {
         object.key("MoveToColdStorageAfterDays").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

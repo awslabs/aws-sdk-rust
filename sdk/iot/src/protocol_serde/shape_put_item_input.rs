@@ -34,7 +34,10 @@ pub(crate) fn de_put_item_input<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_put_item_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PutItemInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_put_item_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PutItemInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.table_name {
         object.key("tableName").string(var_1.as_str());
     }

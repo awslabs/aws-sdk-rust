@@ -48,7 +48,10 @@ pub(crate) fn de_ser_de_info<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_ser_de_info(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SerDeInfo) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_ser_de_info(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SerDeInfo,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }

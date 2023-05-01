@@ -39,7 +39,10 @@ pub(crate) fn de_connection_password_encryption<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_connection_password_encryption(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ConnectionPasswordEncryption) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_connection_password_encryption(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ConnectionPasswordEncryption,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("ReturnConnectionPasswordEncrypted").boolean(input.return_connection_password_encrypted);
     }

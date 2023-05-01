@@ -43,7 +43,10 @@ pub(crate) fn de_simulation_software_suite<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_simulation_software_suite(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SimulationSoftwareSuite) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_simulation_software_suite(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SimulationSoftwareSuite,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

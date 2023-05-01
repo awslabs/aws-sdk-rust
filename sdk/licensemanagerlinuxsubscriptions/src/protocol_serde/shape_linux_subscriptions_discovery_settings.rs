@@ -39,7 +39,10 @@ pub(crate) fn de_linux_subscriptions_discovery_settings<'a, I>(tokens: &mut std:
     }
 }
 
-pub fn ser_linux_subscriptions_discovery_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LinuxSubscriptionsDiscoverySettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_linux_subscriptions_discovery_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LinuxSubscriptionsDiscoverySettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_regions {
         let mut array_2 = object.key("SourceRegions").start_array();
         for item_3 in var_1 {

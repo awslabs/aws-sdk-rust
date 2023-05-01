@@ -34,7 +34,10 @@ pub(crate) fn de_self_managed_kafka_event_source_config<'a, I>(tokens: &mut std:
     }
 }
 
-pub fn ser_self_managed_kafka_event_source_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SelfManagedKafkaEventSourceConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_self_managed_kafka_event_source_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SelfManagedKafkaEventSourceConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.consumer_group_id {
         object.key("ConsumerGroupId").string(var_1.as_str());
     }

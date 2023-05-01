@@ -39,7 +39,10 @@ pub(crate) fn de_media_insights_configuration<'a, I>(tokens: &mut std::iter::Pee
     }
 }
 
-pub fn ser_media_insights_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MediaInsightsConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_media_insights_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MediaInsightsConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.disabled {
         object.key("Disabled").boolean(*var_1);
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_heterogeneous<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_heterogeneous(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Heterogeneous) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_heterogeneous(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Heterogeneous,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_database_engine {
         let mut array_2 = object.key("targetDatabaseEngine").start_array();
         for item_3 in var_1 {

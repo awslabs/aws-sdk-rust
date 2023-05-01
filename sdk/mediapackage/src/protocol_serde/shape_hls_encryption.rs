@@ -60,7 +60,10 @@ pub(crate) fn de_hls_encryption<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_hls_encryption(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::HlsEncryption) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_hls_encryption(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::HlsEncryption,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.constant_initialization_vector {
         object.key("constantInitializationVector").string(var_1.as_str());
     }

@@ -39,7 +39,10 @@ pub(crate) fn de_scte35_splice_insert_schedule_action_settings<'a, I>(tokens: &m
     }
 }
 
-pub fn ser_scte35_splice_insert_schedule_action_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Scte35SpliceInsertScheduleActionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_scte35_splice_insert_schedule_action_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Scte35SpliceInsertScheduleActionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.duration != 0 {
         object.key("duration").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.duration).into()));
     }

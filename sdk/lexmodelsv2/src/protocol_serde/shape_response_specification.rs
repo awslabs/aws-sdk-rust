@@ -35,7 +35,10 @@ pub(crate) fn de_response_specification<'a, I>(tokens: &mut std::iter::Peekable<
     }
 }
 
-pub fn ser_response_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ResponseSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_response_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ResponseSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.message_groups {
         let mut array_2 = object.key("messageGroups").start_array();
         for item_3 in var_1 {

@@ -40,7 +40,10 @@ pub(crate) fn de_export_resource_specification<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_export_resource_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ExportResourceSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_export_resource_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ExportResourceSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bot_export_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("botExportSpecification").start_object();

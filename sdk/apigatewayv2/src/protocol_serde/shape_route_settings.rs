@@ -56,7 +56,10 @@ pub(crate) fn de_route_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_route_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RouteSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_route_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RouteSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.data_trace_enabled {
         object.key("dataTraceEnabled").boolean(input.data_trace_enabled);
     }

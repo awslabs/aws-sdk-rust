@@ -30,7 +30,10 @@ pub(crate) fn de_user_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_user_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::UserSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_user_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::UserSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.telephony {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Telephony").start_object();

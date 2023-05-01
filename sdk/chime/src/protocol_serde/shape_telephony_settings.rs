@@ -40,7 +40,10 @@ pub(crate) fn de_telephony_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_telephony_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TelephonySettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_telephony_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TelephonySettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.inbound_calling {
         object.key("InboundCalling").boolean(*var_1);
     }

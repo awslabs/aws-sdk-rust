@@ -43,7 +43,10 @@ pub(crate) fn de_cdn_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_cdn_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CdnConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cdn_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CdnConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ad_segment_url_prefix {
         object.key("AdSegmentUrlPrefix").string(var_1.as_str());
     }

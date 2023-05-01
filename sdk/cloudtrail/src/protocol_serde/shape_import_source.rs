@@ -30,7 +30,10 @@ pub(crate) fn de_import_source<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_import_source(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ImportSource) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_import_source(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ImportSource,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3 {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3").start_object();

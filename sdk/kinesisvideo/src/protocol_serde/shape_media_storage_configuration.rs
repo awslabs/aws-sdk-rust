@@ -43,7 +43,10 @@ pub(crate) fn de_media_storage_configuration<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_media_storage_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MediaStorageConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_media_storage_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MediaStorageConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamARN").string(var_1.as_str());
     }

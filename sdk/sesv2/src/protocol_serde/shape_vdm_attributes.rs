@@ -44,7 +44,10 @@ pub(crate) fn de_vdm_attributes<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_vdm_attributes(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::VdmAttributes) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_vdm_attributes(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::VdmAttributes,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.vdm_enabled {
         object.key("VdmEnabled").string(var_1.as_str());
     }

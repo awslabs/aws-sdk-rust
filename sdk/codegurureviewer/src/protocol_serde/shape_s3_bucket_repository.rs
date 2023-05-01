@@ -39,7 +39,10 @@ pub(crate) fn de_s3_bucket_repository<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_s3_bucket_repository(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::S3BucketRepository) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_s3_bucket_repository(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::S3BucketRepository,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }

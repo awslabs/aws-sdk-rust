@@ -35,7 +35,10 @@ pub(crate) fn de_time_range<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_time_range(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TimeRange) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_time_range(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TimeRange,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.start_time {
         object.key("StartTime").date_time(var_1, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }

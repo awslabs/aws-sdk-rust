@@ -48,7 +48,10 @@ pub(crate) fn de_quota_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_quota_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::QuotaSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_quota_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::QuotaSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.limit != 0 {
         object.key("limit").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.limit).into()));
     }

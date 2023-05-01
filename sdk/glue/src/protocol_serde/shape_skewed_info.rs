@@ -40,7 +40,10 @@ pub(crate) fn de_skewed_info<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_skewed_info(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SkewedInfo) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_skewed_info(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SkewedInfo,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.skewed_column_names {
         let mut array_2 = object.key("SkewedColumnNames").start_array();
         for item_3 in var_1 {

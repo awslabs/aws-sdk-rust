@@ -34,7 +34,10 @@ pub(crate) fn de_http_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_http_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::HttpConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_http_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::HttpConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.base_url {
         object.key("BaseUrl").string(var_1.as_str());
     }

@@ -49,7 +49,10 @@ pub(crate) fn de_edge_config<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_edge_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EdgeConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_edge_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EdgeConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.hub_device_arn {
         object.key("HubDeviceArn").string(var_1.as_str());
     }

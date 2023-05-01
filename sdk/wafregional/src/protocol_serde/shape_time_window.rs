@@ -35,7 +35,10 @@ pub(crate) fn de_time_window<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_time_window(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TimeWindow) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_time_window(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TimeWindow,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.start_time {
         object.key("StartTime").date_time(var_1, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }

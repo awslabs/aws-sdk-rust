@@ -52,7 +52,10 @@ pub(crate) fn de_kinesis_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_kinesis_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::KinesisAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_kinesis_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::KinesisAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());
     }

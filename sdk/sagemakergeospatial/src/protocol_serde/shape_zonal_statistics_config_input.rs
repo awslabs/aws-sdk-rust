@@ -53,7 +53,10 @@ pub(crate) fn de_zonal_statistics_config_input<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_zonal_statistics_config_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ZonalStatisticsConfigInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_zonal_statistics_config_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ZonalStatisticsConfigInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.zone_s3_path {
         object.key("ZoneS3Path").string(var_1.as_str());
     }

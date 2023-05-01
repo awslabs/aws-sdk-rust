@@ -43,7 +43,10 @@ pub(crate) fn de_customer_managed_s3_storage<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_customer_managed_s3_storage(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CustomerManagedS3Storage) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_customer_managed_s3_storage(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CustomerManagedS3Storage,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_resource_arn {
         object.key("s3ResourceArn").string(var_1.as_str());
     }

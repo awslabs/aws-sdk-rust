@@ -52,7 +52,10 @@ pub(crate) fn de_schedule_configuration<'a, I>(tokens: &mut std::iter::Peekable<
     }
 }
 
-pub fn ser_schedule_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ScheduleConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_schedule_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ScheduleConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.first_execution_from {
         object.key("FirstExecutionFrom").string(var_1.as_str());
     }

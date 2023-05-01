@@ -30,7 +30,10 @@ pub(crate) fn de_related_item_event_included_data<'a, I>(tokens: &mut std::iter:
     }
 }
 
-pub fn ser_related_item_event_included_data(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RelatedItemEventIncludedData) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_related_item_event_included_data(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RelatedItemEventIncludedData,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.include_content {
         object.key("includeContent").boolean(*var_1);
     }

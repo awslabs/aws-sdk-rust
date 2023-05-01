@@ -43,7 +43,10 @@ pub(crate) fn de_location_timestamp<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_location_timestamp(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LocationTimestamp) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_location_timestamp(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LocationTimestamp,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.value {
         object.key("value").string(var_1.as_str());
     }

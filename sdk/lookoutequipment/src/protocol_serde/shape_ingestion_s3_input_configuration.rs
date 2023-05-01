@@ -52,7 +52,10 @@ pub(crate) fn de_ingestion_s3_input_configuration<'a, I>(tokens: &mut std::iter:
     }
 }
 
-pub fn ser_ingestion_s3_input_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::IngestionS3InputConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_ingestion_s3_input_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::IngestionS3InputConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bucket {
         object.key("Bucket").string(var_1.as_str());
     }

@@ -34,7 +34,10 @@ pub(crate) fn de_guardian_attributes<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_guardian_attributes(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::GuardianAttributes) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_guardian_attributes(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::GuardianAttributes,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.optimized_shared_delivery {
         object.key("OptimizedSharedDelivery").string(var_1.as_str());
     }

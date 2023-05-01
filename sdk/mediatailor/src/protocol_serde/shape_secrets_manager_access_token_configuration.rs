@@ -52,7 +52,10 @@ pub(crate) fn de_secrets_manager_access_token_configuration<'a, I>(tokens: &mut 
     }
 }
 
-pub fn ser_secrets_manager_access_token_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SecretsManagerAccessTokenConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_secrets_manager_access_token_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SecretsManagerAccessTokenConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.header_name {
         object.key("HeaderName").string(var_1.as_str());
     }

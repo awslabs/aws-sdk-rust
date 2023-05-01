@@ -39,7 +39,10 @@ pub(crate) fn de_record_format<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_record_format(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RecordFormat) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_record_format(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RecordFormat,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.record_format_type {
         object.key("RecordFormatType").string(var_1.as_str());
     }

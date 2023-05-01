@@ -52,7 +52,10 @@ pub(crate) fn de_aws_account<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_aws_account(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AwsAccount) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_aws_account(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AwsAccount,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }

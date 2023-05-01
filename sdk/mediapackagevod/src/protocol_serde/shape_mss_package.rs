@@ -42,7 +42,10 @@ pub(crate) fn de_mss_package<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_mss_package(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MssPackage) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_mss_package(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MssPackage,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.encryption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("encryption").start_object();

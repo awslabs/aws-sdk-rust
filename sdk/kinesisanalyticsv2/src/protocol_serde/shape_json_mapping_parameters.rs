@@ -34,7 +34,10 @@ pub(crate) fn de_json_mapping_parameters<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_json_mapping_parameters(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::JsonMappingParameters) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_json_mapping_parameters(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::JsonMappingParameters,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.record_row_path {
         object.key("RecordRowPath").string(var_1.as_str());
     }

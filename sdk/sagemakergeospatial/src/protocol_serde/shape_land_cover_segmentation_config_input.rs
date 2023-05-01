@@ -15,8 +15,10 @@ pub(crate) fn de_land_cover_segmentation_config_input<'a, I>(tokens: &mut std::i
     }
 }
 
-pub fn ser_land_cover_segmentation_config_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LandCoverSegmentationConfigInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let (_, _) = (object, input);
+pub fn ser_land_cover_segmentation_config_input(
+                    #[allow(unused_variables)] object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                    #[allow(unused_variables)] input: &crate::types::LandCoverSegmentationConfigInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     Ok(())
 }
 

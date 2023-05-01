@@ -53,7 +53,10 @@ pub(crate) fn de_alternate_key<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_alternate_key(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AlternateKey) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_alternate_key(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AlternateKey,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

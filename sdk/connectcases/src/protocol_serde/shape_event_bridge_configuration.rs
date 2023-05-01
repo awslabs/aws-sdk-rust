@@ -35,7 +35,10 @@ pub(crate) fn de_event_bridge_configuration<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_event_bridge_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EventBridgeConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_event_bridge_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EventBridgeConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("enabled").boolean(*var_1);
     }

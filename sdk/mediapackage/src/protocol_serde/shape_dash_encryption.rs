@@ -37,7 +37,10 @@ pub(crate) fn de_dash_encryption<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
     }
 }
 
-pub fn ser_dash_encryption(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DashEncryption) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dash_encryption(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DashEncryption,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.key_rotation_interval_seconds != 0 {
         object.key("keyRotationIntervalSeconds").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.key_rotation_interval_seconds).into()));
     }

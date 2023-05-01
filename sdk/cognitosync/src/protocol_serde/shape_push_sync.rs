@@ -39,7 +39,10 @@ pub(crate) fn de_push_sync<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result
     }
 }
 
-pub fn ser_push_sync(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PushSync) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_push_sync(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PushSync,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_arns {
         let mut array_2 = object.key("ApplicationArns").start_array();
         for item_3 in var_1 {

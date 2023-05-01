@@ -43,7 +43,10 @@ pub(crate) fn de_stop_timecode<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_stop_timecode(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StopTimecode) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_stop_timecode(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StopTimecode,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.last_frame_clipping_behavior {
         object.key("lastFrameClippingBehavior").string(var_1.as_str());
     }

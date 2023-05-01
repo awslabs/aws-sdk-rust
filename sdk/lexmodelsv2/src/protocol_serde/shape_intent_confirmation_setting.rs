@@ -90,7 +90,10 @@ pub(crate) fn de_intent_confirmation_setting<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_intent_confirmation_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::IntentConfirmationSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_intent_confirmation_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::IntentConfirmationSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.prompt_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("promptSpecification").start_object();

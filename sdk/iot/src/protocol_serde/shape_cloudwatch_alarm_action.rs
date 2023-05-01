@@ -61,7 +61,10 @@ pub(crate) fn de_cloudwatch_alarm_action<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_cloudwatch_alarm_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CloudwatchAlarmAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cloudwatch_alarm_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CloudwatchAlarmAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());
     }

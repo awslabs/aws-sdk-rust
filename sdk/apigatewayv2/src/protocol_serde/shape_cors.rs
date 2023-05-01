@@ -57,7 +57,10 @@ pub(crate) fn de_cors<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Opti
     }
 }
 
-pub fn ser_cors(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Cors) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cors(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Cors,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.allow_credentials {
         object.key("allowCredentials").boolean(input.allow_credentials);
     }

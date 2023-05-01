@@ -30,7 +30,10 @@ pub(crate) fn de_ad_marker_passthrough<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_ad_marker_passthrough(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AdMarkerPassthrough) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_ad_marker_passthrough(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AdMarkerPassthrough,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }

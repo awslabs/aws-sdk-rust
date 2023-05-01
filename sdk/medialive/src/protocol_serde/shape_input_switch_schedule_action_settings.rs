@@ -44,7 +44,10 @@ pub(crate) fn de_input_switch_schedule_action_settings<'a, I>(tokens: &mut std::
     }
 }
 
-pub fn ser_input_switch_schedule_action_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::InputSwitchScheduleActionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_input_switch_schedule_action_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::InputSwitchScheduleActionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.input_attachment_name_reference {
         object.key("inputAttachmentNameReference").string(var_1.as_str());
     }

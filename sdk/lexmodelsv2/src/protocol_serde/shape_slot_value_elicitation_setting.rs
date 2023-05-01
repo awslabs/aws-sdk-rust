@@ -59,7 +59,10 @@ pub(crate) fn de_slot_value_elicitation_setting<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_slot_value_elicitation_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SlotValueElicitationSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_slot_value_elicitation_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SlotValueElicitationSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.default_value_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("defaultValueSpecification").start_object();

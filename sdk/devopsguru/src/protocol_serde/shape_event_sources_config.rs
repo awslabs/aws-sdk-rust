@@ -30,7 +30,10 @@ pub(crate) fn de_event_sources_config<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_event_sources_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EventSourcesConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_event_sources_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EventSourcesConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.amazon_code_guru_profiler {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AmazonCodeGuruProfiler").start_object();

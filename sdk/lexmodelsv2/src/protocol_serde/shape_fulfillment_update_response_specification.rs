@@ -42,7 +42,10 @@ pub(crate) fn de_fulfillment_update_response_specification<'a, I>(tokens: &mut s
     }
 }
 
-pub fn ser_fulfillment_update_response_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FulfillmentUpdateResponseSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_fulfillment_update_response_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FulfillmentUpdateResponseSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.frequency_in_seconds {
         object.key("frequencyInSeconds").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

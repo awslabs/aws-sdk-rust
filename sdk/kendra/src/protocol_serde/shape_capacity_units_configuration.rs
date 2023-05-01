@@ -39,7 +39,10 @@ pub(crate) fn de_capacity_units_configuration<'a, I>(tokens: &mut std::iter::Pee
     }
 }
 
-pub fn ser_capacity_units_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CapacityUnitsConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_capacity_units_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CapacityUnitsConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.storage_capacity_units {
         object.key("StorageCapacityUnits").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

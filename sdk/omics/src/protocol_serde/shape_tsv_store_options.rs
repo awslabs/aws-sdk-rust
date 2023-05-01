@@ -44,7 +44,10 @@ pub(crate) fn de_tsv_store_options<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_tsv_store_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TsvStoreOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_tsv_store_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TsvStoreOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.annotation_type {
         object.key("annotationType").string(var_1.as_str());
     }

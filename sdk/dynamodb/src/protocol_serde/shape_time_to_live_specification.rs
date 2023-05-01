@@ -39,7 +39,10 @@ pub(crate) fn de_time_to_live_specification<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_time_to_live_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TimeToLiveSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_time_to_live_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TimeToLiveSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("Enabled").boolean(*var_1);
     }

@@ -83,7 +83,10 @@ pub(crate) fn de_image_generation_configuration<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_image_generation_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ImageGenerationConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_image_generation_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ImageGenerationConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }

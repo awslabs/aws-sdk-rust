@@ -147,7 +147,10 @@ pub(crate) fn de_contact_detail<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_contact_detail(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ContactDetail) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_contact_detail(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ContactDetail,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.first_name {
         object.key("FirstName").string(var_1.as_str());
     }

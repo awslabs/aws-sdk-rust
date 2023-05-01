@@ -39,7 +39,10 @@ pub(crate) fn de_notification_configuration<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_notification_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::NotificationConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_notification_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::NotificationConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }

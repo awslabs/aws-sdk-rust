@@ -44,7 +44,10 @@ pub(crate) fn de_posix_user<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_posix_user(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PosixUser) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_posix_user(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PosixUser,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.uid {
         object.key("Uid").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

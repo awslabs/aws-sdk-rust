@@ -52,7 +52,10 @@ pub(crate) fn de_table_identifier<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_table_identifier(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TableIdentifier) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_table_identifier(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TableIdentifier,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }

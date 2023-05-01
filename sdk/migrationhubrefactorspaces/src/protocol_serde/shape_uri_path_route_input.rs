@@ -53,7 +53,10 @@ pub(crate) fn de_uri_path_route_input<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_uri_path_route_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::UriPathRouteInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_uri_path_route_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::UriPathRouteInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_path {
         object.key("SourcePath").string(var_1.as_str());
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_dash_encryption<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
     }
 }
 
-pub fn ser_dash_encryption(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DashEncryption) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dash_encryption(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DashEncryption,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.speke_key_provider {
         #[allow(unused_mut)]
         let mut object_2 = object.key("spekeKeyProvider").start_object();

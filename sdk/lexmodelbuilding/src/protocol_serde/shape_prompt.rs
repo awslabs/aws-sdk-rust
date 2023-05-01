@@ -46,7 +46,10 @@ pub(crate) fn de_prompt<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
     }
 }
 
-pub fn ser_prompt(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Prompt) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_prompt(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Prompt,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.messages {
         let mut array_2 = object.key("messages").start_array();
         for item_3 in var_1 {

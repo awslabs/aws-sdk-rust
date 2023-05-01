@@ -30,7 +30,10 @@ pub(crate) fn de_data_privacy<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_data_privacy(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DataPrivacy) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_data_privacy(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DataPrivacy,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("childDirected").boolean(input.child_directed);
     }

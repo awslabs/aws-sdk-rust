@@ -34,7 +34,10 @@ pub(crate) fn de_on_failure<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_on_failure(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::OnFailure) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_on_failure(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::OnFailure,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.destination {
         object.key("Destination").string(var_1.as_str());
     }

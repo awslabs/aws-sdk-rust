@@ -46,7 +46,10 @@ pub(crate) fn de_rule_config<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_rule_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RuleConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_rule_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RuleConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("Inverted").boolean(input.inverted);
     }

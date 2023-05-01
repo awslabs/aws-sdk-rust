@@ -15,8 +15,10 @@ pub(crate) fn de_immediate_mode_schedule_action_start_settings<'a, I>(tokens: &m
     }
 }
 
-pub fn ser_immediate_mode_schedule_action_start_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ImmediateModeScheduleActionStartSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let (_, _) = (object, input);
+pub fn ser_immediate_mode_schedule_action_start_settings(
+                    #[allow(unused_variables)] object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                    #[allow(unused_variables)] input: &crate::types::ImmediateModeScheduleActionStartSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     Ok(())
 }
 

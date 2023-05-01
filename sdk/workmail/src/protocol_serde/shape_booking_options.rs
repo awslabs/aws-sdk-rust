@@ -40,7 +40,10 @@ pub(crate) fn de_booking_options<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
     }
 }
 
-pub fn ser_booking_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BookingOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_booking_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BookingOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.auto_accept_requests {
         object.key("AutoAcceptRequests").boolean(input.auto_accept_requests);
     }

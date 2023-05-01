@@ -34,7 +34,10 @@ pub(crate) fn de_lambda_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_lambda_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LambdaAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lambda_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LambdaAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.function_arn {
         object.key("functionArn").string(var_1.as_str());
     }

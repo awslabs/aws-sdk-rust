@@ -37,7 +37,10 @@ pub(crate) fn de_throttle_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_throttle_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ThrottleSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_throttle_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ThrottleSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.burst_limit != 0 {
         object.key("burstLimit").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.burst_limit).into()));
     }

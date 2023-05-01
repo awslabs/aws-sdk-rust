@@ -57,7 +57,10 @@ pub(crate) fn de_intent<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
     }
 }
 
-pub fn ser_intent(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Intent) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_intent(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Intent,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

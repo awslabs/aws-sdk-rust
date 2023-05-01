@@ -47,7 +47,10 @@ pub(crate) fn de_fulfillment_updates_specification<'a, I>(tokens: &mut std::iter
     }
 }
 
-pub fn ser_fulfillment_updates_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FulfillmentUpdatesSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_fulfillment_updates_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FulfillmentUpdatesSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.active {
         object.key("active").boolean(*var_1);
     }

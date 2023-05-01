@@ -39,7 +39,10 @@ pub(crate) fn de_user_defined<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_user_defined(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::UserDefined) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_user_defined(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::UserDefined,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.value {
         object.key("Value").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::Float((*var_1).into()));
     }

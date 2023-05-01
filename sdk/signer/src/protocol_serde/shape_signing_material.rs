@@ -34,7 +34,10 @@ pub(crate) fn de_signing_material<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_signing_material(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SigningMaterial) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_signing_material(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SigningMaterial,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("certificateArn").string(var_1.as_str());
     }

@@ -48,7 +48,10 @@ pub(crate) fn de_physical_connection_requirements<'a, I>(tokens: &mut std::iter:
     }
 }
 
-pub fn ser_physical_connection_requirements(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PhysicalConnectionRequirements) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_physical_connection_requirements(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PhysicalConnectionRequirements,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.subnet_id {
         object.key("SubnetId").string(var_1.as_str());
     }

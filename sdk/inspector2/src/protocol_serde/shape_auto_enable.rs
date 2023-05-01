@@ -40,7 +40,10 @@ pub(crate) fn de_auto_enable<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_auto_enable(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AutoEnable) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_auto_enable(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AutoEnable,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ec2 {
         object.key("ec2").boolean(*var_1);
     }

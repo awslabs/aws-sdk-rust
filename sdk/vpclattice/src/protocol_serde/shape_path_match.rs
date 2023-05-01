@@ -35,7 +35,10 @@ pub(crate) fn de_path_match<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_path_match(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PathMatch) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_path_match(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PathMatch,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#match {
         #[allow(unused_mut)]
         let mut object_2 = object.key("match").start_object();

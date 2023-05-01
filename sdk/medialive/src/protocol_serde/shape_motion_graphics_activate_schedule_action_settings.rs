@@ -59,7 +59,10 @@ pub(crate) fn de_motion_graphics_activate_schedule_action_settings<'a, I>(tokens
     }
 }
 
-pub fn ser_motion_graphics_activate_schedule_action_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MotionGraphicsActivateScheduleActionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_motion_graphics_activate_schedule_action_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MotionGraphicsActivateScheduleActionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.duration != 0 {
         object.key("duration").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.duration).into()));
     }

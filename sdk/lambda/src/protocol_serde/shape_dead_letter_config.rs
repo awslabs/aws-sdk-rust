@@ -34,7 +34,10 @@ pub(crate) fn de_dead_letter_config<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_dead_letter_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DeadLetterConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dead_letter_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DeadLetterConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_arn {
         object.key("TargetArn").string(var_1.as_str());
     }

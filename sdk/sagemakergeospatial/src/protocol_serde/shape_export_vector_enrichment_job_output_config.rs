@@ -30,7 +30,10 @@ pub(crate) fn de_export_vector_enrichment_job_output_config<'a, I>(tokens: &mut 
     }
 }
 
-pub fn ser_export_vector_enrichment_job_output_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ExportVectorEnrichmentJobOutputConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_export_vector_enrichment_job_output_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ExportVectorEnrichmentJobOutputConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Data").start_object();

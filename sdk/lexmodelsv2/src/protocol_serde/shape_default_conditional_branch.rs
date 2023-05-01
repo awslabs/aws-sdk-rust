@@ -35,7 +35,10 @@ pub(crate) fn de_default_conditional_branch<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_default_conditional_branch(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DefaultConditionalBranch) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_default_conditional_branch(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DefaultConditionalBranch,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.next_step {
         #[allow(unused_mut)]
         let mut object_2 = object.key("nextStep").start_object();

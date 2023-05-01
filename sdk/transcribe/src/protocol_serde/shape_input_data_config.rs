@@ -52,7 +52,10 @@ pub(crate) fn de_input_data_config<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_input_data_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::InputDataConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_input_data_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::InputDataConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_uri {
         object.key("S3Uri").string(var_1.as_str());
     }

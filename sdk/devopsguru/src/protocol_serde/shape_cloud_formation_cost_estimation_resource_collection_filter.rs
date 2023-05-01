@@ -30,7 +30,10 @@ pub(crate) fn de_cloud_formation_cost_estimation_resource_collection_filter<'a, 
     }
 }
 
-pub fn ser_cloud_formation_cost_estimation_resource_collection_filter(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CloudFormationCostEstimationResourceCollectionFilter) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cloud_formation_cost_estimation_resource_collection_filter(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CloudFormationCostEstimationResourceCollectionFilter,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.stack_names {
         let mut array_2 = object.key("StackNames").start_array();
         for item_3 in var_1 {

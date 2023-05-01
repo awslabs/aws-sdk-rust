@@ -30,7 +30,10 @@ pub(crate) fn de_lex_transcript_filter<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_lex_transcript_filter(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LexTranscriptFilter) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lex_transcript_filter(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LexTranscriptFilter,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.date_range_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dateRangeFilter").start_object();

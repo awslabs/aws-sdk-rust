@@ -39,7 +39,10 @@ pub(crate) fn de_action_type_artifact_details<'a, I>(tokens: &mut std::iter::Pee
     }
 }
 
-pub fn ser_action_type_artifact_details(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ActionTypeArtifactDetails) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_action_type_artifact_details(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ActionTypeArtifactDetails,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("minimumCount").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.minimum_count).into()));
     }

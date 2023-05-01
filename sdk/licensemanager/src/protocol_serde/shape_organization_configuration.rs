@@ -30,7 +30,10 @@ pub(crate) fn de_organization_configuration<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_organization_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::OrganizationConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_organization_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::OrganizationConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("EnableIntegration").boolean(input.enable_integration);
     }

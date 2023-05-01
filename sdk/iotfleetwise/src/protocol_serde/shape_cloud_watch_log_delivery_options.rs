@@ -43,7 +43,10 @@ pub(crate) fn de_cloud_watch_log_delivery_options<'a, I>(tokens: &mut std::iter:
     }
 }
 
-pub fn ser_cloud_watch_log_delivery_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CloudWatchLogDeliveryOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cloud_watch_log_delivery_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CloudWatchLogDeliveryOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.log_type {
         object.key("logType").string(var_1.as_str());
     }

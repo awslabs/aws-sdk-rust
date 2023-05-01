@@ -34,7 +34,10 @@ pub(crate) fn de_firehose_destination_configuration<'a, I>(tokens: &mut std::ite
     }
 }
 
-pub fn ser_firehose_destination_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FirehoseDestinationConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_firehose_destination_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FirehoseDestinationConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.delivery_stream_name {
         object.key("deliveryStreamName").string(var_1.as_str());
     }

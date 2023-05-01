@@ -57,7 +57,10 @@ pub(crate) fn de_static_ip_connection_info<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_static_ip_connection_info(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StaticIpConnectionInfo) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_static_ip_connection_info(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StaticIpConnectionInfo,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ip_address {
         object.key("IpAddress").string(var_1.as_str());
     }

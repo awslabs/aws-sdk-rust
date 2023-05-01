@@ -43,7 +43,10 @@ pub(crate) fn de_file_batch_job_identifier<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_file_batch_job_identifier(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FileBatchJobIdentifier) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_file_batch_job_identifier(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FileBatchJobIdentifier,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.file_name {
         object.key("fileName").string(var_1.as_str());
     }

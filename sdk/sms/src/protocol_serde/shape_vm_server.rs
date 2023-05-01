@@ -66,7 +66,10 @@ pub(crate) fn de_vm_server<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result
     }
 }
 
-pub fn ser_vm_server(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::VmServer) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_vm_server(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::VmServer,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.vm_server_address {
         #[allow(unused_mut)]
         let mut object_2 = object.key("vmServerAddress").start_object();

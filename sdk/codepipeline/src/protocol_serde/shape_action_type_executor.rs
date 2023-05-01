@@ -55,7 +55,10 @@ pub(crate) fn de_action_type_executor<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_action_type_executor(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ActionTypeExecutor) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_action_type_executor(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ActionTypeExecutor,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("configuration").start_object();

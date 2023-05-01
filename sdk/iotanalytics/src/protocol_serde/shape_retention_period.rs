@@ -37,7 +37,10 @@ pub(crate) fn de_retention_period<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_retention_period(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RetentionPeriod) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_retention_period(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RetentionPeriod,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.unlimited {
         object.key("unlimited").boolean(input.unlimited);
     }

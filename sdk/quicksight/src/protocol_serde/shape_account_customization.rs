@@ -43,7 +43,10 @@ pub(crate) fn de_account_customization<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_account_customization(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AccountCustomization) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_account_customization(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AccountCustomization,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.default_theme {
         object.key("DefaultTheme").string(var_1.as_str());
     }

@@ -61,7 +61,10 @@ pub(crate) fn de_login_auth_config_req_obj<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_login_auth_config_req_obj(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LoginAuthConfigReqObj) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_login_auth_config_req_obj(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LoginAuthConfigReqObj,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.aws_cognito_identity_pool_id {
         object.key("aws_cognito_identity_pool_id").string(var_1.as_str());
     }

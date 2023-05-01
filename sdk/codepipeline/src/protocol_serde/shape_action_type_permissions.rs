@@ -30,7 +30,10 @@ pub(crate) fn de_action_type_permissions<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_action_type_permissions(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ActionTypePermissions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_action_type_permissions(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ActionTypePermissions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.allowed_accounts {
         let mut array_2 = object.key("allowedAccounts").start_array();
         for item_3 in var_1 {

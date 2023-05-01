@@ -34,7 +34,10 @@ pub(crate) fn de_lambda_executor_configuration<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_lambda_executor_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LambdaExecutorConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lambda_executor_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LambdaExecutorConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.lambda_function_arn {
         object.key("lambdaFunctionArn").string(var_1.as_str());
     }

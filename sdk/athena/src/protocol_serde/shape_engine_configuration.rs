@@ -51,7 +51,10 @@ pub(crate) fn de_engine_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_engine_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EngineConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_engine_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EngineConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.coordinator_dpu_size {
         object.key("CoordinatorDpuSize").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

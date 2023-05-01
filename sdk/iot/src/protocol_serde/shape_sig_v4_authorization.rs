@@ -52,7 +52,10 @@ pub(crate) fn de_sig_v4_authorization<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_sig_v4_authorization(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SigV4Authorization) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sig_v4_authorization(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SigV4Authorization,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.signing_region {
         object.key("signingRegion").string(var_1.as_str());
     }

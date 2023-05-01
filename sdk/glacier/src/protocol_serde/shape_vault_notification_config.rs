@@ -11,7 +11,10 @@ pub fn de_vault_notification_config_payload(input: &[u8]) -> Result<crate::types
     result
 }
 
-pub fn ser_vault_notification_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::VaultNotificationConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_vault_notification_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::VaultNotificationConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sns_topic {
         object.key("SNSTopic").string(var_1.as_str());
     }

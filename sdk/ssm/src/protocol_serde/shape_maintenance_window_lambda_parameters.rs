@@ -48,7 +48,10 @@ pub(crate) fn de_maintenance_window_lambda_parameters<'a, I>(tokens: &mut std::i
     }
 }
 
-pub fn ser_maintenance_window_lambda_parameters(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MaintenanceWindowLambdaParameters) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_maintenance_window_lambda_parameters(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MaintenanceWindowLambdaParameters,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_context {
         object.key("ClientContext").string(var_1.as_str());
     }

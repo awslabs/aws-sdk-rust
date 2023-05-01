@@ -52,7 +52,10 @@ pub(crate) fn de_step_functions_action<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_step_functions_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StepFunctionsAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_step_functions_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StepFunctionsAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.execution_name_prefix {
         object.key("executionNamePrefix").string(var_1.as_str());
     }

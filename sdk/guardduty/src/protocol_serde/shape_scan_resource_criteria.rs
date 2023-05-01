@@ -35,7 +35,10 @@ pub(crate) fn de_scan_resource_criteria<'a, I>(tokens: &mut std::iter::Peekable<
     }
 }
 
-pub fn ser_scan_resource_criteria(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ScanResourceCriteria) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_scan_resource_criteria(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ScanResourceCriteria,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.include {
         #[allow(unused_mut)]
         let mut object_2 = object.key("include").start_object();

@@ -40,7 +40,10 @@ pub(crate) fn de_suite_run_configuration<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_suite_run_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SuiteRunConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_suite_run_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SuiteRunConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.primary_device {
         #[allow(unused_mut)]
         let mut object_2 = object.key("primaryDevice").start_object();

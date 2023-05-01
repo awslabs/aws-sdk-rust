@@ -42,7 +42,10 @@ pub(crate) fn de_streaming_configuration<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_streaming_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StreamingConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_streaming_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StreamingConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_retention_in_hours {
         object.key("DataRetentionInHours").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

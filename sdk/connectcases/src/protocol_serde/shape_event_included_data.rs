@@ -35,7 +35,10 @@ pub(crate) fn de_event_included_data<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_event_included_data(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EventIncludedData) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_event_included_data(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EventIncludedData,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.case_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("caseData").start_object();

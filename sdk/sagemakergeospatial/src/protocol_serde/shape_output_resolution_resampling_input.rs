@@ -30,7 +30,10 @@ pub(crate) fn de_output_resolution_resampling_input<'a, I>(tokens: &mut std::ite
     }
 }
 
-pub fn ser_output_resolution_resampling_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::OutputResolutionResamplingInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_output_resolution_resampling_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::OutputResolutionResamplingInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.user_defined {
         #[allow(unused_mut)]
         let mut object_2 = object.key("UserDefined").start_object();

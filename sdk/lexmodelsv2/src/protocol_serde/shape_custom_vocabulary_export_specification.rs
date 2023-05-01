@@ -52,7 +52,10 @@ pub(crate) fn de_custom_vocabulary_export_specification<'a, I>(tokens: &mut std:
     }
 }
 
-pub fn ser_custom_vocabulary_export_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CustomVocabularyExportSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_custom_vocabulary_export_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CustomVocabularyExportSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bot_id {
         object.key("botId").string(var_1.as_str());
     }

@@ -43,7 +43,10 @@ pub(crate) fn de_reveal_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_reveal_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RevealConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_reveal_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RevealConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.kms_key_id {
         object.key("kmsKeyId").string(var_1.as_str());
     }

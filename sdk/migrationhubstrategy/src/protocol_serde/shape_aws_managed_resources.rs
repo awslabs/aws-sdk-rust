@@ -30,7 +30,10 @@ pub(crate) fn de_aws_managed_resources<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_aws_managed_resources(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AwsManagedResources) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_aws_managed_resources(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AwsManagedResources,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_destination {
         let mut array_2 = object.key("targetDestination").start_array();
         for item_3 in var_1 {

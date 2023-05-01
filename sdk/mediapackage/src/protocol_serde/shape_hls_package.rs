@@ -103,7 +103,10 @@ pub(crate) fn de_hls_package<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_hls_package(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::HlsPackage) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_hls_package(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::HlsPackage,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ad_markers {
         object.key("adMarkers").string(var_1.as_str());
     }

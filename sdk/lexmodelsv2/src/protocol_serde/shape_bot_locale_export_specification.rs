@@ -52,7 +52,10 @@ pub(crate) fn de_bot_locale_export_specification<'a, I>(tokens: &mut std::iter::
     }
 }
 
-pub fn ser_bot_locale_export_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BotLocaleExportSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_bot_locale_export_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BotLocaleExportSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bot_id {
         object.key("botId").string(var_1.as_str());
     }

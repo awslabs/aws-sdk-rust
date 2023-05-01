@@ -30,7 +30,10 @@ pub(crate) fn de_routing_config<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_routing_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RoutingConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_routing_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RoutingConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.failover_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FailoverConfig").start_object();

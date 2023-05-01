@@ -43,7 +43,10 @@ pub(crate) fn de_timestream_resources<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_timestream_resources(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TimestreamResources) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_timestream_resources(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TimestreamResources,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.timestream_database_name {
         object.key("timestreamDatabaseName").string(var_1.as_str());
     }

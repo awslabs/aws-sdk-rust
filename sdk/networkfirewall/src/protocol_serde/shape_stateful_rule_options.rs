@@ -34,7 +34,10 @@ pub(crate) fn de_stateful_rule_options<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_stateful_rule_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StatefulRuleOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_stateful_rule_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StatefulRuleOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.rule_order {
         object.key("RuleOrder").string(var_1.as_str());
     }

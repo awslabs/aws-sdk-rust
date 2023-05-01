@@ -43,7 +43,10 @@ pub(crate) fn de_media_source_config<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_media_source_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MediaSourceConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_media_source_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MediaSourceConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.media_uri_secret_arn {
         object.key("MediaUriSecretArn").string(var_1.as_str());
     }

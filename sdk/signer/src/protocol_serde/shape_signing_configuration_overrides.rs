@@ -43,7 +43,10 @@ pub(crate) fn de_signing_configuration_overrides<'a, I>(tokens: &mut std::iter::
     }
 }
 
-pub fn ser_signing_configuration_overrides(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SigningConfigurationOverrides) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_signing_configuration_overrides(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SigningConfigurationOverrides,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.encryption_algorithm {
         object.key("encryptionAlgorithm").string(var_1.as_str());
     }

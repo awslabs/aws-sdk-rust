@@ -75,7 +75,10 @@ pub(crate) fn de_mqtt_headers<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_mqtt_headers(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MqttHeaders) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_mqtt_headers(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MqttHeaders,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.payload_format_indicator {
         object.key("payloadFormatIndicator").string(var_1.as_str());
     }

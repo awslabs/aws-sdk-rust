@@ -30,7 +30,10 @@ pub(crate) fn de_software_token_mfa_config_type<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_software_token_mfa_config_type(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SoftwareTokenMfaConfigType) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_software_token_mfa_config_type(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SoftwareTokenMfaConfigType,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }

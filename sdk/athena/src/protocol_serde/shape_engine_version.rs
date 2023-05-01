@@ -43,7 +43,10 @@ pub(crate) fn de_engine_version<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_engine_version(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EngineVersion) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_engine_version(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EngineVersion,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.selected_engine_version {
         object.key("SelectedEngineVersion").string(var_1.as_str());
     }

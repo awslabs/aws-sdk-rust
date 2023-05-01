@@ -65,7 +65,10 @@ pub(crate) fn de_pipeline_declaration<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_pipeline_declaration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PipelineDeclaration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_pipeline_declaration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PipelineDeclaration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

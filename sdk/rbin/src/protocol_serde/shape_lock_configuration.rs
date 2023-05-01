@@ -30,7 +30,10 @@ pub(crate) fn de_lock_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_lock_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::LockConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_lock_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::LockConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.unlock_delay {
         #[allow(unused_mut)]
         let mut object_2 = object.key("UnlockDelay").start_object();

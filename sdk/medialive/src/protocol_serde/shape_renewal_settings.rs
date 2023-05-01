@@ -41,7 +41,10 @@ pub(crate) fn de_renewal_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_renewal_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RenewalSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_renewal_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RenewalSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.automatic_renewal {
         object.key("automaticRenewal").string(var_1.as_str());
     }

@@ -39,7 +39,10 @@ pub(crate) fn de_sms_mfa_config_type<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_sms_mfa_config_type(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SmsMfaConfigType) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sms_mfa_config_type(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SmsMfaConfigType,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sms_authentication_message {
         object.key("SmsAuthenticationMessage").string(var_1.as_str());
     }

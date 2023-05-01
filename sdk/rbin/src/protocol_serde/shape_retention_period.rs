@@ -41,7 +41,10 @@ pub(crate) fn de_retention_period<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_retention_period(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RetentionPeriod) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_retention_period(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RetentionPeriod,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.retention_period_value {
         object.key("RetentionPeriodValue").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

@@ -15,8 +15,10 @@ pub(crate) fn de_cloud_masking_config_input<'a, I>(tokens: &mut std::iter::Peeka
     }
 }
 
-pub fn ser_cloud_masking_config_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CloudMaskingConfigInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let (_, _) = (object, input);
+pub fn ser_cloud_masking_config_input(
+                    #[allow(unused_variables)] object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                    #[allow(unused_variables)] input: &crate::types::CloudMaskingConfigInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     Ok(())
 }
 

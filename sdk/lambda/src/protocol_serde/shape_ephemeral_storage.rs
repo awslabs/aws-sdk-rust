@@ -32,7 +32,10 @@ pub(crate) fn de_ephemeral_storage<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_ephemeral_storage(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EphemeralStorage) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_ephemeral_storage(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EphemeralStorage,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.size {
         object.key("Size").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

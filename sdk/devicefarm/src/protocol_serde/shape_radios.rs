@@ -45,7 +45,10 @@ pub(crate) fn de_radios<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
     }
 }
 
-pub fn ser_radios(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Radios) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_radios(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Radios,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.wifi {
         object.key("wifi").boolean(*var_1);
     }

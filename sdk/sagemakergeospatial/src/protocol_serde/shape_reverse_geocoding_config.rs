@@ -43,7 +43,10 @@ pub(crate) fn de_reverse_geocoding_config<'a, I>(tokens: &mut std::iter::Peekabl
     }
 }
 
-pub fn ser_reverse_geocoding_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ReverseGeocodingConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_reverse_geocoding_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ReverseGeocodingConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.y_attribute_name {
         object.key("YAttributeName").string(var_1.as_str());
     }

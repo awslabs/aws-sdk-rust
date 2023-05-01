@@ -35,7 +35,10 @@ pub(crate) fn de_vcf_options<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_vcf_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::VcfOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_vcf_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::VcfOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ignore_qual_field {
         object.key("ignoreQualField").boolean(*var_1);
     }

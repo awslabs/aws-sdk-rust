@@ -30,7 +30,10 @@ pub(crate) fn de_channel_membership_preferences<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_channel_membership_preferences(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ChannelMembershipPreferences) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_channel_membership_preferences(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ChannelMembershipPreferences,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.push_notifications {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PushNotifications").start_object();

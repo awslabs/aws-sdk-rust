@@ -39,7 +39,10 @@ pub(crate) fn de_geo_mosaic_config_input<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_geo_mosaic_config_input(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::GeoMosaicConfigInput) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_geo_mosaic_config_input(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::GeoMosaicConfigInput,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.algorithm_name {
         object.key("AlgorithmName").string(var_1.as_str());
     }

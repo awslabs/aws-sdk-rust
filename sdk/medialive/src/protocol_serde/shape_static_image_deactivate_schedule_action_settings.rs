@@ -39,7 +39,10 @@ pub(crate) fn de_static_image_deactivate_schedule_action_settings<'a, I>(tokens:
     }
 }
 
-pub fn ser_static_image_deactivate_schedule_action_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StaticImageDeactivateScheduleActionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_static_image_deactivate_schedule_action_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StaticImageDeactivateScheduleActionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.fade_out != 0 {
         object.key("fadeOut").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.fade_out).into()));
     }

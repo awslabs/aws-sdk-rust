@@ -43,7 +43,10 @@ pub(crate) fn de_encryption_at_rest<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_encryption_at_rest(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::EncryptionAtRest) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_encryption_at_rest(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::EncryptionAtRest,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.catalog_encryption_mode {
         object.key("CatalogEncryptionMode").string(var_1.as_str());
     }

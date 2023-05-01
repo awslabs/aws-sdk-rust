@@ -72,7 +72,10 @@ pub(crate) fn de_protocols_list_data<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_protocols_list_data(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ProtocolsListData) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_protocols_list_data(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ProtocolsListData,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.list_id {
         object.key("ListId").string(var_1.as_str());
     }

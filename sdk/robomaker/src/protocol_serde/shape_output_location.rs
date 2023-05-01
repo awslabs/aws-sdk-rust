@@ -43,7 +43,10 @@ pub(crate) fn de_output_location<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
     }
 }
 
-pub fn ser_output_location(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::OutputLocation) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_output_location(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::OutputLocation,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_bucket {
         object.key("s3Bucket").string(var_1.as_str());
     }

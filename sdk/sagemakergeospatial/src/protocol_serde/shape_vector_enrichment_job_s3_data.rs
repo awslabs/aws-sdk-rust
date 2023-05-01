@@ -43,7 +43,10 @@ pub(crate) fn de_vector_enrichment_job_s3_data<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_vector_enrichment_job_s3_data(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::VectorEnrichmentJobS3Data) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_vector_enrichment_job_s3_data(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::VectorEnrichmentJobS3Data,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_uri {
         object.key("S3Uri").string(var_1.as_str());
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_alias_routing_configuration<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_alias_routing_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AliasRoutingConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_alias_routing_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AliasRoutingConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.additional_version_weights {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AdditionalVersionWeights").start_object();

@@ -35,7 +35,10 @@ pub(crate) fn de_cost_estimation_resource_collection_filter<'a, I>(tokens: &mut 
     }
 }
 
-pub fn ser_cost_estimation_resource_collection_filter(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CostEstimationResourceCollectionFilter) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cost_estimation_resource_collection_filter(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CostEstimationResourceCollectionFilter,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cloud_formation {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CloudFormation").start_object();

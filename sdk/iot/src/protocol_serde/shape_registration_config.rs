@@ -52,7 +52,10 @@ pub(crate) fn de_registration_config<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_registration_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RegistrationConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_registration_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RegistrationConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.template_body {
         object.key("templateBody").string(var_1.as_str());
     }

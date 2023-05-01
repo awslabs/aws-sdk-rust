@@ -44,7 +44,10 @@ pub(crate) fn de_thing_group_indexing_configuration<'a, I>(tokens: &mut std::ite
     }
 }
 
-pub fn ser_thing_group_indexing_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ThingGroupIndexingConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_thing_group_indexing_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ThingGroupIndexingConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.thing_group_indexing_mode {
         object.key("thingGroupIndexingMode").string(var_1.as_str());
     }

@@ -61,7 +61,10 @@ pub(crate) fn de_action_type_identifier<'a, I>(tokens: &mut std::iter::Peekable<
     }
 }
 
-pub fn ser_action_type_identifier(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ActionTypeIdentifier) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_action_type_identifier(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ActionTypeIdentifier,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.category {
         object.key("category").string(var_1.as_str());
     }

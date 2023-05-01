@@ -66,7 +66,10 @@ pub(crate) fn de_post_launch_actions<'a, I>(tokens: &mut std::iter::Peekable<I>)
     }
 }
 
-pub fn ser_post_launch_actions(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PostLaunchActions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_post_launch_actions(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PostLaunchActions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.deployment {
         object.key("deployment").string(var_1.as_str());
     }

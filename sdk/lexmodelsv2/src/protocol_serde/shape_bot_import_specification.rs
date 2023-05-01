@@ -65,7 +65,10 @@ pub(crate) fn de_bot_import_specification<'a, I>(tokens: &mut std::iter::Peekabl
     }
 }
 
-pub fn ser_bot_import_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BotImportSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_bot_import_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BotImportSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bot_name {
         object.key("botName").string(var_1.as_str());
     }

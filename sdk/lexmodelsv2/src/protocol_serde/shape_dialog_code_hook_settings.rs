@@ -30,7 +30,10 @@ pub(crate) fn de_dialog_code_hook_settings<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_dialog_code_hook_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DialogCodeHookSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dialog_code_hook_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DialogCodeHookSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("enabled").boolean(input.enabled);
     }

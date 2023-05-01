@@ -34,7 +34,10 @@ pub(crate) fn de_environment<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_environment(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Environment) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_environment(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Environment,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.uri {
         object.key("uri").string(var_1.as_str());
     }

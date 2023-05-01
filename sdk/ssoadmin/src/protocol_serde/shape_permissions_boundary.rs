@@ -39,7 +39,10 @@ pub(crate) fn de_permissions_boundary<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_permissions_boundary(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PermissionsBoundary) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_permissions_boundary(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PermissionsBoundary,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.customer_managed_policy_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CustomerManagedPolicyReference").start_object();

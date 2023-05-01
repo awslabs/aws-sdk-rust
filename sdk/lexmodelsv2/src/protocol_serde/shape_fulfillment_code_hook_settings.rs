@@ -45,7 +45,10 @@ pub(crate) fn de_fulfillment_code_hook_settings<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_fulfillment_code_hook_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FulfillmentCodeHookSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_fulfillment_code_hook_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FulfillmentCodeHookSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("enabled").boolean(input.enabled);
     }

@@ -40,7 +40,10 @@ pub(crate) fn de_dialog_state<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_dialog_state(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DialogState) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dialog_state(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DialogState,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dialog_action {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dialogAction").start_object();

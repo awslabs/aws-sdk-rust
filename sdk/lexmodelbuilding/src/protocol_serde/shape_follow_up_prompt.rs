@@ -35,7 +35,10 @@ pub(crate) fn de_follow_up_prompt<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_follow_up_prompt(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FollowUpPrompt) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_follow_up_prompt(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FollowUpPrompt,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.prompt {
         #[allow(unused_mut)]
         let mut object_2 = object.key("prompt").start_object();

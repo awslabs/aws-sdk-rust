@@ -57,7 +57,10 @@ pub(crate) fn de_firehose_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
     }
 }
 
-pub fn ser_firehose_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FirehoseAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_firehose_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FirehoseAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());
     }

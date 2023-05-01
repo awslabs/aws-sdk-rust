@@ -70,7 +70,10 @@ pub(crate) fn de_post_dialog_code_hook_invocation_specification<'a, I>(tokens: &
     }
 }
 
-pub fn ser_post_dialog_code_hook_invocation_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PostDialogCodeHookInvocationSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_post_dialog_code_hook_invocation_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PostDialogCodeHookInvocationSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.success_response {
         #[allow(unused_mut)]
         let mut object_2 = object.key("successResponse").start_object();

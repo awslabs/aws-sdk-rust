@@ -39,7 +39,10 @@ pub(crate) fn de_fulfillment_activity<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_fulfillment_activity(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FulfillmentActivity) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_fulfillment_activity(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FulfillmentActivity,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }

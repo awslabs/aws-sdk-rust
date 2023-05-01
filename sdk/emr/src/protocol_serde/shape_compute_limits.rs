@@ -62,7 +62,10 @@ pub(crate) fn de_compute_limits<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_compute_limits(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ComputeLimits) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_compute_limits(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ComputeLimits,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.unit_type {
         object.key("UnitType").string(var_1.as_str());
     }

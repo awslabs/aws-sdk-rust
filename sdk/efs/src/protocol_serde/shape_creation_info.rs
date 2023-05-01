@@ -48,7 +48,10 @@ pub(crate) fn de_creation_info<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_creation_info(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CreationInfo) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_creation_info(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CreationInfo,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.owner_uid {
         object.key("OwnerUid").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

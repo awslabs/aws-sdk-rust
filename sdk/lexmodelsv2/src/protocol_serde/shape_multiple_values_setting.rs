@@ -30,7 +30,10 @@ pub(crate) fn de_multiple_values_setting<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_multiple_values_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MultipleValuesSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_multiple_values_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MultipleValuesSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.allow_multiple_values {
         object.key("allowMultipleValues").boolean(input.allow_multiple_values);
     }

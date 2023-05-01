@@ -30,7 +30,10 @@ pub(crate) fn de_sensitivity_inspection_template_excludes<'a, I>(tokens: &mut st
     }
 }
 
-pub fn ser_sensitivity_inspection_template_excludes(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SensitivityInspectionTemplateExcludes) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sensitivity_inspection_template_excludes(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SensitivityInspectionTemplateExcludes,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.managed_data_identifier_ids {
         let mut array_2 = object.key("managedDataIdentifierIds").start_array();
         for item_3 in var_1 {

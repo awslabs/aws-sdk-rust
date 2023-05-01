@@ -48,7 +48,10 @@ pub(crate) fn de_stream_selection<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_stream_selection(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StreamSelection) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_stream_selection(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StreamSelection,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_video_bits_per_second != 0 {
         object.key("maxVideoBitsPerSecond").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.max_video_bits_per_second).into()));
     }

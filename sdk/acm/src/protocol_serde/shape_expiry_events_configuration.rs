@@ -32,7 +32,10 @@ pub(crate) fn de_expiry_events_configuration<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_expiry_events_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ExpiryEventsConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_expiry_events_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ExpiryEventsConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.days_before_expiry {
         object.key("DaysBeforeExpiry").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

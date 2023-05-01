@@ -34,7 +34,10 @@ pub(crate) fn de_backup_policy<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_backup_policy(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BackupPolicy) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_backup_policy(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BackupPolicy,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }

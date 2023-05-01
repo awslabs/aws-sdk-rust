@@ -43,7 +43,10 @@ pub(crate) fn de_bumper<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
     }
 }
 
-pub fn ser_bumper(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Bumper) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_bumper(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Bumper,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.end_url {
         object.key("EndUrl").string(var_1.as_str());
     }

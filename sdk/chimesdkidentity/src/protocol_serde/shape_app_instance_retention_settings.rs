@@ -30,7 +30,10 @@ pub(crate) fn de_app_instance_retention_settings<'a, I>(tokens: &mut std::iter::
     }
 }
 
-pub fn ser_app_instance_retention_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AppInstanceRetentionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_app_instance_retention_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AppInstanceRetentionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.channel_retention_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ChannelRetentionSettings").start_object();

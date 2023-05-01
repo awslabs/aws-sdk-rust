@@ -39,7 +39,10 @@ pub(crate) fn de_world_count<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_world_count(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::WorldCount) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_world_count(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::WorldCount,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.floorplan_count {
         object.key("floorplanCount").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

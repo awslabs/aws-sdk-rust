@@ -45,7 +45,10 @@ pub(crate) fn de_intent_closing_setting<'a, I>(tokens: &mut std::iter::Peekable<
     }
 }
 
-pub fn ser_intent_closing_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::IntentClosingSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_intent_closing_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::IntentClosingSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.closing_response {
         #[allow(unused_mut)]
         let mut object_2 = object.key("closingResponse").start_object();

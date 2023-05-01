@@ -34,7 +34,10 @@ pub(crate) fn de_kms_key_to_grant<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_kms_key_to_grant(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::KmsKeyToGrant) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_kms_key_to_grant(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::KmsKeyToGrant,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.kms_key_arn {
         object.key("KmsKeyArn").string(var_1.as_str());
     }

@@ -44,7 +44,10 @@ pub(crate) fn de_audit_mitigation_actions_task_target<'a, I>(tokens: &mut std::i
     }
 }
 
-pub fn ser_audit_mitigation_actions_task_target(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::AuditMitigationActionsTaskTarget) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_audit_mitigation_actions_task_target(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::AuditMitigationActionsTaskTarget,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.audit_task_id {
         object.key("auditTaskId").string(var_1.as_str());
     }

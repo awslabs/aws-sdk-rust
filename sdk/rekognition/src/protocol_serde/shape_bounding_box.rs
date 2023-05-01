@@ -45,7 +45,10 @@ pub(crate) fn de_bounding_box<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_bounding_box(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BoundingBox) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_bounding_box(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BoundingBox,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.width {
         object.key("Width").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::Float((*var_1).into()));
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_join_resource_type_event_configuration<'a, I>(tokens: &mut std:
     }
 }
 
-pub fn ser_join_resource_type_event_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::JoinResourceTypeEventConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_join_resource_type_event_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::JoinResourceTypeEventConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.lo_ra_wan {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LoRaWAN").start_object();

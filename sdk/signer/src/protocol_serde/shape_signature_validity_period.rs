@@ -41,7 +41,10 @@ pub(crate) fn de_signature_validity_period<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_signature_validity_period(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SignatureValidityPeriod) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_signature_validity_period(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SignatureValidityPeriod,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.value != 0 {
         object.key("value").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((input.value).into()));
     }

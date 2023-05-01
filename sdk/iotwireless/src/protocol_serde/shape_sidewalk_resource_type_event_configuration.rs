@@ -34,7 +34,10 @@ pub(crate) fn de_sidewalk_resource_type_event_configuration<'a, I>(tokens: &mut 
     }
 }
 
-pub fn ser_sidewalk_resource_type_event_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SidewalkResourceTypeEventConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sidewalk_resource_type_event_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SidewalkResourceTypeEventConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.wireless_device_event_topic {
         object.key("WirelessDeviceEventTopic").string(var_1.as_str());
     }

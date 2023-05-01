@@ -115,7 +115,10 @@ pub(crate) fn de_dynamo_db_action<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_dynamo_db_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DynamoDbAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dynamo_db_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DynamoDbAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.table_name {
         object.key("tableName").string(var_1.as_str());
     }

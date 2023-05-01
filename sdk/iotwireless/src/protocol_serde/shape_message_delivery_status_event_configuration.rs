@@ -39,7 +39,10 @@ pub(crate) fn de_message_delivery_status_event_configuration<'a, I>(tokens: &mut
     }
 }
 
-pub fn ser_message_delivery_status_event_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MessageDeliveryStatusEventConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_message_delivery_status_event_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MessageDeliveryStatusEventConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Sidewalk").start_object();

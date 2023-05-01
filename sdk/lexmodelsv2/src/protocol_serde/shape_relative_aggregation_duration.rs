@@ -41,7 +41,10 @@ pub(crate) fn de_relative_aggregation_duration<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_relative_aggregation_duration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RelativeAggregationDuration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_relative_aggregation_duration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RelativeAggregationDuration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.time_dimension {
         object.key("timeDimension").string(var_1.as_str());
     }

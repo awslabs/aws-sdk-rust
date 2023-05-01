@@ -57,7 +57,10 @@ pub(crate) fn de_metric_value<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_metric_value(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::MetricValue) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_metric_value(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::MetricValue,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.count {
         object.key("count").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

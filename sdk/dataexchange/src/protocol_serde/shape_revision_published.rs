@@ -34,7 +34,10 @@ pub(crate) fn de_revision_published<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_revision_published(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RevisionPublished) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_revision_published(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RevisionPublished,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_set_id {
         object.key("DataSetId").string(var_1.as_str());
     }

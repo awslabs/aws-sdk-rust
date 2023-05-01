@@ -43,7 +43,10 @@ pub(crate) fn de_voice_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_voice_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::VoiceSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_voice_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::VoiceSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.voice_id {
         object.key("voiceId").string(var_1.as_str());
     }

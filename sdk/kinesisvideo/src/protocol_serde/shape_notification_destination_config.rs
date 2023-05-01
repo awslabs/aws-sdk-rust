@@ -34,7 +34,10 @@ pub(crate) fn de_notification_destination_config<'a, I>(tokens: &mut std::iter::
     }
 }
 
-pub fn ser_notification_destination_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::NotificationDestinationConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_notification_destination_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::NotificationDestinationConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.uri {
         object.key("Uri").string(var_1.as_str());
     }

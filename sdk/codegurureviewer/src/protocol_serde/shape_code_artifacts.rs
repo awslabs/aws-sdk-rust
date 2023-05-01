@@ -43,7 +43,10 @@ pub(crate) fn de_code_artifacts<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_code_artifacts(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CodeArtifacts) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_code_artifacts(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CodeArtifacts,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_code_artifacts_object_key {
         object.key("SourceCodeArtifactsObjectKey").string(var_1.as_str());
     }

@@ -61,7 +61,10 @@ pub(crate) fn de_resource_details<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_resource_details(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ResourceDetails) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_resource_details(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ResourceDetails,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.resource_id {
         object.key("ResourceId").string(var_1.as_str());
     }

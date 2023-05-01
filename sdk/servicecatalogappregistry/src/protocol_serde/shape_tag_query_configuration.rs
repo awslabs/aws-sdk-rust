@@ -34,7 +34,10 @@ pub(crate) fn de_tag_query_configuration<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_tag_query_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TagQueryConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_tag_query_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TagQueryConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tag_key {
         object.key("tagKey").string(var_1.as_str());
     }

@@ -39,7 +39,10 @@ pub(crate) fn de_rightsizing_recommendation_configuration<'a, I>(tokens: &mut st
     }
 }
 
-pub fn ser_rightsizing_recommendation_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RightsizingRecommendationConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_rightsizing_recommendation_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RightsizingRecommendationConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.recommendation_target {
         object.key("RecommendationTarget").string(var_1.as_str());
     }

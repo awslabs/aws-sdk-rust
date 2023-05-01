@@ -65,7 +65,10 @@ pub(crate) fn de_activated_rule<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_activated_rule(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ActivatedRule) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_activated_rule(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ActivatedRule,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.priority {
         object.key("Priority").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

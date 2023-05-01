@@ -48,7 +48,10 @@ pub(crate) fn de_security_service_policy_data<'a, I>(tokens: &mut std::iter::Pee
     }
 }
 
-pub fn ser_security_service_policy_data(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SecurityServicePolicyData) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_security_service_policy_data(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SecurityServicePolicyData,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());
     }

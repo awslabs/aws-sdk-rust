@@ -34,7 +34,10 @@ pub(crate) fn de_external_metrics_preference<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_external_metrics_preference(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ExternalMetricsPreference) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_external_metrics_preference(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ExternalMetricsPreference,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source {
         object.key("source").string(var_1.as_str());
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_data_source<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_data_source(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DataSource) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_data_source(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DataSource,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.glue_table {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GlueTable").start_object();

@@ -56,7 +56,10 @@ pub(crate) fn de_termination<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_termination(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Termination) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_termination(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Termination,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cps_limit {
         object.key("CpsLimit").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

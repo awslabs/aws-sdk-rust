@@ -94,7 +94,10 @@ pub(crate) fn de_read_options<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_read_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ReadOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_read_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ReadOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sep {
         object.key("sep").string(var_1.as_str());
     }

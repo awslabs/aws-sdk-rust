@@ -39,7 +39,10 @@ pub(crate) fn de_proximity_event_configuration<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_proximity_event_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ProximityEventConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_proximity_event_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ProximityEventConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Sidewalk").start_object();

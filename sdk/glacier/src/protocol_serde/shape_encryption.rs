@@ -52,7 +52,10 @@ pub(crate) fn de_encryption<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_encryption(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Encryption) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_encryption(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Encryption,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.encryption_type {
         object.key("EncryptionType").string(var_1.as_str());
     }

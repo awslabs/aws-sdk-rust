@@ -43,7 +43,10 @@ pub(crate) fn de_federated_database<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_federated_database(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::FederatedDatabase) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_federated_database(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::FederatedDatabase,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.identifier {
         object.key("Identifier").string(var_1.as_str());
     }

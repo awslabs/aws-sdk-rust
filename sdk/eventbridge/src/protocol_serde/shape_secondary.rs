@@ -34,7 +34,10 @@ pub(crate) fn de_secondary<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result
     }
 }
 
-pub fn ser_secondary(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Secondary) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_secondary(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Secondary,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.route {
         object.key("Route").string(var_1.as_str());
     }

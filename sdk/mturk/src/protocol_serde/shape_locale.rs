@@ -43,7 +43,10 @@ pub(crate) fn de_locale<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
     }
 }
 
-pub fn ser_locale(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Locale) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_locale(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Locale,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.country {
         object.key("Country").string(var_1.as_str());
     }

@@ -45,7 +45,10 @@ pub(crate) fn de_initial_response_setting<'a, I>(tokens: &mut std::iter::Peekabl
     }
 }
 
-pub fn ser_initial_response_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::InitialResponseSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_initial_response_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::InitialResponseSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.initial_response {
         #[allow(unused_mut)]
         let mut object_2 = object.key("initialResponse").start_object();

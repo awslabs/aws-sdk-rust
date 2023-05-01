@@ -35,7 +35,10 @@ pub(crate) fn de_geofence_geometry<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_geofence_geometry(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::GeofenceGeometry) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_geofence_geometry(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::GeofenceGeometry,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.polygon {
         let mut array_2 = object.key("Polygon").start_array();
         for item_3 in var_1 {

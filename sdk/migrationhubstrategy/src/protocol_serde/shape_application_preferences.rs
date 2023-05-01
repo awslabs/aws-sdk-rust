@@ -30,7 +30,10 @@ pub(crate) fn de_application_preferences<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_application_preferences(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ApplicationPreferences) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_application_preferences(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ApplicationPreferences,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.management_preference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("managementPreference").start_object();

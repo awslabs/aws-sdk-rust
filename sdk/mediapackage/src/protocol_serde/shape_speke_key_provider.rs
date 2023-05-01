@@ -71,7 +71,10 @@ pub(crate) fn de_speke_key_provider<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_speke_key_provider(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SpekeKeyProvider) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_speke_key_provider(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SpekeKeyProvider,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("certificateArn").string(var_1.as_str());
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_http_authorization<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_http_authorization(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::HttpAuthorization) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_http_authorization(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::HttpAuthorization,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sigv4 {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sigv4").start_object();

@@ -70,7 +70,10 @@ pub(crate) fn de_stored_query<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
     }
 }
 
-pub fn ser_stored_query(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::StoredQuery) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_stored_query(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::StoredQuery,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.query_id {
         object.key("QueryId").string(var_1.as_str());
     }

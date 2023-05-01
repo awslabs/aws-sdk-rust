@@ -30,7 +30,10 @@ pub(crate) fn de_scte35_time_signal_schedule_action_settings<'a, I>(tokens: &mut
     }
 }
 
-pub fn ser_scte35_time_signal_schedule_action_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Scte35TimeSignalScheduleActionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_scte35_time_signal_schedule_action_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Scte35TimeSignalScheduleActionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.scte35_descriptors {
         let mut array_2 = object.key("scte35Descriptors").start_array();
         for item_3 in var_1 {

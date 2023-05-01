@@ -44,7 +44,10 @@ pub(crate) fn de_http_match<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_http_match(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::HttpMatch) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_http_match(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::HttpMatch,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.method {
         object.key("method").string(var_1.as_str());
     }

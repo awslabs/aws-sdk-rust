@@ -54,7 +54,10 @@ pub(crate) fn de_block_public_access_configuration<'a, I>(tokens: &mut std::iter
     }
 }
 
-pub fn ser_block_public_access_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BlockPublicAccessConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_block_public_access_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BlockPublicAccessConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
      {
         object.key("BlockPublicSecurityGroupRules").boolean(input.block_public_security_group_rules);
     }

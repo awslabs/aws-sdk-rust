@@ -48,7 +48,10 @@ pub(crate) fn de_primary_key<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
     }
 }
 
-pub fn ser_primary_key(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PrimaryKey) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_primary_key(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PrimaryKey,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

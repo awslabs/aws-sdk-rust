@@ -30,7 +30,10 @@ pub(crate) fn de_refresh_configuration<'a, I>(tokens: &mut std::iter::Peekable<I
     }
 }
 
-pub fn ser_refresh_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RefreshConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_refresh_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RefreshConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.incremental_refresh {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IncrementalRefresh").start_object();

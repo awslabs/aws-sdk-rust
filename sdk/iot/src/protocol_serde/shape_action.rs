@@ -140,7 +140,10 @@ pub(crate) fn de_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
     }
 }
 
-pub fn ser_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::Action) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::Action,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dynamo_db {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dynamoDB").start_object();

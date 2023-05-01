@@ -30,7 +30,10 @@ pub(crate) fn de_tls_config<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_tls_config(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::TlsConfig) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_tls_config(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::TlsConfig,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.insecure_skip_verification {
         object.key("insecureSkipVerification").boolean(input.insecure_skip_verification);
     }

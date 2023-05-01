@@ -48,7 +48,10 @@ pub(crate) fn de_sqs_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resul
     }
 }
 
-pub fn ser_sqs_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SqsAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sqs_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SqsAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());
     }

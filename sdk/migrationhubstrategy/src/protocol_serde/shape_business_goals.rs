@@ -53,7 +53,10 @@ pub(crate) fn de_business_goals<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
     }
 }
 
-pub fn ser_business_goals(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::BusinessGoals) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_business_goals(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::BusinessGoals,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.speed_of_migration {
         object.key("speedOfMigration").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

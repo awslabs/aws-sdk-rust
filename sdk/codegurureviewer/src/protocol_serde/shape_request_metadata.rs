@@ -57,7 +57,10 @@ pub(crate) fn de_request_metadata<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
     }
 }
 
-pub fn ser_request_metadata(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RequestMetadata) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_request_metadata(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RequestMetadata,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.request_id {
         object.key("RequestId").string(var_1.as_str());
     }

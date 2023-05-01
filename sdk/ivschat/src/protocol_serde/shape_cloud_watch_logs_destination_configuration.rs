@@ -34,7 +34,10 @@ pub(crate) fn de_cloud_watch_logs_destination_configuration<'a, I>(tokens: &mut 
     }
 }
 
-pub fn ser_cloud_watch_logs_destination_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CloudWatchLogsDestinationConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_cloud_watch_logs_destination_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CloudWatchLogsDestinationConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }

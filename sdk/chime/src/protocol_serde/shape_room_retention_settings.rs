@@ -32,7 +32,10 @@ pub(crate) fn de_room_retention_settings<'a, I>(tokens: &mut std::iter::Peekable
     }
 }
 
-pub fn ser_room_retention_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::RoomRetentionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_room_retention_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::RoomRetentionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.retention_days {
         object.key("RetentionDays").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::NegInt((*var_1).into()));
     }

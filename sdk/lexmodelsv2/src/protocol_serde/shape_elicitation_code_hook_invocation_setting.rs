@@ -39,7 +39,10 @@ pub(crate) fn de_elicitation_code_hook_invocation_setting<'a, I>(tokens: &mut st
     }
 }
 
-pub fn ser_elicitation_code_hook_invocation_setting(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ElicitationCodeHookInvocationSetting) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_elicitation_code_hook_invocation_setting(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ElicitationCodeHookInvocationSetting,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enable_code_hook_invocation {
         object.key("enableCodeHookInvocation").boolean(*var_1);
     }

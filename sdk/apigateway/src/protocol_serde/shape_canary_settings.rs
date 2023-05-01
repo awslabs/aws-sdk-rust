@@ -49,7 +49,10 @@ pub(crate) fn de_canary_settings<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
     }
 }
 
-pub fn ser_canary_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::CanarySettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_canary_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::CanarySettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.percent_traffic != 0.0 {
         object.key("percentTraffic").number(#[allow(clippy::useless_conversion)]aws_smithy_types::Number::Float((input.percent_traffic).into()));
     }

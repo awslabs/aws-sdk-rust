@@ -34,7 +34,10 @@ pub(crate) fn de_script_batch_job_identifier<'a, I>(tokens: &mut std::iter::Peek
     }
 }
 
-pub fn ser_script_batch_job_identifier(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ScriptBatchJobIdentifier) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_script_batch_job_identifier(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ScriptBatchJobIdentifier,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.script_name {
         object.key("scriptName").string(var_1.as_str());
     }

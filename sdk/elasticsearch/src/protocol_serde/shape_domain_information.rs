@@ -52,7 +52,10 @@ pub(crate) fn de_domain_information<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_domain_information(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DomainInformation) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_domain_information(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DomainInformation,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.owner_id {
         object.key("OwnerId").string(var_1.as_str());
     }

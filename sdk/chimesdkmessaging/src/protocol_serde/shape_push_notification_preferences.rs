@@ -43,7 +43,10 @@ pub(crate) fn de_push_notification_preferences<'a, I>(tokens: &mut std::iter::Pe
     }
 }
 
-pub fn ser_push_notification_preferences(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PushNotificationPreferences) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_push_notification_preferences(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PushNotificationPreferences,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.allow_notifications {
         object.key("AllowNotifications").string(var_1.as_str());
     }

@@ -30,7 +30,10 @@ pub(crate) fn de_sip_media_application_logging_configuration<'a, I>(tokens: &mut
     }
 }
 
-pub fn ser_sip_media_application_logging_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::SipMediaApplicationLoggingConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_sip_media_application_logging_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::SipMediaApplicationLoggingConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enable_sip_media_application_message_logs {
         object.key("EnableSipMediaApplicationMessageLogs").boolean(*var_1);
     }

@@ -57,7 +57,10 @@ pub(crate) fn de_dialog_action<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
     }
 }
 
-pub fn ser_dialog_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DialogAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dialog_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DialogAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }

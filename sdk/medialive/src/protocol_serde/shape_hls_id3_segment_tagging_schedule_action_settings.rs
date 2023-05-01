@@ -43,7 +43,10 @@ pub(crate) fn de_hls_id3_segment_tagging_schedule_action_settings<'a, I>(tokens:
     }
 }
 
-pub fn ser_hls_id3_segment_tagging_schedule_action_settings(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::HlsId3SegmentTaggingScheduleActionSettings) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_hls_id3_segment_tagging_schedule_action_settings(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::HlsId3SegmentTaggingScheduleActionSettings,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tag {
         object.key("tag").string(var_1.as_str());
     }

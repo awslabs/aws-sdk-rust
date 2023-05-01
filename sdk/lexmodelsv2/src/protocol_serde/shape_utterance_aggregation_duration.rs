@@ -30,7 +30,10 @@ pub(crate) fn de_utterance_aggregation_duration<'a, I>(tokens: &mut std::iter::P
     }
 }
 
-pub fn ser_utterance_aggregation_duration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::UtteranceAggregationDuration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_utterance_aggregation_duration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::UtteranceAggregationDuration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.relative_aggregation_duration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("relativeAggregationDuration").start_object();

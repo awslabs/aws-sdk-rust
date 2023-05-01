@@ -39,7 +39,10 @@ pub(crate) fn de_iot_site_wise_action<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_iot_site_wise_action(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::IotSiteWiseAction) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_iot_site_wise_action(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::IotSiteWiseAction,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.put_asset_property_value_entries {
         let mut array_2 = object.key("putAssetPropertyValueEntries").start_array();
         for item_3 in var_1 {

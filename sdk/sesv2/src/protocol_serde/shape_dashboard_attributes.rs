@@ -34,7 +34,10 @@ pub(crate) fn de_dashboard_attributes<'a, I>(tokens: &mut std::iter::Peekable<I>
     }
 }
 
-pub fn ser_dashboard_attributes(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DashboardAttributes) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_dashboard_attributes(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DashboardAttributes,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.engagement_metrics {
         object.key("EngagementMetrics").string(var_1.as_str());
     }

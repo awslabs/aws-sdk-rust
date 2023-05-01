@@ -40,7 +40,10 @@ pub(crate) fn de_prefetch_retrieval<'a, I>(tokens: &mut std::iter::Peekable<I>) 
     }
 }
 
-pub fn ser_prefetch_retrieval(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::PrefetchRetrieval) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_prefetch_retrieval(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::PrefetchRetrieval,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dynamic_variables {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DynamicVariables").start_object();

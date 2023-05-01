@@ -40,7 +40,10 @@ pub(crate) fn de_conditional_specification<'a, I>(tokens: &mut std::iter::Peekab
     }
 }
 
-pub fn ser_conditional_specification(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::ConditionalSpecification) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_conditional_specification(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::ConditionalSpecification,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.active {
         object.key("active").boolean(*var_1);
     }

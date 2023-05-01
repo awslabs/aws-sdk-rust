@@ -30,7 +30,10 @@ pub(crate) fn de_device_registration_state_resource_type_event_configuration<'a,
     }
 }
 
-pub fn ser_device_registration_state_resource_type_event_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DeviceRegistrationStateResourceTypeEventConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_device_registration_state_resource_type_event_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Sidewalk").start_object();

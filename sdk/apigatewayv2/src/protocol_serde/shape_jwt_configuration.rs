@@ -39,7 +39,10 @@ pub(crate) fn de_jwt_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>) -
     }
 }
 
-pub fn ser_jwt_configuration(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::JwtConfiguration) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_jwt_configuration(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::JwtConfiguration,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.audience {
         let mut array_2 = object.key("audience").start_array();
         for item_3 in var_1 {

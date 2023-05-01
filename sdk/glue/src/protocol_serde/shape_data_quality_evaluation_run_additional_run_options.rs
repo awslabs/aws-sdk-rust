@@ -39,7 +39,10 @@ pub(crate) fn de_data_quality_evaluation_run_additional_run_options<'a, I>(token
     }
 }
 
-pub fn ser_data_quality_evaluation_run_additional_run_options(object: &mut aws_smithy_json::serialize::JsonObjectWriter, input: &crate::types::DataQualityEvaluationRunAdditionalRunOptions) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
+pub fn ser_data_quality_evaluation_run_additional_run_options(
+                     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+                     input: &crate::types::DataQualityEvaluationRunAdditionalRunOptions,
+                ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_metrics_enabled {
         object.key("CloudWatchMetricsEnabled").boolean(*var_1);
     }
