@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let backupvaultevent = unimplemented!();
 /// match backupvaultevent {
@@ -45,14 +45,22 @@
 /// Specifically, when `backupvaultevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BackupVaultEvent::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum BackupVaultEvent {
     #[allow(missing_docs)] // documentation missing in model
     BackupJobCompleted,
@@ -89,71 +97,90 @@ pub enum BackupVaultEvent {
     #[allow(missing_docs)] // documentation missing in model
     S3RestoreObjectFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BackupVaultEvent {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BACKUP_JOB_COMPLETED" => BackupVaultEvent::BackupJobCompleted,
-"BACKUP_JOB_EXPIRED" => BackupVaultEvent::BackupJobExpired,
-"BACKUP_JOB_FAILED" => BackupVaultEvent::BackupJobFailed,
-"BACKUP_JOB_STARTED" => BackupVaultEvent::BackupJobStarted,
-"BACKUP_JOB_SUCCESSFUL" => BackupVaultEvent::BackupJobSuccessful,
-"BACKUP_PLAN_CREATED" => BackupVaultEvent::BackupPlanCreated,
-"BACKUP_PLAN_MODIFIED" => BackupVaultEvent::BackupPlanModified,
-"COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
-"COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
-"COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
-"RECOVERY_POINT_MODIFIED" => BackupVaultEvent::RecoveryPointModified,
-"RESTORE_JOB_COMPLETED" => BackupVaultEvent::RestoreJobCompleted,
-"RESTORE_JOB_FAILED" => BackupVaultEvent::RestoreJobFailed,
-"RESTORE_JOB_STARTED" => BackupVaultEvent::RestoreJobStarted,
-"RESTORE_JOB_SUCCESSFUL" => BackupVaultEvent::RestoreJobSuccessful,
-"S3_BACKUP_OBJECT_FAILED" => BackupVaultEvent::S3BackupObjectFailed,
-"S3_RESTORE_OBJECT_FAILED" => BackupVaultEvent::S3RestoreObjectFailed,
-other => BackupVaultEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "BACKUP_JOB_COMPLETED" => BackupVaultEvent::BackupJobCompleted,
+            "BACKUP_JOB_EXPIRED" => BackupVaultEvent::BackupJobExpired,
+            "BACKUP_JOB_FAILED" => BackupVaultEvent::BackupJobFailed,
+            "BACKUP_JOB_STARTED" => BackupVaultEvent::BackupJobStarted,
+            "BACKUP_JOB_SUCCESSFUL" => BackupVaultEvent::BackupJobSuccessful,
+            "BACKUP_PLAN_CREATED" => BackupVaultEvent::BackupPlanCreated,
+            "BACKUP_PLAN_MODIFIED" => BackupVaultEvent::BackupPlanModified,
+            "COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
+            "COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
+            "COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
+            "RECOVERY_POINT_MODIFIED" => BackupVaultEvent::RecoveryPointModified,
+            "RESTORE_JOB_COMPLETED" => BackupVaultEvent::RestoreJobCompleted,
+            "RESTORE_JOB_FAILED" => BackupVaultEvent::RestoreJobFailed,
+            "RESTORE_JOB_STARTED" => BackupVaultEvent::RestoreJobStarted,
+            "RESTORE_JOB_SUCCESSFUL" => BackupVaultEvent::RestoreJobSuccessful,
+            "S3_BACKUP_OBJECT_FAILED" => BackupVaultEvent::S3BackupObjectFailed,
+            "S3_RESTORE_OBJECT_FAILED" => BackupVaultEvent::S3RestoreObjectFailed,
+            other => {
+                BackupVaultEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for BackupVaultEvent {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(BackupVaultEvent::from(s))
-                }
-            }
-impl BackupVaultEvent {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    BackupVaultEvent::BackupJobCompleted => "BACKUP_JOB_COMPLETED",
-    BackupVaultEvent::BackupJobExpired => "BACKUP_JOB_EXPIRED",
-    BackupVaultEvent::BackupJobFailed => "BACKUP_JOB_FAILED",
-    BackupVaultEvent::BackupJobStarted => "BACKUP_JOB_STARTED",
-    BackupVaultEvent::BackupJobSuccessful => "BACKUP_JOB_SUCCESSFUL",
-    BackupVaultEvent::BackupPlanCreated => "BACKUP_PLAN_CREATED",
-    BackupVaultEvent::BackupPlanModified => "BACKUP_PLAN_MODIFIED",
-    BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
-    BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
-    BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
-    BackupVaultEvent::RecoveryPointModified => "RECOVERY_POINT_MODIFIED",
-    BackupVaultEvent::RestoreJobCompleted => "RESTORE_JOB_COMPLETED",
-    BackupVaultEvent::RestoreJobFailed => "RESTORE_JOB_FAILED",
-    BackupVaultEvent::RestoreJobStarted => "RESTORE_JOB_STARTED",
-    BackupVaultEvent::RestoreJobSuccessful => "RESTORE_JOB_SUCCESSFUL",
-    BackupVaultEvent::S3BackupObjectFailed => "S3_BACKUP_OBJECT_FAILED",
-    BackupVaultEvent::S3RestoreObjectFailed => "S3_RESTORE_OBJECT_FAILED",
-    BackupVaultEvent::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BACKUP_JOB_COMPLETED", "BACKUP_JOB_EXPIRED", "BACKUP_JOB_FAILED", "BACKUP_JOB_STARTED", "BACKUP_JOB_SUCCESSFUL", "BACKUP_PLAN_CREATED", "BACKUP_PLAN_MODIFIED", "COPY_JOB_FAILED", "COPY_JOB_STARTED", "COPY_JOB_SUCCESSFUL", "RECOVERY_POINT_MODIFIED", "RESTORE_JOB_COMPLETED", "RESTORE_JOB_FAILED", "RESTORE_JOB_STARTED", "RESTORE_JOB_SUCCESSFUL", "S3_BACKUP_OBJECT_FAILED", "S3_RESTORE_OBJECT_FAILED"]
-                }
-            }
-impl AsRef<str> for BackupVaultEvent {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for BackupVaultEvent {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BackupVaultEvent::from(s))
+    }
+}
+impl BackupVaultEvent {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BackupVaultEvent::BackupJobCompleted => "BACKUP_JOB_COMPLETED",
+            BackupVaultEvent::BackupJobExpired => "BACKUP_JOB_EXPIRED",
+            BackupVaultEvent::BackupJobFailed => "BACKUP_JOB_FAILED",
+            BackupVaultEvent::BackupJobStarted => "BACKUP_JOB_STARTED",
+            BackupVaultEvent::BackupJobSuccessful => "BACKUP_JOB_SUCCESSFUL",
+            BackupVaultEvent::BackupPlanCreated => "BACKUP_PLAN_CREATED",
+            BackupVaultEvent::BackupPlanModified => "BACKUP_PLAN_MODIFIED",
+            BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
+            BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
+            BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
+            BackupVaultEvent::RecoveryPointModified => "RECOVERY_POINT_MODIFIED",
+            BackupVaultEvent::RestoreJobCompleted => "RESTORE_JOB_COMPLETED",
+            BackupVaultEvent::RestoreJobFailed => "RESTORE_JOB_FAILED",
+            BackupVaultEvent::RestoreJobStarted => "RESTORE_JOB_STARTED",
+            BackupVaultEvent::RestoreJobSuccessful => "RESTORE_JOB_SUCCESSFUL",
+            BackupVaultEvent::S3BackupObjectFailed => "S3_BACKUP_OBJECT_FAILED",
+            BackupVaultEvent::S3RestoreObjectFailed => "S3_RESTORE_OBJECT_FAILED",
+            BackupVaultEvent::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BACKUP_JOB_COMPLETED",
+            "BACKUP_JOB_EXPIRED",
+            "BACKUP_JOB_FAILED",
+            "BACKUP_JOB_STARTED",
+            "BACKUP_JOB_SUCCESSFUL",
+            "BACKUP_PLAN_CREATED",
+            "BACKUP_PLAN_MODIFIED",
+            "COPY_JOB_FAILED",
+            "COPY_JOB_STARTED",
+            "COPY_JOB_SUCCESSFUL",
+            "RECOVERY_POINT_MODIFIED",
+            "RESTORE_JOB_COMPLETED",
+            "RESTORE_JOB_FAILED",
+            "RESTORE_JOB_STARTED",
+            "RESTORE_JOB_SUCCESSFUL",
+            "S3_BACKUP_OBJECT_FAILED",
+            "S3_RESTORE_OBJECT_FAILED",
+        ]
+    }
+}
+impl AsRef<str> for BackupVaultEvent {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

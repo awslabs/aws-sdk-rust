@@ -105,4 +105,3 @@ pub mod update_nodegroup_config;
 
 /// Types for the `UpdateNodegroupVersion` operation.
 pub mod update_nodegroup_version;
-

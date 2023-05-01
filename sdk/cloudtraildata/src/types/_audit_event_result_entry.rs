@@ -3,7 +3,7 @@
 /// <p>A response that includes successful and failed event results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuditEventResultEntry  {
+pub struct AuditEventResultEntry {
     /// <p>The original event ID from the source event.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AuditEventResultEntry  {
 }
 impl AuditEventResultEntry {
     /// <p>The original event ID from the source event.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The event ID assigned by CloudTrail.</p>
-    pub fn event_id(&self) -> std::option::Option<& str> {
+    pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AuditEventResultEntryBuilder {
     }
     /// <p>The original event ID from the source event.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The event ID assigned by CloudTrail.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AuditEventResultEntryBuilder {
     }
     /// <p>The event ID assigned by CloudTrail.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input; self
+        self.event_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AuditEventResultEntry`](crate::types::AuditEventResultEntry).
     pub fn build(self) -> crate::types::AuditEventResultEntry {
         crate::types::AuditEventResultEntry {
-            id: self.id
-            ,
-            event_id: self.event_id
-            ,
+            id: self.id,
+            event_id: self.event_id,
         }
     }
 }
-

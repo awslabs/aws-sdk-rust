@@ -16,4 +16,3 @@ pub mod builders;
 
 /// Error types that AWS CloudTrail Data Service can respond with.
 pub mod error;
-

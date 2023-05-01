@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecoveryPointInput  {
+pub struct DeleteRecoveryPointInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct DeleteRecoveryPointInput  {
 }
 impl DeleteRecoveryPointInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> std::option::Option<& str> {
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(&self) -> std::option::Option<& str> {
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
 }
 impl DeleteRecoveryPointInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecoveryPointInput`](crate::operation::delete_recovery_point::DeleteRecoveryPointInput).
-    pub fn builder() -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointInputBuilder {
-        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointInputBuilder {
+        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointInputBuilder::default(
+        )
     }
 }
 
@@ -41,8 +43,12 @@ impl DeleteRecoveryPointInputBuilder {
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_vault_name = input; self
+    pub fn set_backup_vault_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.backup_vault_name = input;
+        self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +56,25 @@ impl DeleteRecoveryPointInputBuilder {
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recovery_point_arn = input; self
+    pub fn set_recovery_point_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recovery_point_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRecoveryPointInput`](crate::operation::delete_recovery_point::DeleteRecoveryPointInput).
-    pub fn build(self) -> Result<crate::operation::delete_recovery_point::DeleteRecoveryPointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_recovery_point::DeleteRecoveryPointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_recovery_point::DeleteRecoveryPointInput {
-                backup_vault_name: self.backup_vault_name
-                ,
-                recovery_point_arn: self.recovery_point_arn
-                ,
-            }
+                backup_vault_name: self.backup_vault_name,
+                recovery_point_arn: self.recovery_point_arn,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFargateProfilesOutput  {
+pub struct ListFargateProfilesOutput {
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
     #[doc(hidden)]
     pub fargate_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,23 +13,25 @@ pub struct ListFargateProfilesOutput  {
 }
 impl ListFargateProfilesOutput {
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
-    pub fn fargate_profile_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn fargate_profile_names(&self) -> std::option::Option<&[std::string::String]> {
         self.fargate_profile_names.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFargateProfilesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFargateProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListFargateProfilesOutput`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput).
-    pub fn builder() -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder {
-        crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder {
+        crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListFargateProfilesOutputBuilder {
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
     pub fn fargate_profile_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.fargate_profile_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.fargate_profile_names = Some(v);
-                        self
+        v.push(input.into());
+        self.fargate_profile_names = Some(v);
+        self
     }
     /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
-    pub fn set_fargate_profile_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.fargate_profile_names = input; self
+    pub fn set_fargate_profile_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.fargate_profile_names = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListFargateProfilesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFargateProfilesOutput`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput).
     pub fn build(self) -> crate::operation::list_fargate_profiles::ListFargateProfilesOutput {
         crate::operation::list_fargate_profiles::ListFargateProfilesOutput {
-            fargate_profile_names: self.fargate_profile_names
-            ,
-            next_token: self.next_token
-            ,
+            fargate_profile_names: self.fargate_profile_names,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

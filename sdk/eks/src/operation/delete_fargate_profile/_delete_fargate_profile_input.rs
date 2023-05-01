@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFargateProfileInput  {
+pub struct DeleteFargateProfileInput {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteFargateProfileInput  {
 }
 impl DeleteFargateProfileInput {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
-    pub fn cluster_name(&self) -> std::option::Option<& str> {
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the Fargate profile to delete.</p>
-    pub fn fargate_profile_name(&self) -> std::option::Option<& str> {
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
         self.fargate_profile_name.as_deref()
     }
 }
 impl DeleteFargateProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteFargateProfileInput`](crate::operation::delete_fargate_profile::DeleteFargateProfileInput).
-    pub fn builder() -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder {
         crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteFargateProfileInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input; self
+        self.cluster_name = input;
+        self
     }
     /// <p>The name of the Fargate profile to delete.</p>
     pub fn fargate_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +52,25 @@ impl DeleteFargateProfileInputBuilder {
         self
     }
     /// <p>The name of the Fargate profile to delete.</p>
-    pub fn set_fargate_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fargate_profile_name = input; self
+    pub fn set_fargate_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fargate_profile_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFargateProfileInput`](crate::operation::delete_fargate_profile::DeleteFargateProfileInput).
-    pub fn build(self) -> Result<crate::operation::delete_fargate_profile::DeleteFargateProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_fargate_profile::DeleteFargateProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_fargate_profile::DeleteFargateProfileInput {
-                cluster_name: self.cluster_name
-                ,
-                fargate_profile_name: self.fargate_profile_name
-                ,
-            }
+                cluster_name: self.cluster_name,
+                fargate_profile_name: self.fargate_profile_name,
+            },
         )
     }
 }
-

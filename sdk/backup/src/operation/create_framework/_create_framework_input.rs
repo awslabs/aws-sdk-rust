@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFrameworkInput  {
+pub struct CreateFrameworkInput {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
     pub framework_name: std::option::Option<std::string::String>,
@@ -17,27 +17,31 @@ pub struct CreateFrameworkInput  {
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub framework_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub framework_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFrameworkInput {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(&self) -> std::option::Option<& str> {
+    pub fn framework_name(&self) -> std::option::Option<&str> {
         self.framework_name.as_deref()
     }
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
-    pub fn framework_description(&self) -> std::option::Option<& str> {
+    pub fn framework_description(&self) -> std::option::Option<&str> {
         self.framework_description.as_deref()
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn framework_controls(&self) -> std::option::Option<& [crate::types::FrameworkControl]> {
+    pub fn framework_controls(&self) -> std::option::Option<&[crate::types::FrameworkControl]> {
         self.framework_controls.as_deref()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn framework_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn framework_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.framework_tags.as_ref()
     }
 }
@@ -54,9 +58,11 @@ impl CreateFrameworkInput {
 pub struct CreateFrameworkInputBuilder {
     pub(crate) framework_name: std::option::Option<std::string::String>,
     pub(crate) framework_description: std::option::Option<std::string::String>,
-    pub(crate) framework_controls: std::option::Option<std::vec::Vec<crate::types::FrameworkControl>>,
+    pub(crate) framework_controls:
+        std::option::Option<std::vec::Vec<crate::types::FrameworkControl>>,
     pub(crate) idempotency_token: std::option::Option<std::string::String>,
-    pub(crate) framework_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) framework_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFrameworkInputBuilder {
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
@@ -66,7 +72,8 @@ impl CreateFrameworkInputBuilder {
     }
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn set_framework_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_name = input; self
+        self.framework_name = input;
+        self
     }
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
     pub fn framework_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +81,12 @@ impl CreateFrameworkInputBuilder {
         self
     }
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
-    pub fn set_framework_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_description = input; self
+    pub fn set_framework_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.framework_description = input;
+        self
     }
     /// Appends an item to `framework_controls`.
     ///
@@ -84,13 +95,17 @@ impl CreateFrameworkInputBuilder {
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(mut self, input: crate::types::FrameworkControl) -> Self {
         let mut v = self.framework_controls.unwrap_or_default();
-                        v.push(input);
-                        self.framework_controls = Some(v);
-                        self
+        v.push(input);
+        self.framework_controls = Some(v);
+        self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(mut self, input: std::option::Option<std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
-        self.framework_controls = input; self
+    pub fn set_framework_controls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FrameworkControl>>,
+    ) -> Self {
+        self.framework_controls = input;
+        self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,40 +113,51 @@ impl CreateFrameworkInputBuilder {
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// Adds a key-value pair to `framework_tags`.
     ///
     /// To override the contents of this collection use [`set_framework_tags`](Self::set_framework_tags).
     ///
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn framework_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn framework_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.framework_tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.framework_tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.framework_tags = Some(hash_map);
+        self
     }
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn set_framework_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.framework_tags = input; self
+    pub fn set_framework_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.framework_tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFrameworkInput`](crate::operation::create_framework::CreateFrameworkInput).
-    pub fn build(self) -> Result<crate::operation::create_framework::CreateFrameworkInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_framework::CreateFrameworkInput {
-                framework_name: self.framework_name
-                ,
-                framework_description: self.framework_description
-                ,
-                framework_controls: self.framework_controls
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-                framework_tags: self.framework_tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_framework::CreateFrameworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_framework::CreateFrameworkInput {
+            framework_name: self.framework_name,
+            framework_description: self.framework_description,
+            framework_controls: self.framework_controls,
+            idempotency_token: self.idempotency_token,
+            framework_tags: self.framework_tags,
+        })
     }
 }
-
