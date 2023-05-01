@@ -100,3 +100,4 @@ pub mod builders;
 
 /// Error types that Amazon Kinesis can respond with.
 pub mod error;
+

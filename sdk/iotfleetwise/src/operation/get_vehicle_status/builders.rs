@@ -4,89 +4,62 @@ pub use crate::operation::get_vehicle_status::_get_vehicle_status_output::GetVeh
 pub use crate::operation::get_vehicle_status::_get_vehicle_status_input::GetVehicleStatusInputBuilder;
 
 /// Fluent builder constructing a request to `GetVehicleStatus`.
-///
+/// 
 /// <p> Retrieves information about the status of a vehicle with any associated campaigns. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVehicleStatusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_vehicle_status::builders::GetVehicleStatusInputBuilder,
-}
-impl GetVehicleStatusFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_vehicle_status::builders::GetVehicleStatusInputBuilder
+            }
+impl GetVehicleStatusFluentBuilder  {
     /// Creates a new `GetVehicleStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_vehicle_status::GetVehicleStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_vehicle_status::GetVehicleStatusError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_vehicle_status::GetVehicleStatusOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_vehicle_status::GetVehicleStatusError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_vehicle_status::GetVehicleStatus, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_vehicle_status::GetVehicleStatusError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_vehicle_status::GetVehicleStatusOutput, aws_smithy_http::result::SdkError<crate::operation::get_vehicle_status::GetVehicleStatusError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator {
-        crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>A pagination token for the next set of results.</p>
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator {
+                            crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::new(self.handle, self.inner)
+                        }
+    /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A pagination token for the next set of results.</p>
+    /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
@@ -113,3 +86,4 @@ impl GetVehicleStatusFluentBuilder {
         self
     }
 }
+

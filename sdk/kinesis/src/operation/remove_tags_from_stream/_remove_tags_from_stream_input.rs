@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>RemoveTagsFromStream</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromStreamInput {
+pub struct RemoveTagsFromStreamInput  {
     /// <p>The name of the stream.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct RemoveTagsFromStreamInput {
 }
 impl RemoveTagsFromStreamInput {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
 impl RemoveTagsFromStreamInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {
+    pub fn builder() -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {
         crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl RemoveTagsFromStreamInputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -62,17 +60,13 @@ impl RemoveTagsFromStreamInputBuilder {
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = Some(v);
+                        self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +75,20 @@ impl RemoveTagsFromStreamInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
-                stream_name: self.stream_name,
-                tag_keys: self.tag_keys,
-                stream_arn: self.stream_arn,
-            },
+                stream_name: self.stream_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
         )
     }
 }
+

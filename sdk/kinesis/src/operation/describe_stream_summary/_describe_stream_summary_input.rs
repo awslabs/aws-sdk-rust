@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStreamSummaryInput {
+pub struct DescribeStreamSummaryInput  {
     /// <p>The name of the stream to describe.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DescribeStreamSummaryInput {
 }
 impl DescribeStreamSummaryInput {
     /// <p>The name of the stream to describe.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
 impl DescribeStreamSummaryInput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder {
         crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DescribeStreamSummaryInputBuilder {
     }
     /// <p>The name of the stream to describe.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DescribeStreamSummaryInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_stream_summary::DescribeStreamSummaryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_stream_summary::DescribeStreamSummaryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_stream_summary::DescribeStreamSummaryInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-            },
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sample {
+pub struct Sample  {
     /// <p>The number of rows in the sample.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl Sample {
         self.size
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SampleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SampleType> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SampleBuilder {
     }
     /// <p>The number of rows in the sample.</p>
     pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
     pub fn r#type(mut self, input: crate::types::SampleType) -> Self {
@@ -53,14 +52,16 @@ impl SampleBuilder {
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::SampleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`Sample`](crate::types::Sample).
     pub fn build(self) -> crate::types::Sample {
         crate::types::Sample {
-            size: self.size,
-            r#type: self.r#type,
+            size: self.size
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

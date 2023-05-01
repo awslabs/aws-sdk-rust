@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStreamModeOutput {
+pub struct UpdateStreamModeOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateStreamModeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateStreamModeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamModeOutput`](crate::operation::update_stream_mode::UpdateStreamModeOutput).
-    pub fn builder() -> crate::operation::update_stream_mode::builders::UpdateStreamModeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_stream_mode::builders::UpdateStreamModeOutputBuilder {
         crate::operation::update_stream_mode::builders::UpdateStreamModeOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct UpdateStreamModeOutputBuilder {
 }
 impl UpdateStreamModeOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateStreamModeOutput`](crate::operation::update_stream_mode::UpdateStreamModeOutput).
     pub fn build(self) -> crate::operation::update_stream_mode::UpdateStreamModeOutput {
         crate::operation::update_stream_mode::UpdateStreamModeOutput {
@@ -41,3 +40,4 @@ impl UpdateStreamModeOutputBuilder {
         }
     }
 }
+

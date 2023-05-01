@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopJobRunInput {
+pub struct StopJobRunInput  {
     /// <p>The name of the job to be stopped.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct StopJobRunInput {
 }
 impl StopJobRunInput {
     /// <p>The name of the job to be stopped.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the job run to be stopped.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl StopJobRunInputBuilder {
     }
     /// <p>The name of the job to be stopped.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ID of the job run to be stopped.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl StopJobRunInputBuilder {
     }
     /// <p>The ID of the job run to be stopped.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// Consumes the builder and constructs a [`StopJobRunInput`](crate::operation::stop_job_run::StopJobRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_job_run::StopJobRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_job_run::StopJobRunInput {
-            name: self.name,
-            run_id: self.run_id,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_job_run::StopJobRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_job_run::StopJobRunInput {
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+            }
+        )
     }
 }
+

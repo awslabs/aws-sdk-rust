@@ -30,3 +30,4 @@ pub use crate::types::_enhanced_metrics::EnhancedMetricsBuilder;
 pub use crate::types::_consumer_description::ConsumerDescriptionBuilder;
 
 pub use crate::types::_stream_description::StreamDescriptionBuilder;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterAccountInput {
+pub struct RegisterAccountInput  {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[doc(hidden)]
     pub timestream_resources: std::option::Option<crate::types::TimestreamResources>,
@@ -13,12 +13,12 @@ pub struct RegisterAccountInput {
 }
 impl RegisterAccountInput {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    pub fn timestream_resources(&self) -> std::option::Option<&crate::types::TimestreamResources> {
+    pub fn timestream_resources(&self) -> std::option::Option<& crate::types::TimestreamResources> {
         self.timestream_resources.as_ref()
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
-    pub fn iam_resources(&self) -> std::option::Option<&crate::types::IamResources> {
+    pub fn iam_resources(&self) -> std::option::Option<& crate::types::IamResources> {
         self.iam_resources.as_ref()
     }
 }
@@ -43,12 +43,8 @@ impl RegisterAccountInputBuilder {
         self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    pub fn set_timestream_resources(
-        mut self,
-        input: std::option::Option<crate::types::TimestreamResources>,
-    ) -> Self {
-        self.timestream_resources = input;
-        self
+    pub fn set_timestream_resources(mut self, input: std::option::Option<crate::types::TimestreamResources>) -> Self {
+        self.timestream_resources = input; self
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
@@ -58,23 +54,19 @@ impl RegisterAccountInputBuilder {
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
-    pub fn set_iam_resources(
-        mut self,
-        input: std::option::Option<crate::types::IamResources>,
-    ) -> Self {
-        self.iam_resources = input;
-        self
+    pub fn set_iam_resources(mut self, input: std::option::Option<crate::types::IamResources>) -> Self {
+        self.iam_resources = input; self
     }
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_account::RegisterAccountInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::register_account::RegisterAccountInput {
-            timestream_resources: self.timestream_resources,
-            iam_resources: self.iam_resources,
-        })
+    pub fn build(self) -> Result<crate::operation::register_account::RegisterAccountInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::register_account::RegisterAccountInput {
+                timestream_resources: self.timestream_resources
+                ,
+                iam_resources: self.iam_resources
+                ,
+            }
+        )
     }
 }
+

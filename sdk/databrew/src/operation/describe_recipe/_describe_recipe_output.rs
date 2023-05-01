@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecipeOutput {
+pub struct DescribeRecipeOutput  {
     /// <p>The identifier (user name) of the user who created the recipe.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
@@ -35,8 +35,7 @@ pub struct DescribeRecipeOutput {
     pub steps: std::option::Option<std::vec::Vec<crate::types::RecipeStep>>,
     /// <p>Metadata tags associated with this project.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ARN of the recipe.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -47,66 +46,63 @@ pub struct DescribeRecipeOutput {
 }
 impl DescribeRecipeOutput {
     /// <p>The identifier (user name) of the user who created the recipe.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the recipe was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time that the recipe was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the project associated with this recipe.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
-    pub fn published_by(&self) -> std::option::Option<&str> {
+    pub fn published_by(&self) -> std::option::Option<& str> {
         self.published_by.as_deref()
     }
     /// <p>The date and time when the recipe was last published.</p>
-    pub fn published_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn published_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.published_date.as_ref()
     }
     /// <p>The description of the recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::types::RecipeStep]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::types::RecipeStep]> {
         self.steps.as_deref()
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ARN of the recipe.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The recipe version identifier.</p>
-    pub fn recipe_version(&self) -> std::option::Option<&str> {
+    pub fn recipe_version(&self) -> std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRecipeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeRecipeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput).
     pub fn builder() -> crate::operation::describe_recipe::builders::DescribeRecipeOutputBuilder {
@@ -128,8 +124,7 @@ pub struct DescribeRecipeOutputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) steps: std::option::Option<std::vec::Vec<crate::types::RecipeStep>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) recipe_version: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -142,8 +137,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who created the recipe.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The date and time that the recipe was created.</p>
     pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,12 +145,8 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>The date and time that the recipe was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_date = input;
-        self
+    pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_date = input; self
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
     pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,8 +155,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
     pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>The date and time that the recipe was last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -174,12 +163,8 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>The date and time that the recipe was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
     }
     /// <p>The name of the project associated with this recipe.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,8 +173,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The name of the project associated with this recipe.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
     pub fn published_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,8 +182,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who last published the recipe.</p>
     pub fn set_published_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.published_by = input;
-        self
+        self.published_by = input; self
     }
     /// <p>The date and time when the recipe was last published.</p>
     pub fn published_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -207,12 +190,8 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>The date and time when the recipe was last published.</p>
-    pub fn set_published_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.published_date = input;
-        self
+    pub fn set_published_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.published_date = input; self
     }
     /// <p>The description of the recipe.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,8 +200,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The description of the recipe.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the recipe.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +209,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The name of the recipe.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `steps`.
     ///
@@ -241,42 +218,28 @@ impl DescribeRecipeOutputBuilder {
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub fn steps(mut self, input: crate::types::RecipeStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = Some(v);
-        self
+                        v.push(input);
+                        self.steps = Some(v);
+                        self
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn set_steps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecipeStep>>,
-    ) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecipeStep>>) -> Self {
+        self.steps = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags associated with this project.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The ARN of the recipe.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -285,8 +248,7 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The ARN of the recipe.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The recipe version identifier.</p>
     pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,35 +257,48 @@ impl DescribeRecipeOutputBuilder {
     }
     /// <p>The recipe version identifier.</p>
     pub fn set_recipe_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recipe_version = input;
-        self
+        self.recipe_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput).
     pub fn build(self) -> crate::operation::describe_recipe::DescribeRecipeOutput {
         crate::operation::describe_recipe::DescribeRecipeOutput {
-            created_by: self.created_by,
-            create_date: self.create_date,
-            last_modified_by: self.last_modified_by,
-            last_modified_date: self.last_modified_date,
-            project_name: self.project_name,
-            published_by: self.published_by,
-            published_date: self.published_date,
-            description: self.description,
-            name: self.name,
-            steps: self.steps,
-            tags: self.tags,
-            resource_arn: self.resource_arn,
-            recipe_version: self.recipe_version,
+            created_by: self.created_by
+            ,
+            create_date: self.create_date
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            project_name: self.project_name
+            ,
+            published_by: self.published_by
+            ,
+            published_date: self.published_date
+            ,
+            description: self.description
+            ,
+            name: self.name
+            ,
+            steps: self.steps
+            ,
+            tags: self.tags
+            ,
+            resource_arn: self.resource_arn
+            ,
+            recipe_version: self.recipe_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

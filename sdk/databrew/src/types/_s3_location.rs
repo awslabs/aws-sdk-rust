@@ -3,7 +3,7 @@
 /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The unique name of the object in the bucket.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
-    pub fn bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> std::option::Option<& str> {
         self.bucket_owner.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The unique name of the object in the bucket.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl S3LocationBuilder {
     }
     /// <p>The unique name of the object in the bucket.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
     pub fn bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
     pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_owner = input;
-        self
+        self.bucket_owner = input; self
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket: self.bucket,
-            key: self.key,
-            bucket_owner: self.bucket_owner,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            bucket_owner: self.bucket_owner
+            ,
         }
     }
 }
+

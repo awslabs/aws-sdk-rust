@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRumEventsInput {
+pub struct PutRumEventsInput  {
     /// <p>The ID of the app monitor that is sending this data.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct PutRumEventsInput {
 }
 impl PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A unique identifier for this batch of RUM event data.</p>
-    pub fn batch_id(&self) -> std::option::Option<&str> {
+    pub fn batch_id(&self) -> std::option::Option<& str> {
         self.batch_id.as_deref()
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn app_monitor_details(&self) -> std::option::Option<&crate::types::AppMonitorDetails> {
+    pub fn app_monitor_details(&self) -> std::option::Option<& crate::types::AppMonitorDetails> {
         self.app_monitor_details.as_ref()
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-    pub fn user_details(&self) -> std::option::Option<&crate::types::UserDetails> {
+    pub fn user_details(&self) -> std::option::Option<& crate::types::UserDetails> {
         self.user_details.as_ref()
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn rum_events(&self) -> std::option::Option<&[crate::types::RumEvent]> {
+    pub fn rum_events(&self) -> std::option::Option<& [crate::types::RumEvent]> {
         self.rum_events.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl PutRumEventsInputBuilder {
     }
     /// <p>The ID of the app monitor that is sending this data.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for this batch of RUM event data.</p>
     pub fn batch_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl PutRumEventsInputBuilder {
     }
     /// <p>A unique identifier for this batch of RUM event data.</p>
     pub fn set_batch_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.batch_id = input;
-        self
+        self.batch_id = input; self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
     pub fn app_monitor_details(mut self, input: crate::types::AppMonitorDetails) -> Self {
@@ -85,12 +83,8 @@ impl PutRumEventsInputBuilder {
         self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn set_app_monitor_details(
-        mut self,
-        input: std::option::Option<crate::types::AppMonitorDetails>,
-    ) -> Self {
-        self.app_monitor_details = input;
-        self
+    pub fn set_app_monitor_details(mut self, input: std::option::Option<crate::types::AppMonitorDetails>) -> Self {
+        self.app_monitor_details = input; self
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
     pub fn user_details(mut self, input: crate::types::UserDetails) -> Self {
@@ -98,12 +92,8 @@ impl PutRumEventsInputBuilder {
         self
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-    pub fn set_user_details(
-        mut self,
-        input: std::option::Option<crate::types::UserDetails>,
-    ) -> Self {
-        self.user_details = input;
-        self
+    pub fn set_user_details(mut self, input: std::option::Option<crate::types::UserDetails>) -> Self {
+        self.user_details = input; self
     }
     /// Appends an item to `rum_events`.
     ///
@@ -112,31 +102,30 @@ impl PutRumEventsInputBuilder {
     /// <p>An array of structures that contain the telemetry event data.</p>
     pub fn rum_events(mut self, input: crate::types::RumEvent) -> Self {
         let mut v = self.rum_events.unwrap_or_default();
-        v.push(input);
-        self.rum_events = Some(v);
-        self
+                        v.push(input);
+                        self.rum_events = Some(v);
+                        self
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn set_rum_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RumEvent>>,
-    ) -> Self {
-        self.rum_events = input;
-        self
+    pub fn set_rum_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::RumEvent>>) -> Self {
+        self.rum_events = input; self
     }
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_rum_events::PutRumEventsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_rum_events::PutRumEventsInput {
-            id: self.id,
-            batch_id: self.batch_id,
-            app_monitor_details: self.app_monitor_details,
-            user_details: self.user_details,
-            rum_events: self.rum_events,
-        })
+    pub fn build(self) -> Result<crate::operation::put_rum_events::PutRumEventsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_rum_events::PutRumEventsInput {
+                id: self.id
+                ,
+                batch_id: self.batch_id
+                ,
+                app_monitor_details: self.app_monitor_details
+                ,
+                user_details: self.user_details
+                ,
+                rum_events: self.rum_events
+                ,
+            }
+        )
     }
 }
+

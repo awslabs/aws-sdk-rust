@@ -3,14 +3,13 @@
 /// <p>The request couldn't be completed because it contains signal decoders with one or more validation errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecoderManifestValidationException {
+pub struct DecoderManifestValidationException  {
     /// <p>The request couldn't be completed because of invalid signals in the request.</p>
     #[doc(hidden)]
     pub invalid_signals: std::option::Option<std::vec::Vec<crate::types::InvalidSignalDecoder>>,
     /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
     #[doc(hidden)]
-    pub invalid_network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::InvalidNetworkInterface>>,
+    pub invalid_network_interfaces: std::option::Option<std::vec::Vec<crate::types::InvalidNetworkInterface>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -18,27 +17,23 @@ pub struct DecoderManifestValidationException {
 }
 impl DecoderManifestValidationException {
     /// <p>The request couldn't be completed because of invalid signals in the request.</p>
-    pub fn invalid_signals(&self) -> std::option::Option<&[crate::types::InvalidSignalDecoder]> {
+    pub fn invalid_signals(&self) -> std::option::Option<& [crate::types::InvalidSignalDecoder]> {
         self.invalid_signals.as_deref()
     }
     /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
-    pub fn invalid_network_interfaces(
-        &self,
-    ) -> std::option::Option<&[crate::types::InvalidNetworkInterface]> {
+    pub fn invalid_network_interfaces(&self) -> std::option::Option<& [crate::types::InvalidNetworkInterface]> {
         self.invalid_network_interfaces.as_deref()
     }
 }
 impl DecoderManifestValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DecoderManifestValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DecoderManifestValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -52,12 +47,8 @@ impl aws_http::request_id::RequestId for crate::types::error::DecoderManifestVal
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DecoderManifestValidationException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DecoderManifestValidationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DecoderManifestValidationException {
     /// Creates a new builder-style object to manufacture [`DecoderManifestValidationException`](crate::types::error::DecoderManifestValidationException).
@@ -70,10 +61,8 @@ impl DecoderManifestValidationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DecoderManifestValidationExceptionBuilder {
-    pub(crate) invalid_signals:
-        std::option::Option<std::vec::Vec<crate::types::InvalidSignalDecoder>>,
-    pub(crate) invalid_network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::InvalidNetworkInterface>>,
+    pub(crate) invalid_signals: std::option::Option<std::vec::Vec<crate::types::InvalidSignalDecoder>>,
+    pub(crate) invalid_network_interfaces: std::option::Option<std::vec::Vec<crate::types::InvalidNetworkInterface>>,
     pub(crate) message: std::option::Option<std::string::String>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
@@ -85,39 +74,28 @@ impl DecoderManifestValidationExceptionBuilder {
     /// <p>The request couldn't be completed because of invalid signals in the request.</p>
     pub fn invalid_signals(mut self, input: crate::types::InvalidSignalDecoder) -> Self {
         let mut v = self.invalid_signals.unwrap_or_default();
-        v.push(input);
-        self.invalid_signals = Some(v);
-        self
+                        v.push(input);
+                        self.invalid_signals = Some(v);
+                        self
     }
     /// <p>The request couldn't be completed because of invalid signals in the request.</p>
-    pub fn set_invalid_signals(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InvalidSignalDecoder>>,
-    ) -> Self {
-        self.invalid_signals = input;
-        self
+    pub fn set_invalid_signals(mut self, input: std::option::Option<std::vec::Vec<crate::types::InvalidSignalDecoder>>) -> Self {
+        self.invalid_signals = input; self
     }
     /// Appends an item to `invalid_network_interfaces`.
     ///
     /// To override the contents of this collection use [`set_invalid_network_interfaces`](Self::set_invalid_network_interfaces).
     ///
     /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
-    pub fn invalid_network_interfaces(
-        mut self,
-        input: crate::types::InvalidNetworkInterface,
-    ) -> Self {
+    pub fn invalid_network_interfaces(mut self, input: crate::types::InvalidNetworkInterface) -> Self {
         let mut v = self.invalid_network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.invalid_network_interfaces = Some(v);
-        self
+                        v.push(input);
+                        self.invalid_network_interfaces = Some(v);
+                        self
     }
     /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
-    pub fn set_invalid_network_interfaces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InvalidNetworkInterface>>,
-    ) -> Self {
-        self.invalid_network_interfaces = input;
-        self
+    pub fn set_invalid_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::InvalidNetworkInterface>>) -> Self {
+        self.invalid_network_interfaces = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,30 +104,30 @@ impl DecoderManifestValidationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`DecoderManifestValidationException`](crate::types::error::DecoderManifestValidationException).
     pub fn build(self) -> crate::types::error::DecoderManifestValidationException {
         crate::types::error::DecoderManifestValidationException {
-            invalid_signals: self.invalid_signals,
-            invalid_network_interfaces: self.invalid_network_interfaces,
-            message: self.message,
+            invalid_signals: self.invalid_signals
+            ,
+            invalid_network_interfaces: self.invalid_network_interfaces
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

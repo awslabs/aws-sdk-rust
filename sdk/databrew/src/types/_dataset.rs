@@ -3,7 +3,7 @@
 /// <p>Represents a dataset that can be processed by DataBrew.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -39,66 +39,62 @@ pub struct Dataset {
     pub path_options: std::option::Option<crate::types::PathOptions>,
     /// <p>Metadata tags that have been applied to the dataset.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl Dataset {
     /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the dataset was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The unique name of the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::InputFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::InputFormat> {
         self.format.as_ref()
     }
     /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
-    pub fn format_options(&self) -> std::option::Option<&crate::types::FormatOptions> {
+    pub fn format_options(&self) -> std::option::Option<& crate::types::FormatOptions> {
         self.format_options.as_ref()
     }
     /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
-    pub fn input(&self) -> std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
     /// <p>The last modification date and time of the dataset.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn path_options(&self) -> std::option::Option<&crate::types::PathOptions> {
+    pub fn path_options(&self) -> std::option::Option<& crate::types::PathOptions> {
         self.path_options.as_ref()
     }
     /// <p>Metadata tags that have been applied to the dataset.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -124,8 +120,7 @@ pub struct DatasetBuilder {
     pub(crate) last_modified_by: std::option::Option<std::string::String>,
     pub(crate) source: std::option::Option<crate::types::Source>,
     pub(crate) path_options: std::option::Option<crate::types::PathOptions>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) resource_arn: std::option::Option<std::string::String>,
 }
 impl DatasetBuilder {
@@ -136,8 +131,7 @@ impl DatasetBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +140,7 @@ impl DatasetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The date and time that the dataset was created.</p>
     pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,12 +148,8 @@ impl DatasetBuilder {
         self
     }
     /// <p>The date and time that the dataset was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_date = input;
-        self
+    pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_date = input; self
     }
     /// <p>The unique name of the dataset.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +158,7 @@ impl DatasetBuilder {
     }
     /// <p>The unique name of the dataset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(mut self, input: crate::types::InputFormat) -> Self {
@@ -179,8 +167,7 @@ impl DatasetBuilder {
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::InputFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -188,12 +175,8 @@ impl DatasetBuilder {
         self
     }
     /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
-    pub fn set_format_options(
-        mut self,
-        input: std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
-        self.format_options = input;
-        self
+    pub fn set_format_options(mut self, input: std::option::Option<crate::types::FormatOptions>) -> Self {
+        self.format_options = input; self
     }
     /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
@@ -202,8 +185,7 @@ impl DatasetBuilder {
     }
     /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn set_input(mut self, input: std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The last modification date and time of the dataset.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -211,12 +193,8 @@ impl DatasetBuilder {
         self
     }
     /// <p>The last modification date and time of the dataset.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
     pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,8 +203,7 @@ impl DatasetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
     pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
@@ -235,8 +212,7 @@ impl DatasetBuilder {
     }
     /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn path_options(mut self, input: crate::types::PathOptions) -> Self {
@@ -244,37 +220,23 @@ impl DatasetBuilder {
         self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn set_path_options(
-        mut self,
-        input: std::option::Option<crate::types::PathOptions>,
-    ) -> Self {
-        self.path_options = input;
-        self
+    pub fn set_path_options(mut self, input: std::option::Option<crate::types::PathOptions>) -> Self {
+        self.path_options = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags that have been applied to the dataset.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Metadata tags that have been applied to the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -283,25 +245,38 @@ impl DatasetBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {
         crate::types::Dataset {
-            account_id: self.account_id,
-            created_by: self.created_by,
-            create_date: self.create_date,
-            name: self.name,
-            format: self.format,
-            format_options: self.format_options,
-            input: self.input,
-            last_modified_date: self.last_modified_date,
-            last_modified_by: self.last_modified_by,
-            source: self.source,
-            path_options: self.path_options,
-            tags: self.tags,
-            resource_arn: self.resource_arn,
+            account_id: self.account_id
+            ,
+            created_by: self.created_by
+            ,
+            create_date: self.create_date
+            ,
+            name: self.name
+            ,
+            format: self.format
+            ,
+            format_options: self.format_options
+            ,
+            input: self.input
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            source: self.source
+            ,
+            path_options: self.path_options
+            ,
+            tags: self.tags
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

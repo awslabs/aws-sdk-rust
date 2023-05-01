@@ -84,3 +84,4 @@ pub mod update_shard_count;
 
 /// Types for the `UpdateStreamMode` operation.
 pub mod update_stream_mode;
+

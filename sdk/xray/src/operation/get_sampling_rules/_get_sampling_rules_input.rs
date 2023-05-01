@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSamplingRulesInput {
+pub struct GetSamplingRulesInput  {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingRulesInput {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetSamplingRulesInput {
     /// Creates a new builder-style object to manufacture [`GetSamplingRulesInput`](crate::operation::get_sampling_rules::GetSamplingRulesInput).
-    pub fn builder() -> crate::operation::get_sampling_rules::builders::GetSamplingRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sampling_rules::builders::GetSamplingRulesInputBuilder {
         crate::operation::get_sampling_rules::builders::GetSamplingRulesInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetSamplingRulesInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetSamplingRulesInput`](crate::operation::get_sampling_rules::GetSamplingRulesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_sampling_rules::GetSamplingRulesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_sampling_rules::GetSamplingRulesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_sampling_rules::GetSamplingRulesInput {
-                next_token: self.next_token,
-            },
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

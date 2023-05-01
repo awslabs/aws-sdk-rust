@@ -3,7 +3,7 @@
 /// <p>The exception associated with a root cause.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RootCauseException {
+pub struct RootCauseException  {
     /// <p>The name of the exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RootCauseException {
 }
 impl RootCauseException {
     /// <p>The name of the exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message of the exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RootCauseExceptionBuilder {
     }
     /// <p>The name of the exception.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The message of the exception.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl RootCauseExceptionBuilder {
     }
     /// <p>The message of the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`RootCauseException`](crate::types::RootCauseException).
     pub fn build(self) -> crate::types::RootCauseException {
         crate::types::RootCauseException {
-            name: self.name,
-            message: self.message,
+            name: self.name
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

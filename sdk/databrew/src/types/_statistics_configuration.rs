@@ -3,7 +3,7 @@
 /// <p>Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatisticsConfiguration {
+pub struct StatisticsConfiguration  {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
     #[doc(hidden)]
     pub included_statistics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct StatisticsConfiguration {
 }
 impl StatisticsConfiguration {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
-    pub fn included_statistics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn included_statistics(&self) -> std::option::Option<& [std::string::String]> {
         self.included_statistics.as_deref()
     }
     /// <p>List of overrides for evaluations.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::types::StatisticOverride]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::types::StatisticOverride]> {
         self.overrides.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl StatisticsConfigurationBuilder {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
     pub fn included_statistics(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.included_statistics.unwrap_or_default();
-        v.push(input.into());
-        self.included_statistics = Some(v);
-        self
+                        v.push(input.into());
+                        self.included_statistics = Some(v);
+                        self
     }
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
-    pub fn set_included_statistics(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.included_statistics = input;
-        self
+    pub fn set_included_statistics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.included_statistics = input; self
     }
     /// Appends an item to `overrides`.
     ///
@@ -62,23 +58,22 @@ impl StatisticsConfigurationBuilder {
     /// <p>List of overrides for evaluations.</p>
     pub fn overrides(mut self, input: crate::types::StatisticOverride) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-        v.push(input);
-        self.overrides = Some(v);
-        self
+                        v.push(input);
+                        self.overrides = Some(v);
+                        self
     }
     /// <p>List of overrides for evaluations.</p>
-    pub fn set_overrides(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StatisticOverride>>,
-    ) -> Self {
-        self.overrides = input;
-        self
+    pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::StatisticOverride>>) -> Self {
+        self.overrides = input; self
     }
     /// Consumes the builder and constructs a [`StatisticsConfiguration`](crate::types::StatisticsConfiguration).
     pub fn build(self) -> crate::types::StatisticsConfiguration {
         crate::types::StatisticsConfiguration {
-            included_statistics: self.included_statistics,
-            overrides: self.overrides,
+            included_statistics: self.included_statistics
+            ,
+            overrides: self.overrides
+            ,
         }
     }
 }
+

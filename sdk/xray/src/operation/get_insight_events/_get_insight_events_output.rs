@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightEventsOutput {
+pub struct GetInsightEventsOutput  {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     #[doc(hidden)]
     pub insight_events: std::option::Option<std::vec::Vec<crate::types::InsightEvent>>,
@@ -13,23 +13,22 @@ pub struct GetInsightEventsOutput {
 }
 impl GetInsightEventsOutput {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    pub fn insight_events(&self) -> std::option::Option<&[crate::types::InsightEvent]> {
+    pub fn insight_events(&self) -> std::option::Option<& [crate::types::InsightEvent]> {
         self.insight_events.as_deref()
     }
     /// <p>Use this token to retrieve the next page of insight events.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetInsightEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInsightEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightEventsOutput`](crate::operation::get_insight_events::GetInsightEventsOutput).
-    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsOutputBuilder {
         crate::operation::get_insight_events::builders::GetInsightEventsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl GetInsightEventsOutputBuilder {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     pub fn insight_events(mut self, input: crate::types::InsightEvent) -> Self {
         let mut v = self.insight_events.unwrap_or_default();
-        v.push(input);
-        self.insight_events = Some(v);
-        self
+                        v.push(input);
+                        self.insight_events = Some(v);
+                        self
     }
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    pub fn set_insight_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightEvent>>,
-    ) -> Self {
-        self.insight_events = input;
-        self
+    pub fn set_insight_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightEvent>>) -> Self {
+        self.insight_events = input; self
     }
     /// <p>Use this token to retrieve the next page of insight events.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl GetInsightEventsOutputBuilder {
     }
     /// <p>Use this token to retrieve the next page of insight events.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInsightEventsOutput`](crate::operation::get_insight_events::GetInsightEventsOutput).
     pub fn build(self) -> crate::operation::get_insight_events::GetInsightEventsOutput {
         crate::operation::get_insight_events::GetInsightEventsOutput {
-            insight_events: self.insight_events,
-            next_token: self.next_token,
+            insight_events: self.insight_events
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -51,3 +51,4 @@ pub mod update_app_monitor;
 
 /// Types for the `UpdateRumMetricDefinition` operation.
 pub mod update_rum_metric_definition;
+

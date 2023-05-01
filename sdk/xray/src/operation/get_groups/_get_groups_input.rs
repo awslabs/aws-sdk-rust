@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupsInput {
+pub struct GetGroupsInput  {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetGroupsInput {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetGroupsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetGroupsInput`](crate::operation::get_groups::GetGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_groups::GetGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_groups::GetGroupsInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::get_groups::GetGroupsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_groups::GetGroupsInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

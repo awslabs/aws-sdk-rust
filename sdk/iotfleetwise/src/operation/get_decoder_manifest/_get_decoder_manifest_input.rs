@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDecoderManifestInput {
+pub struct GetDecoderManifestInput  {
     /// <p> The name of the decoder manifest to retrieve information about. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDecoderManifestInput {
     /// <p> The name of the decoder manifest to retrieve information about. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetDecoderManifestInput {
     /// Creates a new builder-style object to manufacture [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
-    pub fn builder(
-    ) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
+    pub fn builder() -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
         crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetDecoderManifestInputBuilder {
     }
     /// <p> The name of the decoder manifest to retrieve information about. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_decoder_manifest::GetDecoderManifestInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_decoder_manifest::GetDecoderManifestInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_decoder_manifest::GetDecoderManifestInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_decoder_manifest::GetDecoderManifestInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecipeVersionOutput {
+pub struct DeleteRecipeVersionOutput  {
     /// <p>The name of the recipe that was deleted.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,25 +13,23 @@ pub struct DeleteRecipeVersionOutput {
 }
 impl DeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was deleted.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the recipe that was deleted.</p>
-    pub fn recipe_version(&self) -> std::option::Option<&str> {
+    pub fn recipe_version(&self) -> std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteRecipeVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRecipeVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecipeVersionOutput`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder {
-        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder {
+        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::default()
     }
 }
 
@@ -51,8 +49,7 @@ impl DeleteRecipeVersionOutputBuilder {
     }
     /// <p>The name of the recipe that was deleted.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the recipe that was deleted.</p>
     pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,24 +58,26 @@ impl DeleteRecipeVersionOutputBuilder {
     }
     /// <p>The version of the recipe that was deleted.</p>
     pub fn set_recipe_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recipe_version = input;
-        self
+        self.recipe_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRecipeVersionOutput`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput).
     pub fn build(self) -> crate::operation::delete_recipe_version::DeleteRecipeVersionOutput {
         crate::operation::delete_recipe_version::DeleteRecipeVersionOutput {
-            name: self.name,
-            recipe_version: self.recipe_version,
+            name: self.name
+            ,
+            recipe_version: self.recipe_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

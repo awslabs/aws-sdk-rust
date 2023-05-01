@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSamplingRuleInput {
+pub struct UpdateSamplingRuleInput  {
     /// <p>The rule and fields to change.</p>
     #[doc(hidden)]
     pub sampling_rule_update: std::option::Option<crate::types::SamplingRuleUpdate>,
 }
 impl UpdateSamplingRuleInput {
     /// <p>The rule and fields to change.</p>
-    pub fn sampling_rule_update(&self) -> std::option::Option<&crate::types::SamplingRuleUpdate> {
+    pub fn sampling_rule_update(&self) -> std::option::Option<& crate::types::SamplingRuleUpdate> {
         self.sampling_rule_update.as_ref()
     }
 }
 impl UpdateSamplingRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateSamplingRuleInput`](crate::operation::update_sampling_rule::UpdateSamplingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_sampling_rule::builders::UpdateSamplingRuleInputBuilder {
+    pub fn builder() -> crate::operation::update_sampling_rule::builders::UpdateSamplingRuleInputBuilder {
         crate::operation::update_sampling_rule::builders::UpdateSamplingRuleInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl UpdateSamplingRuleInputBuilder {
         self
     }
     /// <p>The rule and fields to change.</p>
-    pub fn set_sampling_rule_update(
-        mut self,
-        input: std::option::Option<crate::types::SamplingRuleUpdate>,
-    ) -> Self {
-        self.sampling_rule_update = input;
-        self
+    pub fn set_sampling_rule_update(mut self, input: std::option::Option<crate::types::SamplingRuleUpdate>) -> Self {
+        self.sampling_rule_update = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSamplingRuleInput`](crate::operation::update_sampling_rule::UpdateSamplingRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_sampling_rule::UpdateSamplingRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_sampling_rule::UpdateSamplingRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_sampling_rule::UpdateSamplingRuleInput {
-                sampling_rule_update: self.sampling_rule_update,
-            },
+                sampling_rule_update: self.sampling_rule_update
+                ,
+            }
         )
     }
 }
+

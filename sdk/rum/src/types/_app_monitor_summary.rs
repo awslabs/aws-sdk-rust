@@ -3,7 +3,7 @@
 /// <p>A structure that includes some data about app monitors and their settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppMonitorSummary {
+pub struct AppMonitorSummary  {
     /// <p>The name of this app monitor.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct AppMonitorSummary {
 }
 impl AppMonitorSummary {
     /// <p>The name of this app monitor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique ID of this app monitor.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time that the app monitor was created.</p>
-    pub fn created(&self) -> std::option::Option<&str> {
+    pub fn created(&self) -> std::option::Option<& str> {
         self.created.as_deref()
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The current state of this app monitor.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StateEnum> {
+    pub fn state(&self) -> std::option::Option<& crate::types::StateEnum> {
         self.state.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl AppMonitorSummaryBuilder {
     }
     /// <p>The name of this app monitor.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique ID of this app monitor.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl AppMonitorSummaryBuilder {
     }
     /// <p>The unique ID of this app monitor.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The date and time that the app monitor was created.</p>
     pub fn created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl AppMonitorSummaryBuilder {
     }
     /// <p>The date and time that the app monitor was created.</p>
     pub fn set_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl AppMonitorSummaryBuilder {
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The current state of this app monitor.</p>
     pub fn state(mut self, input: crate::types::StateEnum) -> Self {
@@ -107,17 +103,22 @@ impl AppMonitorSummaryBuilder {
     }
     /// <p>The current state of this app monitor.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::StateEnum>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`AppMonitorSummary`](crate::types::AppMonitorSummary).
     pub fn build(self) -> crate::types::AppMonitorSummary {
         crate::types::AppMonitorSummary {
-            name: self.name,
-            id: self.id,
-            created: self.created,
-            last_modified: self.last_modified,
-            state: self.state,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            created: self.created
+            ,
+            last_modified: self.last_modified
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

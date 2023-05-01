@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compressionformat = unimplemented!();
 /// match compressionformat {
@@ -37,22 +37,14 @@
 /// Specifically, when `compressionformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CompressionFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CompressionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Brotli,
@@ -73,58 +65,55 @@ pub enum CompressionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Zstd,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CompressionFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "BROTLI" => CompressionFormat::Brotli,
-            "BZIP2" => CompressionFormat::Bzip2,
-            "DEFLATE" => CompressionFormat::Deflate,
-            "GZIP" => CompressionFormat::Gzip,
-            "LZ4" => CompressionFormat::Lz4,
-            "LZO" => CompressionFormat::Lzo,
-            "SNAPPY" => CompressionFormat::Snappy,
-            "ZLIB" => CompressionFormat::Zlib,
-            "ZSTD" => CompressionFormat::Zstd,
-            other => {
-                CompressionFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BROTLI" => CompressionFormat::Brotli,
+"BZIP2" => CompressionFormat::Bzip2,
+"DEFLATE" => CompressionFormat::Deflate,
+"GZIP" => CompressionFormat::Gzip,
+"LZ4" => CompressionFormat::Lz4,
+"LZO" => CompressionFormat::Lzo,
+"SNAPPY" => CompressionFormat::Snappy,
+"ZLIB" => CompressionFormat::Zlib,
+"ZSTD" => CompressionFormat::Zstd,
+other => CompressionFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for CompressionFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CompressionFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CompressionFormat::from(s))
+                }
+            }
 impl CompressionFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CompressionFormat::Brotli => "BROTLI",
-            CompressionFormat::Bzip2 => "BZIP2",
-            CompressionFormat::Deflate => "DEFLATE",
-            CompressionFormat::Gzip => "GZIP",
-            CompressionFormat::Lz4 => "LZ4",
-            CompressionFormat::Lzo => "LZO",
-            CompressionFormat::Snappy => "SNAPPY",
-            CompressionFormat::Zlib => "ZLIB",
-            CompressionFormat::Zstd => "ZSTD",
-            CompressionFormat::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BROTLI", "BZIP2", "DEFLATE", "GZIP", "LZ4", "LZO", "SNAPPY", "ZLIB", "ZSTD",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CompressionFormat::Brotli => "BROTLI",
+    CompressionFormat::Bzip2 => "BZIP2",
+    CompressionFormat::Deflate => "DEFLATE",
+    CompressionFormat::Gzip => "GZIP",
+    CompressionFormat::Lz4 => "LZ4",
+    CompressionFormat::Lzo => "LZO",
+    CompressionFormat::Snappy => "SNAPPY",
+    CompressionFormat::Zlib => "ZLIB",
+    CompressionFormat::Zstd => "ZSTD",
+    CompressionFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BROTLI", "BZIP2", "DEFLATE", "GZIP", "LZ4", "LZO", "SNAPPY", "ZLIB", "ZSTD"]
+                }
+            }
 impl AsRef<str> for CompressionFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+
