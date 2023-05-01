@@ -28,7 +28,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.1"
+//! aws-config = "0.55.2"
 //! aws-sdk-migrationhuborchestrator = "0.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

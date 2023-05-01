@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.55.1", path = "../../sdk/aws-config" }
+aws-config= { version = "0.55.2", path = "../../sdk/aws-config" }
 aws-sdk-medialive= { version = "0.27.0", path = "../../sdk/medialive" }
 
 [dependencies.tokio]
