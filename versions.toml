@@ -1,4 +1,4 @@
-smithy_rs_revision = '80afac612f1958c7af2027260e0f1a37b8150b0b'
+smithy_rs_revision = '6bcd67678574e09131e1edb234bc29b448d674ef'
 aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
 
 [manual_interventions]
@@ -1529,7 +1529,7 @@ model_hash = 'ca12434fd2bfc5db9b0719c8bd95a83bbba69815fa5e1d93c621502cd7d9b68b'
 [crates.aws-sdk-pricing]
 category = 'AwsSdk'
 version = '0.27.0'
-source_hash = '72414471ea9e58a92a6559a6ca9c24d71e07479b2bcfc0a0bb6209352a6d5b20'
+source_hash = 'f799842feccccd8fb4258455a630d246b1d89e399ccbdd823802f29f69ef41d6'
 model_hash = 'd3dfb95fa3dccda0c57353ed34b82a0d0ded991a49f4b989f47f1f7774e49feb'
 
 [crates.aws-sdk-privatenetworks]

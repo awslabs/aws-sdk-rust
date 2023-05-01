@@ -4,81 +4,56 @@ pub use crate::operation::describe_services::_describe_services_output::Describe
 pub use crate::operation::describe_services::_describe_services_input::DescribeServicesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeServices`.
-///
+/// 
 /// <p>Returns the metadata for one service or a list of the metadata for all services. Use this without a service code to get the service codes for all services. Use it with a service code, such as <code>AmazonEC2</code>, to get information specific to that service, such as the attribute names available for that service. For example, some of the attribute names available for EC2 are <code>volumeType</code>, <code>maxIopsVolume</code>, <code>operation</code>, <code>locationType</code>, and <code>instanceCapacity10xlarge</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeServicesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_services::builders::DescribeServicesInputBuilder,
+                    inner: crate::operation::describe_services::builders::DescribeServicesInputBuilder,
 }
-impl DescribeServicesFluentBuilder {
+impl DescribeServicesFluentBuilder  {
     /// Creates a new `DescribeServices`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: Default::default(),
+            handle, inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_services::DescribeServices,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_services::DescribeServicesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_services::DescribeServices, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_services::DescribeServicesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_services::paginator::DescribeServicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_services::paginator::DescribeServicesPaginator {
-        crate::operation::describe_services::paginator::DescribeServicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_services::paginator::DescribeServicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_services::paginator::DescribeServicesPaginator {
+                                crate::operation::describe_services::paginator::DescribeServicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
@@ -89,13 +64,13 @@ impl DescribeServicesFluentBuilder {
         self.inner = self.inner.set_service_code(input);
         self
     }
-    /// <p>The format version that you want the response to be in.</p>
+    /// <p>The format version that you want the response to be in.</p> 
     /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.format_version(input.into());
         self
     }
-    /// <p>The format version that you want the response to be in.</p>
+    /// <p>The format version that you want the response to be in.</p> 
     /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn set_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_format_version(input);
@@ -122,3 +97,4 @@ impl DescribeServicesFluentBuilder {
         self
     }
 }
+
