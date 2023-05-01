@@ -6,8 +6,8 @@
 use crate::middleware::Signature;
 use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{
-    sign, PayloadChecksumKind, PercentEncodingMode, SignableRequest, SignatureLocation,
-    SigningParams, SigningSettings, UriPathNormalizationMode,
+    sign, PayloadChecksumKind, PercentEncodingMode, SessionTokenMode, SignableRequest,
+    SignatureLocation, SigningParams, SigningSettings, UriPathNormalizationMode,
 };
 use aws_smithy_http::body::SdkBody;
 use aws_types::region::SigningRegion;
@@ -63,6 +63,7 @@ impl OperationSigningConfig {
                 double_uri_encode: true,
                 content_sha256_header: false,
                 normalize_uri_path: true,
+                omit_session_token: false,
             },
             signing_requirements: SigningRequirements::Required,
             expires_in: None,
@@ -90,10 +91,7 @@ pub struct SigningOptions {
     pub double_uri_encode: bool,
     pub content_sha256_header: bool,
     pub normalize_uri_path: bool,
-    /*
-    Currently unsupported:
     pub omit_session_token: bool,
-     */
 }
 
 /// Signing Configuration for an individual Request
@@ -145,6 +143,11 @@ impl SigV4Signer {
             } else {
                 UriPathNormalizationMode::Disabled
             };
+        settings.session_token_mode = if operation_config.signing_options.omit_session_token {
+            SessionTokenMode::Exclude
+        } else {
+            SessionTokenMode::Include
+        };
         settings.signature_location = match operation_config.signature_type {
             HttpSignatureType::HttpRequestHeaders => SignatureLocation::Headers,
             HttpSignatureType::HttpRequestQueryParams => SignatureLocation::QueryParams,

@@ -32,6 +32,11 @@ pub struct SigningSettings {
 
     /// Specifies whether the absolute path component of the URI should be normalized during signing.
     pub uri_path_normalization_mode: UriPathNormalizationMode,
+
+    /// Some services require X-Amz-Security-Token to be included in the
+    /// canonical request. Other services require only it to be added after
+    /// calculating the signature.
+    pub session_token_mode: SessionTokenMode,
 }
 
 /// HTTP payload checksum type
@@ -78,6 +83,18 @@ pub enum UriPathNormalizationMode {
     Disabled,
 }
 
+/// Config value to specify whether X-Amz-Security-Token should be part of the canonical request.
+/// <http://docs.aws.amazon.com/general/latest/gr/sigv4-add-signature-to-request.html#temporary-security-credentials>
+#[non_exhaustive]
+#[derive(Debug, Eq, PartialEq)]
+pub enum SessionTokenMode {
+    /// Include in the canonical request before calculating the signature.
+    Include,
+
+    /// Exclude in the canonical request.
+    Exclude,
+}
+
 impl Default for SigningSettings {
     fn default() -> Self {
         // The user agent header should not be signed because it may be altered by proxies
@@ -90,6 +107,7 @@ impl Default for SigningSettings {
             expires_in: None,
             excluded_headers: Some(EXCLUDED_HEADERS.to_vec()),
             uri_path_normalization_mode: UriPathNormalizationMode::Enabled,
+            session_token_mode: SessionTokenMode::Include,
         }
     }
 }

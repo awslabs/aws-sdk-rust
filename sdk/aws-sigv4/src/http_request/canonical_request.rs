@@ -5,6 +5,7 @@
 
 use crate::date_time::{format_date, format_date_time};
 use crate::http_request::error::CanonicalRequestError;
+use crate::http_request::settings::SessionTokenMode;
 use crate::http_request::settings::UriPathNormalizationMode;
 use crate::http_request::sign::SignableRequest;
 use crate::http_request::uri_path_normalization::normalize_uri_path;
@@ -122,6 +123,8 @@ impl<'a> CanonicalRequest<'a> {
     /// - If `settings.percent_encoding_mode` specifies double encoding, `%` in the URL will be re-encoded as `%25`
     /// - If `settings.payload_checksum_kind` is XAmzSha256, add a x-amz-content-sha256 with the body
     ///   checksum. This is the same checksum used as the "payload_hash" in the canonical request
+    /// - If `settings.session_token_mode` specifies X-Amz-Security-Token to be
+    ///   included before calculating the signature, add it, otherwise omit it.
     /// - `settings.signature_location` determines where the signature will be placed in a request,
     ///   and also alters the kinds of signing values that go along with it in the request.
     pub(super) fn from<'b>(
@@ -146,11 +149,17 @@ impl<'a> CanonicalRequest<'a> {
         let (signed_headers, canonical_headers) =
             Self::headers(req, params, &payload_hash, &date_time)?;
         let signed_headers = SignedHeaders::new(signed_headers);
+
+        let security_token = match params.settings.session_token_mode {
+            SessionTokenMode::Include => params.security_token,
+            SessionTokenMode::Exclude => None,
+        };
+
         let values = match params.settings.signature_location {
             SignatureLocation::Headers => SignatureValues::Headers(HeaderValues {
                 content_sha256: payload_hash,
                 date_time,
-                security_token: params.security_token,
+                security_token,
                 signed_headers,
             }),
             SignatureLocation::QueryParams => SignatureValues::QueryParams(QueryParamValues {
@@ -170,10 +179,11 @@ impl<'a> CanonicalRequest<'a> {
                     .expect("presigning requires expires_in")
                     .as_secs()
                     .to_string(),
-                security_token: params.security_token,
+                security_token,
                 signed_headers,
             }),
         };
+
         let creq = CanonicalRequest {
             method: req.method(),
             path,
@@ -232,6 +242,12 @@ impl<'a> CanonicalRequest<'a> {
                 }
             }
 
+            if params.settings.session_token_mode == SessionTokenMode::Exclude
+                && name == HeaderName::from_static(header::X_AMZ_SECURITY_TOKEN)
+            {
+                continue;
+            }
+
             if params.settings.signature_location == SignatureLocation::QueryParams {
                 // The X-Amz-User-Agent header should not be signed if this is for a presigned URL
                 if name == HeaderName::from_static(header::X_AMZ_USER_AGENT) {
@@ -240,6 +256,7 @@ impl<'a> CanonicalRequest<'a> {
             }
             signed_headers.push(CanonicalHeaderName(name.clone()));
         }
+
         Ok((signed_headers, canonical_headers))
     }
 
@@ -280,6 +297,7 @@ impl<'a> CanonicalRequest<'a> {
                 param::X_AMZ_SIGNED_HEADERS,
                 values.signed_headers.as_str(),
             );
+
             if let Some(security_token) = values.security_token {
                 add_param(&mut params, param::X_AMZ_SECURITY_TOKEN, security_token);
             }
@@ -521,7 +539,7 @@ mod tests {
     };
     use crate::http_request::test::{test_canonical_request, test_request, test_sts};
     use crate::http_request::{
-        PayloadChecksumKind, SignableBody, SignableRequest, SigningSettings,
+        PayloadChecksumKind, SessionTokenMode, SignableBody, SignableRequest, SigningSettings,
     };
     use crate::http_request::{SignatureLocation, SigningParams};
     use crate::sign::sha256_hex_string;
@@ -724,6 +742,36 @@ mod tests {
         let expected = "list-type=2&prefix=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~";
         let actual = creq.params.unwrap();
         assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn test_omit_session_token() {
+        let req = test_request("get-vanilla-query-order-key-case");
+        let req = SignableRequest::from(&req);
+        let settings = SigningSettings {
+            session_token_mode: SessionTokenMode::Include,
+            ..Default::default()
+        };
+        let mut signing_params = signing_params(settings);
+        signing_params.security_token = Some("notarealsessiontoken");
+
+        let creq = CanonicalRequest::from(&req, &signing_params).unwrap();
+        assert_eq!(
+            creq.values.signed_headers().as_str(),
+            "host;x-amz-date;x-amz-security-token"
+        );
+        assert_eq!(
+            creq.headers.get("x-amz-security-token").unwrap(),
+            "notarealsessiontoken"
+        );
+
+        signing_params.settings.session_token_mode = SessionTokenMode::Exclude;
+        let creq = CanonicalRequest::from(&req, &signing_params).unwrap();
+        assert_eq!(
+            creq.headers.get("x-amz-security-token").unwrap(),
+            "notarealsessiontoken"
+        );
+        assert_eq!(creq.values.signed_headers().as_str(), "host;x-amz-date");
     }
 
     // It should exclude user-agent and x-amz-user-agent headers from presigning
