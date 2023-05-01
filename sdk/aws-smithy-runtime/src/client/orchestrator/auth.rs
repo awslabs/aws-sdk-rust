@@ -24,7 +24,7 @@ pub(super) async fn orchestrate_auth(
         .map_err(construction_failure)?;
     let identity_resolvers = cfg.identity_resolvers();
 
-    for option in auth_options {
+    for option in auth_options.as_ref() {
         let scheme_id = option.scheme_id();
         let scheme_properties = option.properties();
         if let Some(auth_scheme) = cfg.http_auth_schemes().scheme(scheme_id) {

@@ -11,6 +11,7 @@ use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::property_bag::PropertyBag;
 use std::any::Any;
+use std::borrow::Cow;
 use std::fmt::Debug;
 use std::future::Future;
 use std::pin::Pin;
@@ -72,17 +73,17 @@ impl AuthOptionResolverParams {
 }
 
 pub trait AuthOptionResolver: Send + Sync + Debug {
-    fn resolve_auth_options(
-        &self,
+    fn resolve_auth_options<'a>(
+        &'a self,
         params: &AuthOptionResolverParams,
-    ) -> Result<Vec<HttpAuthOption>, BoxError>;
+    ) -> Result<Cow<'a, [HttpAuthOption]>, BoxError>;
 }
 
 impl AuthOptionResolver for Box<dyn AuthOptionResolver> {
-    fn resolve_auth_options(
-        &self,
+    fn resolve_auth_options<'a>(
+        &'a self,
         params: &AuthOptionResolverParams,
-    ) -> Result<Vec<HttpAuthOption>, BoxError> {
+    ) -> Result<Cow<'a, [HttpAuthOption]>, BoxError> {
         (**self).resolve_auth_options(params)
     }
 }

@@ -6,6 +6,7 @@
 use crate::client::orchestrator::{
     AuthOptionResolver, AuthOptionResolverParams, BoxError, HttpAuthOption,
 };
+use std::borrow::Cow;
 
 /// New-type around a `Vec<HttpAuthOption>` that implements `AuthOptionResolver`.
 ///
@@ -23,11 +24,11 @@ impl AuthOptionListResolver {
 }
 
 impl AuthOptionResolver for AuthOptionListResolver {
-    fn resolve_auth_options(
-        &self,
+    fn resolve_auth_options<'a>(
+        &'a self,
         _params: &AuthOptionResolverParams,
-    ) -> Result<Vec<HttpAuthOption>, BoxError> {
-        Ok(self.auth_options.clone())
+    ) -> Result<Cow<'a, [HttpAuthOption]>, BoxError> {
+        Ok(Cow::Borrowed(&self.auth_options))
     }
 }
 
