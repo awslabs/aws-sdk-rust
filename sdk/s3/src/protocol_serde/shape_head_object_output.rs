@@ -99,7 +99,8 @@ pub(crate) fn de_expiration_header(header_map: &http::HeaderMap) -> std::result:
 
 pub(crate) fn de_expires_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<aws_smithy_types::DateTime>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Expires").iter();
-    let var_4: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::HttpDate)?;
+    let var_4: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::HttpDate)?
+    ;
     if var_4.len() > 1 {
                                 Err(aws_smithy_http::header::ParseError::new(format!("expected one item but found {}", var_4.len())))
                             } else {
@@ -110,7 +111,8 @@ pub(crate) fn de_expires_header(header_map: &http::HeaderMap) -> std::result::Re
 
 pub(crate) fn de_last_modified_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<aws_smithy_types::DateTime>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Last-Modified").iter();
-    let var_5: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::HttpDate)?;
+    let var_5: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::HttpDate)?
+    ;
     if var_5.len() > 1 {
                                 Err(aws_smithy_http::header::ParseError::new(format!("expected one item but found {}", var_5.len())))
                             } else {
@@ -153,7 +155,8 @@ pub(crate) fn de_object_lock_mode_header(header_map: &http::HeaderMap) -> std::r
 
 pub(crate) fn de_object_lock_retain_until_date_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<aws_smithy_types::DateTime>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-object-lock-retain-until-date").iter();
-    let var_7: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::DateTimeWithOffset)?;
+    let var_7: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::DateTimeWithOffset)?
+    ;
     if var_7.len() > 1 {
                                 Err(aws_smithy_http::header::ParseError::new(format!("expected one item but found {}", var_7.len())))
                             } else {
