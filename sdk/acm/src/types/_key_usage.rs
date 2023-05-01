@@ -3,14 +3,14 @@
 /// <p>The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyUsage  {
+pub struct KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::KeyUsageName>,
 }
 impl KeyUsage {
     /// <p>A string value that contains a Key Usage extension name.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::KeyUsageName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::KeyUsageName> {
         self.name.as_ref()
     }
 }
@@ -35,14 +35,11 @@ impl KeyUsageBuilder {
     }
     /// <p>A string value that contains a Key Usage extension name.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::KeyUsageName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`KeyUsage`](crate::types::KeyUsage).
     pub fn build(self) -> crate::types::KeyUsage {
-        crate::types::KeyUsage {
-            name: self.name
-            ,
-        }
+        crate::types::KeyUsage { name: self.name }
     }
 }
-

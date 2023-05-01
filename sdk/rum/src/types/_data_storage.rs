@@ -3,14 +3,14 @@
 /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataStorage {
+pub struct DataStorage  {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
     #[doc(hidden)]
     pub cw_log: std::option::Option<crate::types::CwLog>,
 }
 impl DataStorage {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
-    pub fn cw_log(&self) -> std::option::Option<&crate::types::CwLog> {
+    pub fn cw_log(&self) -> std::option::Option<& crate::types::CwLog> {
         self.cw_log.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl DataStorageBuilder {
     }
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
     pub fn set_cw_log(mut self, input: std::option::Option<crate::types::CwLog>) -> Self {
-        self.cw_log = input;
-        self
+        self.cw_log = input; self
     }
     /// Consumes the builder and constructs a [`DataStorage`](crate::types::DataStorage).
     pub fn build(self) -> crate::types::DataStorage {
         crate::types::DataStorage {
-            cw_log: self.cw_log,
+            cw_log: self.cw_log
+            ,
         }
     }
 }
+

@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppMonitorInput {
+pub struct DeleteAppMonitorInput  {
     /// <p>The name of the app monitor to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAppMonitorInput {
     /// <p>The name of the app monitor to delete.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteAppMonitorInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppMonitorInput`](crate::operation::delete_app_monitor::DeleteAppMonitorInput).
-    pub fn builder() -> crate::operation::delete_app_monitor::builders::DeleteAppMonitorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_monitor::builders::DeleteAppMonitorInputBuilder {
         crate::operation::delete_app_monitor::builders::DeleteAppMonitorInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteAppMonitorInputBuilder {
     }
     /// <p>The name of the app monitor to delete.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAppMonitorInput`](crate::operation::delete_app_monitor::DeleteAppMonitorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_app_monitor::DeleteAppMonitorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_app_monitor::DeleteAppMonitorInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_app_monitor::DeleteAppMonitorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_app_monitor::DeleteAppMonitorInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

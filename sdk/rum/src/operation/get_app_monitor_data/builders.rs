@@ -4,82 +4,55 @@ pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_output::Ge
 pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_input::GetAppMonitorDataInputBuilder;
 
 /// Fluent builder constructing a request to `GetAppMonitorData`.
-///
+/// 
 /// <p>Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAppMonitorDataFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder,
-}
-impl GetAppMonitorDataFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder
+            }
+impl GetAppMonitorDataFluentBuilder  {
     /// Creates a new `GetAppMonitorData`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_app_monitor_data::GetAppMonitorData,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_app_monitor_data::GetAppMonitorDataOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_app_monitor_data::GetAppMonitorData, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_app_monitor_data::GetAppMonitorDataOutput, aws_smithy_http::result::SdkError<crate::operation::get_app_monitor_data::GetAppMonitorDataError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator {
-        crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator {
+                            crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -110,10 +83,7 @@ impl GetAppMonitorDataFluentBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -138,3 +108,4 @@ impl GetAppMonitorDataFluentBuilder {
         self
     }
 }
+

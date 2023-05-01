@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendConnectionErrors {
+pub struct BackendConnectionErrors  {
     /// <p></p>
     #[doc(hidden)]
     pub timeout_count: std::option::Option<i32>,
@@ -75,8 +75,7 @@ impl BackendConnectionErrorsBuilder {
     }
     /// <p></p>
     pub fn set_timeout_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_count = input;
-        self
+        self.timeout_count = input; self
     }
     /// <p></p>
     pub fn connection_refused_count(mut self, input: i32) -> Self {
@@ -85,8 +84,7 @@ impl BackendConnectionErrorsBuilder {
     }
     /// <p></p>
     pub fn set_connection_refused_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.connection_refused_count = input;
-        self
+        self.connection_refused_count = input; self
     }
     /// <p></p>
     pub fn http_code4_xx_count(mut self, input: i32) -> Self {
@@ -95,8 +93,7 @@ impl BackendConnectionErrorsBuilder {
     }
     /// <p></p>
     pub fn set_http_code4_xx_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.http_code4_xx_count = input;
-        self
+        self.http_code4_xx_count = input; self
     }
     /// <p></p>
     pub fn http_code5_xx_count(mut self, input: i32) -> Self {
@@ -105,8 +102,7 @@ impl BackendConnectionErrorsBuilder {
     }
     /// <p></p>
     pub fn set_http_code5_xx_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.http_code5_xx_count = input;
-        self
+        self.http_code5_xx_count = input; self
     }
     /// <p></p>
     pub fn unknown_host_count(mut self, input: i32) -> Self {
@@ -115,8 +111,7 @@ impl BackendConnectionErrorsBuilder {
     }
     /// <p></p>
     pub fn set_unknown_host_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.unknown_host_count = input;
-        self
+        self.unknown_host_count = input; self
     }
     /// <p></p>
     pub fn other_count(mut self, input: i32) -> Self {
@@ -125,18 +120,24 @@ impl BackendConnectionErrorsBuilder {
     }
     /// <p></p>
     pub fn set_other_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.other_count = input;
-        self
+        self.other_count = input; self
     }
     /// Consumes the builder and constructs a [`BackendConnectionErrors`](crate::types::BackendConnectionErrors).
     pub fn build(self) -> crate::types::BackendConnectionErrors {
         crate::types::BackendConnectionErrors {
-            timeout_count: self.timeout_count,
-            connection_refused_count: self.connection_refused_count,
-            http_code4_xx_count: self.http_code4_xx_count,
-            http_code5_xx_count: self.http_code5_xx_count,
-            unknown_host_count: self.unknown_host_count,
-            other_count: self.other_count,
+            timeout_count: self.timeout_count
+            ,
+            connection_refused_count: self.connection_refused_count
+            ,
+            http_code4_xx_count: self.http_code4_xx_count
+            ,
+            http_code5_xx_count: self.http_code5_xx_count
+            ,
+            unknown_host_count: self.unknown_host_count
+            ,
+            other_count: self.other_count
+            ,
         }
     }
 }
+

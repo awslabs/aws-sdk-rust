@@ -4,63 +4,86 @@ pub use crate::operation::list_price_lists::_list_price_lists_output::ListPriceL
 pub use crate::operation::list_price_lists::_list_price_lists_input::ListPriceListsInputBuilder;
 
 /// Fluent builder constructing a request to `ListPriceLists`.
-/// 
-/// <p> <i> <b>This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i> </p> 
+///
+/// <p> <i> <b>This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i> </p>
 /// <p>This returns a list of Price List references that the requester if authorized to view, given a <code>ServiceCode</code>, <code>CurrencyCode</code>, and an <code>EffectiveDate</code>. Use without a <code>RegionCode</code> filter to list Price List references from all available Amazon Web Services Regions. Use with a <code>RegionCode</code> filter to get the Price List reference that's specific to a specific Amazon Web Services Region. You can use the <code>PriceListArn</code> from the response to get your preferred Price List files through the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html"> <code>GetPriceListFileUrl</code> </a> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPriceListsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_price_lists::builders::ListPriceListsInputBuilder
-            }
-impl ListPriceListsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_price_lists::builders::ListPriceListsInputBuilder,
+}
+impl ListPriceListsFluentBuilder {
     /// Creates a new `ListPriceLists`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_price_lists::ListPriceLists, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_price_lists::ListPriceListsOutput, aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_price_lists::ListPriceLists,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_price_lists::ListPriceListsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_price_lists::paginator::ListPriceListsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_price_lists::paginator::ListPriceListsPaginator {
-                            crate::operation::list_price_lists::paginator::ListPriceListsPaginator::new(self.handle, self.inner)
-                        }
-    /// <p>The service code or the Savings Plan service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"> <code>DescribeServices</code> </a> API.</p> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_price_lists::paginator::ListPriceListsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_price_lists::paginator::ListPriceListsPaginator {
+        crate::operation::list_price_lists::paginator::ListPriceListsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p>The service code or the Savings Plan service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"> <code>DescribeServices</code> </a> API.</p>
     /// <p>To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>. </p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
         self
     }
-    /// <p>The service code or the Savings Plan service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"> <code>DescribeServices</code> </a> API.</p> 
+    /// <p>The service code or the Savings Plan service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"> <code>DescribeServices</code> </a> API.</p>
     /// <p>To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>. </p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_service_code(input);
@@ -72,7 +95,10 @@ impl ListPriceListsFluentBuilder  {
         self
     }
     /// <p>The date that the Price List file prices are effective from. </p>
-    pub fn set_effective_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_effective_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_effective_date(input);
         self
     }
@@ -117,4 +143,3 @@ impl ListPriceListsFluentBuilder  {
         self
     }
 }
-

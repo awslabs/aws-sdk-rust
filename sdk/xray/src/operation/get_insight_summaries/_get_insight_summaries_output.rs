@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightSummariesOutput {
+pub struct GetInsightSummariesOutput  {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     #[doc(hidden)]
     pub insight_summaries: std::option::Option<std::vec::Vec<crate::types::InsightSummary>>,
@@ -13,25 +13,23 @@ pub struct GetInsightSummariesOutput {
 }
 impl GetInsightSummariesOutput {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-    pub fn insight_summaries(&self) -> std::option::Option<&[crate::types::InsightSummary]> {
+    pub fn insight_summaries(&self) -> std::option::Option<& [crate::types::InsightSummary]> {
         self.insight_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetInsightSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInsightSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder {
-        crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder {
+        crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl GetInsightSummariesOutputBuilder {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     pub fn insight_summaries(mut self, input: crate::types::InsightSummary) -> Self {
         let mut v = self.insight_summaries.unwrap_or_default();
-        v.push(input);
-        self.insight_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.insight_summaries = Some(v);
+                        self
     }
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-    pub fn set_insight_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightSummary>>,
-    ) -> Self {
-        self.insight_summaries = input;
-        self
+    pub fn set_insight_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightSummary>>) -> Self {
+        self.insight_summaries = input; self
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl GetInsightSummariesOutputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput).
     pub fn build(self) -> crate::operation::get_insight_summaries::GetInsightSummariesOutput {
         crate::operation::get_insight_summaries::GetInsightSummariesOutput {
-            insight_summaries: self.insight_summaries,
-            next_token: self.next_token,
+            insight_summaries: self.insight_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

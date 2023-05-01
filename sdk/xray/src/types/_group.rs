@@ -3,7 +3,7 @@
 /// <p>Details and metadata for a group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -13,35 +13,33 @@ pub struct Group {
     /// <p>The filter expression defining the parameters to include traces.</p>
     #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::types::InsightsConfiguration>,
 }
 impl Group {
     /// <p>The unique case-sensitive name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>The filter expression defining the parameters to include traces.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
     /// </ul>
-    pub fn insights_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::InsightsConfiguration> {
+    pub fn insights_configuration(&self) -> std::option::Option<& crate::types::InsightsConfiguration> {
         self.insights_configuration.as_ref()
     }
 }
@@ -69,8 +67,7 @@ impl GroupBuilder {
     }
     /// <p>The unique case-sensitive name of the group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
     pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl GroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
     pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_arn = input;
-        self
+        self.group_arn = input; self
     }
     /// <p>The filter expression defining the parameters to include traces.</p>
     pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,41 +84,38 @@ impl GroupBuilder {
         self
     }
     /// <p>The filter expression defining the parameters to include traces.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.filter_expression = input;
-        self
+    pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.filter_expression = input; self
     }
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
     /// </ul>
     pub fn insights_configuration(mut self, input: crate::types::InsightsConfiguration) -> Self {
         self.insights_configuration = Some(input);
         self
     }
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
     /// </ul>
-    pub fn set_insights_configuration(
-        mut self,
-        input: std::option::Option<crate::types::InsightsConfiguration>,
-    ) -> Self {
-        self.insights_configuration = input;
-        self
+    pub fn set_insights_configuration(mut self, input: std::option::Option<crate::types::InsightsConfiguration>) -> Self {
+        self.insights_configuration = input; self
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
     pub fn build(self) -> crate::types::Group {
         crate::types::Group {
-            group_name: self.group_name,
-            group_arn: self.group_arn,
-            filter_expression: self.filter_expression,
-            insights_configuration: self.insights_configuration,
+            group_name: self.group_name
+            ,
+            group_arn: self.group_arn
+            ,
+            filter_expression: self.filter_expression
+            ,
+            insights_configuration: self.insights_configuration
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTraceSummariesOutput {
+pub struct GetTraceSummariesOutput  {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     #[doc(hidden)]
     pub trace_summaries: std::option::Option<std::vec::Vec<crate::types::TraceSummary>>,
@@ -19,11 +19,11 @@ pub struct GetTraceSummariesOutput {
 }
 impl GetTraceSummariesOutput {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    pub fn trace_summaries(&self) -> std::option::Option<&[crate::types::TraceSummary]> {
+    pub fn trace_summaries(&self) -> std::option::Option<& [crate::types::TraceSummary]> {
         self.trace_summaries.as_deref()
     }
     /// <p>The start time of this page of results.</p>
-    pub fn approximate_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn approximate_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.approximate_time.as_ref()
     }
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
@@ -31,19 +31,18 @@ impl GetTraceSummariesOutput {
         self.traces_processed_count
     }
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetTraceSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTraceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesOutputBuilder {
+    pub fn builder() -> crate::operation::get_trace_summaries::builders::GetTraceSummariesOutputBuilder {
         crate::operation::get_trace_summaries::builders::GetTraceSummariesOutputBuilder::default()
     }
 }
@@ -66,17 +65,13 @@ impl GetTraceSummariesOutputBuilder {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     pub fn trace_summaries(mut self, input: crate::types::TraceSummary) -> Self {
         let mut v = self.trace_summaries.unwrap_or_default();
-        v.push(input);
-        self.trace_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.trace_summaries = Some(v);
+                        self
     }
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    pub fn set_trace_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TraceSummary>>,
-    ) -> Self {
-        self.trace_summaries = input;
-        self
+    pub fn set_trace_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::TraceSummary>>) -> Self {
+        self.trace_summaries = input; self
     }
     /// <p>The start time of this page of results.</p>
     pub fn approximate_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,12 +79,8 @@ impl GetTraceSummariesOutputBuilder {
         self
     }
     /// <p>The start time of this page of results.</p>
-    pub fn set_approximate_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.approximate_time = input;
-        self
+    pub fn set_approximate_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.approximate_time = input; self
     }
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     pub fn traces_processed_count(mut self, input: i64) -> Self {
@@ -98,8 +89,7 @@ impl GetTraceSummariesOutputBuilder {
     }
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     pub fn set_traces_processed_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.traces_processed_count = input;
-        self
+        self.traces_processed_count = input; self
     }
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,26 +98,30 @@ impl GetTraceSummariesOutputBuilder {
     }
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput).
     pub fn build(self) -> crate::operation::get_trace_summaries::GetTraceSummariesOutput {
         crate::operation::get_trace_summaries::GetTraceSummariesOutput {
-            trace_summaries: self.trace_summaries,
-            approximate_time: self.approximate_time,
-            traces_processed_count: self.traces_processed_count,
-            next_token: self.next_token,
+            trace_summaries: self.trace_summaries
+            ,
+            approximate_time: self.approximate_time
+            ,
+            traces_processed_count: self.traces_processed_count
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

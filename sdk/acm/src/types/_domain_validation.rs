@@ -3,7 +3,7 @@
 /// <p>Contains information about the validation of each domain name in the certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainValidation  {
+pub struct DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct DomainValidation  {
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     #[doc(hidden)]
     pub validation_domain: std::option::Option<std::string::String>,
-    /// <p>The validation status of the domain name. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li> 
-    /// <li> <p> <code></code>SUCCESS</p> </li> 
-    /// <li> <p> <code></code>FAILED</p> </li> 
+    /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
+    /// <li> <p> <code></code>SUCCESS</p> </li>
+    /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub validation_status: std::option::Option<crate::types::DomainStatus>,
-    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p> 
+    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     #[doc(hidden)]
     pub resource_record: std::option::Option<crate::types::ResourceRecord>,
@@ -31,33 +31,33 @@ pub struct DomainValidation  {
 }
 impl DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn validation_emails(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn validation_emails(&self) -> std::option::Option<&[std::string::String]> {
         self.validation_emails.as_deref()
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
-    pub fn validation_domain(&self) -> std::option::Option<& str> {
+    pub fn validation_domain(&self) -> std::option::Option<&str> {
         self.validation_domain.as_deref()
     }
-    /// <p>The validation status of the domain name. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li> 
-    /// <li> <p> <code></code>SUCCESS</p> </li> 
-    /// <li> <p> <code></code>FAILED</p> </li> 
+    /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
+    /// <li> <p> <code></code>SUCCESS</p> </li>
+    /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
-    pub fn validation_status(&self) -> std::option::Option<& crate::types::DomainStatus> {
+    pub fn validation_status(&self) -> std::option::Option<&crate::types::DomainStatus> {
         self.validation_status.as_ref()
     }
-    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p> 
+    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
-    pub fn resource_record(&self) -> std::option::Option<& crate::types::ResourceRecord> {
+    pub fn resource_record(&self) -> std::option::Option<&crate::types::ResourceRecord> {
         self.resource_record.as_ref()
     }
     /// <p>Specifies the domain validation method.</p>
-    pub fn validation_method(&self) -> std::option::Option<& crate::types::ValidationMethod> {
+    pub fn validation_method(&self) -> std::option::Option<&crate::types::ValidationMethod> {
         self.validation_method.as_ref()
     }
 }
@@ -87,7 +87,8 @@ impl DomainValidationBuilder {
     }
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Appends an item to `validation_emails`.
     ///
@@ -96,13 +97,17 @@ impl DomainValidationBuilder {
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
     pub fn validation_emails(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.validation_emails.unwrap_or_default();
-                        v.push(input.into());
-                        self.validation_emails = Some(v);
-                        self
+        v.push(input.into());
+        self.validation_emails = Some(v);
+        self
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn set_validation_emails(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.validation_emails = input; self
+    pub fn set_validation_emails(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.validation_emails = input;
+        self
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub fn validation_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,38 +115,50 @@ impl DomainValidationBuilder {
         self
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
-    pub fn set_validation_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.validation_domain = input; self
+    pub fn set_validation_domain(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.validation_domain = input;
+        self
     }
-    /// <p>The validation status of the domain name. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li> 
-    /// <li> <p> <code></code>SUCCESS</p> </li> 
-    /// <li> <p> <code></code>FAILED</p> </li> 
+    /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
+    /// <li> <p> <code></code>SUCCESS</p> </li>
+    /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
     pub fn validation_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.validation_status = Some(input);
         self
     }
-    /// <p>The validation status of the domain name. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li> 
-    /// <li> <p> <code></code>SUCCESS</p> </li> 
-    /// <li> <p> <code></code>FAILED</p> </li> 
+    /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
+    /// <li> <p> <code></code>SUCCESS</p> </li>
+    /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
-    pub fn set_validation_status(mut self, input: std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.validation_status = input; self
+    pub fn set_validation_status(
+        mut self,
+        input: std::option::Option<crate::types::DomainStatus>,
+    ) -> Self {
+        self.validation_status = input;
+        self
     }
-    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p> 
+    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn resource_record(mut self, input: crate::types::ResourceRecord) -> Self {
         self.resource_record = Some(input);
         self
     }
-    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p> 
+    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
-    pub fn set_resource_record(mut self, input: std::option::Option<crate::types::ResourceRecord>) -> Self {
-        self.resource_record = input; self
+    pub fn set_resource_record(
+        mut self,
+        input: std::option::Option<crate::types::ResourceRecord>,
+    ) -> Self {
+        self.resource_record = input;
+        self
     }
     /// <p>Specifies the domain validation method.</p>
     pub fn validation_method(mut self, input: crate::types::ValidationMethod) -> Self {
@@ -149,25 +166,22 @@ impl DomainValidationBuilder {
         self
     }
     /// <p>Specifies the domain validation method.</p>
-    pub fn set_validation_method(mut self, input: std::option::Option<crate::types::ValidationMethod>) -> Self {
-        self.validation_method = input; self
+    pub fn set_validation_method(
+        mut self,
+        input: std::option::Option<crate::types::ValidationMethod>,
+    ) -> Self {
+        self.validation_method = input;
+        self
     }
     /// Consumes the builder and constructs a [`DomainValidation`](crate::types::DomainValidation).
     pub fn build(self) -> crate::types::DomainValidation {
         crate::types::DomainValidation {
-            domain_name: self.domain_name
-            ,
-            validation_emails: self.validation_emails
-            ,
-            validation_domain: self.validation_domain
-            ,
-            validation_status: self.validation_status
-            ,
-            resource_record: self.resource_record
-            ,
-            validation_method: self.validation_method
-            ,
+            domain_name: self.domain_name,
+            validation_emails: self.validation_emails,
+            validation_domain: self.validation_domain,
+            validation_status: self.validation_status,
+            resource_record: self.resource_record,
+            validation_method: self.validation_method,
         }
     }
 }
-

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDecoderManifestInput {
+pub struct DeleteDecoderManifestInput  {
     /// <p> The name of the decoder manifest to delete. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDecoderManifestInput {
     /// <p> The name of the decoder manifest to delete. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteDecoderManifestInput {
     /// Creates a new builder-style object to manufacture [`DeleteDecoderManifestInput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput).
-    pub fn builder(
-    ) -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestInputBuilder {
         crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DeleteDecoderManifestInputBuilder {
     }
     /// <p> The name of the decoder manifest to delete. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDecoderManifestInput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

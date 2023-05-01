@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTraceSummariesInput {
+pub struct GetTraceSummariesInput  {
     /// <p>The start of the time frame for which to retrieve traces.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -27,15 +27,15 @@ pub struct GetTraceSummariesInput {
 }
 impl GetTraceSummariesInput {
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    pub fn time_range_type(&self) -> std::option::Option<&crate::types::TimeRangeType> {
+    pub fn time_range_type(&self) -> std::option::Option<& crate::types::TimeRangeType> {
         self.time_range_type.as_ref()
     }
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
@@ -43,22 +43,21 @@ impl GetTraceSummariesInput {
         self.sampling
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    pub fn sampling_strategy(&self) -> std::option::Option<&crate::types::SamplingStrategy> {
+    pub fn sampling_strategy(&self) -> std::option::Option<& crate::types::SamplingStrategy> {
         self.sampling_strategy.as_ref()
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetTraceSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
-    pub fn builder(
-    ) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
+    pub fn builder() -> crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
         crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder::default()
     }
 }
@@ -82,12 +81,8 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -96,8 +91,7 @@ impl GetTraceSummariesInputBuilder {
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
     pub fn time_range_type(mut self, input: crate::types::TimeRangeType) -> Self {
@@ -105,12 +99,8 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    pub fn set_time_range_type(
-        mut self,
-        input: std::option::Option<crate::types::TimeRangeType>,
-    ) -> Self {
-        self.time_range_type = input;
-        self
+    pub fn set_time_range_type(mut self, input: std::option::Option<crate::types::TimeRangeType>) -> Self {
+        self.time_range_type = input; self
     }
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub fn sampling(mut self, input: bool) -> Self {
@@ -119,8 +109,7 @@ impl GetTraceSummariesInputBuilder {
     }
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub fn set_sampling(mut self, input: std::option::Option<bool>) -> Self {
-        self.sampling = input;
-        self
+        self.sampling = input; self
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
     pub fn sampling_strategy(mut self, input: crate::types::SamplingStrategy) -> Self {
@@ -128,12 +117,8 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    pub fn set_sampling_strategy(
-        mut self,
-        input: std::option::Option<crate::types::SamplingStrategy>,
-    ) -> Self {
-        self.sampling_strategy = input;
-        self
+    pub fn set_sampling_strategy(mut self, input: std::option::Option<crate::types::SamplingStrategy>) -> Self {
+        self.sampling_strategy = input; self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
     pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,12 +126,8 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.filter_expression = input;
-        self
+    pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.filter_expression = input; self
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,26 +136,28 @@ impl GetTraceSummariesInputBuilder {
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_trace_summaries::GetTraceSummariesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_trace_summaries::GetTraceSummariesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_trace_summaries::GetTraceSummariesInput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                time_range_type: self.time_range_type,
-                sampling: self.sampling,
-                sampling_strategy: self.sampling_strategy,
-                filter_expression: self.filter_expression,
-                next_token: self.next_token,
-            },
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                time_range_type: self.time_range_type
+                ,
+                sampling: self.sampling
+                ,
+                sampling_strategy: self.sampling_strategy
+                ,
+                filter_expression: self.filter_expression
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

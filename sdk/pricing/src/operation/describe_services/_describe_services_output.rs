@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServicesOutput  {
+pub struct DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::types::Service>>,
@@ -16,26 +16,27 @@ pub struct DescribeServicesOutput  {
 }
 impl DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn services(&self) -> std::option::Option<& [crate::types::Service]> {
+    pub fn services(&self) -> std::option::Option<&[crate::types::Service]> {
         self.services.as_deref()
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-    pub fn format_version(&self) -> std::option::Option<& str> {
+    pub fn format_version(&self) -> std::option::Option<&str> {
         self.format_version.as_deref()
     }
     /// <p>The pagination token for the next set of retrievable results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeServicesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder
+    {
         crate::operation::describe_services::builders::DescribeServicesOutputBuilder::default()
     }
 }
@@ -57,13 +58,17 @@ impl DescribeServicesOutputBuilder {
     /// <p>The service metadata for the service or services in the response.</p>
     pub fn services(mut self, input: crate::types::Service) -> Self {
         let mut v = self.services.unwrap_or_default();
-                        v.push(input);
-                        self.services = Some(v);
-                        self
+        v.push(input);
+        self.services = Some(v);
+        self
     }
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::types::Service>>) -> Self {
-        self.services = input; self
+    pub fn set_services(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Service>>,
+    ) -> Self {
+        self.services = input;
+        self
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
     pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,7 +77,8 @@ impl DescribeServicesOutputBuilder {
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
     pub fn set_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format_version = input; self
+        self.format_version = input;
+        self
     }
     /// <p>The pagination token for the next set of retrievable results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +87,25 @@ impl DescribeServicesOutputBuilder {
     }
     /// <p>The pagination token for the next set of retrievable results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
     pub fn build(self) -> crate::operation::describe_services::DescribeServicesOutput {
         crate::operation::describe_services::DescribeServicesOutput {
-            services: self.services
-            ,
-            format_version: self.format_version
-            ,
-            next_token: self.next_token
-            ,
+            services: self.services,
+            format_version: self.format_version,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-
