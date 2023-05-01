@@ -1254,7 +1254,32 @@ impl From<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError> for Err
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AcceleratorNotDisabledException(inner) => inner.source(),
+            Error::AcceleratorNotFoundException(inner) => inner.source(),
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AssociatedEndpointGroupFoundException(inner) => inner.source(),
+            Error::AssociatedListenerFoundException(inner) => inner.source(),
+            Error::ByoipCidrNotFoundException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::EndpointAlreadyExistsException(inner) => inner.source(),
+            Error::EndpointGroupAlreadyExistsException(inner) => inner.source(),
+            Error::EndpointGroupNotFoundException(inner) => inner.source(),
+            Error::EndpointNotFoundException(inner) => inner.source(),
+            Error::IncorrectCidrStateException(inner) => inner.source(),
+            Error::InternalServiceErrorException(inner) => inner.source(),
+            Error::InvalidArgumentException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidPortRangeException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ListenerNotFoundException(inner) => inner.source(),
+            Error::TransactionInProgressException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -2021,7 +2021,48 @@ impl From<crate::operation::upgrade_published_schema::UpgradePublishedSchemaErro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::BatchWriteException(inner) => inner.source(),
+            Error::CannotListParentOfRootException(inner) => inner.source(),
+            Error::DirectoryAlreadyExistsException(inner) => inner.source(),
+            Error::DirectoryDeletedException(inner) => inner.source(),
+            Error::DirectoryNotDisabledException(inner) => inner.source(),
+            Error::DirectoryNotEnabledException(inner) => inner.source(),
+            Error::FacetAlreadyExistsException(inner) => inner.source(),
+            Error::FacetInUseException(inner) => inner.source(),
+            Error::FacetNotFoundException(inner) => inner.source(),
+            Error::FacetValidationException(inner) => inner.source(),
+            Error::IncompatibleSchemaException(inner) => inner.source(),
+            Error::IndexedAttributeMissingException(inner) => inner.source(),
+            Error::InternalServiceException(inner) => inner.source(),
+            Error::InvalidArnException(inner) => inner.source(),
+            Error::InvalidAttachmentException(inner) => inner.source(),
+            Error::InvalidFacetUpdateException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidRuleException(inner) => inner.source(),
+            Error::InvalidSchemaDocException(inner) => inner.source(),
+            Error::InvalidTaggingRequestException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::LinkNameAlreadyInUseException(inner) => inner.source(),
+            Error::NotIndexException(inner) => inner.source(),
+            Error::NotNodeException(inner) => inner.source(),
+            Error::NotPolicyException(inner) => inner.source(),
+            Error::ObjectAlreadyDetachedException(inner) => inner.source(),
+            Error::ObjectNotDetachedException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RetryableConflictException(inner) => inner.source(),
+            Error::SchemaAlreadyExistsException(inner) => inner.source(),
+            Error::SchemaAlreadyPublishedException(inner) => inner.source(),
+            Error::StillContainsLinksException(inner) => inner.source(),
+            Error::UnsupportedIndexTypeException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

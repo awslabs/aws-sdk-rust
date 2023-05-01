@@ -291,7 +291,23 @@ impl From<crate::operation::start_object::StartObjectError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::DataAlreadyExistsException(inner) => inner.source(),
+            Error::IllegalArgumentException(inner) => inner.source(),
+            Error::KmsInvalidKeyUsageException(inner) => inner.source(),
+            Error::NotReadableInputStreamException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RetryableException(inner) => inner.source(),
+            Error::ServiceInternalException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

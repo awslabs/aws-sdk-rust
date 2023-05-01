@@ -2317,7 +2317,67 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConformancePackTemplateValidationException(inner) => inner.source(),
+            Error::IdempotentParameterMismatch(inner) => inner.source(),
+            Error::InsufficientDeliveryPolicyException(inner) => inner.source(),
+            Error::InsufficientPermissionsException(inner) => inner.source(),
+            Error::InvalidConfigurationRecorderNameException(inner) => inner.source(),
+            Error::InvalidDeliveryChannelNameException(inner) => inner.source(),
+            Error::InvalidExpressionException(inner) => inner.source(),
+            Error::InvalidLimitException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidRecordingGroupException(inner) => inner.source(),
+            Error::InvalidResultTokenException(inner) => inner.source(),
+            Error::InvalidRoleException(inner) => inner.source(),
+            Error::InvalidS3KeyPrefixException(inner) => inner.source(),
+            Error::InvalidS3KmsKeyArnException(inner) => inner.source(),
+            Error::InvalidSnsTopicArnException(inner) => inner.source(),
+            Error::InvalidTimeRangeException(inner) => inner.source(),
+            Error::LastDeliveryChannelDeleteFailedException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MaxActiveResourcesExceededException(inner) => inner.source(),
+            Error::MaxNumberOfConfigRulesExceededException(inner) => inner.source(),
+            Error::MaxNumberOfConfigurationRecordersExceededException(inner) => inner.source(),
+            Error::MaxNumberOfConformancePacksExceededException(inner) => inner.source(),
+            Error::MaxNumberOfDeliveryChannelsExceededException(inner) => inner.source(),
+            Error::MaxNumberOfOrganizationConfigRulesExceededException(inner) => inner.source(),
+            Error::MaxNumberOfOrganizationConformancePacksExceededException(inner) => inner.source(),
+            Error::MaxNumberOfRetentionConfigurationsExceededException(inner) => inner.source(),
+            Error::NoAvailableConfigurationRecorderException(inner) => inner.source(),
+            Error::NoAvailableDeliveryChannelException(inner) => inner.source(),
+            Error::NoAvailableOrganizationException(inner) => inner.source(),
+            Error::NoRunningConfigurationRecorderException(inner) => inner.source(),
+            Error::NoSuchBucketException(inner) => inner.source(),
+            Error::NoSuchConfigRuleException(inner) => inner.source(),
+            Error::NoSuchConfigRuleInConformancePackException(inner) => inner.source(),
+            Error::NoSuchConfigurationAggregatorException(inner) => inner.source(),
+            Error::NoSuchConfigurationRecorderException(inner) => inner.source(),
+            Error::NoSuchConformancePackException(inner) => inner.source(),
+            Error::NoSuchDeliveryChannelException(inner) => inner.source(),
+            Error::NoSuchOrganizationConfigRuleException(inner) => inner.source(),
+            Error::NoSuchOrganizationConformancePackException(inner) => inner.source(),
+            Error::NoSuchRemediationConfigurationException(inner) => inner.source(),
+            Error::NoSuchRemediationExceptionException(inner) => inner.source(),
+            Error::NoSuchRetentionConfigurationException(inner) => inner.source(),
+            Error::OrganizationAccessDeniedException(inner) => inner.source(),
+            Error::OrganizationAllFeaturesNotEnabledException(inner) => inner.source(),
+            Error::OrganizationConformancePackTemplateValidationException(inner) => inner.source(),
+            Error::OversizedConfigurationItemException(inner) => inner.source(),
+            Error::RemediationInProgressException(inner) => inner.source(),
+            Error::ResourceConcurrentModificationException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotDiscoveredException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

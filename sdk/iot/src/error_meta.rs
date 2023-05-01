@@ -6093,7 +6093,44 @@ impl From<crate::operation::validate_security_profile_behaviors::ValidateSecurit
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CertificateConflictException(inner) => inner.source(),
+            Error::CertificateStateException(inner) => inner.source(),
+            Error::CertificateValidationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::ConflictingResourceUpdateException(inner) => inner.source(),
+            Error::DeleteConflictException(inner) => inner.source(),
+            Error::IndexNotReadyException(inner) => inner.source(),
+            Error::InternalException(inner) => inner.source(),
+            Error::InternalFailureException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidAggregationException(inner) => inner.source(),
+            Error::InvalidQueryException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidResponseException(inner) => inner.source(),
+            Error::InvalidStateTransitionException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MalformedPolicyException(inner) => inner.source(),
+            Error::NotConfiguredException(inner) => inner.source(),
+            Error::RegistrationCodeValidationException(inner) => inner.source(),
+            Error::ResourceAlreadyExistsException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceRegistrationFailureException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::SqlParseException(inner) => inner.source(),
+            Error::TaskAlreadyExistsException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::TransferAlreadyCompletedException(inner) => inner.source(),
+            Error::TransferConflictException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
+            Error::VersionConflictException(inner) => inner.source(),
+            Error::VersionsLimitExceededException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

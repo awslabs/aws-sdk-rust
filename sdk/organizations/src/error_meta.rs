@@ -1782,7 +1782,60 @@ impl From<crate::operation::update_policy::UpdatePolicyError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AwsOrganizationsNotInUseException(inner) => inner.source(),
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AccessDeniedForDependencyException(inner) => inner.source(),
+            Error::AccountAlreadyClosedException(inner) => inner.source(),
+            Error::AccountAlreadyRegisteredException(inner) => inner.source(),
+            Error::AccountNotFoundException(inner) => inner.source(),
+            Error::AccountNotRegisteredException(inner) => inner.source(),
+            Error::AccountOwnerNotVerifiedException(inner) => inner.source(),
+            Error::AlreadyInOrganizationException(inner) => inner.source(),
+            Error::ChildNotFoundException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::ConstraintViolationException(inner) => inner.source(),
+            Error::CreateAccountStatusNotFoundException(inner) => inner.source(),
+            Error::DestinationParentNotFoundException(inner) => inner.source(),
+            Error::DuplicateAccountException(inner) => inner.source(),
+            Error::DuplicateHandshakeException(inner) => inner.source(),
+            Error::DuplicateOrganizationalUnitException(inner) => inner.source(),
+            Error::DuplicatePolicyAttachmentException(inner) => inner.source(),
+            Error::DuplicatePolicyException(inner) => inner.source(),
+            Error::EffectivePolicyNotFoundException(inner) => inner.source(),
+            Error::FinalizingOrganizationException(inner) => inner.source(),
+            Error::HandshakeAlreadyInStateException(inner) => inner.source(),
+            Error::HandshakeConstraintViolationException(inner) => inner.source(),
+            Error::HandshakeNotFoundException(inner) => inner.source(),
+            Error::InvalidHandshakeTransitionException(inner) => inner.source(),
+            Error::InvalidInputException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::MasterCannotLeaveOrganizationException(inner) => inner.source(),
+            Error::OrganizationNotEmptyException(inner) => inner.source(),
+            Error::OrganizationalUnitNotEmptyException(inner) => inner.source(),
+            Error::OrganizationalUnitNotFoundException(inner) => inner.source(),
+            Error::ParentNotFoundException(inner) => inner.source(),
+            Error::PolicyChangesInProgressException(inner) => inner.source(),
+            Error::PolicyInUseException(inner) => inner.source(),
+            Error::PolicyNotAttachedException(inner) => inner.source(),
+            Error::PolicyNotFoundException(inner) => inner.source(),
+            Error::PolicyTypeAlreadyEnabledException(inner) => inner.source(),
+            Error::PolicyTypeNotAvailableForOrganizationException(inner) => inner.source(),
+            Error::PolicyTypeNotEnabledException(inner) => inner.source(),
+            Error::ResourcePolicyNotFoundException(inner) => inner.source(),
+            Error::RootNotFoundException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::SourceParentNotFoundException(inner) => inner.source(),
+            Error::TargetNotFoundException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::UnsupportedApiEndpointException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -298,7 +298,16 @@ impl From<crate::operation::enable_health_service_access_for_organization::Enabl
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::InvalidPaginationToken(inner) => inner.source(),
+            Error::UnsupportedLocale(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

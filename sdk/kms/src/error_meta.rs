@@ -1535,7 +1535,59 @@ impl From<crate::operation::verify_mac::VerifyMacError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AlreadyExistsException(inner) => inner.source(),
+            Error::CloudHsmClusterInUseException(inner) => inner.source(),
+            Error::CloudHsmClusterInvalidConfigurationException(inner) => inner.source(),
+            Error::CloudHsmClusterNotActiveException(inner) => inner.source(),
+            Error::CloudHsmClusterNotFoundException(inner) => inner.source(),
+            Error::CloudHsmClusterNotRelatedException(inner) => inner.source(),
+            Error::CustomKeyStoreHasCmKsException(inner) => inner.source(),
+            Error::CustomKeyStoreInvalidStateException(inner) => inner.source(),
+            Error::CustomKeyStoreNameInUseException(inner) => inner.source(),
+            Error::CustomKeyStoreNotFoundException(inner) => inner.source(),
+            Error::DependencyTimeoutException(inner) => inner.source(),
+            Error::DisabledException(inner) => inner.source(),
+            Error::ExpiredImportTokenException(inner) => inner.source(),
+            Error::IncorrectKeyException(inner) => inner.source(),
+            Error::IncorrectKeyMaterialException(inner) => inner.source(),
+            Error::IncorrectTrustAnchorException(inner) => inner.source(),
+            Error::InvalidAliasNameException(inner) => inner.source(),
+            Error::InvalidArnException(inner) => inner.source(),
+            Error::InvalidCiphertextException(inner) => inner.source(),
+            Error::InvalidGrantIdException(inner) => inner.source(),
+            Error::InvalidGrantTokenException(inner) => inner.source(),
+            Error::InvalidImportTokenException(inner) => inner.source(),
+            Error::InvalidKeyUsageException(inner) => inner.source(),
+            Error::InvalidMarkerException(inner) => inner.source(),
+            Error::KmsInternalException(inner) => inner.source(),
+            Error::KmsInvalidMacException(inner) => inner.source(),
+            Error::KmsInvalidSignatureException(inner) => inner.source(),
+            Error::KmsInvalidStateException(inner) => inner.source(),
+            Error::KeyUnavailableException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::TagException(inner) => inner.source(),
+            Error::UnsupportedOperationException(inner) => inner.source(),
+            Error::XksKeyAlreadyInUseException(inner) => inner.source(),
+            Error::XksKeyInvalidConfigurationException(inner) => inner.source(),
+            Error::XksKeyNotFoundException(inner) => inner.source(),
+            Error::XksProxyIncorrectAuthenticationCredentialException(inner) => inner.source(),
+            Error::XksProxyInvalidConfigurationException(inner) => inner.source(),
+            Error::XksProxyInvalidResponseException(inner) => inner.source(),
+            Error::XksProxyUriEndpointInUseException(inner) => inner.source(),
+            Error::XksProxyUriInUseException(inner) => inner.source(),
+            Error::XksProxyUriUnreachableException(inner) => inner.source(),
+            Error::XksProxyVpcEndpointServiceInUseException(inner) => inner.source(),
+            Error::XksProxyVpcEndpointServiceInvalidConfigurationException(inner) => inner.source(),
+            Error::XksProxyVpcEndpointServiceNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

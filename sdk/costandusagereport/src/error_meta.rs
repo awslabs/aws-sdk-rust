@@ -114,7 +114,17 @@ impl From<crate::operation::put_report_definition::PutReportDefinitionError> for
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DuplicateReportNameException(inner) => inner.source(),
+            Error::InternalErrorException(inner) => inner.source(),
+            Error::ReportLimitReachedException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

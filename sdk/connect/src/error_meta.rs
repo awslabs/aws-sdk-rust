@@ -4761,7 +4761,34 @@ impl From<crate::operation::update_user_security_profiles::UpdateUserSecurityPro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::ContactFlowNotPublishedException(inner) => inner.source(),
+            Error::ContactNotFoundException(inner) => inner.source(),
+            Error::DestinationNotAllowedException(inner) => inner.source(),
+            Error::DuplicateResourceException(inner) => inner.source(),
+            Error::IdempotencyException(inner) => inner.source(),
+            Error::InternalServiceException(inner) => inner.source(),
+            Error::InvalidContactFlowException(inner) => inner.source(),
+            Error::InvalidContactFlowModuleException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::OutboundContactNotPermittedException(inner) => inner.source(),
+            Error::PropertyValidationException(inner) => inner.source(),
+            Error::ResourceConflictException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::UserNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

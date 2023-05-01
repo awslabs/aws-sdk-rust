@@ -195,7 +195,21 @@ impl From<crate::operation::start_snapshot::StartSnapshotError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConcurrentLimitExceededException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
+            Error::RequestThrottledException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

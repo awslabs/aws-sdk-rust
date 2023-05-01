@@ -1229,7 +1229,24 @@ impl From<crate::operation::update_connection::UpdateConnectionError> for Error 
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::IllegalStatusException(inner) => inner.source(),
+            Error::InternalException(inner) => inner.source(),
+            Error::InvalidEventPatternException(inner) => inner.source(),
+            Error::InvalidStateException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ManagedRuleException(inner) => inner.source(),
+            Error::OperationDisabledException(inner) => inner.source(),
+            Error::PolicyLengthExceededException(inner) => inner.source(),
+            Error::ResourceAlreadyExistsException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

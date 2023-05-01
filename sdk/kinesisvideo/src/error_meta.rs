@@ -762,7 +762,28 @@ impl From<crate::operation::update_stream::UpdateStreamError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AccountChannelLimitExceededException(inner) => inner.source(),
+            Error::AccountStreamLimitExceededException(inner) => inner.source(),
+            Error::ClientLimitExceededException(inner) => inner.source(),
+            Error::DeviceStreamLimitExceededException(inner) => inner.source(),
+            Error::InvalidArgumentException(inner) => inner.source(),
+            Error::InvalidDeviceException(inner) => inner.source(),
+            Error::InvalidResourceFormatException(inner) => inner.source(),
+            Error::NoDataRetentionException(inner) => inner.source(),
+            Error::NotAuthorizedException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::StreamEdgeConfigurationNotFoundException(inner) => inner.source(),
+            Error::TagsPerResourceExceededLimitException(inner) => inner.source(),
+            Error::VersionMismatchException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

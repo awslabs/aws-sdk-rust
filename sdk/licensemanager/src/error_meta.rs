@@ -1393,7 +1393,30 @@ impl From<crate::operation::update_service_settings::UpdateServiceSettingsError>
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AuthorizationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::EntitlementNotAllowedException(inner) => inner.source(),
+            Error::FailedDependencyException(inner) => inner.source(),
+            Error::FilterLimitExceededException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidResourceStateException(inner) => inner.source(),
+            Error::LicenseUsageException(inner) => inner.source(),
+            Error::NoEntitlementsAllowedException(inner) => inner.source(),
+            Error::RateLimitExceededException(inner) => inner.source(),
+            Error::RedirectException(inner) => inner.source(),
+            Error::ResourceLimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServerInternalException(inner) => inner.source(),
+            Error::UnsupportedDigitalSignatureMethodException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

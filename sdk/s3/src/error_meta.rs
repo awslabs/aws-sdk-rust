@@ -1934,7 +1934,22 @@ impl From<crate::types::error::SelectObjectContentEventStreamError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BucketAlreadyExists(inner) => inner.source(),
+            Error::BucketAlreadyOwnedByYou(inner) => inner.source(),
+            Error::InvalidObjectState(inner) => inner.source(),
+            Error::NoSuchBucket(inner) => inner.source(),
+            Error::NoSuchKey(inner) => inner.source(),
+            Error::NoSuchUpload(inner) => inner.source(),
+            Error::NotFound(inner) => inner.source(),
+            Error::ObjectAlreadyInActiveTierError(inner) => inner.source(),
+            Error::ObjectNotInActiveTierError(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl crate::s3_request_id::RequestIdExt for Error {
     fn extended_request_id(&self) -> Option<&str> {
         match self {

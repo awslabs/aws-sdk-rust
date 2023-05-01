@@ -235,7 +235,19 @@ impl From<crate::operation::untag_resources::UntagResourcesError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConstraintViolationException(inner) => inner.source(),
+            Error::InternalServiceException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::PaginationTokenExpiredException(inner) => inner.source(),
+            Error::ThrottledException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

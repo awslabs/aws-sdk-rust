@@ -953,7 +953,50 @@ impl From<crate::operation::set_subnets::SetSubnetsError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AlpnPolicyNotSupportedException(inner) => inner.source(),
+            Error::AllocationIdNotFoundException(inner) => inner.source(),
+            Error::AvailabilityZoneNotSupportedException(inner) => inner.source(),
+            Error::CertificateNotFoundException(inner) => inner.source(),
+            Error::DuplicateListenerException(inner) => inner.source(),
+            Error::DuplicateLoadBalancerNameException(inner) => inner.source(),
+            Error::DuplicateTagKeysException(inner) => inner.source(),
+            Error::DuplicateTargetGroupNameException(inner) => inner.source(),
+            Error::HealthUnavailableException(inner) => inner.source(),
+            Error::IncompatibleProtocolsException(inner) => inner.source(),
+            Error::InvalidConfigurationRequestException(inner) => inner.source(),
+            Error::InvalidLoadBalancerActionException(inner) => inner.source(),
+            Error::InvalidSchemeException(inner) => inner.source(),
+            Error::InvalidSecurityGroupException(inner) => inner.source(),
+            Error::InvalidSubnetException(inner) => inner.source(),
+            Error::InvalidTargetException(inner) => inner.source(),
+            Error::ListenerNotFoundException(inner) => inner.source(),
+            Error::LoadBalancerNotFoundException(inner) => inner.source(),
+            Error::OperationNotPermittedException(inner) => inner.source(),
+            Error::PriorityInUseException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::RuleNotFoundException(inner) => inner.source(),
+            Error::SslPolicyNotFoundException(inner) => inner.source(),
+            Error::SubnetNotFoundException(inner) => inner.source(),
+            Error::TargetGroupAssociationLimitException(inner) => inner.source(),
+            Error::TargetGroupNotFoundException(inner) => inner.source(),
+            Error::TooManyActionsException(inner) => inner.source(),
+            Error::TooManyCertificatesException(inner) => inner.source(),
+            Error::TooManyListenersException(inner) => inner.source(),
+            Error::TooManyLoadBalancersException(inner) => inner.source(),
+            Error::TooManyRegistrationsForTargetIdException(inner) => inner.source(),
+            Error::TooManyRulesException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::TooManyTargetGroupsException(inner) => inner.source(),
+            Error::TooManyTargetsException(inner) => inner.source(),
+            Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.source(),
+            Error::UnsupportedProtocolException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

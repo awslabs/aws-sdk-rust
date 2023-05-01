@@ -1594,7 +1594,27 @@ impl From<crate::operation::update_workspace_image_permission::UpdateWorkspaceIm
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::InvalidParameterValuesException(inner) => inner.source(),
+            Error::InvalidResourceStateException(inner) => inner.source(),
+            Error::OperationInProgressException(inner) => inner.source(),
+            Error::OperationNotSupportedException(inner) => inner.source(),
+            Error::ResourceAlreadyExistsException(inner) => inner.source(),
+            Error::ResourceAssociatedException(inner) => inner.source(),
+            Error::ResourceCreationFailedException(inner) => inner.source(),
+            Error::ResourceLimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceUnavailableException(inner) => inner.source(),
+            Error::UnsupportedNetworkConfigurationException(inner) => inner.source(),
+            Error::UnsupportedWorkspaceConfigurationException(inner) => inner.source(),
+            Error::WorkspacesDefaultRoleNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -3763,7 +3763,40 @@ impl From<crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError> for 
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::CredentialReportExpiredException(inner) => inner.source(),
+            Error::CredentialReportNotPresentException(inner) => inner.source(),
+            Error::CredentialReportNotReadyException(inner) => inner.source(),
+            Error::DeleteConflictException(inner) => inner.source(),
+            Error::DuplicateCertificateException(inner) => inner.source(),
+            Error::DuplicateSshPublicKeyException(inner) => inner.source(),
+            Error::EntityAlreadyExistsException(inner) => inner.source(),
+            Error::EntityTemporarilyUnmodifiableException(inner) => inner.source(),
+            Error::InvalidAuthenticationCodeException(inner) => inner.source(),
+            Error::InvalidCertificateException(inner) => inner.source(),
+            Error::InvalidInputException(inner) => inner.source(),
+            Error::InvalidPublicKeyException(inner) => inner.source(),
+            Error::InvalidUserTypeException(inner) => inner.source(),
+            Error::KeyPairMismatchException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MalformedCertificateException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::NoSuchEntityException(inner) => inner.source(),
+            Error::PasswordPolicyViolationException(inner) => inner.source(),
+            Error::PolicyEvaluationException(inner) => inner.source(),
+            Error::PolicyNotAttachableException(inner) => inner.source(),
+            Error::ReportGenerationLimitExceededException(inner) => inner.source(),
+            Error::ServiceFailureException(inner) => inner.source(),
+            Error::ServiceNotSupportedException(inner) => inner.source(),
+            Error::UnmodifiableEntityException(inner) => inner.source(),
+            Error::UnrecognizedPublicKeyEncodingException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

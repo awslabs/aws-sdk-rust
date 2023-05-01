@@ -1032,7 +1032,41 @@ impl From<crate::operation::update_resource_share::UpdateResourceShareError> for
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::IdempotentParameterMismatchException(inner) => inner.source(),
+            Error::InvalidClientTokenException(inner) => inner.source(),
+            Error::InvalidMaxResultsException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidPolicyException(inner) => inner.source(),
+            Error::InvalidResourceTypeException(inner) => inner.source(),
+            Error::InvalidStateTransitionException(inner) => inner.source(),
+            Error::MalformedArnException(inner) => inner.source(),
+            Error::MalformedPolicyTemplateException(inner) => inner.source(),
+            Error::MissingRequiredParameterException(inner) => inner.source(),
+            Error::OperationNotPermittedException(inner) => inner.source(),
+            Error::PermissionAlreadyExistsException(inner) => inner.source(),
+            Error::PermissionLimitExceededException(inner) => inner.source(),
+            Error::PermissionVersionsLimitExceededException(inner) => inner.source(),
+            Error::ResourceArnNotFoundException(inner) => inner.source(),
+            Error::ResourceShareInvitationAlreadyAcceptedException(inner) => inner.source(),
+            Error::ResourceShareInvitationAlreadyRejectedException(inner) => inner.source(),
+            Error::ResourceShareInvitationArnNotFoundException(inner) => inner.source(),
+            Error::ResourceShareInvitationExpiredException(inner) => inner.source(),
+            Error::ResourceShareLimitExceededException(inner) => inner.source(),
+            Error::ServerInternalException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::TagLimitExceededException(inner) => inner.source(),
+            Error::TagPolicyViolationException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::UnknownResourceException(inner) => inner.source(),
+            Error::UnmatchedPolicyPermissionException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

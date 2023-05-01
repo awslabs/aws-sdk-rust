@@ -642,7 +642,23 @@ impl From<crate::operation::update_subscriber::UpdateSubscriberError> for Error 
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::CreationLimitExceededException(inner) => inner.source(),
+            Error::DuplicateRecordException(inner) => inner.source(),
+            Error::ExpiredNextTokenException(inner) => inner.source(),
+            Error::InternalErrorException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::ResourceLockedException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

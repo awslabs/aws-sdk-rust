@@ -1252,7 +1252,38 @@ impl From<crate::operation::update_user::UpdateUserError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictingOperationException(inner) => inner.source(),
+            Error::CustomMetadataLimitExceededException(inner) => inner.source(),
+            Error::DeactivatingLastSystemUserException(inner) => inner.source(),
+            Error::DocumentLockedForCommentsException(inner) => inner.source(),
+            Error::DraftUploadOutOfSyncException(inner) => inner.source(),
+            Error::EntityAlreadyExistsException(inner) => inner.source(),
+            Error::EntityNotExistsException(inner) => inner.source(),
+            Error::FailedDependencyException(inner) => inner.source(),
+            Error::IllegalUserStateException(inner) => inner.source(),
+            Error::InvalidArgumentException(inner) => inner.source(),
+            Error::InvalidCommentOperationException(inner) => inner.source(),
+            Error::InvalidOperationException(inner) => inner.source(),
+            Error::InvalidPasswordException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ProhibitedStateException(inner) => inner.source(),
+            Error::RequestedEntityTooLargeException(inner) => inner.source(),
+            Error::ResourceAlreadyCheckedOutException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::StorageLimitExceededException(inner) => inner.source(),
+            Error::StorageLimitWillExceedException(inner) => inner.source(),
+            Error::TooManyLabelsException(inner) => inner.source(),
+            Error::TooManySubscriptionsException(inner) => inner.source(),
+            Error::UnauthorizedOperationException(inner) => inner.source(),
+            Error::UnauthorizedResourceAccessException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

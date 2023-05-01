@@ -4,72 +4,50 @@ pub use crate::operation::update_decoder_manifest::_update_decoder_manifest_outp
 pub use crate::operation::update_decoder_manifest::_update_decoder_manifest_input::UpdateDecoderManifestInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDecoderManifest`.
-///
-/// <p> Updates a decoder manifest.</p>
+/// 
+/// <p> Updates a decoder manifest.</p> 
 /// <p>A decoder manifest can only be updated when the status is <code>DRAFT</code>. Only <code>ACTIVE</code> decoder manifests can be associated with vehicles.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDecoderManifestFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestInputBuilder,
-}
-impl UpdateDecoderManifestFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestInputBuilder
+            }
+impl UpdateDecoderManifestFluentBuilder  {
     /// Creates a new `UpdateDecoderManifest`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_decoder_manifest::UpdateDecoderManifest,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_decoder_manifest::UpdateDecoderManifestError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_decoder_manifest::UpdateDecoderManifestOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_decoder_manifest::UpdateDecoderManifestError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_decoder_manifest::UpdateDecoderManifest, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_decoder_manifest::UpdateDecoderManifestError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_decoder_manifest::UpdateDecoderManifestOutput, aws_smithy_http::result::SdkError<crate::operation::update_decoder_manifest::UpdateDecoderManifestError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The name of the decoder manifest to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -100,10 +78,7 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about decoding additional signals to add to the decoder manifest. </p>
-    pub fn set_signal_decoders_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SignalDecoder>>,
-    ) -> Self {
+    pub fn set_signal_decoders_to_add(mut self, input: std::option::Option<std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.inner = self.inner.set_signal_decoders_to_add(input);
         self
     }
@@ -117,10 +92,7 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of updated information about decoding signals to update in the decoder manifest. </p>
-    pub fn set_signal_decoders_to_update(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SignalDecoder>>,
-    ) -> Self {
+    pub fn set_signal_decoders_to_update(mut self, input: std::option::Option<std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.inner = self.inner.set_signal_decoders_to_update(input);
         self
     }
@@ -134,10 +106,7 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of signal decoders to remove from the decoder manifest. </p>
-    pub fn set_signal_decoders_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_signal_decoders_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_signal_decoders_to_remove(input);
         self
     }
@@ -151,10 +120,7 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about the network interfaces to add to the decoder manifest. </p>
-    pub fn set_network_interfaces_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces_to_add(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.inner = self.inner.set_network_interfaces_to_add(input);
         self
     }
@@ -168,10 +134,7 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about the network interfaces to update in the decoder manifest. </p>
-    pub fn set_network_interfaces_to_update(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces_to_update(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.inner = self.inner.set_network_interfaces_to_update(input);
         self
     }
@@ -185,10 +148,7 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of network interfaces to remove from the decoder manifest.</p>
-    pub fn set_network_interfaces_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interfaces_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_network_interfaces_to_remove(input);
         self
     }
@@ -203,3 +163,4 @@ impl UpdateDecoderManifestFluentBuilder {
         self
     }
 }
+

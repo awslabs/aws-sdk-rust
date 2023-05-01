@@ -640,7 +640,32 @@ impl From<crate::operation::update_certificate_authority::UpdateCertificateAutho
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CertificateMismatchException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::InvalidArgsException(inner) => inner.source(),
+            Error::InvalidArnException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidPolicyException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidStateException(inner) => inner.source(),
+            Error::InvalidTagException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::LockoutPreventedException(inner) => inner.source(),
+            Error::MalformedCsrException(inner) => inner.source(),
+            Error::MalformedCertificateException(inner) => inner.source(),
+            Error::PermissionAlreadyExistsException(inner) => inner.source(),
+            Error::RequestAlreadyProcessedException(inner) => inner.source(),
+            Error::RequestFailedException(inner) => inner.source(),
+            Error::RequestInProgressException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

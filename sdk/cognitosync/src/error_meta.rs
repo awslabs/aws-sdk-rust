@@ -483,7 +483,26 @@ impl From<crate::operation::update_records::UpdateRecordsError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AlreadyStreamedException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DuplicateRequestException(inner) => inner.source(),
+            Error::InternalErrorException(inner) => inner.source(),
+            Error::InvalidConfigurationException(inner) => inner.source(),
+            Error::InvalidLambdaFunctionOutputException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::LambdaThrottledException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::NotAuthorizedException(inner) => inner.source(),
+            Error::ResourceConflictException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

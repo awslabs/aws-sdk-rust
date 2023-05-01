@@ -681,7 +681,22 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AuthorizationErrorException(inner) => inner.source(),
+            Error::ConflictErrorException(inner) => inner.source(),
+            Error::HomeRegionNotSetException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::OperationNotPermittedException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServerInternalErrorException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

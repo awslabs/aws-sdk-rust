@@ -1237,7 +1237,31 @@ impl From<crate::operation::update_table_storage_optimizer::UpdateTableStorageOp
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AlreadyExistsException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::EntityNotFoundException(inner) => inner.source(),
+            Error::ExpiredException(inner) => inner.source(),
+            Error::GlueEncryptionException(inner) => inner.source(),
+            Error::InternalServiceException(inner) => inner.source(),
+            Error::InvalidInputException(inner) => inner.source(),
+            Error::OperationTimeoutException(inner) => inner.source(),
+            Error::PermissionTypeMismatchException(inner) => inner.source(),
+            Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::ResourceNumberLimitExceededException(inner) => inner.source(),
+            Error::StatisticsNotReadyYetException(inner) => inner.source(),
+            Error::ThrottledException(inner) => inner.source(),
+            Error::TransactionCanceledException(inner) => inner.source(),
+            Error::TransactionCommitInProgressException(inner) => inner.source(),
+            Error::TransactionCommittedException(inner) => inner.source(),
+            Error::WorkUnitsNotReadyYetException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

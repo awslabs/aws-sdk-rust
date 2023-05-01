@@ -264,7 +264,20 @@ impl From<crate::operation::list_tables::ListTablesError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ActiveStatementsExceededException(inner) => inner.source(),
+            Error::BatchExecuteStatementException(inner) => inner.source(),
+            Error::DatabaseConnectionException(inner) => inner.source(),
+            Error::ExecuteStatementException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

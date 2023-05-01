@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetInput {
+pub struct CreateFleetInput  {
     /// <p> The unique ID of the fleet to create. </p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateFleetInput {
 }
 impl CreateFleetInput {
     /// <p> The unique ID of the fleet to create. </p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p> A brief description of the fleet to create. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn signal_catalog_arn(&self) -> std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>Metadata that can be used to manage the fleet.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p> The unique ID of the fleet to create. </p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p> A brief description of the fleet to create. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p> A brief description of the fleet to create. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +75,8 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.signal_catalog_arn = input;
-        self
+    pub fn set_signal_catalog_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.signal_catalog_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -91,30 +85,28 @@ impl CreateFleetInputBuilder {
     /// <p>Metadata that can be used to manage the fleet.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the fleet.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_fleet::CreateFleetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_fleet::CreateFleetInput {
-            fleet_id: self.fleet_id,
-            description: self.description,
-            signal_catalog_arn: self.signal_catalog_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_fleet::CreateFleetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_fleet::CreateFleetInput {
+                fleet_id: self.fleet_id
+                ,
+                description: self.description
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

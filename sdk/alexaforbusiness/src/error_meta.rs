@@ -2063,7 +2063,28 @@ impl From<crate::operation::update_skill_group::UpdateSkillGroupError> for Error
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AlreadyExistsException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DeviceNotRegisteredException(inner) => inner.source(),
+            Error::InvalidCertificateAuthorityException(inner) => inner.source(),
+            Error::InvalidDeviceException(inner) => inner.source(),
+            Error::InvalidSecretsManagerResourceException(inner) => inner.source(),
+            Error::InvalidServiceLinkedRoleStateException(inner) => inner.source(),
+            Error::InvalidUserStatusException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::NameInUseException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::ResourceAssociatedException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::SkillNotLinkedException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

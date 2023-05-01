@@ -631,7 +631,40 @@ impl From<crate::operation::update_subnet_group::UpdateSubnetGroupError> for Err
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ClusterAlreadyExistsFault(inner) => inner.source(),
+            Error::ClusterNotFoundFault(inner) => inner.source(),
+            Error::ClusterQuotaForCustomerExceededFault(inner) => inner.source(),
+            Error::InsufficientClusterCapacityFault(inner) => inner.source(),
+            Error::InvalidArnFault(inner) => inner.source(),
+            Error::InvalidClusterStateFault(inner) => inner.source(),
+            Error::InvalidParameterCombinationException(inner) => inner.source(),
+            Error::InvalidParameterGroupStateFault(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidSubnet(inner) => inner.source(),
+            Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
+            Error::NodeNotFoundFault(inner) => inner.source(),
+            Error::NodeQuotaForClusterExceededFault(inner) => inner.source(),
+            Error::NodeQuotaForCustomerExceededFault(inner) => inner.source(),
+            Error::ParameterGroupAlreadyExistsFault(inner) => inner.source(),
+            Error::ParameterGroupNotFoundFault(inner) => inner.source(),
+            Error::ParameterGroupQuotaExceededFault(inner) => inner.source(),
+            Error::ServiceLinkedRoleNotFoundFault(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::SubnetGroupAlreadyExistsFault(inner) => inner.source(),
+            Error::SubnetGroupInUseFault(inner) => inner.source(),
+            Error::SubnetGroupNotFoundFault(inner) => inner.source(),
+            Error::SubnetGroupQuotaExceededFault(inner) => inner.source(),
+            Error::SubnetInUse(inner) => inner.source(),
+            Error::SubnetQuotaExceededFault(inner) => inner.source(),
+            Error::TagNotFoundFault(inner) => inner.source(),
+            Error::TagQuotaPerResourceExceeded(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

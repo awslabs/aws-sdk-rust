@@ -3,7 +3,7 @@
 /// <p>A signal that represents static information about the vehicle, such as engine type or manufacturing date.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -35,23 +35,23 @@ pub struct Attribute {
 }
 impl Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>The specified data type of the attribute. </p>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::NodeDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::types::NodeDataType> {
         self.data_type.as_ref()
     }
     /// <p>A brief description of the attribute.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit for the attribute.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>The specified possible minimum value of the attribute.</p>
@@ -64,11 +64,11 @@ impl Attribute {
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    pub fn assigned_value(&self) -> std::option::Option<&str> {
+    pub fn assigned_value(&self) -> std::option::Option<& str> {
         self.assigned_value.as_deref()
     }
     /// <p>The default value of the attribute.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
@@ -100,12 +100,8 @@ impl AttributeBuilder {
         self
     }
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn set_fully_qualified_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.fully_qualified_name = input;
-        self
+    pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.fully_qualified_name = input; self
     }
     /// <p>The specified data type of the attribute. </p>
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
@@ -114,8 +110,7 @@ impl AttributeBuilder {
     }
     /// <p>The specified data type of the attribute. </p>
     pub fn set_data_type(mut self, input: std::option::Option<crate::types::NodeDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>A brief description of the attribute.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +119,7 @@ impl AttributeBuilder {
     }
     /// <p>A brief description of the attribute.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The scientific unit for the attribute.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +128,7 @@ impl AttributeBuilder {
     }
     /// <p>The scientific unit for the attribute.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// Appends an item to `allowed_values`.
     ///
@@ -144,17 +137,13 @@ impl AttributeBuilder {
     /// <p>A list of possible values an attribute can be assigned.</p>
     pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = Some(v);
+                        self
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.allowed_values = input; self
     }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn min(mut self, input: f64) -> Self {
@@ -163,8 +152,7 @@ impl AttributeBuilder {
     }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The specified possible maximum value of the attribute.</p>
     pub fn max(mut self, input: f64) -> Self {
@@ -173,8 +161,7 @@ impl AttributeBuilder {
     }
     /// <p>The specified possible maximum value of the attribute.</p>
     pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
@@ -185,8 +172,7 @@ impl AttributeBuilder {
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
     pub fn set_assigned_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assigned_value = input;
-        self
+        self.assigned_value = input; self
     }
     /// <p>The default value of the attribute.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,21 +181,30 @@ impl AttributeBuilder {
     }
     /// <p>The default value of the attribute.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
         crate::types::Attribute {
-            fully_qualified_name: self.fully_qualified_name,
-            data_type: self.data_type,
-            description: self.description,
-            unit: self.unit,
-            allowed_values: self.allowed_values,
-            min: self.min,
-            max: self.max,
-            assigned_value: self.assigned_value,
-            default_value: self.default_value,
+            fully_qualified_name: self.fully_qualified_name
+            ,
+            data_type: self.data_type
+            ,
+            description: self.description
+            ,
+            unit: self.unit
+            ,
+            allowed_values: self.allowed_values
+            ,
+            min: self.min
+            ,
+            max: self.max
+            ,
+            assigned_value: self.assigned_value
+            ,
+            default_value: self.default_value
+            ,
         }
     }
 }
+

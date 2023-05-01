@@ -244,3 +244,4 @@ pub mod builders;
 
 /// Error types that AWS IoT FleetWise can respond with.
 pub mod error;
+

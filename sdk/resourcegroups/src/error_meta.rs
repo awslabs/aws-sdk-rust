@@ -499,7 +499,20 @@ impl From<crate::operation::update_group_query::UpdateGroupQueryError> for Error
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BadRequestException(inner) => inner.source(),
+            Error::ForbiddenException(inner) => inner.source(),
+            Error::InternalServerErrorException(inner) => inner.source(),
+            Error::MethodNotAllowedException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

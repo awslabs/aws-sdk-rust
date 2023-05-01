@@ -1506,7 +1506,45 @@ impl From<crate::operation::update_time_to_live::UpdateTimeToLiveError> for Erro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BackupInUseException(inner) => inner.source(),
+            Error::BackupNotFoundException(inner) => inner.source(),
+            Error::ConditionalCheckFailedException(inner) => inner.source(),
+            Error::ContinuousBackupsUnavailableException(inner) => inner.source(),
+            Error::DuplicateItemException(inner) => inner.source(),
+            Error::ExportConflictException(inner) => inner.source(),
+            Error::ExportNotFoundException(inner) => inner.source(),
+            Error::GlobalTableAlreadyExistsException(inner) => inner.source(),
+            Error::GlobalTableNotFoundException(inner) => inner.source(),
+            Error::IdempotentParameterMismatchException(inner) => inner.source(),
+            Error::ImportConflictException(inner) => inner.source(),
+            Error::ImportNotFoundException(inner) => inner.source(),
+            Error::IndexNotFoundException(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::InvalidEndpointException(inner) => inner.source(),
+            Error::InvalidExportTimeException(inner) => inner.source(),
+            Error::InvalidRestoreTimeException(inner) => inner.source(),
+            Error::ItemCollectionSizeLimitExceededException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::PointInTimeRecoveryUnavailableException(inner) => inner.source(),
+            Error::ProvisionedThroughputExceededException(inner) => inner.source(),
+            Error::ReplicaAlreadyExistsException(inner) => inner.source(),
+            Error::ReplicaNotFoundException(inner) => inner.source(),
+            Error::RequestLimitExceeded(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TableAlreadyExistsException(inner) => inner.source(),
+            Error::TableInUseException(inner) => inner.source(),
+            Error::TableNotFoundException(inner) => inner.source(),
+            Error::TransactionCanceledException(inner) => inner.source(),
+            Error::TransactionConflictException(inner) => inner.source(),
+            Error::TransactionInProgressException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

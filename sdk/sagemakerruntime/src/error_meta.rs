@@ -80,7 +80,19 @@ impl From<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> for
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::InternalDependencyException(inner) => inner.source(),
+            Error::InternalFailure(inner) => inner.source(),
+            Error::ModelError(inner) => inner.source(),
+            Error::ModelNotReadyException(inner) => inner.source(),
+            Error::ServiceUnavailable(inner) => inner.source(),
+            Error::ValidationError(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

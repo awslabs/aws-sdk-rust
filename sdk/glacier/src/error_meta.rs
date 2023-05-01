@@ -831,7 +831,21 @@ impl From<crate::operation::upload_multipart_part::UploadMultipartPartError> for
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::InsufficientCapacityException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MissingParameterValueException(inner) => inner.source(),
+            Error::PolicyEnforcedException(inner) => inner.source(),
+            Error::RequestTimeoutException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

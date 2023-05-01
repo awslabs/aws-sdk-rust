@@ -1171,7 +1171,45 @@ impl From<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPho
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AuthorizationErrorException(inner) => inner.source(),
+            Error::BatchEntryIdsNotDistinctException(inner) => inner.source(),
+            Error::BatchRequestTooLongException(inner) => inner.source(),
+            Error::ConcurrentAccessException(inner) => inner.source(),
+            Error::EmptyBatchRequestException(inner) => inner.source(),
+            Error::EndpointDisabledException(inner) => inner.source(),
+            Error::FilterPolicyLimitExceededException(inner) => inner.source(),
+            Error::InternalErrorException(inner) => inner.source(),
+            Error::InvalidBatchEntryIdException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidSecurityException(inner) => inner.source(),
+            Error::KmsAccessDeniedException(inner) => inner.source(),
+            Error::KmsDisabledException(inner) => inner.source(),
+            Error::KmsInvalidStateException(inner) => inner.source(),
+            Error::KmsNotFoundException(inner) => inner.source(),
+            Error::KmsOptInRequired(inner) => inner.source(),
+            Error::KmsThrottlingException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::OptedOutException(inner) => inner.source(),
+            Error::PlatformApplicationDisabledException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::StaleTagException(inner) => inner.source(),
+            Error::SubscriptionLimitExceededException(inner) => inner.source(),
+            Error::TagLimitExceededException(inner) => inner.source(),
+            Error::TagPolicyException(inner) => inner.source(),
+            Error::ThrottledException(inner) => inner.source(),
+            Error::TooManyEntriesInBatchRequestException(inner) => inner.source(),
+            Error::TopicLimitExceededException(inner) => inner.source(),
+            Error::UserErrorException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::VerificationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

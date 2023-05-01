@@ -825,7 +825,20 @@ impl From<crate::operation::view_billing::ViewBillingError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DnssecLimitExceeded(inner) => inner.source(),
+            Error::DomainLimitExceeded(inner) => inner.source(),
+            Error::DuplicateRequest(inner) => inner.source(),
+            Error::InvalidInput(inner) => inner.source(),
+            Error::OperationLimitExceeded(inner) => inner.source(),
+            Error::TldRulesViolation(inner) => inner.source(),
+            Error::UnsupportedTld(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

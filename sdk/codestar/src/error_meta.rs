@@ -475,7 +475,26 @@ impl From<crate::operation::update_user_profile::UpdateUserProfileError> for Err
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidServiceRoleException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ProjectAlreadyExistsException(inner) => inner.source(),
+            Error::ProjectConfigurationException(inner) => inner.source(),
+            Error::ProjectCreationFailedException(inner) => inner.source(),
+            Error::ProjectNotFoundException(inner) => inner.source(),
+            Error::TeamMemberAlreadyAssociatedException(inner) => inner.source(),
+            Error::TeamMemberNotFoundException(inner) => inner.source(),
+            Error::UserProfileAlreadyExistsException(inner) => inner.source(),
+            Error::UserProfileNotFoundException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

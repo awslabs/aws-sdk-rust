@@ -1110,7 +1110,46 @@ impl From<crate::operation::upload_layer_part::UploadLayerPartError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::EmptyUploadException(inner) => inner.source(),
+            Error::ImageAlreadyExistsException(inner) => inner.source(),
+            Error::ImageDigestDoesNotMatchException(inner) => inner.source(),
+            Error::ImageNotFoundException(inner) => inner.source(),
+            Error::ImageTagAlreadyExistsException(inner) => inner.source(),
+            Error::InvalidLayerException(inner) => inner.source(),
+            Error::InvalidLayerPartException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidTagParameterException(inner) => inner.source(),
+            Error::KmsException(inner) => inner.source(),
+            Error::LayerAlreadyExistsException(inner) => inner.source(),
+            Error::LayerInaccessibleException(inner) => inner.source(),
+            Error::LayerPartTooSmallException(inner) => inner.source(),
+            Error::LayersNotFoundException(inner) => inner.source(),
+            Error::LifecyclePolicyNotFoundException(inner) => inner.source(),
+            Error::LifecyclePolicyPreviewInProgressException(inner) => inner.source(),
+            Error::LifecyclePolicyPreviewNotFoundException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::PullThroughCacheRuleAlreadyExistsException(inner) => inner.source(),
+            Error::PullThroughCacheRuleNotFoundException(inner) => inner.source(),
+            Error::ReferencedImagesNotFoundException(inner) => inner.source(),
+            Error::RegistryPolicyNotFoundException(inner) => inner.source(),
+            Error::RepositoryAlreadyExistsException(inner) => inner.source(),
+            Error::RepositoryNotEmptyException(inner) => inner.source(),
+            Error::RepositoryNotFoundException(inner) => inner.source(),
+            Error::RepositoryPolicyNotFoundException(inner) => inner.source(),
+            Error::ScanNotFoundException(inner) => inner.source(),
+            Error::ServerException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnsupportedImageTypeException(inner) => inner.source(),
+            Error::UnsupportedUpstreamRegistryException(inner) => inner.source(),
+            Error::UploadNotFoundException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

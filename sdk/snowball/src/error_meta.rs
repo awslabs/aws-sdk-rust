@@ -627,7 +627,24 @@ impl From<crate::operation::update_long_term_pricing::UpdateLongTermPricingError
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ClusterLimitExceededException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::Ec2RequestFailedException(inner) => inner.source(),
+            Error::InvalidAddressException(inner) => inner.source(),
+            Error::InvalidInputCombinationException(inner) => inner.source(),
+            Error::InvalidJobStateException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidResourceException(inner) => inner.source(),
+            Error::KmsRequestFailedException(inner) => inner.source(),
+            Error::ReturnShippingLabelAlreadyExistsException(inner) => inner.source(),
+            Error::UnsupportedAddressException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

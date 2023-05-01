@@ -2046,7 +2046,35 @@ impl From<crate::operation::update_resource::UpdateResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DirectoryInUseException(inner) => inner.source(),
+            Error::DirectoryServiceAuthenticationFailedException(inner) => inner.source(),
+            Error::DirectoryUnavailableException(inner) => inner.source(),
+            Error::EmailAddressInUseException(inner) => inner.source(),
+            Error::EntityAlreadyRegisteredException(inner) => inner.source(),
+            Error::EntityNotFoundException(inner) => inner.source(),
+            Error::EntityStateException(inner) => inner.source(),
+            Error::InvalidConfigurationException(inner) => inner.source(),
+            Error::InvalidCustomSesConfigurationException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidPasswordException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MailDomainInUseException(inner) => inner.source(),
+            Error::MailDomainNotFoundException(inner) => inner.source(),
+            Error::MailDomainStateException(inner) => inner.source(),
+            Error::NameAvailabilityException(inner) => inner.source(),
+            Error::OrganizationNotFoundException(inner) => inner.source(),
+            Error::OrganizationStateException(inner) => inner.source(),
+            Error::ReservedNameException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnsupportedOperationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

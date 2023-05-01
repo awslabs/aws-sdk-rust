@@ -221,7 +221,21 @@ impl From<crate::operation::get_session_token::GetSessionTokenError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ExpiredTokenException(inner) => inner.source(),
+            Error::IdpCommunicationErrorException(inner) => inner.source(),
+            Error::IdpRejectedClaimException(inner) => inner.source(),
+            Error::InvalidAuthorizationMessageException(inner) => inner.source(),
+            Error::InvalidIdentityTokenException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::PackedPolicyTooLargeException(inner) => inner.source(),
+            Error::RegionDisabledException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

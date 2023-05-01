@@ -491,7 +491,29 @@ impl From<crate::operation::untag_queue::UntagQueueError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BatchEntryIdsNotDistinct(inner) => inner.source(),
+            Error::BatchRequestTooLong(inner) => inner.source(),
+            Error::EmptyBatchRequest(inner) => inner.source(),
+            Error::InvalidAttributeName(inner) => inner.source(),
+            Error::InvalidBatchEntryId(inner) => inner.source(),
+            Error::InvalidIdFormat(inner) => inner.source(),
+            Error::InvalidMessageContents(inner) => inner.source(),
+            Error::MessageNotInflight(inner) => inner.source(),
+            Error::OverLimit(inner) => inner.source(),
+            Error::PurgeQueueInProgress(inner) => inner.source(),
+            Error::QueueDeletedRecently(inner) => inner.source(),
+            Error::QueueDoesNotExist(inner) => inner.source(),
+            Error::QueueNameExists(inner) => inner.source(),
+            Error::ReceiptHandleIsInvalid(inner) => inner.source(),
+            Error::TooManyEntriesInBatchRequest(inner) => inner.source(),
+            Error::UnsupportedOperation(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

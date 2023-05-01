@@ -75,7 +75,17 @@ impl From<crate::operation::put_raw_message_content::PutRawMessageContentError> 
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::InvalidContentLocation(inner) => inner.source(),
+            Error::MessageFrozen(inner) => inner.source(),
+            Error::MessageRejected(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

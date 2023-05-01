@@ -698,7 +698,38 @@ impl From<crate::operation::update_state_machine::UpdateStateMachineError> for E
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ActivityDoesNotExist(inner) => inner.source(),
+            Error::ActivityLimitExceeded(inner) => inner.source(),
+            Error::ActivityWorkerLimitExceeded(inner) => inner.source(),
+            Error::ExecutionAlreadyExists(inner) => inner.source(),
+            Error::ExecutionDoesNotExist(inner) => inner.source(),
+            Error::ExecutionLimitExceeded(inner) => inner.source(),
+            Error::InvalidArn(inner) => inner.source(),
+            Error::InvalidDefinition(inner) => inner.source(),
+            Error::InvalidExecutionInput(inner) => inner.source(),
+            Error::InvalidLoggingConfiguration(inner) => inner.source(),
+            Error::InvalidName(inner) => inner.source(),
+            Error::InvalidOutput(inner) => inner.source(),
+            Error::InvalidToken(inner) => inner.source(),
+            Error::InvalidTracingConfiguration(inner) => inner.source(),
+            Error::MissingRequiredParameter(inner) => inner.source(),
+            Error::ResourceNotFound(inner) => inner.source(),
+            Error::StateMachineAlreadyExists(inner) => inner.source(),
+            Error::StateMachineDeleting(inner) => inner.source(),
+            Error::StateMachineDoesNotExist(inner) => inner.source(),
+            Error::StateMachineLimitExceeded(inner) => inner.source(),
+            Error::StateMachineTypeNotSupported(inner) => inner.source(),
+            Error::TaskDoesNotExist(inner) => inner.source(),
+            Error::TaskTimedOut(inner) => inner.source(),
+            Error::TooManyTags(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

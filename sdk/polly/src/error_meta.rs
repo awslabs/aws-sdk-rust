@@ -298,7 +298,34 @@ impl From<crate::operation::synthesize_speech::SynthesizeSpeechError> for Error 
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::EngineNotSupportedException(inner) => inner.source(),
+            Error::InvalidLexiconException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidS3BucketException(inner) => inner.source(),
+            Error::InvalidS3KeyException(inner) => inner.source(),
+            Error::InvalidSampleRateException(inner) => inner.source(),
+            Error::InvalidSnsTopicArnException(inner) => inner.source(),
+            Error::InvalidSsmlException(inner) => inner.source(),
+            Error::InvalidTaskIdException(inner) => inner.source(),
+            Error::LanguageNotSupportedException(inner) => inner.source(),
+            Error::LexiconNotFoundException(inner) => inner.source(),
+            Error::LexiconSizeExceededException(inner) => inner.source(),
+            Error::MarksNotSupportedForFormatException(inner) => inner.source(),
+            Error::MaxLexemeLengthExceededException(inner) => inner.source(),
+            Error::MaxLexiconsNumberExceededException(inner) => inner.source(),
+            Error::ServiceFailureException(inner) => inner.source(),
+            Error::SsmlMarksNotSupportedForTextTypeException(inner) => inner.source(),
+            Error::SynthesisTaskNotFoundException(inner) => inner.source(),
+            Error::TextLengthExceededException(inner) => inner.source(),
+            Error::UnsupportedPlsAlphabetException(inner) => inner.source(),
+            Error::UnsupportedPlsLanguageException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

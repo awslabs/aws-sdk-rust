@@ -907,7 +907,26 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DashboardInvalidInputError(inner) => inner.source(),
+            Error::DashboardNotFoundError(inner) => inner.source(),
+            Error::InternalServiceFault(inner) => inner.source(),
+            Error::InvalidFormatFault(inner) => inner.source(),
+            Error::InvalidNextToken(inner) => inner.source(),
+            Error::InvalidParameterCombinationException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::LimitExceededFault(inner) => inner.source(),
+            Error::MissingRequiredParameterException(inner) => inner.source(),
+            Error::ResourceNotFound(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

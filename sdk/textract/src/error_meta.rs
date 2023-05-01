@@ -440,7 +440,27 @@ impl From<crate::operation::start_lending_analysis::StartLendingAnalysisError> f
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::BadDocumentException(inner) => inner.source(),
+            Error::DocumentTooLargeException(inner) => inner.source(),
+            Error::HumanLoopQuotaExceededException(inner) => inner.source(),
+            Error::IdempotentParameterMismatchException(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::InvalidJobIdException(inner) => inner.source(),
+            Error::InvalidKmsKeyException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidS3ObjectException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ProvisionedThroughputExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::UnsupportedDocumentException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

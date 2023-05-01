@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDecoderManifestOutput {
+pub struct DeleteDecoderManifestOutput  {
     /// <p>The name of the deleted decoder manifest.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct DeleteDecoderManifestOutput {
 }
 impl DeleteDecoderManifestOutput {
     /// <p>The name of the deleted decoder manifest.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted decoder manifest.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDecoderManifestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteDecoderManifestOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDecoderManifestOutput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestOutputBuilder {
         crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl DeleteDecoderManifestOutputBuilder {
     }
     /// <p>The name of the deleted decoder manifest.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted decoder manifest.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,24 +58,26 @@ impl DeleteDecoderManifestOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted decoder manifest.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteDecoderManifestOutput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput).
     pub fn build(self) -> crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput {
         crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

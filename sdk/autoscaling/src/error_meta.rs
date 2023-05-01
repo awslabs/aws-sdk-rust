@@ -1468,7 +1468,23 @@ impl From<crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupErr
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ActiveInstanceRefreshNotFoundFault(inner) => inner.source(),
+            Error::AlreadyExistsFault(inner) => inner.source(),
+            Error::InstanceRefreshInProgressFault(inner) => inner.source(),
+            Error::InvalidNextToken(inner) => inner.source(),
+            Error::IrreversibleInstanceRefreshFault(inner) => inner.source(),
+            Error::LimitExceededFault(inner) => inner.source(),
+            Error::ResourceContentionFault(inner) => inner.source(),
+            Error::ResourceInUseFault(inner) => inner.source(),
+            Error::ScalingActivityInProgressFault(inner) => inner.source(),
+            Error::ServiceLinkedRoleFailure(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

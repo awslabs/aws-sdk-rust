@@ -413,7 +413,19 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CloudHsmAccessDeniedException(inner) => inner.source(),
+            Error::CloudHsmInternalFailureException(inner) => inner.source(),
+            Error::CloudHsmInvalidRequestException(inner) => inner.source(),
+            Error::CloudHsmResourceNotFoundException(inner) => inner.source(),
+            Error::CloudHsmServiceException(inner) => inner.source(),
+            Error::CloudHsmTagException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

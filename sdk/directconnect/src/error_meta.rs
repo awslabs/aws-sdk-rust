@@ -1433,7 +1433,17 @@ impl From<crate::operation::update_virtual_interface_attributes::UpdateVirtualIn
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DirectConnectClientException(inner) => inner.source(),
+            Error::DirectConnectServerException(inner) => inner.source(),
+            Error::DuplicateTagKeysException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

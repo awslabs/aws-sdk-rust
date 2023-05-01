@@ -921,7 +921,25 @@ impl From<crate::operation::update_replication_job::UpdateReplicationJobError> f
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DryRunOperationException(inner) => inner.source(),
+            Error::InternalError(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::MissingRequiredParameterException(inner) => inner.source(),
+            Error::NoConnectorsAvailableException(inner) => inner.source(),
+            Error::OperationNotPermittedException(inner) => inner.source(),
+            Error::ReplicationJobAlreadyExistsException(inner) => inner.source(),
+            Error::ReplicationJobNotFoundException(inner) => inner.source(),
+            Error::ReplicationRunLimitExceededException(inner) => inner.source(),
+            Error::ServerCannotBeReplicatedException(inner) => inner.source(),
+            Error::TemporarilyUnavailableException(inner) => inner.source(),
+            Error::UnauthorizedOperationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

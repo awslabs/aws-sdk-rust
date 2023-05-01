@@ -1653,7 +1653,38 @@ impl From<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscrip
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedFault(inner) => inner.source(),
+            Error::CollectorNotFoundFault(inner) => inner.source(),
+            Error::InsufficientResourceCapacityFault(inner) => inner.source(),
+            Error::InvalidCertificateFault(inner) => inner.source(),
+            Error::InvalidOperationFault(inner) => inner.source(),
+            Error::InvalidResourceStateFault(inner) => inner.source(),
+            Error::InvalidSubnet(inner) => inner.source(),
+            Error::KmsAccessDeniedFault(inner) => inner.source(),
+            Error::KmsDisabledFault(inner) => inner.source(),
+            Error::KmsFault(inner) => inner.source(),
+            Error::KmsInvalidStateFault(inner) => inner.source(),
+            Error::KmsKeyNotAccessibleFault(inner) => inner.source(),
+            Error::KmsNotFoundFault(inner) => inner.source(),
+            Error::KmsThrottlingFault(inner) => inner.source(),
+            Error::ReplicationSubnetGroupDoesNotCoverEnoughAZs(inner) => inner.source(),
+            Error::ResourceAlreadyExistsFault(inner) => inner.source(),
+            Error::ResourceNotFoundFault(inner) => inner.source(),
+            Error::ResourceQuotaExceededFault(inner) => inner.source(),
+            Error::S3AccessDeniedFault(inner) => inner.source(),
+            Error::S3ResourceNotFoundFault(inner) => inner.source(),
+            Error::SnsInvalidTopicFault(inner) => inner.source(),
+            Error::SnsNoAuthorizationFault(inner) => inner.source(),
+            Error::StorageQuotaExceededFault(inner) => inner.source(),
+            Error::SubnetAlreadyInUse(inner) => inner.source(),
+            Error::UpgradeDependencyFailureFault(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

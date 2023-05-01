@@ -1750,7 +1750,50 @@ impl From<crate::operation::update_function_url_config::UpdateFunctionUrlConfigE
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CodeSigningConfigNotFoundException(inner) => inner.source(),
+            Error::CodeStorageExceededException(inner) => inner.source(),
+            Error::CodeVerificationFailedException(inner) => inner.source(),
+            Error::Ec2AccessDeniedException(inner) => inner.source(),
+            Error::Ec2ThrottledException(inner) => inner.source(),
+            Error::Ec2UnexpectedException(inner) => inner.source(),
+            Error::EfsioException(inner) => inner.source(),
+            Error::EfsMountConnectivityException(inner) => inner.source(),
+            Error::EfsMountFailureException(inner) => inner.source(),
+            Error::EfsMountTimeoutException(inner) => inner.source(),
+            Error::EniLimitReachedException(inner) => inner.source(),
+            Error::InvalidCodeSignatureException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidRequestContentException(inner) => inner.source(),
+            Error::InvalidRuntimeException(inner) => inner.source(),
+            Error::InvalidSecurityGroupIdException(inner) => inner.source(),
+            Error::InvalidSubnetIdException(inner) => inner.source(),
+            Error::InvalidZipFileException(inner) => inner.source(),
+            Error::KmsAccessDeniedException(inner) => inner.source(),
+            Error::KmsDisabledException(inner) => inner.source(),
+            Error::KmsInvalidStateException(inner) => inner.source(),
+            Error::KmsNotFoundException(inner) => inner.source(),
+            Error::PolicyLengthExceededException(inner) => inner.source(),
+            Error::PreconditionFailedException(inner) => inner.source(),
+            Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.source(),
+            Error::RequestTooLargeException(inner) => inner.source(),
+            Error::ResourceConflictException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::SnapStartException(inner) => inner.source(),
+            Error::SnapStartNotReadyException(inner) => inner.source(),
+            Error::SnapStartTimeoutException(inner) => inner.source(),
+            Error::SubnetIpAddressLimitReachedException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::UnsupportedMediaTypeException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

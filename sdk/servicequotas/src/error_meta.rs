@@ -574,7 +574,30 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AwsServiceAccessNotEnabledException(inner) => inner.source(),
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::DependencyAccessDeniedException(inner) => inner.source(),
+            Error::IllegalArgumentException(inner) => inner.source(),
+            Error::InvalidPaginationTokenException(inner) => inner.source(),
+            Error::InvalidResourceStateException(inner) => inner.source(),
+            Error::NoAvailableOrganizationException(inner) => inner.source(),
+            Error::NoSuchResourceException(inner) => inner.source(),
+            Error::OrganizationNotInAllFeaturesModeException(inner) => inner.source(),
+            Error::QuotaExceededException(inner) => inner.source(),
+            Error::ResourceAlreadyExistsException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::ServiceQuotaTemplateNotInUseException(inner) => inner.source(),
+            Error::TagPolicyViolationException(inner) => inner.source(),
+            Error::TemplatesNotAvailableInRegionException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

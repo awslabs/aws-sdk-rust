@@ -1155,7 +1155,48 @@ impl From<crate::operation::update_volume::UpdateVolumeError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ActiveDirectoryError(inner) => inner.source(),
+            Error::BackupBeingCopied(inner) => inner.source(),
+            Error::BackupInProgress(inner) => inner.source(),
+            Error::BackupNotFound(inner) => inner.source(),
+            Error::BackupRestoring(inner) => inner.source(),
+            Error::BadRequest(inner) => inner.source(),
+            Error::DataRepositoryAssociationNotFound(inner) => inner.source(),
+            Error::DataRepositoryTaskEnded(inner) => inner.source(),
+            Error::DataRepositoryTaskExecuting(inner) => inner.source(),
+            Error::DataRepositoryTaskNotFound(inner) => inner.source(),
+            Error::FileCacheNotFound(inner) => inner.source(),
+            Error::FileSystemNotFound(inner) => inner.source(),
+            Error::IncompatibleParameterError(inner) => inner.source(),
+            Error::IncompatibleRegionForMultiAz(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::InvalidDataRepositoryType(inner) => inner.source(),
+            Error::InvalidDestinationKmsKey(inner) => inner.source(),
+            Error::InvalidExportPath(inner) => inner.source(),
+            Error::InvalidImportPath(inner) => inner.source(),
+            Error::InvalidNetworkSettings(inner) => inner.source(),
+            Error::InvalidPerUnitStorageThroughput(inner) => inner.source(),
+            Error::InvalidRegion(inner) => inner.source(),
+            Error::InvalidSourceKmsKey(inner) => inner.source(),
+            Error::MissingFileCacheConfiguration(inner) => inner.source(),
+            Error::MissingFileSystemConfiguration(inner) => inner.source(),
+            Error::MissingVolumeConfiguration(inner) => inner.source(),
+            Error::NotServiceResourceError(inner) => inner.source(),
+            Error::ResourceDoesNotSupportTagging(inner) => inner.source(),
+            Error::ResourceNotFound(inner) => inner.source(),
+            Error::ServiceLimitExceeded(inner) => inner.source(),
+            Error::SnapshotNotFound(inner) => inner.source(),
+            Error::SourceBackupUnavailable(inner) => inner.source(),
+            Error::StorageVirtualMachineNotFound(inner) => inner.source(),
+            Error::UnsupportedOperation(inner) => inner.source(),
+            Error::VolumeNotFound(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

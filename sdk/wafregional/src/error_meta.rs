@@ -2140,7 +2140,33 @@ impl From<crate::operation::update_xss_match_set::UpdateXssMatchSetError> for Er
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::WafBadRequestException(inner) => inner.source(),
+            Error::WafDisallowedNameException(inner) => inner.source(),
+            Error::WafEntityMigrationException(inner) => inner.source(),
+            Error::WafInternalErrorException(inner) => inner.source(),
+            Error::WafInvalidAccountException(inner) => inner.source(),
+            Error::WafInvalidOperationException(inner) => inner.source(),
+            Error::WafInvalidParameterException(inner) => inner.source(),
+            Error::WafInvalidPermissionPolicyException(inner) => inner.source(),
+            Error::WafInvalidRegexPatternException(inner) => inner.source(),
+            Error::WafLimitsExceededException(inner) => inner.source(),
+            Error::WafNonEmptyEntityException(inner) => inner.source(),
+            Error::WafNonexistentContainerException(inner) => inner.source(),
+            Error::WafNonexistentItemException(inner) => inner.source(),
+            Error::WafReferencedItemException(inner) => inner.source(),
+            Error::WafServiceLinkedRoleErrorException(inner) => inner.source(),
+            Error::WafStaleDataException(inner) => inner.source(),
+            Error::WafSubscriptionNotFoundException(inner) => inner.source(),
+            Error::WafTagOperationException(inner) => inner.source(),
+            Error::WafTagOperationInternalErrorException(inner) => inner.source(),
+            Error::WafUnavailableEntityException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -331,7 +331,34 @@ impl From<crate::operation::update_resource::UpdateResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AlreadyExistsException(inner) => inner.source(),
+            Error::ClientTokenConflictException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConcurrentOperationException(inner) => inner.source(),
+            Error::GeneralServiceException(inner) => inner.source(),
+            Error::HandlerFailureException(inner) => inner.source(),
+            Error::HandlerInternalFailureException(inner) => inner.source(),
+            Error::InvalidCredentialsException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::NetworkFailureException(inner) => inner.source(),
+            Error::NotStabilizedException(inner) => inner.source(),
+            Error::NotUpdatableException(inner) => inner.source(),
+            Error::PrivateTypeException(inner) => inner.source(),
+            Error::RequestTokenNotFoundException(inner) => inner.source(),
+            Error::ResourceConflictException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceInternalErrorException(inner) => inner.source(),
+            Error::ServiceLimitExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::TypeNotFoundException(inner) => inner.source(),
+            Error::UnsupportedActionException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

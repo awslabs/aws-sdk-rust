@@ -1346,7 +1346,25 @@ impl From<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AddFlowOutputs420Exception(inner) => inner.source(),
+            Error::BadRequestException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::CreateBridge420Exception(inner) => inner.source(),
+            Error::CreateFlow420Exception(inner) => inner.source(),
+            Error::CreateGateway420Exception(inner) => inner.source(),
+            Error::ForbiddenException(inner) => inner.source(),
+            Error::GrantFlowEntitlements420Exception(inner) => inner.source(),
+            Error::InternalServerErrorException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

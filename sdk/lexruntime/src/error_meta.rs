@@ -187,7 +187,24 @@ impl From<crate::operation::put_session::PutSessionError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BadGatewayException(inner) => inner.source(),
+            Error::BadRequestException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::DependencyFailedException(inner) => inner.source(),
+            Error::InternalFailureException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::LoopDetectedException(inner) => inner.source(),
+            Error::NotAcceptableException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::RequestTimeoutException(inner) => inner.source(),
+            Error::UnsupportedMediaTypeException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

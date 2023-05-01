@@ -129,7 +129,18 @@ impl From<crate::operation::list_streams::ListStreamsError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ExpiredIteratorException(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TrimmedDataAccessException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

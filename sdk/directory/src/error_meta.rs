@@ -1837,7 +1837,50 @@ impl From<crate::operation::verify_trust::VerifyTrustError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AuthenticationFailedException(inner) => inner.source(),
+            Error::CertificateAlreadyExistsException(inner) => inner.source(),
+            Error::CertificateDoesNotExistException(inner) => inner.source(),
+            Error::CertificateInUseException(inner) => inner.source(),
+            Error::CertificateLimitExceededException(inner) => inner.source(),
+            Error::ClientException(inner) => inner.source(),
+            Error::DirectoryAlreadyInRegionException(inner) => inner.source(),
+            Error::DirectoryAlreadySharedException(inner) => inner.source(),
+            Error::DirectoryDoesNotExistException(inner) => inner.source(),
+            Error::DirectoryInDesiredStateException(inner) => inner.source(),
+            Error::DirectoryLimitExceededException(inner) => inner.source(),
+            Error::DirectoryNotSharedException(inner) => inner.source(),
+            Error::DirectoryUnavailableException(inner) => inner.source(),
+            Error::DomainControllerLimitExceededException(inner) => inner.source(),
+            Error::EntityAlreadyExistsException(inner) => inner.source(),
+            Error::EntityDoesNotExistException(inner) => inner.source(),
+            Error::IncompatibleSettingsException(inner) => inner.source(),
+            Error::InsufficientPermissionsException(inner) => inner.source(),
+            Error::InvalidCertificateException(inner) => inner.source(),
+            Error::InvalidClientAuthStatusException(inner) => inner.source(),
+            Error::InvalidLdapsStatusException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidPasswordException(inner) => inner.source(),
+            Error::InvalidTargetException(inner) => inner.source(),
+            Error::IpRouteLimitExceededException(inner) => inner.source(),
+            Error::NoAvailableCertificateException(inner) => inner.source(),
+            Error::OrganizationsException(inner) => inner.source(),
+            Error::RegionLimitExceededException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::ShareLimitExceededException(inner) => inner.source(),
+            Error::SnapshotLimitExceededException(inner) => inner.source(),
+            Error::TagLimitExceededException(inner) => inner.source(),
+            Error::UnsupportedOperationException(inner) => inner.source(),
+            Error::UnsupportedSettingsException(inner) => inner.source(),
+            Error::UserDoesNotExistException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

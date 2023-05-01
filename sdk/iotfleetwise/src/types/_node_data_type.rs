@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nodedatatype = unimplemented!();
 /// match nodedatatype {
@@ -55,22 +55,14 @@
 /// Specifically, when `nodedatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NodeDataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `NodeDataType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NodeDataType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
@@ -127,120 +119,91 @@ pub enum NodeDataType {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodeDataType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOOLEAN" => NodeDataType::Boolean,
-            "BOOLEAN_ARRAY" => NodeDataType::BooleanArray,
-            "DOUBLE" => NodeDataType::Double,
-            "DOUBLE_ARRAY" => NodeDataType::DoubleArray,
-            "FLOAT" => NodeDataType::Float,
-            "FLOAT_ARRAY" => NodeDataType::FloatArray,
-            "INT16" => NodeDataType::Int16,
-            "INT16_ARRAY" => NodeDataType::Int16Array,
-            "INT32" => NodeDataType::Int32,
-            "INT32_ARRAY" => NodeDataType::Int32Array,
-            "INT64" => NodeDataType::Int64,
-            "INT64_ARRAY" => NodeDataType::Int64Array,
-            "INT8" => NodeDataType::Int8,
-            "INT8_ARRAY" => NodeDataType::Int8Array,
-            "STRING" => NodeDataType::String,
-            "STRING_ARRAY" => NodeDataType::StringArray,
-            "UINT16" => NodeDataType::Uint16,
-            "UINT16_ARRAY" => NodeDataType::Uint16Array,
-            "UINT32" => NodeDataType::Uint32,
-            "UINT32_ARRAY" => NodeDataType::Uint32Array,
-            "UINT64" => NodeDataType::Uint64,
-            "UINT64_ARRAY" => NodeDataType::Uint64Array,
-            "UINT8" => NodeDataType::Uint8,
-            "UINT8_ARRAY" => NodeDataType::Uint8Array,
-            "UNIX_TIMESTAMP" => NodeDataType::UnixTimestamp,
-            "UNIX_TIMESTAMP_ARRAY" => NodeDataType::UnixTimestampArray,
-            "UNKNOWN" => NodeDataType::UnknownValue,
-            other => {
-                NodeDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BOOLEAN" => NodeDataType::Boolean,
+"BOOLEAN_ARRAY" => NodeDataType::BooleanArray,
+"DOUBLE" => NodeDataType::Double,
+"DOUBLE_ARRAY" => NodeDataType::DoubleArray,
+"FLOAT" => NodeDataType::Float,
+"FLOAT_ARRAY" => NodeDataType::FloatArray,
+"INT16" => NodeDataType::Int16,
+"INT16_ARRAY" => NodeDataType::Int16Array,
+"INT32" => NodeDataType::Int32,
+"INT32_ARRAY" => NodeDataType::Int32Array,
+"INT64" => NodeDataType::Int64,
+"INT64_ARRAY" => NodeDataType::Int64Array,
+"INT8" => NodeDataType::Int8,
+"INT8_ARRAY" => NodeDataType::Int8Array,
+"STRING" => NodeDataType::String,
+"STRING_ARRAY" => NodeDataType::StringArray,
+"UINT16" => NodeDataType::Uint16,
+"UINT16_ARRAY" => NodeDataType::Uint16Array,
+"UINT32" => NodeDataType::Uint32,
+"UINT32_ARRAY" => NodeDataType::Uint32Array,
+"UINT64" => NodeDataType::Uint64,
+"UINT64_ARRAY" => NodeDataType::Uint64Array,
+"UINT8" => NodeDataType::Uint8,
+"UINT8_ARRAY" => NodeDataType::Uint8Array,
+"UNIX_TIMESTAMP" => NodeDataType::UnixTimestamp,
+"UNIX_TIMESTAMP_ARRAY" => NodeDataType::UnixTimestampArray,
+"UNKNOWN" => NodeDataType::UnknownValue,
+other => NodeDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for NodeDataType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NodeDataType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NodeDataType::from(s))
+                }
+            }
 impl NodeDataType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NodeDataType::Boolean => "BOOLEAN",
-            NodeDataType::BooleanArray => "BOOLEAN_ARRAY",
-            NodeDataType::Double => "DOUBLE",
-            NodeDataType::DoubleArray => "DOUBLE_ARRAY",
-            NodeDataType::Float => "FLOAT",
-            NodeDataType::FloatArray => "FLOAT_ARRAY",
-            NodeDataType::Int16 => "INT16",
-            NodeDataType::Int16Array => "INT16_ARRAY",
-            NodeDataType::Int32 => "INT32",
-            NodeDataType::Int32Array => "INT32_ARRAY",
-            NodeDataType::Int64 => "INT64",
-            NodeDataType::Int64Array => "INT64_ARRAY",
-            NodeDataType::Int8 => "INT8",
-            NodeDataType::Int8Array => "INT8_ARRAY",
-            NodeDataType::String => "STRING",
-            NodeDataType::StringArray => "STRING_ARRAY",
-            NodeDataType::Uint16 => "UINT16",
-            NodeDataType::Uint16Array => "UINT16_ARRAY",
-            NodeDataType::Uint32 => "UINT32",
-            NodeDataType::Uint32Array => "UINT32_ARRAY",
-            NodeDataType::Uint64 => "UINT64",
-            NodeDataType::Uint64Array => "UINT64_ARRAY",
-            NodeDataType::Uint8 => "UINT8",
-            NodeDataType::Uint8Array => "UINT8_ARRAY",
-            NodeDataType::UnixTimestamp => "UNIX_TIMESTAMP",
-            NodeDataType::UnixTimestampArray => "UNIX_TIMESTAMP_ARRAY",
-            NodeDataType::UnknownValue => "UNKNOWN",
-            NodeDataType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOOLEAN",
-            "BOOLEAN_ARRAY",
-            "DOUBLE",
-            "DOUBLE_ARRAY",
-            "FLOAT",
-            "FLOAT_ARRAY",
-            "INT16",
-            "INT16_ARRAY",
-            "INT32",
-            "INT32_ARRAY",
-            "INT64",
-            "INT64_ARRAY",
-            "INT8",
-            "INT8_ARRAY",
-            "STRING",
-            "STRING_ARRAY",
-            "UINT16",
-            "UINT16_ARRAY",
-            "UINT32",
-            "UINT32_ARRAY",
-            "UINT64",
-            "UINT64_ARRAY",
-            "UINT8",
-            "UINT8_ARRAY",
-            "UNIX_TIMESTAMP",
-            "UNIX_TIMESTAMP_ARRAY",
-            "UNKNOWN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NodeDataType::Boolean => "BOOLEAN",
+    NodeDataType::BooleanArray => "BOOLEAN_ARRAY",
+    NodeDataType::Double => "DOUBLE",
+    NodeDataType::DoubleArray => "DOUBLE_ARRAY",
+    NodeDataType::Float => "FLOAT",
+    NodeDataType::FloatArray => "FLOAT_ARRAY",
+    NodeDataType::Int16 => "INT16",
+    NodeDataType::Int16Array => "INT16_ARRAY",
+    NodeDataType::Int32 => "INT32",
+    NodeDataType::Int32Array => "INT32_ARRAY",
+    NodeDataType::Int64 => "INT64",
+    NodeDataType::Int64Array => "INT64_ARRAY",
+    NodeDataType::Int8 => "INT8",
+    NodeDataType::Int8Array => "INT8_ARRAY",
+    NodeDataType::String => "STRING",
+    NodeDataType::StringArray => "STRING_ARRAY",
+    NodeDataType::Uint16 => "UINT16",
+    NodeDataType::Uint16Array => "UINT16_ARRAY",
+    NodeDataType::Uint32 => "UINT32",
+    NodeDataType::Uint32Array => "UINT32_ARRAY",
+    NodeDataType::Uint64 => "UINT64",
+    NodeDataType::Uint64Array => "UINT64_ARRAY",
+    NodeDataType::Uint8 => "UINT8",
+    NodeDataType::Uint8Array => "UINT8_ARRAY",
+    NodeDataType::UnixTimestamp => "UNIX_TIMESTAMP",
+    NodeDataType::UnixTimestampArray => "UNIX_TIMESTAMP_ARRAY",
+    NodeDataType::UnknownValue => "UNKNOWN",
+    NodeDataType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOOLEAN", "BOOLEAN_ARRAY", "DOUBLE", "DOUBLE_ARRAY", "FLOAT", "FLOAT_ARRAY", "INT16", "INT16_ARRAY", "INT32", "INT32_ARRAY", "INT64", "INT64_ARRAY", "INT8", "INT8_ARRAY", "STRING", "STRING_ARRAY", "UINT16", "UINT16_ARRAY", "UINT32", "UINT32_ARRAY", "UINT64", "UINT64_ARRAY", "UINT8", "UINT8_ARRAY", "UNIX_TIMESTAMP", "UNIX_TIMESTAMP_ARRAY", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for NodeDataType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

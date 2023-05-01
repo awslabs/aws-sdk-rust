@@ -738,7 +738,35 @@ impl From<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalan
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessPointNotFoundException(inner) => inner.source(),
+            Error::CertificateNotFoundException(inner) => inner.source(),
+            Error::DependencyThrottleException(inner) => inner.source(),
+            Error::DuplicateAccessPointNameException(inner) => inner.source(),
+            Error::DuplicateListenerException(inner) => inner.source(),
+            Error::DuplicatePolicyNameException(inner) => inner.source(),
+            Error::DuplicateTagKeysException(inner) => inner.source(),
+            Error::InvalidConfigurationRequestException(inner) => inner.source(),
+            Error::InvalidEndPointException(inner) => inner.source(),
+            Error::InvalidSchemeException(inner) => inner.source(),
+            Error::InvalidSecurityGroupException(inner) => inner.source(),
+            Error::InvalidSubnetException(inner) => inner.source(),
+            Error::ListenerNotFoundException(inner) => inner.source(),
+            Error::LoadBalancerAttributeNotFoundException(inner) => inner.source(),
+            Error::OperationNotPermittedException(inner) => inner.source(),
+            Error::PolicyNotFoundException(inner) => inner.source(),
+            Error::PolicyTypeNotFoundException(inner) => inner.source(),
+            Error::SubnetNotFoundException(inner) => inner.source(),
+            Error::TooManyAccessPointsException(inner) => inner.source(),
+            Error::TooManyPoliciesException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnsupportedProtocolException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

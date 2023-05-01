@@ -4236,7 +4236,20 @@ impl From<crate::operation::update_relational_database_parameters::UpdateRelatio
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AccountSetupInProgressException(inner) => inner.source(),
+            Error::InvalidInputException(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::OperationFailureException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::UnauthenticatedException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -177,7 +177,30 @@ impl From<crate::operation::resolve_customer::ResolveCustomerError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CustomerNotEntitledException(inner) => inner.source(),
+            Error::DisabledApiException(inner) => inner.source(),
+            Error::DuplicateRequestException(inner) => inner.source(),
+            Error::ExpiredTokenException(inner) => inner.source(),
+            Error::InternalServiceErrorException(inner) => inner.source(),
+            Error::InvalidCustomerIdentifierException(inner) => inner.source(),
+            Error::InvalidEndpointRegionException(inner) => inner.source(),
+            Error::InvalidProductCodeException(inner) => inner.source(),
+            Error::InvalidPublicKeyVersionException(inner) => inner.source(),
+            Error::InvalidRegionException(inner) => inner.source(),
+            Error::InvalidTagException(inner) => inner.source(),
+            Error::InvalidTokenException(inner) => inner.source(),
+            Error::InvalidUsageAllocationsException(inner) => inner.source(),
+            Error::InvalidUsageDimensionException(inner) => inner.source(),
+            Error::PlatformNotSupportedException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::TimestampOutOfBoundsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

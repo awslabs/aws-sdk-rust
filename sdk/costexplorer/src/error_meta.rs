@@ -886,7 +886,25 @@ impl From<crate::operation::update_cost_category_definition::UpdateCostCategoryD
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BillExpirationException(inner) => inner.source(),
+            Error::DataUnavailableException(inner) => inner.source(),
+            Error::GenerationExistsException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::RequestChangedException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnknownMonitorException(inner) => inner.source(),
+            Error::UnknownSubscriptionException(inner) => inner.source(),
+            Error::UnresolvableUsageUnitException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

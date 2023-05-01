@@ -766,7 +766,28 @@ impl From<crate::operation::update_stream_mode::UpdateStreamModeError> for Error
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::ExpiredIteratorException(inner) => inner.source(),
+            Error::ExpiredNextTokenException(inner) => inner.source(),
+            Error::InvalidArgumentException(inner) => inner.source(),
+            Error::KmsAccessDeniedException(inner) => inner.source(),
+            Error::KmsDisabledException(inner) => inner.source(),
+            Error::KmsInvalidStateException(inner) => inner.source(),
+            Error::KmsNotFoundException(inner) => inner.source(),
+            Error::KmsOptInRequired(inner) => inner.source(),
+            Error::KmsThrottlingException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ProvisionedThroughputExceededException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

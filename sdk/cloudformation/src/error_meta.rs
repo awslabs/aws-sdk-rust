@@ -1499,7 +1499,35 @@ impl From<crate::operation::validate_template::ValidateTemplateError> for Error 
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AlreadyExistsException(inner) => inner.source(),
+            Error::CfnRegistryException(inner) => inner.source(),
+            Error::ChangeSetNotFoundException(inner) => inner.source(),
+            Error::CreatedButModifiedException(inner) => inner.source(),
+            Error::InsufficientCapabilitiesException(inner) => inner.source(),
+            Error::InvalidChangeSetStatusException(inner) => inner.source(),
+            Error::InvalidOperationException(inner) => inner.source(),
+            Error::InvalidStateTransitionException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::NameAlreadyExistsException(inner) => inner.source(),
+            Error::OperationIdAlreadyExistsException(inner) => inner.source(),
+            Error::OperationInProgressException(inner) => inner.source(),
+            Error::OperationNotFoundException(inner) => inner.source(),
+            Error::OperationStatusCheckFailedException(inner) => inner.source(),
+            Error::StackInstanceNotFoundException(inner) => inner.source(),
+            Error::StackNotFoundException(inner) => inner.source(),
+            Error::StackSetNotEmptyException(inner) => inner.source(),
+            Error::StackSetNotFoundException(inner) => inner.source(),
+            Error::StaleRequestException(inner) => inner.source(),
+            Error::TokenAlreadyExistsException(inner) => inner.source(),
+            Error::TypeConfigurationNotFoundException(inner) => inner.source(),
+            Error::TypeNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

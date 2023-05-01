@@ -1362,7 +1362,25 @@ impl From<crate::operation::update_job_status::UpdateJobStatusError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BadRequestException(inner) => inner.source(),
+            Error::BucketAlreadyExists(inner) => inner.source(),
+            Error::BucketAlreadyOwnedByYou(inner) => inner.source(),
+            Error::IdempotencyException(inner) => inner.source(),
+            Error::InternalServiceException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::JobStatusException(inner) => inner.source(),
+            Error::NoSuchPublicAccessBlockConfiguration(inner) => inner.source(),
+            Error::NotFoundException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

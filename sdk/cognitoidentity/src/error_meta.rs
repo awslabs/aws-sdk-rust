@@ -641,7 +641,24 @@ impl From<crate::operation::update_identity_pool::UpdateIdentityPoolError> for E
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DeveloperUserAlreadyRegisteredException(inner) => inner.source(),
+            Error::ExternalServiceException(inner) => inner.source(),
+            Error::InternalErrorException(inner) => inner.source(),
+            Error::InvalidIdentityPoolConfigurationException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::NotAuthorizedException(inner) => inner.source(),
+            Error::ResourceConflictException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

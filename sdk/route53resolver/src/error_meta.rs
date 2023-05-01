@@ -1673,7 +1673,29 @@ impl From<crate::operation::update_resolver_rule::UpdateResolverRuleError> for E
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::InternalServiceErrorException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidPolicyDocument(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidTagException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ResourceExistsException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceUnavailableException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::UnknownResourceException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

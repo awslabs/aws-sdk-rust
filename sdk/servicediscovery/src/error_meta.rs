@@ -659,7 +659,27 @@ impl From<crate::operation::update_service::UpdateServiceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CustomHealthNotFound(inner) => inner.source(),
+            Error::DuplicateRequest(inner) => inner.source(),
+            Error::InstanceNotFound(inner) => inner.source(),
+            Error::InvalidInput(inner) => inner.source(),
+            Error::NamespaceAlreadyExists(inner) => inner.source(),
+            Error::NamespaceNotFound(inner) => inner.source(),
+            Error::OperationNotFound(inner) => inner.source(),
+            Error::RequestLimitExceeded(inner) => inner.source(),
+            Error::ResourceInUse(inner) => inner.source(),
+            Error::ResourceLimitExceeded(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceAlreadyExists(inner) => inner.source(),
+            Error::ServiceNotFound(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -57,7 +57,19 @@ impl From<crate::operation::send_command::SendCommandError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::BadRequestException(inner) => inner.source(),
+            Error::CapacityExceededException(inner) => inner.source(),
+            Error::InvalidSessionException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::OccConflictException(inner) => inner.source(),
+            Error::RateExceededException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

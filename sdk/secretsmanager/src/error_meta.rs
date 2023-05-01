@@ -601,7 +601,25 @@ impl From<crate::operation::validate_resource_policy::ValidateResourcePolicyErro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DecryptionFailure(inner) => inner.source(),
+            Error::EncryptionFailure(inner) => inner.source(),
+            Error::InternalServiceError(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::PreconditionNotMetException(inner) => inner.source(),
+            Error::PublicPolicyException(inner) => inner.source(),
+            Error::ResourceExistsException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

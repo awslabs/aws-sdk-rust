@@ -502,7 +502,28 @@ impl From<crate::operation::update_parallel_data::UpdateParallelDataError> for E
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::DetectedLanguageLowConfidenceException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidFilterException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::TextSizeLimitExceededException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnsupportedDisplayLanguageCodeException(inner) => inner.source(),
+            Error::UnsupportedLanguagePairException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

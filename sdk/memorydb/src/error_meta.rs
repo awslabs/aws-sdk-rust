@@ -1147,7 +1147,66 @@ impl From<crate::operation::update_user::UpdateUserError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AclAlreadyExistsFault(inner) => inner.source(),
+            Error::AclNotFoundFault(inner) => inner.source(),
+            Error::AclQuotaExceededFault(inner) => inner.source(),
+            Error::ApiCallRateForCustomerExceededFault(inner) => inner.source(),
+            Error::ClusterAlreadyExistsFault(inner) => inner.source(),
+            Error::ClusterNotFoundFault(inner) => inner.source(),
+            Error::ClusterQuotaForCustomerExceededFault(inner) => inner.source(),
+            Error::DefaultUserRequired(inner) => inner.source(),
+            Error::DuplicateUserNameFault(inner) => inner.source(),
+            Error::InsufficientClusterCapacityFault(inner) => inner.source(),
+            Error::InvalidAclStateFault(inner) => inner.source(),
+            Error::InvalidArnFault(inner) => inner.source(),
+            Error::InvalidClusterStateFault(inner) => inner.source(),
+            Error::InvalidCredentialsException(inner) => inner.source(),
+            Error::InvalidKmsKeyFault(inner) => inner.source(),
+            Error::InvalidNodeStateFault(inner) => inner.source(),
+            Error::InvalidParameterCombinationException(inner) => inner.source(),
+            Error::InvalidParameterGroupStateFault(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidSnapshotStateFault(inner) => inner.source(),
+            Error::InvalidSubnet(inner) => inner.source(),
+            Error::InvalidUserStateFault(inner) => inner.source(),
+            Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
+            Error::NoOperationFault(inner) => inner.source(),
+            Error::NodeQuotaForClusterExceededFault(inner) => inner.source(),
+            Error::NodeQuotaForCustomerExceededFault(inner) => inner.source(),
+            Error::ParameterGroupAlreadyExistsFault(inner) => inner.source(),
+            Error::ParameterGroupNotFoundFault(inner) => inner.source(),
+            Error::ParameterGroupQuotaExceededFault(inner) => inner.source(),
+            Error::ReservedNodeAlreadyExistsFault(inner) => inner.source(),
+            Error::ReservedNodeNotFoundFault(inner) => inner.source(),
+            Error::ReservedNodeQuotaExceededFault(inner) => inner.source(),
+            Error::ReservedNodesOfferingNotFoundFault(inner) => inner.source(),
+            Error::ServiceLinkedRoleNotFoundFault(inner) => inner.source(),
+            Error::ServiceUpdateNotFoundFault(inner) => inner.source(),
+            Error::ShardNotFoundFault(inner) => inner.source(),
+            Error::ShardsPerClusterQuotaExceededFault(inner) => inner.source(),
+            Error::SnapshotAlreadyExistsFault(inner) => inner.source(),
+            Error::SnapshotNotFoundFault(inner) => inner.source(),
+            Error::SnapshotQuotaExceededFault(inner) => inner.source(),
+            Error::SubnetGroupAlreadyExistsFault(inner) => inner.source(),
+            Error::SubnetGroupInUseFault(inner) => inner.source(),
+            Error::SubnetGroupNotFoundFault(inner) => inner.source(),
+            Error::SubnetGroupQuotaExceededFault(inner) => inner.source(),
+            Error::SubnetInUse(inner) => inner.source(),
+            Error::SubnetNotAllowedFault(inner) => inner.source(),
+            Error::SubnetQuotaExceededFault(inner) => inner.source(),
+            Error::TagNotFoundFault(inner) => inner.source(),
+            Error::TagQuotaPerResourceExceeded(inner) => inner.source(),
+            Error::TestFailoverNotAvailableFault(inner) => inner.source(),
+            Error::UserAlreadyExistsFault(inner) => inner.source(),
+            Error::UserNotFoundFault(inner) => inner.source(),
+            Error::UserQuotaExceededFault(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

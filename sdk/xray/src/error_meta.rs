@@ -713,7 +713,23 @@ impl From<crate::operation::update_sampling_rule::UpdateSamplingRuleError> for E
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::InvalidPolicyRevisionIdException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::LockoutPreventionException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::PolicyCountLimitExceededException(inner) => inner.source(),
+            Error::PolicySizeLimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RuleLimitExceededException(inner) => inner.source(),
+            Error::ThrottledException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

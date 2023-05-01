@@ -1081,7 +1081,32 @@ impl From<crate::operation::validate_configuration_settings::ValidateConfigurati
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CodeBuildNotInServiceRegionException(inner) => inner.source(),
+            Error::ElasticBeanstalkServiceException(inner) => inner.source(),
+            Error::InsufficientPrivilegesException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::ManagedActionInvalidStateException(inner) => inner.source(),
+            Error::OperationInProgressException(inner) => inner.source(),
+            Error::PlatformVersionStillReferencedException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceTypeNotSupportedException(inner) => inner.source(),
+            Error::S3LocationNotInServiceRegionException(inner) => inner.source(),
+            Error::S3SubscriptionRequiredException(inner) => inner.source(),
+            Error::SourceBundleDeletionException(inner) => inner.source(),
+            Error::TooManyApplicationVersionsException(inner) => inner.source(),
+            Error::TooManyApplicationsException(inner) => inner.source(),
+            Error::TooManyBucketsException(inner) => inner.source(),
+            Error::TooManyConfigurationTemplatesException(inner) => inner.source(),
+            Error::TooManyEnvironmentsException(inner) => inner.source(),
+            Error::TooManyPlatformsException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

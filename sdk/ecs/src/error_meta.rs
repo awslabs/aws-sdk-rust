@@ -1480,7 +1480,38 @@ impl From<crate::operation::update_task_set::UpdateTaskSetError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AttributeLimitExceededException(inner) => inner.source(),
+            Error::BlockedException(inner) => inner.source(),
+            Error::ClientException(inner) => inner.source(),
+            Error::ClusterContainsContainerInstancesException(inner) => inner.source(),
+            Error::ClusterContainsServicesException(inner) => inner.source(),
+            Error::ClusterContainsTasksException(inner) => inner.source(),
+            Error::ClusterNotFoundException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MissingVersionException(inner) => inner.source(),
+            Error::NamespaceNotFoundException(inner) => inner.source(),
+            Error::NoUpdateAvailableException(inner) => inner.source(),
+            Error::PlatformTaskDefinitionIncompatibilityException(inner) => inner.source(),
+            Error::PlatformUnknownException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServerException(inner) => inner.source(),
+            Error::ServiceNotActiveException(inner) => inner.source(),
+            Error::ServiceNotFoundException(inner) => inner.source(),
+            Error::TargetNotConnectedException(inner) => inner.source(),
+            Error::TargetNotFoundException(inner) => inner.source(),
+            Error::TaskSetNotFoundException(inner) => inner.source(),
+            Error::UnsupportedFeatureException(inner) => inner.source(),
+            Error::UpdateInProgressException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

@@ -1587,7 +1587,30 @@ impl From<crate::operation::update_infrastructure_configuration::UpdateInfrastru
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::CallRateLimitExceededException(inner) => inner.source(),
+            Error::ClientException(inner) => inner.source(),
+            Error::ForbiddenException(inner) => inner.source(),
+            Error::IdempotentParameterMismatchException(inner) => inner.source(),
+            Error::InvalidPaginationTokenException(inner) => inner.source(),
+            Error::InvalidParameterCombinationException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidVersionNumberException(inner) => inner.source(),
+            Error::ResourceAlreadyExistsException(inner) => inner.source(),
+            Error::ResourceDependencyException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

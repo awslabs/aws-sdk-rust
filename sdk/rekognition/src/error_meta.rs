@@ -1870,7 +1870,34 @@ impl From<crate::operation::update_stream_processor::UpdateStreamProcessorError>
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::HumanLoopQuotaExceededException(inner) => inner.source(),
+            Error::IdempotentParameterMismatchException(inner) => inner.source(),
+            Error::ImageTooLargeException(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::InvalidImageFormatException(inner) => inner.source(),
+            Error::InvalidPaginationTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidPolicyRevisionIdException(inner) => inner.source(),
+            Error::InvalidS3ObjectException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::ProvisionedThroughputExceededException(inner) => inner.source(),
+            Error::ResourceAlreadyExistsException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::SessionNotFoundException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::VideoTooLargeException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

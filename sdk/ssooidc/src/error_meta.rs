@@ -129,7 +129,25 @@ impl From<crate::operation::start_device_authorization::StartDeviceAuthorization
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AuthorizationPendingException(inner) => inner.source(),
+            Error::ExpiredTokenException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidClientException(inner) => inner.source(),
+            Error::InvalidClientMetadataException(inner) => inner.source(),
+            Error::InvalidGrantException(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidScopeException(inner) => inner.source(),
+            Error::SlowDownException(inner) => inner.source(),
+            Error::UnauthorizedClientException(inner) => inner.source(),
+            Error::UnsupportedGrantTypeException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

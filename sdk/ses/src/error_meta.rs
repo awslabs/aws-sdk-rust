@@ -1647,7 +1647,47 @@ impl From<crate::operation::verify_email_identity::VerifyEmailIdentityError> for
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccountSendingPausedException(inner) => inner.source(),
+            Error::AlreadyExistsException(inner) => inner.source(),
+            Error::CannotDeleteException(inner) => inner.source(),
+            Error::ConfigurationSetAlreadyExistsException(inner) => inner.source(),
+            Error::ConfigurationSetDoesNotExistException(inner) => inner.source(),
+            Error::ConfigurationSetSendingPausedException(inner) => inner.source(),
+            Error::CustomVerificationEmailInvalidContentException(inner) => inner.source(),
+            Error::CustomVerificationEmailTemplateAlreadyExistsException(inner) => inner.source(),
+            Error::CustomVerificationEmailTemplateDoesNotExistException(inner) => inner.source(),
+            Error::EventDestinationAlreadyExistsException(inner) => inner.source(),
+            Error::EventDestinationDoesNotExistException(inner) => inner.source(),
+            Error::FromEmailAddressNotVerifiedException(inner) => inner.source(),
+            Error::InvalidCloudWatchDestinationException(inner) => inner.source(),
+            Error::InvalidConfigurationSetException(inner) => inner.source(),
+            Error::InvalidDeliveryOptionsException(inner) => inner.source(),
+            Error::InvalidFirehoseDestinationException(inner) => inner.source(),
+            Error::InvalidLambdaFunctionException(inner) => inner.source(),
+            Error::InvalidPolicyException(inner) => inner.source(),
+            Error::InvalidRenderingParameterException(inner) => inner.source(),
+            Error::InvalidS3ConfigurationException(inner) => inner.source(),
+            Error::InvalidSnsDestinationException(inner) => inner.source(),
+            Error::InvalidSnsTopicException(inner) => inner.source(),
+            Error::InvalidTemplateException(inner) => inner.source(),
+            Error::InvalidTrackingOptionsException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MailFromDomainNotVerifiedException(inner) => inner.source(),
+            Error::MessageRejected(inner) => inner.source(),
+            Error::MissingRenderingAttributeException(inner) => inner.source(),
+            Error::ProductionAccessNotGrantedException(inner) => inner.source(),
+            Error::RuleDoesNotExistException(inner) => inner.source(),
+            Error::RuleSetDoesNotExistException(inner) => inner.source(),
+            Error::TemplateDoesNotExistException(inner) => inner.source(),
+            Error::TrackingOptionsAlreadyExistsException(inner) => inner.source(),
+            Error::TrackingOptionsDoesNotExistException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

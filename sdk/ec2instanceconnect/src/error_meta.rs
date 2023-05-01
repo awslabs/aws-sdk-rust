@@ -104,7 +104,24 @@ impl From<crate::operation::send_ssh_public_key::SendSSHPublicKeyError> for Erro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AuthException(inner) => inner.source(),
+            Error::Ec2InstanceNotFoundException(inner) => inner.source(),
+            Error::Ec2InstanceStateInvalidException(inner) => inner.source(),
+            Error::Ec2InstanceTypeInvalidException(inner) => inner.source(),
+            Error::Ec2InstanceUnavailableException(inner) => inner.source(),
+            Error::InvalidArgsException(inner) => inner.source(),
+            Error::SerialConsoleAccessDisabledException(inner) => inner.source(),
+            Error::SerialConsoleSessionLimitExceededException(inner) => inner.source(),
+            Error::SerialConsoleSessionUnavailableException(inner) => inner.source(),
+            Error::ServiceException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

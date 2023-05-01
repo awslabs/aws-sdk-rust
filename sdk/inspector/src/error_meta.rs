@@ -946,7 +946,24 @@ impl From<crate::operation::update_assessment_target::UpdateAssessmentTargetErro
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::AgentsAlreadyRunningAssessmentException(inner) => inner.source(),
+            Error::AssessmentRunInProgressException(inner) => inner.source(),
+            Error::InternalException(inner) => inner.source(),
+            Error::InvalidCrossAccountRoleException(inner) => inner.source(),
+            Error::InvalidInputException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::NoSuchEntityException(inner) => inner.source(),
+            Error::PreviewGenerationInProgressException(inner) => inner.source(),
+            Error::ServiceTemporarilyUnavailableException(inner) => inner.source(),
+            Error::UnsupportedFeatureException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

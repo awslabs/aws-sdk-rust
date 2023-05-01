@@ -881,7 +881,23 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::DefaultUndefinedFault(inner) => inner.source(),
+            Error::DomainAlreadyExistsFault(inner) => inner.source(),
+            Error::DomainDeprecatedFault(inner) => inner.source(),
+            Error::LimitExceededFault(inner) => inner.source(),
+            Error::OperationNotPermittedFault(inner) => inner.source(),
+            Error::TooManyTagsFault(inner) => inner.source(),
+            Error::TypeAlreadyExistsFault(inner) => inner.source(),
+            Error::TypeDeprecatedFault(inner) => inner.source(),
+            Error::UnknownResourceFault(inner) => inner.source(),
+            Error::WorkflowExecutionAlreadyStartedFault(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

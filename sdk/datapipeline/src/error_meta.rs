@@ -479,7 +479,18 @@ impl From<crate::operation::validate_pipeline_definition::ValidatePipelineDefini
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::InternalServiceError(inner) => inner.source(),
+            Error::InvalidRequestException(inner) => inner.source(),
+            Error::PipelineDeletedException(inner) => inner.source(),
+            Error::PipelineNotFoundException(inner) => inner.source(),
+            Error::TaskNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

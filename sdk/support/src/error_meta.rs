@@ -349,7 +349,22 @@ impl From<crate::operation::resolve_case::ResolveCaseError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AttachmentIdNotFound(inner) => inner.source(),
+            Error::AttachmentLimitExceeded(inner) => inner.source(),
+            Error::AttachmentSetExpired(inner) => inner.source(),
+            Error::AttachmentSetIdNotFound(inner) => inner.source(),
+            Error::AttachmentSetSizeLimitExceeded(inner) => inner.source(),
+            Error::CaseCreationLimitExceeded(inner) => inner.source(),
+            Error::CaseIdNotFound(inner) => inner.source(),
+            Error::DescribeAttachmentLimitExceeded(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

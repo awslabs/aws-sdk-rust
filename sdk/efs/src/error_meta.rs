@@ -843,7 +843,43 @@ impl From<crate::operation::update_file_system::UpdateFileSystemError> for Error
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AccessPointAlreadyExists(inner) => inner.source(),
+            Error::AccessPointLimitExceeded(inner) => inner.source(),
+            Error::AccessPointNotFound(inner) => inner.source(),
+            Error::AvailabilityZonesMismatch(inner) => inner.source(),
+            Error::BadRequest(inner) => inner.source(),
+            Error::DependencyTimeout(inner) => inner.source(),
+            Error::FileSystemAlreadyExists(inner) => inner.source(),
+            Error::FileSystemInUse(inner) => inner.source(),
+            Error::FileSystemLimitExceeded(inner) => inner.source(),
+            Error::FileSystemNotFound(inner) => inner.source(),
+            Error::IncorrectFileSystemLifeCycleState(inner) => inner.source(),
+            Error::IncorrectMountTargetState(inner) => inner.source(),
+            Error::InsufficientThroughputCapacity(inner) => inner.source(),
+            Error::InternalServerError(inner) => inner.source(),
+            Error::InvalidPolicyException(inner) => inner.source(),
+            Error::IpAddressInUse(inner) => inner.source(),
+            Error::MountTargetConflict(inner) => inner.source(),
+            Error::MountTargetNotFound(inner) => inner.source(),
+            Error::NetworkInterfaceLimitExceeded(inner) => inner.source(),
+            Error::NoFreeAddressesInSubnet(inner) => inner.source(),
+            Error::PolicyNotFound(inner) => inner.source(),
+            Error::ReplicationNotFound(inner) => inner.source(),
+            Error::SecurityGroupLimitExceeded(inner) => inner.source(),
+            Error::SecurityGroupNotFound(inner) => inner.source(),
+            Error::SubnetNotFound(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
+            Error::ThroughputLimitExceeded(inner) => inner.source(),
+            Error::TooManyRequests(inner) => inner.source(),
+            Error::UnsupportedAvailabilityZone(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

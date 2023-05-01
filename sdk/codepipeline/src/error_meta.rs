@@ -1043,7 +1043,49 @@ impl From<crate::operation::update_pipeline::UpdatePipelineError> for Error {
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::ActionNotFoundException(inner) => inner.source(),
+            Error::ActionTypeNotFoundException(inner) => inner.source(),
+            Error::ApprovalAlreadyCompletedException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::DuplicatedStopRequestException(inner) => inner.source(),
+            Error::InvalidActionDeclarationException(inner) => inner.source(),
+            Error::InvalidApprovalTokenException(inner) => inner.source(),
+            Error::InvalidArnException(inner) => inner.source(),
+            Error::InvalidBlockerDeclarationException(inner) => inner.source(),
+            Error::InvalidClientTokenException(inner) => inner.source(),
+            Error::InvalidJobException(inner) => inner.source(),
+            Error::InvalidJobStateException(inner) => inner.source(),
+            Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidNonceException(inner) => inner.source(),
+            Error::InvalidStageDeclarationException(inner) => inner.source(),
+            Error::InvalidStructureException(inner) => inner.source(),
+            Error::InvalidTagsException(inner) => inner.source(),
+            Error::InvalidWebhookAuthenticationParametersException(inner) => inner.source(),
+            Error::InvalidWebhookFilterPatternException(inner) => inner.source(),
+            Error::JobNotFoundException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::NotLatestPipelineExecutionException(inner) => inner.source(),
+            Error::OutputVariablesSizeExceededException(inner) => inner.source(),
+            Error::PipelineExecutionNotFoundException(inner) => inner.source(),
+            Error::PipelineExecutionNotStoppableException(inner) => inner.source(),
+            Error::PipelineNameInUseException(inner) => inner.source(),
+            Error::PipelineNotFoundException(inner) => inner.source(),
+            Error::PipelineVersionNotFoundException(inner) => inner.source(),
+            Error::RequestFailedException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::StageNotFoundException(inner) => inner.source(),
+            Error::StageNotRetryableException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
+            Error::WebhookNotFoundException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {

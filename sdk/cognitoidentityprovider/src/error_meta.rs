@@ -2961,7 +2961,54 @@ impl From<crate::operation::verify_user_attribute::VerifyUserAttributeError> for
         }
     }
 }
-impl std::error::Error for Error {}
+impl std::error::Error for Error {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            Error::AliasExistsException(inner) => inner.source(),
+            Error::CodeDeliveryFailureException(inner) => inner.source(),
+            Error::CodeMismatchException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DuplicateProviderException(inner) => inner.source(),
+            Error::EnableSoftwareTokenMfaException(inner) => inner.source(),
+            Error::ExpiredCodeException(inner) => inner.source(),
+            Error::ForbiddenException(inner) => inner.source(),
+            Error::GroupExistsException(inner) => inner.source(),
+            Error::InternalErrorException(inner) => inner.source(),
+            Error::InvalidEmailRoleAccessPolicyException(inner) => inner.source(),
+            Error::InvalidLambdaResponseException(inner) => inner.source(),
+            Error::InvalidOAuthFlowException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
+            Error::InvalidPasswordException(inner) => inner.source(),
+            Error::InvalidSmsRoleAccessPolicyException(inner) => inner.source(),
+            Error::InvalidSmsRoleTrustRelationshipException(inner) => inner.source(),
+            Error::InvalidUserPoolConfigurationException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
+            Error::MfaMethodNotFoundException(inner) => inner.source(),
+            Error::NotAuthorizedException(inner) => inner.source(),
+            Error::PasswordResetRequiredException(inner) => inner.source(),
+            Error::PreconditionNotMetException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ScopeDoesNotExistException(inner) => inner.source(),
+            Error::SoftwareTokenMfaNotFoundException(inner) => inner.source(),
+            Error::TooManyFailedAttemptsException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
+            Error::UnexpectedLambdaException(inner) => inner.source(),
+            Error::UnsupportedIdentityProviderException(inner) => inner.source(),
+            Error::UnsupportedOperationException(inner) => inner.source(),
+            Error::UnsupportedTokenTypeException(inner) => inner.source(),
+            Error::UnsupportedUserStateException(inner) => inner.source(),
+            Error::UserImportInProgressException(inner) => inner.source(),
+            Error::UserLambdaValidationException(inner) => inner.source(),
+            Error::UserNotConfirmedException(inner) => inner.source(),
+            Error::UserNotFoundException(inner) => inner.source(),
+            Error::UserPoolAddOnNotEnabledException(inner) => inner.source(),
+            Error::UserPoolTaggingException(inner) => inner.source(),
+            Error::UsernameExistsException(inner) => inner.source(),
+            Error::Unhandled(inner) => inner.source()
+        }
+    }
+}
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
