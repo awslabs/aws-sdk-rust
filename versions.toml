@@ -1,5 +1,5 @@
-smithy_rs_revision = '9201176c9876c9f7bf6599f8a93fe69d25ee0f03'
-aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
+smithy_rs_revision = '27498a715f74bfa572f15ef93761b189448bed64'
+aws_doc_sdk_examples_revision = 'f4fc46139c2ea0784e31cadd19b430fcd2bbc21a'
 
 [manual_interventions]
 crates_to_remove = []
@@ -2167,6 +2167,11 @@ source_hash = '20cfa396b9319ee9af43481afb08888a33ee0071b95a663952a6ddd719b25a21'
 category = 'AwsRuntime'
 version = '0.55.2'
 source_hash = '4d038ddfbef121dbea2e4ae535a1165a93c79de9ff0f7615831a31ba40482941'
+
+[crates.aws-wasm]
+category = 'AwsRuntime'
+version = '0.1.0'
+source_hash = '6a9c68b4832db7333d004dd0977621747b66f439892891b1559de58be62c4577'
 [release.crates]
 aws-config = '0.55.2'
 aws-credential-types = '0.55.2'
@@ -2533,3 +2538,4 @@ aws-smithy-types = '0.55.2'
 aws-smithy-types-convert = '0.55.2'
 aws-smithy-xml = '0.55.2'
 aws-types = '0.55.2'
+aws-wasm = '0.1.0'

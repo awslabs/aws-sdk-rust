@@ -49,6 +49,7 @@ exclude = [
     "examples/qldb",
     "examples/textract",
     "examples/stepfunction",
+    "examples/webassembly",
     "examples/cloudformation",
     "examples/localstack",
     "examples/ssm",

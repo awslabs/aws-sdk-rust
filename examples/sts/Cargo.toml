@@ -11,6 +11,8 @@ aws-config= { version = "0.55.2", path = "../../sdk/aws-config" }
 aws-sdk-sts= { version = "0.27.0", path = "../../sdk/sts" }
 aws-types= { version = "0.55.2", path = "../../sdk/aws-types" }
 
+[workspace]
+
 [dependencies.tokio]
 version = "1.20.1"
 features = ["full"]
@@ -22,5 +24,3 @@ features = ["derive"]
 [dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
-
-[workspace]

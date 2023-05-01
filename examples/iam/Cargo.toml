@@ -20,6 +20,9 @@ path = "src/iam-service-lib.rs"
 [dependencies]
 tower-service = "0.3.2"
 http = "0.2.8"
+futures = "0.3.28"
+async_once = "0.2.6"
+lazy_static = "1.4.0"
 aws-config= { version = "0.55.2", path = "../../sdk/aws-config" }
 aws-credential-types= { version = "0.55.2", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-hyper= { version = "0.55.2", path = "../../sdk/aws-hyper" }
