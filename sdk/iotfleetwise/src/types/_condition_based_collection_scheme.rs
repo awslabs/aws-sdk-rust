@@ -3,12 +3,12 @@
 /// <p>Information about a collection scheme that uses a simple logical expression to recognize what data to collect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionBasedCollectionScheme  {
+pub struct ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     #[doc(hidden)]
     pub minimum_trigger_interval_ms: std::option::Option<i64>,
@@ -21,17 +21,17 @@ pub struct ConditionBasedCollectionScheme  {
 }
 impl ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_trigger_interval_ms(&self) -> std::option::Option<i64> {
         self.minimum_trigger_interval_ms
     }
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
-    pub fn trigger_mode(&self) -> std::option::Option<& crate::types::TriggerMode> {
+    pub fn trigger_mode(&self) -> std::option::Option<&crate::types::TriggerMode> {
         self.trigger_mode.as_ref()
     }
     /// <p>Specifies the version of the conditional expression language.</p>
@@ -63,20 +63,22 @@ impl ConditionBasedCollectionSchemeBuilder {
     }
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_trigger_interval_ms(mut self, input: i64) -> Self {
         self.minimum_trigger_interval_ms = Some(input);
         self
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn set_minimum_trigger_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
-        self.minimum_trigger_interval_ms = input; self
+        self.minimum_trigger_interval_ms = input;
+        self
     }
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
     pub fn trigger_mode(mut self, input: crate::types::TriggerMode) -> Self {
@@ -84,8 +86,12 @@ impl ConditionBasedCollectionSchemeBuilder {
         self
     }
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
-    pub fn set_trigger_mode(mut self, input: std::option::Option<crate::types::TriggerMode>) -> Self {
-        self.trigger_mode = input; self
+    pub fn set_trigger_mode(
+        mut self,
+        input: std::option::Option<crate::types::TriggerMode>,
+    ) -> Self {
+        self.trigger_mode = input;
+        self
     }
     /// <p>Specifies the version of the conditional expression language.</p>
     pub fn condition_language_version(mut self, input: i32) -> Self {
@@ -94,20 +100,16 @@ impl ConditionBasedCollectionSchemeBuilder {
     }
     /// <p>Specifies the version of the conditional expression language.</p>
     pub fn set_condition_language_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.condition_language_version = input; self
+        self.condition_language_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
     pub fn build(self) -> crate::types::ConditionBasedCollectionScheme {
         crate::types::ConditionBasedCollectionScheme {
-            expression: self.expression
-            ,
-            minimum_trigger_interval_ms: self.minimum_trigger_interval_ms
-            ,
-            trigger_mode: self.trigger_mode
-            ,
-            condition_language_version: self.condition_language_version
-            ,
+            expression: self.expression,
+            minimum_trigger_interval_ms: self.minimum_trigger_interval_ms,
+            trigger_mode: self.trigger_mode,
+            condition_language_version: self.condition_language_version,
         }
     }
 }
-

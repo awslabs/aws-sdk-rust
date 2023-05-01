@@ -3,7 +3,7 @@
 /// <p>A reason that a signal isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSignal  {
+pub struct InvalidSignal {
     /// <p>The name of the signal that isn't valid.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct InvalidSignal  {
 }
 impl InvalidSignal {
     /// <p>The name of the signal that isn't valid.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A message about why the signal isn't valid.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl InvalidSignalBuilder {
     }
     /// <p>The name of the signal that isn't valid.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A message about why the signal isn't valid.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl InvalidSignalBuilder {
     }
     /// <p>A message about why the signal isn't valid.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`InvalidSignal`](crate::types::InvalidSignal).
     pub fn build(self) -> crate::types::InvalidSignal {
         crate::types::InvalidSignal {
-            name: self.name
-            ,
-            reason: self.reason
-            ,
+            name: self.name,
+            reason: self.reason,
         }
     }
 }
-
