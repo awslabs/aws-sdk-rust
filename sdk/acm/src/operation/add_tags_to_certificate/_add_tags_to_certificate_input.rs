@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToCertificateInput  {
-    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> 
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> 
+pub struct AddTagsToCertificateInput {
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -13,20 +13,21 @@ pub struct AddTagsToCertificateInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToCertificateInput {
-    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> 
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> 
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl AddTagsToCertificateInput {
     /// Creates a new builder-style object to manufacture [`AddTagsToCertificateInput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateInput).
-    pub fn builder() -> crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder {
         crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder::default()
     }
 }
@@ -39,18 +40,19 @@ pub struct AddTagsToCertificateInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToCertificateInputBuilder {
-    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> 
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> 
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.certificate_arn = Some(input.into());
         self
     }
-    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> 
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> 
+    /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -59,24 +61,30 @@ impl AddTagsToCertificateInputBuilder {
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddTagsToCertificateInput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateInput).
-    pub fn build(self) -> Result<crate::operation::add_tags_to_certificate::AddTagsToCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_tags_to_certificate::AddTagsToCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_tags_to_certificate::AddTagsToCertificateInput {
-                certificate_arn: self.certificate_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                certificate_arn: self.certificate_arn,
+                tags: self.tags,
+            },
         )
     }
 }
-

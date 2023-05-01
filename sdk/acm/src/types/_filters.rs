@@ -3,30 +3,30 @@
 /// <p>This structure can be used in the <code>ListCertificates</code> action to filter the output of the certificate list. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filters  {
+pub struct Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
     #[doc(hidden)]
     pub extended_key_usage: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
     #[doc(hidden)]
     pub key_usage: std::option::Option<std::vec::Vec<crate::types::KeyUsageName>>,
-    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p> 
+    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     #[doc(hidden)]
     pub key_types: std::option::Option<std::vec::Vec<crate::types::KeyAlgorithm>>,
 }
 impl Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
-    pub fn extended_key_usage(&self) -> std::option::Option<& [crate::types::ExtendedKeyUsageName]> {
+    pub fn extended_key_usage(&self) -> std::option::Option<&[crate::types::ExtendedKeyUsageName]> {
         self.extended_key_usage.as_deref()
     }
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
-    pub fn key_usage(&self) -> std::option::Option<& [crate::types::KeyUsageName]> {
+    pub fn key_usage(&self) -> std::option::Option<&[crate::types::KeyUsageName]> {
         self.key_usage.as_deref()
     }
-    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p> 
+    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
-    pub fn key_types(&self) -> std::option::Option<& [crate::types::KeyAlgorithm]> {
+    pub fn key_types(&self) -> std::option::Option<&[crate::types::KeyAlgorithm]> {
         self.key_types.as_deref()
     }
 }
@@ -41,7 +41,8 @@ impl Filters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FiltersBuilder {
-    pub(crate) extended_key_usage: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
+    pub(crate) extended_key_usage:
+        std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     pub(crate) key_usage: std::option::Option<std::vec::Vec<crate::types::KeyUsageName>>,
     pub(crate) key_types: std::option::Option<std::vec::Vec<crate::types::KeyAlgorithm>>,
 }
@@ -53,13 +54,17 @@ impl FiltersBuilder {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
     pub fn extended_key_usage(mut self, input: crate::types::ExtendedKeyUsageName) -> Self {
         let mut v = self.extended_key_usage.unwrap_or_default();
-                        v.push(input);
-                        self.extended_key_usage = Some(v);
-                        self
+        v.push(input);
+        self.extended_key_usage = Some(v);
+        self
     }
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
-    pub fn set_extended_key_usage(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsageName>>) -> Self {
-        self.extended_key_usage = input; self
+    pub fn set_extended_key_usage(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
+    ) -> Self {
+        self.extended_key_usage = input;
+        self
     }
     /// Appends an item to `key_usage`.
     ///
@@ -68,41 +73,45 @@ impl FiltersBuilder {
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
     pub fn key_usage(mut self, input: crate::types::KeyUsageName) -> Self {
         let mut v = self.key_usage.unwrap_or_default();
-                        v.push(input);
-                        self.key_usage = Some(v);
-                        self
+        v.push(input);
+        self.key_usage = Some(v);
+        self
     }
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
-    pub fn set_key_usage(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyUsageName>>) -> Self {
-        self.key_usage = input; self
+    pub fn set_key_usage(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KeyUsageName>>,
+    ) -> Self {
+        self.key_usage = input;
+        self
     }
     /// Appends an item to `key_types`.
     ///
     /// To override the contents of this collection use [`set_key_types`](Self::set_key_types).
     ///
-    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p> 
+    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub fn key_types(mut self, input: crate::types::KeyAlgorithm) -> Self {
         let mut v = self.key_types.unwrap_or_default();
-                        v.push(input);
-                        self.key_types = Some(v);
-                        self
+        v.push(input);
+        self.key_types = Some(v);
+        self
     }
-    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p> 
+    /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
-    pub fn set_key_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyAlgorithm>>) -> Self {
-        self.key_types = input; self
+    pub fn set_key_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KeyAlgorithm>>,
+    ) -> Self {
+        self.key_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {
         crate::types::Filters {
-            extended_key_usage: self.extended_key_usage
-            ,
-            key_usage: self.key_usage
-            ,
-            key_types: self.key_types
-            ,
+            extended_key_usage: self.extended_key_usage,
+            key_usage: self.key_usage,
+            key_types: self.key_types,
         }
     }
 }
-

@@ -60,6 +60,16 @@ impl WriteGetObjectResponseInput {
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
         if let Some(params) = params { request.properties_mut().insert(params); }
+        let endpoint_prefix =
+             {
+                let request_route = self.request_route.as_deref().unwrap_or_default();
+                if request_route.is_empty() {
+                                            return Err(aws_smithy_http::operation::error::BuildError::invalid_field("request_route", "request_route was unset or empty but must be set as part of the endpoint prefix"))
+                                        }
+                aws_smithy_http::endpoint::EndpointPrefix::new(format!("{RequestRoute}.", RequestRoute = request_route))
+            }
+        ?;
+        request.properties_mut().insert(endpoint_prefix);
         request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
                                 aws_types::os_shim_internal::Env::real(),

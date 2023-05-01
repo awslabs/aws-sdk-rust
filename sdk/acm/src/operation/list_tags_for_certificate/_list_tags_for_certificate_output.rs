@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForCertificateOutput  {
+pub struct ListTagsForCertificateOutput {
     /// <p>The key-value pairs that define the applied tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -10,18 +10,20 @@ pub struct ListTagsForCertificateOutput  {
 }
 impl ListTagsForCertificateOutput {
     /// <p>The key-value pairs that define the applied tags.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTagsForCertificateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTagsForCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput).
-    pub fn builder() -> crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateOutputBuilder
+    {
         crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateOutputBuilder::default()
     }
 }
@@ -41,30 +43,34 @@ impl ListTagsForCertificateOutputBuilder {
     /// <p>The key-value pairs that define the applied tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The key-value pairs that define the applied tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput {
         crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput {
-            tags: self.tags
-            ,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

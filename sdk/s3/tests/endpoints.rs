@@ -135,3 +135,22 @@ async fn s3_object_lambda_no_cross_region() {
         err
     );
 }
+
+#[tokio::test]
+async fn write_get_object_response() {
+    let (req, client) = test_client(|b| b);
+    let _write = client
+        .write_get_object_response()
+        .request_route("req-route")
+        .request_token("token")
+        .status_code(200)
+        .body(vec![1, 2, 3].into())
+        .send()
+        .await;
+
+    let captured_request = req.expect_request();
+    assert_eq!(
+        captured_request.uri().to_string(),
+        "https://req-route.s3-object-lambda.us-west-4.amazonaws.com/WriteGetObjectResponse?x-id=WriteGetObjectResponse"
+    );
+}
