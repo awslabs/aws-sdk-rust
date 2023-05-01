@@ -108,6 +108,7 @@ impl PostContent {
 impl aws_smithy_http::response::ParseHttpResponse for PostContent {
                 type Output = std::result::Result<crate::operation::post_content::PostContentOutput, crate::operation::post_content::PostContentError>;
                 fn parse_unloaded(&self, response: &mut aws_smithy_http::operation::Response) -> Option<Self::Output> {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                     // This is an error, defer to the non-streaming parser
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;

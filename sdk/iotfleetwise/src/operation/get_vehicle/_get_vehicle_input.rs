@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVehicleInput {
+pub struct GetVehicleInput  {
     /// <p> The ID of the vehicle to retrieve information about. </p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
 }
 impl GetVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetVehicleInputBuilder {
     }
     /// <p> The ID of the vehicle to retrieve information about. </p>
     pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
     }
     /// Consumes the builder and constructs a [`GetVehicleInput`](crate::operation::get_vehicle::GetVehicleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_vehicle::GetVehicleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_vehicle::GetVehicleInput {
-            vehicle_name: self.vehicle_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_vehicle::GetVehicleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_vehicle::GetVehicleInput {
+                vehicle_name: self.vehicle_name
+                ,
+            }
+        )
     }
 }
+

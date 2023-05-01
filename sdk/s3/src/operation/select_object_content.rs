@@ -109,6 +109,8 @@ impl SelectObjectContent {
 impl aws_smithy_http::response::ParseHttpResponse for SelectObjectContent {
                 type Output = std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, crate::operation::select_object_content::SelectObjectContentError>;
                 fn parse_unloaded(&self, response: &mut aws_smithy_http::operation::Response) -> Option<Self::Output> {
+                     tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                     // This is an error, defer to the non-streaming parser
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;

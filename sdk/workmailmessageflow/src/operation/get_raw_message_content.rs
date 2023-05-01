@@ -88,6 +88,7 @@ impl GetRawMessageContent {
 impl aws_smithy_http::response::ParseHttpResponse for GetRawMessageContent {
                 type Output = std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentOutput, crate::operation::get_raw_message_content::GetRawMessageContentError>;
                 fn parse_unloaded(&self, response: &mut aws_smithy_http::operation::Response) -> Option<Self::Output> {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                     // This is an error, defer to the non-streaming parser
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;

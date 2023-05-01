@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVehiclesInFleetInput {
+pub struct ListVehiclesInFleetInput  {
     /// <p> The ID of a fleet. </p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>A pagination token for the next set of results.</p>
+    /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,12 +16,12 @@ pub struct ListVehiclesInFleetInput {
 }
 impl ListVehiclesInFleetInput {
     /// <p> The ID of a fleet. </p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A pagination token for the next set of results.</p>
+    /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
@@ -31,10 +31,8 @@ impl ListVehiclesInFleetInput {
 }
 impl ListVehiclesInFleetInput {
     /// Creates a new builder-style object to manufacture [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
-    pub fn builder(
-    ) -> crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder {
-        crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder {
+        crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder::default()
     }
 }
 
@@ -54,20 +52,18 @@ impl ListVehiclesInFleetInputBuilder {
     }
     /// <p> The ID of a fleet. </p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
-    /// <p>A pagination token for the next set of results.</p>
+    /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A pagination token for the next set of results.</p>
+    /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,22 +72,20 @@ impl ListVehiclesInFleetInputBuilder {
     }
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput {
-                fleet_id: self.fleet_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                fleet_id: self.fleet_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

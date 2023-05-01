@@ -89,6 +89,7 @@ impl DescribeInputDeviceThumbnail {
 impl aws_smithy_http::response::ParseHttpResponse for DescribeInputDeviceThumbnail {
                 type Output = std::result::Result<crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput, crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError>;
                 fn parse_unloaded(&self, response: &mut aws_smithy_http::operation::Response) -> Option<Self::Output> {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                     // This is an error, defer to the non-streaming parser
                     if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
                         return None;
