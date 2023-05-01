@@ -6,7 +6,6 @@ May 1st, 2023
 
 **New this release:**
 - 🎉 ([smithy-rs#2254](https://github.com/awslabs/smithy-rs/issues/2254), @eduardomourar) The AWS SDK now compiles for the `wasm32-unknown-unknown` and `wasm32-wasi` targets when no default features are enabled. WebAssembly is not officially supported yet, but this is a great first step towards it!
-- 🐛🎉 ([smithy-rs#2562](https://github.com/awslabs/smithy-rs/issues/2562)) Update the `std::fmt::Debug` implementation for `aws-sigv4::SigningParams` so that it will no longer print sensitive information.
 - ([aws-sdk-rust#784](https://github.com/awslabs/aws-sdk-rust/issues/784), @abusch) Implement std::error::Error#source() properly for the service meta Error enum.
 - 🐛 ([smithy-rs#2496](https://github.com/awslabs/smithy-rs/issues/2496)) The outputs for event stream operations (for example, S3's SelectObjectContent) now implement the `Sync` auto-trait.
 - 🐛 ([aws-sdk-rust#764](https://github.com/awslabs/aws-sdk-rust/issues/764)) S3's `GetObject` will no longer panic when checksum validation is enabled and the target object was uploaded as a multi-part upload.
@@ -400,7 +399,6 @@ Thank you for your contributions! ❤
 |aws-smithy-types-convert|0.55.2|
 |aws-smithy-xml|0.55.2|
 |aws-types|0.55.2|
-|aws-wasm|0.1.0|
 </details>
 
 
