@@ -169,3 +169,31 @@ impl std::error::Error for InterceptorError {
         self.source.as_ref().map(|err| err.as_ref() as _)
     }
 }
+
+/// A convenience error that allows for adding additional `context` to `source`
+#[derive(Debug)]
+pub struct ContextAttachedError {
+    context: String,
+    source: Option<BoxError>,
+}
+
+impl ContextAttachedError {
+    pub fn new(context: impl Into<String>, source: impl Into<BoxError>) -> Self {
+        Self {
+            context: context.into(),
+            source: Some(source.into()),
+        }
+    }
+}
+
+impl fmt::Display for ContextAttachedError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.context)
+    }
+}
+
+impl std::error::Error for ContextAttachedError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        self.source.as_ref().map(|err| err.as_ref() as _)
+    }
+}

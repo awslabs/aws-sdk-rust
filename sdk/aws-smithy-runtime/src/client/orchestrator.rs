@@ -18,7 +18,8 @@ use aws_smithy_runtime_api::config_bag::ConfigBag;
 use tracing::{debug_span, Instrument};
 
 mod auth;
-mod endpoints;
+/// Defines types that implement a trait for endpoint resolution
+pub mod endpoints;
 mod http;
 pub(self) mod phase;
 

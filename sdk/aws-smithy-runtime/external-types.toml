@@ -6,5 +6,5 @@ allowed_external_types = [
     "http::header::name::HeaderName",
     "http::request::Request",
     "http::response::Response",
-    "uri::Uri",
+    "http::uri::Uri",
 ]
