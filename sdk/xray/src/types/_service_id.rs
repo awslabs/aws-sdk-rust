@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceId  {
+pub struct ServiceId {
     /// <p></p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ServiceId  {
 }
 impl ServiceId {
     /// <p></p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p></p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p></p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ServiceIdBuilder {
     }
     /// <p></p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `names`.
     ///
@@ -68,13 +69,17 @@ impl ServiceIdBuilder {
     /// <p></p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p></p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl ServiceIdBuilder {
     }
     /// <p></p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p></p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,20 +98,16 @@ impl ServiceIdBuilder {
     }
     /// <p></p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServiceId`](crate::types::ServiceId).
     pub fn build(self) -> crate::types::ServiceId {
         crate::types::ServiceId {
-            name: self.name
-            ,
-            names: self.names
-            ,
-            account_id: self.account_id
-            ,
-            r#type: self.r#type
-            ,
+            name: self.name,
+            names: self.names,
+            account_id: self.account_id,
+            r#type: self.r#type,
         }
     }
 }
-

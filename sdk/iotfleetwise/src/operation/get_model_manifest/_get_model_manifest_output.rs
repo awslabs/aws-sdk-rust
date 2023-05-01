@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelManifestOutput  {
+pub struct GetModelManifestOutput {
     /// <p> The name of the vehicle model. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,42 +28,43 @@ pub struct GetModelManifestOutput  {
 }
 impl GetModelManifestOutput {
     /// <p> The name of the vehicle model. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> A brief description of the vehicle model. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
-    pub fn signal_catalog_arn(&self) -> std::option::Option<& str> {
+    pub fn signal_catalog_arn(&self) -> std::option::Option<&str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ManifestStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ManifestStatus> {
         self.status.as_ref()
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the vehicle model was modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetModelManifestOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetModelManifestOutput {
     /// Creates a new builder-style object to manufacture [`GetModelManifestOutput`](crate::operation::get_model_manifest::GetModelManifestOutput).
-    pub fn builder() -> crate::operation::get_model_manifest::builders::GetModelManifestOutputBuilder {
+    pub fn builder() -> crate::operation::get_model_manifest::builders::GetModelManifestOutputBuilder
+    {
         crate::operation::get_model_manifest::builders::GetModelManifestOutputBuilder::default()
     }
 }
@@ -89,7 +90,8 @@ impl GetModelManifestOutputBuilder {
     }
     /// <p> The name of the vehicle model. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +100,8 @@ impl GetModelManifestOutputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> A brief description of the vehicle model. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +110,8 @@ impl GetModelManifestOutputBuilder {
     }
     /// <p> A brief description of the vehicle model. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
     pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +119,12 @@ impl GetModelManifestOutputBuilder {
         self
     }
     /// <p> The ARN of the signal catalog associated with the vehicle model. </p>
-    pub fn set_signal_catalog_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.signal_catalog_arn = input; self
+    pub fn set_signal_catalog_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.signal_catalog_arn = input;
+        self
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
@@ -125,7 +133,8 @@ impl GetModelManifestOutputBuilder {
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. You can edit the vehicle model if the status is marked <code>DRAFT</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ManifestStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +142,12 @@ impl GetModelManifestOutputBuilder {
         self
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The last time the vehicle model was modified.</p>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,37 +155,33 @@ impl GetModelManifestOutputBuilder {
         self
     }
     /// <p>The last time the vehicle model was modified.</p>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetModelManifestOutput`](crate::operation::get_model_manifest::GetModelManifestOutput).
     pub fn build(self) -> crate::operation::get_model_manifest::GetModelManifestOutput {
         crate::operation::get_model_manifest::GetModelManifestOutput {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            description: self.description
-            ,
-            signal_catalog_arn: self.signal_catalog_arn
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
+            name: self.name,
+            arn: self.arn,
+            description: self.description,
+            signal_catalog_arn: self.signal_catalog_arn,
+            status: self.status,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
             _request_id: self._request_id,
         }
     }
 }
-

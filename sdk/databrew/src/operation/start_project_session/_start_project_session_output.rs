@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartProjectSessionOutput  {
+pub struct StartProjectSessionOutput {
     /// <p>The name of the project to be acted upon.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct StartProjectSessionOutput  {
 }
 impl StartProjectSessionOutput {
     /// <p>The name of the project to be acted upon.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A system-generated identifier for the session.</p>
-    pub fn client_session_id(&self) -> std::option::Option<& str> {
+    pub fn client_session_id(&self) -> std::option::Option<&str> {
         self.client_session_id.as_deref()
     }
 }
-impl  std::fmt::Debug for StartProjectSessionOutput  {
+impl std::fmt::Debug for StartProjectSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartProjectSessionOutput");
         formatter.field("name", &self.name);
@@ -31,14 +31,16 @@ impl  std::fmt::Debug for StartProjectSessionOutput  {
     }
 }
 impl aws_http::request_id::RequestId for StartProjectSessionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartProjectSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
-    pub fn builder() -> crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder {
-        crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder {
+        crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder::default(
+        )
     }
 }
 
@@ -58,7 +60,8 @@ impl StartProjectSessionOutputBuilder {
     }
     /// <p>The name of the project to be acted upon.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A system-generated identifier for the session.</p>
     pub fn client_session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,25 +69,27 @@ impl StartProjectSessionOutputBuilder {
         self
     }
     /// <p>A system-generated identifier for the session.</p>
-    pub fn set_client_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_session_id = input; self
+    pub fn set_client_session_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_session_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
     pub fn build(self) -> crate::operation::start_project_session::StartProjectSessionOutput {
         crate::operation::start_project_session::StartProjectSessionOutput {
-            name: self.name
-            ,
-            client_session_id: self.client_session_id
-            ,
+            name: self.name,
+            client_session_id: self.client_session_id,
             _request_id: self._request_id,
         }
     }
@@ -98,4 +103,3 @@ impl std::fmt::Debug for StartProjectSessionOutputBuilder {
         formatter.finish()
     }
 }
-

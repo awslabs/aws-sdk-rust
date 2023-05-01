@@ -138,6 +138,7 @@ impl Builder {
                             /// use aws_smithy_http::endpoint;
                             /// use aws_sdk_mq::endpoint::{Params as EndpointParams, DefaultResolver};
                             /// /// Endpoint resolver which adds a prefix to the generated endpoint
+                            /// #[derive(Debug)]
                             /// struct PrefixResolver {
                             ///     base_resolver: DefaultResolver,
                             ///     prefix: String

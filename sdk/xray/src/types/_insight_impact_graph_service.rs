@@ -3,16 +3,16 @@
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightImpactGraphService  {
+pub struct InsightImpactGraphService {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
-    /// <p>Identifier for the service. Unique within the service map.</p> 
-    /// <ul> 
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -34,30 +34,30 @@ impl InsightImpactGraphService {
     pub fn reference_id(&self) -> std::option::Option<i32> {
         self.reference_id
     }
-    /// <p>Identifier for the service. Unique within the service map.</p> 
-    /// <ul> 
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The canonical name of the service.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Connections to downstream services.</p>
-    pub fn edges(&self) -> std::option::Option<& [crate::types::InsightImpactGraphEdge]> {
+    pub fn edges(&self) -> std::option::Option<&[crate::types::InsightImpactGraphEdge]> {
         self.edges.as_deref()
     }
 }
@@ -87,28 +87,30 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     pub fn set_reference_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.reference_id = input; self
+        self.reference_id = input;
+        self
     }
-    /// <p>Identifier for the service. Unique within the service map.</p> 
-    /// <ul> 
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>Identifier for the service. Unique within the service map.</p> 
-    /// <ul> 
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
-    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The canonical name of the service.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>The canonical name of the service.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `names`.
     ///
@@ -126,13 +129,17 @@ impl InsightImpactGraphServiceBuilder {
     /// <p>A list of names for the service, including the canonical name.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +148,8 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Appends an item to `edges`.
     ///
@@ -150,30 +158,27 @@ impl InsightImpactGraphServiceBuilder {
     /// <p>Connections to downstream services.</p>
     pub fn edges(mut self, input: crate::types::InsightImpactGraphEdge) -> Self {
         let mut v = self.edges.unwrap_or_default();
-                        v.push(input);
-                        self.edges = Some(v);
-                        self
+        v.push(input);
+        self.edges = Some(v);
+        self
     }
     /// <p>Connections to downstream services.</p>
-    pub fn set_edges(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightImpactGraphEdge>>) -> Self {
-        self.edges = input; self
+    pub fn set_edges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InsightImpactGraphEdge>>,
+    ) -> Self {
+        self.edges = input;
+        self
     }
     /// Consumes the builder and constructs a [`InsightImpactGraphService`](crate::types::InsightImpactGraphService).
     pub fn build(self) -> crate::types::InsightImpactGraphService {
         crate::types::InsightImpactGraphService {
-            reference_id: self.reference_id
-            ,
-            r#type: self.r#type
-            ,
-            name: self.name
-            ,
-            names: self.names
-            ,
-            account_id: self.account_id
-            ,
-            edges: self.edges
-            ,
+            reference_id: self.reference_id,
+            r#type: self.r#type,
+            name: self.name,
+            names: self.names,
+            account_id: self.account_id,
+            edges: self.edges,
         }
     }
 }
-

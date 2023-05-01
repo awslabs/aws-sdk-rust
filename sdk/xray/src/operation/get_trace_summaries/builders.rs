@@ -4,67 +4,97 @@ pub use crate::operation::get_trace_summaries::_get_trace_summaries_output::GetT
 pub use crate::operation::get_trace_summaries::_get_trace_summaries_input::GetTraceSummariesInputBuilder;
 
 /// Fluent builder constructing a request to `GetTraceSummaries`.
-/// 
-/// <p>Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.</p> 
-/// <p>A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come from a known user. For example, the following filter expression targets traces that pass through <code>api.example.com</code>:</p> 
-/// <p> <code>service("api.example.com")</code> </p> 
-/// <p>This filter expression finds traces that have an annotation named <code>account</code> with the value <code>12345</code>:</p> 
-/// <p> <code>annotation.account = "12345"</code> </p> 
+///
+/// <p>Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.</p>
+/// <p>A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come from a known user. For example, the following filter expression targets traces that pass through <code>api.example.com</code>:</p>
+/// <p> <code>service("api.example.com")</code> </p>
+/// <p>This filter expression finds traces that have an annotation named <code>account</code> with the value <code>12345</code>:</p>
+/// <p> <code>annotation.account = "12345"</code> </p>
 /// <p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTraceSummariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder
-            }
-impl GetTraceSummariesFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder,
+}
+impl GetTraceSummariesFluentBuilder {
     /// Creates a new `GetTraceSummaries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_trace_summaries::GetTraceSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_trace_summaries::GetTraceSummariesOutput, aws_smithy_http::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_trace_summaries::GetTraceSummaries,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_trace_summaries::GetTraceSummariesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_trace_summaries::GetTraceSummariesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_trace_summaries::GetTraceSummariesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator {
-                            crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator {
+        crate::operation::get_trace_summaries::paginator::GetTraceSummariesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The start of the time frame for which to retrieve traces.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -84,7 +114,10 @@ impl GetTraceSummariesFluentBuilder  {
         self
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    pub fn set_time_range_type(mut self, input: std::option::Option<crate::types::TimeRangeType>) -> Self {
+    pub fn set_time_range_type(
+        mut self,
+        input: std::option::Option<crate::types::TimeRangeType>,
+    ) -> Self {
         self.inner = self.inner.set_time_range_type(input);
         self
     }
@@ -104,7 +137,10 @@ impl GetTraceSummariesFluentBuilder  {
         self
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    pub fn set_sampling_strategy(mut self, input: std::option::Option<crate::types::SamplingStrategy>) -> Self {
+    pub fn set_sampling_strategy(
+        mut self,
+        input: std::option::Option<crate::types::SamplingStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_sampling_strategy(input);
         self
     }
@@ -114,7 +150,10 @@ impl GetTraceSummariesFluentBuilder  {
         self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_filter_expression(input);
         self
     }
@@ -129,4 +168,3 @@ impl GetTraceSummariesFluentBuilder  {
         self
     }
 }
-

@@ -4,6 +4,7 @@
  */
 
 use self::auth::orchestrate_auth;
+use crate::client::orchestrator::endpoints::orchestrate_endpoint;
 use crate::client::orchestrator::http::read_body;
 use crate::client::orchestrator::phase::Phase;
 use aws_smithy_http::result::SdkError;
@@ -17,6 +18,7 @@ use aws_smithy_runtime_api::config_bag::ConfigBag;
 use tracing::{debug_span, Instrument};
 
 mod auth;
+mod endpoints;
 mod http;
 pub(self) mod phase;
 
@@ -105,12 +107,7 @@ async fn make_an_attempt(
 ) -> Result<Phase, SdkError<Error, HttpResponse>> {
     let dispatch_phase = dispatch_phase
         .include(|ctx| interceptors.read_before_attempt(ctx, cfg))?
-        .include_mut(|ctx| {
-            let request = ctx.request_mut().expect("request has been set");
-
-            let endpoint_resolver = cfg.endpoint_resolver();
-            endpoint_resolver.resolve_and_apply_endpoint(request)
-        })?
+        .include_mut(|ctx| orchestrate_endpoint(ctx, cfg))?
         .include_mut(|ctx| interceptors.modify_before_signing(ctx, cfg))?
         .include(|ctx| interceptors.read_before_signing(ctx, cfg))?;
 

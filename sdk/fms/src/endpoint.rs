@@ -1093,7 +1093,7 @@ impl Params {
 }
 
 /// The default endpoint resolver
-                #[derive(Default)]
+                #[derive(Debug, Default)]
                 pub struct DefaultResolver {
                     partition_resolver: crate::endpoint_lib::partition::PartitionResolver
                 }

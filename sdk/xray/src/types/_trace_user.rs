@@ -3,7 +3,7 @@
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TraceUser  {
+pub struct TraceUser {
     /// <p>The user's name.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TraceUser  {
 }
 impl TraceUser {
     /// <p>The user's name.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn service_ids(&self) -> std::option::Option<& [crate::types::ServiceId]> {
+    pub fn service_ids(&self) -> std::option::Option<&[crate::types::ServiceId]> {
         self.service_ids.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TraceUserBuilder {
     }
     /// <p>The user's name.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// Appends an item to `service_ids`.
     ///
@@ -52,22 +53,23 @@ impl TraceUserBuilder {
     /// <p>Services that the user's request hit.</p>
     pub fn service_ids(mut self, input: crate::types::ServiceId) -> Self {
         let mut v = self.service_ids.unwrap_or_default();
-                        v.push(input);
-                        self.service_ids = Some(v);
-                        self
+        v.push(input);
+        self.service_ids = Some(v);
+        self
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn set_service_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceId>>) -> Self {
-        self.service_ids = input; self
+    pub fn set_service_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServiceId>>,
+    ) -> Self {
+        self.service_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`TraceUser`](crate::types::TraceUser).
     pub fn build(self) -> crate::types::TraceUser {
         crate::types::TraceUser {
-            user_name: self.user_name
-            ,
-            service_ids: self.service_ids
-            ,
+            user_name: self.user_name,
+            service_ids: self.service_ids,
         }
     }
 }
-

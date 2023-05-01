@@ -13,6 +13,8 @@ use http::header::HeaderName;
 use http::{HeaderValue, Uri};
 use std::str::FromStr;
 
+// TODO(enableNewSmithyRuntime): Delete this module
+
 /// Middleware to apply an HTTP endpoint to the request
 ///
 /// This middleware reads [`aws_smithy_types::endpoint::Endpoint`] out of the request properties and applies

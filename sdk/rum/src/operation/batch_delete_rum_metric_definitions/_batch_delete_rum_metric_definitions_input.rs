@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteRumMetricDefinitionsInput  {
+pub struct BatchDeleteRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
     #[doc(hidden)]
     pub app_monitor_name: std::option::Option<std::string::String>,
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::MetricDestination>,
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> 
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
@@ -19,26 +19,26 @@ pub struct BatchDeleteRumMetricDefinitionsInput  {
 }
 impl BatchDeleteRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
-    pub fn app_monitor_name(&self) -> std::option::Option<& str> {
+    pub fn app_monitor_name(&self) -> std::option::Option<&str> {
         self.app_monitor_name.as_deref()
     }
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
-    pub fn destination(&self) -> std::option::Option<& crate::types::MetricDestination> {
+    pub fn destination(&self) -> std::option::Option<&crate::types::MetricDestination> {
         self.destination.as_ref()
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> 
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    pub fn metric_definition_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn metric_definition_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.metric_definition_ids.as_deref()
     }
 }
 impl BatchDeleteRumMetricDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsInput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput).
-    pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder{
         crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder::default()
     }
 }
@@ -60,7 +60,8 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
     pub fn set_app_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_monitor_name = input; self
+        self.app_monitor_name = input;
+        self
     }
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
@@ -68,19 +69,24 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
         self
     }
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::MetricDestination>) -> Self {
-        self.destination = input; self
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::MetricDestination>,
+    ) -> Self {
+        self.destination = input;
+        self
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> 
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.destination_arn = Some(input.into());
         self
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> 
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// Appends an item to `metric_definition_ids`.
     ///
@@ -89,16 +95,25 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
     pub fn metric_definition_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.metric_definition_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.metric_definition_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.metric_definition_ids = Some(v);
+        self
     }
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    pub fn set_metric_definition_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.metric_definition_ids = input; self
+    pub fn set_metric_definition_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.metric_definition_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsInput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput).
-    pub fn build(self) -> Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput {
                 app_monitor_name: self.app_monitor_name
@@ -113,4 +128,3 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
         )
     }
 }
-

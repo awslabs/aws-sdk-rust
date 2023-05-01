@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEncryptionConfigInput  {
-    /// <p>An Amazon Web Services KMS key in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li> 
-    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li> 
-    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li> 
-    /// </ul> 
+pub struct PutEncryptionConfigInput {
+    /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
+    /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -17,25 +17,27 @@ pub struct PutEncryptionConfigInput  {
     pub r#type: std::option::Option<crate::types::EncryptionType>,
 }
 impl PutEncryptionConfigInput {
-    /// <p>An Amazon Web Services KMS key in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li> 
-    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li> 
-    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li> 
-    /// </ul> 
+    /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
+    /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::EncryptionType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
 }
 impl PutEncryptionConfigInput {
     /// Creates a new builder-style object to manufacture [`PutEncryptionConfigInput`](crate::operation::put_encryption_config::PutEncryptionConfigInput).
-    pub fn builder() -> crate::operation::put_encryption_config::builders::PutEncryptionConfigInputBuilder {
-        crate::operation::put_encryption_config::builders::PutEncryptionConfigInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_encryption_config::builders::PutEncryptionConfigInputBuilder {
+        crate::operation::put_encryption_config::builders::PutEncryptionConfigInputBuilder::default(
+        )
     }
 }
 
@@ -47,26 +49,27 @@ pub struct PutEncryptionConfigInputBuilder {
     pub(crate) r#type: std::option::Option<crate::types::EncryptionType>,
 }
 impl PutEncryptionConfigInputBuilder {
-    /// <p>An Amazon Web Services KMS key in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li> 
-    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li> 
-    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li> 
-    /// </ul> 
+    /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
+    /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.key_id = Some(input.into());
         self
     }
-    /// <p>An Amazon Web Services KMS key in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li> 
-    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li> 
-    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li> 
-    /// </ul> 
+    /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
+    /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
@@ -75,18 +78,21 @@ impl PutEncryptionConfigInputBuilder {
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutEncryptionConfigInput`](crate::operation::put_encryption_config::PutEncryptionConfigInput).
-    pub fn build(self) -> Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_encryption_config::PutEncryptionConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_encryption_config::PutEncryptionConfigInput {
-                key_id: self.key_id
-                ,
-                r#type: self.r#type
-                ,
-            }
+                key_id: self.key_id,
+                r#type: self.r#type,
+            },
         )
     }
 }
-

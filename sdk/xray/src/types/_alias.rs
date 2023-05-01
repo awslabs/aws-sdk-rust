@@ -3,7 +3,7 @@
 /// <p>An alias for an edge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alias  {
+pub struct Alias {
     /// <p>The canonical name of the alias.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Alias  {
 }
 impl Alias {
     /// <p>The canonical name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of names for the alias, including the canonical name.</p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type of the alias.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl AliasBuilder {
     }
     /// <p>The canonical name of the alias.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `names`.
     ///
@@ -60,13 +61,17 @@ impl AliasBuilder {
     /// <p>A list of names for the alias, including the canonical name.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
     /// <p>A list of names for the alias, including the canonical name.</p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p>The type of the alias.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,18 +80,15 @@ impl AliasBuilder {
     }
     /// <p>The type of the alias.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`Alias`](crate::types::Alias).
     pub fn build(self) -> crate::types::Alias {
         crate::types::Alias {
-            name: self.name
-            ,
-            names: self.names
-            ,
-            r#type: self.r#type
-            ,
+            name: self.name,
+            names: self.names,
+            r#type: self.r#type,
         }
     }
 }
-

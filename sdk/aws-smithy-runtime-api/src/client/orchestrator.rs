@@ -9,6 +9,7 @@ use crate::client::interceptors::InterceptorContext;
 use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::endpoint::EndpointPrefix;
 use aws_smithy_http::property_bag::PropertyBag;
 use std::any::Any;
 use std::borrow::Cow;
@@ -179,8 +180,26 @@ pub trait HttpRequestSigner: Send + Sync + Debug {
     ) -> Result<(), BoxError>;
 }
 
+#[derive(Debug)]
+pub struct EndpointResolverParams(TypeErasedBox);
+
+impl EndpointResolverParams {
+    pub fn new<T: Any + Send + Sync + 'static>(params: T) -> Self {
+        Self(TypedBox::new(params).erase())
+    }
+
+    pub fn get<T: 'static>(&self) -> Option<&T> {
+        self.0.downcast_ref()
+    }
+}
+
 pub trait EndpointResolver: Send + Sync + Debug {
-    fn resolve_and_apply_endpoint(&self, request: &mut HttpRequest) -> Result<(), BoxError>;
+    fn resolve_and_apply_endpoint(
+        &self,
+        params: &EndpointResolverParams,
+        endpoint_prefix: Option<&EndpointPrefix>,
+        request: &mut HttpRequest,
+    ) -> Result<(), BoxError>;
 }
 
 pub trait ConfigBagAccessors {
@@ -192,6 +211,9 @@ pub trait ConfigBagAccessors {
 
     fn auth_option_resolver(&self) -> &dyn AuthOptionResolver;
     fn set_auth_option_resolver(&mut self, auth_option_resolver: impl AuthOptionResolver + 'static);
+
+    fn endpoint_resolver_params(&self) -> &EndpointResolverParams;
+    fn set_endpoint_resolver_params(&mut self, endpoint_resolver_params: EndpointResolverParams);
 
     fn endpoint_resolver(&self) -> &dyn EndpointResolver;
     fn set_endpoint_resolver(&mut self, endpoint_resolver: impl EndpointResolver + 'static);
@@ -264,6 +286,15 @@ impl ConfigBagAccessors for ConfigBag {
 
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static) {
         self.put::<Box<dyn RetryStrategy>>(Box::new(retry_strategy));
+    }
+
+    fn endpoint_resolver_params(&self) -> &EndpointResolverParams {
+        self.get::<EndpointResolverParams>()
+            .expect("endpoint resolver params must be set")
+    }
+
+    fn set_endpoint_resolver_params(&mut self, endpoint_resolver_params: EndpointResolverParams) {
+        self.put::<EndpointResolverParams>(endpoint_resolver_params);
     }
 
     fn endpoint_resolver(&self) -> &dyn EndpointResolver {

@@ -3,7 +3,7 @@
 /// <p>The structure containing configurations related to insights.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightsConfiguration  {
+pub struct InsightsConfiguration {
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     #[doc(hidden)]
     pub insights_enabled: std::option::Option<bool>,
@@ -43,7 +43,8 @@ impl InsightsConfigurationBuilder {
     }
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     pub fn set_insights_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.insights_enabled = input; self
+        self.insights_enabled = input;
+        self
     }
     /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
     pub fn notifications_enabled(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl InsightsConfigurationBuilder {
     }
     /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
     pub fn set_notifications_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.notifications_enabled = input; self
+        self.notifications_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`InsightsConfiguration`](crate::types::InsightsConfiguration).
     pub fn build(self) -> crate::types::InsightsConfiguration {
         crate::types::InsightsConfiguration {
-            insights_enabled: self.insights_enabled
-            ,
-            notifications_enabled: self.notifications_enabled
-            ,
+            insights_enabled: self.insights_enabled,
+            notifications_enabled: self.notifications_enabled,
         }
     }
 }
-
