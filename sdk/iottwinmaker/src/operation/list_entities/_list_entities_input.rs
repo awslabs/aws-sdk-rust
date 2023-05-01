@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitiesInput {
+pub struct ListEntitiesInput  {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>A list of objects that filter the request.</p> <note>
-    /// <p>Only one object is accepted as a valid input.</p>
+    /// <p>A list of objects that filter the request.</p> <note> 
+    /// <p>Only one object is accepted as a valid input.</p> 
     /// </note>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::ListEntitiesFilter>>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -21,22 +21,22 @@ pub struct ListEntitiesInput {
 }
 impl ListEntitiesInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
-    /// <p>A list of objects that filter the request.</p> <note>
-    /// <p>Only one object is accepted as a valid input.</p>
+    /// <p>A list of objects that filter the request.</p> <note> 
+    /// <p>Only one object is accepted as a valid input.</p> 
     /// </note>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::ListEntitiesFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::ListEntitiesFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -64,43 +64,37 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of objects that filter the request.</p> <note>
-    /// <p>Only one object is accepted as a valid input.</p>
+    /// <p>A list of objects that filter the request.</p> <note> 
+    /// <p>Only one object is accepted as a valid input.</p> 
     /// </note>
     pub fn filters(mut self, input: crate::types::ListEntitiesFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>A list of objects that filter the request.</p> <note>
-    /// <p>Only one object is accepted as a valid input.</p>
+    /// <p>A list of objects that filter the request.</p> <note> 
+    /// <p>Only one object is accepted as a valid input.</p> 
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ListEntitiesFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListEntitiesFilter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,21 +103,22 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_entities::ListEntitiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_entities::ListEntitiesInput {
-            workspace_id: self.workspace_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_entities::ListEntitiesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_entities::ListEntitiesInput {
+                workspace_id: self.workspace_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

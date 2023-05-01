@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopHyperParameterTuningJobInput {
+pub struct StopHyperParameterTuningJobInput  {
     /// <p>The name of the tuning job to stop.</p>
     #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
 }
 impl StopHyperParameterTuningJobInput {
     /// <p>The name of the tuning job to stop.</p>
-    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<& str> {
         self.hyper_parameter_tuning_job_name.as_deref()
     }
 }
 impl StopHyperParameterTuningJobInput {
     /// Creates a new builder-style object to manufacture [`StopHyperParameterTuningJobInput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput).
-    pub fn builder() -> crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobInputBuilder {
         crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobInputBuilder::default()
     }
 }
@@ -28,32 +28,22 @@ pub struct StopHyperParameterTuningJobInputBuilder {
 }
 impl StopHyperParameterTuningJobInputBuilder {
     /// <p>The name of the tuning job to stop.</p>
-    pub fn hyper_parameter_tuning_job_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = Some(input.into());
         self
     }
     /// <p>The name of the tuning job to stop.</p>
-    pub fn set_hyper_parameter_tuning_job_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hyper_parameter_tuning_job_name = input;
-        self
+    pub fn set_hyper_parameter_tuning_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hyper_parameter_tuning_job_name = input; self
     }
     /// Consumes the builder and constructs a [`StopHyperParameterTuningJobInput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput {
-                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
-            },
+                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name
+                ,
+            }
         )
     }
 }
+

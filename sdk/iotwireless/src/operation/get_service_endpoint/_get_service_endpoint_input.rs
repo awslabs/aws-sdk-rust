@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceEndpointInput {
+pub struct GetServiceEndpointInput  {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::WirelessGatewayServiceType>,
 }
 impl GetServiceEndpointInput {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
-    pub fn service_type(&self) -> std::option::Option<&crate::types::WirelessGatewayServiceType> {
+    pub fn service_type(&self) -> std::option::Option<& crate::types::WirelessGatewayServiceType> {
         self.service_type.as_ref()
     }
 }
 impl GetServiceEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetServiceEndpointInput`](crate::operation::get_service_endpoint::GetServiceEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_endpoint::builders::GetServiceEndpointInputBuilder {
+    pub fn builder() -> crate::operation::get_service_endpoint::builders::GetServiceEndpointInputBuilder {
         crate::operation::get_service_endpoint::builders::GetServiceEndpointInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetServiceEndpointInputBuilder {
         self
     }
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
-    pub fn set_service_type(
-        mut self,
-        input: std::option::Option<crate::types::WirelessGatewayServiceType>,
-    ) -> Self {
-        self.service_type = input;
-        self
+    pub fn set_service_type(mut self, input: std::option::Option<crate::types::WirelessGatewayServiceType>) -> Self {
+        self.service_type = input; self
     }
     /// Consumes the builder and constructs a [`GetServiceEndpointInput`](crate::operation::get_service_endpoint::GetServiceEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_service_endpoint::GetServiceEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_service_endpoint::GetServiceEndpointInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_service_endpoint::GetServiceEndpointInput {
-                service_type: self.service_type,
-            },
+                service_type: self.service_type
+                ,
+            }
         )
     }
 }
+

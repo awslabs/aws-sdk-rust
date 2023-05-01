@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSimulationJobBatchesInput {
+pub struct ListSimulationJobBatchesInput  {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListSimulationJobBatchesInput {
 }
 impl ListSimulationJobBatchesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
@@ -23,15 +23,13 @@ impl ListSimulationJobBatchesInput {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl ListSimulationJobBatchesInput {
     /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesInput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput).
-    pub fn builder(
-    ) -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder {
         crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListSimulationJobBatchesInputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +59,7 @@ impl ListSimulationJobBatchesInputBuilder {
     }
     /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -72,31 +68,26 @@ impl ListSimulationJobBatchesInputBuilder {
     /// <p>Optional filters to limit results.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Optional filters to limit results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Consumes the builder and constructs a [`ListSimulationJobBatchesInput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

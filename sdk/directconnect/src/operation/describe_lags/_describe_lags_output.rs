@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLagsOutput {
+pub struct DescribeLagsOutput  {
     /// <p>The LAGs.</p>
     #[doc(hidden)]
     pub lags: std::option::Option<std::vec::Vec<crate::types::Lag>>,
@@ -10,15 +10,15 @@ pub struct DescribeLagsOutput {
 }
 impl DescribeLagsOutput {
     /// <p>The LAGs.</p>
-    pub fn lags(&self) -> std::option::Option<&[crate::types::Lag]> {
+    pub fn lags(&self) -> std::option::Option<& [crate::types::Lag]> {
         self.lags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeLagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput).
     pub fn builder() -> crate::operation::describe_lags::builders::DescribeLagsOutputBuilder {
@@ -41,32 +41,30 @@ impl DescribeLagsOutputBuilder {
     /// <p>The LAGs.</p>
     pub fn lags(mut self, input: crate::types::Lag) -> Self {
         let mut v = self.lags.unwrap_or_default();
-        v.push(input);
-        self.lags = Some(v);
-        self
+                        v.push(input);
+                        self.lags = Some(v);
+                        self
     }
     /// <p>The LAGs.</p>
-    pub fn set_lags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Lag>>,
-    ) -> Self {
-        self.lags = input;
-        self
+    pub fn set_lags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Lag>>) -> Self {
+        self.lags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput).
     pub fn build(self) -> crate::operation::describe_lags::DescribeLagsOutput {
         crate::operation::describe_lags::DescribeLagsOutput {
-            lags: self.lags,
+            lags: self.lags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

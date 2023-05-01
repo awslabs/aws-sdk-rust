@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorModelOutput {
+pub struct DescribeDetectorModelOutput  {
     /// <p>Information about the detector model.</p>
     #[doc(hidden)]
     pub detector_model: std::option::Option<crate::types::DetectorModel>,
@@ -10,20 +10,18 @@ pub struct DescribeDetectorModelOutput {
 }
 impl DescribeDetectorModelOutput {
     /// <p>Information about the detector model.</p>
-    pub fn detector_model(&self) -> std::option::Option<&crate::types::DetectorModel> {
+    pub fn detector_model(&self) -> std::option::Option<& crate::types::DetectorModel> {
         self.detector_model.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDetectorModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelOutput`](crate::operation::describe_detector_model::DescribeDetectorModelOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_detector_model::builders::DescribeDetectorModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_detector_model::builders::DescribeDetectorModelOutputBuilder {
         crate::operation::describe_detector_model::builders::DescribeDetectorModelOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl DescribeDetectorModelOutputBuilder {
         self
     }
     /// <p>Information about the detector model.</p>
-    pub fn set_detector_model(
-        mut self,
-        input: std::option::Option<crate::types::DetectorModel>,
-    ) -> Self {
-        self.detector_model = input;
-        self
+    pub fn set_detector_model(mut self, input: std::option::Option<crate::types::DetectorModel>) -> Self {
+        self.detector_model = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDetectorModelOutput`](crate::operation::describe_detector_model::DescribeDetectorModelOutput).
     pub fn build(self) -> crate::operation::describe_detector_model::DescribeDetectorModelOutput {
         crate::operation::describe_detector_model::DescribeDetectorModelOutput {
-            detector_model: self.detector_model,
+            detector_model: self.detector_model
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

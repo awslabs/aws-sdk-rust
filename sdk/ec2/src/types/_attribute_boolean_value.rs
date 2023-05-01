@@ -3,7 +3,7 @@
 /// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeBooleanValue {
+pub struct AttributeBooleanValue  {
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<bool>,
@@ -35,11 +35,14 @@ impl AttributeBooleanValueBuilder {
     }
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`AttributeBooleanValue`](crate::types::AttributeBooleanValue).
     pub fn build(self) -> crate::types::AttributeBooleanValue {
-        crate::types::AttributeBooleanValue { value: self.value }
+        crate::types::AttributeBooleanValue {
+            value: self.value
+            ,
+        }
     }
 }
+

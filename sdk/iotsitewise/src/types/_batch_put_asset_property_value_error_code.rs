@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchputassetpropertyvalueerrorcode = unimplemented!();
 /// match batchputassetpropertyvalueerrorcode {
@@ -37,22 +37,14 @@
 /// Specifically, when `batchputassetpropertyvalueerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchPutAssetPropertyValueErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchPutAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -73,90 +65,55 @@ pub enum BatchPutAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     TimestampOutOfRangeException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchPutAssetPropertyValueErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDeniedException" => BatchPutAssetPropertyValueErrorCode::AccessDeniedException,
-            "ConflictingOperationException" => {
-                BatchPutAssetPropertyValueErrorCode::ConflictingOperationException
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDeniedException" => BatchPutAssetPropertyValueErrorCode::AccessDeniedException,
+"ConflictingOperationException" => BatchPutAssetPropertyValueErrorCode::ConflictingOperationException,
+"InternalFailureException" => BatchPutAssetPropertyValueErrorCode::InternalFailureException,
+"InvalidRequestException" => BatchPutAssetPropertyValueErrorCode::InvalidRequestException,
+"LimitExceededException" => BatchPutAssetPropertyValueErrorCode::LimitExceededException,
+"ResourceNotFoundException" => BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException,
+"ServiceUnavailableException" => BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException,
+"ThrottlingException" => BatchPutAssetPropertyValueErrorCode::ThrottlingException,
+"TimestampOutOfRangeException" => BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException,
+other => BatchPutAssetPropertyValueErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "InternalFailureException" => {
-                BatchPutAssetPropertyValueErrorCode::InternalFailureException
-            }
-            "InvalidRequestException" => {
-                BatchPutAssetPropertyValueErrorCode::InvalidRequestException
-            }
-            "LimitExceededException" => BatchPutAssetPropertyValueErrorCode::LimitExceededException,
-            "ResourceNotFoundException" => {
-                BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException
-            }
-            "ServiceUnavailableException" => {
-                BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException
-            }
-            "ThrottlingException" => BatchPutAssetPropertyValueErrorCode::ThrottlingException,
-            "TimestampOutOfRangeException" => {
-                BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException
-            }
-            other => BatchPutAssetPropertyValueErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
 impl std::str::FromStr for BatchPutAssetPropertyValueErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchPutAssetPropertyValueErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchPutAssetPropertyValueErrorCode::from(s))
+                }
+            }
 impl BatchPutAssetPropertyValueErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchPutAssetPropertyValueErrorCode::AccessDeniedException => "AccessDeniedException",
-            BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => {
-                "ConflictingOperationException"
-            }
-            BatchPutAssetPropertyValueErrorCode::InternalFailureException => {
-                "InternalFailureException"
-            }
-            BatchPutAssetPropertyValueErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
-            BatchPutAssetPropertyValueErrorCode::LimitExceededException => "LimitExceededException",
-            BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
-            BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => {
-                "ServiceUnavailableException"
-            }
-            BatchPutAssetPropertyValueErrorCode::ThrottlingException => "ThrottlingException",
-            BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => {
-                "TimestampOutOfRangeException"
-            }
-            BatchPutAssetPropertyValueErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedException",
-            "ConflictingOperationException",
-            "InternalFailureException",
-            "InvalidRequestException",
-            "LimitExceededException",
-            "ResourceNotFoundException",
-            "ServiceUnavailableException",
-            "ThrottlingException",
-            "TimestampOutOfRangeException",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchPutAssetPropertyValueErrorCode::AccessDeniedException => "AccessDeniedException",
+    BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => "ConflictingOperationException",
+    BatchPutAssetPropertyValueErrorCode::InternalFailureException => "InternalFailureException",
+    BatchPutAssetPropertyValueErrorCode::InvalidRequestException => "InvalidRequestException",
+    BatchPutAssetPropertyValueErrorCode::LimitExceededException => "LimitExceededException",
+    BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
+    BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => "ServiceUnavailableException",
+    BatchPutAssetPropertyValueErrorCode::ThrottlingException => "ThrottlingException",
+    BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => "TimestampOutOfRangeException",
+    BatchPutAssetPropertyValueErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDeniedException", "ConflictingOperationException", "InternalFailureException", "InvalidRequestException", "LimitExceededException", "ResourceNotFoundException", "ServiceUnavailableException", "ThrottlingException", "TimestampOutOfRangeException"]
+                }
+            }
 impl AsRef<str> for BatchPutAssetPropertyValueErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

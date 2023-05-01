@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountaccesstype = unimplemented!();
 /// match accountaccesstype {
@@ -30,64 +30,55 @@
 /// Specifically, when `accountaccesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountAccessType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountAccessType {
     /// Indicates that the customer is using Grafana to monitor resources in their current account.
     CurrentAccount,
     /// Indicates that the customer is using Grafana to monitor resources in organizational units.
     Organization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountAccessType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURRENT_ACCOUNT" => AccountAccessType::CurrentAccount,
-            "ORGANIZATION" => AccountAccessType::Organization,
-            other => {
-                AccountAccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURRENT_ACCOUNT" => AccountAccessType::CurrentAccount,
+"ORGANIZATION" => AccountAccessType::Organization,
+other => AccountAccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AccountAccessType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountAccessType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountAccessType::from(s))
+                }
+            }
 impl AccountAccessType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountAccessType::CurrentAccount => "CURRENT_ACCOUNT",
-            AccountAccessType::Organization => "ORGANIZATION",
-            AccountAccessType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CURRENT_ACCOUNT", "ORGANIZATION"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountAccessType::CurrentAccount => "CURRENT_ACCOUNT",
+    AccountAccessType::Organization => "ORGANIZATION",
+    AccountAccessType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURRENT_ACCOUNT", "ORGANIZATION"]
+                }
+            }
 impl AsRef<str> for AccountAccessType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

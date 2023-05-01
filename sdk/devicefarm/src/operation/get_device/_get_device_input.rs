@@ -3,14 +3,14 @@
 /// <p>Represents a request to the get device request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceInput {
+pub struct GetDeviceInput  {
     /// <p>The device type's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetDeviceInput {
     /// <p>The device type's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl GetDeviceInputBuilder {
     }
     /// <p>The device type's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_device::GetDeviceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_device::GetDeviceInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::get_device::GetDeviceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_device::GetDeviceInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

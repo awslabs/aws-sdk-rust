@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAttendeeInput {
+pub struct GetAttendeeInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetAttendeeInput {
 }
 impl GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(&self) -> std::option::Option<&str> {
+    pub fn attendee_id(&self) -> std::option::Option<& str> {
         self.attendee_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetAttendeeInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetAttendeeInputBuilder {
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attendee_id = input;
-        self
+        self.attendee_id = input; self
     }
     /// Consumes the builder and constructs a [`GetAttendeeInput`](crate::operation::get_attendee::GetAttendeeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_attendee::GetAttendeeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_attendee::GetAttendeeInput {
-            meeting_id: self.meeting_id,
-            attendee_id: self.attendee_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_attendee::GetAttendeeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_attendee::GetAttendeeInput {
+                meeting_id: self.meeting_id
+                ,
+                attendee_id: self.attendee_id
+                ,
+            }
+        )
     }
 }
+

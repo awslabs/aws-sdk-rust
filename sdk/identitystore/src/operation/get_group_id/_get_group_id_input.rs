@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupIdInput {
+pub struct GetGroupIdInput  {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetGroupIdInput {
 }
 impl GetGroupIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
-    pub fn alternate_identifier(&self) -> std::option::Option<&crate::types::AlternateIdentifier> {
+    pub fn alternate_identifier(&self) -> std::option::Option<& crate::types::AlternateIdentifier> {
         self.alternate_identifier.as_ref()
     }
 }
@@ -41,12 +41,8 @@ impl GetGroupIdInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identity_store_id = input;
-        self
+    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identity_store_id = input; self
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
@@ -54,23 +50,19 @@ impl GetGroupIdInputBuilder {
         self
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
-    pub fn set_alternate_identifier(
-        mut self,
-        input: std::option::Option<crate::types::AlternateIdentifier>,
-    ) -> Self {
-        self.alternate_identifier = input;
-        self
+    pub fn set_alternate_identifier(mut self, input: std::option::Option<crate::types::AlternateIdentifier>) -> Self {
+        self.alternate_identifier = input; self
     }
     /// Consumes the builder and constructs a [`GetGroupIdInput`](crate::operation::get_group_id::GetGroupIdInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_group_id::GetGroupIdInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_group_id::GetGroupIdInput {
-            identity_store_id: self.identity_store_id,
-            alternate_identifier: self.alternate_identifier,
-        })
+    pub fn build(self) -> Result<crate::operation::get_group_id::GetGroupIdInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_group_id::GetGroupIdInput {
+                identity_store_id: self.identity_store_id
+                ,
+                alternate_identifier: self.alternate_identifier
+                ,
+            }
+        )
     }
 }
+

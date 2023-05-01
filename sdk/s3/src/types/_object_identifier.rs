@@ -3,9 +3,9 @@
 /// <p>Object Identifier is unique value to identify objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectIdentifier {
-    /// <p>Key name of the object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+pub struct ObjectIdentifier  {
+    /// <p>Key name of the object.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -14,14 +14,14 @@ pub struct ObjectIdentifier {
     pub version_id: std::option::Option<std::string::String>,
 }
 impl ObjectIdentifier {
-    /// <p>Key name of the object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// <p>Key name of the object.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>VersionId for the specific version of the object to delete.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -40,19 +40,18 @@ pub struct ObjectIdentifierBuilder {
     pub(crate) version_id: std::option::Option<std::string::String>,
 }
 impl ObjectIdentifierBuilder {
-    /// <p>Key name of the object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// <p>Key name of the object.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
         self.key = Some(input.into());
         self
     }
-    /// <p>Key name of the object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// <p>Key name of the object.</p> <important> 
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p> 
     /// </important>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>VersionId for the specific version of the object to delete.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,16 @@ impl ObjectIdentifierBuilder {
     }
     /// <p>VersionId for the specific version of the object to delete.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Consumes the builder and constructs a [`ObjectIdentifier`](crate::types::ObjectIdentifier).
     pub fn build(self) -> crate::types::ObjectIdentifier {
         crate::types::ObjectIdentifier {
-            key: self.key,
-            version_id: self.version_id,
+            key: self.key
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

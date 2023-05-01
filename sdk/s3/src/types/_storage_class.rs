@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storageclass = unimplemented!();
 /// match storageclass {
@@ -19,6 +19,7 @@
 ///     StorageClass::OnezoneIa => { /* ... */ },
 ///     StorageClass::Outposts => { /* ... */ },
 ///     StorageClass::ReducedRedundancy => { /* ... */ },
+///     StorageClass::Snow => { /* ... */ },
 ///     StorageClass::Standard => { /* ... */ },
 ///     StorageClass::StandardIa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -37,22 +38,14 @@
 /// Specifically, when `storageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
@@ -69,70 +62,63 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     ReducedRedundancy,
     #[allow(missing_docs)] // documentation missing in model
+    Snow,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     #[allow(missing_docs)] // documentation missing in model
     StandardIa,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEEP_ARCHIVE" => StorageClass::DeepArchive,
-            "GLACIER" => StorageClass::Glacier,
-            "GLACIER_IR" => StorageClass::GlacierIr,
-            "INTELLIGENT_TIERING" => StorageClass::IntelligentTiering,
-            "ONEZONE_IA" => StorageClass::OnezoneIa,
-            "OUTPOSTS" => StorageClass::Outposts,
-            "REDUCED_REDUNDANCY" => StorageClass::ReducedRedundancy,
-            "STANDARD" => StorageClass::Standard,
-            "STANDARD_IA" => StorageClass::StandardIa,
-            other => {
-                StorageClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEEP_ARCHIVE" => StorageClass::DeepArchive,
+"GLACIER" => StorageClass::Glacier,
+"GLACIER_IR" => StorageClass::GlacierIr,
+"INTELLIGENT_TIERING" => StorageClass::IntelligentTiering,
+"ONEZONE_IA" => StorageClass::OnezoneIa,
+"OUTPOSTS" => StorageClass::Outposts,
+"REDUCED_REDUNDANCY" => StorageClass::ReducedRedundancy,
+"SNOW" => StorageClass::Snow,
+"STANDARD" => StorageClass::Standard,
+"STANDARD_IA" => StorageClass::StandardIa,
+other => StorageClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for StorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageClass::from(s))
+                }
+            }
 impl StorageClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StorageClass::DeepArchive => "DEEP_ARCHIVE",
-            StorageClass::Glacier => "GLACIER",
-            StorageClass::GlacierIr => "GLACIER_IR",
-            StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
-            StorageClass::OnezoneIa => "ONEZONE_IA",
-            StorageClass::Outposts => "OUTPOSTS",
-            StorageClass::ReducedRedundancy => "REDUCED_REDUNDANCY",
-            StorageClass::Standard => "STANDARD",
-            StorageClass::StandardIa => "STANDARD_IA",
-            StorageClass::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEEP_ARCHIVE",
-            "GLACIER",
-            "GLACIER_IR",
-            "INTELLIGENT_TIERING",
-            "ONEZONE_IA",
-            "OUTPOSTS",
-            "REDUCED_REDUNDANCY",
-            "STANDARD",
-            "STANDARD_IA",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StorageClass::DeepArchive => "DEEP_ARCHIVE",
+    StorageClass::Glacier => "GLACIER",
+    StorageClass::GlacierIr => "GLACIER_IR",
+    StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
+    StorageClass::OnezoneIa => "ONEZONE_IA",
+    StorageClass::Outposts => "OUTPOSTS",
+    StorageClass::ReducedRedundancy => "REDUCED_REDUNDANCY",
+    StorageClass::Snow => "SNOW",
+    StorageClass::Standard => "STANDARD",
+    StorageClass::StandardIa => "STANDARD_IA",
+    StorageClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEEP_ARCHIVE", "GLACIER", "GLACIER_IR", "INTELLIGENT_TIERING", "ONEZONE_IA", "OUTPOSTS", "REDUCED_REDUNDANCY", "SNOW", "STANDARD", "STANDARD_IA"]
+                }
+            }
 impl AsRef<str> for StorageClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderstatus = unimplemented!();
 /// match orderstatus {
@@ -38,22 +38,14 @@
 /// Specifically, when `orderstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -76,67 +68,57 @@ pub enum OrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Received,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => OrderStatus::Cancelled,
-            "COMPLETED" => OrderStatus::Completed,
-            "ERROR" => OrderStatus::Error,
-            "FULFILLED" => OrderStatus::Fulfilled,
-            "INSTALLING" => OrderStatus::Installing,
-            "IN_PROGRESS" => OrderStatus::InProgress,
-            "PENDING" => OrderStatus::Pending,
-            "PREPARING" => OrderStatus::Preparing,
-            "PROCESSING" => OrderStatus::Processing,
-            "RECEIVED" => OrderStatus::Received,
-            other => OrderStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => OrderStatus::Cancelled,
+"COMPLETED" => OrderStatus::Completed,
+"ERROR" => OrderStatus::Error,
+"FULFILLED" => OrderStatus::Fulfilled,
+"INSTALLING" => OrderStatus::Installing,
+"IN_PROGRESS" => OrderStatus::InProgress,
+"PENDING" => OrderStatus::Pending,
+"PREPARING" => OrderStatus::Preparing,
+"PROCESSING" => OrderStatus::Processing,
+"RECEIVED" => OrderStatus::Received,
+other => OrderStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrderStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderStatus::from(s))
+                }
+            }
 impl OrderStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrderStatus::Cancelled => "CANCELLED",
-            OrderStatus::Completed => "COMPLETED",
-            OrderStatus::Error => "ERROR",
-            OrderStatus::Fulfilled => "FULFILLED",
-            OrderStatus::Installing => "INSTALLING",
-            OrderStatus::InProgress => "IN_PROGRESS",
-            OrderStatus::Pending => "PENDING",
-            OrderStatus::Preparing => "PREPARING",
-            OrderStatus::Processing => "PROCESSING",
-            OrderStatus::Received => "RECEIVED",
-            OrderStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "COMPLETED",
-            "ERROR",
-            "FULFILLED",
-            "INSTALLING",
-            "IN_PROGRESS",
-            "PENDING",
-            "PREPARING",
-            "PROCESSING",
-            "RECEIVED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrderStatus::Cancelled => "CANCELLED",
+    OrderStatus::Completed => "COMPLETED",
+    OrderStatus::Error => "ERROR",
+    OrderStatus::Fulfilled => "FULFILLED",
+    OrderStatus::Installing => "INSTALLING",
+    OrderStatus::InProgress => "IN_PROGRESS",
+    OrderStatus::Pending => "PENDING",
+    OrderStatus::Preparing => "PREPARING",
+    OrderStatus::Processing => "PROCESSING",
+    OrderStatus::Received => "RECEIVED",
+    OrderStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "COMPLETED", "ERROR", "FULFILLED", "INSTALLING", "IN_PROGRESS", "PENDING", "PREPARING", "PROCESSING", "RECEIVED"]
+                }
+            }
 impl AsRef<str> for OrderStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

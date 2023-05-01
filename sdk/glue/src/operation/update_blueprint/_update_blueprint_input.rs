@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBlueprintInput {
+pub struct UpdateBlueprintInput  {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateBlueprintInput {
 }
 impl UpdateBlueprintInput {
     /// <p>The name of the blueprint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the blueprint.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn blueprint_location(&self) -> std::option::Option<&str> {
+    pub fn blueprint_location(&self) -> std::option::Option<& str> {
         self.blueprint_location.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl UpdateBlueprintInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the blueprint.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl UpdateBlueprintInputBuilder {
     }
     /// <p>A description of the blueprint.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
     pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +67,21 @@ impl UpdateBlueprintInputBuilder {
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn set_blueprint_location(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.blueprint_location = input;
-        self
+    pub fn set_blueprint_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.blueprint_location = input; self
     }
     /// Consumes the builder and constructs a [`UpdateBlueprintInput`](crate::operation::update_blueprint::UpdateBlueprintInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_blueprint::UpdateBlueprintInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_blueprint::UpdateBlueprintInput {
-            name: self.name,
-            description: self.description,
-            blueprint_location: self.blueprint_location,
-        })
+    pub fn build(self) -> Result<crate::operation::update_blueprint::UpdateBlueprintInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_blueprint::UpdateBlueprintInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                blueprint_location: self.blueprint_location
+                ,
+            }
+        )
     }
 }
+

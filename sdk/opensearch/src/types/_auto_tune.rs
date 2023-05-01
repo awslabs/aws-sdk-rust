@@ -3,7 +3,7 @@
 /// <p>Information about an Auto-Tune action. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoTune {
+pub struct AutoTune  {
     /// <p>The type of Auto-Tune action.</p>
     #[doc(hidden)]
     pub auto_tune_type: std::option::Option<crate::types::AutoTuneType>,
@@ -13,11 +13,11 @@ pub struct AutoTune {
 }
 impl AutoTune {
     /// <p>The type of Auto-Tune action.</p>
-    pub fn auto_tune_type(&self) -> std::option::Option<&crate::types::AutoTuneType> {
+    pub fn auto_tune_type(&self) -> std::option::Option<& crate::types::AutoTuneType> {
         self.auto_tune_type.as_ref()
     }
     /// <p>Details about an Auto-Tune action.</p>
-    pub fn auto_tune_details(&self) -> std::option::Option<&crate::types::AutoTuneDetails> {
+    pub fn auto_tune_details(&self) -> std::option::Option<& crate::types::AutoTuneDetails> {
         self.auto_tune_details.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl AutoTuneBuilder {
         self
     }
     /// <p>The type of Auto-Tune action.</p>
-    pub fn set_auto_tune_type(
-        mut self,
-        input: std::option::Option<crate::types::AutoTuneType>,
-    ) -> Self {
-        self.auto_tune_type = input;
-        self
+    pub fn set_auto_tune_type(mut self, input: std::option::Option<crate::types::AutoTuneType>) -> Self {
+        self.auto_tune_type = input; self
     }
     /// <p>Details about an Auto-Tune action.</p>
     pub fn auto_tune_details(mut self, input: crate::types::AutoTuneDetails) -> Self {
@@ -55,18 +51,17 @@ impl AutoTuneBuilder {
         self
     }
     /// <p>Details about an Auto-Tune action.</p>
-    pub fn set_auto_tune_details(
-        mut self,
-        input: std::option::Option<crate::types::AutoTuneDetails>,
-    ) -> Self {
-        self.auto_tune_details = input;
-        self
+    pub fn set_auto_tune_details(mut self, input: std::option::Option<crate::types::AutoTuneDetails>) -> Self {
+        self.auto_tune_details = input; self
     }
     /// Consumes the builder and constructs a [`AutoTune`](crate::types::AutoTune).
     pub fn build(self) -> crate::types::AutoTune {
         crate::types::AutoTune {
-            auto_tune_type: self.auto_tune_type,
-            auto_tune_details: self.auto_tune_details,
+            auto_tune_type: self.auto_tune_type
+            ,
+            auto_tune_details: self.auto_tune_details
+            ,
         }
     }
 }
+

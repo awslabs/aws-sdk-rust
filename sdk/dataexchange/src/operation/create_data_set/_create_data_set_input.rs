@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataSetInput {
+pub struct CreateDataSetInput  {
     /// <p>The type of asset that is added to a data set.</p>
     #[doc(hidden)]
     pub asset_type: std::option::Option<crate::types::AssetType>,
@@ -14,27 +14,23 @@ pub struct CreateDataSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDataSetInput {
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::types::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::types::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,8 +48,7 @@ pub struct CreateDataSetInputBuilder {
     pub(crate) asset_type: std::option::Option<crate::types::AssetType>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDataSetInputBuilder {
     /// <p>The type of asset that is added to a data set.</p>
@@ -63,8 +58,7 @@ impl CreateDataSetInputBuilder {
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn set_asset_type(mut self, input: std::option::Option<crate::types::AssetType>) -> Self {
-        self.asset_type = input;
-        self
+        self.asset_type = input; self
     }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +67,7 @@ impl CreateDataSetInputBuilder {
     }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the data set.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,46 +76,37 @@ impl CreateDataSetInputBuilder {
     }
     /// <p>The name of the data set.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_data_set::CreateDataSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_data_set::CreateDataSetInput {
-            asset_type: self.asset_type,
-            description: self.description,
-            name: self.name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_data_set::CreateDataSetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_data_set::CreateDataSetInput {
+                asset_type: self.asset_type
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

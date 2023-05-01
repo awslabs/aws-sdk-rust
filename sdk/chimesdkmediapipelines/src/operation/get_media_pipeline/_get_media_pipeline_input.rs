@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMediaPipelineInput {
+pub struct GetMediaPipelineInput  {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
 }
 impl GetMediaPipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
 }
 impl GetMediaPipelineInput {
     /// Creates a new builder-style object to manufacture [`GetMediaPipelineInput`](crate::operation::get_media_pipeline::GetMediaPipelineInput).
-    pub fn builder() -> crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder {
         crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetMediaPipelineInputBuilder {
         self
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.media_pipeline_id = input;
-        self
+    pub fn set_media_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.media_pipeline_id = input; self
     }
     /// Consumes the builder and constructs a [`GetMediaPipelineInput`](crate::operation::get_media_pipeline::GetMediaPipelineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_media_pipeline::GetMediaPipelineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_media_pipeline::GetMediaPipelineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_media_pipeline::GetMediaPipelineInput {
-                media_pipeline_id: self.media_pipeline_id,
-            },
+                media_pipeline_id: self.media_pipeline_id
+                ,
+            }
         )
     }
 }
+

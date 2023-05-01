@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomVocabularyMetadataInput {
+pub struct DescribeCustomVocabularyMetadataInput  {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DescribeCustomVocabularyMetadataInput {
 }
 impl DescribeCustomVocabularyMetadataInput {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version of the bot to return metadata for.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 impl DescribeCustomVocabularyMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomVocabularyMetadataInput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput).
-    pub fn builder() -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder {
         crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
     }
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot version of the bot to return metadata for.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
     }
     /// <p>The bot version of the bot to return metadata for.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,11 +68,10 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeCustomVocabularyMetadataInput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput).
-    pub fn build(self) -> Result<crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput {
                 bot_id: self.bot_id
@@ -87,3 +84,4 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
         )
     }
 }
+

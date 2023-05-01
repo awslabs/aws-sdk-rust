@@ -3,14 +3,14 @@
 /// <p>A request to obtain more information about a dedicated IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpInput {
+pub struct GetDedicatedIpInput  {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpInput {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> std::option::Option<& str> {
         self.ip.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl GetDedicatedIpInputBuilder {
     }
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
     pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
     }
     /// Consumes the builder and constructs a [`GetDedicatedIpInput`](crate::operation::get_dedicated_ip::GetDedicatedIpInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_dedicated_ip::GetDedicatedIpInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_dedicated_ip::GetDedicatedIpInput { ip: self.ip })
+    pub fn build(self) -> Result<crate::operation::get_dedicated_ip::GetDedicatedIpInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_dedicated_ip::GetDedicatedIpInput {
+                ip: self.ip
+                ,
+            }
+        )
     }
 }
+

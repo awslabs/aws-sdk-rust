@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOtaUpdatesInput {
+pub struct ListOtaUpdatesInput  {
     /// <p>The maximum number of results to return at one time.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,11 +19,11 @@ impl ListOtaUpdatesInput {
         self.max_results
     }
     /// <p>A token used to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The OTA update job status.</p>
-    pub fn ota_update_status(&self) -> std::option::Option<&crate::types::OtaUpdateStatus> {
+    pub fn ota_update_status(&self) -> std::option::Option<& crate::types::OtaUpdateStatus> {
         self.ota_update_status.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl ListOtaUpdatesInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token used to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListOtaUpdatesInputBuilder {
     }
     /// <p>A token used to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The OTA update job status.</p>
     pub fn ota_update_status(mut self, input: crate::types::OtaUpdateStatus) -> Self {
@@ -69,24 +67,21 @@ impl ListOtaUpdatesInputBuilder {
         self
     }
     /// <p>The OTA update job status.</p>
-    pub fn set_ota_update_status(
-        mut self,
-        input: std::option::Option<crate::types::OtaUpdateStatus>,
-    ) -> Self {
-        self.ota_update_status = input;
-        self
+    pub fn set_ota_update_status(mut self, input: std::option::Option<crate::types::OtaUpdateStatus>) -> Self {
+        self.ota_update_status = input; self
     }
     /// Consumes the builder and constructs a [`ListOtaUpdatesInput`](crate::operation::list_ota_updates::ListOtaUpdatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_ota_updates::ListOtaUpdatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_ota_updates::ListOtaUpdatesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            ota_update_status: self.ota_update_status,
-        })
+    pub fn build(self) -> Result<crate::operation::list_ota_updates::ListOtaUpdatesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_ota_updates::ListOtaUpdatesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                ota_update_status: self.ota_update_status
+                ,
+            }
+        )
     }
 }
+

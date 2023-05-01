@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dvbddshandling = unimplemented!();
 /// match dvbddshandling {
@@ -31,22 +31,14 @@
 /// Specifically, when `dvbddshandling` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DvbddsHandling::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify how MediaConvert handles the display definition segment (DDS). To exclude the DDS from this set of captions: Keep the default, None. To include the DDS: Choose Specified. When you do, also specify the offset coordinates of the display window with DDS x-coordinate and DDS y-coordinate. To include the DDS, but not include display window data: Choose No display window. When you do, you can write position metadata to the page composition segment (PCS) with DDS x-coordinate and DDS y-coordinate. For video resolutions with a height of 576 pixels or less, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling. All burn-in and DVB-Sub font settings must match.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DvbddsHandling {
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -55,44 +47,43 @@ pub enum DvbddsHandling {
     #[allow(missing_docs)] // documentation missing in model
     Specified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DvbddsHandling {
-    fn from(s: &str) -> Self {
-        match s {
-            "NONE" => DvbddsHandling::None,
-            "NO_DISPLAY_WINDOW" => DvbddsHandling::NoDisplayWindow,
-            "SPECIFIED" => DvbddsHandling::Specified,
-            other => {
-                DvbddsHandling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NONE" => DvbddsHandling::None,
+"NO_DISPLAY_WINDOW" => DvbddsHandling::NoDisplayWindow,
+"SPECIFIED" => DvbddsHandling::Specified,
+other => DvbddsHandling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for DvbddsHandling {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DvbddsHandling::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DvbddsHandling::from(s))
+                }
+            }
 impl DvbddsHandling {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DvbddsHandling::None => "NONE",
-            DvbddsHandling::NoDisplayWindow => "NO_DISPLAY_WINDOW",
-            DvbddsHandling::Specified => "SPECIFIED",
-            DvbddsHandling::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["NONE", "NO_DISPLAY_WINDOW", "SPECIFIED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DvbddsHandling::None => "NONE",
+    DvbddsHandling::NoDisplayWindow => "NO_DISPLAY_WINDOW",
+    DvbddsHandling::Specified => "SPECIFIED",
+    DvbddsHandling::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NONE", "NO_DISPLAY_WINDOW", "SPECIFIED"]
+                }
+            }
 impl AsRef<str> for DvbddsHandling {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

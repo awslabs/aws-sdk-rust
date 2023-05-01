@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFeatureMetadataInput {
+pub struct UpdateFeatureMetadataInput  {
     /// <p>The name of the feature group containing the feature that you're updating.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -21,31 +21,29 @@ pub struct UpdateFeatureMetadataInput {
 }
 impl UpdateFeatureMetadataInput {
     /// <p>The name of the feature group containing the feature that you're updating.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The name of the feature that you're updating.</p>
-    pub fn feature_name(&self) -> std::option::Option<&str> {
+    pub fn feature_name(&self) -> std::option::Option<& str> {
         self.feature_name.as_deref()
     }
     /// <p>A description that you can write to better describe the feature.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn parameter_additions(&self) -> std::option::Option<&[crate::types::FeatureParameter]> {
+    pub fn parameter_additions(&self) -> std::option::Option<& [crate::types::FeatureParameter]> {
         self.parameter_additions.as_deref()
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn parameter_removals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parameter_removals(&self) -> std::option::Option<& [std::string::String]> {
         self.parameter_removals.as_deref()
     }
 }
 impl UpdateFeatureMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder {
         crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder::default()
     }
 }
@@ -57,8 +55,7 @@ pub struct UpdateFeatureMetadataInputBuilder {
     pub(crate) feature_group_name: std::option::Option<std::string::String>,
     pub(crate) feature_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) parameter_additions:
-        std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
+    pub(crate) parameter_additions: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
     pub(crate) parameter_removals: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFeatureMetadataInputBuilder {
@@ -68,12 +65,8 @@ impl UpdateFeatureMetadataInputBuilder {
         self
     }
     /// <p>The name of the feature group containing the feature that you're updating.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.feature_group_name = input;
-        self
+    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.feature_group_name = input; self
     }
     /// <p>The name of the feature that you're updating.</p>
     pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +75,7 @@ impl UpdateFeatureMetadataInputBuilder {
     }
     /// <p>The name of the feature that you're updating.</p>
     pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_name = input;
-        self
+        self.feature_name = input; self
     }
     /// <p>A description that you can write to better describe the feature.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +84,7 @@ impl UpdateFeatureMetadataInputBuilder {
     }
     /// <p>A description that you can write to better describe the feature.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `parameter_additions`.
     ///
@@ -102,17 +93,13 @@ impl UpdateFeatureMetadataInputBuilder {
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
     pub fn parameter_additions(mut self, input: crate::types::FeatureParameter) -> Self {
         let mut v = self.parameter_additions.unwrap_or_default();
-        v.push(input);
-        self.parameter_additions = Some(v);
-        self
+                        v.push(input);
+                        self.parameter_additions = Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn set_parameter_additions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
-    ) -> Self {
-        self.parameter_additions = input;
-        self
+    pub fn set_parameter_additions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
+        self.parameter_additions = input; self
     }
     /// Appends an item to `parameter_removals`.
     ///
@@ -121,33 +108,30 @@ impl UpdateFeatureMetadataInputBuilder {
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
     pub fn parameter_removals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.parameter_removals.unwrap_or_default();
-        v.push(input.into());
-        self.parameter_removals = Some(v);
-        self
+                        v.push(input.into());
+                        self.parameter_removals = Some(v);
+                        self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn set_parameter_removals(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.parameter_removals = input;
-        self
+    pub fn set_parameter_removals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.parameter_removals = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_feature_metadata::UpdateFeatureMetadataInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_feature_metadata::UpdateFeatureMetadataInput {
-                feature_group_name: self.feature_group_name,
-                feature_name: self.feature_name,
-                description: self.description,
-                parameter_additions: self.parameter_additions,
-                parameter_removals: self.parameter_removals,
-            },
+                feature_group_name: self.feature_group_name
+                ,
+                feature_name: self.feature_name
+                ,
+                description: self.description
+                ,
+                parameter_additions: self.parameter_additions
+                ,
+                parameter_removals: self.parameter_removals
+                ,
+            }
         )
     }
 }
+

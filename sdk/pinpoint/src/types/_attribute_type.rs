@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let attributetype = unimplemented!();
 /// match attributetype {
@@ -35,22 +35,14 @@
 /// Specifically, when `attributetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AttributeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AttributeType {
     #[allow(missing_docs)] // documentation missing in model
     After,
@@ -67,60 +59,51 @@ pub enum AttributeType {
     #[allow(missing_docs)] // documentation missing in model
     On,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AFTER" => AttributeType::After,
-            "BEFORE" => AttributeType::Before,
-            "BETWEEN" => AttributeType::Between,
-            "CONTAINS" => AttributeType::Contains,
-            "EXCLUSIVE" => AttributeType::Exclusive,
-            "INCLUSIVE" => AttributeType::Inclusive,
-            "ON" => AttributeType::On,
-            other => {
-                AttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AFTER" => AttributeType::After,
+"BEFORE" => AttributeType::Before,
+"BETWEEN" => AttributeType::Between,
+"CONTAINS" => AttributeType::Contains,
+"EXCLUSIVE" => AttributeType::Exclusive,
+"INCLUSIVE" => AttributeType::Inclusive,
+"ON" => AttributeType::On,
+other => AttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AttributeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttributeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AttributeType::from(s))
+                }
+            }
 impl AttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AttributeType::After => "AFTER",
-            AttributeType::Before => "BEFORE",
-            AttributeType::Between => "BETWEEN",
-            AttributeType::Contains => "CONTAINS",
-            AttributeType::Exclusive => "EXCLUSIVE",
-            AttributeType::Inclusive => "INCLUSIVE",
-            AttributeType::On => "ON",
-            AttributeType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AFTER",
-            "BEFORE",
-            "BETWEEN",
-            "CONTAINS",
-            "EXCLUSIVE",
-            "INCLUSIVE",
-            "ON",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AttributeType::After => "AFTER",
+    AttributeType::Before => "BEFORE",
+    AttributeType::Between => "BETWEEN",
+    AttributeType::Contains => "CONTAINS",
+    AttributeType::Exclusive => "EXCLUSIVE",
+    AttributeType::Inclusive => "INCLUSIVE",
+    AttributeType::On => "ON",
+    AttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AFTER", "BEFORE", "BETWEEN", "CONTAINS", "EXCLUSIVE", "INCLUSIVE", "ON"]
+                }
+            }
 impl AsRef<str> for AttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

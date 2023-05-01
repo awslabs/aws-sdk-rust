@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstanceStorageConfigsOutput {
+pub struct ListInstanceStorageConfigsOutput  {
     /// <p>A valid storage type.</p>
     #[doc(hidden)]
     pub storage_configs: std::option::Option<std::vec::Vec<crate::types::InstanceStorageConfig>>,
@@ -13,22 +13,22 @@ pub struct ListInstanceStorageConfigsOutput {
 }
 impl ListInstanceStorageConfigsOutput {
     /// <p>A valid storage type.</p>
-    pub fn storage_configs(&self) -> std::option::Option<&[crate::types::InstanceStorageConfig]> {
+    pub fn storage_configs(&self) -> std::option::Option<& [crate::types::InstanceStorageConfig]> {
         self.storage_configs.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListInstanceStorageConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListInstanceStorageConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput).
-    pub fn builder() -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder {
         crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl ListInstanceStorageConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListInstanceStorageConfigsOutputBuilder {
-    pub(crate) storage_configs:
-        std::option::Option<std::vec::Vec<crate::types::InstanceStorageConfig>>,
+    pub(crate) storage_configs: std::option::Option<std::vec::Vec<crate::types::InstanceStorageConfig>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListInstanceStorageConfigsOutputBuilder {
     /// <p>A valid storage type.</p>
     pub fn storage_configs(mut self, input: crate::types::InstanceStorageConfig) -> Self {
         let mut v = self.storage_configs.unwrap_or_default();
-        v.push(input);
-        self.storage_configs = Some(v);
-        self
+                        v.push(input);
+                        self.storage_configs = Some(v);
+                        self
     }
     /// <p>A valid storage type.</p>
-    pub fn set_storage_configs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceStorageConfig>>,
-    ) -> Self {
-        self.storage_configs = input;
-        self
+    pub fn set_storage_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceStorageConfig>>) -> Self {
+        self.storage_configs = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,26 +64,26 @@ impl ListInstanceStorageConfigsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput {
+    pub fn build(self) -> crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput {
         crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput {
-            storage_configs: self.storage_configs,
-            next_token: self.next_token,
+            storage_configs: self.storage_configs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

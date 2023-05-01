@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowRunPropertiesInput {
+pub struct GetWorkflowRunPropertiesInput  {
     /// <p>Name of the workflow which was run.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct GetWorkflowRunPropertiesInput {
 }
 impl GetWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
 impl GetWorkflowRunPropertiesInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder {
         crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl GetWorkflowRunPropertiesInputBuilder {
     }
     /// <p>Name of the workflow which was run.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl GetWorkflowRunPropertiesInputBuilder {
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
-                name: self.name,
-                run_id: self.run_id,
-            },
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+            }
         )
     }
 }
+

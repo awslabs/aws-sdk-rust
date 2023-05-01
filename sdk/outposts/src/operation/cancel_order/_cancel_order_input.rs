@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelOrderInput {
+pub struct CancelOrderInput  {
     /// <p> The ID of the order. </p>
     #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
 }
 impl CancelOrderInput {
     /// <p> The ID of the order. </p>
-    pub fn order_id(&self) -> std::option::Option<&str> {
+    pub fn order_id(&self) -> std::option::Option<& str> {
         self.order_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl CancelOrderInputBuilder {
     }
     /// <p> The ID of the order. </p>
     pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.order_id = input;
-        self
+        self.order_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelOrderInput`](crate::operation::cancel_order::CancelOrderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_order::CancelOrderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::cancel_order::CancelOrderInput {
-            order_id: self.order_id,
-        })
+    pub fn build(self) -> Result<crate::operation::cancel_order::CancelOrderInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::cancel_order::CancelOrderInput {
+                order_id: self.order_id
+                ,
+            }
+        )
     }
 }
+

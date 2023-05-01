@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBandwidthRateLimitScheduleOutput {
+pub struct PutBandwidthRateLimitScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct PutBandwidthRateLimitScheduleOutput {
 }
 impl PutBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutBandwidthRateLimitScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`PutBandwidthRateLimitScheduleOutput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput).
-    pub fn builder() -> crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleOutputBuilder {
         crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleOutputBuilder::default()
     }
 }
@@ -41,26 +41,24 @@ impl PutBandwidthRateLimitScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutBandwidthRateLimitScheduleOutput`](crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput
-    {
+    pub fn build(self) -> crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput {
         crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput {
-            gateway_arn: self.gateway_arn,
+            gateway_arn: self.gateway_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

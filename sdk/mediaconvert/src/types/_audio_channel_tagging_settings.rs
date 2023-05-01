@@ -3,14 +3,14 @@
 /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioChannelTaggingSettings {
+pub struct AudioChannelTaggingSettings  {
     /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
     #[doc(hidden)]
     pub channel_tag: std::option::Option<crate::types::AudioChannelTag>,
 }
 impl AudioChannelTaggingSettings {
     /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
-    pub fn channel_tag(&self) -> std::option::Option<&crate::types::AudioChannelTag> {
+    pub fn channel_tag(&self) -> std::option::Option<& crate::types::AudioChannelTag> {
         self.channel_tag.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl AudioChannelTaggingSettingsBuilder {
         self
     }
     /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
-    pub fn set_channel_tag(
-        mut self,
-        input: std::option::Option<crate::types::AudioChannelTag>,
-    ) -> Self {
-        self.channel_tag = input;
-        self
+    pub fn set_channel_tag(mut self, input: std::option::Option<crate::types::AudioChannelTag>) -> Self {
+        self.channel_tag = input; self
     }
     /// Consumes the builder and constructs a [`AudioChannelTaggingSettings`](crate::types::AudioChannelTaggingSettings).
     pub fn build(self) -> crate::types::AudioChannelTaggingSettings {
         crate::types::AudioChannelTaggingSettings {
-            channel_tag: self.channel_tag,
+            channel_tag: self.channel_tag
+            ,
         }
     }
 }
+

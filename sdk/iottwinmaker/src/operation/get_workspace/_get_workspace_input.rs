@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkspaceInput {
+pub struct GetWorkspaceInput  {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl GetWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetWorkspaceInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// Consumes the builder and constructs a [`GetWorkspaceInput`](crate::operation::get_workspace::GetWorkspaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_workspace::GetWorkspaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_workspace::GetWorkspaceInput {
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_workspace::GetWorkspaceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_workspace::GetWorkspaceInput {
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

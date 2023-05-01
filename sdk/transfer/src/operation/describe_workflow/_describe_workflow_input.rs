@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkflowInput {
+pub struct DescribeWorkflowInput  {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
 impl DescribeWorkflowInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowInput`](crate::operation::describe_workflow::DescribeWorkflowInput).
-    pub fn builder() -> crate::operation::describe_workflow::builders::DescribeWorkflowInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workflow::builders::DescribeWorkflowInputBuilder {
         crate::operation::describe_workflow::builders::DescribeWorkflowInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl DescribeWorkflowInputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorkflowInput`](crate::operation::describe_workflow::DescribeWorkflowInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_workflow::DescribeWorkflowInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_workflow::DescribeWorkflowInput {
-            workflow_id: self.workflow_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_workflow::DescribeWorkflowInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_workflow::DescribeWorkflowInput {
+                workflow_id: self.workflow_id
+                ,
+            }
+        )
     }
 }
+

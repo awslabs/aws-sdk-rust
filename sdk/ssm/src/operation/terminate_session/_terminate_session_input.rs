@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateSessionInput {
+pub struct TerminateSessionInput  {
     /// <p>The ID of the session to terminate.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl TerminateSessionInput {
     /// <p>The ID of the session to terminate.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 impl TerminateSessionInput {
     /// Creates a new builder-style object to manufacture [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
-    pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionInputBuilder {
         crate::operation::terminate_session::builders::TerminateSessionInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl TerminateSessionInputBuilder {
     }
     /// <p>The ID of the session to terminate.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// Consumes the builder and constructs a [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::terminate_session::TerminateSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::terminate_session::TerminateSessionInput {
-            session_id: self.session_id,
-        })
+    pub fn build(self) -> Result<crate::operation::terminate_session::TerminateSessionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::terminate_session::TerminateSessionInput {
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

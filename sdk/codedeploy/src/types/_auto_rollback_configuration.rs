@@ -3,7 +3,7 @@
 /// <p>Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoRollbackConfiguration {
+pub struct AutoRollbackConfiguration  {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,7 +17,7 @@ impl AutoRollbackConfiguration {
         self.enabled
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::AutoRollbackEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::types::AutoRollbackEvent]> {
         self.events.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AutoRollbackConfigurationBuilder {
     }
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Appends an item to `events`.
     ///
@@ -53,23 +52,23 @@ impl AutoRollbackConfigurationBuilder {
     /// <p>The event type or types that trigger a rollback.</p>
     pub fn events(mut self, input: crate::types::AutoRollbackEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = Some(v);
-        self
+                        v.push(input);
+                        self.events = Some(v);
+                        self
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn set_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutoRollbackEvent>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoRollbackEvent>>) -> Self {
+        self.events = input; self
     }
     /// Consumes the builder and constructs a [`AutoRollbackConfiguration`](crate::types::AutoRollbackConfiguration).
     pub fn build(self) -> crate::types::AutoRollbackConfiguration {
         crate::types::AutoRollbackConfiguration {
-            enabled: self.enabled.unwrap_or_default(),
-            events: self.events,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

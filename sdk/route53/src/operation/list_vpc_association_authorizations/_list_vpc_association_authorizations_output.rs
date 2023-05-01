@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcAssociationAuthorizationsOutput {
+pub struct ListVpcAssociationAuthorizationsOutput  {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -17,26 +17,26 @@ pub struct ListVpcAssociationAuthorizationsOutput {
 }
 impl ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-    pub fn vp_cs(&self) -> std::option::Option<&[crate::types::Vpc]> {
+    pub fn vp_cs(&self) -> std::option::Option<& [crate::types::Vpc]> {
         self.vp_cs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVpcAssociationAuthorizationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVpcAssociationAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsOutput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput).
-    pub fn builder() -> crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder {
         crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListVpcAssociationAuthorizationsOutputBuilder {
     }
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ListVpcAssociationAuthorizationsOutputBuilder {
     }
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `vp_cs`.
     ///
@@ -78,32 +76,25 @@ impl ListVpcAssociationAuthorizationsOutputBuilder {
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
     pub fn vp_cs(mut self, input: crate::types::Vpc) -> Self {
         let mut v = self.vp_cs.unwrap_or_default();
-        v.push(input);
-        self.vp_cs = Some(v);
-        self
+                        v.push(input);
+                        self.vp_cs = Some(v);
+                        self
     }
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-    pub fn set_vp_cs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Vpc>>,
-    ) -> Self {
-        self.vp_cs = input;
-        self
+    pub fn set_vp_cs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Vpc>>) -> Self {
+        self.vp_cs = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVpcAssociationAuthorizationsOutput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput {
         crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput {
             hosted_zone_id: self.hosted_zone_id
             ,
@@ -115,3 +106,4 @@ impl ListVpcAssociationAuthorizationsOutputBuilder {
         }
     }
 }
+

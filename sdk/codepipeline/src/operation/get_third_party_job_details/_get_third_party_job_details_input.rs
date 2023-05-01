@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>GetThirdPartyJobDetails</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetThirdPartyJobDetailsInput {
+pub struct GetThirdPartyJobDetailsInput  {
     /// <p>The unique system-generated ID used for identifying the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,19 +13,17 @@ pub struct GetThirdPartyJobDetailsInput {
 }
 impl GetThirdPartyJobDetailsInput {
     /// <p>The unique system-generated ID used for identifying the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl GetThirdPartyJobDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyJobDetailsInput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder {
         crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder::default()
     }
 }
@@ -45,8 +43,7 @@ impl GetThirdPartyJobDetailsInputBuilder {
     }
     /// <p>The unique system-generated ID used for identifying the job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,21 +52,18 @@ impl GetThirdPartyJobDetailsInputBuilder {
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`GetThirdPartyJobDetailsInput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput {
-                job_id: self.job_id,
-                client_token: self.client_token,
-            },
+                job_id: self.job_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -3,25 +3,24 @@
 /// <p>Represents the input of a batch get repositories operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRepositoriesInput {
-    /// <p>The names of the repositories to get information about.</p> <note>
-    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+pub struct BatchGetRepositoriesInput  {
+    /// <p>The names of the repositories to get information about.</p> <note> 
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p> 
     /// </note>
     #[doc(hidden)]
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetRepositoriesInput {
-    /// <p>The names of the repositories to get information about.</p> <note>
-    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// <p>The names of the repositories to get information about.</p> <note> 
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p> 
     /// </note>
-    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn repository_names(&self) -> std::option::Option<& [std::string::String]> {
         self.repository_names.as_deref()
     }
 }
 impl BatchGetRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesInput`](crate::operation::batch_get_repositories::BatchGetRepositoriesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesInputBuilder {
         crate::operation::batch_get_repositories::builders::BatchGetRepositoriesInputBuilder::default()
     }
 }
@@ -37,36 +36,29 @@ impl BatchGetRepositoriesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
-    /// <p>The names of the repositories to get information about.</p> <note>
-    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// <p>The names of the repositories to get information about.</p> <note> 
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p> 
     /// </note>
     pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
-        v.push(input.into());
-        self.repository_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.repository_names = Some(v);
+                        self
     }
-    /// <p>The names of the repositories to get information about.</p> <note>
-    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// <p>The names of the repositories to get information about.</p> <note> 
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p> 
     /// </note>
-    pub fn set_repository_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.repository_names = input;
-        self
+    pub fn set_repository_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.repository_names = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetRepositoriesInput`](crate::operation::batch_get_repositories::BatchGetRepositoriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_repositories::BatchGetRepositoriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_repositories::BatchGetRepositoriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_repositories::BatchGetRepositoriesInput {
-                repository_names: self.repository_names,
-            },
+                repository_names: self.repository_names
+                ,
+            }
         )
     }
 }
+

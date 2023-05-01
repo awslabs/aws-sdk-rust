@@ -3,7 +3,7 @@
 /// <p>The video artifact configuration object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoArtifactsConfiguration {
+pub struct VideoArtifactsConfiguration  {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ArtifactsState>,
@@ -13,11 +13,11 @@ pub struct VideoArtifactsConfiguration {
 }
 impl VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ArtifactsState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ArtifactsState> {
         self.state.as_ref()
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
-    pub fn mux_type(&self) -> std::option::Option<&crate::types::VideoMuxType> {
+    pub fn mux_type(&self) -> std::option::Option<& crate::types::VideoMuxType> {
         self.mux_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl VideoArtifactsConfigurationBuilder {
     }
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ArtifactsState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub fn mux_type(mut self, input: crate::types::VideoMuxType) -> Self {
@@ -53,14 +52,16 @@ impl VideoArtifactsConfigurationBuilder {
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub fn set_mux_type(mut self, input: std::option::Option<crate::types::VideoMuxType>) -> Self {
-        self.mux_type = input;
-        self
+        self.mux_type = input; self
     }
     /// Consumes the builder and constructs a [`VideoArtifactsConfiguration`](crate::types::VideoArtifactsConfiguration).
     pub fn build(self) -> crate::types::VideoArtifactsConfiguration {
         crate::types::VideoArtifactsConfiguration {
-            state: self.state,
-            mux_type: self.mux_type,
+            state: self.state
+            ,
+            mux_type: self.mux_type
+            ,
         }
     }
 }
+

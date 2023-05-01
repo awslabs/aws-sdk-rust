@@ -3,7 +3,7 @@
 /// <p>A structure containing the schema version information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaVersionNumber {
+pub struct SchemaVersionNumber  {
     /// <p>The latest version available for the schema.</p>
     #[doc(hidden)]
     pub latest_version: bool,
@@ -43,8 +43,7 @@ impl SchemaVersionNumberBuilder {
     }
     /// <p>The latest version available for the schema.</p>
     pub fn set_latest_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.latest_version = input;
-        self
+        self.latest_version = input; self
     }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -53,14 +52,18 @@ impl SchemaVersionNumberBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// Consumes the builder and constructs a [`SchemaVersionNumber`](crate::types::SchemaVersionNumber).
     pub fn build(self) -> crate::types::SchemaVersionNumber {
         crate::types::SchemaVersionNumber {
-            latest_version: self.latest_version.unwrap_or_default(),
-            version_number: self.version_number.unwrap_or_default(),
+            latest_version: self.latest_version
+                .unwrap_or_default()
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

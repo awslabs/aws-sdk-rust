@@ -126,3 +126,4 @@ pub mod untag_resource;
 
 /// Types for the `VerifySMSSandboxPhoneNumber` operation.
 pub mod verify_sms_sandbox_phone_number;
+

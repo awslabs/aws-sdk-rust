@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetResourceConfigInput {
+pub struct BatchGetResourceConfigInput  {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     #[doc(hidden)]
     pub resource_keys: std::option::Option<std::vec::Vec<crate::types::ResourceKey>>,
 }
 impl BatchGetResourceConfigInput {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn resource_keys(&self) -> std::option::Option<&[crate::types::ResourceKey]> {
+    pub fn resource_keys(&self) -> std::option::Option<& [crate::types::ResourceKey]> {
         self.resource_keys.as_deref()
     }
 }
 impl BatchGetResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`BatchGetResourceConfigInput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder {
         crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder::default()
     }
 }
@@ -36,29 +34,22 @@ impl BatchGetResourceConfigInputBuilder {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn resource_keys(mut self, input: crate::types::ResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = Some(v);
+                        self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn set_resource_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceKey>>,
-    ) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceKey>>) -> Self {
+        self.resource_keys = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetResourceConfigInput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_resource_config::BatchGetResourceConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_resource_config::BatchGetResourceConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_resource_config::BatchGetResourceConfigInput {
-                resource_keys: self.resource_keys,
-            },
+                resource_keys: self.resource_keys
+                ,
+            }
         )
     }
 }
+

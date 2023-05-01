@@ -3,7 +3,7 @@
 /// <p>The structure representing the AddNotificationChannelsResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddNotificationChannelsOutput {
+pub struct AddNotificationChannelsOutput  {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
     pub notification_configuration: std::option::Option<crate::types::NotificationConfiguration>,
@@ -11,22 +11,18 @@ pub struct AddNotificationChannelsOutput {
 }
 impl AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AddNotificationChannelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AddNotificationChannelsOutput {
     /// Creates a new builder-style object to manufacture [`AddNotificationChannelsOutput`](crate::operation::add_notification_channels::AddNotificationChannelsOutput).
-    pub fn builder(
-    ) -> crate::operation::add_notification_channels::builders::AddNotificationChannelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_notification_channels::builders::AddNotificationChannelsOutputBuilder {
         crate::operation::add_notification_channels::builders::AddNotificationChannelsOutputBuilder::default()
     }
 }
@@ -35,43 +31,35 @@ impl AddNotificationChannelsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AddNotificationChannelsOutputBuilder {
-    pub(crate) notification_configuration:
-        std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }
 impl AddNotificationChannelsOutputBuilder {
     /// <p>The new notification configuration for this profiling group.</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = Some(input);
         self
     }
     /// <p>The new notification configuration for this profiling group.</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
-        self.notification_configuration = input;
-        self
+    pub fn set_notification_configuration(mut self, input: std::option::Option<crate::types::NotificationConfiguration>) -> Self {
+        self.notification_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AddNotificationChannelsOutput`](crate::operation::add_notification_channels::AddNotificationChannelsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_notification_channels::AddNotificationChannelsOutput {
+    pub fn build(self) -> crate::operation::add_notification_channels::AddNotificationChannelsOutput {
         crate::operation::add_notification_channels::AddNotificationChannelsOutput {
-            notification_configuration: self.notification_configuration,
+            notification_configuration: self.notification_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

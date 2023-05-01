@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateNetworkSiteOutput {
+pub struct ActivateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::types::NetworkSite>,
@@ -10,21 +10,19 @@ pub struct ActivateNetworkSiteOutput {
 }
 impl ActivateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::types::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::types::NetworkSite> {
         self.network_site.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ActivateNetworkSiteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ActivateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteOutput`](crate::operation::activate_network_site::ActivateNetworkSiteOutput).
-    pub fn builder(
-    ) -> crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder {
-        crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder {
+        crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,25 @@ impl ActivateNetworkSiteOutputBuilder {
         self
     }
     /// <p>Information about the network site.</p>
-    pub fn set_network_site(
-        mut self,
-        input: std::option::Option<crate::types::NetworkSite>,
-    ) -> Self {
-        self.network_site = input;
-        self
+    pub fn set_network_site(mut self, input: std::option::Option<crate::types::NetworkSite>) -> Self {
+        self.network_site = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ActivateNetworkSiteOutput`](crate::operation::activate_network_site::ActivateNetworkSiteOutput).
     pub fn build(self) -> crate::operation::activate_network_site::ActivateNetworkSiteOutput {
         crate::operation::activate_network_site::ActivateNetworkSiteOutput {
-            network_site: self.network_site,
+            network_site: self.network_site
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

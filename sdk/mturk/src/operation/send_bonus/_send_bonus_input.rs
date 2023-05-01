@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendBonusInput {
+pub struct SendBonusInput  {
     /// <p>The ID of the Worker being paid the bonus.</p>
     #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct SendBonusInput {
 }
 impl SendBonusInput {
     /// <p>The ID of the Worker being paid the bonus.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
-    pub fn bonus_amount(&self) -> std::option::Option<&str> {
+    pub fn bonus_amount(&self) -> std::option::Option<& str> {
         self.bonus_amount.as_deref()
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
-    pub fn assignment_id(&self) -> std::option::Option<&str> {
+    pub fn assignment_id(&self) -> std::option::Option<& str> {
         self.assignment_id.as_deref()
     }
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    pub fn unique_request_token(&self) -> std::option::Option<&str> {
+    pub fn unique_request_token(&self) -> std::option::Option<& str> {
         self.unique_request_token.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl SendBonusInputBuilder {
     }
     /// <p>The ID of the Worker being paid the bonus.</p>
     pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
     pub fn bonus_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl SendBonusInputBuilder {
     }
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
     pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bonus_amount = input;
-        self
+        self.bonus_amount = input; self
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
     pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl SendBonusInputBuilder {
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
     pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assignment_id = input;
-        self
+        self.assignment_id = input; self
     }
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +93,7 @@ impl SendBonusInputBuilder {
     }
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
     pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,26 +101,25 @@ impl SendBonusInputBuilder {
         self
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    pub fn set_unique_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.unique_request_token = input;
-        self
+    pub fn set_unique_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.unique_request_token = input; self
     }
     /// Consumes the builder and constructs a [`SendBonusInput`](crate::operation::send_bonus::SendBonusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_bonus::SendBonusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::send_bonus::SendBonusInput {
-            worker_id: self.worker_id,
-            bonus_amount: self.bonus_amount,
-            assignment_id: self.assignment_id,
-            reason: self.reason,
-            unique_request_token: self.unique_request_token,
-        })
+    pub fn build(self) -> Result<crate::operation::send_bonus::SendBonusInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::send_bonus::SendBonusInput {
+                worker_id: self.worker_id
+                ,
+                bonus_amount: self.bonus_amount
+                ,
+                assignment_id: self.assignment_id
+                ,
+                reason: self.reason
+                ,
+                unique_request_token: self.unique_request_token
+                ,
+            }
+        )
     }
 }
+

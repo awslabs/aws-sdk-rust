@@ -22,3 +22,4 @@ pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
 pub use crate::types::_log_destination::LogDestinationBuilder;
 
 pub use crate::types::_cloud_watch_logs_log_group::CloudWatchLogsLogGroupBuilder;
+

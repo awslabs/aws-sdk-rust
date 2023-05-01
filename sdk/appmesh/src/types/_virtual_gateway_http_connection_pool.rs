@@ -3,7 +3,7 @@
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayHttpConnectionPool {
+pub struct VirtualGatewayHttpConnectionPool  {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_connections: i32,
@@ -43,8 +43,7 @@ impl VirtualGatewayHttpConnectionPoolBuilder {
     }
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_connections = input;
-        self
+        self.max_connections = input; self
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(mut self, input: i32) -> Self {
@@ -53,14 +52,17 @@ impl VirtualGatewayHttpConnectionPoolBuilder {
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn set_max_pending_requests(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_pending_requests = input;
-        self
+        self.max_pending_requests = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayHttpConnectionPool`](crate::types::VirtualGatewayHttpConnectionPool).
     pub fn build(self) -> crate::types::VirtualGatewayHttpConnectionPool {
         crate::types::VirtualGatewayHttpConnectionPool {
-            max_connections: self.max_connections.unwrap_or_default(),
-            max_pending_requests: self.max_pending_requests,
+            max_connections: self.max_connections
+                .unwrap_or_default()
+            ,
+            max_pending_requests: self.max_pending_requests
+            ,
         }
     }
 }
+

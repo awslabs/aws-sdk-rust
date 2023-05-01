@@ -4,104 +4,86 @@ pub use crate::operation::describe_verified_access_endpoints::_describe_verified
 pub use crate::operation::describe_verified_access_endpoints::_describe_verified_access_endpoints_input::DescribeVerifiedAccessEndpointsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeVerifiedAccessEndpoints`.
-///
-/// <p>Describe Amazon Web Services Verified Access endpoints.</p>
+/// 
+/// <p>Describes the specified Amazon Web Services Verified Access endpoints.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVerifiedAccessEndpointsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsInputBuilder
             }
-impl DescribeVerifiedAccessEndpointsFluentBuilder {
+impl DescribeVerifiedAccessEndpointsFluentBuilder  {
     /// Creates a new `DescribeVerifiedAccessEndpoints`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_verified_access_endpoints::paginator::DescribeVerifiedAccessEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_verified_access_endpoints::paginator::DescribeVerifiedAccessEndpointsPaginator{
-        crate::operation::describe_verified_access_endpoints::paginator::DescribeVerifiedAccessEndpointsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_verified_access_endpoints::paginator::DescribeVerifiedAccessEndpointsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_verified_access_endpoints::paginator::DescribeVerifiedAccessEndpointsPaginator {
+                            crate::operation::describe_verified_access_endpoints::paginator::DescribeVerifiedAccessEndpointsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `VerifiedAccessEndpointIds`.
     ///
     /// To override the contents of this collection use [`set_verified_access_endpoint_ids`](Self::set_verified_access_endpoint_ids).
     ///
-    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    /// <p>The ID of the Verified Access endpoint.</p>
     pub fn verified_access_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_endpoint_ids(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    /// <p>The ID of the Verified Access endpoint.</p>
+    pub fn set_verified_access_endpoint_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_verified_access_endpoint_ids(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn set_verified_access_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access group.</p>
+    /// <p>The ID of the Verified Access group.</p>
     pub fn verified_access_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access group.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    /// <p>The ID of the Verified Access group.</p>
+    pub fn set_verified_access_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_group_id(input);
         self
     }
@@ -135,10 +117,7 @@ impl DescribeVerifiedAccessEndpointsFluentBuilder {
         self
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -153,3 +132,4 @@ impl DescribeVerifiedAccessEndpointsFluentBuilder {
         self
     }
 }
+

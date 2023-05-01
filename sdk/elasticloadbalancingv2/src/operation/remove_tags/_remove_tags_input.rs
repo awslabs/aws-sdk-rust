@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsInput {
+pub struct RemoveTagsInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,11 +12,11 @@ pub struct RemoveTagsInput {
 }
 impl RemoveTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tag keys for the tags to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -42,17 +42,13 @@ impl RemoveTagsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -61,28 +57,24 @@ impl RemoveTagsInputBuilder {
     /// <p>The tag keys for the tags to remove.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = Some(v);
+                        self
     }
     /// <p>The tag keys for the tags to remove.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::remove_tags::RemoveTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::remove_tags::RemoveTagsInput {
-            resource_arns: self.resource_arns,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> Result<crate::operation::remove_tags::RemoveTagsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::remove_tags::RemoveTagsInput {
+                resource_arns: self.resource_arns
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

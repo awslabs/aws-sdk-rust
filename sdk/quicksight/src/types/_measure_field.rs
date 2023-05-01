@@ -3,7 +3,7 @@
 /// <p>The measure (metric) type field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeasureField {
+pub struct MeasureField  {
     /// <p>The measure type field with numerical type columns.</p>
     #[doc(hidden)]
     pub numerical_measure_field: std::option::Option<crate::types::NumericalMeasureField>,
@@ -19,25 +19,19 @@ pub struct MeasureField {
 }
 impl MeasureField {
     /// <p>The measure type field with numerical type columns.</p>
-    pub fn numerical_measure_field(
-        &self,
-    ) -> std::option::Option<&crate::types::NumericalMeasureField> {
+    pub fn numerical_measure_field(&self) -> std::option::Option<& crate::types::NumericalMeasureField> {
         self.numerical_measure_field.as_ref()
     }
     /// <p>The measure type field with categorical type columns.</p>
-    pub fn categorical_measure_field(
-        &self,
-    ) -> std::option::Option<&crate::types::CategoricalMeasureField> {
+    pub fn categorical_measure_field(&self) -> std::option::Option<& crate::types::CategoricalMeasureField> {
         self.categorical_measure_field.as_ref()
     }
     /// <p>The measure type field with date type columns.</p>
-    pub fn date_measure_field(&self) -> std::option::Option<&crate::types::DateMeasureField> {
+    pub fn date_measure_field(&self) -> std::option::Option<& crate::types::DateMeasureField> {
         self.date_measure_field.as_ref()
     }
     /// <p>The calculated measure field only used in pivot tables.</p>
-    pub fn calculated_measure_field(
-        &self,
-    ) -> std::option::Option<&crate::types::CalculatedMeasureField> {
+    pub fn calculated_measure_field(&self) -> std::option::Option<& crate::types::CalculatedMeasureField> {
         self.calculated_measure_field.as_ref()
     }
 }
@@ -53,8 +47,7 @@ impl MeasureField {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct MeasureFieldBuilder {
     pub(crate) numerical_measure_field: std::option::Option<crate::types::NumericalMeasureField>,
-    pub(crate) categorical_measure_field:
-        std::option::Option<crate::types::CategoricalMeasureField>,
+    pub(crate) categorical_measure_field: std::option::Option<crate::types::CategoricalMeasureField>,
     pub(crate) date_measure_field: std::option::Option<crate::types::DateMeasureField>,
     pub(crate) calculated_measure_field: std::option::Option<crate::types::CalculatedMeasureField>,
 }
@@ -65,28 +58,17 @@ impl MeasureFieldBuilder {
         self
     }
     /// <p>The measure type field with numerical type columns.</p>
-    pub fn set_numerical_measure_field(
-        mut self,
-        input: std::option::Option<crate::types::NumericalMeasureField>,
-    ) -> Self {
-        self.numerical_measure_field = input;
-        self
+    pub fn set_numerical_measure_field(mut self, input: std::option::Option<crate::types::NumericalMeasureField>) -> Self {
+        self.numerical_measure_field = input; self
     }
     /// <p>The measure type field with categorical type columns.</p>
-    pub fn categorical_measure_field(
-        mut self,
-        input: crate::types::CategoricalMeasureField,
-    ) -> Self {
+    pub fn categorical_measure_field(mut self, input: crate::types::CategoricalMeasureField) -> Self {
         self.categorical_measure_field = Some(input);
         self
     }
     /// <p>The measure type field with categorical type columns.</p>
-    pub fn set_categorical_measure_field(
-        mut self,
-        input: std::option::Option<crate::types::CategoricalMeasureField>,
-    ) -> Self {
-        self.categorical_measure_field = input;
-        self
+    pub fn set_categorical_measure_field(mut self, input: std::option::Option<crate::types::CategoricalMeasureField>) -> Self {
+        self.categorical_measure_field = input; self
     }
     /// <p>The measure type field with date type columns.</p>
     pub fn date_measure_field(mut self, input: crate::types::DateMeasureField) -> Self {
@@ -94,12 +76,8 @@ impl MeasureFieldBuilder {
         self
     }
     /// <p>The measure type field with date type columns.</p>
-    pub fn set_date_measure_field(
-        mut self,
-        input: std::option::Option<crate::types::DateMeasureField>,
-    ) -> Self {
-        self.date_measure_field = input;
-        self
+    pub fn set_date_measure_field(mut self, input: std::option::Option<crate::types::DateMeasureField>) -> Self {
+        self.date_measure_field = input; self
     }
     /// <p>The calculated measure field only used in pivot tables.</p>
     pub fn calculated_measure_field(mut self, input: crate::types::CalculatedMeasureField) -> Self {
@@ -107,20 +85,21 @@ impl MeasureFieldBuilder {
         self
     }
     /// <p>The calculated measure field only used in pivot tables.</p>
-    pub fn set_calculated_measure_field(
-        mut self,
-        input: std::option::Option<crate::types::CalculatedMeasureField>,
-    ) -> Self {
-        self.calculated_measure_field = input;
-        self
+    pub fn set_calculated_measure_field(mut self, input: std::option::Option<crate::types::CalculatedMeasureField>) -> Self {
+        self.calculated_measure_field = input; self
     }
     /// Consumes the builder and constructs a [`MeasureField`](crate::types::MeasureField).
     pub fn build(self) -> crate::types::MeasureField {
         crate::types::MeasureField {
-            numerical_measure_field: self.numerical_measure_field,
-            categorical_measure_field: self.categorical_measure_field,
-            date_measure_field: self.date_measure_field,
-            calculated_measure_field: self.calculated_measure_field,
+            numerical_measure_field: self.numerical_measure_field
+            ,
+            categorical_measure_field: self.categorical_measure_field
+            ,
+            date_measure_field: self.date_measure_field
+            ,
+            calculated_measure_field: self.calculated_measure_field
+            ,
         }
     }
 }
+

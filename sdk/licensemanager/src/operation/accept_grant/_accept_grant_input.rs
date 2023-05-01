@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptGrantInput {
+pub struct AcceptGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
 }
 impl AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl AcceptGrantInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
     }
     /// Consumes the builder and constructs a [`AcceptGrantInput`](crate::operation::accept_grant::AcceptGrantInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::accept_grant::AcceptGrantInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::accept_grant::AcceptGrantInput {
-            grant_arn: self.grant_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::accept_grant::AcceptGrantInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::accept_grant::AcceptGrantInput {
+                grant_arn: self.grant_arn
+                ,
+            }
+        )
     }
 }
+

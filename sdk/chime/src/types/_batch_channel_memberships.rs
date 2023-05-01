@@ -3,7 +3,7 @@
 /// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchChannelMemberships {
+pub struct BatchChannelMemberships  {
     /// <p>The identifier of the member who invited another member.</p>
     #[doc(hidden)]
     pub invited_by: std::option::Option<crate::types::Identity>,
@@ -19,19 +19,19 @@ pub struct BatchChannelMemberships {
 }
 impl BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
-    pub fn invited_by(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn invited_by(&self) -> std::option::Option<& crate::types::Identity> {
         self.invited_by.as_ref()
     }
     /// <p>The membership types set for the channel users.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMembershipType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
     /// <p>The users successfully added to the request.</p>
-    pub fn members(&self) -> std::option::Option<&[crate::types::Identity]> {
+    pub fn members(&self) -> std::option::Option<& [crate::types::Identity]> {
         self.members.as_deref()
     }
     /// <p>The ARN of the channel to which you're adding users.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl BatchChannelMembershipsBuilder {
     }
     /// <p>The identifier of the member who invited another member.</p>
     pub fn set_invited_by(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.invited_by = input;
-        self
+        self.invited_by = input; self
     }
     /// <p>The membership types set for the channel users.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
@@ -68,12 +67,8 @@ impl BatchChannelMembershipsBuilder {
         self
     }
     /// <p>The membership types set for the channel users.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ChannelMembershipType>) -> Self {
+        self.r#type = input; self
     }
     /// Appends an item to `members`.
     ///
@@ -82,17 +77,13 @@ impl BatchChannelMembershipsBuilder {
     /// <p>The users successfully added to the request.</p>
     pub fn members(mut self, input: crate::types::Identity) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input);
-        self.members = Some(v);
-        self
+                        v.push(input);
+                        self.members = Some(v);
+                        self
     }
     /// <p>The users successfully added to the request.</p>
-    pub fn set_members(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Identity>>,
-    ) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<crate::types::Identity>>) -> Self {
+        self.members = input; self
     }
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,16 +92,20 @@ impl BatchChannelMembershipsBuilder {
     }
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// Consumes the builder and constructs a [`BatchChannelMemberships`](crate::types::BatchChannelMemberships).
     pub fn build(self) -> crate::types::BatchChannelMemberships {
         crate::types::BatchChannelMemberships {
-            invited_by: self.invited_by,
-            r#type: self.r#type,
-            members: self.members,
-            channel_arn: self.channel_arn,
+            invited_by: self.invited_by
+            ,
+            r#type: self.r#type
+            ,
+            members: self.members
+            ,
+            channel_arn: self.channel_arn
+            ,
         }
     }
 }
+

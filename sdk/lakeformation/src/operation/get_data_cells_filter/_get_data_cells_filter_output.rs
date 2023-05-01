@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataCellsFilterOutput {
+pub struct GetDataCellsFilterOutput  {
     /// <p>A structure that describes certain columns on certain rows.</p>
     #[doc(hidden)]
     pub data_cells_filter: std::option::Option<crate::types::DataCellsFilter>,
@@ -10,21 +10,19 @@ pub struct GetDataCellsFilterOutput {
 }
 impl GetDataCellsFilterOutput {
     /// <p>A structure that describes certain columns on certain rows.</p>
-    pub fn data_cells_filter(&self) -> std::option::Option<&crate::types::DataCellsFilter> {
+    pub fn data_cells_filter(&self) -> std::option::Option<& crate::types::DataCellsFilter> {
         self.data_cells_filter.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataCellsFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`GetDataCellsFilterOutput`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder {
-        crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder {
+        crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,25 @@ impl GetDataCellsFilterOutputBuilder {
         self
     }
     /// <p>A structure that describes certain columns on certain rows.</p>
-    pub fn set_data_cells_filter(
-        mut self,
-        input: std::option::Option<crate::types::DataCellsFilter>,
-    ) -> Self {
-        self.data_cells_filter = input;
-        self
+    pub fn set_data_cells_filter(mut self, input: std::option::Option<crate::types::DataCellsFilter>) -> Self {
+        self.data_cells_filter = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDataCellsFilterOutput`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput).
     pub fn build(self) -> crate::operation::get_data_cells_filter::GetDataCellsFilterOutput {
         crate::operation::get_data_cells_filter::GetDataCellsFilterOutput {
-            data_cells_filter: self.data_cells_filter,
+            data_cells_filter: self.data_cells_filter
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationInput {
+pub struct UpdateConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct UpdateConfigurationInput {
 }
 impl UpdateConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the configuration revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Contents of the <filename>
@@ -31,14 +31,13 @@ impl UpdateConfigurationInput {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn server_properties(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }
 }
 impl UpdateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
         crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl UpdateConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The description of the configuration revision.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl UpdateConfigurationInputBuilder {
     }
     /// <p>The description of the configuration revision.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -86,26 +83,21 @@ impl UpdateConfigurationInputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.server_properties = input;
-        self
+    pub fn set_server_properties(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.server_properties = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_configuration::UpdateConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_configuration::UpdateConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_configuration::UpdateConfigurationInput {
-                arn: self.arn,
-                description: self.description,
-                server_properties: self.server_properties,
-            },
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                server_properties: self.server_properties
+                ,
+            }
         )
     }
 }
+

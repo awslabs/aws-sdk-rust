@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessorInput {
+pub struct DeleteAccessorInput  {
     /// <p>The unique identifier of the accessor.</p>
     #[doc(hidden)]
     pub accessor_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccessorInput {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn accessor_id(&self) -> std::option::Option<&str> {
+    pub fn accessor_id(&self) -> std::option::Option<& str> {
         self.accessor_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteAccessorInputBuilder {
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn set_accessor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accessor_id = input;
-        self
+        self.accessor_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAccessorInput`](crate::operation::delete_accessor::DeleteAccessorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_accessor::DeleteAccessorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_accessor::DeleteAccessorInput {
-            accessor_id: self.accessor_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_accessor::DeleteAccessorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_accessor::DeleteAccessorInput {
+                accessor_id: self.accessor_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetAdvisorCollectorOutput {
+pub struct CreateFleetAdvisorCollectorOutput  {
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
     #[doc(hidden)]
     pub collector_referenced_id: std::option::Option<std::string::String>,
@@ -22,34 +22,34 @@ pub struct CreateFleetAdvisorCollectorOutput {
 }
 impl CreateFleetAdvisorCollectorOutput {
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
-    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+    pub fn collector_referenced_id(&self) -> std::option::Option<& str> {
         self.collector_referenced_id.as_deref()
     }
     /// <p>The name of the new Fleet Advisor collector.</p>
-    pub fn collector_name(&self) -> std::option::Option<&str> {
+    pub fn collector_name(&self) -> std::option::Option<& str> {
         self.collector_name.as_deref()
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFleetAdvisorCollectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateFleetAdvisorCollectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetAdvisorCollectorOutput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput).
-    pub fn builder() -> crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorOutputBuilder{
+    pub fn builder() -> crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorOutputBuilder {
         crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorOutputBuilder::default()
     }
 }
@@ -72,12 +72,8 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
         self
     }
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
-    pub fn set_collector_referenced_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.collector_referenced_id = input;
-        self
+    pub fn set_collector_referenced_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.collector_referenced_id = input; self
     }
     /// <p>The name of the new Fleet Advisor collector.</p>
     pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +82,7 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
     }
     /// <p>The name of the new Fleet Advisor collector.</p>
     pub fn set_collector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collector_name = input;
-        self
+        self.collector_name = input; self
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +91,7 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,12 +99,8 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
         self
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_access_role_arn = input;
-        self
+    pub fn set_service_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_access_role_arn = input; self
     }
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,29 +109,32 @@ impl CreateFleetAdvisorCollectorOutputBuilder {
     }
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateFleetAdvisorCollectorOutput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput {
+    pub fn build(self) -> crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput {
         crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput {
-            collector_referenced_id: self.collector_referenced_id,
-            collector_name: self.collector_name,
-            description: self.description,
-            service_access_role_arn: self.service_access_role_arn,
-            s3_bucket_name: self.s3_bucket_name,
+            collector_referenced_id: self.collector_referenced_id
+            ,
+            collector_name: self.collector_name
+            ,
+            description: self.description
+            ,
+            service_access_role_arn: self.service_access_role_arn
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

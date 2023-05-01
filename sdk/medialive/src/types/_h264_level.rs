@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h264level = unimplemented!();
 /// match h264level {
@@ -45,22 +45,14 @@
 /// Specifically, when `h264level` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264Level::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// H264 Level
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum H264Level {
     #[allow(missing_docs)] // documentation missing in model
     H264Level1,
@@ -97,88 +89,71 @@ pub enum H264Level {
     #[allow(missing_docs)] // documentation missing in model
     H264LevelAuto,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for H264Level {
-    fn from(s: &str) -> Self {
-        match s {
-            "H264_LEVEL_1" => H264Level::H264Level1,
-            "H264_LEVEL_1_1" => H264Level::H264Level11,
-            "H264_LEVEL_1_2" => H264Level::H264Level12,
-            "H264_LEVEL_1_3" => H264Level::H264Level13,
-            "H264_LEVEL_2" => H264Level::H264Level2,
-            "H264_LEVEL_2_1" => H264Level::H264Level21,
-            "H264_LEVEL_2_2" => H264Level::H264Level22,
-            "H264_LEVEL_3" => H264Level::H264Level3,
-            "H264_LEVEL_3_1" => H264Level::H264Level31,
-            "H264_LEVEL_3_2" => H264Level::H264Level32,
-            "H264_LEVEL_4" => H264Level::H264Level4,
-            "H264_LEVEL_4_1" => H264Level::H264Level41,
-            "H264_LEVEL_4_2" => H264Level::H264Level42,
-            "H264_LEVEL_5" => H264Level::H264Level5,
-            "H264_LEVEL_5_1" => H264Level::H264Level51,
-            "H264_LEVEL_5_2" => H264Level::H264Level52,
-            "H264_LEVEL_AUTO" => H264Level::H264LevelAuto,
-            other => H264Level::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "H264_LEVEL_1" => H264Level::H264Level1,
+"H264_LEVEL_1_1" => H264Level::H264Level11,
+"H264_LEVEL_1_2" => H264Level::H264Level12,
+"H264_LEVEL_1_3" => H264Level::H264Level13,
+"H264_LEVEL_2" => H264Level::H264Level2,
+"H264_LEVEL_2_1" => H264Level::H264Level21,
+"H264_LEVEL_2_2" => H264Level::H264Level22,
+"H264_LEVEL_3" => H264Level::H264Level3,
+"H264_LEVEL_3_1" => H264Level::H264Level31,
+"H264_LEVEL_3_2" => H264Level::H264Level32,
+"H264_LEVEL_4" => H264Level::H264Level4,
+"H264_LEVEL_4_1" => H264Level::H264Level41,
+"H264_LEVEL_4_2" => H264Level::H264Level42,
+"H264_LEVEL_5" => H264Level::H264Level5,
+"H264_LEVEL_5_1" => H264Level::H264Level51,
+"H264_LEVEL_5_2" => H264Level::H264Level52,
+"H264_LEVEL_AUTO" => H264Level::H264LevelAuto,
+other => H264Level::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for H264Level {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264Level::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(H264Level::from(s))
+                }
+            }
 impl H264Level {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H264Level::H264Level1 => "H264_LEVEL_1",
-            H264Level::H264Level11 => "H264_LEVEL_1_1",
-            H264Level::H264Level12 => "H264_LEVEL_1_2",
-            H264Level::H264Level13 => "H264_LEVEL_1_3",
-            H264Level::H264Level2 => "H264_LEVEL_2",
-            H264Level::H264Level21 => "H264_LEVEL_2_1",
-            H264Level::H264Level22 => "H264_LEVEL_2_2",
-            H264Level::H264Level3 => "H264_LEVEL_3",
-            H264Level::H264Level31 => "H264_LEVEL_3_1",
-            H264Level::H264Level32 => "H264_LEVEL_3_2",
-            H264Level::H264Level4 => "H264_LEVEL_4",
-            H264Level::H264Level41 => "H264_LEVEL_4_1",
-            H264Level::H264Level42 => "H264_LEVEL_4_2",
-            H264Level::H264Level5 => "H264_LEVEL_5",
-            H264Level::H264Level51 => "H264_LEVEL_5_1",
-            H264Level::H264Level52 => "H264_LEVEL_5_2",
-            H264Level::H264LevelAuto => "H264_LEVEL_AUTO",
-            H264Level::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "H264_LEVEL_1",
-            "H264_LEVEL_1_1",
-            "H264_LEVEL_1_2",
-            "H264_LEVEL_1_3",
-            "H264_LEVEL_2",
-            "H264_LEVEL_2_1",
-            "H264_LEVEL_2_2",
-            "H264_LEVEL_3",
-            "H264_LEVEL_3_1",
-            "H264_LEVEL_3_2",
-            "H264_LEVEL_4",
-            "H264_LEVEL_4_1",
-            "H264_LEVEL_4_2",
-            "H264_LEVEL_5",
-            "H264_LEVEL_5_1",
-            "H264_LEVEL_5_2",
-            "H264_LEVEL_AUTO",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H264Level::H264Level1 => "H264_LEVEL_1",
+    H264Level::H264Level11 => "H264_LEVEL_1_1",
+    H264Level::H264Level12 => "H264_LEVEL_1_2",
+    H264Level::H264Level13 => "H264_LEVEL_1_3",
+    H264Level::H264Level2 => "H264_LEVEL_2",
+    H264Level::H264Level21 => "H264_LEVEL_2_1",
+    H264Level::H264Level22 => "H264_LEVEL_2_2",
+    H264Level::H264Level3 => "H264_LEVEL_3",
+    H264Level::H264Level31 => "H264_LEVEL_3_1",
+    H264Level::H264Level32 => "H264_LEVEL_3_2",
+    H264Level::H264Level4 => "H264_LEVEL_4",
+    H264Level::H264Level41 => "H264_LEVEL_4_1",
+    H264Level::H264Level42 => "H264_LEVEL_4_2",
+    H264Level::H264Level5 => "H264_LEVEL_5",
+    H264Level::H264Level51 => "H264_LEVEL_5_1",
+    H264Level::H264Level52 => "H264_LEVEL_5_2",
+    H264Level::H264LevelAuto => "H264_LEVEL_AUTO",
+    H264Level::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["H264_LEVEL_1", "H264_LEVEL_1_1", "H264_LEVEL_1_2", "H264_LEVEL_1_3", "H264_LEVEL_2", "H264_LEVEL_2_1", "H264_LEVEL_2_2", "H264_LEVEL_3", "H264_LEVEL_3_1", "H264_LEVEL_3_2", "H264_LEVEL_4", "H264_LEVEL_4_1", "H264_LEVEL_4_2", "H264_LEVEL_5", "H264_LEVEL_5_1", "H264_LEVEL_5_2", "H264_LEVEL_AUTO"]
+                }
+            }
 impl AsRef<str> for H264Level {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

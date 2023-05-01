@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchJobsOutput {
+pub struct SearchJobsOutput  {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
@@ -13,19 +13,19 @@ pub struct SearchJobsOutput {
 }
 impl SearchJobsOutput {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::types::JobSummary]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::types::JobSummary]> {
         self.jobs.as_deref()
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchJobsOutput {
     /// Creates a new builder-style object to manufacture [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
     pub fn builder() -> crate::operation::search_jobs::builders::SearchJobsOutputBuilder {
@@ -49,17 +49,13 @@ impl SearchJobsOutputBuilder {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
     pub fn jobs(mut self, input: crate::types::JobSummary) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = Some(v);
-        self
+                        v.push(input);
+                        self.jobs = Some(v);
+                        self
     }
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn set_jobs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
-    ) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobSummary>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl SearchJobsOutputBuilder {
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
     pub fn build(self) -> crate::operation::search_jobs::SearchJobsOutput {
         crate::operation::search_jobs::SearchJobsOutput {
-            jobs: self.jobs,
-            next_token: self.next_token,
+            jobs: self.jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

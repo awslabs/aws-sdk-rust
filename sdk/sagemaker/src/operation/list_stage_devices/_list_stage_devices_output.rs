@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStageDevicesOutput {
+pub struct ListStageDevicesOutput  {
     /// <p>List of summaries of devices allocated to the stage.</p>
     #[doc(hidden)]
-    pub device_deployment_summaries:
-        std::option::Option<std::vec::Vec<crate::types::DeviceDeploymentSummary>>,
+    pub device_deployment_summaries: std::option::Option<std::vec::Vec<crate::types::DeviceDeploymentSummary>>,
     /// <p>The token to use when calling the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,25 +13,22 @@ pub struct ListStageDevicesOutput {
 }
 impl ListStageDevicesOutput {
     /// <p>List of summaries of devices allocated to the stage.</p>
-    pub fn device_deployment_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::DeviceDeploymentSummary]> {
+    pub fn device_deployment_summaries(&self) -> std::option::Option<& [crate::types::DeviceDeploymentSummary]> {
         self.device_deployment_summaries.as_deref()
     }
     /// <p>The token to use when calling the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListStageDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListStageDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListStageDevicesOutput`](crate::operation::list_stage_devices::ListStageDevicesOutput).
-    pub fn builder() -> crate::operation::list_stage_devices::builders::ListStageDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_stage_devices::builders::ListStageDevicesOutputBuilder {
         crate::operation::list_stage_devices::builders::ListStageDevicesOutputBuilder::default()
     }
 }
@@ -41,8 +37,7 @@ impl ListStageDevicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListStageDevicesOutputBuilder {
-    pub(crate) device_deployment_summaries:
-        std::option::Option<std::vec::Vec<crate::types::DeviceDeploymentSummary>>,
+    pub(crate) device_deployment_summaries: std::option::Option<std::vec::Vec<crate::types::DeviceDeploymentSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,22 +47,15 @@ impl ListStageDevicesOutputBuilder {
     /// To override the contents of this collection use [`set_device_deployment_summaries`](Self::set_device_deployment_summaries).
     ///
     /// <p>List of summaries of devices allocated to the stage.</p>
-    pub fn device_deployment_summaries(
-        mut self,
-        input: crate::types::DeviceDeploymentSummary,
-    ) -> Self {
+    pub fn device_deployment_summaries(mut self, input: crate::types::DeviceDeploymentSummary) -> Self {
         let mut v = self.device_deployment_summaries.unwrap_or_default();
-        v.push(input);
-        self.device_deployment_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.device_deployment_summaries = Some(v);
+                        self
     }
     /// <p>List of summaries of devices allocated to the stage.</p>
-    pub fn set_device_deployment_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceDeploymentSummary>>,
-    ) -> Self {
-        self.device_deployment_summaries = input;
-        self
+    pub fn set_device_deployment_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeviceDeploymentSummary>>) -> Self {
+        self.device_deployment_summaries = input; self
     }
     /// <p>The token to use when calling the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,24 +64,26 @@ impl ListStageDevicesOutputBuilder {
     }
     /// <p>The token to use when calling the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListStageDevicesOutput`](crate::operation::list_stage_devices::ListStageDevicesOutput).
     pub fn build(self) -> crate::operation::list_stage_devices::ListStageDevicesOutput {
         crate::operation::list_stage_devices::ListStageDevicesOutput {
-            device_deployment_summaries: self.device_deployment_summaries,
-            next_token: self.next_token,
+            device_deployment_summaries: self.device_deployment_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

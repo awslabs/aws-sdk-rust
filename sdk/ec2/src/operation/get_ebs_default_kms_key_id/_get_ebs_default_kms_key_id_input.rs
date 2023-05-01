@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEbsDefaultKmsKeyIdInput {
+pub struct GetEbsDefaultKmsKeyIdInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -15,9 +15,7 @@ impl GetEbsDefaultKmsKeyIdInput {
 }
 impl GetEbsDefaultKmsKeyIdInput {
     /// Creates a new builder-style object to manufacture [`GetEbsDefaultKmsKeyIdInput`](crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdInput).
-    pub fn builder(
-    ) -> crate::operation::get_ebs_default_kms_key_id::builders::GetEbsDefaultKmsKeyIdInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ebs_default_kms_key_id::builders::GetEbsDefaultKmsKeyIdInputBuilder {
         crate::operation::get_ebs_default_kms_key_id::builders::GetEbsDefaultKmsKeyIdInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetEbsDefaultKmsKeyIdInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`GetEbsDefaultKmsKeyIdInput`](crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdInput {
-                dry_run: self.dry_run,
-            },
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

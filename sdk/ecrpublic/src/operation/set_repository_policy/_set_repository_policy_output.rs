@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetRepositoryPolicyOutput {
+pub struct SetRepositoryPolicyOutput  {
     /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -16,29 +16,27 @@ pub struct SetRepositoryPolicyOutput {
 }
 impl SetRepositoryPolicyOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The JSON repository policy text that's applied to the repository.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SetRepositoryPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyOutput`](crate::operation::set_repository_policy::SetRepositoryPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder {
-        crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder {
+        crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder::default()
     }
 }
 
@@ -59,8 +57,7 @@ impl SetRepositoryPolicyOutputBuilder {
     }
     /// <p>The registry ID that's associated with the request.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The repository name that's associated with the request.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +66,7 @@ impl SetRepositoryPolicyOutputBuilder {
     }
     /// <p>The repository name that's associated with the request.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The JSON repository policy text that's applied to the repository.</p>
     pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,25 +75,28 @@ impl SetRepositoryPolicyOutputBuilder {
     }
     /// <p>The JSON repository policy text that's applied to the repository.</p>
     pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_text = input;
-        self
+        self.policy_text = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetRepositoryPolicyOutput`](crate::operation::set_repository_policy::SetRepositoryPolicyOutput).
     pub fn build(self) -> crate::operation::set_repository_policy::SetRepositoryPolicyOutput {
         crate::operation::set_repository_policy::SetRepositoryPolicyOutput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            policy_text: self.policy_text,
+            registry_id: self.registry_id
+            ,
+            repository_name: self.repository_name
+            ,
+            policy_text: self.policy_text
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

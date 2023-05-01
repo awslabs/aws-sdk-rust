@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDocumentInput {
+pub struct DeleteDocumentInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DeleteDocumentInput {
 }
 impl DeleteDocumentInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<&str> {
+    pub fn authentication_token(&self) -> std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<&str> {
+    pub fn document_id(&self) -> std::option::Option<& str> {
         self.document_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDocumentInput {
+impl  std::fmt::Debug for DeleteDocumentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDocumentInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -49,12 +49,8 @@ impl DeleteDocumentInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_token = input; self
     }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,20 +59,18 @@ impl DeleteDocumentInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_document::DeleteDocumentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_document::DeleteDocumentInput {
-            authentication_token: self.authentication_token,
-            document_id: self.document_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_document::DeleteDocumentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_document::DeleteDocumentInput {
+                authentication_token: self.authentication_token
+                ,
+                document_id: self.document_id
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for DeleteDocumentInputBuilder {
@@ -87,3 +81,4 @@ impl std::fmt::Debug for DeleteDocumentInputBuilder {
         formatter.finish()
     }
 }
+

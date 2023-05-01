@@ -3,7 +3,7 @@
 /// <p>Provides the forecast to meet the target for a particular date range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WhatIfRangeScenario {
+pub struct WhatIfRangeScenario  {
     /// <p>The start date in the date range that you need the forecast results for.</p>
     #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,11 +16,11 @@ pub struct WhatIfRangeScenario {
 }
 impl WhatIfRangeScenario {
     /// <p>The start date in the date range that you need the forecast results for.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The end date in the date range that you need the forecast results for.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The target value that you want to meet for the provided date range.</p>
@@ -50,12 +50,8 @@ impl WhatIfRangeScenarioBuilder {
         self
     }
     /// <p>The start date in the date range that you need the forecast results for.</p>
-    pub fn set_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
     }
     /// <p>The end date in the date range that you need the forecast results for.</p>
     pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -64,8 +60,7 @@ impl WhatIfRangeScenarioBuilder {
     }
     /// <p>The end date in the date range that you need the forecast results for.</p>
     pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The target value that you want to meet for the provided date range.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -74,15 +69,19 @@ impl WhatIfRangeScenarioBuilder {
     }
     /// <p>The target value that you want to meet for the provided date range.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`WhatIfRangeScenario`](crate::types::WhatIfRangeScenario).
     pub fn build(self) -> crate::types::WhatIfRangeScenario {
         crate::types::WhatIfRangeScenario {
-            start_date: self.start_date,
-            end_date: self.end_date,
-            value: self.value.unwrap_or_default(),
+            start_date: self.start_date
+            ,
+            end_date: self.end_date
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

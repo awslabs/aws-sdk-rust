@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyInput {
+pub struct GetResourcePolicyInput  {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl GetResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetResourcePolicyInputBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resource_policy::GetResourcePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_resource_policy::GetResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_resource_policy::GetResourcePolicyInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

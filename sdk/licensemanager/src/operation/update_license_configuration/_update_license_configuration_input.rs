@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseConfigurationInput {
+pub struct UpdateLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -26,25 +26,22 @@ pub struct UpdateLicenseConfigurationInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>New product information.</p>
     #[doc(hidden)]
-    pub product_information_list:
-        std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
+    pub product_information_list: std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
 }
 impl UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>New status of the license configuration.</p>
-    pub fn license_configuration_status(
-        &self,
-    ) -> std::option::Option<&crate::types::LicenseConfigurationStatus> {
+    pub fn license_configuration_status(&self) -> std::option::Option<& crate::types::LicenseConfigurationStatus> {
         self.license_configuration_status.as_ref()
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_rules(&self) -> std::option::Option<& [std::string::String]> {
         self.license_rules.as_deref()
     }
     /// <p>New number of licenses managed by the license configuration.</p>
@@ -56,17 +53,15 @@ impl UpdateLicenseConfigurationInput {
         self.license_count_hard_limit
     }
     /// <p>New name of the license configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>New description of the license configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>New product information.</p>
-    pub fn product_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::ProductInformation]> {
+    pub fn product_information_list(&self) -> std::option::Option<& [crate::types::ProductInformation]> {
         self.product_information_list.as_deref()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -76,7 +71,7 @@ impl UpdateLicenseConfigurationInput {
 }
 impl UpdateLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationInput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationInput).
-    pub fn builder() -> crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder {
         crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder::default()
     }
 }
@@ -86,15 +81,13 @@ impl UpdateLicenseConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationInputBuilder {
     pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
-    pub(crate) license_configuration_status:
-        std::option::Option<crate::types::LicenseConfigurationStatus>,
+    pub(crate) license_configuration_status: std::option::Option<crate::types::LicenseConfigurationStatus>,
     pub(crate) license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) license_count: std::option::Option<i64>,
     pub(crate) license_count_hard_limit: std::option::Option<bool>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) product_information_list:
-        std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
+    pub(crate) product_information_list: std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
     pub(crate) disassociate_when_not_found: std::option::Option<bool>,
 }
 impl UpdateLicenseConfigurationInputBuilder {
@@ -104,28 +97,17 @@ impl UpdateLicenseConfigurationInputBuilder {
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.license_configuration_arn = input;
-        self
+    pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.license_configuration_arn = input; self
     }
     /// <p>New status of the license configuration.</p>
-    pub fn license_configuration_status(
-        mut self,
-        input: crate::types::LicenseConfigurationStatus,
-    ) -> Self {
+    pub fn license_configuration_status(mut self, input: crate::types::LicenseConfigurationStatus) -> Self {
         self.license_configuration_status = Some(input);
         self
     }
     /// <p>New status of the license configuration.</p>
-    pub fn set_license_configuration_status(
-        mut self,
-        input: std::option::Option<crate::types::LicenseConfigurationStatus>,
-    ) -> Self {
-        self.license_configuration_status = input;
-        self
+    pub fn set_license_configuration_status(mut self, input: std::option::Option<crate::types::LicenseConfigurationStatus>) -> Self {
+        self.license_configuration_status = input; self
     }
     /// Appends an item to `license_rules`.
     ///
@@ -134,17 +116,13 @@ impl UpdateLicenseConfigurationInputBuilder {
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
     pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.license_rules.unwrap_or_default();
-        v.push(input.into());
-        self.license_rules = Some(v);
-        self
+                        v.push(input.into());
+                        self.license_rules = Some(v);
+                        self
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn set_license_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.license_rules = input;
-        self
+    pub fn set_license_rules(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.license_rules = input; self
     }
     /// <p>New number of licenses managed by the license configuration.</p>
     pub fn license_count(mut self, input: i64) -> Self {
@@ -153,8 +131,7 @@ impl UpdateLicenseConfigurationInputBuilder {
     }
     /// <p>New number of licenses managed by the license configuration.</p>
     pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.license_count = input;
-        self
+        self.license_count = input; self
     }
     /// <p>New hard limit of the number of available licenses.</p>
     pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -163,8 +140,7 @@ impl UpdateLicenseConfigurationInputBuilder {
     }
     /// <p>New hard limit of the number of available licenses.</p>
     pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
-        self.license_count_hard_limit = input;
-        self
+        self.license_count_hard_limit = input; self
     }
     /// <p>New name of the license configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +149,7 @@ impl UpdateLicenseConfigurationInputBuilder {
     }
     /// <p>New name of the license configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>New description of the license configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,8 +158,7 @@ impl UpdateLicenseConfigurationInputBuilder {
     }
     /// <p>New description of the license configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `product_information_list`.
     ///
@@ -193,17 +167,13 @@ impl UpdateLicenseConfigurationInputBuilder {
     /// <p>New product information.</p>
     pub fn product_information_list(mut self, input: crate::types::ProductInformation) -> Self {
         let mut v = self.product_information_list.unwrap_or_default();
-        v.push(input);
-        self.product_information_list = Some(v);
-        self
+                        v.push(input);
+                        self.product_information_list = Some(v);
+                        self
     }
     /// <p>New product information.</p>
-    pub fn set_product_information_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
-    ) -> Self {
-        self.product_information_list = input;
-        self
+    pub fn set_product_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProductInformation>>) -> Self {
+        self.product_information_list = input; self
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
@@ -212,28 +182,32 @@ impl UpdateLicenseConfigurationInputBuilder {
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
-        self.disassociate_when_not_found = input;
-        self
+        self.disassociate_when_not_found = input; self
     }
     /// Consumes the builder and constructs a [`UpdateLicenseConfigurationInput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_license_configuration::UpdateLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_license_configuration::UpdateLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-                license_configuration_status: self.license_configuration_status,
-                license_rules: self.license_rules,
-                license_count: self.license_count,
-                license_count_hard_limit: self.license_count_hard_limit,
-                name: self.name,
-                description: self.description,
-                product_information_list: self.product_information_list,
-                disassociate_when_not_found: self.disassociate_when_not_found,
-            },
+                license_configuration_arn: self.license_configuration_arn
+                ,
+                license_configuration_status: self.license_configuration_status
+                ,
+                license_rules: self.license_rules
+                ,
+                license_count: self.license_count
+                ,
+                license_count_hard_limit: self.license_count_hard_limit
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                product_information_list: self.product_information_list
+                ,
+                disassociate_when_not_found: self.disassociate_when_not_found
+                ,
+            }
         )
     }
 }
+

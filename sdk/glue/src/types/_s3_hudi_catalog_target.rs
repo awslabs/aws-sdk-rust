@@ -3,7 +3,7 @@
 /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3HudiCatalogTarget {
+pub struct S3HudiCatalogTarget  {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,44 +21,38 @@ pub struct S3HudiCatalogTarget {
     pub database: std::option::Option<std::string::String>,
     /// <p>Specifies additional connection options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::types::CatalogSchemaChangePolicy>,
 }
 impl S3HudiCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn partition_keys(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.partition_keys.as_deref()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> std::option::Option<& str> {
         self.table.as_deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn additional_options(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn additional_options(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.additional_options.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn schema_change_policy(
-        &self,
-    ) -> std::option::Option<&crate::types::CatalogSchemaChangePolicy> {
+    pub fn schema_change_policy(&self) -> std::option::Option<& crate::types::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -75,12 +69,10 @@ impl S3HudiCatalogTarget {
 pub struct S3HudiCatalogTargetBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) partition_keys:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub(crate) partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     pub(crate) table: std::option::Option<std::string::String>,
     pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) additional_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) schema_change_policy: std::option::Option<crate::types::CatalogSchemaChangePolicy>,
 }
 impl S3HudiCatalogTargetBuilder {
@@ -91,8 +83,7 @@ impl S3HudiCatalogTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `inputs`.
     ///
@@ -101,17 +92,13 @@ impl S3HudiCatalogTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -120,17 +107,13 @@ impl S3HudiCatalogTargetBuilder {
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-        v.push(input);
-        self.partition_keys = Some(v);
-        self
+                        v.push(input);
+                        self.partition_keys = Some(v);
+                        self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn set_partition_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    ) -> Self {
-        self.partition_keys = input;
-        self
+    pub fn set_partition_keys(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+        self.partition_keys = input; self
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +122,7 @@ impl S3HudiCatalogTargetBuilder {
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The name of the database to write to.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,33 +131,22 @@ impl S3HudiCatalogTargetBuilder {
     }
     /// <p>The name of the database to write to.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// Adds a key-value pair to `additional_options`.
     ///
     /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
     ///
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn additional_options(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn additional_options(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_options = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_options = Some(hash_map);
+                        self
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.additional_options = input;
-        self
+    pub fn set_additional_options(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.additional_options = input; self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(mut self, input: crate::types::CatalogSchemaChangePolicy) -> Self {
@@ -183,23 +154,27 @@ impl S3HudiCatalogTargetBuilder {
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn set_schema_change_policy(
-        mut self,
-        input: std::option::Option<crate::types::CatalogSchemaChangePolicy>,
-    ) -> Self {
-        self.schema_change_policy = input;
-        self
+    pub fn set_schema_change_policy(mut self, input: std::option::Option<crate::types::CatalogSchemaChangePolicy>) -> Self {
+        self.schema_change_policy = input; self
     }
     /// Consumes the builder and constructs a [`S3HudiCatalogTarget`](crate::types::S3HudiCatalogTarget).
     pub fn build(self) -> crate::types::S3HudiCatalogTarget {
         crate::types::S3HudiCatalogTarget {
-            name: self.name,
-            inputs: self.inputs,
-            partition_keys: self.partition_keys,
-            table: self.table,
-            database: self.database,
-            additional_options: self.additional_options,
-            schema_change_policy: self.schema_change_policy,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            partition_keys: self.partition_keys
+            ,
+            table: self.table
+            ,
+            database: self.database
+            ,
+            additional_options: self.additional_options
+            ,
+            schema_change_policy: self.schema_change_policy
+            ,
         }
     }
 }
+

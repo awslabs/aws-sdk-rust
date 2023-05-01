@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCompanyNetworkConfigurationInput {
+pub struct DescribeCompanyNetworkConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCompanyNetworkConfigurationInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 impl DescribeCompanyNetworkConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeCompanyNetworkConfigurationInput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput).
-    pub fn builder() -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder {
         crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl DescribeCompanyNetworkConfigurationInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeCompanyNetworkConfigurationInput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput {
                 fleet_arn: self.fleet_arn
@@ -47,3 +46,4 @@ impl DescribeCompanyNetworkConfigurationInputBuilder {
         )
     }
 }
+

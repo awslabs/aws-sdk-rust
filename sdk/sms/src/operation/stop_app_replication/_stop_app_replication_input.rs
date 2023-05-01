@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAppReplicationInput {
+pub struct StopAppReplicationInput  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl StopAppReplicationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
 impl StopAppReplicationInput {
     /// Creates a new builder-style object to manufacture [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder {
+    pub fn builder() -> crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder {
         crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl StopAppReplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// Consumes the builder and constructs a [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_app_replication::StopAppReplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_app_replication::StopAppReplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_app_replication::StopAppReplicationInput {
-                app_id: self.app_id,
-            },
+                app_id: self.app_id
+                ,
+            }
         )
     }
 }
+

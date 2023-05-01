@@ -21,3 +21,4 @@ pub mod publish;
 
 /// Types for the `UpdateThingShadow` operation.
 pub mod update_thing_shadow;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppOutput {
+pub struct CreateAppOutput  {
     /// <p>A summary description of the application.</p>
     #[doc(hidden)]
     pub app_summary: std::option::Option<crate::types::AppSummary>,
@@ -16,23 +16,23 @@ pub struct CreateAppOutput {
 }
 impl CreateAppOutput {
     /// <p>A summary description of the application.</p>
-    pub fn app_summary(&self) -> std::option::Option<&crate::types::AppSummary> {
+    pub fn app_summary(&self) -> std::option::Option<& crate::types::AppSummary> {
         self.app_summary.as_ref()
     }
     /// <p>The server groups included in the application.</p>
-    pub fn server_groups(&self) -> std::option::Option<&[crate::types::ServerGroup]> {
+    pub fn server_groups(&self) -> std::option::Option<& [crate::types::ServerGroup]> {
         self.server_groups.as_deref()
     }
     /// <p>The tags associated with the application.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAppOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAppOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppOutput`](crate::operation::create_app::CreateAppOutput).
     pub fn builder() -> crate::operation::create_app::builders::CreateAppOutputBuilder {
@@ -57,8 +57,7 @@ impl CreateAppOutputBuilder {
     }
     /// <p>A summary description of the application.</p>
     pub fn set_app_summary(mut self, input: std::option::Option<crate::types::AppSummary>) -> Self {
-        self.app_summary = input;
-        self
+        self.app_summary = input; self
     }
     /// Appends an item to `server_groups`.
     ///
@@ -67,17 +66,13 @@ impl CreateAppOutputBuilder {
     /// <p>The server groups included in the application.</p>
     pub fn server_groups(mut self, input: crate::types::ServerGroup) -> Self {
         let mut v = self.server_groups.unwrap_or_default();
-        v.push(input);
-        self.server_groups = Some(v);
-        self
+                        v.push(input);
+                        self.server_groups = Some(v);
+                        self
     }
     /// <p>The server groups included in the application.</p>
-    pub fn set_server_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerGroup>>,
-    ) -> Self {
-        self.server_groups = input;
-        self
+    pub fn set_server_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServerGroup>>) -> Self {
+        self.server_groups = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -86,34 +81,34 @@ impl CreateAppOutputBuilder {
     /// <p>The tags associated with the application.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags associated with the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAppOutput`](crate::operation::create_app::CreateAppOutput).
     pub fn build(self) -> crate::operation::create_app::CreateAppOutput {
         crate::operation::create_app::CreateAppOutput {
-            app_summary: self.app_summary,
-            server_groups: self.server_groups,
-            tags: self.tags,
+            app_summary: self.app_summary
+            ,
+            server_groups: self.server_groups
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

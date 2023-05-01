@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicelimit = unimplemented!();
 /// match servicelimit {
@@ -38,7 +38,7 @@
 /// Specifically, when `servicelimit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceLimit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -48,15 +48,7 @@
 /// apply for a specific account in a specific Amazon Web Services Region. You can increase some of them by
 /// contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceLimit {
     #[allow(missing_docs)] // documentation missing in model
     FileCacheCount,
@@ -79,73 +71,57 @@ pub enum ServiceLimit {
     #[allow(missing_docs)] // documentation missing in model
     VolumesPerFileSystem,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceLimit {
-    fn from(s: &str) -> Self {
-        match s {
-            "FILE_CACHE_COUNT" => ServiceLimit::FileCacheCount,
-            "FILE_SYSTEM_COUNT" => ServiceLimit::FileSystemCount,
-            "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM" => {
-                ServiceLimit::StorageVirtualMachinesPerFileSystem
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FILE_CACHE_COUNT" => ServiceLimit::FileCacheCount,
+"FILE_SYSTEM_COUNT" => ServiceLimit::FileSystemCount,
+"STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM" => ServiceLimit::StorageVirtualMachinesPerFileSystem,
+"TOTAL_IN_PROGRESS_COPY_BACKUPS" => ServiceLimit::TotalInProgressCopyBackups,
+"TOTAL_SSD_IOPS" => ServiceLimit::TotalSsdIops,
+"TOTAL_STORAGE" => ServiceLimit::TotalStorage,
+"TOTAL_THROUGHPUT_CAPACITY" => ServiceLimit::TotalThroughputCapacity,
+"TOTAL_USER_INITIATED_BACKUPS" => ServiceLimit::TotalUserInitiatedBackups,
+"TOTAL_USER_TAGS" => ServiceLimit::TotalUserTags,
+"VOLUMES_PER_FILE_SYSTEM" => ServiceLimit::VolumesPerFileSystem,
+other => ServiceLimit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "TOTAL_IN_PROGRESS_COPY_BACKUPS" => ServiceLimit::TotalInProgressCopyBackups,
-            "TOTAL_SSD_IOPS" => ServiceLimit::TotalSsdIops,
-            "TOTAL_STORAGE" => ServiceLimit::TotalStorage,
-            "TOTAL_THROUGHPUT_CAPACITY" => ServiceLimit::TotalThroughputCapacity,
-            "TOTAL_USER_INITIATED_BACKUPS" => ServiceLimit::TotalUserInitiatedBackups,
-            "TOTAL_USER_TAGS" => ServiceLimit::TotalUserTags,
-            "VOLUMES_PER_FILE_SYSTEM" => ServiceLimit::VolumesPerFileSystem,
-            other => {
-                ServiceLimit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
 impl std::str::FromStr for ServiceLimit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceLimit::from(s))
-    }
-}
-impl ServiceLimit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceLimit::FileCacheCount => "FILE_CACHE_COUNT",
-            ServiceLimit::FileSystemCount => "FILE_SYSTEM_COUNT",
-            ServiceLimit::StorageVirtualMachinesPerFileSystem => {
-                "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceLimit::from(s))
+                }
             }
-            ServiceLimit::TotalInProgressCopyBackups => "TOTAL_IN_PROGRESS_COPY_BACKUPS",
-            ServiceLimit::TotalSsdIops => "TOTAL_SSD_IOPS",
-            ServiceLimit::TotalStorage => "TOTAL_STORAGE",
-            ServiceLimit::TotalThroughputCapacity => "TOTAL_THROUGHPUT_CAPACITY",
-            ServiceLimit::TotalUserInitiatedBackups => "TOTAL_USER_INITIATED_BACKUPS",
-            ServiceLimit::TotalUserTags => "TOTAL_USER_TAGS",
-            ServiceLimit::VolumesPerFileSystem => "VOLUMES_PER_FILE_SYSTEM",
-            ServiceLimit::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILE_CACHE_COUNT",
-            "FILE_SYSTEM_COUNT",
-            "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM",
-            "TOTAL_IN_PROGRESS_COPY_BACKUPS",
-            "TOTAL_SSD_IOPS",
-            "TOTAL_STORAGE",
-            "TOTAL_THROUGHPUT_CAPACITY",
-            "TOTAL_USER_INITIATED_BACKUPS",
-            "TOTAL_USER_TAGS",
-            "VOLUMES_PER_FILE_SYSTEM",
-        ]
-    }
+impl ServiceLimit {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceLimit::FileCacheCount => "FILE_CACHE_COUNT",
+    ServiceLimit::FileSystemCount => "FILE_SYSTEM_COUNT",
+    ServiceLimit::StorageVirtualMachinesPerFileSystem => "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM",
+    ServiceLimit::TotalInProgressCopyBackups => "TOTAL_IN_PROGRESS_COPY_BACKUPS",
+    ServiceLimit::TotalSsdIops => "TOTAL_SSD_IOPS",
+    ServiceLimit::TotalStorage => "TOTAL_STORAGE",
+    ServiceLimit::TotalThroughputCapacity => "TOTAL_THROUGHPUT_CAPACITY",
+    ServiceLimit::TotalUserInitiatedBackups => "TOTAL_USER_INITIATED_BACKUPS",
+    ServiceLimit::TotalUserTags => "TOTAL_USER_TAGS",
+    ServiceLimit::VolumesPerFileSystem => "VOLUMES_PER_FILE_SYSTEM",
+    ServiceLimit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FILE_CACHE_COUNT", "FILE_SYSTEM_COUNT", "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM", "TOTAL_IN_PROGRESS_COPY_BACKUPS", "TOTAL_SSD_IOPS", "TOTAL_STORAGE", "TOTAL_THROUGHPUT_CAPACITY", "TOTAL_USER_INITIATED_BACKUPS", "TOTAL_USER_TAGS", "VOLUMES_PER_FILE_SYSTEM"]
+                }
+            }
 impl AsRef<str> for ServiceLimit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSyncJobInput {
+pub struct DeleteSyncJobInput  {
     /// <p>The workspace ID.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub sync_source: std::option::Option<std::string::String>,
 }
 impl DeleteSyncJobInput {
     /// <p>The workspace ID.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
-    pub fn sync_source(&self) -> std::option::Option<&str> {
+    pub fn sync_source(&self) -> std::option::Option<& str> {
         self.sync_source.as_deref()
     }
 }
@@ -46,33 +46,31 @@ impl DeleteSyncJobInputBuilder {
     }
     /// <p>The workspace ID.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.sync_source = Some(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSyncJobInput`](crate::operation::delete_sync_job::DeleteSyncJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_sync_job::DeleteSyncJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_sync_job::DeleteSyncJobInput {
-            workspace_id: self.workspace_id,
-            sync_source: self.sync_source,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_sync_job::DeleteSyncJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_sync_job::DeleteSyncJobInput {
+                workspace_id: self.workspace_id
+                ,
+                sync_source: self.sync_source
+                ,
+            }
+        )
     }
 }
+

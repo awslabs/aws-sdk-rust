@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitGatewayConnectPeerOutput {
+pub struct CreateTransitGatewayConnectPeerOutput  {
     /// <p>Information about the Connect peer.</p>
     #[doc(hidden)]
     pub transit_gateway_connect_peer: std::option::Option<crate::types::TransitGatewayConnectPeer>,
@@ -10,20 +10,18 @@ pub struct CreateTransitGatewayConnectPeerOutput {
 }
 impl CreateTransitGatewayConnectPeerOutput {
     /// <p>Information about the Connect peer.</p>
-    pub fn transit_gateway_connect_peer(
-        &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayConnectPeer> {
+    pub fn transit_gateway_connect_peer(&self) -> std::option::Option<& crate::types::TransitGatewayConnectPeer> {
         self.transit_gateway_connect_peer.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTransitGatewayConnectPeerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTransitGatewayConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayConnectPeerOutput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput).
-    pub fn builder() -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerOutputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerOutputBuilder {
         crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerOutputBuilder::default()
     }
 }
@@ -32,41 +30,30 @@ impl CreateTransitGatewayConnectPeerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectPeerOutputBuilder {
-    pub(crate) transit_gateway_connect_peer:
-        std::option::Option<crate::types::TransitGatewayConnectPeer>,
+    pub(crate) transit_gateway_connect_peer: std::option::Option<crate::types::TransitGatewayConnectPeer>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayConnectPeerOutputBuilder {
     /// <p>Information about the Connect peer.</p>
-    pub fn transit_gateway_connect_peer(
-        mut self,
-        input: crate::types::TransitGatewayConnectPeer,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer(mut self, input: crate::types::TransitGatewayConnectPeer) -> Self {
         self.transit_gateway_connect_peer = Some(input);
         self
     }
     /// <p>Information about the Connect peer.</p>
-    pub fn set_transit_gateway_connect_peer(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayConnectPeer>,
-    ) -> Self {
-        self.transit_gateway_connect_peer = input;
-        self
+    pub fn set_transit_gateway_connect_peer(mut self, input: std::option::Option<crate::types::TransitGatewayConnectPeer>) -> Self {
+        self.transit_gateway_connect_peer = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectPeerOutput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput
-    {
+    pub fn build(self) -> crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput {
         crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput {
             transit_gateway_connect_peer: self.transit_gateway_connect_peer
             ,
@@ -74,3 +61,4 @@ impl CreateTransitGatewayConnectPeerOutputBuilder {
         }
     }
 }
+

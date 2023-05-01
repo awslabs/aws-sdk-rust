@@ -3,15 +3,15 @@
 /// <p>Container for the parameters to the <code><code>DescribeOutboundCrossClusterSearchConnections</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
+pub struct DescribeOutboundCrossClusterSearchConnectionsInput  {
     /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
-    /// <ul>
-    /// <li>cross-cluster-search-connection-id</li>
-    /// <li>destination-domain-info.domain-name</li>
-    /// <li>destination-domain-info.owner-id</li>
-    /// <li>destination-domain-info.region</li>
-    /// <li>source-domain-info.domain-name</li>
-    /// </ul>
+    /// <ul> 
+    /// <li>cross-cluster-search-connection-id</li> 
+    /// <li>destination-domain-info.domain-name</li> 
+    /// <li>destination-domain-info.owner-id</li> 
+    /// <li>destination-domain-info.region</li> 
+    /// <li>source-domain-info.domain-name</li> 
+    /// </ul> 
     /// <p></p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -24,15 +24,15 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
 }
 impl DescribeOutboundCrossClusterSearchConnectionsInput {
     /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
-    /// <ul>
-    /// <li>cross-cluster-search-connection-id</li>
-    /// <li>destination-domain-info.domain-name</li>
-    /// <li>destination-domain-info.owner-id</li>
-    /// <li>destination-domain-info.region</li>
-    /// <li>source-domain-info.domain-name</li>
-    /// </ul>
+    /// <ul> 
+    /// <li>cross-cluster-search-connection-id</li> 
+    /// <li>destination-domain-info.domain-name</li> 
+    /// <li>destination-domain-info.owner-id</li> 
+    /// <li>destination-domain-info.region</li> 
+    /// <li>source-domain-info.domain-name</li> 
+    /// </ul> 
     /// <p></p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -40,13 +40,13 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         self.max_results
     }
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeOutboundCrossClusterSearchConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput).
-    pub fn builder() -> crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
         crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder::default()
     }
 }
@@ -65,35 +65,31 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
-    /// <ul>
-    /// <li>cross-cluster-search-connection-id</li>
-    /// <li>destination-domain-info.domain-name</li>
-    /// <li>destination-domain-info.owner-id</li>
-    /// <li>destination-domain-info.region</li>
-    /// <li>source-domain-info.domain-name</li>
-    /// </ul>
+    /// <ul> 
+    /// <li>cross-cluster-search-connection-id</li> 
+    /// <li>destination-domain-info.domain-name</li> 
+    /// <li>destination-domain-info.owner-id</li> 
+    /// <li>destination-domain-info.region</li> 
+    /// <li>source-domain-info.domain-name</li> 
+    /// </ul> 
     /// <p></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
-    /// <ul>
-    /// <li>cross-cluster-search-connection-id</li>
-    /// <li>destination-domain-info.domain-name</li>
-    /// <li>destination-domain-info.owner-id</li>
-    /// <li>destination-domain-info.region</li>
-    /// <li>source-domain-info.domain-name</li>
-    /// </ul>
+    /// <ul> 
+    /// <li>cross-cluster-search-connection-id</li> 
+    /// <li>destination-domain-info.domain-name</li> 
+    /// <li>destination-domain-info.owner-id</li> 
+    /// <li>destination-domain-info.region</li> 
+    /// <li>source-domain-info.domain-name</li> 
+    /// </ul> 
     /// <p></p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,8 +98,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,11 +107,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
     }
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput {
                 filters: self.filters
@@ -130,3 +124,4 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
         )
     }
 }
+

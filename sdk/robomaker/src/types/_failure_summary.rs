@@ -3,7 +3,7 @@
 /// <p>Information about worlds that failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureSummary {
+pub struct FailureSummary  {
     /// <p>The total number of failures.</p>
     #[doc(hidden)]
     pub total_failure_count: i32,
@@ -17,7 +17,7 @@ impl FailureSummary {
         self.total_failure_count
     }
     /// <p>The worlds that failed.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::WorldFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::types::WorldFailure]> {
         self.failures.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FailureSummaryBuilder {
     }
     /// <p>The total number of failures.</p>
     pub fn set_total_failure_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_failure_count = input;
-        self
+        self.total_failure_count = input; self
     }
     /// Appends an item to `failures`.
     ///
@@ -53,23 +52,23 @@ impl FailureSummaryBuilder {
     /// <p>The worlds that failed.</p>
     pub fn failures(mut self, input: crate::types::WorldFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = Some(v);
-        self
+                        v.push(input);
+                        self.failures = Some(v);
+                        self
     }
     /// <p>The worlds that failed.</p>
-    pub fn set_failures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorldFailure>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorldFailure>>) -> Self {
+        self.failures = input; self
     }
     /// Consumes the builder and constructs a [`FailureSummary`](crate::types::FailureSummary).
     pub fn build(self) -> crate::types::FailureSummary {
         crate::types::FailureSummary {
-            total_failure_count: self.total_failure_count.unwrap_or_default(),
-            failures: self.failures,
+            total_failure_count: self.total_failure_count
+                .unwrap_or_default()
+            ,
+            failures: self.failures
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRetentionConfigurationOutput {
+pub struct PutRetentionConfigurationOutput  {
     /// <p>Returns a retention configuration object.</p>
     #[doc(hidden)]
     pub retention_configuration: std::option::Option<crate::types::RetentionConfiguration>,
@@ -10,20 +10,18 @@ pub struct PutRetentionConfigurationOutput {
 }
 impl PutRetentionConfigurationOutput {
     /// <p>Returns a retention configuration object.</p>
-    pub fn retention_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::RetentionConfiguration> {
+    pub fn retention_configuration(&self) -> std::option::Option<& crate::types::RetentionConfiguration> {
         self.retention_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutRetentionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutRetentionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutRetentionConfigurationOutput`](crate::operation::put_retention_configuration::PutRetentionConfigurationOutput).
-    pub fn builder() -> crate::operation::put_retention_configuration::builders::PutRetentionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_retention_configuration::builders::PutRetentionConfigurationOutputBuilder {
         crate::operation::put_retention_configuration::builders::PutRetentionConfigurationOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl PutRetentionConfigurationOutputBuilder {
         self
     }
     /// <p>Returns a retention configuration object.</p>
-    pub fn set_retention_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RetentionConfiguration>,
-    ) -> Self {
-        self.retention_configuration = input;
-        self
+    pub fn set_retention_configuration(mut self, input: std::option::Option<crate::types::RetentionConfiguration>) -> Self {
+        self.retention_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutRetentionConfigurationOutput`](crate::operation::put_retention_configuration::PutRetentionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_retention_configuration::PutRetentionConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_retention_configuration::PutRetentionConfigurationOutput {
         crate::operation::put_retention_configuration::PutRetentionConfigurationOutput {
-            retention_configuration: self.retention_configuration,
+            retention_configuration: self.retention_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,24 +3,20 @@
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
+pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_gateway_event_topic:
-        std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub wireless_gateway_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_gateway_event_topic(&self) -> std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.wireless_gateway_event_topic.as_ref()
     }
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
         crate::types::builders::LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder::default()
     }
 }
@@ -29,30 +25,24 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
-    pub(crate) wireless_gateway_event_topic:
-        std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub(crate) wireless_gateway_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_event_topic(
-        mut self,
-        input: crate::types::EventNotificationTopicStatus,
-    ) -> Self {
+    pub fn wireless_gateway_event_topic(mut self, input: crate::types::EventNotificationTopicStatus) -> Self {
         self.wireless_gateway_event_topic = Some(input);
         self
     }
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-    pub fn set_wireless_gateway_event_topic(
-        mut self,
-        input: std::option::Option<crate::types::EventNotificationTopicStatus>,
-    ) -> Self {
-        self.wireless_gateway_event_topic = input;
-        self
+    pub fn set_wireless_gateway_event_topic(mut self, input: std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
+        self.wireless_gateway_event_topic = input; self
     }
     /// Consumes the builder and constructs a [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration {
         crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration {
-            wireless_gateway_event_topic: self.wireless_gateway_event_topic,
+            wireless_gateway_event_topic: self.wireless_gateway_event_topic
+            ,
         }
     }
 }
+

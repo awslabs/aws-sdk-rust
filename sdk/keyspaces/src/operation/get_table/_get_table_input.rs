@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTableInput {
+pub struct GetTableInput  {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetTableInput {
 }
 impl GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetTableInputBuilder {
     }
     /// <p>The name of the keyspace that the table is stored in.</p>
     pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetTableInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Consumes the builder and constructs a [`GetTableInput`](crate::operation::get_table::GetTableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_table::GetTableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_table::GetTableInput {
-            keyspace_name: self.keyspace_name,
-            table_name: self.table_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_table::GetTableInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_table::GetTableInput {
+                keyspace_name: self.keyspace_name
+                ,
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

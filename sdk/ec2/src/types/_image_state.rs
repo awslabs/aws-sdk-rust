@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagestate = unimplemented!();
 /// match imagestate {
@@ -35,22 +35,14 @@
 /// Specifically, when `imagestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -67,58 +59,51 @@ pub enum ImageState {
     #[allow(missing_docs)] // documentation missing in model
     Transient,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => ImageState::Available,
-            "deregistered" => ImageState::Deregistered,
-            "error" => ImageState::Error,
-            "failed" => ImageState::Failed,
-            "invalid" => ImageState::Invalid,
-            "pending" => ImageState::Pending,
-            "transient" => ImageState::Transient,
-            other => ImageState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => ImageState::Available,
+"deregistered" => ImageState::Deregistered,
+"error" => ImageState::Error,
+"failed" => ImageState::Failed,
+"invalid" => ImageState::Invalid,
+"pending" => ImageState::Pending,
+"transient" => ImageState::Transient,
+other => ImageState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ImageState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageState::from(s))
+                }
+            }
 impl ImageState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImageState::Available => "available",
-            ImageState::Deregistered => "deregistered",
-            ImageState::Error => "error",
-            ImageState::Failed => "failed",
-            ImageState::Invalid => "invalid",
-            ImageState::Pending => "pending",
-            ImageState::Transient => "transient",
-            ImageState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available",
-            "deregistered",
-            "error",
-            "failed",
-            "invalid",
-            "pending",
-            "transient",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImageState::Available => "available",
+    ImageState::Deregistered => "deregistered",
+    ImageState::Error => "error",
+    ImageState::Failed => "failed",
+    ImageState::Invalid => "invalid",
+    ImageState::Pending => "pending",
+    ImageState::Transient => "transient",
+    ImageState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deregistered", "error", "failed", "invalid", "pending", "transient"]
+                }
+            }
 impl AsRef<str> for ImageState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

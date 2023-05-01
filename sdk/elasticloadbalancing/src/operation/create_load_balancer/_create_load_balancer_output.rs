@@ -3,7 +3,7 @@
 /// <p>Contains the output for CreateLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerOutput {
+pub struct CreateLoadBalancerOutput  {
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
@@ -11,19 +11,18 @@ pub struct CreateLoadBalancerOutput {
 }
 impl CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> std::option::Option<& str> {
         self.dns_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLoadBalancerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder {
+    pub fn builder() -> crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder {
         crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl CreateLoadBalancerOutputBuilder {
     }
     /// <p>The DNS name of the load balancer.</p>
     pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
     pub fn build(self) -> crate::operation::create_load_balancer::CreateLoadBalancerOutput {
         crate::operation::create_load_balancer::CreateLoadBalancerOutput {
-            dns_name: self.dns_name,
+            dns_name: self.dns_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

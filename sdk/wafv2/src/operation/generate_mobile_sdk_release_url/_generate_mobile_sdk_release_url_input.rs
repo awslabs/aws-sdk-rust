@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateMobileSdkReleaseUrlInput {
+pub struct GenerateMobileSdkReleaseUrlInput  {
     /// <p>The device platform.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::Platform>,
@@ -12,17 +12,17 @@ pub struct GenerateMobileSdkReleaseUrlInput {
 }
 impl GenerateMobileSdkReleaseUrlInput {
     /// <p>The device platform.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    pub fn release_version(&self) -> std::option::Option<&str> {
+    pub fn release_version(&self) -> std::option::Option<& str> {
         self.release_version.as_deref()
     }
 }
 impl GenerateMobileSdkReleaseUrlInput {
     /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlInput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput).
-    pub fn builder() -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder{
+    pub fn builder() -> crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder {
         crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
     }
     /// <p>The device platform.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub fn set_release_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.release_version = input;
-        self
+        self.release_version = input; self
     }
     /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlInput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput {
-                platform: self.platform,
-                release_version: self.release_version,
-            },
+                platform: self.platform
+                ,
+                release_version: self.release_version
+                ,
+            }
         )
     }
 }
+

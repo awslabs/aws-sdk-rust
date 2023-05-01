@@ -3,7 +3,7 @@
 /// <p>The parameters for a split charge method. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategorySplitChargeRuleParameter {
+pub struct CostCategorySplitChargeRuleParameter  {
     /// <p>The parameter type. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
@@ -13,13 +13,11 @@ pub struct CostCategorySplitChargeRuleParameter {
 }
 impl CostCategorySplitChargeRuleParameter {
     /// <p>The parameter type. </p>
-    pub fn r#type(
-        &self,
-    ) -> std::option::Option<&crate::types::CostCategorySplitChargeRuleParameterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::CostCategorySplitChargeRuleParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The parameter values. </p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -44,12 +42,8 @@ impl CostCategorySplitChargeRuleParameterBuilder {
         self
     }
     /// <p>The parameter type. </p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>) -> Self {
+        self.r#type = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -58,23 +52,22 @@ impl CostCategorySplitChargeRuleParameterBuilder {
     /// <p>The parameter values. </p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>The parameter values. </p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRuleParameter`](crate::types::CostCategorySplitChargeRuleParameter).
     pub fn build(self) -> crate::types::CostCategorySplitChargeRuleParameter {
         crate::types::CostCategorySplitChargeRuleParameter {
-            r#type: self.r#type,
-            values: self.values,
+            r#type: self.r#type
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

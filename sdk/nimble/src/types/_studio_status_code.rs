@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let studiostatuscode = unimplemented!();
 /// match studiostatuscode {
@@ -47,22 +47,14 @@
 /// Specifically, when `studiostatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StudioStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The status code.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StudioStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     AwsSsoAccessDenied,
@@ -103,112 +95,75 @@ pub enum StudioStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     StudioWithStudioComponentsNotDeleted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_SSO_ACCESS_DENIED" => StudioStatusCode::AwsSsoAccessDenied,
-            "AWS_SSO_CONFIGURATION_REPAIRED" => StudioStatusCode::AwsSsoConfigurationRepaired,
-            "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS" => {
-                StudioStatusCode::AwsSsoConfigurationRepairInProgress
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_SSO_ACCESS_DENIED" => StudioStatusCode::AwsSsoAccessDenied,
+"AWS_SSO_CONFIGURATION_REPAIRED" => StudioStatusCode::AwsSsoConfigurationRepaired,
+"AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS" => StudioStatusCode::AwsSsoConfigurationRepairInProgress,
+"AWS_SSO_NOT_ENABLED" => StudioStatusCode::AwsSsoNotEnabled,
+"AWS_STS_REGION_DISABLED" => StudioStatusCode::AwsStsRegionDisabled,
+"ENCRYPTION_KEY_ACCESS_DENIED" => StudioStatusCode::EncryptionKeyAccessDenied,
+"ENCRYPTION_KEY_NOT_FOUND" => StudioStatusCode::EncryptionKeyNotFound,
+"INTERNAL_ERROR" => StudioStatusCode::InternalError,
+"ROLE_COULD_NOT_BE_ASSUMED" => StudioStatusCode::RoleCouldNotBeAssumed,
+"ROLE_NOT_OWNED_BY_STUDIO_OWNER" => StudioStatusCode::RoleNotOwnedByStudioOwner,
+"STUDIO_CREATED" => StudioStatusCode::StudioCreated,
+"STUDIO_CREATE_IN_PROGRESS" => StudioStatusCode::StudioCreateInProgress,
+"STUDIO_DELETED" => StudioStatusCode::StudioDeleted,
+"STUDIO_DELETE_IN_PROGRESS" => StudioStatusCode::StudioDeleteInProgress,
+"STUDIO_UPDATED" => StudioStatusCode::StudioUpdated,
+"STUDIO_UPDATE_IN_PROGRESS" => StudioStatusCode::StudioUpdateInProgress,
+"STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED" => StudioStatusCode::StudioWithLaunchProfilesNotDeleted,
+"STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED" => StudioStatusCode::StudioWithStreamingImagesNotDeleted,
+"STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED" => StudioStatusCode::StudioWithStudioComponentsNotDeleted,
+other => StudioStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "AWS_SSO_NOT_ENABLED" => StudioStatusCode::AwsSsoNotEnabled,
-            "AWS_STS_REGION_DISABLED" => StudioStatusCode::AwsStsRegionDisabled,
-            "ENCRYPTION_KEY_ACCESS_DENIED" => StudioStatusCode::EncryptionKeyAccessDenied,
-            "ENCRYPTION_KEY_NOT_FOUND" => StudioStatusCode::EncryptionKeyNotFound,
-            "INTERNAL_ERROR" => StudioStatusCode::InternalError,
-            "ROLE_COULD_NOT_BE_ASSUMED" => StudioStatusCode::RoleCouldNotBeAssumed,
-            "ROLE_NOT_OWNED_BY_STUDIO_OWNER" => StudioStatusCode::RoleNotOwnedByStudioOwner,
-            "STUDIO_CREATED" => StudioStatusCode::StudioCreated,
-            "STUDIO_CREATE_IN_PROGRESS" => StudioStatusCode::StudioCreateInProgress,
-            "STUDIO_DELETED" => StudioStatusCode::StudioDeleted,
-            "STUDIO_DELETE_IN_PROGRESS" => StudioStatusCode::StudioDeleteInProgress,
-            "STUDIO_UPDATED" => StudioStatusCode::StudioUpdated,
-            "STUDIO_UPDATE_IN_PROGRESS" => StudioStatusCode::StudioUpdateInProgress,
-            "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED" => {
-                StudioStatusCode::StudioWithLaunchProfilesNotDeleted
-            }
-            "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED" => {
-                StudioStatusCode::StudioWithStreamingImagesNotDeleted
-            }
-            "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED" => {
-                StudioStatusCode::StudioWithStudioComponentsNotDeleted
-            }
-            other => {
-                StudioStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
 impl std::str::FromStr for StudioStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StudioStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StudioStatusCode::from(s))
+                }
+            }
 impl StudioStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioStatusCode::AwsSsoAccessDenied => "AWS_SSO_ACCESS_DENIED",
-            StudioStatusCode::AwsSsoConfigurationRepaired => "AWS_SSO_CONFIGURATION_REPAIRED",
-            StudioStatusCode::AwsSsoConfigurationRepairInProgress => {
-                "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS"
-            }
-            StudioStatusCode::AwsSsoNotEnabled => "AWS_SSO_NOT_ENABLED",
-            StudioStatusCode::AwsStsRegionDisabled => "AWS_STS_REGION_DISABLED",
-            StudioStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
-            StudioStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
-            StudioStatusCode::InternalError => "INTERNAL_ERROR",
-            StudioStatusCode::RoleCouldNotBeAssumed => "ROLE_COULD_NOT_BE_ASSUMED",
-            StudioStatusCode::RoleNotOwnedByStudioOwner => "ROLE_NOT_OWNED_BY_STUDIO_OWNER",
-            StudioStatusCode::StudioCreated => "STUDIO_CREATED",
-            StudioStatusCode::StudioCreateInProgress => "STUDIO_CREATE_IN_PROGRESS",
-            StudioStatusCode::StudioDeleted => "STUDIO_DELETED",
-            StudioStatusCode::StudioDeleteInProgress => "STUDIO_DELETE_IN_PROGRESS",
-            StudioStatusCode::StudioUpdated => "STUDIO_UPDATED",
-            StudioStatusCode::StudioUpdateInProgress => "STUDIO_UPDATE_IN_PROGRESS",
-            StudioStatusCode::StudioWithLaunchProfilesNotDeleted => {
-                "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED"
-            }
-            StudioStatusCode::StudioWithStreamingImagesNotDeleted => {
-                "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED"
-            }
-            StudioStatusCode::StudioWithStudioComponentsNotDeleted => {
-                "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED"
-            }
-            StudioStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_SSO_ACCESS_DENIED",
-            "AWS_SSO_CONFIGURATION_REPAIRED",
-            "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS",
-            "AWS_SSO_NOT_ENABLED",
-            "AWS_STS_REGION_DISABLED",
-            "ENCRYPTION_KEY_ACCESS_DENIED",
-            "ENCRYPTION_KEY_NOT_FOUND",
-            "INTERNAL_ERROR",
-            "ROLE_COULD_NOT_BE_ASSUMED",
-            "ROLE_NOT_OWNED_BY_STUDIO_OWNER",
-            "STUDIO_CREATED",
-            "STUDIO_CREATE_IN_PROGRESS",
-            "STUDIO_DELETED",
-            "STUDIO_DELETE_IN_PROGRESS",
-            "STUDIO_UPDATED",
-            "STUDIO_UPDATE_IN_PROGRESS",
-            "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED",
-            "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED",
-            "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioStatusCode::AwsSsoAccessDenied => "AWS_SSO_ACCESS_DENIED",
+    StudioStatusCode::AwsSsoConfigurationRepaired => "AWS_SSO_CONFIGURATION_REPAIRED",
+    StudioStatusCode::AwsSsoConfigurationRepairInProgress => "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS",
+    StudioStatusCode::AwsSsoNotEnabled => "AWS_SSO_NOT_ENABLED",
+    StudioStatusCode::AwsStsRegionDisabled => "AWS_STS_REGION_DISABLED",
+    StudioStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
+    StudioStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
+    StudioStatusCode::InternalError => "INTERNAL_ERROR",
+    StudioStatusCode::RoleCouldNotBeAssumed => "ROLE_COULD_NOT_BE_ASSUMED",
+    StudioStatusCode::RoleNotOwnedByStudioOwner => "ROLE_NOT_OWNED_BY_STUDIO_OWNER",
+    StudioStatusCode::StudioCreated => "STUDIO_CREATED",
+    StudioStatusCode::StudioCreateInProgress => "STUDIO_CREATE_IN_PROGRESS",
+    StudioStatusCode::StudioDeleted => "STUDIO_DELETED",
+    StudioStatusCode::StudioDeleteInProgress => "STUDIO_DELETE_IN_PROGRESS",
+    StudioStatusCode::StudioUpdated => "STUDIO_UPDATED",
+    StudioStatusCode::StudioUpdateInProgress => "STUDIO_UPDATE_IN_PROGRESS",
+    StudioStatusCode::StudioWithLaunchProfilesNotDeleted => "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED",
+    StudioStatusCode::StudioWithStreamingImagesNotDeleted => "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED",
+    StudioStatusCode::StudioWithStudioComponentsNotDeleted => "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED",
+    StudioStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_SSO_ACCESS_DENIED", "AWS_SSO_CONFIGURATION_REPAIRED", "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS", "AWS_SSO_NOT_ENABLED", "AWS_STS_REGION_DISABLED", "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "ROLE_COULD_NOT_BE_ASSUMED", "ROLE_NOT_OWNED_BY_STUDIO_OWNER", "STUDIO_CREATED", "STUDIO_CREATE_IN_PROGRESS", "STUDIO_DELETED", "STUDIO_DELETE_IN_PROGRESS", "STUDIO_UPDATED", "STUDIO_UPDATE_IN_PROGRESS", "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED", "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED", "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED"]
+                }
+            }
 impl AsRef<str> for StudioStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

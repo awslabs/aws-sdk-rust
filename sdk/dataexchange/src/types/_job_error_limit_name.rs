@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let joberrorlimitname = unimplemented!();
 /// match joberrorlimitname {
@@ -33,22 +33,14 @@
 /// Specifically, when `joberrorlimitname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobErrorLimitName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobErrorLimitName {
     #[allow(missing_docs)] // documentation missing in model
     AwsLakeFormationDataPermissionAssetsPerRevision,
@@ -61,66 +53,47 @@ pub enum JobErrorLimitName {
     #[allow(missing_docs)] // documentation missing in model
     AssetsPerRevision,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobErrorLimitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS Lake Formation data permission assets per revision" => {
-                JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS Lake Formation data permission assets per revision" => JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+"Amazon Redshift datashare assets per revision" => JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision,
+"Amazon S3 data access assets per revision" => JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision,
+"Asset size in GB" => JobErrorLimitName::AssetSizeInGb,
+"Assets per revision" => JobErrorLimitName::AssetsPerRevision,
+other => JobErrorLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "Amazon Redshift datashare assets per revision" => {
-                JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision
-            }
-            "Amazon S3 data access assets per revision" => {
-                JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision
-            }
-            "Asset size in GB" => JobErrorLimitName::AssetSizeInGb,
-            "Assets per revision" => JobErrorLimitName::AssetsPerRevision,
-            other => {
-                JobErrorLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
 impl std::str::FromStr for JobErrorLimitName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobErrorLimitName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobErrorLimitName::from(s))
+                }
+            }
 impl JobErrorLimitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => {
-                "AWS Lake Formation data permission assets per revision"
-            }
-            JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => {
-                "Amazon Redshift datashare assets per revision"
-            }
-            JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => {
-                "Amazon S3 data access assets per revision"
-            }
-            JobErrorLimitName::AssetSizeInGb => "Asset size in GB",
-            JobErrorLimitName::AssetsPerRevision => "Assets per revision",
-            JobErrorLimitName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS Lake Formation data permission assets per revision",
-            "Amazon Redshift datashare assets per revision",
-            "Amazon S3 data access assets per revision",
-            "Asset size in GB",
-            "Assets per revision",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+    JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
+    JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
+    JobErrorLimitName::AssetSizeInGb => "Asset size in GB",
+    JobErrorLimitName::AssetsPerRevision => "Assets per revision",
+    JobErrorLimitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS Lake Formation data permission assets per revision", "Amazon Redshift datashare assets per revision", "Amazon S3 data access assets per revision", "Asset size in GB", "Assets per revision"]
+                }
+            }
 impl AsRef<str> for JobErrorLimitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

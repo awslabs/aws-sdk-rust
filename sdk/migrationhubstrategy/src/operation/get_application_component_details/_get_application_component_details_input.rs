@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationComponentDetailsInput {
+pub struct GetApplicationComponentDetailsInput  {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
     #[doc(hidden)]
     pub application_component_id: std::option::Option<std::string::String>,
 }
 impl GetApplicationComponentDetailsInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    pub fn application_component_id(&self) -> std::option::Option<&str> {
+    pub fn application_component_id(&self) -> std::option::Option<& str> {
         self.application_component_id.as_deref()
     }
 }
 impl GetApplicationComponentDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentDetailsInput`](crate::operation::get_application_component_details::GetApplicationComponentDetailsInput).
-    pub fn builder() -> crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsInputBuilder{
+    pub fn builder() -> crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsInputBuilder {
         crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl GetApplicationComponentDetailsInputBuilder {
         self
     }
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    pub fn set_application_component_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_component_id = input;
-        self
+    pub fn set_application_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_component_id = input; self
     }
     /// Consumes the builder and constructs a [`GetApplicationComponentDetailsInput`](crate::operation::get_application_component_details::GetApplicationComponentDetailsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_application_component_details::GetApplicationComponentDetailsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_application_component_details::GetApplicationComponentDetailsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_application_component_details::GetApplicationComponentDetailsInput {
                 application_component_id: self.application_component_id
@@ -55,3 +46,4 @@ impl GetApplicationComponentDetailsInputBuilder {
         )
     }
 }
+

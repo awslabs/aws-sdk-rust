@@ -3,7 +3,7 @@
 /// <p>Creates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRequireCheckIn {
+pub struct CreateRequireCheckIn  {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl CreateRequireCheckInBuilder {
     }
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.release_after_minutes = input;
-        self
+        self.release_after_minutes = input; self
     }
     /// <p>Whether require check in is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -53,14 +52,16 @@ impl CreateRequireCheckInBuilder {
     }
     /// <p>Whether require check in is enabled or not.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`CreateRequireCheckIn`](crate::types::CreateRequireCheckIn).
     pub fn build(self) -> crate::types::CreateRequireCheckIn {
         crate::types::CreateRequireCheckIn {
-            release_after_minutes: self.release_after_minutes,
-            enabled: self.enabled,
+            release_after_minutes: self.release_after_minutes
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

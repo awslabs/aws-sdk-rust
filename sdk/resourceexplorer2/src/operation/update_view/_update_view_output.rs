@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateViewOutput {
+pub struct UpdateViewOutput  {
     /// <p>Details about the view that you changed with this operation.</p>
     #[doc(hidden)]
     pub view: std::option::Option<crate::types::View>,
@@ -10,15 +10,15 @@ pub struct UpdateViewOutput {
 }
 impl UpdateViewOutput {
     /// <p>Details about the view that you changed with this operation.</p>
-    pub fn view(&self) -> std::option::Option<&crate::types::View> {
+    pub fn view(&self) -> std::option::Option<& crate::types::View> {
         self.view.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateViewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateViewOutput {
     /// Creates a new builder-style object to manufacture [`UpdateViewOutput`](crate::operation::update_view::UpdateViewOutput).
     pub fn builder() -> crate::operation::update_view::builders::UpdateViewOutputBuilder {
@@ -41,23 +41,24 @@ impl UpdateViewOutputBuilder {
     }
     /// <p>Details about the view that you changed with this operation.</p>
     pub fn set_view(mut self, input: std::option::Option<crate::types::View>) -> Self {
-        self.view = input;
-        self
+        self.view = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateViewOutput`](crate::operation::update_view::UpdateViewOutput).
     pub fn build(self) -> crate::operation::update_view::UpdateViewOutput {
         crate::operation::update_view::UpdateViewOutput {
-            view: self.view,
+            view: self.view
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

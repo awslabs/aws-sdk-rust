@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachVolumeInput {
+pub struct DetachVolumeInput  {
     /// <p>The device name.</p>
     #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct DetachVolumeInput {
 }
 impl DetachVolumeInput {
     /// <p>The device name.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures.</p>
@@ -29,11 +29,11 @@ impl DetachVolumeInput {
         self.force
     }
     /// <p>The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -66,8 +66,7 @@ impl DetachVolumeInputBuilder {
     }
     /// <p>The device name.</p>
     pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -76,8 +75,7 @@ impl DetachVolumeInputBuilder {
     }
     /// <p>Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl DetachVolumeInputBuilder {
     }
     /// <p>The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +93,7 @@ impl DetachVolumeInputBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -106,22 +102,24 @@ impl DetachVolumeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::detach_volume::DetachVolumeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::detach_volume::DetachVolumeInput {
-            device: self.device,
-            force: self.force,
-            instance_id: self.instance_id,
-            volume_id: self.volume_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> Result<crate::operation::detach_volume::DetachVolumeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::detach_volume::DetachVolumeInput {
+                device: self.device
+                ,
+                force: self.force
+                ,
+                instance_id: self.instance_id
+                ,
+                volume_id: self.volume_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

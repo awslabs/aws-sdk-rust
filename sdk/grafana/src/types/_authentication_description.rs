@@ -3,7 +3,7 @@
 /// <p>A structure containing information about the user authentication methods used by the workspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationDescription {
+pub struct AuthenticationDescription  {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     #[doc(hidden)]
     pub providers: std::option::Option<std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
@@ -16,15 +16,15 @@ pub struct AuthenticationDescription {
 }
 impl AuthenticationDescription {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-    pub fn providers(&self) -> std::option::Option<&[crate::types::AuthenticationProviderTypes]> {
+    pub fn providers(&self) -> std::option::Option<& [crate::types::AuthenticationProviderTypes]> {
         self.providers.as_deref()
     }
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
-    pub fn saml(&self) -> std::option::Option<&crate::types::SamlAuthentication> {
+    pub fn saml(&self) -> std::option::Option<& crate::types::SamlAuthentication> {
         self.saml.as_ref()
     }
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
-    pub fn aws_sso(&self) -> std::option::Option<&crate::types::AwsSsoAuthentication> {
+    pub fn aws_sso(&self) -> std::option::Option<& crate::types::AwsSsoAuthentication> {
         self.aws_sso.as_ref()
     }
 }
@@ -39,8 +39,7 @@ impl AuthenticationDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AuthenticationDescriptionBuilder {
-    pub(crate) providers:
-        std::option::Option<std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub(crate) providers: std::option::Option<std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     pub(crate) saml: std::option::Option<crate::types::SamlAuthentication>,
     pub(crate) aws_sso: std::option::Option<crate::types::AwsSsoAuthentication>,
 }
@@ -52,17 +51,13 @@ impl AuthenticationDescriptionBuilder {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
     pub fn providers(mut self, input: crate::types::AuthenticationProviderTypes) -> Self {
         let mut v = self.providers.unwrap_or_default();
-        v.push(input);
-        self.providers = Some(v);
-        self
+                        v.push(input);
+                        self.providers = Some(v);
+                        self
     }
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-    pub fn set_providers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
-    ) -> Self {
-        self.providers = input;
-        self
+    pub fn set_providers(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuthenticationProviderTypes>>) -> Self {
+        self.providers = input; self
     }
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn saml(mut self, input: crate::types::SamlAuthentication) -> Self {
@@ -70,12 +65,8 @@ impl AuthenticationDescriptionBuilder {
         self
     }
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
-    pub fn set_saml(
-        mut self,
-        input: std::option::Option<crate::types::SamlAuthentication>,
-    ) -> Self {
-        self.saml = input;
-        self
+    pub fn set_saml(mut self, input: std::option::Option<crate::types::SamlAuthentication>) -> Self {
+        self.saml = input; self
     }
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
     pub fn aws_sso(mut self, input: crate::types::AwsSsoAuthentication) -> Self {
@@ -83,19 +74,19 @@ impl AuthenticationDescriptionBuilder {
         self
     }
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
-    pub fn set_aws_sso(
-        mut self,
-        input: std::option::Option<crate::types::AwsSsoAuthentication>,
-    ) -> Self {
-        self.aws_sso = input;
-        self
+    pub fn set_aws_sso(mut self, input: std::option::Option<crate::types::AwsSsoAuthentication>) -> Self {
+        self.aws_sso = input; self
     }
     /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::types::AuthenticationDescription).
     pub fn build(self) -> crate::types::AuthenticationDescription {
         crate::types::AuthenticationDescription {
-            providers: self.providers,
-            saml: self.saml,
-            aws_sso: self.aws_sso,
+            providers: self.providers
+            ,
+            saml: self.saml
+            ,
+            aws_sso: self.aws_sso
+            ,
         }
     }
 }
+

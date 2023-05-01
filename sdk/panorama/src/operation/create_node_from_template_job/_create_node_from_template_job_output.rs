@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNodeFromTemplateJobOutput {
+pub struct CreateNodeFromTemplateJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct CreateNodeFromTemplateJobOutput {
 }
 impl CreateNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNodeFromTemplateJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateNodeFromTemplateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateNodeFromTemplateJobOutput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput).
-    pub fn builder() -> crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder{
+    pub fn builder() -> crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder {
         crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl CreateNodeFromTemplateJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateNodeFromTemplateJobOutput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
+    pub fn build(self) -> crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
         crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
-            job_id: self.job_id,
+            job_id: self.job_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

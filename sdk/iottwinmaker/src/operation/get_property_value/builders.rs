@@ -4,83 +4,56 @@ pub use crate::operation::get_property_value::_get_property_value_output::GetPro
 pub use crate::operation::get_property_value::_get_property_value_input::GetPropertyValueInputBuilder;
 
 /// Fluent builder constructing a request to `GetPropertyValue`.
-///
-/// <p>Gets the property values for a component, component type, entity, or workspace.</p>
+/// 
+/// <p>Gets the property values for a component, component type, entity, or workspace.</p> 
 /// <p>You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>, or <code>workspaceId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPropertyValueFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_property_value::builders::GetPropertyValueInputBuilder,
-}
-impl GetPropertyValueFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_property_value::builders::GetPropertyValueInputBuilder
+            }
+impl GetPropertyValueFluentBuilder  {
     /// Creates a new `GetPropertyValue`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_property_value::GetPropertyValue,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_property_value::GetPropertyValueOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_property_value::GetPropertyValueError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_property_value::GetPropertyValue, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_property_value::GetPropertyValueOutput, aws_smithy_http::result::SdkError<crate::operation::get_property_value::GetPropertyValueError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_property_value::paginator::GetPropertyValuePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_property_value::paginator::GetPropertyValuePaginator {
-        crate::operation::get_property_value::paginator::GetPropertyValuePaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_property_value::paginator::GetPropertyValuePaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_property_value::paginator::GetPropertyValuePaginator {
+                            crate::operation::get_property_value::paginator::GetPropertyValuePaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the component whose property values the operation returns.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
@@ -97,10 +70,7 @@ impl GetPropertyValueFluentBuilder {
         self
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
     }
@@ -124,10 +94,7 @@ impl GetPropertyValueFluentBuilder {
         self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn set_selected_properties(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_selected_properties(input);
         self
     }
@@ -141,13 +108,13 @@ impl GetPropertyValueFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -169,10 +136,7 @@ impl GetPropertyValueFluentBuilder {
         self
     }
     /// <p>The property group name.</p>
-    pub fn set_property_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_property_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_property_group_name(input);
         self
     }
@@ -182,11 +146,9 @@ impl GetPropertyValueFluentBuilder {
         self
     }
     /// <p>The tabular conditions.</p>
-    pub fn set_tabular_conditions(
-        mut self,
-        input: std::option::Option<crate::types::TabularConditions>,
-    ) -> Self {
+    pub fn set_tabular_conditions(mut self, input: std::option::Option<crate::types::TabularConditions>) -> Self {
         self.inner = self.inner.set_tabular_conditions(input);
         self
     }
 }
+

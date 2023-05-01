@@ -3,7 +3,7 @@
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompatibleEnvironmentTemplateInput {
+pub struct CompatibleEnvironmentTemplateInput  {
     /// <p>The compatible environment template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CompatibleEnvironmentTemplateInput {
 }
 impl CompatibleEnvironmentTemplateInput {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CompatibleEnvironmentTemplateInputBuilder {
     }
     /// <p>The compatible environment template name.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The major version of the compatible environment template.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CompatibleEnvironmentTemplateInputBuilder {
     }
     /// <p>The major version of the compatible environment template.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// Consumes the builder and constructs a [`CompatibleEnvironmentTemplateInput`](crate::types::CompatibleEnvironmentTemplateInput).
     pub fn build(self) -> crate::types::CompatibleEnvironmentTemplateInput {
         crate::types::CompatibleEnvironmentTemplateInput {
-            template_name: self.template_name,
-            major_version: self.major_version,
+            template_name: self.template_name
+            ,
+            major_version: self.major_version
+            ,
         }
     }
 }
+

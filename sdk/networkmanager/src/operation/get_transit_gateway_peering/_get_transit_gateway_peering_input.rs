@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTransitGatewayPeeringInput {
+pub struct GetTransitGatewayPeeringInput  {
     /// <p>The ID of the peering request.</p>
     #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayPeeringInput {
     /// <p>The ID of the peering request.</p>
-    pub fn peering_id(&self) -> std::option::Option<&str> {
+    pub fn peering_id(&self) -> std::option::Option<& str> {
         self.peering_id.as_deref()
     }
 }
 impl GetTransitGatewayPeeringInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
-    pub fn builder(
-    ) -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder {
         crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetTransitGatewayPeeringInputBuilder {
     }
     /// <p>The ID of the peering request.</p>
     pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peering_id = input;
-        self
+        self.peering_id = input; self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput {
-                peering_id: self.peering_id,
-            },
+                peering_id: self.peering_id
+                ,
+            }
         )
     }
 }
+

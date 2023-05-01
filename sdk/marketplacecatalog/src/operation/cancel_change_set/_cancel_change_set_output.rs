@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelChangeSetOutput {
+pub struct CancelChangeSetOutput  {
     /// <p>The unique identifier for the change set referenced in this request.</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct CancelChangeSetOutput {
 }
 impl CancelChangeSetOutput {
     /// <p>The unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated with the change set referenced in this request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+    pub fn change_set_arn(&self) -> std::option::Option<& str> {
         self.change_set_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CancelChangeSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CancelChangeSetOutput`](crate::operation::cancel_change_set::CancelChangeSetOutput).
-    pub fn builder() -> crate::operation::cancel_change_set::builders::CancelChangeSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_change_set::builders::CancelChangeSetOutputBuilder {
         crate::operation::cancel_change_set::builders::CancelChangeSetOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl CancelChangeSetOutputBuilder {
     }
     /// <p>The unique identifier for the change set referenced in this request.</p>
     pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_id = input;
-        self
+        self.change_set_id = input; self
     }
     /// <p>The ARN associated with the change set referenced in this request.</p>
     pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,24 +58,26 @@ impl CancelChangeSetOutputBuilder {
     }
     /// <p>The ARN associated with the change set referenced in this request.</p>
     pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_arn = input;
-        self
+        self.change_set_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelChangeSetOutput`](crate::operation::cancel_change_set::CancelChangeSetOutput).
     pub fn build(self) -> crate::operation::cancel_change_set::CancelChangeSetOutput {
         crate::operation::cancel_change_set::CancelChangeSetOutput {
-            change_set_id: self.change_set_id,
-            change_set_arn: self.change_set_arn,
+            change_set_id: self.change_set_id
+            ,
+            change_set_arn: self.change_set_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

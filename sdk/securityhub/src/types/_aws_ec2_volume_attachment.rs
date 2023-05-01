@@ -3,7 +3,7 @@
 /// <p>An attachment to an Amazon EC2 volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2VolumeAttachment {
+pub struct AwsEc2VolumeAttachment  {
     /// <p>The datetime when the attachment initiated.</p>
     #[doc(hidden)]
     pub attach_time: std::option::Option<std::string::String>,
@@ -13,20 +13,20 @@ pub struct AwsEc2VolumeAttachment {
     /// <p>The identifier of the EC2 instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The attachment state of the volume. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>attaching</code> </p> </li>
-    /// <li> <p> <code>attached</code> </p> </li>
-    /// <li> <p> <code>busy</code> </p> </li>
-    /// <li> <p> <code>detaching</code> </p> </li>
-    /// <li> <p> <code>detached</code> </p> </li>
+    /// <p>The attachment state of the volume. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>attaching</code> </p> </li> 
+    /// <li> <p> <code>attached</code> </p> </li> 
+    /// <li> <p> <code>busy</code> </p> </li> 
+    /// <li> <p> <code>detaching</code> </p> </li> 
+    /// <li> <p> <code>detached</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl AwsEc2VolumeAttachment {
     /// <p>The datetime when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&str> {
+    pub fn attach_time(&self) -> std::option::Option<& str> {
         self.attach_time.as_deref()
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
@@ -34,18 +34,18 @@ impl AwsEc2VolumeAttachment {
         self.delete_on_termination
     }
     /// <p>The identifier of the EC2 instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
-    /// <p>The attachment state of the volume. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>attaching</code> </p> </li>
-    /// <li> <p> <code>attached</code> </p> </li>
-    /// <li> <p> <code>busy</code> </p> </li>
-    /// <li> <p> <code>detaching</code> </p> </li>
-    /// <li> <p> <code>detached</code> </p> </li>
+    /// <p>The attachment state of the volume. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>attaching</code> </p> </li> 
+    /// <li> <p> <code>attached</code> </p> </li> 
+    /// <li> <p> <code>busy</code> </p> </li> 
+    /// <li> <p> <code>detaching</code> </p> </li> 
+    /// <li> <p> <code>detached</code> </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The datetime when the attachment initiated.</p>
     pub fn set_attach_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attach_time = input;
-        self
+        self.attach_time = input; self
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -83,8 +82,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>The identifier of the EC2 instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,40 +91,44 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The identifier of the EC2 instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
-    /// <p>The attachment state of the volume. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>attaching</code> </p> </li>
-    /// <li> <p> <code>attached</code> </p> </li>
-    /// <li> <p> <code>busy</code> </p> </li>
-    /// <li> <p> <code>detaching</code> </p> </li>
-    /// <li> <p> <code>detached</code> </p> </li>
+    /// <p>The attachment state of the volume. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>attaching</code> </p> </li> 
+    /// <li> <p> <code>attached</code> </p> </li> 
+    /// <li> <p> <code>busy</code> </p> </li> 
+    /// <li> <p> <code>detaching</code> </p> </li> 
+    /// <li> <p> <code>detached</code> </p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The attachment state of the volume. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>attaching</code> </p> </li>
-    /// <li> <p> <code>attached</code> </p> </li>
-    /// <li> <p> <code>busy</code> </p> </li>
-    /// <li> <p> <code>detaching</code> </p> </li>
-    /// <li> <p> <code>detached</code> </p> </li>
+    /// <p>The attachment state of the volume. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>attaching</code> </p> </li> 
+    /// <li> <p> <code>attached</code> </p> </li> 
+    /// <li> <p> <code>busy</code> </p> </li> 
+    /// <li> <p> <code>detaching</code> </p> </li> 
+    /// <li> <p> <code>detached</code> </p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2VolumeAttachment`](crate::types::AwsEc2VolumeAttachment).
     pub fn build(self) -> crate::types::AwsEc2VolumeAttachment {
         crate::types::AwsEc2VolumeAttachment {
-            attach_time: self.attach_time,
-            delete_on_termination: self.delete_on_termination.unwrap_or_default(),
-            instance_id: self.instance_id,
-            status: self.status,
+            attach_time: self.attach_time
+            ,
+            delete_on_termination: self.delete_on_termination
+                .unwrap_or_default()
+            ,
+            instance_id: self.instance_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

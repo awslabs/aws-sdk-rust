@@ -4,82 +4,56 @@ pub use crate::operation::list_medical_vocabularies::_list_medical_vocabularies_
 pub use crate::operation::list_medical_vocabularies::_list_medical_vocabularies_input::ListMedicalVocabulariesInputBuilder;
 
 /// Fluent builder constructing a request to `ListMedicalVocabularies`.
-///
-/// <p>Provides a list of custom medical vocabularies that match the specified criteria. If no criteria are specified, all custom medical vocabularies are returned.</p>
+/// 
+/// <p>Provides a list of custom medical vocabularies that match the specified criteria. If no criteria are specified, all custom medical vocabularies are returned.</p> 
 /// <p>To get detailed information about a specific custom medical vocabulary, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMedicalVocabulariesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesInputBuilder,
-}
-impl ListMedicalVocabulariesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesInputBuilder
+            }
+impl ListMedicalVocabulariesFluentBuilder  {
     /// Creates a new `ListMedicalVocabularies`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_medical_vocabularies::ListMedicalVocabularies,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_medical_vocabularies::ListMedicalVocabularies, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput, aws_smithy_http::result::SdkError<crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_medical_vocabularies::paginator::ListMedicalVocabulariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_medical_vocabularies::paginator::ListMedicalVocabulariesPaginator
-    {
-        crate::operation::list_medical_vocabularies::paginator::ListMedicalVocabulariesPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_medical_vocabularies::paginator::ListMedicalVocabulariesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_medical_vocabularies::paginator::ListMedicalVocabulariesPaginator {
+                            crate::operation::list_medical_vocabularies::paginator::ListMedicalVocabulariesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -106,10 +80,7 @@ impl ListMedicalVocabulariesFluentBuilder {
         self
     }
     /// <p>Returns only custom medical vocabularies with the specified state. Custom vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
-    pub fn set_state_equals(
-        mut self,
-        input: std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_state_equals(mut self, input: std::option::Option<crate::types::VocabularyState>) -> Self {
         self.inner = self.inner.set_state_equals(input);
         self
     }
@@ -124,3 +95,4 @@ impl ListMedicalVocabulariesFluentBuilder {
         self
     }
 }
+

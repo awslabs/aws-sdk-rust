@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The identifier of the FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
@@ -12,10 +12,10 @@ pub struct UpdateEnvironmentInput {
     /// <p>The description of the environment.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub federation_mode: std::option::Option<crate::types::FederationMode>,
@@ -25,36 +25,33 @@ pub struct UpdateEnvironmentInput {
 }
 impl UpdateEnvironmentInput {
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
-    pub fn federation_mode(&self) -> std::option::Option<&crate::types::FederationMode> {
+    pub fn federation_mode(&self) -> std::option::Option<& crate::types::FederationMode> {
         self.federation_mode.as_ref()
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn federation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::FederationParameters> {
+    pub fn federation_parameters(&self) -> std::option::Option<& crate::types::FederationParameters> {
         self.federation_parameters.as_ref()
     }
 }
 impl UpdateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::default()
     }
 }
@@ -77,8 +74,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The identifier of the FinSpace environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +83,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,29 +92,24 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The description of the environment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
     pub fn federation_mode(mut self, input: crate::types::FederationMode) -> Self {
         self.federation_mode = Some(input);
         self
     }
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
-    pub fn set_federation_mode(
-        mut self,
-        input: std::option::Option<crate::types::FederationMode>,
-    ) -> Self {
-        self.federation_mode = input;
-        self
+    pub fn set_federation_mode(mut self, input: std::option::Option<crate::types::FederationMode>) -> Self {
+        self.federation_mode = input; self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub fn federation_parameters(mut self, input: crate::types::FederationParameters) -> Self {
@@ -127,28 +117,25 @@ impl UpdateEnvironmentInputBuilder {
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn set_federation_parameters(
-        mut self,
-        input: std::option::Option<crate::types::FederationParameters>,
-    ) -> Self {
-        self.federation_parameters = input;
-        self
+    pub fn set_federation_parameters(mut self, input: std::option::Option<crate::types::FederationParameters>) -> Self {
+        self.federation_parameters = input; self
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_environment::UpdateEnvironmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_environment::UpdateEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_environment::UpdateEnvironmentInput {
-                environment_id: self.environment_id,
-                name: self.name,
-                description: self.description,
-                federation_mode: self.federation_mode,
-                federation_parameters: self.federation_parameters,
-            },
+                environment_id: self.environment_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                federation_mode: self.federation_mode
+                ,
+                federation_parameters: self.federation_parameters
+                ,
+            }
         )
     }
 }
+

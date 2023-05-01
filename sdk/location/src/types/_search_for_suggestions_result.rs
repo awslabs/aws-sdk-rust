@@ -3,25 +3,25 @@
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchForSuggestionsResult {
+pub struct SearchForSuggestionsResult  {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
-    pub fn place_id(&self) -> std::option::Option<&str> {
+    pub fn place_id(&self) -> std::option::Option<& str> {
         self.place_id.as_deref()
     }
 }
@@ -47,28 +47,29 @@ impl SearchForSuggestionsResultBuilder {
     }
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.place_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.place_id = input;
-        self
+        self.place_id = input; self
     }
     /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
     pub fn build(self) -> crate::types::SearchForSuggestionsResult {
         crate::types::SearchForSuggestionsResult {
-            text: self.text,
-            place_id: self.place_id,
+            text: self.text
+            ,
+            place_id: self.place_id
+            ,
         }
     }
 }
+

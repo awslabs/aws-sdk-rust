@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationSubscriptionOutput {
+pub struct CreateNotificationSubscriptionOutput  {
     /// <p>The subscription.</p>
     #[doc(hidden)]
     pub subscription: std::option::Option<crate::types::Subscription>,
@@ -10,18 +10,18 @@ pub struct CreateNotificationSubscriptionOutput {
 }
 impl CreateNotificationSubscriptionOutput {
     /// <p>The subscription.</p>
-    pub fn subscription(&self) -> std::option::Option<&crate::types::Subscription> {
+    pub fn subscription(&self) -> std::option::Option<& crate::types::Subscription> {
         self.subscription.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNotificationSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateNotificationSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput).
-    pub fn builder() -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionOutputBuilder {
         crate::operation::create_notification_subscription::builders::CreateNotificationSubscriptionOutputBuilder::default()
     }
 }
@@ -40,30 +40,25 @@ impl CreateNotificationSubscriptionOutputBuilder {
         self
     }
     /// <p>The subscription.</p>
-    pub fn set_subscription(
-        mut self,
-        input: std::option::Option<crate::types::Subscription>,
-    ) -> Self {
-        self.subscription = input;
-        self
+    pub fn set_subscription(mut self, input: std::option::Option<crate::types::Subscription>) -> Self {
+        self.subscription = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput
-    {
+    pub fn build(self) -> crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput {
         crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput {
-            subscription: self.subscription,
+            subscription: self.subscription
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

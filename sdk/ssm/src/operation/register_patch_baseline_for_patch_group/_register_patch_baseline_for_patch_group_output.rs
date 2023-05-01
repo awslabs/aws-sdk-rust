@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterPatchBaselineForPatchGroupOutput {
+pub struct RegisterPatchBaselineForPatchGroupOutput  {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct RegisterPatchBaselineForPatchGroupOutput {
 }
 impl RegisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch group registered with the patch baseline.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> std::option::Option<& str> {
         self.patch_group.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterPatchBaselineForPatchGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`RegisterPatchBaselineForPatchGroupOutput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput).
-    pub fn builder() -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupOutputBuilder{
+    pub fn builder() -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupOutputBuilder {
         crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl RegisterPatchBaselineForPatchGroupOutputBuilder {
     }
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
     pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The name of the patch group registered with the patch baseline.</p>
     pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,20 +58,19 @@ impl RegisterPatchBaselineForPatchGroupOutputBuilder {
     }
     /// <p>The name of the patch group registered with the patch baseline.</p>
     pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.patch_group = input;
-        self
+        self.patch_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterPatchBaselineForPatchGroupOutput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput).
-    pub fn build(self) -> crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput{
+    pub fn build(self) -> crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput {
         crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput {
             baseline_id: self.baseline_id
             ,
@@ -82,3 +80,4 @@ impl RegisterPatchBaselineForPatchGroupOutputBuilder {
         }
     }
 }
+

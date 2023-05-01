@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppVersionAppComponentsInput {
+pub struct ListAppVersionAppComponentsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListAppVersionAppComponentsInput {
 }
 impl ListAppVersionAppComponentsInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the Application Component.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of Application Components to be displayed per Resilience Hub application version.</p>
@@ -36,7 +36,7 @@ impl ListAppVersionAppComponentsInput {
 }
 impl ListAppVersionAppComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionAppComponentsInput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput).
-    pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder{
+    pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder {
         crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListAppVersionAppComponentsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The version of the Application Component.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ListAppVersionAppComponentsInputBuilder {
     }
     /// <p>The version of the Application Component.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl ListAppVersionAppComponentsInputBuilder {
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of Application Components to be displayed per Resilience Hub application version.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -88,23 +85,22 @@ impl ListAppVersionAppComponentsInputBuilder {
     }
     /// <p>Maximum number of Application Components to be displayed per Resilience Hub application version.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAppVersionAppComponentsInput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_app_version_app_components::ListAppVersionAppComponentsInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

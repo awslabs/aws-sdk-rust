@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelImageLaunchPermissionInput {
+pub struct CancelImageLaunchPermissionInput  {
     /// <p>The ID of the AMI that was shared with your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CancelImageLaunchPermissionInput {
 }
 impl CancelImageLaunchPermissionInput {
     /// <p>The ID of the AMI that was shared with your Amazon Web Services account.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl CancelImageLaunchPermissionInput {
 }
 impl CancelImageLaunchPermissionInput {
     /// Creates a new builder-style object to manufacture [`CancelImageLaunchPermissionInput`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput).
-    pub fn builder() -> crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder{
+    pub fn builder() -> crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder {
         crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl CancelImageLaunchPermissionInputBuilder {
     }
     /// <p>The ID of the AMI that was shared with your Amazon Web Services account.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -52,21 +51,18 @@ impl CancelImageLaunchPermissionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CancelImageLaunchPermissionInput`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionInput {
-                image_id: self.image_id,
-                dry_run: self.dry_run,
-            },
+                image_id: self.image_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoutingProfileQueuesInput {
+pub struct ListRoutingProfileQueuesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListRoutingProfileQueuesInput {
 }
 impl ListRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
@@ -36,9 +36,7 @@ impl ListRoutingProfileQueuesInput {
 }
 impl ListRoutingProfileQueuesInput {
     /// Creates a new builder-style object to manufacture [`ListRoutingProfileQueuesInput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput).
-    pub fn builder(
-    ) -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder {
         crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl ListRoutingProfileQueuesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +66,8 @@ impl ListRoutingProfileQueuesInputBuilder {
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.routing_profile_id = input;
-        self
+    pub fn set_routing_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.routing_profile_id = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +76,7 @@ impl ListRoutingProfileQueuesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,23 +85,22 @@ impl ListRoutingProfileQueuesInputBuilder {
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListRoutingProfileQueuesInput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput {
-                instance_id: self.instance_id,
-                routing_profile_id: self.routing_profile_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                instance_id: self.instance_id
+                ,
+                routing_profile_id: self.routing_profile_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

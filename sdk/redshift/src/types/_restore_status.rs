@@ -3,7 +3,7 @@
 /// <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreStatus {
+pub struct RestoreStatus  {
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct RestoreStatus {
 }
 impl RestoreStatus {
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
@@ -75,8 +75,7 @@ impl RestoreStatusBuilder {
     }
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn current_restore_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -84,12 +83,8 @@ impl RestoreStatusBuilder {
         self
     }
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    pub fn set_current_restore_rate_in_mega_bytes_per_second(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.current_restore_rate_in_mega_bytes_per_second = input;
-        self
+    pub fn set_current_restore_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
+        self.current_restore_rate_in_mega_bytes_per_second = input; self
     }
     /// <p>The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn snapshot_size_in_mega_bytes(mut self, input: i64) -> Self {
@@ -98,8 +93,7 @@ impl RestoreStatusBuilder {
     }
     /// <p>The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn set_snapshot_size_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.snapshot_size_in_mega_bytes = input;
-        self
+        self.snapshot_size_in_mega_bytes = input; self
     }
     /// <p>The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
@@ -108,8 +102,7 @@ impl RestoreStatusBuilder {
     }
     /// <p>The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.progress_in_mega_bytes = input;
-        self
+        self.progress_in_mega_bytes = input; self
     }
     /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -118,8 +111,7 @@ impl RestoreStatusBuilder {
     }
     /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.elapsed_time_in_seconds = input;
-        self
+        self.elapsed_time_in_seconds = input; self
     }
     /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. </p>
     pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
@@ -127,26 +119,30 @@ impl RestoreStatusBuilder {
         self
     }
     /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. </p>
-    pub fn set_estimated_time_to_completion_in_seconds(
-        mut self,
-        input: std::option::Option<i64>,
-    ) -> Self {
-        self.estimated_time_to_completion_in_seconds = input;
-        self
+    pub fn set_estimated_time_to_completion_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+        self.estimated_time_to_completion_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`RestoreStatus`](crate::types::RestoreStatus).
     pub fn build(self) -> crate::types::RestoreStatus {
         crate::types::RestoreStatus {
-            status: self.status,
-            current_restore_rate_in_mega_bytes_per_second: self
-                .current_restore_rate_in_mega_bytes_per_second
-                .unwrap_or_default(),
-            snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes.unwrap_or_default(),
-            progress_in_mega_bytes: self.progress_in_mega_bytes.unwrap_or_default(),
-            elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
-            estimated_time_to_completion_in_seconds: self
-                .estimated_time_to_completion_in_seconds
-                .unwrap_or_default(),
+            status: self.status
+            ,
+            current_restore_rate_in_mega_bytes_per_second: self.current_restore_rate_in_mega_bytes_per_second
+                .unwrap_or_default()
+            ,
+            snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes
+                .unwrap_or_default()
+            ,
+            progress_in_mega_bytes: self.progress_in_mega_bytes
+                .unwrap_or_default()
+            ,
+            elapsed_time_in_seconds: self.elapsed_time_in_seconds
+                .unwrap_or_default()
+            ,
+            estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

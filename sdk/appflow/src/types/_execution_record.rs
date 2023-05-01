@@ -3,7 +3,7 @@
 /// <p> Specifies information about the past flow run instances for a given flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionRecord {
+pub struct ExecutionRecord  {
     /// <p> Specifies the identifier of the given flow run. </p>
     #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
@@ -27,42 +27,39 @@ pub struct ExecutionRecord {
     pub data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
     #[doc(hidden)]
-    pub metadata_catalog_details:
-        std::option::Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>,
+    pub metadata_catalog_details: std::option::Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>,
 }
 impl ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
-    pub fn execution_status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn execution_status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
     /// <p> Describes the result of the given flow run. </p>
-    pub fn execution_result(&self) -> std::option::Option<&crate::types::ExecutionResult> {
+    pub fn execution_result(&self) -> std::option::Option<& crate::types::ExecutionResult> {
         self.execution_result.as_ref()
     }
     /// <p> Specifies the start time of the flow run. </p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p> Specifies the time of the most recent update. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
-    pub fn data_pull_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_pull_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_pull_start_time.as_ref()
     }
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
-    pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn data_pull_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.data_pull_end_time.as_ref()
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn metadata_catalog_details(
-        &self,
-    ) -> std::option::Option<&[crate::types::MetadataCatalogDetail]> {
+    pub fn metadata_catalog_details(&self) -> std::option::Option<& [crate::types::MetadataCatalogDetail]> {
         self.metadata_catalog_details.as_deref()
     }
 }
@@ -84,8 +81,7 @@ pub struct ExecutionRecordBuilder {
     pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) data_pull_start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) metadata_catalog_details:
-        std::option::Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>,
+    pub(crate) metadata_catalog_details: std::option::Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>,
 }
 impl ExecutionRecordBuilder {
     /// <p> Specifies the identifier of the given flow run. </p>
@@ -95,8 +91,7 @@ impl ExecutionRecordBuilder {
     }
     /// <p> Specifies the identifier of the given flow run. </p>
     pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -104,12 +99,8 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
-    pub fn set_execution_status(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
-        self.execution_status = input;
-        self
+    pub fn set_execution_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
+        self.execution_status = input; self
     }
     /// <p> Describes the result of the given flow run. </p>
     pub fn execution_result(mut self, input: crate::types::ExecutionResult) -> Self {
@@ -117,12 +108,8 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Describes the result of the given flow run. </p>
-    pub fn set_execution_result(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionResult>,
-    ) -> Self {
-        self.execution_result = input;
-        self
+    pub fn set_execution_result(mut self, input: std::option::Option<crate::types::ExecutionResult>) -> Self {
+        self.execution_result = input; self
     }
     /// <p> Specifies the start time of the flow run. </p>
     pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,12 +117,8 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Specifies the start time of the flow run. </p>
-    pub fn set_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_at = input;
-        self
+    pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input; self
     }
     /// <p> Specifies the time of the most recent update. </p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,12 +126,8 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> Specifies the time of the most recent update. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +135,8 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
-    pub fn set_data_pull_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.data_pull_start_time = input;
-        self
+    pub fn set_data_pull_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.data_pull_start_time = input; self
     }
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -169,12 +144,8 @@ impl ExecutionRecordBuilder {
         self
     }
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
-    pub fn set_data_pull_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.data_pull_end_time = input;
-        self
+    pub fn set_data_pull_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.data_pull_end_time = input; self
     }
     /// Appends an item to `metadata_catalog_details`.
     ///
@@ -183,29 +154,34 @@ impl ExecutionRecordBuilder {
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
     pub fn metadata_catalog_details(mut self, input: crate::types::MetadataCatalogDetail) -> Self {
         let mut v = self.metadata_catalog_details.unwrap_or_default();
-        v.push(input);
-        self.metadata_catalog_details = Some(v);
-        self
+                        v.push(input);
+                        self.metadata_catalog_details = Some(v);
+                        self
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn set_metadata_catalog_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>,
-    ) -> Self {
-        self.metadata_catalog_details = input;
-        self
+    pub fn set_metadata_catalog_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>) -> Self {
+        self.metadata_catalog_details = input; self
     }
     /// Consumes the builder and constructs a [`ExecutionRecord`](crate::types::ExecutionRecord).
     pub fn build(self) -> crate::types::ExecutionRecord {
         crate::types::ExecutionRecord {
-            execution_id: self.execution_id,
-            execution_status: self.execution_status,
-            execution_result: self.execution_result,
-            started_at: self.started_at,
-            last_updated_at: self.last_updated_at,
-            data_pull_start_time: self.data_pull_start_time,
-            data_pull_end_time: self.data_pull_end_time,
-            metadata_catalog_details: self.metadata_catalog_details,
+            execution_id: self.execution_id
+            ,
+            execution_status: self.execution_status
+            ,
+            execution_result: self.execution_result
+            ,
+            started_at: self.started_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            data_pull_start_time: self.data_pull_start_time
+            ,
+            data_pull_end_time: self.data_pull_end_time
+            ,
+            metadata_catalog_details: self.metadata_catalog_details
+            ,
         }
     }
 }
+

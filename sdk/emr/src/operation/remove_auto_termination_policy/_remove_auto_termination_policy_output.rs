@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAutoTerminationPolicyOutput {
+pub struct RemoveAutoTerminationPolicyOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveAutoTerminationPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveAutoTerminationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAutoTerminationPolicyOutput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput).
-    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyOutputBuilder {
         crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct RemoveAutoTerminationPolicyOutputBuilder {
 }
 impl RemoveAutoTerminationPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveAutoTerminationPolicyOutput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput {
+    pub fn build(self) -> crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput {
         crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput {
             _request_id: self._request_id,
         }
     }
 }
+

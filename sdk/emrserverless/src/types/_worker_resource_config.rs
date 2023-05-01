@@ -3,7 +3,7 @@
 /// <p>The cumulative configuration requirements for every worker instance of the worker type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerResourceConfig {
+pub struct WorkerResourceConfig  {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
     #[doc(hidden)]
     pub cpu: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct WorkerResourceConfig {
 }
 impl WorkerResourceConfig {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
-    pub fn cpu(&self) -> std::option::Option<&str> {
+    pub fn cpu(&self) -> std::option::Option<& str> {
         self.cpu.as_deref()
     }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
-    pub fn memory(&self) -> std::option::Option<&str> {
+    pub fn memory(&self) -> std::option::Option<& str> {
         self.memory.as_deref()
     }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
-    pub fn disk(&self) -> std::option::Option<&str> {
+    pub fn disk(&self) -> std::option::Option<& str> {
         self.disk.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl WorkerResourceConfigBuilder {
     }
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
     pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
     pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl WorkerResourceConfigBuilder {
     }
     /// <p>The memory requirements for every worker instance of the worker type.</p>
     pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub fn disk(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl WorkerResourceConfigBuilder {
     }
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub fn set_disk(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disk = input;
-        self
+        self.disk = input; self
     }
     /// Consumes the builder and constructs a [`WorkerResourceConfig`](crate::types::WorkerResourceConfig).
     pub fn build(self) -> crate::types::WorkerResourceConfig {
         crate::types::WorkerResourceConfig {
-            cpu: self.cpu,
-            memory: self.memory,
-            disk: self.disk,
+            cpu: self.cpu
+            ,
+            memory: self.memory
+            ,
+            disk: self.disk
+            ,
         }
     }
 }
+

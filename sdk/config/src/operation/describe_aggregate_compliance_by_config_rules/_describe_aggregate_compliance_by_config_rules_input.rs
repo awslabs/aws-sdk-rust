@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAggregateComplianceByConfigRulesInput {
+pub struct DescribeAggregateComplianceByConfigRulesInput  {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeAggregateComplianceByConfigRulesInput {
 }
 impl DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ConfigRuleComplianceFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ConfigRuleComplianceFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -30,13 +30,13 @@ impl DescribeAggregateComplianceByConfigRulesInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeAggregateComplianceByConfigRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateComplianceByConfigRulesInput`](crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput).
-    pub fn builder() -> crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesInputBuilder{
+    pub fn builder() -> crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesInputBuilder {
         crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_aggregator_name = input; self
     }
     /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(mut self, input: crate::types::ConfigRuleComplianceFilters) -> Self {
@@ -70,12 +66,8 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
         self
     }
     /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ConfigRuleComplianceFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ConfigRuleComplianceFilters>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -84,8 +76,7 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,11 +85,10 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAggregateComplianceByConfigRulesInput`](crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput).
-    pub fn build(self) -> Result<crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput {
                 configuration_aggregator_name: self.configuration_aggregator_name
@@ -113,3 +103,4 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
         )
     }
 }
+

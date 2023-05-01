@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttributeGroupsOutput {
+pub struct ListAttributeGroupsOutput  {
     /// <p>This list of attribute groups.</p>
     #[doc(hidden)]
     pub attribute_groups: std::option::Option<std::vec::Vec<crate::types::AttributeGroupSummary>>,
@@ -13,25 +13,23 @@ pub struct ListAttributeGroupsOutput {
 }
 impl ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
-    pub fn attribute_groups(&self) -> std::option::Option<&[crate::types::AttributeGroupSummary]> {
+    pub fn attribute_groups(&self) -> std::option::Option<& [crate::types::AttributeGroupSummary]> {
         self.attribute_groups.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAttributeGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAttributeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsOutput`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder {
-        crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder {
+        crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder::default()
     }
 }
 
@@ -39,8 +37,7 @@ impl ListAttributeGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAttributeGroupsOutputBuilder {
-    pub(crate) attribute_groups:
-        std::option::Option<std::vec::Vec<crate::types::AttributeGroupSummary>>,
+    pub(crate) attribute_groups: std::option::Option<std::vec::Vec<crate::types::AttributeGroupSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl ListAttributeGroupsOutputBuilder {
     /// <p>This list of attribute groups.</p>
     pub fn attribute_groups(mut self, input: crate::types::AttributeGroupSummary) -> Self {
         let mut v = self.attribute_groups.unwrap_or_default();
-        v.push(input);
-        self.attribute_groups = Some(v);
-        self
+                        v.push(input);
+                        self.attribute_groups = Some(v);
+                        self
     }
     /// <p>This list of attribute groups.</p>
-    pub fn set_attribute_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeGroupSummary>>,
-    ) -> Self {
-        self.attribute_groups = input;
-        self
+    pub fn set_attribute_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeGroupSummary>>) -> Self {
+        self.attribute_groups = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +64,26 @@ impl ListAttributeGroupsOutputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAttributeGroupsOutput`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput).
     pub fn build(self) -> crate::operation::list_attribute_groups::ListAttributeGroupsOutput {
         crate::operation::list_attribute_groups::ListAttributeGroupsOutput {
-            attribute_groups: self.attribute_groups,
-            next_token: self.next_token,
+            attribute_groups: self.attribute_groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

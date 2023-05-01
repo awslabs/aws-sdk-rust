@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIntegrationResponseOutput {
+pub struct DeleteIntegrationResponseOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteIntegrationResponseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteIntegrationResponseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput).
-    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseOutputBuilder{
+    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseOutputBuilder {
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeleteIntegrationResponseOutputBuilder {
 }
 impl DeleteIntegrationResponseOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_integration_response::DeleteIntegrationResponseOutput {
+    pub fn build(self) -> crate::operation::delete_integration_response::DeleteIntegrationResponseOutput {
         crate::operation::delete_integration_response::DeleteIntegrationResponseOutput {
             _request_id: self._request_id,
         }
     }
 }
+

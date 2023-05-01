@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerImagesOutput {
+pub struct GetContainerImagesOutput  {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
     #[doc(hidden)]
     pub container_images: std::option::Option<std::vec::Vec<crate::types::ContainerImage>>,
@@ -10,19 +10,18 @@ pub struct GetContainerImagesOutput {
 }
 impl GetContainerImagesOutput {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    pub fn container_images(&self) -> std::option::Option<&[crate::types::ContainerImage]> {
+    pub fn container_images(&self) -> std::option::Option<& [crate::types::ContainerImage]> {
         self.container_images.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContainerImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetContainerImagesOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerImagesOutput`](crate::operation::get_container_images::GetContainerImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder {
+    pub fn builder() -> crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder {
         crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl GetContainerImagesOutputBuilder {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
     pub fn container_images(mut self, input: crate::types::ContainerImage) -> Self {
         let mut v = self.container_images.unwrap_or_default();
-        v.push(input);
-        self.container_images = Some(v);
-        self
+                        v.push(input);
+                        self.container_images = Some(v);
+                        self
     }
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    pub fn set_container_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerImage>>,
-    ) -> Self {
-        self.container_images = input;
-        self
+    pub fn set_container_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContainerImage>>) -> Self {
+        self.container_images = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetContainerImagesOutput`](crate::operation::get_container_images::GetContainerImagesOutput).
     pub fn build(self) -> crate::operation::get_container_images::GetContainerImagesOutput {
         crate::operation::get_container_images::GetContainerImagesOutput {
-            container_images: self.container_images,
+            container_images: self.container_images
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

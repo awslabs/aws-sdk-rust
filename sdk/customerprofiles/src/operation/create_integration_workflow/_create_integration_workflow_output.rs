@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIntegrationWorkflowOutput {
+pub struct CreateIntegrationWorkflowOutput  {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct CreateIntegrationWorkflowOutput {
 }
 impl CreateIntegrationWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>A message indicating create request was received.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateIntegrationWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateIntegrationWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
-    pub fn builder() -> crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder{
+    pub fn builder() -> crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder {
         crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl CreateIntegrationWorkflowOutputBuilder {
     }
     /// <p>Unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A message indicating create request was received.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +58,26 @@ impl CreateIntegrationWorkflowOutputBuilder {
     }
     /// <p>A message indicating create request was received.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
+    pub fn build(self) -> crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
         crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
-            workflow_id: self.workflow_id,
-            message: self.message,
+            workflow_id: self.workflow_id
+            ,
+            message: self.message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

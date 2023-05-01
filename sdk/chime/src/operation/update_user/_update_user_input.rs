@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -21,25 +21,23 @@ pub struct UpdateUserInput {
 }
 impl UpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
-    pub fn license_type(&self) -> std::option::Option<&crate::types::License> {
+    pub fn license_type(&self) -> std::option::Option<& crate::types::License> {
         self.license_type.as_ref()
     }
     /// <p>The user type.</p>
-    pub fn user_type(&self) -> std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        &self,
-    ) -> std::option::Option<&crate::types::AlexaForBusinessMetadata> {
+    pub fn alexa_for_business_metadata(&self) -> std::option::Option<& crate::types::AlexaForBusinessMetadata> {
         self.alexa_for_business_metadata.as_ref()
     }
 }
@@ -58,8 +56,7 @@ pub struct UpdateUserInputBuilder {
     pub(crate) user_id: std::option::Option<std::string::String>,
     pub(crate) license_type: std::option::Option<crate::types::License>,
     pub(crate) user_type: std::option::Option<crate::types::UserType>,
-    pub(crate) alexa_for_business_metadata:
-        std::option::Option<crate::types::AlexaForBusinessMetadata>,
+    pub(crate) alexa_for_business_metadata: std::option::Option<crate::types::AlexaForBusinessMetadata>,
 }
 impl UpdateUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -69,8 +66,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +75,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
     pub fn license_type(mut self, input: crate::types::License) -> Self {
@@ -89,8 +84,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
     pub fn set_license_type(mut self, input: std::option::Option<crate::types::License>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
@@ -99,38 +93,33 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The user type.</p>
     pub fn set_user_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        mut self,
-        input: crate::types::AlexaForBusinessMetadata,
-    ) -> Self {
+    pub fn alexa_for_business_metadata(mut self, input: crate::types::AlexaForBusinessMetadata) -> Self {
         self.alexa_for_business_metadata = Some(input);
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn set_alexa_for_business_metadata(
-        mut self,
-        input: std::option::Option<crate::types::AlexaForBusinessMetadata>,
-    ) -> Self {
-        self.alexa_for_business_metadata = input;
-        self
+    pub fn set_alexa_for_business_metadata(mut self, input: std::option::Option<crate::types::AlexaForBusinessMetadata>) -> Self {
+        self.alexa_for_business_metadata = input; self
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_user::UpdateUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_user::UpdateUserInput {
-            account_id: self.account_id,
-            user_id: self.user_id,
-            license_type: self.license_type,
-            user_type: self.user_type,
-            alexa_for_business_metadata: self.alexa_for_business_metadata,
-        })
+    pub fn build(self) -> Result<crate::operation::update_user::UpdateUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_user::UpdateUserInput {
+                account_id: self.account_id
+                ,
+                user_id: self.user_id
+                ,
+                license_type: self.license_type
+                ,
+                user_type: self.user_type
+                ,
+                alexa_for_business_metadata: self.alexa_for_business_metadata
+                ,
+            }
+        )
     }
 }
+

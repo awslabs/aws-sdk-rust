@@ -3,14 +3,14 @@
 /// <p>The free-form layout configuration of a section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FreeFormSectionLayoutConfiguration {
+pub struct FreeFormSectionLayoutConfiguration  {
     /// <p>The elements that are included in the free-form layout.</p>
     #[doc(hidden)]
     pub elements: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>,
 }
 impl FreeFormSectionLayoutConfiguration {
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn elements(&self) -> std::option::Option<&[crate::types::FreeFormLayoutElement]> {
+    pub fn elements(&self) -> std::option::Option<& [crate::types::FreeFormLayoutElement]> {
         self.elements.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl FreeFormSectionLayoutConfigurationBuilder {
     /// <p>The elements that are included in the free-form layout.</p>
     pub fn elements(mut self, input: crate::types::FreeFormLayoutElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input);
-        self.elements = Some(v);
-        self
+                        v.push(input);
+                        self.elements = Some(v);
+                        self
     }
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn set_elements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>,
-    ) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>) -> Self {
+        self.elements = input; self
     }
     /// Consumes the builder and constructs a [`FreeFormSectionLayoutConfiguration`](crate::types::FreeFormSectionLayoutConfiguration).
     pub fn build(self) -> crate::types::FreeFormSectionLayoutConfiguration {
         crate::types::FreeFormSectionLayoutConfiguration {
-            elements: self.elements,
+            elements: self.elements
+            ,
         }
     }
 }
+

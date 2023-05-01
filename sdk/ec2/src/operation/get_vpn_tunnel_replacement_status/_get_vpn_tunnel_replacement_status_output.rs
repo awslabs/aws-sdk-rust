@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVpnTunnelReplacementStatusOutput {
+pub struct GetVpnTunnelReplacementStatusOutput  {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
     #[doc(hidden)]
     pub vpn_connection_id: std::option::Option<std::string::String>,
@@ -25,38 +25,38 @@ pub struct GetVpnTunnelReplacementStatusOutput {
 }
 impl GetVpnTunnelReplacementStatusOutput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(&self) -> std::option::Option<&str> {
+    pub fn vpn_connection_id(&self) -> std::option::Option<& str> {
         self.vpn_connection_id.as_deref()
     }
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn customer_gateway_id(&self) -> std::option::Option<& str> {
         self.customer_gateway_id.as_deref()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn vpn_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn vpn_gateway_id(&self) -> std::option::Option<& str> {
         self.vpn_gateway_id.as_deref()
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(&self) -> std::option::Option<&str> {
+    pub fn vpn_tunnel_outside_ip_address(&self) -> std::option::Option<& str> {
         self.vpn_tunnel_outside_ip_address.as_deref()
     }
     /// <p>Get details of pending tunnel endpoint maintenance.</p>
-    pub fn maintenance_details(&self) -> std::option::Option<&crate::types::MaintenanceDetails> {
+    pub fn maintenance_details(&self) -> std::option::Option<& crate::types::MaintenanceDetails> {
         self.maintenance_details.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetVpnTunnelReplacementStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetVpnTunnelReplacementStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetVpnTunnelReplacementStatusOutput`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput).
-    pub fn builder() -> crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusOutputBuilder {
         crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusOutputBuilder::default()
     }
 }
@@ -80,12 +80,8 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpn_connection_id = input;
-        self
+    pub fn set_vpn_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpn_connection_id = input; self
     }
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,12 +89,8 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self
     }
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_id = input;
-        self
+    pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the customer gateway.</p>
     pub fn customer_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,12 +98,8 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.customer_gateway_id = input;
-        self
+    pub fn set_customer_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.customer_gateway_id = input; self
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn vpn_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +108,7 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn set_vpn_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpn_gateway_id = input;
-        self
+        self.vpn_gateway_id = input; self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn vpn_tunnel_outside_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,12 +116,8 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpn_tunnel_outside_ip_address = input;
-        self
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpn_tunnel_outside_ip_address = input; self
     }
     /// <p>Get details of pending tunnel endpoint maintenance.</p>
     pub fn maintenance_details(mut self, input: crate::types::MaintenanceDetails) -> Self {
@@ -142,35 +125,35 @@ impl GetVpnTunnelReplacementStatusOutputBuilder {
         self
     }
     /// <p>Get details of pending tunnel endpoint maintenance.</p>
-    pub fn set_maintenance_details(
-        mut self,
-        input: std::option::Option<crate::types::MaintenanceDetails>,
-    ) -> Self {
-        self.maintenance_details = input;
-        self
+    pub fn set_maintenance_details(mut self, input: std::option::Option<crate::types::MaintenanceDetails>) -> Self {
+        self.maintenance_details = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetVpnTunnelReplacementStatusOutput`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput
-    {
+    pub fn build(self) -> crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput {
         crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput {
-            vpn_connection_id: self.vpn_connection_id,
-            transit_gateway_id: self.transit_gateway_id,
-            customer_gateway_id: self.customer_gateway_id,
-            vpn_gateway_id: self.vpn_gateway_id,
-            vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
-            maintenance_details: self.maintenance_details,
+            vpn_connection_id: self.vpn_connection_id
+            ,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            customer_gateway_id: self.customer_gateway_id
+            ,
+            vpn_gateway_id: self.vpn_gateway_id
+            ,
+            vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address
+            ,
+            maintenance_details: self.maintenance_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

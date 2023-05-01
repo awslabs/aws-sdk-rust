@@ -3,7 +3,7 @@
 /// <p>Describes a gateway object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayInfo {
+pub struct GatewayInfo  {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct GatewayInfo {
     /// <p>The type of the gateway.</p>
     #[doc(hidden)]
     pub gateway_type: std::option::Option<std::string::String>,
-    /// <p>The state of the gateway.</p>
+    /// <p>The state of the gateway.</p> 
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     #[doc(hidden)]
     pub gateway_operational_state: std::option::Option<std::string::String>,
@@ -35,40 +35,40 @@ pub struct GatewayInfo {
 }
 impl GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The type of the gateway.</p>
-    pub fn gateway_type(&self) -> std::option::Option<&str> {
+    pub fn gateway_type(&self) -> std::option::Option<& str> {
         self.gateway_type.as_deref()
     }
-    /// <p>The state of the gateway.</p>
+    /// <p>The state of the gateway.</p> 
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
-    pub fn gateway_operational_state(&self) -> std::option::Option<&str> {
+    pub fn gateway_operational_state(&self) -> std::option::Option<& str> {
         self.gateway_operational_state.as_deref()
     }
     /// <p>The name of the gateway.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
-    pub fn ec2_instance_region(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_region(&self) -> std::option::Option<& str> {
         self.ec2_instance_region.as_deref()
     }
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
-    pub fn host_environment(&self) -> std::option::Option<&crate::types::HostEnvironment> {
+    pub fn host_environment(&self) -> std::option::Option<& crate::types::HostEnvironment> {
         self.host_environment.as_ref()
     }
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
-    pub fn host_environment_id(&self) -> std::option::Option<&str> {
+    pub fn host_environment_id(&self) -> std::option::Option<& str> {
         self.host_environment_id.as_deref()
     }
 }
@@ -101,8 +101,7 @@ impl GatewayInfoBuilder {
     }
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +110,7 @@ impl GatewayInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The type of the gateway.</p>
     pub fn gateway_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,23 +119,18 @@ impl GatewayInfoBuilder {
     }
     /// <p>The type of the gateway.</p>
     pub fn set_gateway_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_type = input;
-        self
+        self.gateway_type = input; self
     }
-    /// <p>The state of the gateway.</p>
+    /// <p>The state of the gateway.</p> 
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     pub fn gateway_operational_state(mut self, input: impl Into<std::string::String>) -> Self {
         self.gateway_operational_state = Some(input.into());
         self
     }
-    /// <p>The state of the gateway.</p>
+    /// <p>The state of the gateway.</p> 
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
-    pub fn set_gateway_operational_state(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.gateway_operational_state = input;
-        self
+    pub fn set_gateway_operational_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.gateway_operational_state = input; self
     }
     /// <p>The name of the gateway.</p>
     pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +139,7 @@ impl GatewayInfoBuilder {
     }
     /// <p>The name of the gateway.</p>
     pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_name = input;
-        self
+        self.gateway_name = input; self
     }
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
     pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +148,7 @@ impl GatewayInfoBuilder {
     }
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
     pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_instance_id = input;
-        self
+        self.ec2_instance_id = input; self
     }
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
     pub fn ec2_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,12 +156,8 @@ impl GatewayInfoBuilder {
         self
     }
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
-    pub fn set_ec2_instance_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ec2_instance_region = input;
-        self
+    pub fn set_ec2_instance_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ec2_instance_region = input; self
     }
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
     pub fn host_environment(mut self, input: crate::types::HostEnvironment) -> Self {
@@ -178,12 +165,8 @@ impl GatewayInfoBuilder {
         self
     }
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
-    pub fn set_host_environment(
-        mut self,
-        input: std::option::Option<crate::types::HostEnvironment>,
-    ) -> Self {
-        self.host_environment = input;
-        self
+    pub fn set_host_environment(mut self, input: std::option::Option<crate::types::HostEnvironment>) -> Self {
+        self.host_environment = input; self
     }
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub fn host_environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,25 +174,31 @@ impl GatewayInfoBuilder {
         self
     }
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
-    pub fn set_host_environment_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.host_environment_id = input;
-        self
+    pub fn set_host_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.host_environment_id = input; self
     }
     /// Consumes the builder and constructs a [`GatewayInfo`](crate::types::GatewayInfo).
     pub fn build(self) -> crate::types::GatewayInfo {
         crate::types::GatewayInfo {
-            gateway_id: self.gateway_id,
-            gateway_arn: self.gateway_arn,
-            gateway_type: self.gateway_type,
-            gateway_operational_state: self.gateway_operational_state,
-            gateway_name: self.gateway_name,
-            ec2_instance_id: self.ec2_instance_id,
-            ec2_instance_region: self.ec2_instance_region,
-            host_environment: self.host_environment,
-            host_environment_id: self.host_environment_id,
+            gateway_id: self.gateway_id
+            ,
+            gateway_arn: self.gateway_arn
+            ,
+            gateway_type: self.gateway_type
+            ,
+            gateway_operational_state: self.gateway_operational_state
+            ,
+            gateway_name: self.gateway_name
+            ,
+            ec2_instance_id: self.ec2_instance_id
+            ,
+            ec2_instance_region: self.ec2_instance_region
+            ,
+            host_environment: self.host_environment
+            ,
+            host_environment_id: self.host_environment_id
+            ,
         }
     }
 }
+

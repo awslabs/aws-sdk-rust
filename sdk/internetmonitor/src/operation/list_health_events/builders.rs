@@ -4,84 +4,57 @@ pub use crate::operation::list_health_events::_list_health_events_output::ListHe
 pub use crate::operation::list_health_events::_list_health_events_input::ListHealthEventsInputBuilder;
 
 /// Fluent builder constructing a request to `ListHealthEvents`.
-///
-/// <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns all information for health events including the client location information the network cause and status, event start and end time, percentage of total traffic impacted, and status.</p> <note>
-/// <p>Health events that have start times during the time frame that is requested are not included in the list of health events.</p>
+/// 
+/// <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns all information for health events including the client location information the network cause and status, event start and end time, percentage of total traffic impacted, and status.</p> <note> 
+/// <p>Health events that have start times during the time frame that is requested are not included in the list of health events.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHealthEventsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_health_events::builders::ListHealthEventsInputBuilder,
-}
-impl ListHealthEventsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_health_events::builders::ListHealthEventsInputBuilder
+            }
+impl ListHealthEventsFluentBuilder  {
     /// Creates a new `ListHealthEvents`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_health_events::ListHealthEvents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_health_events::ListHealthEventsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_health_events::ListHealthEventsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_health_events::ListHealthEvents, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_health_events::ListHealthEventsOutput, aws_smithy_http::result::SdkError<crate::operation::list_health_events::ListHealthEventsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_health_events::paginator::ListHealthEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_health_events::paginator::ListHealthEventsPaginator {
-        crate::operation::list_health_events::paginator::ListHealthEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_health_events::paginator::ListHealthEventsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_health_events::paginator::ListHealthEventsPaginator {
+                            crate::operation::list_health_events::paginator::ListHealthEventsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the monitor.</p>
     pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
@@ -98,10 +71,7 @@ impl ListHealthEventsFluentBuilder {
         self
     }
     /// <p>The time when a health event started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -141,11 +111,9 @@ impl ListHealthEventsFluentBuilder {
         self
     }
     /// <p>The status of a health event.</p>
-    pub fn set_event_status(
-        mut self,
-        input: std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
+    pub fn set_event_status(mut self, input: std::option::Option<crate::types::HealthEventStatus>) -> Self {
         self.inner = self.inner.set_event_status(input);
         self
     }
 }
+

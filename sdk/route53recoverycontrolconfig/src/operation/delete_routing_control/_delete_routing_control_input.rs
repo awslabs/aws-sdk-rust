@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRoutingControlInput {
+pub struct DeleteRoutingControlInput  {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
     #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
 }
 impl DeleteRoutingControlInput {
     /// Creates a new builder-style object to manufacture [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
-    pub fn builder(
-    ) -> crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder {
+    pub fn builder() -> crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder {
         crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteRoutingControlInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.routing_control_arn = input;
-        self
+    pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.routing_control_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_routing_control::DeleteRoutingControlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_routing_control::DeleteRoutingControlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_routing_control::DeleteRoutingControlInput {
-                routing_control_arn: self.routing_control_arn,
-            },
+                routing_control_arn: self.routing_control_arn
+                ,
+            }
         )
     }
 }
+

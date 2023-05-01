@@ -37,6 +37,10 @@ pub use crate::types::_dataflow_endpoint_list_item::DataflowEndpointListItem;
 
 pub use crate::types::_endpoint_details::EndpointDetails;
 
+pub use crate::types::_capability_health_reason::CapabilityHealthReason;
+
+pub use crate::types::_capability_health::CapabilityHealth;
+
 pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpoint;
 
 pub use crate::types::_audit_results::AuditResults;
@@ -127,8 +131,6 @@ pub use crate::types::_agent_details::AgentDetails;
 
 pub use crate::types::_component_version::ComponentVersion;
 
-pub use crate::types::_component_type::ComponentType;
-
 pub use crate::types::_discovery_data::DiscoveryData;
 
 pub use crate::types::_component_status_data::ComponentStatusData;
@@ -157,9 +159,11 @@ mod _aws_ground_station_agent_endpoint;
 
 mod _bandwidth_units;
 
-mod _component_status_data;
+mod _capability_health;
 
-mod _component_type;
+mod _capability_health_reason;
+
+mod _component_status_data;
 
 mod _component_version;
 
@@ -276,3 +280,4 @@ pub mod builders;
 
 /// Error types that AWS Ground Station can respond with.
 pub mod error;
+

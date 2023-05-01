@@ -4,92 +4,62 @@ pub use crate::operation::list_build_batches::_list_build_batches_output::ListBu
 pub use crate::operation::list_build_batches::_list_build_batches_input::ListBuildBatchesInputBuilder;
 
 /// Fluent builder constructing a request to `ListBuildBatches`.
-///
+/// 
 /// <p>Retrieves the identifiers of your build batches in the current region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuildBatchesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder,
-}
-impl ListBuildBatchesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder
+            }
+impl ListBuildBatchesFluentBuilder  {
     /// Creates a new `ListBuildBatches`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_build_batches::ListBuildBatches,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_build_batches::ListBuildBatchesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_build_batches::ListBuildBatchesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_build_batches::ListBuildBatchesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_build_batches::ListBuildBatches, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_build_batches::ListBuildBatchesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_build_batches::ListBuildBatchesOutput, aws_smithy_http::result::SdkError<crate::operation::list_build_batches::ListBuildBatchesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator {
-        crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator {
+                            crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     pub fn filter(mut self, input: crate::types::BuildBatchFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::BuildBatchFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::BuildBatchFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -103,24 +73,21 @@ impl ListBuildBatchesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -135,3 +102,4 @@ impl ListBuildBatchesFluentBuilder {
         self
     }
 }
+

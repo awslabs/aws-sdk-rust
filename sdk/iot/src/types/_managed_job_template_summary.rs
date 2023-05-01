@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the managed template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedJobTemplateSummary {
+pub struct ManagedJobTemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
     #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ManagedJobTemplateSummary {
 }
 impl ManagedJobTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The unique Name for a managed template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The description for a managed template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn environments(&self) -> std::option::Option<& [std::string::String]> {
         self.environments.as_deref()
     }
     /// <p>The version for a managed template.</p>
-    pub fn template_version(&self) -> std::option::Option<&str> {
+    pub fn template_version(&self) -> std::option::Option<& str> {
         self.template_version.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl ManagedJobTemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
     pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The unique Name for a managed template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl ManagedJobTemplateSummaryBuilder {
     }
     /// <p>The unique Name for a managed template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The description for a managed template.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl ManagedJobTemplateSummaryBuilder {
     }
     /// <p>The description for a managed template.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `environments`.
     ///
@@ -97,17 +94,13 @@ impl ManagedJobTemplateSummaryBuilder {
     /// <p>A list of environments that are supported with the managed job template.</p>
     pub fn environments(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.environments.unwrap_or_default();
-        v.push(input.into());
-        self.environments = Some(v);
-        self
+                        v.push(input.into());
+                        self.environments = Some(v);
+                        self
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn set_environments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.environments = input;
-        self
+    pub fn set_environments(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.environments = input; self
     }
     /// <p>The version for a managed template.</p>
     pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,17 +109,22 @@ impl ManagedJobTemplateSummaryBuilder {
     }
     /// <p>The version for a managed template.</p>
     pub fn set_template_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_version = input;
-        self
+        self.template_version = input; self
     }
     /// Consumes the builder and constructs a [`ManagedJobTemplateSummary`](crate::types::ManagedJobTemplateSummary).
     pub fn build(self) -> crate::types::ManagedJobTemplateSummary {
         crate::types::ManagedJobTemplateSummary {
-            template_arn: self.template_arn,
-            template_name: self.template_name,
-            description: self.description,
-            environments: self.environments,
-            template_version: self.template_version,
+            template_arn: self.template_arn
+            ,
+            template_name: self.template_name
+            ,
+            description: self.description
+            ,
+            environments: self.environments
+            ,
+            template_version: self.template_version
+            ,
         }
     }
 }
+

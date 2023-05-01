@@ -3,7 +3,7 @@
 /// <p>An object that describes details of a map filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapFilter {
+pub struct MapFilter  {
     /// <p>The operator to use when comparing values in the filter.</p>
     #[doc(hidden)]
     pub comparison: std::option::Option<crate::types::MapComparison>,
@@ -16,15 +16,15 @@ pub struct MapFilter {
 }
 impl MapFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn comparison(&self) -> std::option::Option<&crate::types::MapComparison> {
+    pub fn comparison(&self) -> std::option::Option<& crate::types::MapComparison> {
         self.comparison.as_ref()
     }
     /// <p>The tag key used in the filter.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value used in the filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl MapFilterBuilder {
         self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn set_comparison(
-        mut self,
-        input: std::option::Option<crate::types::MapComparison>,
-    ) -> Self {
-        self.comparison = input;
-        self
+    pub fn set_comparison(mut self, input: std::option::Option<crate::types::MapComparison>) -> Self {
+        self.comparison = input; self
     }
     /// <p>The tag key used in the filter.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl MapFilterBuilder {
     }
     /// <p>The tag key used in the filter.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag value used in the filter.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl MapFilterBuilder {
     }
     /// <p>The tag value used in the filter.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`MapFilter`](crate::types::MapFilter).
     pub fn build(self) -> crate::types::MapFilter {
         crate::types::MapFilter {
-            comparison: self.comparison,
-            key: self.key,
-            value: self.value,
+            comparison: self.comparison
+            ,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

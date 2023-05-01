@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSolNetworkPackageOutput {
+pub struct UpdateSolNetworkPackageOutput  {
     /// <p>Operational state of the network service descriptor in the network package.</p>
     #[doc(hidden)]
     pub nsd_operational_state: std::option::Option<crate::types::NsdOperationalState>,
@@ -10,20 +10,18 @@ pub struct UpdateSolNetworkPackageOutput {
 }
 impl UpdateSolNetworkPackageOutput {
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn nsd_operational_state(&self) -> std::option::Option<&crate::types::NsdOperationalState> {
+    pub fn nsd_operational_state(&self) -> std::option::Option<& crate::types::NsdOperationalState> {
         self.nsd_operational_state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSolNetworkPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateSolNetworkPackageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSolNetworkPackageOutput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput).
-    pub fn builder(
-    ) -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder {
         crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl UpdateSolNetworkPackageOutputBuilder {
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_operational_state(
-        mut self,
-        input: std::option::Option<crate::types::NsdOperationalState>,
-    ) -> Self {
-        self.nsd_operational_state = input;
-        self
+    pub fn set_nsd_operational_state(mut self, input: std::option::Option<crate::types::NsdOperationalState>) -> Self {
+        self.nsd_operational_state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateSolNetworkPackageOutput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput {
+    pub fn build(self) -> crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput {
         crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput {
-            nsd_operational_state: self.nsd_operational_state,
+            nsd_operational_state: self.nsd_operational_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

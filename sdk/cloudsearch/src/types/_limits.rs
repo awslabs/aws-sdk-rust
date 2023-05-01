@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Limits {
+pub struct Limits  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub maximum_replication_count: i32,
@@ -42,8 +42,7 @@ impl LimitsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_maximum_replication_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_replication_count = input;
-        self
+        self.maximum_replication_count = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn maximum_partition_count(mut self, input: i32) -> Self {
@@ -52,14 +51,18 @@ impl LimitsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_maximum_partition_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_partition_count = input;
-        self
+        self.maximum_partition_count = input; self
     }
     /// Consumes the builder and constructs a [`Limits`](crate::types::Limits).
     pub fn build(self) -> crate::types::Limits {
         crate::types::Limits {
-            maximum_replication_count: self.maximum_replication_count.unwrap_or_default(),
-            maximum_partition_count: self.maximum_partition_count.unwrap_or_default(),
+            maximum_replication_count: self.maximum_replication_count
+                .unwrap_or_default()
+            ,
+            maximum_partition_count: self.maximum_partition_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

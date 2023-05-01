@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVerifiedEmailAddressOutput {
+pub struct DeleteVerifiedEmailAddressOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteVerifiedEmailAddressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVerifiedEmailAddressOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput).
-    pub fn builder() -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressOutputBuilder {
         crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeleteVerifiedEmailAddressOutputBuilder {
 }
 impl DeleteVerifiedEmailAddressOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput {
+    pub fn build(self) -> crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput {
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput {
             _request_id: self._request_id,
         }
     }
 }
+

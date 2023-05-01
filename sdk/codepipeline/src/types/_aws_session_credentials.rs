@@ -3,7 +3,7 @@
 /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AwsSessionCredentials {
+pub struct AwsSessionCredentials  {
     /// <p>The access key for the session.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct AwsSessionCredentials {
 }
 impl AwsSessionCredentials {
     /// <p>The access key for the session.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The secret access key for the session.</p>
-    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> std::option::Option<& str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The token for the session.</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> std::option::Option<& str> {
         self.session_token.as_deref()
     }
 }
-impl std::fmt::Debug for AwsSessionCredentials {
+impl  std::fmt::Debug for AwsSessionCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsSessionCredentials");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -60,8 +60,7 @@ impl AwsSessionCredentialsBuilder {
     }
     /// <p>The access key for the session.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The secret access key for the session.</p>
     pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +68,8 @@ impl AwsSessionCredentialsBuilder {
         self
     }
     /// <p>The secret access key for the session.</p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secret_access_key = input;
-        self
+    pub fn set_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secret_access_key = input; self
     }
     /// <p>The token for the session.</p>
     pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,15 +78,17 @@ impl AwsSessionCredentialsBuilder {
     }
     /// <p>The token for the session.</p>
     pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// Consumes the builder and constructs a [`AwsSessionCredentials`](crate::types::AwsSessionCredentials).
     pub fn build(self) -> crate::types::AwsSessionCredentials {
         crate::types::AwsSessionCredentials {
-            access_key_id: self.access_key_id,
-            secret_access_key: self.secret_access_key,
-            session_token: self.session_token,
+            access_key_id: self.access_key_id
+            ,
+            secret_access_key: self.secret_access_key
+            ,
+            session_token: self.session_token
+            ,
         }
     }
 }
@@ -104,3 +101,4 @@ impl std::fmt::Debug for AwsSessionCredentialsBuilder {
         formatter.finish()
     }
 }
+

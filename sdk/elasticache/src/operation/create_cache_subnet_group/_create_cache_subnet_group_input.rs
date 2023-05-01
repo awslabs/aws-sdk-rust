@@ -3,9 +3,9 @@
 /// <p>Represents the input of a <code>CreateCacheSubnetGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCacheSubnetGroupInput {
-    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
-    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+pub struct CreateCacheSubnetGroupInput  {
+    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> 
     /// <p>Example: <code>mysubnetgroup</code> </p>
     #[doc(hidden)]
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
@@ -20,30 +20,28 @@ pub struct CreateCacheSubnetGroupInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCacheSubnetGroupInput {
-    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
-    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> 
     /// <p>Example: <code>mysubnetgroup</code> </p>
-    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<& str> {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>A description for the cache subnet group.</p>
-    pub fn cache_subnet_group_description(&self) -> std::option::Option<&str> {
+    pub fn cache_subnet_group_description(&self) -> std::option::Option<& str> {
         self.cache_subnet_group_description.as_deref()
     }
     /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateCacheSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupInput`](crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupInputBuilder {
         crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupInputBuilder::default()
     }
 }
@@ -58,22 +56,18 @@ pub struct CreateCacheSubnetGroupInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCacheSubnetGroupInputBuilder {
-    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
-    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> 
     /// <p>Example: <code>mysubnetgroup</code> </p>
     pub fn cache_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.cache_subnet_group_name = Some(input.into());
         self
     }
-    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
-    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p> 
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p> 
     /// <p>Example: <code>mysubnetgroup</code> </p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cache_subnet_group_name = input;
-        self
+    pub fn set_cache_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cache_subnet_group_name = input; self
     }
     /// <p>A description for the cache subnet group.</p>
     pub fn cache_subnet_group_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,12 +75,8 @@ impl CreateCacheSubnetGroupInputBuilder {
         self
     }
     /// <p>A description for the cache subnet group.</p>
-    pub fn set_cache_subnet_group_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cache_subnet_group_description = input;
-        self
+    pub fn set_cache_subnet_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cache_subnet_group_description = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -95,17 +85,13 @@ impl CreateCacheSubnetGroupInputBuilder {
     /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -114,32 +100,28 @@ impl CreateCacheSubnetGroupInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateCacheSubnetGroupInput`](crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput {
-                cache_subnet_group_name: self.cache_subnet_group_name,
-                cache_subnet_group_description: self.cache_subnet_group_description,
-                subnet_ids: self.subnet_ids,
-                tags: self.tags,
-            },
+                cache_subnet_group_name: self.cache_subnet_group_name
+                ,
+                cache_subnet_group_description: self.cache_subnet_group_description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

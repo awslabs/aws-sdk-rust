@@ -3,7 +3,7 @@
 /// <p>Details of the Amazon Inspector delegated administrator for your organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DelegatedAdmin {
+pub struct DelegatedAdmin  {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DelegatedAdmin {
 }
 impl DelegatedAdmin {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
-    pub fn relationship_status(&self) -> std::option::Option<&crate::types::RelationshipStatus> {
+    pub fn relationship_status(&self) -> std::option::Option<& crate::types::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DelegatedAdminBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
     pub fn relationship_status(mut self, input: crate::types::RelationshipStatus) -> Self {
@@ -52,18 +51,17 @@ impl DelegatedAdminBuilder {
         self
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: std::option::Option<crate::types::RelationshipStatus>,
-    ) -> Self {
-        self.relationship_status = input;
-        self
+    pub fn set_relationship_status(mut self, input: std::option::Option<crate::types::RelationshipStatus>) -> Self {
+        self.relationship_status = input; self
     }
     /// Consumes the builder and constructs a [`DelegatedAdmin`](crate::types::DelegatedAdmin).
     pub fn build(self) -> crate::types::DelegatedAdmin {
         crate::types::DelegatedAdmin {
-            account_id: self.account_id,
-            relationship_status: self.relationship_status,
+            account_id: self.account_id
+            ,
+            relationship_status: self.relationship_status
+            ,
         }
     }
 }
+

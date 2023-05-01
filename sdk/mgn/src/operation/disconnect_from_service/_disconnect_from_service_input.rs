@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisconnectFromServiceInput {
+pub struct DisconnectFromServiceInput  {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
 impl DisconnectFromServiceInput {
     /// Creates a new builder-style object to manufacture [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
-    pub fn builder(
-    ) -> crate::operation::disconnect_from_service::builders::DisconnectFromServiceInputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_from_service::builders::DisconnectFromServiceInputBuilder {
         crate::operation::disconnect_from_service::builders::DisconnectFromServiceInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DisconnectFromServiceInputBuilder {
     }
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// Consumes the builder and constructs a [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disconnect_from_service::DisconnectFromServiceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disconnect_from_service::DisconnectFromServiceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disconnect_from_service::DisconnectFromServiceInput {
-                source_server_id: self.source_server_id,
-            },
+                source_server_id: self.source_server_id
+                ,
+            }
         )
     }
 }
+

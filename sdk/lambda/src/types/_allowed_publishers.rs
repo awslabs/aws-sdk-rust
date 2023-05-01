@@ -3,14 +3,14 @@
 /// <p>List of signing profiles that can sign a code package. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllowedPublishers {
+pub struct AllowedPublishers  {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     #[doc(hidden)]
     pub signing_profile_version_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-    pub fn signing_profile_version_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn signing_profile_version_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.signing_profile_version_arns.as_deref()
     }
 }
@@ -25,8 +25,7 @@ impl AllowedPublishers {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AllowedPublishersBuilder {
-    pub(crate) signing_profile_version_arns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) signing_profile_version_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllowedPublishersBuilder {
     /// Appends an item to `signing_profile_version_arns`.
@@ -36,22 +35,20 @@ impl AllowedPublishersBuilder {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     pub fn signing_profile_version_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.signing_profile_version_arns.unwrap_or_default();
-        v.push(input.into());
-        self.signing_profile_version_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.signing_profile_version_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-    pub fn set_signing_profile_version_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.signing_profile_version_arns = input;
-        self
+    pub fn set_signing_profile_version_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.signing_profile_version_arns = input; self
     }
     /// Consumes the builder and constructs a [`AllowedPublishers`](crate::types::AllowedPublishers).
     pub fn build(self) -> crate::types::AllowedPublishers {
         crate::types::AllowedPublishers {
-            signing_profile_version_arns: self.signing_profile_version_arns,
+            signing_profile_version_arns: self.signing_profile_version_arns
+            ,
         }
     }
 }
+

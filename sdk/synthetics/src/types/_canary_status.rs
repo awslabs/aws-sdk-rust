@@ -3,7 +3,7 @@
 /// <p>A structure that contains the current state of the canary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryStatus {
+pub struct CanaryStatus  {
     /// <p>The current state of the canary.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CanaryState>,
@@ -16,15 +16,15 @@ pub struct CanaryStatus {
 }
 impl CanaryStatus {
     /// <p>The current state of the canary.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::CanaryState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::CanaryState> {
         self.state.as_ref()
     }
     /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::types::CanaryStateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::types::CanaryStateReasonCode> {
         self.state_reason_code.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl CanaryStatusBuilder {
     }
     /// <p>The current state of the canary.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::CanaryState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
     pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CanaryStatusBuilder {
     }
     /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
     pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
     pub fn state_reason_code(mut self, input: crate::types::CanaryStateReasonCode) -> Self {
@@ -70,19 +68,19 @@ impl CanaryStatusBuilder {
         self
     }
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-    pub fn set_state_reason_code(
-        mut self,
-        input: std::option::Option<crate::types::CanaryStateReasonCode>,
-    ) -> Self {
-        self.state_reason_code = input;
-        self
+    pub fn set_state_reason_code(mut self, input: std::option::Option<crate::types::CanaryStateReasonCode>) -> Self {
+        self.state_reason_code = input; self
     }
     /// Consumes the builder and constructs a [`CanaryStatus`](crate::types::CanaryStatus).
     pub fn build(self) -> crate::types::CanaryStatus {
         crate::types::CanaryStatus {
-            state: self.state,
-            state_reason: self.state_reason,
-            state_reason_code: self.state_reason_code,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
+            state_reason_code: self.state_reason_code
+            ,
         }
     }
 }
+

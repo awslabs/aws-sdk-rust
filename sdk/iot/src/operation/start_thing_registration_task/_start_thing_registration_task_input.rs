@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartThingRegistrationTaskInput {
+pub struct StartThingRegistrationTaskInput  {
     /// <p>The provisioning template.</p>
     #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct StartThingRegistrationTaskInput {
 }
 impl StartThingRegistrationTaskInput {
     /// <p>The provisioning template.</p>
-    pub fn template_body(&self) -> std::option::Option<&str> {
+    pub fn template_body(&self) -> std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn input_file_bucket(&self) -> std::option::Option<&str> {
+    pub fn input_file_bucket(&self) -> std::option::Option<& str> {
         self.input_file_bucket.as_deref()
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    pub fn input_file_key(&self) -> std::option::Option<&str> {
+    pub fn input_file_key(&self) -> std::option::Option<& str> {
         self.input_file_key.as_deref()
     }
     /// <p>The IAM role ARN that grants permission the input file.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl StartThingRegistrationTaskInput {
     /// Creates a new builder-style object to manufacture [`StartThingRegistrationTaskInput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput).
-    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder{
+    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder {
         crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl StartThingRegistrationTaskInputBuilder {
     }
     /// <p>The provisioning template.</p>
     pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The S3 bucket that contains the input file.</p>
     pub fn input_file_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl StartThingRegistrationTaskInputBuilder {
         self
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn set_input_file_bucket(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.input_file_bucket = input;
-        self
+    pub fn set_input_file_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.input_file_bucket = input; self
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub fn input_file_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl StartThingRegistrationTaskInputBuilder {
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub fn set_input_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_file_key = input;
-        self
+        self.input_file_key = input; self
     }
     /// <p>The IAM role ARN that grants permission the input file.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,23 +85,22 @@ impl StartThingRegistrationTaskInputBuilder {
     }
     /// <p>The IAM role ARN that grants permission the input file.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`StartThingRegistrationTaskInput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput {
-                template_body: self.template_body,
-                input_file_bucket: self.input_file_bucket,
-                input_file_key: self.input_file_key,
-                role_arn: self.role_arn,
-            },
+                template_body: self.template_body
+                ,
+                input_file_bucket: self.input_file_bucket
+                ,
+                input_file_key: self.input_file_key
+                ,
+                role_arn: self.role_arn
+                ,
+            }
         )
     }
 }
+

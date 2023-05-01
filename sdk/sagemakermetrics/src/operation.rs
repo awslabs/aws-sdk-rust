@@ -3,3 +3,4 @@ pub use aws_http::request_id::RequestId;
 
 /// Types for the `BatchPutMetrics` operation.
 pub mod batch_put_metrics;
+

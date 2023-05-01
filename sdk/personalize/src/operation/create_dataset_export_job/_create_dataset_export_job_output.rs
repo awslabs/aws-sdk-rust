@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetExportJobOutput {
+pub struct CreateDatasetExportJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     #[doc(hidden)]
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateDatasetExportJobOutput {
 }
 impl CreateDatasetExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<& str> {
         self.dataset_export_job_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDatasetExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDatasetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetExportJobOutput`](crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobOutputBuilder {
         crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl CreateDatasetExportJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn set_dataset_export_job_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dataset_export_job_arn = input;
-        self
+    pub fn set_dataset_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dataset_export_job_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDatasetExportJobOutput`](crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput {
+    pub fn build(self) -> crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput {
         crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput {
-            dataset_export_job_arn: self.dataset_export_job_arn,
+            dataset_export_job_arn: self.dataset_export_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

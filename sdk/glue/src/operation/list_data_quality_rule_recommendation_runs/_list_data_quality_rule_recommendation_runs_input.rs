@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataQualityRuleRecommendationRunsInput {
+pub struct ListDataQualityRuleRecommendationRunsInput  {
     /// <p>The filter criteria.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>,
@@ -15,13 +15,11 @@ pub struct ListDataQualityRuleRecommendationRunsInput {
 }
 impl ListDataQualityRuleRecommendationRunsInput {
     /// <p>The filter criteria.</p>
-    pub fn filter(
-        &self,
-    ) -> std::option::Option<&crate::types::DataQualityRuleRecommendationRunFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::DataQualityRuleRecommendationRunFilter> {
         self.filter.as_ref()
     }
     /// <p>A paginated token to offset the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -31,7 +29,7 @@ impl ListDataQualityRuleRecommendationRunsInput {
 }
 impl ListDataQualityRuleRecommendationRunsInput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
-    pub fn builder() -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsInputBuilder{
+    pub fn builder() -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsInputBuilder {
         crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>) -> Self {
+        self.filter = input; self
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,11 +68,10 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
-    pub fn build(self) -> Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput {
                 filter: self.filter
@@ -92,3 +84,4 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
         )
     }
 }
+

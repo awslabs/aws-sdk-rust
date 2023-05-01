@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProductOutput {
+pub struct CreateProductOutput  {
     /// <p>Information about the product view.</p>
     #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::types::ProductViewDetail>,
@@ -16,25 +16,23 @@ pub struct CreateProductOutput {
 }
 impl CreateProductOutput {
     /// <p>Information about the product view.</p>
-    pub fn product_view_detail(&self) -> std::option::Option<&crate::types::ProductViewDetail> {
+    pub fn product_view_detail(&self) -> std::option::Option<& crate::types::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn provisioning_artifact_detail(
-        &self,
-    ) -> std::option::Option<&crate::types::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> std::option::Option<& crate::types::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateProductOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateProductOutput {
     /// Creates a new builder-style object to manufacture [`CreateProductOutput`](crate::operation::create_product::CreateProductOutput).
     pub fn builder() -> crate::operation::create_product::builders::CreateProductOutputBuilder {
@@ -47,8 +45,7 @@ impl CreateProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateProductOutputBuilder {
     pub(crate) product_view_detail: std::option::Option<crate::types::ProductViewDetail>,
-    pub(crate) provisioning_artifact_detail:
-        std::option::Option<crate::types::ProvisioningArtifactDetail>,
+    pub(crate) provisioning_artifact_detail: std::option::Option<crate::types::ProvisioningArtifactDetail>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
@@ -59,28 +56,17 @@ impl CreateProductOutputBuilder {
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn set_product_view_detail(
-        mut self,
-        input: std::option::Option<crate::types::ProductViewDetail>,
-    ) -> Self {
-        self.product_view_detail = input;
-        self
+    pub fn set_product_view_detail(mut self, input: std::option::Option<crate::types::ProductViewDetail>) -> Self {
+        self.product_view_detail = input; self
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn provisioning_artifact_detail(
-        mut self,
-        input: crate::types::ProvisioningArtifactDetail,
-    ) -> Self {
+    pub fn provisioning_artifact_detail(mut self, input: crate::types::ProvisioningArtifactDetail) -> Self {
         self.provisioning_artifact_detail = Some(input);
         self
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn set_provisioning_artifact_detail(
-        mut self,
-        input: std::option::Option<crate::types::ProvisioningArtifactDetail>,
-    ) -> Self {
-        self.provisioning_artifact_detail = input;
-        self
+    pub fn set_provisioning_artifact_detail(mut self, input: std::option::Option<crate::types::ProvisioningArtifactDetail>) -> Self {
+        self.provisioning_artifact_detail = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -89,34 +75,34 @@ impl CreateProductOutputBuilder {
     /// <p>Information about the tags associated with the product.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateProductOutput`](crate::operation::create_product::CreateProductOutput).
     pub fn build(self) -> crate::operation::create_product::CreateProductOutput {
         crate::operation::create_product::CreateProductOutput {
-            product_view_detail: self.product_view_detail,
-            provisioning_artifact_detail: self.provisioning_artifact_detail,
-            tags: self.tags,
+            product_view_detail: self.product_view_detail
+            ,
+            provisioning_artifact_detail: self.provisioning_artifact_detail
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

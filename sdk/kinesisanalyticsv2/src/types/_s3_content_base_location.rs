@@ -3,7 +3,7 @@
 /// <p>The S3 bucket that holds the application information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ContentBaseLocation {
+pub struct S3ContentBaseLocation  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3ContentBaseLocation {
 }
 impl S3ContentBaseLocation {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The base path for the S3 bucket.</p>
-    pub fn base_path(&self) -> std::option::Option<&str> {
+    pub fn base_path(&self) -> std::option::Option<& str> {
         self.base_path.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3ContentBaseLocationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The base path for the S3 bucket.</p>
     pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3ContentBaseLocationBuilder {
     }
     /// <p>The base path for the S3 bucket.</p>
     pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_path = input;
-        self
+        self.base_path = input; self
     }
     /// Consumes the builder and constructs a [`S3ContentBaseLocation`](crate::types::S3ContentBaseLocation).
     pub fn build(self) -> crate::types::S3ContentBaseLocation {
         crate::types::S3ContentBaseLocation {
-            bucket_arn: self.bucket_arn,
-            base_path: self.base_path,
+            bucket_arn: self.bucket_arn
+            ,
+            base_path: self.base_path
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p> A partition dimension defined by an attribute. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Partition {
+pub struct Partition  {
     /// <p> The name of the attribute that defines a partition dimension. </p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
 }
 impl Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl PartitionBuilder {
     }
     /// <p> The name of the attribute that defines a partition dimension. </p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// Consumes the builder and constructs a [`Partition`](crate::types::Partition).
     pub fn build(self) -> crate::types::Partition {
         crate::types::Partition {
-            attribute_name: self.attribute_name,
+            attribute_name: self.attribute_name
+            ,
         }
     }
 }
+

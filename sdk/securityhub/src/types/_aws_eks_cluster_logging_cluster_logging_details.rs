@@ -3,17 +3,17 @@
 /// <p>Details for a cluster logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEksClusterLoggingClusterLoggingDetails {
+pub struct AwsEksClusterLoggingClusterLoggingDetails  {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
-    /// <p>A list of logging types. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>api</code> </p> </li>
-    /// <li> <p> <code>audit</code> </p> </li>
-    /// <li> <p> <code>authenticator</code> </p> </li>
-    /// <li> <p> <code>controllerManager</code> </p> </li>
-    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// <p>A list of logging types. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>api</code> </p> </li> 
+    /// <li> <p> <code>audit</code> </p> </li> 
+    /// <li> <p> <code>authenticator</code> </p> </li> 
+    /// <li> <p> <code>controllerManager</code> </p> </li> 
+    /// <li> <p> <code>scheduler</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -23,15 +23,15 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>A list of logging types. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>api</code> </p> </li>
-    /// <li> <p> <code>audit</code> </p> </li>
-    /// <li> <p> <code>authenticator</code> </p> </li>
-    /// <li> <p> <code>controllerManager</code> </p> </li>
-    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// <p>A list of logging types. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>api</code> </p> </li> 
+    /// <li> <p> <code>audit</code> </p> </li> 
+    /// <li> <p> <code>authenticator</code> </p> </li> 
+    /// <li> <p> <code>controllerManager</code> </p> </li> 
+    /// <li> <p> <code>scheduler</code> </p> </li> 
     /// </ul>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> std::option::Option<& [std::string::String]> {
         self.types.as_deref()
     }
 }
@@ -57,47 +57,46 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     }
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Appends an item to `types`.
     ///
     /// To override the contents of this collection use [`set_types`](Self::set_types).
     ///
-    /// <p>A list of logging types. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>api</code> </p> </li>
-    /// <li> <p> <code>audit</code> </p> </li>
-    /// <li> <p> <code>authenticator</code> </p> </li>
-    /// <li> <p> <code>controllerManager</code> </p> </li>
-    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// <p>A list of logging types. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>api</code> </p> </li> 
+    /// <li> <p> <code>audit</code> </p> </li> 
+    /// <li> <p> <code>authenticator</code> </p> </li> 
+    /// <li> <p> <code>controllerManager</code> </p> </li> 
+    /// <li> <p> <code>scheduler</code> </p> </li> 
     /// </ul>
     pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = Some(v);
-        self
+                        v.push(input.into());
+                        self.types = Some(v);
+                        self
     }
-    /// <p>A list of logging types. Valid values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>api</code> </p> </li>
-    /// <li> <p> <code>audit</code> </p> </li>
-    /// <li> <p> <code>authenticator</code> </p> </li>
-    /// <li> <p> <code>controllerManager</code> </p> </li>
-    /// <li> <p> <code>scheduler</code> </p> </li>
+    /// <p>A list of logging types. Valid values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>api</code> </p> </li> 
+    /// <li> <p> <code>audit</code> </p> </li> 
+    /// <li> <p> <code>authenticator</code> </p> </li> 
+    /// <li> <p> <code>controllerManager</code> </p> </li> 
+    /// <li> <p> <code>scheduler</code> </p> </li> 
     /// </ul>
-    pub fn set_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.types = input; self
     }
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingClusterLoggingDetails`](crate::types::AwsEksClusterLoggingClusterLoggingDetails).
     pub fn build(self) -> crate::types::AwsEksClusterLoggingClusterLoggingDetails {
         crate::types::AwsEksClusterLoggingClusterLoggingDetails {
-            enabled: self.enabled.unwrap_or_default(),
-            types: self.types,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            types: self.types
+            ,
         }
     }
 }
+

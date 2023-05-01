@@ -3,7 +3,7 @@
 /// <p>Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigExportDeliveryInfo {
+pub struct ConfigExportDeliveryInfo  {
     /// <p>Status of the last attempted delivery.</p>
     #[doc(hidden)]
     pub last_status: std::option::Option<crate::types::DeliveryStatus>,
@@ -25,27 +25,27 @@ pub struct ConfigExportDeliveryInfo {
 }
 impl ConfigExportDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
-    pub fn last_status(&self) -> std::option::Option<&crate::types::DeliveryStatus> {
+    pub fn last_status(&self) -> std::option::Option<& crate::types::DeliveryStatus> {
         self.last_status.as_ref()
     }
     /// <p>The error code from the last attempted delivery.</p>
-    pub fn last_error_code(&self) -> std::option::Option<&str> {
+    pub fn last_error_code(&self) -> std::option::Option<& str> {
         self.last_error_code.as_deref()
     }
     /// <p>The error message from the last attempted delivery.</p>
-    pub fn last_error_message(&self) -> std::option::Option<&str> {
+    pub fn last_error_message(&self) -> std::option::Option<& str> {
         self.last_error_message.as_deref()
     }
     /// <p>The time of the last attempted delivery.</p>
-    pub fn last_attempt_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_attempt_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_attempt_time.as_ref()
     }
     /// <p>The time of the last successful delivery.</p>
-    pub fn last_successful_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_successful_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_successful_time.as_ref()
     }
     /// <p>The time that the next delivery occurs.</p>
-    pub fn next_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn next_delivery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.next_delivery_time.as_ref()
     }
 }
@@ -74,12 +74,8 @@ impl ConfigExportDeliveryInfoBuilder {
         self
     }
     /// <p>Status of the last attempted delivery.</p>
-    pub fn set_last_status(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryStatus>,
-    ) -> Self {
-        self.last_status = input;
-        self
+    pub fn set_last_status(mut self, input: std::option::Option<crate::types::DeliveryStatus>) -> Self {
+        self.last_status = input; self
     }
     /// <p>The error code from the last attempted delivery.</p>
     pub fn last_error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +84,7 @@ impl ConfigExportDeliveryInfoBuilder {
     }
     /// <p>The error code from the last attempted delivery.</p>
     pub fn set_last_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_error_code = input;
-        self
+        self.last_error_code = input; self
     }
     /// <p>The error message from the last attempted delivery.</p>
     pub fn last_error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,12 +92,8 @@ impl ConfigExportDeliveryInfoBuilder {
         self
     }
     /// <p>The error message from the last attempted delivery.</p>
-    pub fn set_last_error_message(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.last_error_message = input;
-        self
+    pub fn set_last_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.last_error_message = input; self
     }
     /// <p>The time of the last attempted delivery.</p>
     pub fn last_attempt_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,12 +101,8 @@ impl ConfigExportDeliveryInfoBuilder {
         self
     }
     /// <p>The time of the last attempted delivery.</p>
-    pub fn set_last_attempt_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_attempt_time = input;
-        self
+    pub fn set_last_attempt_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_attempt_time = input; self
     }
     /// <p>The time of the last successful delivery.</p>
     pub fn last_successful_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -123,12 +110,8 @@ impl ConfigExportDeliveryInfoBuilder {
         self
     }
     /// <p>The time of the last successful delivery.</p>
-    pub fn set_last_successful_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_successful_time = input;
-        self
+    pub fn set_last_successful_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_successful_time = input; self
     }
     /// <p>The time that the next delivery occurs.</p>
     pub fn next_delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,22 +119,25 @@ impl ConfigExportDeliveryInfoBuilder {
         self
     }
     /// <p>The time that the next delivery occurs.</p>
-    pub fn set_next_delivery_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.next_delivery_time = input;
-        self
+    pub fn set_next_delivery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.next_delivery_time = input; self
     }
     /// Consumes the builder and constructs a [`ConfigExportDeliveryInfo`](crate::types::ConfigExportDeliveryInfo).
     pub fn build(self) -> crate::types::ConfigExportDeliveryInfo {
         crate::types::ConfigExportDeliveryInfo {
-            last_status: self.last_status,
-            last_error_code: self.last_error_code,
-            last_error_message: self.last_error_message,
-            last_attempt_time: self.last_attempt_time,
-            last_successful_time: self.last_successful_time,
-            next_delivery_time: self.next_delivery_time,
+            last_status: self.last_status
+            ,
+            last_error_code: self.last_error_code
+            ,
+            last_error_message: self.last_error_message
+            ,
+            last_attempt_time: self.last_attempt_time
+            ,
+            last_successful_time: self.last_successful_time
+            ,
+            next_delivery_time: self.next_delivery_time
+            ,
         }
     }
 }
+

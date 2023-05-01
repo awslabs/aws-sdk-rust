@@ -3,7 +3,7 @@
 /// <p>TD-SCDMA object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TdscdmaNmrObj {
+pub struct TdscdmaNmrObj  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     #[doc(hidden)]
     pub uarfcn: std::option::Option<i32>,
@@ -67,8 +67,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     pub fn set_uarfcn(mut self, input: std::option::Option<i32>) -> Self {
-        self.uarfcn = input;
-        self
+        self.uarfcn = input; self
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     pub fn cell_params(mut self, input: i32) -> Self {
@@ -77,8 +76,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     pub fn set_cell_params(mut self, input: std::option::Option<i32>) -> Self {
-        self.cell_params = input;
-        self
+        self.cell_params = input; self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
@@ -87,8 +85,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
-        self.utran_cid = input;
-        self
+        self.utran_cid = input; self
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     pub fn rscp(mut self, input: i32) -> Self {
@@ -97,8 +94,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
-        self.rscp = input;
-        self
+        self.rscp = input; self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
@@ -107,17 +103,22 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
-        self.path_loss = input;
-        self
+        self.path_loss = input; self
     }
     /// Consumes the builder and constructs a [`TdscdmaNmrObj`](crate::types::TdscdmaNmrObj).
     pub fn build(self) -> crate::types::TdscdmaNmrObj {
         crate::types::TdscdmaNmrObj {
-            uarfcn: self.uarfcn,
-            cell_params: self.cell_params,
-            utran_cid: self.utran_cid,
-            rscp: self.rscp,
-            path_loss: self.path_loss,
+            uarfcn: self.uarfcn
+            ,
+            cell_params: self.cell_params
+            ,
+            utran_cid: self.utran_cid
+            ,
+            rscp: self.rscp
+            ,
+            path_loss: self.path_loss
+            ,
         }
     }
 }
+

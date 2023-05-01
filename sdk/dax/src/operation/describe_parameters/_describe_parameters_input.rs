@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeParametersInput {
+pub struct DescribeParametersInput  {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,27 +19,26 @@ pub struct DescribeParametersInput {
 }
 impl DescribeParametersInput {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
+    pub fn builder() -> crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
         crate::operation::describe_parameters::builders::DescribeParametersInputBuilder::default()
     }
 }
@@ -60,12 +59,8 @@ impl DescribeParametersInputBuilder {
         self
     }
     /// <p>The name of the parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parameter_group_name = input;
-        self
+    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parameter_group_name = input; self
     }
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +69,18 @@ impl DescribeParametersInputBuilder {
     }
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,23 +89,22 @@ impl DescribeParametersInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_parameters::DescribeParametersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_parameters::DescribeParametersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_parameters::DescribeParametersInput {
-                parameter_group_name: self.parameter_group_name,
-                source: self.source,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                parameter_group_name: self.parameter_group_name
+                ,
+                source: self.source
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

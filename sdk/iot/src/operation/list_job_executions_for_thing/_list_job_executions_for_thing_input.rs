@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobExecutionsForThingInput {
+pub struct ListJobExecutionsForThingInput  {
     /// <p>The thing name.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::JobExecutionStatus>,
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
@@ -28,19 +28,19 @@ pub struct ListJobExecutionsForThingInput {
 }
 impl ListJobExecutionsForThingInput {
     /// <p>The thing name.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
-    pub fn namespace_id(&self) -> std::option::Option<&str> {
+    pub fn namespace_id(&self) -> std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -48,17 +48,17 @@ impl ListJobExecutionsForThingInput {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl ListJobExecutionsForThingInput {
     /// Creates a new builder-style object to manufacture [`ListJobExecutionsForThingInput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput).
-    pub fn builder() -> crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder{
+    pub fn builder() -> crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder {
         crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder::default()
     }
 }
@@ -82,8 +82,7 @@ impl ListJobExecutionsForThingInputBuilder {
     }
     /// <p>The thing name.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
@@ -91,30 +90,25 @@ impl ListJobExecutionsForThingInputBuilder {
         self
     }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::JobExecutionStatus>) -> Self {
+        self.status = input; self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace_id = Some(input.into());
         self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -123,8 +117,7 @@ impl ListJobExecutionsForThingInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +126,7 @@ impl ListJobExecutionsForThingInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,25 +135,26 @@ impl ListJobExecutionsForThingInputBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`ListJobExecutionsForThingInput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingInput {
-                thing_name: self.thing_name,
-                status: self.status,
-                namespace_id: self.namespace_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                job_id: self.job_id,
-            },
+                thing_name: self.thing_name
+                ,
+                status: self.status
+                ,
+                namespace_id: self.namespace_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWorkerConfigurationInput {
+pub struct CreateWorkerConfigurationInput  {
     /// <p>A summary description of the worker configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -15,33 +15,30 @@ pub struct CreateWorkerConfigurationInput {
 }
 impl CreateWorkerConfigurationInput {
     /// <p>A summary description of the worker configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the worker configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn properties_file_content(&self) -> std::option::Option<&str> {
+    pub fn properties_file_content(&self) -> std::option::Option<& str> {
         self.properties_file_content.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkerConfigurationInput {
+impl  std::fmt::Debug for CreateWorkerConfigurationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkerConfigurationInput");
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl CreateWorkerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
-    pub fn builder() -> crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder {
         crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder::default()
     }
 }
@@ -62,8 +59,7 @@ impl CreateWorkerConfigurationInputBuilder {
     }
     /// <p>A summary description of the worker configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the worker configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +68,7 @@ impl CreateWorkerConfigurationInputBuilder {
     }
     /// <p>The name of the worker configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub fn properties_file_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,26 +76,20 @@ impl CreateWorkerConfigurationInputBuilder {
         self
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn set_properties_file_content(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.properties_file_content = input;
-        self
+    pub fn set_properties_file_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.properties_file_content = input; self
     }
     /// Consumes the builder and constructs a [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_worker_configuration::CreateWorkerConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_worker_configuration::CreateWorkerConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
-                description: self.description,
-                name: self.name,
-                properties_file_content: self.properties_file_content,
-            },
+                description: self.description
+                ,
+                name: self.name
+                ,
+                properties_file_content: self.properties_file_content
+                ,
+            }
         )
     }
 }
@@ -109,10 +98,8 @@ impl std::fmt::Debug for CreateWorkerConfigurationInputBuilder {
         let mut formatter = f.debug_struct("CreateWorkerConfigurationInputBuilder");
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
+

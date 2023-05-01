@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCanariesOutput {
+pub struct DescribeCanariesOutput  {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     #[doc(hidden)]
     pub canaries: std::option::Option<std::vec::Vec<crate::types::Canary>>,
@@ -13,23 +13,22 @@ pub struct DescribeCanariesOutput {
 }
 impl DescribeCanariesOutput {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-    pub fn canaries(&self) -> std::option::Option<&[crate::types::Canary]> {
+    pub fn canaries(&self) -> std::option::Option<& [crate::types::Canary]> {
         self.canaries.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCanariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCanariesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesOutput`](crate::operation::describe_canaries::DescribeCanariesOutput).
-    pub fn builder() -> crate::operation::describe_canaries::builders::DescribeCanariesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_canaries::builders::DescribeCanariesOutputBuilder {
         crate::operation::describe_canaries::builders::DescribeCanariesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl DescribeCanariesOutputBuilder {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     pub fn canaries(mut self, input: crate::types::Canary) -> Self {
         let mut v = self.canaries.unwrap_or_default();
-        v.push(input);
-        self.canaries = Some(v);
-        self
+                        v.push(input);
+                        self.canaries = Some(v);
+                        self
     }
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-    pub fn set_canaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Canary>>,
-    ) -> Self {
-        self.canaries = input;
-        self
+    pub fn set_canaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::Canary>>) -> Self {
+        self.canaries = input; self
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl DescribeCanariesOutputBuilder {
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCanariesOutput`](crate::operation::describe_canaries::DescribeCanariesOutput).
     pub fn build(self) -> crate::operation::describe_canaries::DescribeCanariesOutput {
         crate::operation::describe_canaries::DescribeCanariesOutput {
-            canaries: self.canaries,
-            next_token: self.next_token,
+            canaries: self.canaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

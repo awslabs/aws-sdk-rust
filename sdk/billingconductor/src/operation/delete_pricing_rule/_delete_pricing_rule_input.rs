@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePricingRuleInput {
+pub struct DeletePricingRuleInput  {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeletePricingRuleInput {
     /// Creates a new builder-style object to manufacture [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder {
         crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeletePricingRuleInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_pricing_rule::DeletePricingRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_pricing_rule::DeletePricingRuleInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::delete_pricing_rule::DeletePricingRuleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_pricing_rule::DeletePricingRuleInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

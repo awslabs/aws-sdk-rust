@@ -3,7 +3,7 @@
 /// <p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserSetting {
+pub struct UserSetting  {
     /// <p>The action that is enabled or disabled.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::Action>,
@@ -13,11 +13,11 @@ pub struct UserSetting {
 }
 impl UserSetting {
     /// <p>The action that is enabled or disabled.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UserSettingBuilder {
     }
     /// <p>The action that is enabled or disabled.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
@@ -53,14 +52,16 @@ impl UserSettingBuilder {
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn set_permission(mut self, input: std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// Consumes the builder and constructs a [`UserSetting`](crate::types::UserSetting).
     pub fn build(self) -> crate::types::UserSetting {
         crate::types::UserSetting {
-            action: self.action,
-            permission: self.permission,
+            action: self.action
+            ,
+            permission: self.permission
+            ,
         }
     }
 }
+

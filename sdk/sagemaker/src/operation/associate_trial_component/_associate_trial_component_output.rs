@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTrialComponentOutput {
+pub struct AssociateTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     #[doc(hidden)]
     pub trial_component_arn: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct AssociateTrialComponentOutput {
 }
 impl AssociateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+    pub fn trial_component_arn(&self) -> std::option::Option<& str> {
         self.trial_component_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    pub fn trial_arn(&self) -> std::option::Option<&str> {
+    pub fn trial_arn(&self) -> std::option::Option<& str> {
         self.trial_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateTrialComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrialComponentOutput`](crate::operation::associate_trial_component::AssociateTrialComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_trial_component::builders::AssociateTrialComponentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_trial_component::builders::AssociateTrialComponentOutputBuilder {
         crate::operation::associate_trial_component::builders::AssociateTrialComponentOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl AssociateTrialComponentOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.trial_component_arn = input;
-        self
+    pub fn set_trial_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.trial_component_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn trial_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +58,26 @@ impl AssociateTrialComponentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn set_trial_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_arn = input;
-        self
+        self.trial_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateTrialComponentOutput`](crate::operation::associate_trial_component::AssociateTrialComponentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_trial_component::AssociateTrialComponentOutput {
+    pub fn build(self) -> crate::operation::associate_trial_component::AssociateTrialComponentOutput {
         crate::operation::associate_trial_component::AssociateTrialComponentOutput {
-            trial_component_arn: self.trial_component_arn,
-            trial_arn: self.trial_arn,
+            trial_component_arn: self.trial_component_arn
+            ,
+            trial_arn: self.trial_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

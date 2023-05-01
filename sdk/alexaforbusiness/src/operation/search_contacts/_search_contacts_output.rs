@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchContactsOutput {
+pub struct SearchContactsOutput  {
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
     #[doc(hidden)]
     pub contacts: std::option::Option<std::vec::Vec<crate::types::ContactData>>,
@@ -16,11 +16,11 @@ pub struct SearchContactsOutput {
 }
 impl SearchContactsOutput {
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
-    pub fn contacts(&self) -> std::option::Option<&[crate::types::ContactData]> {
+    pub fn contacts(&self) -> std::option::Option<& [crate::types::ContactData]> {
         self.contacts.as_deref()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of contacts returned.</p>
@@ -29,10 +29,10 @@ impl SearchContactsOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchContactsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchContactsOutput {
     /// Creates a new builder-style object to manufacture [`SearchContactsOutput`](crate::operation::search_contacts::SearchContactsOutput).
     pub fn builder() -> crate::operation::search_contacts::builders::SearchContactsOutputBuilder {
@@ -57,17 +57,13 @@ impl SearchContactsOutputBuilder {
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
     pub fn contacts(mut self, input: crate::types::ContactData) -> Self {
         let mut v = self.contacts.unwrap_or_default();
-        v.push(input);
-        self.contacts = Some(v);
-        self
+                        v.push(input);
+                        self.contacts = Some(v);
+                        self
     }
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_contacts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactData>>,
-    ) -> Self {
-        self.contacts = input;
-        self
+    pub fn set_contacts(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContactData>>) -> Self {
+        self.contacts = input; self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +72,7 @@ impl SearchContactsOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The total number of contacts returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -86,25 +81,28 @@ impl SearchContactsOutputBuilder {
     }
     /// <p>The total number of contacts returned.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchContactsOutput`](crate::operation::search_contacts::SearchContactsOutput).
     pub fn build(self) -> crate::operation::search_contacts::SearchContactsOutput {
         crate::operation::search_contacts::SearchContactsOutput {
-            contacts: self.contacts,
-            next_token: self.next_token,
-            total_count: self.total_count,
+            contacts: self.contacts
+            ,
+            next_token: self.next_token
+            ,
+            total_count: self.total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComplianceDetailsByResourceOutput {
+pub struct GetComplianceDetailsByResourceOutput  {
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
@@ -14,22 +14,22 @@ pub struct GetComplianceDetailsByResourceOutput {
 }
 impl GetComplianceDetailsByResourceOutput {
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
-    pub fn evaluation_results(&self) -> std::option::Option<&[crate::types::EvaluationResult]> {
+    pub fn evaluation_results(&self) -> std::option::Option<& [crate::types::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetComplianceDetailsByResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetComplianceDetailsByResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailsByResourceOutput`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput).
-    pub fn builder() -> crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceOutputBuilder{
+    pub fn builder() -> crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceOutputBuilder {
         crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceOutputBuilder::default()
     }
 }
@@ -38,8 +38,7 @@ impl GetComplianceDetailsByResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetComplianceDetailsByResourceOutputBuilder {
-    pub(crate) evaluation_results:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) evaluation_results: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +50,13 @@ impl GetComplianceDetailsByResourceOutputBuilder {
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     pub fn evaluation_results(mut self, input: crate::types::EvaluationResult) -> Self {
         let mut v = self.evaluation_results.unwrap_or_default();
-        v.push(input);
-        self.evaluation_results = Some(v);
-        self
+                        v.push(input);
+                        self.evaluation_results = Some(v);
+                        self
     }
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
-    pub fn set_evaluation_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
-    ) -> Self {
-        self.evaluation_results = input;
-        self
+    pub fn set_evaluation_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
+        self.evaluation_results = input; self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,27 +65,26 @@ impl GetComplianceDetailsByResourceOutputBuilder {
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetComplianceDetailsByResourceOutput`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput
-    {
+    pub fn build(self) -> crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput {
         crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput {
-            evaluation_results: self.evaluation_results,
-            next_token: self.next_token,
+            evaluation_results: self.evaluation_results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

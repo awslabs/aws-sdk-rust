@@ -3,7 +3,7 @@
 /// Settings for a SCTE-35 splice_insert message.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scte35SpliceInsertScheduleActionSettings {
+pub struct Scte35SpliceInsertScheduleActionSettings  {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
     #[doc(hidden)]
     pub duration: i64,
@@ -43,8 +43,7 @@ impl Scte35SpliceInsertScheduleActionSettingsBuilder {
     }
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
     pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn splice_event_id(mut self, input: i64) -> Self {
@@ -53,14 +52,18 @@ impl Scte35SpliceInsertScheduleActionSettingsBuilder {
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn set_splice_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.splice_event_id = input;
-        self
+        self.splice_event_id = input; self
     }
     /// Consumes the builder and constructs a [`Scte35SpliceInsertScheduleActionSettings`](crate::types::Scte35SpliceInsertScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35SpliceInsertScheduleActionSettings {
         crate::types::Scte35SpliceInsertScheduleActionSettings {
-            duration: self.duration.unwrap_or_default(),
-            splice_event_id: self.splice_event_id.unwrap_or_default(),
+            duration: self.duration
+                .unwrap_or_default()
+            ,
+            splice_event_id: self.splice_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

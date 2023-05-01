@@ -3,14 +3,14 @@
 /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountGrouping {
+pub struct AccountGrouping  {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     #[doc(hidden)]
     pub linked_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
-    pub fn linked_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn linked_account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.linked_account_ids.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl AccountGroupingBuilder {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     pub fn linked_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.linked_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.linked_account_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.linked_account_ids = Some(v);
+                        self
     }
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
-    pub fn set_linked_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.linked_account_ids = input;
-        self
+    pub fn set_linked_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.linked_account_ids = input; self
     }
     /// Consumes the builder and constructs a [`AccountGrouping`](crate::types::AccountGrouping).
     pub fn build(self) -> crate::types::AccountGrouping {
         crate::types::AccountGrouping {
-            linked_account_ids: self.linked_account_ids,
+            linked_account_ids: self.linked_account_ids
+            ,
         }
     }
 }
+

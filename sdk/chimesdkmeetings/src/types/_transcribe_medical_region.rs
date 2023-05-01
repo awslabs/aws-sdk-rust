@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transcribemedicalregion = unimplemented!();
 /// match transcribemedicalregion {
@@ -35,22 +35,14 @@
 /// Specifically, when `transcribemedicalregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TranscribeMedicalRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TranscribeMedicalRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
@@ -67,60 +59,51 @@ pub enum TranscribeMedicalRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeMedicalRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "ap-southeast-2" => TranscribeMedicalRegion::ApSoutheast2,
-            "auto" => TranscribeMedicalRegion::Auto,
-            "ca-central-1" => TranscribeMedicalRegion::CaCentral1,
-            "eu-west-1" => TranscribeMedicalRegion::EuWest1,
-            "us-east-1" => TranscribeMedicalRegion::UsEast1,
-            "us-east-2" => TranscribeMedicalRegion::UsEast2,
-            "us-west-2" => TranscribeMedicalRegion::UsWest2,
-            other => TranscribeMedicalRegion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ap-southeast-2" => TranscribeMedicalRegion::ApSoutheast2,
+"auto" => TranscribeMedicalRegion::Auto,
+"ca-central-1" => TranscribeMedicalRegion::CaCentral1,
+"eu-west-1" => TranscribeMedicalRegion::EuWest1,
+"us-east-1" => TranscribeMedicalRegion::UsEast1,
+"us-east-2" => TranscribeMedicalRegion::UsEast2,
+"us-west-2" => TranscribeMedicalRegion::UsWest2,
+other => TranscribeMedicalRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeMedicalRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscribeMedicalRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TranscribeMedicalRegion::from(s))
+                }
+            }
 impl TranscribeMedicalRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeMedicalRegion::ApSoutheast2 => "ap-southeast-2",
-            TranscribeMedicalRegion::Auto => "auto",
-            TranscribeMedicalRegion::CaCentral1 => "ca-central-1",
-            TranscribeMedicalRegion::EuWest1 => "eu-west-1",
-            TranscribeMedicalRegion::UsEast1 => "us-east-1",
-            TranscribeMedicalRegion::UsEast2 => "us-east-2",
-            TranscribeMedicalRegion::UsWest2 => "us-west-2",
-            TranscribeMedicalRegion::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ap-southeast-2",
-            "auto",
-            "ca-central-1",
-            "eu-west-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeMedicalRegion::ApSoutheast2 => "ap-southeast-2",
+    TranscribeMedicalRegion::Auto => "auto",
+    TranscribeMedicalRegion::CaCentral1 => "ca-central-1",
+    TranscribeMedicalRegion::EuWest1 => "eu-west-1",
+    TranscribeMedicalRegion::UsEast1 => "us-east-1",
+    TranscribeMedicalRegion::UsEast2 => "us-east-2",
+    TranscribeMedicalRegion::UsWest2 => "us-west-2",
+    TranscribeMedicalRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ap-southeast-2", "auto", "ca-central-1", "eu-west-1", "us-east-1", "us-east-2", "us-west-2"]
+                }
+            }
 impl AsRef<str> for TranscribeMedicalRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

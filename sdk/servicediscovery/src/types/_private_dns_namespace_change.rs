@@ -3,7 +3,7 @@
 /// <p>Updated properties for the private DNS namespace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrivateDnsNamespaceChange {
+pub struct PrivateDnsNamespaceChange  {
     /// <p>An updated description for the private DNS namespace.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13,13 +13,11 @@ pub struct PrivateDnsNamespaceChange {
 }
 impl PrivateDnsNamespaceChange {
     /// <p>An updated description for the private DNS namespace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Properties to be updated in the private DNS namespace.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&crate::types::PrivateDnsNamespacePropertiesChange> {
+    pub fn properties(&self) -> std::option::Option<& crate::types::PrivateDnsNamespacePropertiesChange> {
         self.properties.as_ref()
     }
 }
@@ -45,8 +43,7 @@ impl PrivateDnsNamespaceChangeBuilder {
     }
     /// <p>An updated description for the private DNS namespace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Properties to be updated in the private DNS namespace.</p>
     pub fn properties(mut self, input: crate::types::PrivateDnsNamespacePropertiesChange) -> Self {
@@ -54,18 +51,17 @@ impl PrivateDnsNamespaceChangeBuilder {
         self
     }
     /// <p>Properties to be updated in the private DNS namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>) -> Self {
+        self.properties = input; self
     }
     /// Consumes the builder and constructs a [`PrivateDnsNamespaceChange`](crate::types::PrivateDnsNamespaceChange).
     pub fn build(self) -> crate::types::PrivateDnsNamespaceChange {
         crate::types::PrivateDnsNamespaceChange {
-            description: self.description,
-            properties: self.properties,
+            description: self.description
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
+

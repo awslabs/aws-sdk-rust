@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReferencesOutput {
+pub struct ListReferencesOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListReferencesOutput {
 }
 impl ListReferencesOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of references.</p>
-    pub fn references(&self) -> std::option::Option<&[crate::types::ReferenceListItem]> {
+    pub fn references(&self) -> std::option::Option<& [crate::types::ReferenceListItem]> {
         self.references.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListReferencesOutput {
     /// Creates a new builder-style object to manufacture [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput).
     pub fn builder() -> crate::operation::list_references::builders::ListReferencesOutputBuilder {
@@ -49,8 +49,7 @@ impl ListReferencesOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `references`.
     ///
@@ -59,33 +58,32 @@ impl ListReferencesOutputBuilder {
     /// <p>A list of references.</p>
     pub fn references(mut self, input: crate::types::ReferenceListItem) -> Self {
         let mut v = self.references.unwrap_or_default();
-        v.push(input);
-        self.references = Some(v);
-        self
+                        v.push(input);
+                        self.references = Some(v);
+                        self
     }
     /// <p>A list of references.</p>
-    pub fn set_references(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReferenceListItem>>,
-    ) -> Self {
-        self.references = input;
-        self
+    pub fn set_references(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReferenceListItem>>) -> Self {
+        self.references = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput).
     pub fn build(self) -> crate::operation::list_references::ListReferencesOutput {
         crate::operation::list_references::ListReferencesOutput {
-            next_token: self.next_token,
-            references: self.references,
+            next_token: self.next_token
+            ,
+            references: self.references
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

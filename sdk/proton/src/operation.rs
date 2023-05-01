@@ -252,3 +252,4 @@ pub mod update_service_template_version;
 
 /// Types for the `UpdateTemplateSyncConfig` operation.
 pub mod update_template_sync_config;
+

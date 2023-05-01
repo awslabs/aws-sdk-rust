@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataCellsFilterInput {
+pub struct UpdateDataCellsFilterInput  {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     #[doc(hidden)]
     pub table_data: std::option::Option<crate::types::DataCellsFilter>,
 }
 impl UpdateDataCellsFilterInput {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-    pub fn table_data(&self) -> std::option::Option<&crate::types::DataCellsFilter> {
+    pub fn table_data(&self) -> std::option::Option<& crate::types::DataCellsFilter> {
         self.table_data.as_ref()
     }
 }
 impl UpdateDataCellsFilterInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder {
         crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl UpdateDataCellsFilterInputBuilder {
         self
     }
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-    pub fn set_table_data(
-        mut self,
-        input: std::option::Option<crate::types::DataCellsFilter>,
-    ) -> Self {
-        self.table_data = input;
-        self
+    pub fn set_table_data(mut self, input: std::option::Option<crate::types::DataCellsFilter>) -> Self {
+        self.table_data = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput {
-                table_data: self.table_data,
-            },
+                table_data: self.table_data
+                ,
+            }
         )
     }
 }
+

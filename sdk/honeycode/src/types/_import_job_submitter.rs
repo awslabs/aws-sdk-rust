@@ -3,7 +3,7 @@
 /// <p>An object that contains the attributes of the submitter of the import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportJobSubmitter {
+pub struct ImportJobSubmitter  {
     /// <p>The email id of the submitter of the import job, if available.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ImportJobSubmitter {
 }
 impl ImportJobSubmitter {
     /// <p>The email id of the submitter of the import job, if available.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobSubmitter {
+impl  std::fmt::Debug for ImportJobSubmitter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportJobSubmitter");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl ImportJobSubmitterBuilder {
     }
     /// <p>The email id of the submitter of the import job, if available.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl ImportJobSubmitterBuilder {
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// Consumes the builder and constructs a [`ImportJobSubmitter`](crate::types::ImportJobSubmitter).
     pub fn build(self) -> crate::types::ImportJobSubmitter {
         crate::types::ImportJobSubmitter {
-            email: self.email,
-            user_arn: self.user_arn,
+            email: self.email
+            ,
+            user_arn: self.user_arn
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for ImportJobSubmitterBuilder {
         formatter.finish()
     }
 }
+

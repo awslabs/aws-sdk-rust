@@ -3,7 +3,7 @@
 /// <p> Request of CreateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationInput {
+pub struct CreateNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -19,26 +19,25 @@ pub struct CreateNotificationInput {
 }
 impl CreateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification that you want to create.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    pub fn subscribers(&self) -> std::option::Option<&[crate::types::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<& [crate::types::Subscriber]> {
         self.subscribers.as_deref()
     }
 }
 impl CreateNotificationInput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
-    pub fn builder(
-    ) -> crate::operation::create_notification::builders::CreateNotificationInputBuilder {
+    pub fn builder() -> crate::operation::create_notification::builders::CreateNotificationInputBuilder {
         crate::operation::create_notification::builders::CreateNotificationInputBuilder::default()
     }
 }
@@ -60,8 +59,7 @@ impl CreateNotificationInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +68,7 @@ impl CreateNotificationInputBuilder {
     }
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>The notification that you want to create.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -79,12 +76,8 @@ impl CreateNotificationInputBuilder {
         self
     }
     /// <p>The notification that you want to create.</p>
-    pub fn set_notification(
-        mut self,
-        input: std::option::Option<crate::types::Notification>,
-    ) -> Self {
-        self.notification = input;
-        self
+    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
+        self.notification = input; self
     }
     /// Appends an item to `subscribers`.
     ///
@@ -93,32 +86,28 @@ impl CreateNotificationInputBuilder {
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-        v.push(input);
-        self.subscribers = Some(v);
-        self
+                        v.push(input);
+                        self.subscribers = Some(v);
+                        self
     }
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
-        self.subscribers = input;
-        self
+    pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>) -> Self {
+        self.subscribers = input; self
     }
     /// Consumes the builder and constructs a [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_notification::CreateNotificationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_notification::CreateNotificationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_notification::CreateNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                subscribers: self.subscribers,
-            },
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+                notification: self.notification
+                ,
+                subscribers: self.subscribers
+                ,
+            }
         )
     }
 }
+

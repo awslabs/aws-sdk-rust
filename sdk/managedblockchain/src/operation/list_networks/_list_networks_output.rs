@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNetworksOutput {
+pub struct ListNetworksOutput  {
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
     #[doc(hidden)]
     pub networks: std::option::Option<std::vec::Vec<crate::types::NetworkSummary>>,
@@ -13,19 +13,19 @@ pub struct ListNetworksOutput {
 }
 impl ListNetworksOutput {
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
-    pub fn networks(&self) -> std::option::Option<&[crate::types::NetworkSummary]> {
+    pub fn networks(&self) -> std::option::Option<& [crate::types::NetworkSummary]> {
         self.networks.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListNetworksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListNetworksOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworksOutput`](crate::operation::list_networks::ListNetworksOutput).
     pub fn builder() -> crate::operation::list_networks::builders::ListNetworksOutputBuilder {
@@ -49,17 +49,13 @@ impl ListNetworksOutputBuilder {
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
     pub fn networks(mut self, input: crate::types::NetworkSummary) -> Self {
         let mut v = self.networks.unwrap_or_default();
-        v.push(input);
-        self.networks = Some(v);
-        self
+                        v.push(input);
+                        self.networks = Some(v);
+                        self
     }
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
-    pub fn set_networks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkSummary>>,
-    ) -> Self {
-        self.networks = input;
-        self
+    pub fn set_networks(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkSummary>>) -> Self {
+        self.networks = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListNetworksOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListNetworksOutput`](crate::operation::list_networks::ListNetworksOutput).
     pub fn build(self) -> crate::operation::list_networks::ListNetworksOutput {
         crate::operation::list_networks::ListNetworksOutput {
-            networks: self.networks,
-            next_token: self.next_token,
+            networks: self.networks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

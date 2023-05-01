@@ -3,7 +3,7 @@
 /// <p>A summary of compliance information by compliance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComplianceSummaryItem {
+pub struct ComplianceSummaryItem  {
     /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ComplianceSummaryItem {
 }
 impl ComplianceSummaryItem {
     /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
-    pub fn compliance_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_type(&self) -> std::option::Option<& str> {
         self.compliance_type.as_deref()
     }
     /// <p>A list of COMPLIANT items for the specified compliance type.</p>
-    pub fn compliant_summary(&self) -> std::option::Option<&crate::types::CompliantSummary> {
+    pub fn compliant_summary(&self) -> std::option::Option<& crate::types::CompliantSummary> {
         self.compliant_summary.as_ref()
     }
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-    pub fn non_compliant_summary(&self) -> std::option::Option<&crate::types::NonCompliantSummary> {
+    pub fn non_compliant_summary(&self) -> std::option::Option<& crate::types::NonCompliantSummary> {
         self.non_compliant_summary.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ComplianceSummaryItemBuilder {
     }
     /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
     pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>A list of COMPLIANT items for the specified compliance type.</p>
     pub fn compliant_summary(mut self, input: crate::types::CompliantSummary) -> Self {
@@ -60,12 +59,8 @@ impl ComplianceSummaryItemBuilder {
         self
     }
     /// <p>A list of COMPLIANT items for the specified compliance type.</p>
-    pub fn set_compliant_summary(
-        mut self,
-        input: std::option::Option<crate::types::CompliantSummary>,
-    ) -> Self {
-        self.compliant_summary = input;
-        self
+    pub fn set_compliant_summary(mut self, input: std::option::Option<crate::types::CompliantSummary>) -> Self {
+        self.compliant_summary = input; self
     }
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
     pub fn non_compliant_summary(mut self, input: crate::types::NonCompliantSummary) -> Self {
@@ -73,19 +68,19 @@ impl ComplianceSummaryItemBuilder {
         self
     }
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-    pub fn set_non_compliant_summary(
-        mut self,
-        input: std::option::Option<crate::types::NonCompliantSummary>,
-    ) -> Self {
-        self.non_compliant_summary = input;
-        self
+    pub fn set_non_compliant_summary(mut self, input: std::option::Option<crate::types::NonCompliantSummary>) -> Self {
+        self.non_compliant_summary = input; self
     }
     /// Consumes the builder and constructs a [`ComplianceSummaryItem`](crate::types::ComplianceSummaryItem).
     pub fn build(self) -> crate::types::ComplianceSummaryItem {
         crate::types::ComplianceSummaryItem {
-            compliance_type: self.compliance_type,
-            compliant_summary: self.compliant_summary,
-            non_compliant_summary: self.non_compliant_summary,
+            compliance_type: self.compliance_type
+            ,
+            compliant_summary: self.compliant_summary
+            ,
+            non_compliant_summary: self.non_compliant_summary
+            ,
         }
     }
 }
+

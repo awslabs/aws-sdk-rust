@@ -3,7 +3,7 @@
 /// <p>Describes a path.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessScopePath {
+pub struct AccessScopePath  {
     /// <p>The source.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::PathStatement>,
@@ -12,22 +12,19 @@ pub struct AccessScopePath {
     pub destination: std::option::Option<crate::types::PathStatement>,
     /// <p>The through resources.</p>
     #[doc(hidden)]
-    pub through_resources:
-        std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatement>>,
+    pub through_resources: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatement>>,
 }
 impl AccessScopePath {
     /// <p>The source.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::PathStatement> {
+    pub fn source(&self) -> std::option::Option<& crate::types::PathStatement> {
         self.source.as_ref()
     }
     /// <p>The destination.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::PathStatement> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::PathStatement> {
         self.destination.as_ref()
     }
     /// <p>The through resources.</p>
-    pub fn through_resources(
-        &self,
-    ) -> std::option::Option<&[crate::types::ThroughResourcesStatement]> {
+    pub fn through_resources(&self) -> std::option::Option<& [crate::types::ThroughResourcesStatement]> {
         self.through_resources.as_deref()
     }
 }
@@ -44,8 +41,7 @@ impl AccessScopePath {
 pub struct AccessScopePathBuilder {
     pub(crate) source: std::option::Option<crate::types::PathStatement>,
     pub(crate) destination: std::option::Option<crate::types::PathStatement>,
-    pub(crate) through_resources:
-        std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatement>>,
+    pub(crate) through_resources: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatement>>,
 }
 impl AccessScopePathBuilder {
     /// <p>The source.</p>
@@ -55,8 +51,7 @@ impl AccessScopePathBuilder {
     }
     /// <p>The source.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::PathStatement>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The destination.</p>
     pub fn destination(mut self, input: crate::types::PathStatement) -> Self {
@@ -64,12 +59,8 @@ impl AccessScopePathBuilder {
         self
     }
     /// <p>The destination.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::PathStatement>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::PathStatement>) -> Self {
+        self.destination = input; self
     }
     /// Appends an item to `through_resources`.
     ///
@@ -78,24 +69,24 @@ impl AccessScopePathBuilder {
     /// <p>The through resources.</p>
     pub fn through_resources(mut self, input: crate::types::ThroughResourcesStatement) -> Self {
         let mut v = self.through_resources.unwrap_or_default();
-        v.push(input);
-        self.through_resources = Some(v);
-        self
+                        v.push(input);
+                        self.through_resources = Some(v);
+                        self
     }
     /// <p>The through resources.</p>
-    pub fn set_through_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatement>>,
-    ) -> Self {
-        self.through_resources = input;
-        self
+    pub fn set_through_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatement>>) -> Self {
+        self.through_resources = input; self
     }
     /// Consumes the builder and constructs a [`AccessScopePath`](crate::types::AccessScopePath).
     pub fn build(self) -> crate::types::AccessScopePath {
         crate::types::AccessScopePath {
-            source: self.source,
-            destination: self.destination,
-            through_resources: self.through_resources,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            through_resources: self.through_resources
+            ,
         }
     }
 }
+

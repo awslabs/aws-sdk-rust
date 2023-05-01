@@ -3,7 +3,7 @@
 /// <p>The information for keywords that meet a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeywordFilter {
+pub struct KeywordFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::KeywordFilterName>,
@@ -13,11 +13,11 @@ pub struct KeywordFilter {
 }
 impl KeywordFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::KeywordFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::KeywordFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl KeywordFilterBuilder {
     }
     /// <p>The name of the attribute to filter on.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::KeywordFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -53,23 +52,22 @@ impl KeywordFilterBuilder {
     /// <p>An array values to filter for.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>An array values to filter for.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`KeywordFilter`](crate::types::KeywordFilter).
     pub fn build(self) -> crate::types::KeywordFilter {
         crate::types::KeywordFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateSolFunctionPackageOutput {
+pub struct CreateSolFunctionPackageOutput  {
     /// <p>ID of the function package.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -20,40 +20,36 @@ pub struct CreateSolFunctionPackageOutput {
     pub usage_state: std::option::Option<crate::types::UsageState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolFunctionPackageOutput {
     /// <p>ID of the function package.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn onboarding_state(&self) -> std::option::Option<&crate::types::OnboardingState> {
+    pub fn onboarding_state(&self) -> std::option::Option<& crate::types::OnboardingState> {
         self.onboarding_state.as_ref()
     }
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> std::option::Option<&crate::types::OperationalState> {
+    pub fn operational_state(&self) -> std::option::Option<& crate::types::OperationalState> {
         self.operational_state.as_ref()
     }
     /// <p>Usage state of the function package.</p>
-    pub fn usage_state(&self) -> std::option::Option<&crate::types::UsageState> {
+    pub fn usage_state(&self) -> std::option::Option<& crate::types::UsageState> {
         self.usage_state.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSolFunctionPackageOutput {
+impl  std::fmt::Debug for CreateSolFunctionPackageOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSolFunctionPackageOutput");
         formatter.field("id", &self.id);
@@ -67,13 +63,13 @@ impl std::fmt::Debug for CreateSolFunctionPackageOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreateSolFunctionPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`CreateSolFunctionPackageOutput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput).
-    pub fn builder() -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder{
+    pub fn builder() -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder {
         crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder::default()
     }
 }
@@ -87,8 +83,7 @@ pub struct CreateSolFunctionPackageOutputBuilder {
     pub(crate) onboarding_state: std::option::Option<crate::types::OnboardingState>,
     pub(crate) operational_state: std::option::Option<crate::types::OperationalState>,
     pub(crate) usage_state: std::option::Option<crate::types::UsageState>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolFunctionPackageOutputBuilder {
@@ -99,8 +94,7 @@ impl CreateSolFunctionPackageOutputBuilder {
     }
     /// <p>ID of the function package.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Function package ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +103,7 @@ impl CreateSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
@@ -118,12 +111,8 @@ impl CreateSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn set_onboarding_state(
-        mut self,
-        input: std::option::Option<crate::types::OnboardingState>,
-    ) -> Self {
-        self.onboarding_state = input;
-        self
+    pub fn set_onboarding_state(mut self, input: std::option::Option<crate::types::OnboardingState>) -> Self {
+        self.onboarding_state = input; self
     }
     /// <p>Operational state of the function package.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
@@ -131,12 +120,8 @@ impl CreateSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Operational state of the function package.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
-        self.operational_state = input;
-        self
+    pub fn set_operational_state(mut self, input: std::option::Option<crate::types::OperationalState>) -> Self {
+        self.operational_state = input; self
     }
     /// <p>Usage state of the function package.</p>
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
@@ -145,54 +130,47 @@ impl CreateSolFunctionPackageOutputBuilder {
     }
     /// <p>Usage state of the function package.</p>
     pub fn set_usage_state(mut self, input: std::option::Option<crate::types::UsageState>) -> Self {
-        self.usage_state = input;
-        self
+        self.usage_state = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSolFunctionPackageOutput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
+    pub fn build(self) -> crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
         crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
-            id: self.id,
-            arn: self.arn,
-            onboarding_state: self.onboarding_state,
-            operational_state: self.operational_state,
-            usage_state: self.usage_state,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            onboarding_state: self.onboarding_state
+            ,
+            operational_state: self.operational_state
+            ,
+            usage_state: self.usage_state
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -210,3 +188,4 @@ impl std::fmt::Debug for CreateSolFunctionPackageOutputBuilder {
         formatter.finish()
     }
 }
+

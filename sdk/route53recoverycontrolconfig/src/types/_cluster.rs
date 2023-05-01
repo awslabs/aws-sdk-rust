@@ -3,11 +3,11 @@
 /// <p>A set of five redundant Regional endpoints against which you can execute API calls to update or get the state of routing controls. You can host multiple control panels and routing controls on one cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
-    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
+    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> 
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
     #[doc(hidden)]
     pub cluster_endpoints: std::option::Option<std::vec::Vec<crate::types::ClusterEndpoint>>,
@@ -20,20 +20,20 @@ pub struct Cluster {
 }
 impl Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
-    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
+    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> 
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    pub fn cluster_endpoints(&self) -> std::option::Option<&[crate::types::ClusterEndpoint]> {
+    pub fn cluster_endpoints(&self) -> std::option::Option<& [crate::types::ClusterEndpoint]> {
         self.cluster_endpoints.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -61,29 +61,24 @@ impl ClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// Appends an item to `cluster_endpoints`.
     ///
     /// To override the contents of this collection use [`set_cluster_endpoints`](Self::set_cluster_endpoints).
     ///
-    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
+    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> 
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
     pub fn cluster_endpoints(mut self, input: crate::types::ClusterEndpoint) -> Self {
         let mut v = self.cluster_endpoints.unwrap_or_default();
-        v.push(input);
-        self.cluster_endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.cluster_endpoints = Some(v);
+                        self
     }
-    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
+    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> 
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    pub fn set_cluster_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterEndpoint>>,
-    ) -> Self {
-        self.cluster_endpoints = input;
-        self
+    pub fn set_cluster_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClusterEndpoint>>) -> Self {
+        self.cluster_endpoints = input; self
     }
     /// <p>The name of the cluster.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +87,7 @@ impl ClusterBuilder {
     }
     /// <p>The name of the cluster.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -102,16 +96,20 @@ impl ClusterBuilder {
     }
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
-            cluster_arn: self.cluster_arn,
-            cluster_endpoints: self.cluster_endpoints,
-            name: self.name,
-            status: self.status,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_endpoints: self.cluster_endpoints
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

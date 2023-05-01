@@ -3,17 +3,14 @@
 /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogConfigurationUpdate {
+pub struct CatalogConfigurationUpdate  {
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
-    pub glue_data_catalog_configuration_update:
-        std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>,
+    pub glue_data_catalog_configuration_update: std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>,
 }
 impl CatalogConfigurationUpdate {
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    pub fn glue_data_catalog_configuration_update(
-        &self,
-    ) -> std::option::Option<&crate::types::GlueDataCatalogConfigurationUpdate> {
+    pub fn glue_data_catalog_configuration_update(&self) -> std::option::Option<& crate::types::GlueDataCatalogConfigurationUpdate> {
         self.glue_data_catalog_configuration_update.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl CatalogConfigurationUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CatalogConfigurationUpdateBuilder {
-    pub(crate) glue_data_catalog_configuration_update:
-        std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>,
+    pub(crate) glue_data_catalog_configuration_update: std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>,
 }
 impl CatalogConfigurationUpdateBuilder {
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    pub fn glue_data_catalog_configuration_update(
-        mut self,
-        input: crate::types::GlueDataCatalogConfigurationUpdate,
-    ) -> Self {
+    pub fn glue_data_catalog_configuration_update(mut self, input: crate::types::GlueDataCatalogConfigurationUpdate) -> Self {
         self.glue_data_catalog_configuration_update = Some(input);
         self
     }
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    pub fn set_glue_data_catalog_configuration_update(
-        mut self,
-        input: std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>,
-    ) -> Self {
-        self.glue_data_catalog_configuration_update = input;
-        self
+    pub fn set_glue_data_catalog_configuration_update(mut self, input: std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>) -> Self {
+        self.glue_data_catalog_configuration_update = input; self
     }
     /// Consumes the builder and constructs a [`CatalogConfigurationUpdate`](crate::types::CatalogConfigurationUpdate).
     pub fn build(self) -> crate::types::CatalogConfigurationUpdate {
         crate::types::CatalogConfigurationUpdate {
-            glue_data_catalog_configuration_update: self.glue_data_catalog_configuration_update,
+            glue_data_catalog_configuration_update: self.glue_data_catalog_configuration_update
+            ,
         }
     }
 }
+

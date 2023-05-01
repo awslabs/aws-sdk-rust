@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mxfafdsignaling = unimplemented!();
 /// match mxfafdsignaling {
@@ -30,64 +30,55 @@
 /// Specifically, when `mxfafdsignaling` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MxfAfdSignaling::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MxfAfdSignaling {
     #[allow(missing_docs)] // documentation missing in model
     CopyFromVideo,
     #[allow(missing_docs)] // documentation missing in model
     NoCopy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MxfAfdSignaling {
-    fn from(s: &str) -> Self {
-        match s {
-            "COPY_FROM_VIDEO" => MxfAfdSignaling::CopyFromVideo,
-            "NO_COPY" => MxfAfdSignaling::NoCopy,
-            other => {
-                MxfAfdSignaling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COPY_FROM_VIDEO" => MxfAfdSignaling::CopyFromVideo,
+"NO_COPY" => MxfAfdSignaling::NoCopy,
+other => MxfAfdSignaling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for MxfAfdSignaling {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MxfAfdSignaling::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MxfAfdSignaling::from(s))
+                }
+            }
 impl MxfAfdSignaling {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MxfAfdSignaling::CopyFromVideo => "COPY_FROM_VIDEO",
-            MxfAfdSignaling::NoCopy => "NO_COPY",
-            MxfAfdSignaling::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["COPY_FROM_VIDEO", "NO_COPY"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MxfAfdSignaling::CopyFromVideo => "COPY_FROM_VIDEO",
+    MxfAfdSignaling::NoCopy => "NO_COPY",
+    MxfAfdSignaling::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COPY_FROM_VIDEO", "NO_COPY"]
+                }
+            }
 impl AsRef<str> for MxfAfdSignaling {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

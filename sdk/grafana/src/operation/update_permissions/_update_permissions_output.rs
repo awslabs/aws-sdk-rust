@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePermissionsOutput {
+pub struct UpdatePermissionsOutput  {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::UpdateError>>,
@@ -10,19 +10,18 @@ pub struct UpdatePermissionsOutput {
 }
 impl UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::UpdateError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::UpdateError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder {
         crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl UpdatePermissionsOutputBuilder {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
     pub fn errors(mut self, input: crate::types::UpdateError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
     pub fn build(self) -> crate::operation::update_permissions::UpdatePermissionsOutput {
         crate::operation::update_permissions::UpdatePermissionsOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

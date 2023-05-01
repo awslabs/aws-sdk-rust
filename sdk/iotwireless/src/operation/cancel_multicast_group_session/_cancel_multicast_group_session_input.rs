@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelMulticastGroupSessionInput {
+pub struct CancelMulticastGroupSessionInput  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CancelMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl CancelMulticastGroupSessionInput {
     /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionInput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput).
-    pub fn builder() -> crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder{
+    pub fn builder() -> crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder {
         crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl CancelMulticastGroupSessionInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`CancelMulticastGroupSessionInput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

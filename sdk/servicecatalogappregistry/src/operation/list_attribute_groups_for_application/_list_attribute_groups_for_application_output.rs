@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttributeGroupsForApplicationOutput {
+pub struct ListAttributeGroupsForApplicationOutput  {
     /// <p> The details related to a specific attribute group. </p>
     #[doc(hidden)]
-    pub attribute_groups_details:
-        std::option::Option<std::vec::Vec<crate::types::AttributeGroupDetails>>,
+    pub attribute_groups_details: std::option::Option<std::vec::Vec<crate::types::AttributeGroupDetails>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListAttributeGroupsForApplicationOutput {
 }
 impl ListAttributeGroupsForApplicationOutput {
     /// <p> The details related to a specific attribute group. </p>
-    pub fn attribute_groups_details(
-        &self,
-    ) -> std::option::Option<&[crate::types::AttributeGroupDetails]> {
+    pub fn attribute_groups_details(&self) -> std::option::Option<& [crate::types::AttributeGroupDetails]> {
         self.attribute_groups_details.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAttributeGroupsForApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAttributeGroupsForApplicationOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationOutput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput).
-    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationOutputBuilder {
         crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListAttributeGroupsForApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAttributeGroupsForApplicationOutputBuilder {
-    pub(crate) attribute_groups_details:
-        std::option::Option<std::vec::Vec<crate::types::AttributeGroupDetails>>,
+    pub(crate) attribute_groups_details: std::option::Option<std::vec::Vec<crate::types::AttributeGroupDetails>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl ListAttributeGroupsForApplicationOutputBuilder {
     /// <p> The details related to a specific attribute group. </p>
     pub fn attribute_groups_details(mut self, input: crate::types::AttributeGroupDetails) -> Self {
         let mut v = self.attribute_groups_details.unwrap_or_default();
-        v.push(input);
-        self.attribute_groups_details = Some(v);
-        self
+                        v.push(input);
+                        self.attribute_groups_details = Some(v);
+                        self
     }
     /// <p> The details related to a specific attribute group. </p>
-    pub fn set_attribute_groups_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeGroupDetails>>,
-    ) -> Self {
-        self.attribute_groups_details = input;
-        self
+    pub fn set_attribute_groups_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeGroupDetails>>) -> Self {
+        self.attribute_groups_details = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,20 +64,19 @@ impl ListAttributeGroupsForApplicationOutputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationOutput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput).
-    pub fn build(self) -> crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput{
+    pub fn build(self) -> crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput {
         crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput {
             attribute_groups_details: self.attribute_groups_details
             ,
@@ -95,3 +86,4 @@ impl ListAttributeGroupsForApplicationOutputBuilder {
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let burninsubtitlefontcolor = unimplemented!();
 /// match burninsubtitlefontcolor {
@@ -36,22 +36,14 @@
 /// Specifically, when `burninsubtitlefontcolor` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BurninSubtitleFontColor::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BurninSubtitleFontColor {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -70,56 +62,53 @@ pub enum BurninSubtitleFontColor {
     #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BurninSubtitleFontColor {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => BurninSubtitleFontColor::Auto,
-            "BLACK" => BurninSubtitleFontColor::Black,
-            "BLUE" => BurninSubtitleFontColor::Blue,
-            "GREEN" => BurninSubtitleFontColor::Green,
-            "HEX" => BurninSubtitleFontColor::Hex,
-            "RED" => BurninSubtitleFontColor::Red,
-            "WHITE" => BurninSubtitleFontColor::White,
-            "YELLOW" => BurninSubtitleFontColor::Yellow,
-            other => BurninSubtitleFontColor::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTO" => BurninSubtitleFontColor::Auto,
+"BLACK" => BurninSubtitleFontColor::Black,
+"BLUE" => BurninSubtitleFontColor::Blue,
+"GREEN" => BurninSubtitleFontColor::Green,
+"HEX" => BurninSubtitleFontColor::Hex,
+"RED" => BurninSubtitleFontColor::Red,
+"WHITE" => BurninSubtitleFontColor::White,
+"YELLOW" => BurninSubtitleFontColor::Yellow,
+other => BurninSubtitleFontColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BurninSubtitleFontColor {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BurninSubtitleFontColor::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BurninSubtitleFontColor::from(s))
+                }
+            }
 impl BurninSubtitleFontColor {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BurninSubtitleFontColor::Auto => "AUTO",
-            BurninSubtitleFontColor::Black => "BLACK",
-            BurninSubtitleFontColor::Blue => "BLUE",
-            BurninSubtitleFontColor::Green => "GREEN",
-            BurninSubtitleFontColor::Hex => "HEX",
-            BurninSubtitleFontColor::Red => "RED",
-            BurninSubtitleFontColor::White => "WHITE",
-            BurninSubtitleFontColor::Yellow => "YELLOW",
-            BurninSubtitleFontColor::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTO", "BLACK", "BLUE", "GREEN", "HEX", "RED", "WHITE", "YELLOW",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BurninSubtitleFontColor::Auto => "AUTO",
+    BurninSubtitleFontColor::Black => "BLACK",
+    BurninSubtitleFontColor::Blue => "BLUE",
+    BurninSubtitleFontColor::Green => "GREEN",
+    BurninSubtitleFontColor::Hex => "HEX",
+    BurninSubtitleFontColor::Red => "RED",
+    BurninSubtitleFontColor::White => "WHITE",
+    BurninSubtitleFontColor::Yellow => "YELLOW",
+    BurninSubtitleFontColor::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "BLACK", "BLUE", "GREEN", "HEX", "RED", "WHITE", "YELLOW"]
+                }
+            }
 impl AsRef<str> for BurninSubtitleFontColor {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

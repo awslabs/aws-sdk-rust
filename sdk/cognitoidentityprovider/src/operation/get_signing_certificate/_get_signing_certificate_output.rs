@@ -3,7 +3,7 @@
 /// <p>Response from Amazon Cognito for a signing certificate request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSigningCertificateOutput {
+pub struct GetSigningCertificateOutput  {
     /// <p>The signing certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -11,20 +11,18 @@ pub struct GetSigningCertificateOutput {
 }
 impl GetSigningCertificateOutput {
     /// <p>The signing certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetSigningCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_certificate::builders::GetSigningCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_signing_certificate::builders::GetSigningCertificateOutputBuilder {
         crate::operation::get_signing_certificate::builders::GetSigningCertificateOutputBuilder::default()
     }
 }
@@ -44,23 +42,24 @@ impl GetSigningCertificateOutputBuilder {
     }
     /// <p>The signing certificate.</p>
     pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput).
     pub fn build(self) -> crate::operation::get_signing_certificate::GetSigningCertificateOutput {
         crate::operation::get_signing_certificate::GetSigningCertificateOutput {
-            certificate: self.certificate,
+            certificate: self.certificate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

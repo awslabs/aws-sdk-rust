@@ -3,29 +3,26 @@
 /// <p>Contains the output of DescribeReservedInstancesListings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedInstancesListingsOutput {
+pub struct DescribeReservedInstancesListingsOutput  {
     /// <p>Information about the Reserved Instance listing.</p>
     #[doc(hidden)]
-    pub reserved_instances_listings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
+    pub reserved_instances_listings: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesListingsOutput {
     /// <p>Information about the Reserved Instance listing.</p>
-    pub fn reserved_instances_listings(
-        &self,
-    ) -> std::option::Option<&[crate::types::ReservedInstancesListing]> {
+    pub fn reserved_instances_listings(&self) -> std::option::Option<& [crate::types::ReservedInstancesListing]> {
         self.reserved_instances_listings.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeReservedInstancesListingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeReservedInstancesListingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesListingsOutput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsOutputBuilder {
         crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsOutputBuilder::default()
     }
 }
@@ -34,8 +31,7 @@ impl DescribeReservedInstancesListingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReservedInstancesListingsOutputBuilder {
-    pub(crate) reserved_instances_listings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
+    pub(crate) reserved_instances_listings: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesListingsOutputBuilder {
@@ -44,34 +40,27 @@ impl DescribeReservedInstancesListingsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_listings`](Self::set_reserved_instances_listings).
     ///
     /// <p>Information about the Reserved Instance listing.</p>
-    pub fn reserved_instances_listings(
-        mut self,
-        input: crate::types::ReservedInstancesListing,
-    ) -> Self {
+    pub fn reserved_instances_listings(mut self, input: crate::types::ReservedInstancesListing) -> Self {
         let mut v = self.reserved_instances_listings.unwrap_or_default();
-        v.push(input);
-        self.reserved_instances_listings = Some(v);
-        self
+                        v.push(input);
+                        self.reserved_instances_listings = Some(v);
+                        self
     }
     /// <p>Information about the Reserved Instance listing.</p>
-    pub fn set_reserved_instances_listings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
-    ) -> Self {
-        self.reserved_instances_listings = input;
-        self
+    pub fn set_reserved_instances_listings(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>) -> Self {
+        self.reserved_instances_listings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesListingsOutput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput {
         crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput {
             reserved_instances_listings: self.reserved_instances_listings
             ,
@@ -79,3 +68,4 @@ impl DescribeReservedInstancesListingsOutputBuilder {
         }
     }
 }
+

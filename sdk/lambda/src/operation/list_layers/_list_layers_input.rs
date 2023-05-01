@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLayersInput {
+pub struct ListLayersInput  {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     #[doc(hidden)]
     pub compatible_runtime: std::option::Option<crate::types::Runtime>,
@@ -18,11 +18,11 @@ pub struct ListLayersInput {
 }
 impl ListLayersInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-    pub fn compatible_runtime(&self) -> std::option::Option<&crate::types::Runtime> {
+    pub fn compatible_runtime(&self) -> std::option::Option<& crate::types::Runtime> {
         self.compatible_runtime.as_ref()
     }
     /// <p>A pagination token returned by a previous call.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of layers to return.</p>
@@ -30,7 +30,7 @@ impl ListLayersInput {
         self.max_items
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn compatible_architecture(&self) -> std::option::Option<&crate::types::Architecture> {
+    pub fn compatible_architecture(&self) -> std::option::Option<& crate::types::Architecture> {
         self.compatible_architecture.as_ref()
     }
 }
@@ -57,12 +57,8 @@ impl ListLayersInputBuilder {
         self
     }
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-    pub fn set_compatible_runtime(
-        mut self,
-        input: std::option::Option<crate::types::Runtime>,
-    ) -> Self {
-        self.compatible_runtime = input;
-        self
+    pub fn set_compatible_runtime(mut self, input: std::option::Option<crate::types::Runtime>) -> Self {
+        self.compatible_runtime = input; self
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl ListLayersInputBuilder {
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The maximum number of layers to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -81,8 +76,7 @@ impl ListLayersInputBuilder {
     }
     /// <p>The maximum number of layers to return.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn compatible_architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -90,25 +84,23 @@ impl ListLayersInputBuilder {
         self
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn set_compatible_architecture(
-        mut self,
-        input: std::option::Option<crate::types::Architecture>,
-    ) -> Self {
-        self.compatible_architecture = input;
-        self
+    pub fn set_compatible_architecture(mut self, input: std::option::Option<crate::types::Architecture>) -> Self {
+        self.compatible_architecture = input; self
     }
     /// Consumes the builder and constructs a [`ListLayersInput`](crate::operation::list_layers::ListLayersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_layers::ListLayersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_layers::ListLayersInput {
-            compatible_runtime: self.compatible_runtime,
-            marker: self.marker,
-            max_items: self.max_items,
-            compatible_architecture: self.compatible_architecture,
-        })
+    pub fn build(self) -> Result<crate::operation::list_layers::ListLayersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_layers::ListLayersInput {
+                compatible_runtime: self.compatible_runtime
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                compatible_architecture: self.compatible_architecture
+                ,
+            }
+        )
     }
 }
+

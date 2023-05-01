@@ -4,67 +4,49 @@ pub use crate::operation::update_program::_update_program_output::UpdateProgramO
 pub use crate::operation::update_program::_update_program_input::UpdateProgramInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateProgram`.
-///
+/// 
 /// <p>Updates a program within a channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProgramFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_program::builders::UpdateProgramInputBuilder,
-}
-impl UpdateProgramFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_program::builders::UpdateProgramInputBuilder
+            }
+impl UpdateProgramFluentBuilder  {
     /// Creates a new `UpdateProgram`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_program::UpdateProgram,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_program::UpdateProgramError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_program::UpdateProgramOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_program::UpdateProgramError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_program::UpdateProgram, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_program::UpdateProgramError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_program::UpdateProgramOutput, aws_smithy_http::result::SdkError<crate::operation::update_program::UpdateProgramError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `AdBreaks`.
     ///
     /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
@@ -75,10 +57,7 @@ impl UpdateProgramFluentBuilder {
         self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
+    pub fn set_ad_breaks(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>) -> Self {
         self.inner = self.inner.set_ad_breaks(input);
         self
     }
@@ -103,19 +82,14 @@ impl UpdateProgramFluentBuilder {
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(
-        mut self,
-        input: crate::types::UpdateProgramScheduleConfiguration,
-    ) -> Self {
+    pub fn schedule_configuration(mut self, input: crate::types::UpdateProgramScheduleConfiguration) -> Self {
         self.inner = self.inner.schedule_configuration(input);
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::types::UpdateProgramScheduleConfiguration>) -> Self {
         self.inner = self.inner.set_schedule_configuration(input);
         self
     }
 }
+

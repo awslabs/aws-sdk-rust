@@ -3,7 +3,7 @@
 /// <p>Provides a subset of information about an allow list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllowListSummary {
+pub struct AllowListSummary  {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct AllowListSummary {
 }
 impl AllowListSummary {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The custom description of the allow list.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the allow list.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The custom name of the allow list.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl AllowListSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,12 +83,8 @@ impl AllowListSummaryBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The custom description of the allow list.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl AllowListSummaryBuilder {
     }
     /// <p>The custom description of the allow list.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The unique identifier for the allow list.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +102,7 @@ impl AllowListSummaryBuilder {
     }
     /// <p>The unique identifier for the allow list.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The custom name of the allow list.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +111,7 @@ impl AllowListSummaryBuilder {
     }
     /// <p>The custom name of the allow list.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,22 +119,25 @@ impl AllowListSummaryBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// Consumes the builder and constructs a [`AllowListSummary`](crate::types::AllowListSummary).
     pub fn build(self) -> crate::types::AllowListSummary {
         crate::types::AllowListSummary {
-            arn: self.arn,
-            created_at: self.created_at,
-            description: self.description,
-            id: self.id,
-            name: self.name,
-            updated_at: self.updated_at,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

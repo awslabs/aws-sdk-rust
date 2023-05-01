@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExternalModelInput {
+pub struct DeleteExternalModelInput  {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
     #[doc(hidden)]
     pub model_endpoint: std::option::Option<std::string::String>,
 }
 impl DeleteExternalModelInput {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
-    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+    pub fn model_endpoint(&self) -> std::option::Option<& str> {
         self.model_endpoint.as_deref()
     }
 }
 impl DeleteExternalModelInput {
     /// Creates a new builder-style object to manufacture [`DeleteExternalModelInput`](crate::operation::delete_external_model::DeleteExternalModelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder {
-        crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder {
+        crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl DeleteExternalModelInputBuilder {
     }
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
     pub fn set_model_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_endpoint = input;
-        self
+        self.model_endpoint = input; self
     }
     /// Consumes the builder and constructs a [`DeleteExternalModelInput`](crate::operation::delete_external_model::DeleteExternalModelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_external_model::DeleteExternalModelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_external_model::DeleteExternalModelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_external_model::DeleteExternalModelInput {
-                model_endpoint: self.model_endpoint,
-            },
+                model_endpoint: self.model_endpoint
+                ,
+            }
         )
     }
 }
+

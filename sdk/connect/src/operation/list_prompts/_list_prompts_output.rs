@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPromptsOutput {
+pub struct ListPromptsOutput  {
     /// <p>Information about the prompts.</p>
     #[doc(hidden)]
     pub prompt_summary_list: std::option::Option<std::vec::Vec<crate::types::PromptSummary>>,
@@ -13,19 +13,19 @@ pub struct ListPromptsOutput {
 }
 impl ListPromptsOutput {
     /// <p>Information about the prompts.</p>
-    pub fn prompt_summary_list(&self) -> std::option::Option<&[crate::types::PromptSummary]> {
+    pub fn prompt_summary_list(&self) -> std::option::Option<& [crate::types::PromptSummary]> {
         self.prompt_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPromptsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPromptsOutput {
     /// Creates a new builder-style object to manufacture [`ListPromptsOutput`](crate::operation::list_prompts::ListPromptsOutput).
     pub fn builder() -> crate::operation::list_prompts::builders::ListPromptsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListPromptsOutputBuilder {
     /// <p>Information about the prompts.</p>
     pub fn prompt_summary_list(mut self, input: crate::types::PromptSummary) -> Self {
         let mut v = self.prompt_summary_list.unwrap_or_default();
-        v.push(input);
-        self.prompt_summary_list = Some(v);
-        self
+                        v.push(input);
+                        self.prompt_summary_list = Some(v);
+                        self
     }
     /// <p>Information about the prompts.</p>
-    pub fn set_prompt_summary_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PromptSummary>>,
-    ) -> Self {
-        self.prompt_summary_list = input;
-        self
+    pub fn set_prompt_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::PromptSummary>>) -> Self {
+        self.prompt_summary_list = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListPromptsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPromptsOutput`](crate::operation::list_prompts::ListPromptsOutput).
     pub fn build(self) -> crate::operation::list_prompts::ListPromptsOutput {
         crate::operation::list_prompts::ListPromptsOutput {
-            prompt_summary_list: self.prompt_summary_list,
-            next_token: self.next_token,
+            prompt_summary_list: self.prompt_summary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

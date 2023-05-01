@@ -3,20 +3,20 @@
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBandwidthRateLimitInput {
+pub struct DescribeBandwidthRateLimitInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 impl DescribeBandwidthRateLimitInput {
     /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitInput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput).
-    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder{
+    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder {
         crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl DescribeBandwidthRateLimitInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeBandwidthRateLimitInput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput {
-                gateway_arn: self.gateway_arn,
-            },
+                gateway_arn: self.gateway_arn
+                ,
+            }
         )
     }
 }
+

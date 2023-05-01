@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedNodesOutput {
+pub struct DescribeReservedNodesOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct DescribeReservedNodesOutput {
 }
 impl DescribeReservedNodesOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
-    pub fn reserved_nodes(&self) -> std::option::Option<&[crate::types::ReservedNode]> {
+    pub fn reserved_nodes(&self) -> std::option::Option<& [crate::types::ReservedNode]> {
         self.reserved_nodes.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeReservedNodesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeReservedNodesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOutput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesOutputBuilder {
         crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl DescribeReservedNodesOutputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `reserved_nodes`.
     ///
@@ -61,33 +58,32 @@ impl DescribeReservedNodesOutputBuilder {
     /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
     pub fn reserved_nodes(mut self, input: crate::types::ReservedNode) -> Self {
         let mut v = self.reserved_nodes.unwrap_or_default();
-        v.push(input);
-        self.reserved_nodes = Some(v);
-        self
+                        v.push(input);
+                        self.reserved_nodes = Some(v);
+                        self
     }
     /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
-    pub fn set_reserved_nodes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedNode>>,
-    ) -> Self {
-        self.reserved_nodes = input;
-        self
+    pub fn set_reserved_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReservedNode>>) -> Self {
+        self.reserved_nodes = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeReservedNodesOutput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput).
     pub fn build(self) -> crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput {
         crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput {
-            next_token: self.next_token,
-            reserved_nodes: self.reserved_nodes,
+            next_token: self.next_token
+            ,
+            reserved_nodes: self.reserved_nodes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobScopingBlock {
+pub struct JobScopingBlock  {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     #[doc(hidden)]
     pub and: std::option::Option<std::vec::Vec<crate::types::JobScopeTerm>>,
 }
 impl JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn and(&self) -> std::option::Option<&[crate::types::JobScopeTerm]> {
+    pub fn and(&self) -> std::option::Option<& [crate::types::JobScopeTerm]> {
         self.and.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl JobScopingBlockBuilder {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     pub fn and(mut self, input: crate::types::JobScopeTerm) -> Self {
         let mut v = self.and.unwrap_or_default();
-        v.push(input);
-        self.and = Some(v);
-        self
+                        v.push(input);
+                        self.and = Some(v);
+                        self
     }
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn set_and(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobScopeTerm>>,
-    ) -> Self {
-        self.and = input;
-        self
+    pub fn set_and(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobScopeTerm>>) -> Self {
+        self.and = input; self
     }
     /// Consumes the builder and constructs a [`JobScopingBlock`](crate::types::JobScopingBlock).
     pub fn build(self) -> crate::types::JobScopingBlock {
-        crate::types::JobScopingBlock { and: self.and }
+        crate::types::JobScopingBlock {
+            and: self.and
+            ,
+        }
     }
 }
+

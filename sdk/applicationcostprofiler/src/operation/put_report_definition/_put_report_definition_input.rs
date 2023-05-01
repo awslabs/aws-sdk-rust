@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutReportDefinitionInput {
+pub struct PutReportDefinitionInput  {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -21,32 +21,30 @@ pub struct PutReportDefinitionInput {
 }
 impl PutReportDefinitionInput {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>Required. Description of the report.</p>
-    pub fn report_description(&self) -> std::option::Option<&str> {
+    pub fn report_description(&self) -> std::option::Option<& str> {
         self.report_description.as_deref()
     }
     /// <p>Required. The cadence to generate the report.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::types::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<& crate::types::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Required. The format to use for the generated report.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    pub fn destination_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn destination_s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
         self.destination_s3_location.as_ref()
     }
 }
 impl PutReportDefinitionInput {
     /// Creates a new builder-style object to manufacture [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
-        crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
+        crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder::default()
     }
 }
 
@@ -68,8 +66,7 @@ impl PutReportDefinitionInputBuilder {
     }
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>Required. Description of the report.</p>
     pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +74,8 @@ impl PutReportDefinitionInputBuilder {
         self
     }
     /// <p>Required. Description of the report.</p>
-    pub fn set_report_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.report_description = input;
-        self
+    pub fn set_report_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.report_description = input; self
     }
     /// <p>Required. The cadence to generate the report.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -90,12 +83,8 @@ impl PutReportDefinitionInputBuilder {
         self
     }
     /// <p>Required. The cadence to generate the report.</p>
-    pub fn set_report_frequency(
-        mut self,
-        input: std::option::Option<crate::types::ReportFrequency>,
-    ) -> Self {
-        self.report_frequency = input;
-        self
+    pub fn set_report_frequency(mut self, input: std::option::Option<crate::types::ReportFrequency>) -> Self {
+        self.report_frequency = input; self
     }
     /// <p>Required. The format to use for the generated report.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
@@ -104,8 +93,7 @@ impl PutReportDefinitionInputBuilder {
     }
     /// <p>Required. The format to use for the generated report.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -113,28 +101,25 @@ impl PutReportDefinitionInputBuilder {
         self
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    pub fn set_destination_s3_location(
-        mut self,
-        input: std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.destination_s3_location = input;
-        self
+    pub fn set_destination_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+        self.destination_s3_location = input; self
     }
     /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_report_definition::PutReportDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_report_definition::PutReportDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_report_definition::PutReportDefinitionInput {
-                report_id: self.report_id,
-                report_description: self.report_description,
-                report_frequency: self.report_frequency,
-                format: self.format,
-                destination_s3_location: self.destination_s3_location,
-            },
+                report_id: self.report_id
+                ,
+                report_description: self.report_description
+                ,
+                report_frequency: self.report_frequency
+                ,
+                format: self.format
+                ,
+                destination_s3_location: self.destination_s3_location
+                ,
+            }
         )
     }
 }
+

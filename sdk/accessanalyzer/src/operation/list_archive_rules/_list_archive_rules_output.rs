@@ -3,7 +3,7 @@
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArchiveRulesOutput {
+pub struct ListArchiveRulesOutput  {
     /// <p>A list of archive rules created for the specified analyzer.</p>
     #[doc(hidden)]
     pub archive_rules: std::option::Option<std::vec::Vec<crate::types::ArchiveRuleSummary>>,
@@ -14,23 +14,22 @@ pub struct ListArchiveRulesOutput {
 }
 impl ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn archive_rules(&self) -> std::option::Option<&[crate::types::ArchiveRuleSummary]> {
+    pub fn archive_rules(&self) -> std::option::Option<& [crate::types::ArchiveRuleSummary]> {
         self.archive_rules.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListArchiveRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListArchiveRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
-    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder {
         crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListArchiveRulesOutputBuilder {
     /// <p>A list of archive rules created for the specified analyzer.</p>
     pub fn archive_rules(mut self, input: crate::types::ArchiveRuleSummary) -> Self {
         let mut v = self.archive_rules.unwrap_or_default();
-        v.push(input);
-        self.archive_rules = Some(v);
-        self
+                        v.push(input);
+                        self.archive_rules = Some(v);
+                        self
     }
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn set_archive_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ArchiveRuleSummary>>,
-    ) -> Self {
-        self.archive_rules = input;
-        self
+    pub fn set_archive_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ArchiveRuleSummary>>) -> Self {
+        self.archive_rules = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListArchiveRulesOutputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
     pub fn build(self) -> crate::operation::list_archive_rules::ListArchiveRulesOutput {
         crate::operation::list_archive_rules::ListArchiveRulesOutput {
-            archive_rules: self.archive_rules,
-            next_token: self.next_token,
+            archive_rules: self.archive_rules
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

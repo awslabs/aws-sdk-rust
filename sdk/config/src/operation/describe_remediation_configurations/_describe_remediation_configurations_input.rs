@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRemediationConfigurationsInput {
+pub struct DescribeRemediationConfigurationsInput  {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeRemediationConfigurationsInput {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn config_rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.config_rule_names.as_deref()
     }
 }
 impl DescribeRemediationConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRemediationConfigurationsInput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder {
         crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeRemediationConfigurationsInputBuilder {
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
     pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.config_rule_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.config_rule_names = Some(v);
+                        self
     }
     /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.config_rule_names = input;
-        self
+    pub fn set_config_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.config_rule_names = input; self
     }
     /// Consumes the builder and constructs a [`DescribeRemediationConfigurationsInput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput {
                 config_rule_names: self.config_rule_names
@@ -56,3 +52,4 @@ impl DescribeRemediationConfigurationsInputBuilder {
         )
     }
 }
+

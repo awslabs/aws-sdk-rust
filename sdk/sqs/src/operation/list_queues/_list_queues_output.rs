@@ -3,7 +3,7 @@
 /// <p>A list of your queues.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuesOutput {
+pub struct ListQueuesOutput  {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct ListQueuesOutput {
 }
 impl ListQueuesOutput {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
-    pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queue_urls(&self) -> std::option::Option<& [std::string::String]> {
         self.queue_urls.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListQueuesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
     pub fn builder() -> crate::operation::list_queues::builders::ListQueuesOutputBuilder {
@@ -50,8 +50,7 @@ impl ListQueuesOutputBuilder {
     }
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `queue_urls`.
     ///
@@ -60,33 +59,32 @@ impl ListQueuesOutputBuilder {
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
     pub fn queue_urls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.queue_urls.unwrap_or_default();
-        v.push(input.into());
-        self.queue_urls = Some(v);
-        self
+                        v.push(input.into());
+                        self.queue_urls = Some(v);
+                        self
     }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
-    pub fn set_queue_urls(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.queue_urls = input;
-        self
+    pub fn set_queue_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.queue_urls = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
     pub fn build(self) -> crate::operation::list_queues::ListQueuesOutput {
         crate::operation::list_queues::ListQueuesOutput {
-            next_token: self.next_token,
-            queue_urls: self.queue_urls,
+            next_token: self.next_token
+            ,
+            queue_urls: self.queue_urls
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -12,3 +12,4 @@ pub mod register_usage;
 
 /// Types for the `ResolveCustomer` operation.
 pub mod resolve_customer;
+

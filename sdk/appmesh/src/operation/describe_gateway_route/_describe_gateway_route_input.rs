@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayRouteInput {
+pub struct DescribeGatewayRouteInput  {
     /// <p>The name of the gateway route to describe.</p>
     #[doc(hidden)]
     pub gateway_route_name: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct DescribeGatewayRouteInput {
 }
 impl DescribeGatewayRouteInput {
     /// <p>The name of the gateway route to describe.</p>
-    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_route_name(&self) -> std::option::Option<& str> {
         self.gateway_route_name.as_deref()
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
 }
 impl DescribeGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteInput`](crate::operation::describe_gateway_route::DescribeGatewayRouteInput).
-    pub fn builder(
-    ) -> crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder {
+    pub fn builder() -> crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder {
         crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder::default()
     }
 }
@@ -58,12 +57,8 @@ impl DescribeGatewayRouteInputBuilder {
         self
     }
     /// <p>The name of the gateway route to describe.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.gateway_route_name = input;
-        self
+    pub fn set_gateway_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.gateway_route_name = input; self
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
     pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +67,7 @@ impl DescribeGatewayRouteInputBuilder {
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
     pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,12 +75,8 @@ impl DescribeGatewayRouteInputBuilder {
         self
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_name = input;
-        self
+    pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_gateway_name = input; self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,23 +85,22 @@ impl DescribeGatewayRouteInputBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_owner = input;
-        self
+        self.mesh_owner = input; self
     }
     /// Consumes the builder and constructs a [`DescribeGatewayRouteInput`](crate::operation::describe_gateway_route::DescribeGatewayRouteInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_gateway_route::DescribeGatewayRouteInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_gateway_route::DescribeGatewayRouteInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_gateway_route::DescribeGatewayRouteInput {
-                gateway_route_name: self.gateway_route_name,
-                mesh_name: self.mesh_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                mesh_owner: self.mesh_owner,
-            },
+                gateway_route_name: self.gateway_route_name
+                ,
+                mesh_name: self.mesh_name
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+            }
         )
     }
 }
+

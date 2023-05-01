@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallDomainListInput {
+pub struct GetFirewallDomainListInput  {
     /// <p>The ID of the domain list. </p>
     #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallDomainListInput {
     /// <p>The ID of the domain list. </p>
-    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<& str> {
         self.firewall_domain_list_id.as_deref()
     }
 }
 impl GetFirewallDomainListInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListInputBuilder {
         crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl GetFirewallDomainListInputBuilder {
         self
     }
     /// <p>The ID of the domain list. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.firewall_domain_list_id = input;
-        self
+    pub fn set_firewall_domain_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.firewall_domain_list_id = input; self
     }
     /// Consumes the builder and constructs a [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_firewall_domain_list::GetFirewallDomainListInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_firewall_domain_list::GetFirewallDomainListInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_firewall_domain_list::GetFirewallDomainListInput {
-                firewall_domain_list_id: self.firewall_domain_list_id,
-            },
+                firewall_domain_list_id: self.firewall_domain_list_id
+                ,
+            }
         )
     }
 }
+

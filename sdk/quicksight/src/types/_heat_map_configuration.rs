@@ -3,7 +3,7 @@
 /// <p>The configuration of a heat map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HeatMapConfiguration {
+pub struct HeatMapConfiguration  {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
     pub field_wells: std::option::Option<crate::types::HeatMapFieldWells>,
@@ -31,39 +31,35 @@ pub struct HeatMapConfiguration {
 }
 impl HeatMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::HeatMapFieldWells> {
+    pub fn field_wells(&self) -> std::option::Option<& crate::types::HeatMapFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a heat map.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::HeatMapSortConfiguration> {
+    pub fn sort_configuration(&self) -> std::option::Option<& crate::types::HeatMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
-    pub fn row_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn row_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.row_label_options.as_ref()
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
-    pub fn column_label_options(
-        &self,
-    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn column_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.column_label_options.as_ref()
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
-    pub fn color_scale(&self) -> std::option::Option<&crate::types::ColorScale> {
+    pub fn color_scale(&self) -> std::option::Option<& crate::types::ColorScale> {
         self.color_scale.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
 }
@@ -94,12 +90,8 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: std::option::Option<crate::types::HeatMapFieldWells>,
-    ) -> Self {
-        self.field_wells = input;
-        self
+    pub fn set_field_wells(mut self, input: std::option::Option<crate::types::HeatMapFieldWells>) -> Self {
+        self.field_wells = input; self
     }
     /// <p>The sort configuration of a heat map.</p>
     pub fn sort_configuration(mut self, input: crate::types::HeatMapSortConfiguration) -> Self {
@@ -107,12 +99,8 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a heat map.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: std::option::Option<crate::types::HeatMapSortConfiguration>,
-    ) -> Self {
-        self.sort_configuration = input;
-        self
+    pub fn set_sort_configuration(mut self, input: std::option::Option<crate::types::HeatMapSortConfiguration>) -> Self {
+        self.sort_configuration = input; self
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub fn row_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -120,12 +108,8 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
-    pub fn set_row_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.row_label_options = input;
-        self
+    pub fn set_row_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.row_label_options = input; self
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub fn column_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -133,12 +117,8 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
-    pub fn set_column_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.column_label_options = input;
-        self
+    pub fn set_column_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.column_label_options = input; self
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
     pub fn color_scale(mut self, input: crate::types::ColorScale) -> Self {
@@ -147,8 +127,7 @@ impl HeatMapConfigurationBuilder {
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
     pub fn set_color_scale(mut self, input: std::option::Option<crate::types::ColorScale>) -> Self {
-        self.color_scale = input;
-        self
+        self.color_scale = input; self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
@@ -157,8 +136,7 @@ impl HeatMapConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
@@ -166,12 +144,8 @@ impl HeatMapConfigurationBuilder {
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
-        self.data_labels = input;
-        self
+    pub fn set_data_labels(mut self, input: std::option::Option<crate::types::DataLabelOptions>) -> Self {
+        self.data_labels = input; self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
@@ -180,20 +154,28 @@ impl HeatMapConfigurationBuilder {
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn set_tooltip(mut self, input: std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input;
-        self
+        self.tooltip = input; self
     }
     /// Consumes the builder and constructs a [`HeatMapConfiguration`](crate::types::HeatMapConfiguration).
     pub fn build(self) -> crate::types::HeatMapConfiguration {
         crate::types::HeatMapConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            row_label_options: self.row_label_options,
-            column_label_options: self.column_label_options,
-            color_scale: self.color_scale,
-            legend: self.legend,
-            data_labels: self.data_labels,
-            tooltip: self.tooltip,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            row_label_options: self.row_label_options
+            ,
+            column_label_options: self.column_label_options
+            ,
+            color_scale: self.color_scale
+            ,
+            legend: self.legend
+            ,
+            data_labels: self.data_labels
+            ,
+            tooltip: self.tooltip
+            ,
         }
     }
 }
+

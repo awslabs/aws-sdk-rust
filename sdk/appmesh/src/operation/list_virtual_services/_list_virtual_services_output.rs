@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualServicesOutput {
+pub struct ListVirtualServicesOutput  {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
     #[doc(hidden)]
     pub virtual_services: std::option::Option<std::vec::Vec<crate::types::VirtualServiceRef>>,
@@ -13,25 +13,23 @@ pub struct ListVirtualServicesOutput {
 }
 impl ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub fn virtual_services(&self) -> std::option::Option<&[crate::types::VirtualServiceRef]> {
+    pub fn virtual_services(&self) -> std::option::Option<& [crate::types::VirtualServiceRef]> {
         self.virtual_services.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVirtualServicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVirtualServicesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::operation::list_virtual_services::ListVirtualServicesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder {
-        crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder {
+        crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder::default()
     }
 }
 
@@ -39,8 +37,7 @@ impl ListVirtualServicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualServicesOutputBuilder {
-    pub(crate) virtual_services:
-        std::option::Option<std::vec::Vec<crate::types::VirtualServiceRef>>,
+    pub(crate) virtual_services: std::option::Option<std::vec::Vec<crate::types::VirtualServiceRef>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl ListVirtualServicesOutputBuilder {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
     pub fn virtual_services(mut self, input: crate::types::VirtualServiceRef) -> Self {
         let mut v = self.virtual_services.unwrap_or_default();
-        v.push(input);
-        self.virtual_services = Some(v);
-        self
+                        v.push(input);
+                        self.virtual_services = Some(v);
+                        self
     }
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub fn set_virtual_services(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VirtualServiceRef>>,
-    ) -> Self {
-        self.virtual_services = input;
-        self
+    pub fn set_virtual_services(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualServiceRef>>) -> Self {
+        self.virtual_services = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +64,26 @@ impl ListVirtualServicesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVirtualServicesOutput`](crate::operation::list_virtual_services::ListVirtualServicesOutput).
     pub fn build(self) -> crate::operation::list_virtual_services::ListVirtualServicesOutput {
         crate::operation::list_virtual_services::ListVirtualServicesOutput {
-            virtual_services: self.virtual_services,
-            next_token: self.next_token,
+            virtual_services: self.virtual_services
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

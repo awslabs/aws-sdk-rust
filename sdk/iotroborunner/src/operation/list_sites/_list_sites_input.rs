@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSitesInput {
+pub struct ListSitesInput  {
     /// Maximum number of results to retrieve in a single ListSites call.
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl ListSitesInput {
         self.max_results
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ListSitesInputBuilder {
     }
     /// Maximum number of results to retrieve in a single ListSites call.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl ListSitesInputBuilder {
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListSitesInput`](crate::operation::list_sites::ListSitesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_sites::ListSitesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_sites::ListSitesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_sites::ListSitesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_sites::ListSitesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

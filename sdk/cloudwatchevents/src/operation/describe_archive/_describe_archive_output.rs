@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeArchiveOutput {
+pub struct DescribeArchiveOutput  {
     /// <p>The ARN of the archive.</p>
     #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
@@ -40,31 +40,31 @@ pub struct DescribeArchiveOutput {
 }
 impl DescribeArchiveOutput {
     /// <p>The ARN of the archive.</p>
-    pub fn archive_arn(&self) -> std::option::Option<&str> {
+    pub fn archive_arn(&self) -> std::option::Option<& str> {
         self.archive_arn.as_deref()
     }
     /// <p>The name of the archive.</p>
-    pub fn archive_name(&self) -> std::option::Option<&str> {
+    pub fn archive_name(&self) -> std::option::Option<& str> {
         self.archive_name.as_deref()
     }
     /// <p>The ARN of the event source associated with the archive.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The description of the archive.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The event pattern used to filter events sent to the archive.</p>
-    pub fn event_pattern(&self) -> std::option::Option<&str> {
+    pub fn event_pattern(&self) -> std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The state of the archive.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ArchiveState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>The reason that the archive is in the state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The number of days to retain events for in the archive.</p>
@@ -80,15 +80,15 @@ impl DescribeArchiveOutput {
         self.event_count
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeArchiveOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeArchiveOutput {
     /// Creates a new builder-style object to manufacture [`DescribeArchiveOutput`](crate::operation::describe_archive::DescribeArchiveOutput).
     pub fn builder() -> crate::operation::describe_archive::builders::DescribeArchiveOutputBuilder {
@@ -121,8 +121,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The ARN of the archive.</p>
     pub fn set_archive_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.archive_arn = input;
-        self
+        self.archive_arn = input; self
     }
     /// <p>The name of the archive.</p>
     pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +130,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The name of the archive.</p>
     pub fn set_archive_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.archive_name = input;
-        self
+        self.archive_name = input; self
     }
     /// <p>The ARN of the event source associated with the archive.</p>
     pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +139,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The ARN of the event source associated with the archive.</p>
     pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_source_arn = input;
-        self
+        self.event_source_arn = input; self
     }
     /// <p>The description of the archive.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +148,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The description of the archive.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The event pattern used to filter events sent to the archive.</p>
     pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,8 +157,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The event pattern used to filter events sent to the archive.</p>
     pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>The state of the archive.</p>
     pub fn state(mut self, input: crate::types::ArchiveState) -> Self {
@@ -171,8 +166,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The state of the archive.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ArchiveState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The reason that the archive is in the state.</p>
     pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,8 +175,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The reason that the archive is in the state.</p>
     pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The number of days to retain events for in the archive.</p>
     pub fn retention_days(mut self, input: i32) -> Self {
@@ -191,8 +184,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The number of days to retain events for in the archive.</p>
     pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
     }
     /// <p>The size of the archive in bytes.</p>
     pub fn size_bytes(mut self, input: i64) -> Self {
@@ -201,8 +193,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The size of the archive in bytes.</p>
     pub fn set_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.size_bytes = input;
-        self
+        self.size_bytes = input; self
     }
     /// <p>The number of events in the archive.</p>
     pub fn event_count(mut self, input: i64) -> Self {
@@ -211,8 +202,7 @@ impl DescribeArchiveOutputBuilder {
     }
     /// <p>The number of events in the archive.</p>
     pub fn set_event_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.event_count = input;
-        self
+        self.event_count = input; self
     }
     /// <p>The time at which the archive was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -220,37 +210,47 @@ impl DescribeArchiveOutputBuilder {
         self
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeArchiveOutput`](crate::operation::describe_archive::DescribeArchiveOutput).
     pub fn build(self) -> crate::operation::describe_archive::DescribeArchiveOutput {
         crate::operation::describe_archive::DescribeArchiveOutput {
-            archive_arn: self.archive_arn,
-            archive_name: self.archive_name,
-            event_source_arn: self.event_source_arn,
-            description: self.description,
-            event_pattern: self.event_pattern,
-            state: self.state,
-            state_reason: self.state_reason,
-            retention_days: self.retention_days,
-            size_bytes: self.size_bytes.unwrap_or_default(),
-            event_count: self.event_count.unwrap_or_default(),
-            creation_time: self.creation_time,
+            archive_arn: self.archive_arn
+            ,
+            archive_name: self.archive_name
+            ,
+            event_source_arn: self.event_source_arn
+            ,
+            description: self.description
+            ,
+            event_pattern: self.event_pattern
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
+            retention_days: self.retention_days
+            ,
+            size_bytes: self.size_bytes
+                .unwrap_or_default()
+            ,
+            event_count: self.event_count
+                .unwrap_or_default()
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

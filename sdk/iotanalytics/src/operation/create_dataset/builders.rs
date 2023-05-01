@@ -4,67 +4,49 @@ pub use crate::operation::create_dataset::_create_dataset_output::CreateDatasetO
 pub use crate::operation::create_dataset::_create_dataset_input::CreateDatasetInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDataset`.
-///
+/// 
 /// <p>Used to create a dataset. A dataset stores data retrieved from a data store by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application). This operation creates the skeleton of a dataset. The dataset can be populated manually by calling <code>CreateDatasetContent</code> or automatically according to a trigger you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDatasetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_dataset::builders::CreateDatasetInputBuilder,
-}
-impl CreateDatasetFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_dataset::builders::CreateDatasetInputBuilder
+            }
+impl CreateDatasetFluentBuilder  {
     /// Creates a new `CreateDataset`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_dataset::CreateDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_dataset::CreateDatasetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_dataset::CreateDataset, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_dataset::CreateDatasetOutput, aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
@@ -85,10 +67,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>A list of actions that create the dataset contents.</p>
-    pub fn set_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatasetAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -102,10 +81,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
-    pub fn set_triggers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetTrigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatasetTrigger>>) -> Self {
         self.inner = self.inner.set_triggers(input);
         self
     }
@@ -114,18 +90,12 @@ impl CreateDatasetFluentBuilder {
     /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
     ///
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn content_delivery_rules(
-        mut self,
-        input: crate::types::DatasetContentDeliveryRule,
-    ) -> Self {
+    pub fn content_delivery_rules(mut self, input: crate::types::DatasetContentDeliveryRule) -> Self {
         self.inner = self.inner.content_delivery_rules(input);
         self
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn set_content_delivery_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
-    ) -> Self {
+    pub fn set_content_delivery_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatasetContentDeliveryRule>>) -> Self {
         self.inner = self.inner.set_content_delivery_rules(input);
         self
     }
@@ -135,26 +105,17 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn versioning_configuration(
-        mut self,
-        input: crate::types::VersioningConfiguration,
-    ) -> Self {
+    pub fn versioning_configuration(mut self, input: crate::types::VersioningConfiguration) -> Self {
         self.inner = self.inner.versioning_configuration(input);
         self
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn set_versioning_configuration(
-        mut self,
-        input: std::option::Option<crate::types::VersioningConfiguration>,
-    ) -> Self {
+    pub fn set_versioning_configuration(mut self, input: std::option::Option<crate::types::VersioningConfiguration>) -> Self {
         self.inner = self.inner.set_versioning_configuration(input);
         self
     }
@@ -168,10 +129,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -185,11 +143,9 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn set_late_data_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LateDataRule>>,
-    ) -> Self {
+    pub fn set_late_data_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::LateDataRule>>) -> Self {
         self.inner = self.inner.set_late_data_rules(input);
         self
     }
 }
+

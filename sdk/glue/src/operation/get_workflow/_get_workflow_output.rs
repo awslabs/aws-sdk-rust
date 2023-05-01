@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowOutput {
+pub struct GetWorkflowOutput  {
     /// <p>The resource metadata for the workflow.</p>
     #[doc(hidden)]
     pub workflow: std::option::Option<crate::types::Workflow>,
@@ -10,15 +10,15 @@ pub struct GetWorkflowOutput {
 }
 impl GetWorkflowOutput {
     /// <p>The resource metadata for the workflow.</p>
-    pub fn workflow(&self) -> std::option::Option<&crate::types::Workflow> {
+    pub fn workflow(&self) -> std::option::Option<& crate::types::Workflow> {
         self.workflow.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn builder() -> crate::operation::get_workflow::builders::GetWorkflowOutputBuilder {
@@ -41,23 +41,24 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The resource metadata for the workflow.</p>
     pub fn set_workflow(mut self, input: std::option::Option<crate::types::Workflow>) -> Self {
-        self.workflow = input;
-        self
+        self.workflow = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn build(self) -> crate::operation::get_workflow::GetWorkflowOutput {
         crate::operation::get_workflow::GetWorkflowOutput {
-            workflow: self.workflow,
+            workflow: self.workflow
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

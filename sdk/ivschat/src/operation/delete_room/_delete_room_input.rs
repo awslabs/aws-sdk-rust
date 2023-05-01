@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRoomInput {
+pub struct DeleteRoomInput  {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DeleteRoomInput {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteRoomInputBuilder {
     }
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRoomInput`](crate::operation::delete_room::DeleteRoomInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_room::DeleteRoomInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_room::DeleteRoomInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_room::DeleteRoomInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_room::DeleteRoomInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

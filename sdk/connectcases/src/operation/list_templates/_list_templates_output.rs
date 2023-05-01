@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>List of template summary objects.</p>
     #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::types::TemplateSummary>>,
@@ -13,19 +13,19 @@ pub struct ListTemplatesOutput {
 }
 impl ListTemplatesOutput {
     /// <p>List of template summary objects.</p>
-    pub fn templates(&self) -> std::option::Option<&[crate::types::TemplateSummary]> {
+    pub fn templates(&self) -> std::option::Option<& [crate::types::TemplateSummary]> {
         self.templates.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn builder() -> crate::operation::list_templates::builders::ListTemplatesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListTemplatesOutputBuilder {
     /// <p>List of template summary objects.</p>
     pub fn templates(mut self, input: crate::types::TemplateSummary) -> Self {
         let mut v = self.templates.unwrap_or_default();
-        v.push(input);
-        self.templates = Some(v);
-        self
+                        v.push(input);
+                        self.templates = Some(v);
+                        self
     }
     /// <p>List of template summary objects.</p>
-    pub fn set_templates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TemplateSummary>>,
-    ) -> Self {
-        self.templates = input;
-        self
+    pub fn set_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
+        self.templates = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListTemplatesOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn build(self) -> crate::operation::list_templates::ListTemplatesOutput {
         crate::operation::list_templates::ListTemplatesOutput {
-            templates: self.templates,
-            next_token: self.next_token,
+            templates: self.templates
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

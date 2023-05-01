@@ -3,7 +3,7 @@
 /// <p>Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpceConfiguration {
+pub struct VpceConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct VpceConfiguration {
 }
 impl VpceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
-    pub fn vpce_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn vpce_configuration_name(&self) -> std::option::Option<& str> {
         self.vpce_configuration_name.as_deref()
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn vpce_service_name(&self) -> std::option::Option<&str> {
+    pub fn vpce_service_name(&self) -> std::option::Option<& str> {
         self.vpce_service_name.as_deref()
     }
     /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
-    pub fn service_dns_name(&self) -> std::option::Option<&str> {
+    pub fn service_dns_name(&self) -> std::option::Option<& str> {
         self.service_dns_name.as_deref()
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn vpce_configuration_description(&self) -> std::option::Option<&str> {
+    pub fn vpce_configuration_description(&self) -> std::option::Option<& str> {
         self.vpce_configuration_description.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl VpceConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
     pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,12 +75,8 @@ impl VpceConfigurationBuilder {
         self
     }
     /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
-    pub fn set_vpce_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpce_configuration_name = input;
-        self
+    pub fn set_vpce_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpce_configuration_name = input; self
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub fn vpce_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,12 +84,8 @@ impl VpceConfigurationBuilder {
         self
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn set_vpce_service_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpce_service_name = input;
-        self
+    pub fn set_vpce_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpce_service_name = input; self
     }
     /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
     pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +94,7 @@ impl VpceConfigurationBuilder {
     }
     /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
     pub fn set_service_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_dns_name = input;
-        self
+        self.service_dns_name = input; self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub fn vpce_configuration_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,21 +102,23 @@ impl VpceConfigurationBuilder {
         self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpce_configuration_description = input;
-        self
+    pub fn set_vpce_configuration_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpce_configuration_description = input; self
     }
     /// Consumes the builder and constructs a [`VpceConfiguration`](crate::types::VpceConfiguration).
     pub fn build(self) -> crate::types::VpceConfiguration {
         crate::types::VpceConfiguration {
-            arn: self.arn,
-            vpce_configuration_name: self.vpce_configuration_name,
-            vpce_service_name: self.vpce_service_name,
-            service_dns_name: self.service_dns_name,
-            vpce_configuration_description: self.vpce_configuration_description,
+            arn: self.arn
+            ,
+            vpce_configuration_name: self.vpce_configuration_name
+            ,
+            vpce_service_name: self.vpce_service_name
+            ,
+            service_dns_name: self.service_dns_name
+            ,
+            vpce_configuration_description: self.vpce_configuration_description
+            ,
         }
     }
 }
+

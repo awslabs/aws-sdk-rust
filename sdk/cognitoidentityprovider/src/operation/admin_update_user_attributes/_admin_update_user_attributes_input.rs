@@ -3,67 +3,63 @@
 /// <p>Represents the request to update the user's attributes as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminUpdateUserAttributesInput {
+pub struct AdminUpdateUserAttributesInput  {
     /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user for whom you want to update user attributes.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
-    /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+    /// <p>An array of name-value pairs representing user attributes.</p> 
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> 
+    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p> 
     /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
     #[doc(hidden)]
     pub user_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
-    /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
-    /// </ul>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p> 
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note> 
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li> 
+    /// <li> <p>Validate the ClientMetadata value.</p> </li> 
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li> 
+    /// </ul> 
     /// </note>
     #[doc(hidden)]
-    pub client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AdminUpdateUserAttributesInput {
     /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name of the user for whom you want to update user attributes.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
-    /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+    /// <p>An array of name-value pairs representing user attributes.</p> 
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> 
+    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p> 
     /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
-    pub fn user_attributes(&self) -> std::option::Option<&[crate::types::AttributeType]> {
+    pub fn user_attributes(&self) -> std::option::Option<& [crate::types::AttributeType]> {
         self.user_attributes.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
-    /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
-    /// </ul>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p> 
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note> 
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li> 
+    /// <li> <p>Validate the ClientMetadata value.</p> </li> 
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn client_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for AdminUpdateUserAttributesInput {
+impl  std::fmt::Debug for AdminUpdateUserAttributesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUpdateUserAttributesInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -75,7 +71,7 @@ impl std::fmt::Debug for AdminUpdateUserAttributesInput {
 }
 impl AdminUpdateUserAttributesInput {
     /// Creates a new builder-style object to manufacture [`AdminUpdateUserAttributesInput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput).
-    pub fn builder() -> crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder{
+    pub fn builder() -> crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder {
         crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder::default()
     }
 }
@@ -87,8 +83,7 @@ pub struct AdminUpdateUserAttributesInputBuilder {
     pub(crate) user_pool_id: std::option::Option<std::string::String>,
     pub(crate) username: std::option::Option<std::string::String>,
     pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    pub(crate) client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) client_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AdminUpdateUserAttributesInputBuilder {
     /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
@@ -98,8 +93,7 @@ impl AdminUpdateUserAttributesInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user name of the user for whom you want to update user attributes.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,91 +102,75 @@ impl AdminUpdateUserAttributesInputBuilder {
     }
     /// <p>The user name of the user for whom you want to update user attributes.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Appends an item to `user_attributes`.
     ///
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
     ///
-    /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+    /// <p>An array of name-value pairs representing user attributes.</p> 
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> 
+    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p> 
     /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
-        v.push(input);
-        self.user_attributes = Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes = Some(v);
+                        self
     }
-    /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
+    /// <p>An array of name-value pairs representing user attributes.</p> 
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> 
+    /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p> 
     /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
-    pub fn set_user_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    ) -> Self {
-        self.user_attributes = input;
-        self
+    pub fn set_user_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>) -> Self {
+        self.user_attributes = input; self
     }
     /// Adds a key-value pair to `client_metadata`.
     ///
     /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
     ///
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
-    /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
-    /// </ul>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p> 
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note> 
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li> 
+    /// <li> <p>Validate the ClientMetadata value.</p> </li> 
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn client_metadata(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn client_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.client_metadata = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.client_metadata = Some(hash_map);
+                        self
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
-    /// <ul>
-    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
-    /// <li> <p>Validate the ClientMetadata value.</p> </li>
-    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
-    /// </ul>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p> 
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note> 
+    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li> 
+    /// <li> <p>Validate the ClientMetadata value.</p> </li> 
+    /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn set_client_metadata(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.client_metadata = input;
-        self
+    pub fn set_client_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.client_metadata = input; self
     }
     /// Consumes the builder and constructs a [`AdminUpdateUserAttributesInput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                user_attributes: self.user_attributes,
-                client_metadata: self.client_metadata,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                user_attributes: self.user_attributes
+                ,
+                client_metadata: self.client_metadata
+                ,
+            }
         )
     }
 }
@@ -206,3 +184,4 @@ impl std::fmt::Debug for AdminUpdateUserAttributesInputBuilder {
         formatter.finish()
     }
 }
+

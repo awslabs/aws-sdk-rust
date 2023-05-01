@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationsInput {
+pub struct DescribeApplicationsInput  {
     /// <p>The ARNs for the applications.</p>
     #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct DescribeApplicationsInput {
 }
 impl DescribeApplicationsInput {
     /// <p>The ARNs for the applications.</p>
-    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arns(&self) -> std::option::Option<& [std::string::String]> {
         self.arns.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -29,10 +29,8 @@ impl DescribeApplicationsInput {
 }
 impl DescribeApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
-        crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
+        crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder::default()
     }
 }
 
@@ -52,17 +50,13 @@ impl DescribeApplicationsInputBuilder {
     /// <p>The ARNs for the applications.</p>
     pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = Some(v);
+                        self
     }
     /// <p>The ARNs for the applications.</p>
-    pub fn set_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +65,7 @@ impl DescribeApplicationsInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,22 +74,20 @@ impl DescribeApplicationsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_applications::DescribeApplicationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_applications::DescribeApplicationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_applications::DescribeApplicationsInput {
-                arns: self.arns,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                arns: self.arns
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

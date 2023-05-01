@@ -3,14 +3,14 @@
 /// <p>A data source (an Glue table) for which you want data quality results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>An Glue table.</p>
     #[doc(hidden)]
     pub glue_table: std::option::Option<crate::types::GlueTable>,
 }
 impl DataSource {
     /// <p>An Glue table.</p>
-    pub fn glue_table(&self) -> std::option::Option<&crate::types::GlueTable> {
+    pub fn glue_table(&self) -> std::option::Option<& crate::types::GlueTable> {
         self.glue_table.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl DataSourceBuilder {
     }
     /// <p>An Glue table.</p>
     pub fn set_glue_table(mut self, input: std::option::Option<crate::types::GlueTable>) -> Self {
-        self.glue_table = input;
-        self
+        self.glue_table = input; self
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            glue_table: self.glue_table,
+            glue_table: self.glue_table
+            ,
         }
     }
 }
+

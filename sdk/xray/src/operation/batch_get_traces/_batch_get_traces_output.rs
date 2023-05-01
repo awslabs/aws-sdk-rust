@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetTracesOutput {
+pub struct BatchGetTracesOutput  {
     /// <p>Full traces for the specified requests.</p>
     #[doc(hidden)]
     pub traces: std::option::Option<std::vec::Vec<crate::types::Trace>>,
@@ -16,23 +16,23 @@ pub struct BatchGetTracesOutput {
 }
 impl BatchGetTracesOutput {
     /// <p>Full traces for the specified requests.</p>
-    pub fn traces(&self) -> std::option::Option<&[crate::types::Trace]> {
+    pub fn traces(&self) -> std::option::Option<& [crate::types::Trace]> {
         self.traces.as_deref()
     }
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn unprocessed_trace_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn unprocessed_trace_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.unprocessed_trace_ids.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetTracesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetTracesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetTracesOutput`](crate::operation::batch_get_traces::BatchGetTracesOutput).
     pub fn builder() -> crate::operation::batch_get_traces::builders::BatchGetTracesOutputBuilder {
@@ -57,17 +57,13 @@ impl BatchGetTracesOutputBuilder {
     /// <p>Full traces for the specified requests.</p>
     pub fn traces(mut self, input: crate::types::Trace) -> Self {
         let mut v = self.traces.unwrap_or_default();
-        v.push(input);
-        self.traces = Some(v);
-        self
+                        v.push(input);
+                        self.traces = Some(v);
+                        self
     }
     /// <p>Full traces for the specified requests.</p>
-    pub fn set_traces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Trace>>,
-    ) -> Self {
-        self.traces = input;
-        self
+    pub fn set_traces(mut self, input: std::option::Option<std::vec::Vec<crate::types::Trace>>) -> Self {
+        self.traces = input; self
     }
     /// Appends an item to `unprocessed_trace_ids`.
     ///
@@ -76,17 +72,13 @@ impl BatchGetTracesOutputBuilder {
     /// <p>Trace IDs of requests that haven't been processed.</p>
     pub fn unprocessed_trace_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.unprocessed_trace_ids.unwrap_or_default();
-        v.push(input.into());
-        self.unprocessed_trace_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.unprocessed_trace_ids = Some(v);
+                        self
     }
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn set_unprocessed_trace_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.unprocessed_trace_ids = input;
-        self
+    pub fn set_unprocessed_trace_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.unprocessed_trace_ids = input; self
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,25 +87,28 @@ impl BatchGetTracesOutputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetTracesOutput`](crate::operation::batch_get_traces::BatchGetTracesOutput).
     pub fn build(self) -> crate::operation::batch_get_traces::BatchGetTracesOutput {
         crate::operation::batch_get_traces::BatchGetTracesOutput {
-            traces: self.traces,
-            unprocessed_trace_ids: self.unprocessed_trace_ids,
-            next_token: self.next_token,
+            traces: self.traces
+            ,
+            unprocessed_trace_ids: self.unprocessed_trace_ids
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

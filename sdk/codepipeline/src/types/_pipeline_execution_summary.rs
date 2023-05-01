@@ -3,18 +3,18 @@
 /// <p>Summary information about a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineExecutionSummary {
+pub struct PipelineExecutionSummary  {
     /// <p>The ID of the pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::PipelineExecutionStatus>,
@@ -36,39 +36,39 @@ pub struct PipelineExecutionSummary {
 }
 impl PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::PipelineExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::PipelineExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
-    pub fn source_revisions(&self) -> std::option::Option<&[crate::types::SourceRevision]> {
+    pub fn source_revisions(&self) -> std::option::Option<& [crate::types::SourceRevision]> {
         self.source_revisions.as_deref()
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
-    pub fn trigger(&self) -> std::option::Option<&crate::types::ExecutionTrigger> {
+    pub fn trigger(&self) -> std::option::Option<& crate::types::ExecutionTrigger> {
         self.trigger.as_ref()
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
-    pub fn stop_trigger(&self) -> std::option::Option<&crate::types::StopExecutionTrigger> {
+    pub fn stop_trigger(&self) -> std::option::Option<& crate::types::StopExecutionTrigger> {
         self.stop_trigger.as_ref()
     }
 }
@@ -98,41 +98,33 @@ impl PipelineExecutionSummaryBuilder {
         self
     }
     /// <p>The ID of the pipeline execution.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.pipeline_execution_id = input;
-        self
+    pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.pipeline_execution_id = input; self
     }
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::PipelineExecutionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::PipelineExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::PipelineExecutionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,12 +132,8 @@ impl PipelineExecutionSummaryBuilder {
         self
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,12 +141,8 @@ impl PipelineExecutionSummaryBuilder {
         self
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_time = input;
-        self
+    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_update_time = input; self
     }
     /// Appends an item to `source_revisions`.
     ///
@@ -167,17 +151,13 @@ impl PipelineExecutionSummaryBuilder {
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
     pub fn source_revisions(mut self, input: crate::types::SourceRevision) -> Self {
         let mut v = self.source_revisions.unwrap_or_default();
-        v.push(input);
-        self.source_revisions = Some(v);
-        self
+                        v.push(input);
+                        self.source_revisions = Some(v);
+                        self
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
-    pub fn set_source_revisions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceRevision>>,
-    ) -> Self {
-        self.source_revisions = input;
-        self
+    pub fn set_source_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceRevision>>) -> Self {
+        self.source_revisions = input; self
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
     pub fn trigger(mut self, input: crate::types::ExecutionTrigger) -> Self {
@@ -185,12 +165,8 @@ impl PipelineExecutionSummaryBuilder {
         self
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
-    pub fn set_trigger(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionTrigger>,
-    ) -> Self {
-        self.trigger = input;
-        self
+    pub fn set_trigger(mut self, input: std::option::Option<crate::types::ExecutionTrigger>) -> Self {
+        self.trigger = input; self
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
     pub fn stop_trigger(mut self, input: crate::types::StopExecutionTrigger) -> Self {
@@ -198,23 +174,27 @@ impl PipelineExecutionSummaryBuilder {
         self
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
-    pub fn set_stop_trigger(
-        mut self,
-        input: std::option::Option<crate::types::StopExecutionTrigger>,
-    ) -> Self {
-        self.stop_trigger = input;
-        self
+    pub fn set_stop_trigger(mut self, input: std::option::Option<crate::types::StopExecutionTrigger>) -> Self {
+        self.stop_trigger = input; self
     }
     /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
     pub fn build(self) -> crate::types::PipelineExecutionSummary {
         crate::types::PipelineExecutionSummary {
-            pipeline_execution_id: self.pipeline_execution_id,
-            status: self.status,
-            start_time: self.start_time,
-            last_update_time: self.last_update_time,
-            source_revisions: self.source_revisions,
-            trigger: self.trigger,
-            stop_trigger: self.stop_trigger,
+            pipeline_execution_id: self.pipeline_execution_id
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            source_revisions: self.source_revisions
+            ,
+            trigger: self.trigger
+            ,
+            stop_trigger: self.stop_trigger
+            ,
         }
     }
 }
+

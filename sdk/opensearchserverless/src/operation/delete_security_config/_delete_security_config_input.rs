@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSecurityConfigInput {
+pub struct DeleteSecurityConfigInput  {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DeleteSecurityConfigInput {
 }
 impl DeleteSecurityConfigInput {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteSecurityConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityConfigInput`](crate::operation::delete_security_config::DeleteSecurityConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_security_config::builders::DeleteSecurityConfigInputBuilder {
+    pub fn builder() -> crate::operation::delete_security_config::builders::DeleteSecurityConfigInputBuilder {
         crate::operation::delete_security_config::builders::DeleteSecurityConfigInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteSecurityConfigInputBuilder {
     }
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DeleteSecurityConfigInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSecurityConfigInput`](crate::operation::delete_security_config::DeleteSecurityConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_security_config::DeleteSecurityConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_security_config::DeleteSecurityConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_security_config::DeleteSecurityConfigInput {
-                id: self.id,
-                client_token: self.client_token,
-            },
+                id: self.id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

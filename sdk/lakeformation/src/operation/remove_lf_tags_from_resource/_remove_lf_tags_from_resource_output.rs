@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveLfTagsFromResourceOutput {
+pub struct RemoveLfTagsFromResourceOutput  {
     /// <p>A list of failures to untag a resource.</p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::types::LfTagError>>,
@@ -10,18 +10,18 @@ pub struct RemoveLfTagsFromResourceOutput {
 }
 impl RemoveLfTagsFromResourceOutput {
     /// <p>A list of failures to untag a resource.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::LfTagError]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::types::LfTagError]> {
         self.failures.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RemoveLfTagsFromResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveLfTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput).
-    pub fn builder() -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder{
+    pub fn builder() -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder {
         crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder::default()
     }
 }
@@ -41,34 +41,30 @@ impl RemoveLfTagsFromResourceOutputBuilder {
     /// <p>A list of failures to untag a resource.</p>
     pub fn failures(mut self, input: crate::types::LfTagError) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = Some(v);
-        self
+                        v.push(input);
+                        self.failures = Some(v);
+                        self
     }
     /// <p>A list of failures to untag a resource.</p>
-    pub fn set_failures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTagError>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTagError>>) -> Self {
+        self.failures = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput {
+    pub fn build(self) -> crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput {
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput {
-            failures: self.failures,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

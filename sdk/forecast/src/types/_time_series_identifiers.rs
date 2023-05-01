@@ -3,7 +3,7 @@
 /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeSeriesIdentifiers {
+pub struct TimeSeriesIdentifiers  {
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::types::DataSource>,
@@ -16,15 +16,15 @@ pub struct TimeSeriesIdentifiers {
 }
 impl TimeSeriesIdentifiers {
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn schema(&self) -> std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
     /// <p>The format of the data, either CSV or PARQUET.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl TimeSeriesIdentifiersBuilder {
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
@@ -61,8 +60,7 @@ impl TimeSeriesIdentifiersBuilder {
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn set_schema(mut self, input: std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The format of the data, either CSV or PARQUET.</p>
     pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl TimeSeriesIdentifiersBuilder {
     }
     /// <p>The format of the data, either CSV or PARQUET.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// Consumes the builder and constructs a [`TimeSeriesIdentifiers`](crate::types::TimeSeriesIdentifiers).
     pub fn build(self) -> crate::types::TimeSeriesIdentifiers {
         crate::types::TimeSeriesIdentifiers {
-            data_source: self.data_source,
-            schema: self.schema,
-            format: self.format,
+            data_source: self.data_source
+            ,
+            schema: self.schema
+            ,
+            format: self.format
+            ,
         }
     }
 }
+

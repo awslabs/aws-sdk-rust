@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetObjectAttributesInput {
+pub struct GetObjectAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -21,32 +21,30 @@ pub struct GetObjectAttributesInput {
 }
 impl GetObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
-    pub fn consistency_level(&self) -> std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
 impl GetObjectAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder {
-        crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder {
+        crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder::default()
     }
 }
 
@@ -68,8 +66,7 @@ impl GetObjectAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -77,12 +74,8 @@ impl GetObjectAttributesInputBuilder {
         self
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -90,12 +83,8 @@ impl GetObjectAttributesInputBuilder {
         self
     }
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
-        self.consistency_level = input;
-        self
+    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+        self.consistency_level = input; self
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
@@ -103,12 +92,8 @@ impl GetObjectAttributesInputBuilder {
         self
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
-        self.schema_facet = input;
-        self
+    pub fn set_schema_facet(mut self, input: std::option::Option<crate::types::SchemaFacet>) -> Self {
+        self.schema_facet = input; self
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -117,33 +102,30 @@ impl GetObjectAttributesInputBuilder {
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = Some(v);
+                        self
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_object_attributes::GetObjectAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_object_attributes::GetObjectAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_object_attributes::GetObjectAttributesInput {
-                directory_arn: self.directory_arn,
-                object_reference: self.object_reference,
-                consistency_level: self.consistency_level,
-                schema_facet: self.schema_facet,
-                attribute_names: self.attribute_names,
-            },
+                directory_arn: self.directory_arn
+                ,
+                object_reference: self.object_reference
+                ,
+                consistency_level: self.consistency_level
+                ,
+                schema_facet: self.schema_facet
+                ,
+                attribute_names: self.attribute_names
+                ,
+            }
         )
     }
 }
+

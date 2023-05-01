@@ -3,7 +3,7 @@
 /// <p>Describes volume attachment details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachVolumeOutput {
+pub struct DetachVolumeOutput  {
     /// <p>The time stamp when the attachment initiated.</p>
     #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -26,23 +26,23 @@ pub struct DetachVolumeOutput {
 }
 impl DetachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The device name.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The attachment state of the volume.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::VolumeAttachmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::VolumeAttachmentState> {
         self.state.as_ref()
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
@@ -51,10 +51,10 @@ impl DetachVolumeOutput {
     }
 }
 impl aws_http::request_id::RequestId for DetachVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetachVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput).
     pub fn builder() -> crate::operation::detach_volume::builders::DetachVolumeOutputBuilder {
@@ -81,12 +81,8 @@ impl DetachVolumeOutputBuilder {
         self
     }
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn set_attach_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.attach_time = input;
-        self
+    pub fn set_attach_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.attach_time = input; self
     }
     /// <p>The device name.</p>
     pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +91,7 @@ impl DetachVolumeOutputBuilder {
     }
     /// <p>The device name.</p>
     pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +100,7 @@ impl DetachVolumeOutputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The attachment state of the volume.</p>
     pub fn state(mut self, input: crate::types::VolumeAttachmentState) -> Self {
@@ -114,12 +108,8 @@ impl DetachVolumeOutputBuilder {
         self
     }
     /// <p>The attachment state of the volume.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::VolumeAttachmentState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::VolumeAttachmentState>) -> Self {
+        self.state = input; self
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,8 +118,7 @@ impl DetachVolumeOutputBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -138,28 +127,34 @@ impl DetachVolumeOutputBuilder {
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput).
     pub fn build(self) -> crate::operation::detach_volume::DetachVolumeOutput {
         crate::operation::detach_volume::DetachVolumeOutput {
-            attach_time: self.attach_time,
-            device: self.device,
-            instance_id: self.instance_id,
-            state: self.state,
-            volume_id: self.volume_id,
-            delete_on_termination: self.delete_on_termination,
+            attach_time: self.attach_time
+            ,
+            device: self.device
+            ,
+            instance_id: self.instance_id
+            ,
+            state: self.state
+            ,
+            volume_id: self.volume_id
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

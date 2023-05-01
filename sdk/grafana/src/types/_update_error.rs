@@ -3,7 +3,7 @@
 /// <p>A structure containing information about one error encountered while performing an <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateError {
+pub struct UpdateError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl UpdateError {
         self.code
     }
     /// <p>The message for this error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Specifies which permission update caused the error.</p>
-    pub fn caused_by(&self) -> std::option::Option<&crate::types::UpdateInstruction> {
+    pub fn caused_by(&self) -> std::option::Option<& crate::types::UpdateInstruction> {
         self.caused_by.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The message for this error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>The message for this error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Specifies which permission update caused the error.</p>
     pub fn caused_by(mut self, input: crate::types::UpdateInstruction) -> Self {
@@ -70,19 +68,19 @@ impl UpdateErrorBuilder {
         self
     }
     /// <p>Specifies which permission update caused the error.</p>
-    pub fn set_caused_by(
-        mut self,
-        input: std::option::Option<crate::types::UpdateInstruction>,
-    ) -> Self {
-        self.caused_by = input;
-        self
+    pub fn set_caused_by(mut self, input: std::option::Option<crate::types::UpdateInstruction>) -> Self {
+        self.caused_by = input; self
     }
     /// Consumes the builder and constructs a [`UpdateError`](crate::types::UpdateError).
     pub fn build(self) -> crate::types::UpdateError {
         crate::types::UpdateError {
-            code: self.code,
-            message: self.message,
-            caused_by: self.caused_by,
+            code: self.code
+            ,
+            message: self.message
+            ,
+            caused_by: self.caused_by
+            ,
         }
     }
 }
+

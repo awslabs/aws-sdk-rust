@@ -3,7 +3,7 @@
 /// <p>A calculation made by contrasting a measure and a dimension from your source data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metric {
+pub struct Metric  {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Metric {
 }
 impl Metric {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> std::option::Option<& crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The namespace for the metric.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl MetricBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The function with which the metric is calculated.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
@@ -60,12 +59,8 @@ impl MetricBuilder {
         self
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn set_aggregation_function(
-        mut self,
-        input: std::option::Option<crate::types::AggregationFunction>,
-    ) -> Self {
-        self.aggregation_function = input;
-        self
+    pub fn set_aggregation_function(mut self, input: std::option::Option<crate::types::AggregationFunction>) -> Self {
+        self.aggregation_function = input; self
     }
     /// <p>The namespace for the metric.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl MetricBuilder {
     }
     /// <p>The namespace for the metric.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     pub fn build(self) -> crate::types::Metric {
         crate::types::Metric {
-            metric_name: self.metric_name,
-            aggregation_function: self.aggregation_function,
-            namespace: self.namespace,
+            metric_name: self.metric_name
+            ,
+            aggregation_function: self.aggregation_function
+            ,
+            namespace: self.namespace
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The estimated size of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EstimatedResourceSize {
+pub struct EstimatedResourceSize  {
     /// <p>The estimated size of the resource, in bytes.</p>
     #[doc(hidden)]
     pub estimated_size_in_bytes: std::option::Option<f64>,
@@ -17,7 +17,7 @@ impl EstimatedResourceSize {
         self.estimated_size_in_bytes
     }
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    pub fn estimated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn estimated_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.estimated_on.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl EstimatedResourceSizeBuilder {
     }
     /// <p>The estimated size of the resource, in bytes.</p>
     pub fn set_estimated_size_in_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.estimated_size_in_bytes = input;
-        self
+        self.estimated_size_in_bytes = input; self
     }
     /// <p>The time when the estimate of the size of the resource was made.</p>
     pub fn estimated_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -52,18 +51,17 @@ impl EstimatedResourceSizeBuilder {
         self
     }
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    pub fn set_estimated_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.estimated_on = input;
-        self
+    pub fn set_estimated_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.estimated_on = input; self
     }
     /// Consumes the builder and constructs a [`EstimatedResourceSize`](crate::types::EstimatedResourceSize).
     pub fn build(self) -> crate::types::EstimatedResourceSize {
         crate::types::EstimatedResourceSize {
-            estimated_size_in_bytes: self.estimated_size_in_bytes,
-            estimated_on: self.estimated_on,
+            estimated_size_in_bytes: self.estimated_size_in_bytes
+            ,
+            estimated_on: self.estimated_on
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the status of a read replica.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRdsDbStatusInfo {
+pub struct AwsRdsDbStatusInfo  {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
     #[doc(hidden)]
     pub status_type: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct AwsRdsDbStatusInfo {
 }
 impl AwsRdsDbStatusInfo {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
-    pub fn status_type(&self) -> std::option::Option<&str> {
+    pub fn status_type(&self) -> std::option::Option<& str> {
         self.status_type.as_deref()
     }
     /// <p>Whether the read replica instance is operating normally.</p>
@@ -27,11 +27,11 @@ impl AwsRdsDbStatusInfo {
         self.normal
     }
     /// <p>The status of the read replica instance.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl AwsRdsDbStatusInfoBuilder {
     }
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
     pub fn set_status_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_type = input;
-        self
+        self.status_type = input; self
     }
     /// <p>Whether the read replica instance is operating normally.</p>
     pub fn normal(mut self, input: bool) -> Self {
@@ -69,8 +68,7 @@ impl AwsRdsDbStatusInfoBuilder {
     }
     /// <p>Whether the read replica instance is operating normally.</p>
     pub fn set_normal(mut self, input: std::option::Option<bool>) -> Self {
-        self.normal = input;
-        self
+        self.normal = input; self
     }
     /// <p>The status of the read replica instance.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl AwsRdsDbStatusInfoBuilder {
     }
     /// <p>The status of the read replica instance.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,21 @@ impl AwsRdsDbStatusInfoBuilder {
     }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`AwsRdsDbStatusInfo`](crate::types::AwsRdsDbStatusInfo).
     pub fn build(self) -> crate::types::AwsRdsDbStatusInfo {
         crate::types::AwsRdsDbStatusInfo {
-            status_type: self.status_type,
-            normal: self.normal.unwrap_or_default(),
-            status: self.status,
-            message: self.message,
+            status_type: self.status_type
+            ,
+            normal: self.normal
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

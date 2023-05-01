@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIpGroupOutput {
+pub struct CreateIpGroupOutput  {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateIpGroupOutput {
 }
 impl CreateIpGroupOutput {
     /// <p>The identifier of the group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateIpGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateIpGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpGroupOutput`](crate::operation::create_ip_group::CreateIpGroupOutput).
     pub fn builder() -> crate::operation::create_ip_group::builders::CreateIpGroupOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateIpGroupOutputBuilder {
     }
     /// <p>The identifier of the group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateIpGroupOutput`](crate::operation::create_ip_group::CreateIpGroupOutput).
     pub fn build(self) -> crate::operation::create_ip_group::CreateIpGroupOutput {
         crate::operation::create_ip_group::CreateIpGroupOutput {
-            group_id: self.group_id,
+            group_id: self.group_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

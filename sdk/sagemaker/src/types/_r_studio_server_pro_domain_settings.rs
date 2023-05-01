@@ -3,7 +3,7 @@
 /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RStudioServerProDomainSettings {
+pub struct RStudioServerProDomainSettings  {
     /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
     #[doc(hidden)]
     pub domain_execution_role_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct RStudioServerProDomainSettings {
 }
 impl RStudioServerProDomainSettings {
     /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn domain_execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_execution_role_arn(&self) -> std::option::Option<& str> {
         self.domain_execution_role_arn.as_deref()
     }
     /// <p>A URL pointing to an RStudio Connect server.</p>
-    pub fn r_studio_connect_url(&self) -> std::option::Option<&str> {
+    pub fn r_studio_connect_url(&self) -> std::option::Option<& str> {
         self.r_studio_connect_url.as_deref()
     }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
-    pub fn r_studio_package_manager_url(&self) -> std::option::Option<&str> {
+    pub fn r_studio_package_manager_url(&self) -> std::option::Option<& str> {
         self.r_studio_package_manager_url.as_deref()
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn default_resource_spec(&self) -> std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl RStudioServerProDomainSettingsBuilder {
         self
     }
     /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn set_domain_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.domain_execution_role_arn = input;
-        self
+    pub fn set_domain_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.domain_execution_role_arn = input; self
     }
     /// <p>A URL pointing to an RStudio Connect server.</p>
     pub fn r_studio_connect_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +67,8 @@ impl RStudioServerProDomainSettingsBuilder {
         self
     }
     /// <p>A URL pointing to an RStudio Connect server.</p>
-    pub fn set_r_studio_connect_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.r_studio_connect_url = input;
-        self
+    pub fn set_r_studio_connect_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.r_studio_connect_url = input; self
     }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
     pub fn r_studio_package_manager_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +76,8 @@ impl RStudioServerProDomainSettingsBuilder {
         self
     }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
-    pub fn set_r_studio_package_manager_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.r_studio_package_manager_url = input;
-        self
+    pub fn set_r_studio_package_manager_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.r_studio_package_manager_url = input; self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
@@ -97,20 +85,21 @@ impl RStudioServerProDomainSettingsBuilder {
         self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn set_default_resource_spec(
-        mut self,
-        input: std::option::Option<crate::types::ResourceSpec>,
-    ) -> Self {
-        self.default_resource_spec = input;
-        self
+    pub fn set_default_resource_spec(mut self, input: std::option::Option<crate::types::ResourceSpec>) -> Self {
+        self.default_resource_spec = input; self
     }
     /// Consumes the builder and constructs a [`RStudioServerProDomainSettings`](crate::types::RStudioServerProDomainSettings).
     pub fn build(self) -> crate::types::RStudioServerProDomainSettings {
         crate::types::RStudioServerProDomainSettings {
-            domain_execution_role_arn: self.domain_execution_role_arn,
-            r_studio_connect_url: self.r_studio_connect_url,
-            r_studio_package_manager_url: self.r_studio_package_manager_url,
-            default_resource_spec: self.default_resource_spec,
+            domain_execution_role_arn: self.domain_execution_role_arn
+            ,
+            r_studio_connect_url: self.r_studio_connect_url
+            ,
+            r_studio_package_manager_url: self.r_studio_package_manager_url
+            ,
+            default_resource_spec: self.default_resource_spec
+            ,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingAcceleratorInput {
+pub struct DescribeCustomRoutingAcceleratorInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
 }
 impl DescribeCustomRoutingAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorInput`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorInput).
-    pub fn builder() -> crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorInputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorInputBuilder {
         crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl DescribeCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorInput`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorInput).
-    pub fn build(self) -> Result<crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn
@@ -47,3 +46,4 @@ impl DescribeCustomRoutingAcceleratorInputBuilder {
         )
     }
 }
+

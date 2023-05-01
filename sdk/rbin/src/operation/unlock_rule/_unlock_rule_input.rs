@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlockRuleInput {
+pub struct UnlockRuleInput  {
     /// <p>The unique ID of the retention rule.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl UnlockRuleInput {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl UnlockRuleInputBuilder {
     }
     /// <p>The unique ID of the retention rule.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// Consumes the builder and constructs a [`UnlockRuleInput`](crate::operation::unlock_rule::UnlockRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::unlock_rule::UnlockRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::unlock_rule::UnlockRuleInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> Result<crate::operation::unlock_rule::UnlockRuleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::unlock_rule::UnlockRuleInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

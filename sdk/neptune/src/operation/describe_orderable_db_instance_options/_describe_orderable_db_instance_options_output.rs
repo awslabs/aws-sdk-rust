@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrderableDbInstanceOptionsOutput {
+pub struct DescribeOrderableDbInstanceOptionsOutput  {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
     #[doc(hidden)]
-    pub orderable_db_instance_options:
-        std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
+    pub orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeOrderableDbInstanceOptionsOutput {
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-    pub fn orderable_db_instance_options(
-        &self,
-    ) -> std::option::Option<&[crate::types::OrderableDbInstanceOption]> {
+    pub fn orderable_db_instance_options(&self) -> std::option::Option<& [crate::types::OrderableDbInstanceOption]> {
         self.orderable_db_instance_options.as_deref()
     }
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOrderableDbInstanceOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput).
-    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsOutputBuilder {
         crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsOutputBuilder {
-    pub(crate) orderable_db_instance_options:
-        std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
+    pub(crate) orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl DescribeOrderableDbInstanceOptionsOutputBuilder {
     /// To override the contents of this collection use [`set_orderable_db_instance_options`](Self::set_orderable_db_instance_options).
     ///
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-    pub fn orderable_db_instance_options(
-        mut self,
-        input: crate::types::OrderableDbInstanceOption,
-    ) -> Self {
+    pub fn orderable_db_instance_options(mut self, input: crate::types::OrderableDbInstanceOption) -> Self {
         let mut v = self.orderable_db_instance_options.unwrap_or_default();
-        v.push(input);
-        self.orderable_db_instance_options = Some(v);
-        self
+                        v.push(input);
+                        self.orderable_db_instance_options = Some(v);
+                        self
     }
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-    pub fn set_orderable_db_instance_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
-    ) -> Self {
-        self.orderable_db_instance_options = input;
-        self
+    pub fn set_orderable_db_instance_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>) -> Self {
+        self.orderable_db_instance_options = input; self
     }
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl DescribeOrderableDbInstanceOptionsOutputBuilder {
     }
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsOutput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput).
-    pub fn build(self) -> crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput{
+    pub fn build(self) -> crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput {
         crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput {
             orderable_db_instance_options: self.orderable_db_instance_options
             ,
@@ -98,3 +86,4 @@ impl DescribeOrderableDbInstanceOptionsOutputBuilder {
         }
     }
 }
+

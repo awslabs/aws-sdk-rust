@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableFromClusterSnapshotInput {
+pub struct RestoreTableFromClusterSnapshotInput  {
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -34,35 +34,35 @@ pub struct RestoreTableFromClusterSnapshotInput {
 }
 impl RestoreTableFromClusterSnapshotInput {
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
-    pub fn source_database_name(&self) -> std::option::Option<&str> {
+    pub fn source_database_name(&self) -> std::option::Option<& str> {
         self.source_database_name.as_deref()
     }
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
-    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+    pub fn source_schema_name(&self) -> std::option::Option<& str> {
         self.source_schema_name.as_deref()
     }
     /// <p>The name of the source table to restore from.</p>
-    pub fn source_table_name(&self) -> std::option::Option<&str> {
+    pub fn source_table_name(&self) -> std::option::Option<& str> {
         self.source_table_name.as_deref()
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn target_database_name(&self) -> std::option::Option<&str> {
+    pub fn target_database_name(&self) -> std::option::Option<& str> {
         self.target_database_name.as_deref()
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+    pub fn target_schema_name(&self) -> std::option::Option<& str> {
         self.target_schema_name.as_deref()
     }
     /// <p>The name of the table to create as a result of the current request.</p>
-    pub fn new_table_name(&self) -> std::option::Option<&str> {
+    pub fn new_table_name(&self) -> std::option::Option<& str> {
         self.new_table_name.as_deref()
     }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
@@ -72,7 +72,7 @@ impl RestoreTableFromClusterSnapshotInput {
 }
 impl RestoreTableFromClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromClusterSnapshotInput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotInput).
-    pub fn builder() -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder {
         crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder::default()
     }
 }
@@ -98,12 +98,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
     pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,12 +107,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.snapshot_identifier = input;
-        self
+    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.snapshot_identifier = input; self
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
     pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,12 +116,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
-    pub fn set_source_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_database_name = input;
-        self
+    pub fn set_source_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_database_name = input; self
     }
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
     pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,12 +125,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
-    pub fn set_source_schema_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_schema_name = input;
-        self
+    pub fn set_source_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_schema_name = input; self
     }
     /// <p>The name of the source table to restore from.</p>
     pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,12 +134,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The name of the source table to restore from.</p>
-    pub fn set_source_table_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_table_name = input;
-        self
+    pub fn set_source_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_table_name = input; self
     }
     /// <p>The name of the database to restore the table to.</p>
     pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,12 +143,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn set_target_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_database_name = input;
-        self
+    pub fn set_target_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_database_name = input; self
     }
     /// <p>The name of the schema to restore the table to.</p>
     pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,12 +152,8 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn set_target_schema_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_schema_name = input;
-        self
+    pub fn set_target_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_schema_name = input; self
     }
     /// <p>The name of the table to create as a result of the current request.</p>
     pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,8 +162,7 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
     }
     /// <p>The name of the table to create as a result of the current request.</p>
     pub fn set_new_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.new_table_name = input;
-        self
+        self.new_table_name = input; self
     }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
     pub fn enable_case_sensitive_identifier(mut self, input: bool) -> Self {
@@ -199,20 +170,11 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self
     }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
-    pub fn set_enable_case_sensitive_identifier(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.enable_case_sensitive_identifier = input;
-        self
+    pub fn set_enable_case_sensitive_identifier(mut self, input: std::option::Option<bool>) -> Self {
+        self.enable_case_sensitive_identifier = input; self
     }
     /// Consumes the builder and constructs a [`RestoreTableFromClusterSnapshotInput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotInput {
                 cluster_identifier: self.cluster_identifier
@@ -237,3 +199,4 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamOutput {
+pub struct GetStreamOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub stream: std::option::Option<crate::types::Stream>,
@@ -10,15 +10,15 @@ pub struct GetStreamOutput {
 }
 impl GetStreamOutput {
     /// <p></p>
-    pub fn stream(&self) -> std::option::Option<&crate::types::Stream> {
+    pub fn stream(&self) -> std::option::Option<& crate::types::Stream> {
         self.stream.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamOutput`](crate::operation::get_stream::GetStreamOutput).
     pub fn builder() -> crate::operation::get_stream::builders::GetStreamOutputBuilder {
@@ -41,23 +41,24 @@ impl GetStreamOutputBuilder {
     }
     /// <p></p>
     pub fn set_stream(mut self, input: std::option::Option<crate::types::Stream>) -> Self {
-        self.stream = input;
-        self
+        self.stream = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetStreamOutput`](crate::operation::get_stream::GetStreamOutput).
     pub fn build(self) -> crate::operation::get_stream::GetStreamOutput {
         crate::operation::get_stream::GetStreamOutput {
-            stream: self.stream,
+            stream: self.stream
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

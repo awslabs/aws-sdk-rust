@@ -3,14 +3,14 @@
 /// <p>Information about alarms associated with a deployment or deployment group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmConfiguration {
+pub struct AlarmConfiguration  {
     /// <p>Indicates whether the alarm configuration is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
-    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
-    /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p> 
+    /// <ul> 
+    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
+    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
@@ -23,16 +23,16 @@ impl AlarmConfiguration {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
-    /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p> 
+    /// <ul> 
+    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
+    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
     /// </ul>
     pub fn ignore_poll_alarm_failure(&self) -> bool {
         self.ignore_poll_alarm_failure
     }
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<& [crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
@@ -59,26 +59,24 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>Indicates whether the alarm configuration is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
-    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
-    /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p> 
+    /// <ul> 
+    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
+    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
     /// </ul>
     pub fn ignore_poll_alarm_failure(mut self, input: bool) -> Self {
         self.ignore_poll_alarm_failure = Some(input);
         self
     }
-    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
-    /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p> 
+    /// <ul> 
+    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
+    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li> 
     /// </ul>
     pub fn set_ignore_poll_alarm_failure(mut self, input: std::option::Option<bool>) -> Self {
-        self.ignore_poll_alarm_failure = input;
-        self
+        self.ignore_poll_alarm_failure = input; self
     }
     /// Appends an item to `alarms`.
     ///
@@ -87,24 +85,26 @@ impl AlarmConfigurationBuilder {
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input);
-        self.alarms = Some(v);
-        self
+                        v.push(input);
+                        self.alarms = Some(v);
+                        self
     }
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
-    pub fn set_alarms(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::types::Alarm>>) -> Self {
+        self.alarms = input; self
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     pub fn build(self) -> crate::types::AlarmConfiguration {
         crate::types::AlarmConfiguration {
-            enabled: self.enabled.unwrap_or_default(),
-            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
-            alarms: self.alarms,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure
+                .unwrap_or_default()
+            ,
+            alarms: self.alarms
+            ,
         }
     }
 }
+

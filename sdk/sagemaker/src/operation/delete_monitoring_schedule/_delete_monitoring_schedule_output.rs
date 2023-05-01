@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMonitoringScheduleOutput {
+pub struct DeleteMonitoringScheduleOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteMonitoringScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleOutputBuilder {
         crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct DeleteMonitoringScheduleOutputBuilder {
 }
 impl DeleteMonitoringScheduleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput {
+    pub fn build(self) -> crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput {
         crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput {
             _request_id: self._request_id,
         }
     }
 }
+

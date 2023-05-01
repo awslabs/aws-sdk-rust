@@ -3,7 +3,7 @@
 /// <p>Represents the response from the server to the request to start the user import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartUserImportJobOutput {
+pub struct StartUserImportJobOutput  {
     /// <p>The job object that represents the user import job.</p>
     #[doc(hidden)]
     pub user_import_job: std::option::Option<crate::types::UserImportJobType>,
@@ -11,21 +11,19 @@ pub struct StartUserImportJobOutput {
 }
 impl StartUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
-    pub fn user_import_job(&self) -> std::option::Option<&crate::types::UserImportJobType> {
+    pub fn user_import_job(&self) -> std::option::Option<& crate::types::UserImportJobType> {
         self.user_import_job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartUserImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartUserImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartUserImportJobOutput`](crate::operation::start_user_import_job::StartUserImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder {
-        crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder {
+        crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder::default()
     }
 }
 
@@ -43,27 +41,25 @@ impl StartUserImportJobOutputBuilder {
         self
     }
     /// <p>The job object that represents the user import job.</p>
-    pub fn set_user_import_job(
-        mut self,
-        input: std::option::Option<crate::types::UserImportJobType>,
-    ) -> Self {
-        self.user_import_job = input;
-        self
+    pub fn set_user_import_job(mut self, input: std::option::Option<crate::types::UserImportJobType>) -> Self {
+        self.user_import_job = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartUserImportJobOutput`](crate::operation::start_user_import_job::StartUserImportJobOutput).
     pub fn build(self) -> crate::operation::start_user_import_job::StartUserImportJobOutput {
         crate::operation::start_user_import_job::StartUserImportJobOutput {
-            user_import_job: self.user_import_job,
+            user_import_job: self.user_import_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableApplicationLayerAutomaticResponseOutput {
+pub struct DisableApplicationLayerAutomaticResponseOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisableApplicationLayerAutomaticResponseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisableApplicationLayerAutomaticResponseOutput {
     /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput).
-    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseOutputBuilder{
+    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseOutputBuilder {
         crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseOutputBuilder::default()
     }
 }
@@ -25,18 +25,19 @@ pub struct DisableApplicationLayerAutomaticResponseOutputBuilder {
 }
 impl DisableApplicationLayerAutomaticResponseOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput).
-    pub fn build(self) -> crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput{
+    pub fn build(self) -> crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput {
         crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput {
             _request_id: self._request_id,
         }
     }
 }
+

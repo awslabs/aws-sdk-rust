@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVariableOutput {
+pub struct DeleteVariableOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteVariableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVariableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVariableOutput`](crate::operation::delete_variable::DeleteVariableOutput).
     pub fn builder() -> crate::operation::delete_variable::builders::DeleteVariableOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteVariableOutputBuilder {
 }
 impl DeleteVariableOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVariableOutput`](crate::operation::delete_variable::DeleteVariableOutput).
     pub fn build(self) -> crate::operation::delete_variable::DeleteVariableOutput {
         crate::operation::delete_variable::DeleteVariableOutput {
@@ -40,3 +40,4 @@ impl DeleteVariableOutputBuilder {
         }
     }
 }
+

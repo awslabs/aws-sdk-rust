@@ -3,7 +3,7 @@
 /// <p>Describes the status of a VPC peering connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcPeeringConnectionStateReason {
+pub struct VpcPeeringConnectionStateReason  {
     /// <p>The status of the VPC peering connection.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::VpcPeeringConnectionStateReasonCode>,
@@ -13,11 +13,11 @@ pub struct VpcPeeringConnectionStateReason {
 }
 impl VpcPeeringConnectionStateReason {
     /// <p>The status of the VPC peering connection.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::VpcPeeringConnectionStateReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::VpcPeeringConnectionStateReasonCode> {
         self.code.as_ref()
     }
     /// <p>A message that provides more information about the status, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl VpcPeeringConnectionStateReasonBuilder {
         self
     }
     /// <p>The status of the VPC peering connection.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::VpcPeeringConnectionStateReasonCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::VpcPeeringConnectionStateReasonCode>) -> Self {
+        self.code = input; self
     }
     /// <p>A message that provides more information about the status, if applicable.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl VpcPeeringConnectionStateReasonBuilder {
     }
     /// <p>A message that provides more information about the status, if applicable.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`VpcPeeringConnectionStateReason`](crate::types::VpcPeeringConnectionStateReason).
     pub fn build(self) -> crate::types::VpcPeeringConnectionStateReason {
         crate::types::VpcPeeringConnectionStateReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

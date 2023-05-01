@@ -3,25 +3,21 @@
 /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExternalModelOutputs {
+pub struct ExternalModelOutputs  {
     /// <p>The Amazon SageMaker model.</p>
     #[doc(hidden)]
     pub external_model: std::option::Option<crate::types::ExternalModelSummary>,
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
     #[doc(hidden)]
-    pub outputs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub outputs: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExternalModelOutputs {
     /// <p>The Amazon SageMaker model.</p>
-    pub fn external_model(&self) -> std::option::Option<&crate::types::ExternalModelSummary> {
+    pub fn external_model(&self) -> std::option::Option<& crate::types::ExternalModelSummary> {
         self.external_model.as_ref()
     }
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
-    pub fn outputs(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn outputs(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.outputs.as_ref()
     }
 }
@@ -37,8 +33,7 @@ impl ExternalModelOutputs {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ExternalModelOutputsBuilder {
     pub(crate) external_model: std::option::Option<crate::types::ExternalModelSummary>,
-    pub(crate) outputs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) outputs: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExternalModelOutputsBuilder {
     /// <p>The Amazon SageMaker model.</p>
@@ -47,43 +42,32 @@ impl ExternalModelOutputsBuilder {
         self
     }
     /// <p>The Amazon SageMaker model.</p>
-    pub fn set_external_model(
-        mut self,
-        input: std::option::Option<crate::types::ExternalModelSummary>,
-    ) -> Self {
-        self.external_model = input;
-        self
+    pub fn set_external_model(mut self, input: std::option::Option<crate::types::ExternalModelSummary>) -> Self {
+        self.external_model = input; self
     }
     /// Adds a key-value pair to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
-    pub fn outputs(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn outputs(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.outputs.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.outputs = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.outputs = Some(hash_map);
+                        self
     }
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.outputs = input; self
     }
     /// Consumes the builder and constructs a [`ExternalModelOutputs`](crate::types::ExternalModelOutputs).
     pub fn build(self) -> crate::types::ExternalModelOutputs {
         crate::types::ExternalModelOutputs {
-            external_model: self.external_model,
-            outputs: self.outputs,
+            external_model: self.external_model
+            ,
+            outputs: self.outputs
+            ,
         }
     }
 }
+

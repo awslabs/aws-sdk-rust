@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetEntriesInput {
+pub struct ListDatasetEntriesInput  {
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
@@ -27,11 +27,11 @@ pub struct ListDatasetEntriesInput {
 }
 impl ListDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn contains_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn contains_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.contains_labels.as_deref()
     }
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
@@ -39,7 +39,7 @@ impl ListDatasetEntriesInput {
         self.labeled
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn source_ref_contains(&self) -> std::option::Option<&str> {
+    pub fn source_ref_contains(&self) -> std::option::Option<& str> {
         self.source_ref_contains.as_deref()
     }
     /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
@@ -47,7 +47,7 @@ impl ListDatasetEntriesInput {
         self.has_errors
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
@@ -57,8 +57,7 @@ impl ListDatasetEntriesInput {
 }
 impl ListDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
         crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder::default()
     }
 }
@@ -83,8 +82,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// Appends an item to `contains_labels`.
     ///
@@ -93,17 +91,13 @@ impl ListDatasetEntriesInputBuilder {
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
     pub fn contains_labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contains_labels.unwrap_or_default();
-        v.push(input.into());
-        self.contains_labels = Some(v);
-        self
+                        v.push(input.into());
+                        self.contains_labels = Some(v);
+                        self
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn set_contains_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.contains_labels = input;
-        self
+    pub fn set_contains_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.contains_labels = input; self
     }
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
     pub fn labeled(mut self, input: bool) -> Self {
@@ -112,8 +106,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
     pub fn set_labeled(mut self, input: std::option::Option<bool>) -> Self {
-        self.labeled = input;
-        self
+        self.labeled = input; self
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
     pub fn source_ref_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,12 +114,8 @@ impl ListDatasetEntriesInputBuilder {
         self
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_ref_contains = input;
-        self
+    pub fn set_source_ref_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_ref_contains = input; self
     }
     /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
     pub fn has_errors(mut self, input: bool) -> Self {
@@ -135,8 +124,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
     pub fn set_has_errors(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_errors = input;
-        self
+        self.has_errors = input; self
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,8 +133,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -155,26 +142,28 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_dataset_entries::ListDatasetEntriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_dataset_entries::ListDatasetEntriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_dataset_entries::ListDatasetEntriesInput {
-                dataset_arn: self.dataset_arn,
-                contains_labels: self.contains_labels,
-                labeled: self.labeled,
-                source_ref_contains: self.source_ref_contains,
-                has_errors: self.has_errors,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                dataset_arn: self.dataset_arn
+                ,
+                contains_labels: self.contains_labels
+                ,
+                labeled: self.labeled
+                ,
+                source_ref_contains: self.source_ref_contains
+                ,
+                has_errors: self.has_errors
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

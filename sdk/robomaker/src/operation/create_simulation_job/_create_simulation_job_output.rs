@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSimulationJobOutput {
+pub struct CreateSimulationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,92 +18,92 @@ pub struct CreateSimulationJobOutput {
     /// <p>the failure behavior for the simulation job.</p>
     #[doc(hidden)]
     pub failure_behavior: std::option::Option<crate::types::FailureBehavior>,
-    /// <p>The failure code of the simulation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the simulation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> Simulation application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsS3Output
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsCloudwatchLogs
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p> 
+    /// </dd> 
     /// <dt>
     /// SubnetIpLimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>Subnet IP limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Subnet IP limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// ENILimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>ENI limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>ENI limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsUserCredentials
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to use the Role provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to use the Role provided.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for RobotApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for RobotApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub failure_code: std::option::Option<crate::types::SimulationJobErrorCode>,
@@ -127,19 +127,16 @@ pub struct CreateSimulationJobOutput {
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The robot application used by the simulation job.</p>
     #[doc(hidden)]
-    pub robot_applications:
-        std::option::Option<std::vec::Vec<crate::types::RobotApplicationConfig>>,
+    pub robot_applications: std::option::Option<std::vec::Vec<crate::types::RobotApplicationConfig>>,
     /// <p>The simulation application used by the simulation job.</p>
     #[doc(hidden)]
-    pub simulation_applications:
-        std::option::Option<std::vec::Vec<crate::types::SimulationApplicationConfig>>,
+    pub simulation_applications: std::option::Option<std::vec::Vec<crate::types::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
     #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
     /// <p>The list of all tags added to the simulation job.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information about the vpc configuration.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfigResponse>,
@@ -150,125 +147,125 @@ pub struct CreateSimulationJobOutput {
 }
 impl CreateSimulationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the simulation job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SimulationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::SimulationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
-    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>the failure behavior for the simulation job.</p>
-    pub fn failure_behavior(&self) -> std::option::Option<&crate::types::FailureBehavior> {
+    pub fn failure_behavior(&self) -> std::option::Option<& crate::types::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
-    /// <p>The failure code of the simulation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the simulation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> Simulation application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsS3Output
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsCloudwatchLogs
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p> 
+    /// </dd> 
     /// <dt>
     /// SubnetIpLimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>Subnet IP limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Subnet IP limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// ENILimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>ENI limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>ENI limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsUserCredentials
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to use the Role provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to use the Role provided.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for RobotApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for RobotApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::SimulationJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Simulation job output files location.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The logging configuration.</p>
-    pub fn logging_config(&self) -> std::option::Option<&crate::types::LoggingConfig> {
+    pub fn logging_config(&self) -> std::option::Option<& crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The maximum simulation job duration in seconds. </p>
@@ -280,52 +277,43 @@ impl CreateSimulationJobOutput {
         self.simulation_time_millis
     }
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
-    pub fn iam_role(&self) -> std::option::Option<&str> {
+    pub fn iam_role(&self) -> std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>The robot application used by the simulation job.</p>
-    pub fn robot_applications(
-        &self,
-    ) -> std::option::Option<&[crate::types::RobotApplicationConfig]> {
+    pub fn robot_applications(&self) -> std::option::Option<& [crate::types::RobotApplicationConfig]> {
         self.robot_applications.as_deref()
     }
     /// <p>The simulation application used by the simulation job.</p>
-    pub fn simulation_applications(
-        &self,
-    ) -> std::option::Option<&[crate::types::SimulationApplicationConfig]> {
+    pub fn simulation_applications(&self) -> std::option::Option<& [crate::types::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
     /// <p>The data sources for the simulation job.</p>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::types::DataSource]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::types::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>The list of all tags added to the simulation job.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about the vpc configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>Compute information for the simulation job.</p>
-    pub fn compute(&self) -> std::option::Option<&crate::types::ComputeResponse> {
+    pub fn compute(&self) -> std::option::Option<& crate::types::ComputeResponse> {
         self.compute.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSimulationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSimulationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateSimulationJobOutput`](crate::operation::create_simulation_job::CreateSimulationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_simulation_job::builders::CreateSimulationJobOutputBuilder {
-        crate::operation::create_simulation_job::builders::CreateSimulationJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_simulation_job::builders::CreateSimulationJobOutputBuilder {
+        crate::operation::create_simulation_job::builders::CreateSimulationJobOutputBuilder::default()
     }
 }
 
@@ -345,13 +333,10 @@ pub struct CreateSimulationJobOutputBuilder {
     pub(crate) max_job_duration_in_seconds: std::option::Option<i64>,
     pub(crate) simulation_time_millis: std::option::Option<i64>,
     pub(crate) iam_role: std::option::Option<std::string::String>,
-    pub(crate) robot_applications:
-        std::option::Option<std::vec::Vec<crate::types::RobotApplicationConfig>>,
-    pub(crate) simulation_applications:
-        std::option::Option<std::vec::Vec<crate::types::SimulationApplicationConfig>>,
+    pub(crate) robot_applications: std::option::Option<std::vec::Vec<crate::types::RobotApplicationConfig>>,
+    pub(crate) simulation_applications: std::option::Option<std::vec::Vec<crate::types::SimulationApplicationConfig>>,
     pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) vpc_config: std::option::Option<crate::types::VpcConfigResponse>,
     pub(crate) compute: std::option::Option<crate::types::ComputeResponse>,
     _request_id: Option<String>,
@@ -364,8 +349,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The status of the simulation job.</p>
     pub fn status(mut self, input: crate::types::SimulationJobStatus) -> Self {
@@ -373,12 +357,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>The status of the simulation job.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::SimulationJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::SimulationJobStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -386,12 +366,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
-    pub fn set_last_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_started_at = input;
-        self
+    pub fn set_last_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_started_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -399,12 +375,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p>the failure behavior for the simulation job.</p>
     pub fn failure_behavior(mut self, input: crate::types::FailureBehavior) -> Self {
@@ -412,197 +384,189 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>the failure behavior for the simulation job.</p>
-    pub fn set_failure_behavior(
-        mut self,
-        input: std::option::Option<crate::types::FailureBehavior>,
-    ) -> Self {
-        self.failure_behavior = input;
-        self
+    pub fn set_failure_behavior(mut self, input: std::option::Option<crate::types::FailureBehavior>) -> Self {
+        self.failure_behavior = input; self
     }
-    /// <p>The failure code of the simulation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the simulation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> Simulation application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsS3Output
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsCloudwatchLogs
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p> 
+    /// </dd> 
     /// <dt>
     /// SubnetIpLimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>Subnet IP limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Subnet IP limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// ENILimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>ENI limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>ENI limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsUserCredentials
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to use the Role provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to use the Role provided.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for RobotApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for RobotApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// </dl>
     pub fn failure_code(mut self, input: crate::types::SimulationJobErrorCode) -> Self {
         self.failure_code = Some(input);
         self
     }
-    /// <p>The failure code of the simulation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the simulation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationCrash
-    /// </dt>
-    /// <dd>
-    /// <p> Simulation application exited abnormally.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> Simulation application exited abnormally.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation application bundle could not be downloaded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation application bundle could not be downloaded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsS3Output
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish outputs to customer-provided S3 bucket.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsCloudwatchLogs
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p> 
+    /// </dd> 
     /// <dt>
     /// SubnetIpLimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>Subnet IP limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Subnet IP limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// ENILimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>ENI limit exceeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>ENI limit exceeded.</p> 
+    /// </dd> 
     /// <dt>
     /// BadPermissionsUserCredentials
-    /// </dt>
-    /// <dd>
-    /// <p>Unable to use the Role provided.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Unable to use the Role provided.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleRobotApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidBundleSimulationApplication
-    /// </dt>
-    /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p> 
+    /// </dd> 
     /// <dt>
     /// RobotApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for RobotApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for RobotApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// <dt>
     /// SimulationApplicationVersionMismatchedEtag
-    /// </dt>
-    /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::SimulationJobErrorCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::SimulationJobErrorCode>) -> Self {
+        self.failure_code = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -610,12 +574,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>Simulation job output files location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
@@ -623,12 +583,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>Simulation job output files location.</p>
-    pub fn set_output_location(
-        mut self,
-        input: std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
-        self.output_location = input;
-        self
+    pub fn set_output_location(mut self, input: std::option::Option<crate::types::OutputLocation>) -> Self {
+        self.output_location = input; self
     }
     /// <p>The logging configuration.</p>
     pub fn logging_config(mut self, input: crate::types::LoggingConfig) -> Self {
@@ -636,12 +592,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>The logging configuration.</p>
-    pub fn set_logging_config(
-        mut self,
-        input: std::option::Option<crate::types::LoggingConfig>,
-    ) -> Self {
-        self.logging_config = input;
-        self
+    pub fn set_logging_config(mut self, input: std::option::Option<crate::types::LoggingConfig>) -> Self {
+        self.logging_config = input; self
     }
     /// <p>The maximum simulation job duration in seconds. </p>
     pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
@@ -650,8 +602,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The maximum simulation job duration in seconds. </p>
     pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.max_job_duration_in_seconds = input;
-        self
+        self.max_job_duration_in_seconds = input; self
     }
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub fn simulation_time_millis(mut self, input: i64) -> Self {
@@ -660,8 +611,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub fn set_simulation_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.simulation_time_millis = input;
-        self
+        self.simulation_time_millis = input; self
     }
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -670,8 +620,7 @@ impl CreateSimulationJobOutputBuilder {
     }
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// Appends an item to `robot_applications`.
     ///
@@ -680,39 +629,28 @@ impl CreateSimulationJobOutputBuilder {
     /// <p>The robot application used by the simulation job.</p>
     pub fn robot_applications(mut self, input: crate::types::RobotApplicationConfig) -> Self {
         let mut v = self.robot_applications.unwrap_or_default();
-        v.push(input);
-        self.robot_applications = Some(v);
-        self
+                        v.push(input);
+                        self.robot_applications = Some(v);
+                        self
     }
     /// <p>The robot application used by the simulation job.</p>
-    pub fn set_robot_applications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RobotApplicationConfig>>,
-    ) -> Self {
-        self.robot_applications = input;
-        self
+    pub fn set_robot_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::RobotApplicationConfig>>) -> Self {
+        self.robot_applications = input; self
     }
     /// Appends an item to `simulation_applications`.
     ///
     /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
     ///
     /// <p>The simulation application used by the simulation job.</p>
-    pub fn simulation_applications(
-        mut self,
-        input: crate::types::SimulationApplicationConfig,
-    ) -> Self {
+    pub fn simulation_applications(mut self, input: crate::types::SimulationApplicationConfig) -> Self {
         let mut v = self.simulation_applications.unwrap_or_default();
-        v.push(input);
-        self.simulation_applications = Some(v);
-        self
+                        v.push(input);
+                        self.simulation_applications = Some(v);
+                        self
     }
     /// <p>The simulation application used by the simulation job.</p>
-    pub fn set_simulation_applications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SimulationApplicationConfig>>,
-    ) -> Self {
-        self.simulation_applications = input;
-        self
+    pub fn set_simulation_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::SimulationApplicationConfig>>) -> Self {
+        self.simulation_applications = input; self
     }
     /// Appends an item to `data_sources`.
     ///
@@ -721,42 +659,28 @@ impl CreateSimulationJobOutputBuilder {
     /// <p>The data sources for the simulation job.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = Some(v);
+                        self
     }
     /// <p>The data sources for the simulation job.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSource>>) -> Self {
+        self.data_sources = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of all tags added to the simulation job.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The list of all tags added to the simulation job.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Information about the vpc configuration.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfigResponse) -> Self {
@@ -764,12 +688,8 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>Information about the vpc configuration.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: std::option::Option<crate::types::VpcConfigResponse>,
-    ) -> Self {
-        self.vpc_config = input;
-        self
+    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfigResponse>) -> Self {
+        self.vpc_config = input; self
     }
     /// <p>Compute information for the simulation job.</p>
     pub fn compute(mut self, input: crate::types::ComputeResponse) -> Self {
@@ -777,44 +697,61 @@ impl CreateSimulationJobOutputBuilder {
         self
     }
     /// <p>Compute information for the simulation job.</p>
-    pub fn set_compute(
-        mut self,
-        input: std::option::Option<crate::types::ComputeResponse>,
-    ) -> Self {
-        self.compute = input;
-        self
+    pub fn set_compute(mut self, input: std::option::Option<crate::types::ComputeResponse>) -> Self {
+        self.compute = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSimulationJobOutput`](crate::operation::create_simulation_job::CreateSimulationJobOutput).
     pub fn build(self) -> crate::operation::create_simulation_job::CreateSimulationJobOutput {
         crate::operation::create_simulation_job::CreateSimulationJobOutput {
-            arn: self.arn,
-            status: self.status,
-            last_started_at: self.last_started_at,
-            last_updated_at: self.last_updated_at,
-            failure_behavior: self.failure_behavior,
-            failure_code: self.failure_code,
-            client_request_token: self.client_request_token,
-            output_location: self.output_location,
-            logging_config: self.logging_config,
-            max_job_duration_in_seconds: self.max_job_duration_in_seconds.unwrap_or_default(),
-            simulation_time_millis: self.simulation_time_millis.unwrap_or_default(),
-            iam_role: self.iam_role,
-            robot_applications: self.robot_applications,
-            simulation_applications: self.simulation_applications,
-            data_sources: self.data_sources,
-            tags: self.tags,
-            vpc_config: self.vpc_config,
-            compute: self.compute,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            last_started_at: self.last_started_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            failure_behavior: self.failure_behavior
+            ,
+            failure_code: self.failure_code
+            ,
+            client_request_token: self.client_request_token
+            ,
+            output_location: self.output_location
+            ,
+            logging_config: self.logging_config
+            ,
+            max_job_duration_in_seconds: self.max_job_duration_in_seconds
+                .unwrap_or_default()
+            ,
+            simulation_time_millis: self.simulation_time_millis
+                .unwrap_or_default()
+            ,
+            iam_role: self.iam_role
+            ,
+            robot_applications: self.robot_applications
+            ,
+            simulation_applications: self.simulation_applications
+            ,
+            data_sources: self.data_sources
+            ,
+            tags: self.tags
+            ,
+            vpc_config: self.vpc_config
+            ,
+            compute: self.compute
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

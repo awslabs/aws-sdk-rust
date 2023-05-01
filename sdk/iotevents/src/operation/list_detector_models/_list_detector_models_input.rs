@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectorModelsInput {
+pub struct ListDetectorModelsInput  {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListDetectorModelsInput {
 }
 impl ListDetectorModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -22,8 +22,7 @@ impl ListDetectorModelsInput {
 }
 impl ListDetectorModelsInput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelsInput`](crate::operation::list_detector_models::ListDetectorModelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder {
+    pub fn builder() -> crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder {
         crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListDetectorModelsInputBuilder {
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl ListDetectorModelsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListDetectorModelsInput`](crate::operation::list_detector_models::ListDetectorModelsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_detector_models::ListDetectorModelsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_detector_models::ListDetectorModelsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_detector_models::ListDetectorModelsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

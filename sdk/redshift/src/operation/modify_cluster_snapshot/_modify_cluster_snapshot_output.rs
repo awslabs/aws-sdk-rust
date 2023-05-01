@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterSnapshotOutput {
+pub struct ModifyClusterSnapshotOutput  {
     /// <p>Describes a snapshot.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::types::Snapshot>,
@@ -10,20 +10,18 @@ pub struct ModifyClusterSnapshotOutput {
 }
 impl ModifyClusterSnapshotOutput {
     /// <p>Describes a snapshot.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::types::Snapshot> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::types::Snapshot> {
         self.snapshot.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyClusterSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotOutput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder {
         crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder::default()
     }
 }
@@ -43,23 +41,24 @@ impl ModifyClusterSnapshotOutputBuilder {
     }
     /// <p>Describes a snapshot.</p>
     pub fn set_snapshot(mut self, input: std::option::Option<crate::types::Snapshot>) -> Self {
-        self.snapshot = input;
-        self
+        self.snapshot = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotOutput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput).
     pub fn build(self) -> crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput {
         crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput {
-            snapshot: self.snapshot,
+            snapshot: self.snapshot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResponseHeadersPolicyConfigInput {
-    /// <p>The identifier for the response headers policy.</p>
+pub struct GetResponseHeadersPolicyConfigInput  {
+    /// <p>The identifier for the response headers policy.</p> 
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyConfigInput {
-    /// <p>The identifier for the response headers policy.</p>
+    /// <p>The identifier for the response headers policy.</p> 
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetResponseHeadersPolicyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyConfigInput`](crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput).
-    pub fn builder() -> crate::operation::get_response_headers_policy_config::builders::GetResponseHeadersPolicyConfigInputBuilder{
+    pub fn builder() -> crate::operation::get_response_headers_policy_config::builders::GetResponseHeadersPolicyConfigInputBuilder {
         crate::operation::get_response_headers_policy_config::builders::GetResponseHeadersPolicyConfigInputBuilder::default()
     }
 }
@@ -29,25 +29,19 @@ pub struct GetResponseHeadersPolicyConfigInputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyConfigInputBuilder {
-    /// <p>The identifier for the response headers policy.</p>
+    /// <p>The identifier for the response headers policy.</p> 
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The identifier for the response headers policy.</p>
+    /// <p>The identifier for the response headers policy.</p> 
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetResponseHeadersPolicyConfigInput`](crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput {
                 id: self.id
@@ -56,3 +50,4 @@ impl GetResponseHeadersPolicyConfigInputBuilder {
         )
     }
 }
+

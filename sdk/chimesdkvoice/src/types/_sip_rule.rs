@@ -3,7 +3,7 @@
 /// <p>The details of a SIP rule, including name, triggers, and target applications. An AWS account can have multiple SIP rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipRule {
+pub struct SipRule  {
     /// <p>A SIP rule's ID.</p>
     #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
@@ -21,8 +21,7 @@ pub struct SipRule {
     pub trigger_value: std::option::Option<std::string::String>,
     /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
     #[doc(hidden)]
-    pub target_applications:
-        std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub target_applications: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -32,11 +31,11 @@ pub struct SipRule {
 }
 impl SipRule {
     /// <p>A SIP rule's ID.</p>
-    pub fn sip_rule_id(&self) -> std::option::Option<&str> {
+    pub fn sip_rule_id(&self) -> std::option::Option<& str> {
         self.sip_rule_id.as_deref()
     }
     /// <p>A SIP rule's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
@@ -44,25 +43,23 @@ impl SipRule {
         self.disabled
     }
     /// <p>The type of trigger set for a SIP rule, either a phone number or a URI request host name.</p>
-    pub fn trigger_type(&self) -> std::option::Option<&crate::types::SipRuleTriggerType> {
+    pub fn trigger_type(&self) -> std::option::Option<& crate::types::SipRuleTriggerType> {
         self.trigger_type.as_ref()
     }
     /// <p>The value set for a SIP rule's trigger type. Either a phone number or a URI hostname.</p>
-    pub fn trigger_value(&self) -> std::option::Option<&str> {
+    pub fn trigger_value(&self) -> std::option::Option<& str> {
         self.trigger_value.as_deref()
     }
     /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
-    pub fn target_applications(
-        &self,
-    ) -> std::option::Option<&[crate::types::SipRuleTargetApplication]> {
+    pub fn target_applications(&self) -> std::option::Option<& [crate::types::SipRuleTargetApplication]> {
         self.target_applications.as_deref()
     }
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the SIP rule was updated, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -82,8 +79,7 @@ pub struct SipRuleBuilder {
     pub(crate) disabled: std::option::Option<bool>,
     pub(crate) trigger_type: std::option::Option<crate::types::SipRuleTriggerType>,
     pub(crate) trigger_value: std::option::Option<std::string::String>,
-    pub(crate) target_applications:
-        std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub(crate) target_applications: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
     pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -95,8 +91,7 @@ impl SipRuleBuilder {
     }
     /// <p>A SIP rule's ID.</p>
     pub fn set_sip_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sip_rule_id = input;
-        self
+        self.sip_rule_id = input; self
     }
     /// <p>A SIP rule's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +100,7 @@ impl SipRuleBuilder {
     }
     /// <p>A SIP rule's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
     pub fn disabled(mut self, input: bool) -> Self {
@@ -115,8 +109,7 @@ impl SipRuleBuilder {
     }
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>The type of trigger set for a SIP rule, either a phone number or a URI request host name.</p>
     pub fn trigger_type(mut self, input: crate::types::SipRuleTriggerType) -> Self {
@@ -124,12 +117,8 @@ impl SipRuleBuilder {
         self
     }
     /// <p>The type of trigger set for a SIP rule, either a phone number or a URI request host name.</p>
-    pub fn set_trigger_type(
-        mut self,
-        input: std::option::Option<crate::types::SipRuleTriggerType>,
-    ) -> Self {
-        self.trigger_type = input;
-        self
+    pub fn set_trigger_type(mut self, input: std::option::Option<crate::types::SipRuleTriggerType>) -> Self {
+        self.trigger_type = input; self
     }
     /// <p>The value set for a SIP rule's trigger type. Either a phone number or a URI hostname.</p>
     pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +127,7 @@ impl SipRuleBuilder {
     }
     /// <p>The value set for a SIP rule's trigger type. Either a phone number or a URI hostname.</p>
     pub fn set_trigger_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trigger_value = input;
-        self
+        self.trigger_value = input; self
     }
     /// Appends an item to `target_applications`.
     ///
@@ -148,17 +136,13 @@ impl SipRuleBuilder {
     /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
     pub fn target_applications(mut self, input: crate::types::SipRuleTargetApplication) -> Self {
         let mut v = self.target_applications.unwrap_or_default();
-        v.push(input);
-        self.target_applications = Some(v);
-        self
+                        v.push(input);
+                        self.target_applications = Some(v);
+                        self
     }
     /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
-    pub fn set_target_applications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
-    ) -> Self {
-        self.target_applications = input;
-        self
+    pub fn set_target_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
+        self.target_applications = input; self
     }
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -166,12 +150,8 @@ impl SipRuleBuilder {
         self
     }
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The time at which the SIP rule was updated, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -179,24 +159,29 @@ impl SipRuleBuilder {
         self
     }
     /// <p>The time at which the SIP rule was updated, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`SipRule`](crate::types::SipRule).
     pub fn build(self) -> crate::types::SipRule {
         crate::types::SipRule {
-            sip_rule_id: self.sip_rule_id,
-            name: self.name,
-            disabled: self.disabled,
-            trigger_type: self.trigger_type,
-            trigger_value: self.trigger_value,
-            target_applications: self.target_applications,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
+            sip_rule_id: self.sip_rule_id
+            ,
+            name: self.name
+            ,
+            disabled: self.disabled
+            ,
+            trigger_type: self.trigger_type
+            ,
+            trigger_value: self.trigger_value
+            ,
+            target_applications: self.target_applications
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRoomMembershipOutput {
+pub struct CreateRoomMembershipOutput  {
     /// <p>The room membership details.</p>
     #[doc(hidden)]
     pub room_membership: std::option::Option<crate::types::RoomMembership>,
@@ -10,19 +10,18 @@ pub struct CreateRoomMembershipOutput {
 }
 impl CreateRoomMembershipOutput {
     /// <p>The room membership details.</p>
-    pub fn room_membership(&self) -> std::option::Option<&crate::types::RoomMembership> {
+    pub fn room_membership(&self) -> std::option::Option<& crate::types::RoomMembership> {
         self.room_membership.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateRoomMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRoomMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoomMembershipOutput`](crate::operation::create_room_membership::CreateRoomMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::create_room_membership::builders::CreateRoomMembershipOutputBuilder {
+    pub fn builder() -> crate::operation::create_room_membership::builders::CreateRoomMembershipOutputBuilder {
         crate::operation::create_room_membership::builders::CreateRoomMembershipOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateRoomMembershipOutputBuilder {
         self
     }
     /// <p>The room membership details.</p>
-    pub fn set_room_membership(
-        mut self,
-        input: std::option::Option<crate::types::RoomMembership>,
-    ) -> Self {
-        self.room_membership = input;
-        self
+    pub fn set_room_membership(mut self, input: std::option::Option<crate::types::RoomMembership>) -> Self {
+        self.room_membership = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRoomMembershipOutput`](crate::operation::create_room_membership::CreateRoomMembershipOutput).
     pub fn build(self) -> crate::operation::create_room_membership::CreateRoomMembershipOutput {
         crate::operation::create_room_membership::CreateRoomMembershipOutput {
-            room_membership: self.room_membership,
+            room_membership: self.room_membership
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

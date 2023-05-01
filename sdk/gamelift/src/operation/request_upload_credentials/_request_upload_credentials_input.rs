@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestUploadCredentialsInput {
+pub struct RequestUploadCredentialsInput  {
     /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     #[doc(hidden)]
     pub build_id: std::option::Option<std::string::String>,
 }
 impl RequestUploadCredentialsInput {
     /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
-    pub fn build_id(&self) -> std::option::Option<&str> {
+    pub fn build_id(&self) -> std::option::Option<& str> {
         self.build_id.as_deref()
     }
 }
 impl RequestUploadCredentialsInput {
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsInput`](crate::operation::request_upload_credentials::RequestUploadCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder {
         crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl RequestUploadCredentialsInputBuilder {
     }
     /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.build_id = input;
-        self
+        self.build_id = input; self
     }
     /// Consumes the builder and constructs a [`RequestUploadCredentialsInput`](crate::operation::request_upload_credentials::RequestUploadCredentialsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::request_upload_credentials::RequestUploadCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::request_upload_credentials::RequestUploadCredentialsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::request_upload_credentials::RequestUploadCredentialsInput {
-                build_id: self.build_id,
-            },
+                build_id: self.build_id
+                ,
+            }
         )
     }
 }
+

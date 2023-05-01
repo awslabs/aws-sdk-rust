@@ -3,7 +3,7 @@
 /// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsStorageInfo {
+pub struct EbsStorageInfo  {
     /// <p>EBS volume provisioned throughput information.</p>
     #[doc(hidden)]
     pub provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
@@ -13,9 +13,7 @@ pub struct EbsStorageInfo {
 }
 impl EbsStorageInfo {
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> std::option::Option<& crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
@@ -44,12 +42,8 @@ impl EbsStorageInfoBuilder {
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
-        self.provisioned_throughput = input;
-        self
+    pub fn set_provisioned_throughput(mut self, input: std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
+        self.provisioned_throughput = input; self
     }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
@@ -58,14 +52,17 @@ impl EbsStorageInfoBuilder {
     }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// Consumes the builder and constructs a [`EbsStorageInfo`](crate::types::EbsStorageInfo).
     pub fn build(self) -> crate::types::EbsStorageInfo {
         crate::types::EbsStorageInfo {
-            provisioned_throughput: self.provisioned_throughput,
-            volume_size: self.volume_size.unwrap_or_default(),
+            provisioned_throughput: self.provisioned_throughput
+            ,
+            volume_size: self.volume_size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

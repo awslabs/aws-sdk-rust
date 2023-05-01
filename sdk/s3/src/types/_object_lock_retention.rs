@@ -3,7 +3,7 @@
 /// <p>A Retention configuration for an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLockRetention {
+pub struct ObjectLockRetention  {
     /// <p>Indicates the Retention mode for the specified object.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::ObjectLockRetentionMode>,
@@ -13,11 +13,11 @@ pub struct ObjectLockRetention {
 }
 impl ObjectLockRetention {
     /// <p>Indicates the Retention mode for the specified object.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::ObjectLockRetentionMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::types::ObjectLockRetentionMode> {
         self.mode.as_ref()
     }
     /// <p>The date on which this Object Lock Retention will expire.</p>
-    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn retain_until_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.retain_until_date.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ObjectLockRetentionBuilder {
         self
     }
     /// <p>Indicates the Retention mode for the specified object.</p>
-    pub fn set_mode(
-        mut self,
-        input: std::option::Option<crate::types::ObjectLockRetentionMode>,
-    ) -> Self {
-        self.mode = input;
-        self
+    pub fn set_mode(mut self, input: std::option::Option<crate::types::ObjectLockRetentionMode>) -> Self {
+        self.mode = input; self
     }
     /// <p>The date on which this Object Lock Retention will expire.</p>
     pub fn retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -55,18 +51,17 @@ impl ObjectLockRetentionBuilder {
         self
     }
     /// <p>The date on which this Object Lock Retention will expire.</p>
-    pub fn set_retain_until_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.retain_until_date = input;
-        self
+    pub fn set_retain_until_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.retain_until_date = input; self
     }
     /// Consumes the builder and constructs a [`ObjectLockRetention`](crate::types::ObjectLockRetention).
     pub fn build(self) -> crate::types::ObjectLockRetention {
         crate::types::ObjectLockRetention {
-            mode: self.mode,
-            retain_until_date: self.retain_until_date,
+            mode: self.mode
+            ,
+            retain_until_date: self.retain_until_date
+            ,
         }
     }
 }
+

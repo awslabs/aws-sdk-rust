@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeleteEventsByEventTypeStatusOutput {
+pub struct GetDeleteEventsByEventTypeStatusOutput  {
     /// <p>The event type name.</p>
     #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct GetDeleteEventsByEventTypeStatusOutput {
 }
 impl GetDeleteEventsByEventTypeStatusOutput {
     /// <p>The event type name.</p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The deletion status.</p>
-    pub fn events_deletion_status(&self) -> std::option::Option<&crate::types::AsyncJobStatus> {
+    pub fn events_deletion_status(&self) -> std::option::Option<& crate::types::AsyncJobStatus> {
         self.events_deletion_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeleteEventsByEventTypeStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDeleteEventsByEventTypeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput).
-    pub fn builder() -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder {
         crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
     }
     /// <p>The event type name.</p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The deletion status.</p>
     pub fn events_deletion_status(mut self, input: crate::types::AsyncJobStatus) -> Self {
@@ -58,24 +57,20 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
         self
     }
     /// <p>The deletion status.</p>
-    pub fn set_events_deletion_status(
-        mut self,
-        input: std::option::Option<crate::types::AsyncJobStatus>,
-    ) -> Self {
-        self.events_deletion_status = input;
-        self
+    pub fn set_events_deletion_status(mut self, input: std::option::Option<crate::types::AsyncJobStatus>) -> Self {
+        self.events_deletion_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput).
-    pub fn build(self) -> crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput{
+    pub fn build(self) -> crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput {
         crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput {
             event_type_name: self.event_type_name
             ,
@@ -85,3 +80,4 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
         }
     }
 }
+

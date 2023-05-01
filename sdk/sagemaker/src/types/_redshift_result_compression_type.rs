@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let redshiftresultcompressiontype = unimplemented!();
 /// match redshiftresultcompressiontype {
@@ -33,22 +33,14 @@
 /// Specifically, when `redshiftresultcompressiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RedshiftResultCompressionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The compression used for Redshift query results.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RedshiftResultCompressionType {
     #[allow(missing_docs)] // documentation missing in model
     Bzip2,
@@ -61,48 +53,47 @@ pub enum RedshiftResultCompressionType {
     #[allow(missing_docs)] // documentation missing in model
     Zstd,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RedshiftResultCompressionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BZIP2" => RedshiftResultCompressionType::Bzip2,
-            "GZIP" => RedshiftResultCompressionType::Gzip,
-            "None" => RedshiftResultCompressionType::None,
-            "SNAPPY" => RedshiftResultCompressionType::Snappy,
-            "ZSTD" => RedshiftResultCompressionType::Zstd,
-            other => RedshiftResultCompressionType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BZIP2" => RedshiftResultCompressionType::Bzip2,
+"GZIP" => RedshiftResultCompressionType::Gzip,
+"None" => RedshiftResultCompressionType::None,
+"SNAPPY" => RedshiftResultCompressionType::Snappy,
+"ZSTD" => RedshiftResultCompressionType::Zstd,
+other => RedshiftResultCompressionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RedshiftResultCompressionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RedshiftResultCompressionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RedshiftResultCompressionType::from(s))
+                }
+            }
 impl RedshiftResultCompressionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RedshiftResultCompressionType::Bzip2 => "BZIP2",
-            RedshiftResultCompressionType::Gzip => "GZIP",
-            RedshiftResultCompressionType::None => "None",
-            RedshiftResultCompressionType::Snappy => "SNAPPY",
-            RedshiftResultCompressionType::Zstd => "ZSTD",
-            RedshiftResultCompressionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BZIP2", "GZIP", "None", "SNAPPY", "ZSTD"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RedshiftResultCompressionType::Bzip2 => "BZIP2",
+    RedshiftResultCompressionType::Gzip => "GZIP",
+    RedshiftResultCompressionType::None => "None",
+    RedshiftResultCompressionType::Snappy => "SNAPPY",
+    RedshiftResultCompressionType::Zstd => "ZSTD",
+    RedshiftResultCompressionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BZIP2", "GZIP", "None", "SNAPPY", "ZSTD"]
+                }
+            }
 impl AsRef<str> for RedshiftResultCompressionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

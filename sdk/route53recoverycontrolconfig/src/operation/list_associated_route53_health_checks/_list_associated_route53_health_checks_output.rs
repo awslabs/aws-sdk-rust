@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedRoute53HealthChecksOutput {
+pub struct ListAssociatedRoute53HealthChecksOutput  {
     /// <p>Identifiers for the health checks.</p>
     #[doc(hidden)]
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct ListAssociatedRoute53HealthChecksOutput {
 }
 impl ListAssociatedRoute53HealthChecksOutput {
     /// <p>Identifiers for the health checks.</p>
-    pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn health_check_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.health_check_ids.as_deref()
     }
     /// <p>Next token for listing health checks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssociatedRoute53HealthChecksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssociatedRoute53HealthChecksOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput).
-    pub fn builder() -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder{
+    pub fn builder() -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder {
         crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl ListAssociatedRoute53HealthChecksOutputBuilder {
     /// <p>Identifiers for the health checks.</p>
     pub fn health_check_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.health_check_ids.unwrap_or_default();
-        v.push(input.into());
-        self.health_check_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.health_check_ids = Some(v);
+                        self
     }
     /// <p>Identifiers for the health checks.</p>
-    pub fn set_health_check_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.health_check_ids = input;
-        self
+    pub fn set_health_check_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.health_check_ids = input; self
     }
     /// <p>Next token for listing health checks.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +64,19 @@ impl ListAssociatedRoute53HealthChecksOutputBuilder {
     }
     /// <p>Next token for listing health checks.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput).
-    pub fn build(self) -> crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput{
+    pub fn build(self) -> crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput {
         crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput {
             health_check_ids: self.health_check_ids
             ,
@@ -91,3 +86,4 @@ impl ListAssociatedRoute53HealthChecksOutputBuilder {
         }
     }
 }
+

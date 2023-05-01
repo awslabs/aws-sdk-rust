@@ -3,14 +3,14 @@
 /// <p>Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeHintValue {
+pub struct RuntimeHintValue  {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
     #[doc(hidden)]
     pub phrase: std::option::Option<std::string::String>,
 }
 impl RuntimeHintValue {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
-    pub fn phrase(&self) -> std::option::Option<&str> {
+    pub fn phrase(&self) -> std::option::Option<& str> {
         self.phrase.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl RuntimeHintValueBuilder {
     }
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
     pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phrase = input;
-        self
+        self.phrase = input; self
     }
     /// Consumes the builder and constructs a [`RuntimeHintValue`](crate::types::RuntimeHintValue).
     pub fn build(self) -> crate::types::RuntimeHintValue {
         crate::types::RuntimeHintValue {
-            phrase: self.phrase,
+            phrase: self.phrase
+            ,
         }
     }
 }
+

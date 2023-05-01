@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCatalogItemsOutput {
+pub struct ListCatalogItemsOutput  {
     /// <p>Information about the catalog items.</p>
     #[doc(hidden)]
     pub catalog_items: std::option::Option<std::vec::Vec<crate::types::CatalogItem>>,
@@ -13,23 +13,22 @@ pub struct ListCatalogItemsOutput {
 }
 impl ListCatalogItemsOutput {
     /// <p>Information about the catalog items.</p>
-    pub fn catalog_items(&self) -> std::option::Option<&[crate::types::CatalogItem]> {
+    pub fn catalog_items(&self) -> std::option::Option<& [crate::types::CatalogItem]> {
         self.catalog_items.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCatalogItemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCatalogItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput).
-    pub fn builder() -> crate::operation::list_catalog_items::builders::ListCatalogItemsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_catalog_items::builders::ListCatalogItemsOutputBuilder {
         crate::operation::list_catalog_items::builders::ListCatalogItemsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListCatalogItemsOutputBuilder {
     /// <p>Information about the catalog items.</p>
     pub fn catalog_items(mut self, input: crate::types::CatalogItem) -> Self {
         let mut v = self.catalog_items.unwrap_or_default();
-        v.push(input);
-        self.catalog_items = Some(v);
-        self
+                        v.push(input);
+                        self.catalog_items = Some(v);
+                        self
     }
     /// <p>Information about the catalog items.</p>
-    pub fn set_catalog_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CatalogItem>>,
-    ) -> Self {
-        self.catalog_items = input;
-        self
+    pub fn set_catalog_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::CatalogItem>>) -> Self {
+        self.catalog_items = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListCatalogItemsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput).
     pub fn build(self) -> crate::operation::list_catalog_items::ListCatalogItemsOutput {
         crate::operation::list_catalog_items::ListCatalogItemsOutput {
-            catalog_items: self.catalog_items,
-            next_token: self.next_token,
+            catalog_items: self.catalog_items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

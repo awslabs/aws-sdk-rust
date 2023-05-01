@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagPolicyInput {
-    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+pub struct TagPolicyInput  {
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
@@ -12,13 +12,13 @@ pub struct TagPolicyInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl TagPolicyInput {
-    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The list of tags that you want to attach to the IAM customer managed policy. Each tag consists of a key name and an associated value.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -37,17 +37,16 @@ pub struct TagPolicyInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl TagPolicyInputBuilder {
-    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.policy_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -56,28 +55,24 @@ impl TagPolicyInputBuilder {
     /// <p>The list of tags that you want to attach to the IAM customer managed policy. Each tag consists of a key name and an associated value.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The list of tags that you want to attach to the IAM customer managed policy. Each tag consists of a key name and an associated value.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`TagPolicyInput`](crate::operation::tag_policy::TagPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::tag_policy::TagPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::tag_policy::TagPolicyInput {
-            policy_arn: self.policy_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::tag_policy::TagPolicyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::tag_policy::TagPolicyInput {
+                policy_arn: self.policy_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

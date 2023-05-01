@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartNetworkInsightsAnalysisInput {
+pub struct StartNetworkInsightsAnalysisInput  {
     /// <p>The ID of the path.</p>
     #[doc(hidden)]
     pub network_insights_path_id: std::option::Option<std::string::String>,
@@ -24,15 +24,15 @@ pub struct StartNetworkInsightsAnalysisInput {
 }
 impl StartNetworkInsightsAnalysisInput {
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_path_id(&self) -> std::option::Option<& str> {
         self.network_insights_path_id.as_deref()
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn additional_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_accounts.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn filter_in_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_in_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.filter_in_arns.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -40,17 +40,17 @@ impl StartNetworkInsightsAnalysisInput {
         self.dry_run
     }
     /// <p>The tags to apply.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl StartNetworkInsightsAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAnalysisInput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput).
-    pub fn builder() -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder{
+    pub fn builder() -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder {
         crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder::default()
     }
 }
@@ -63,8 +63,7 @@ pub struct StartNetworkInsightsAnalysisInputBuilder {
     pub(crate) additional_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) filter_in_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl StartNetworkInsightsAnalysisInputBuilder {
@@ -74,12 +73,8 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_insights_path_id = input;
-        self
+    pub fn set_network_insights_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_insights_path_id = input; self
     }
     /// Appends an item to `additional_accounts`.
     ///
@@ -88,17 +83,13 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     /// <p>The member accounts that contain resources that the path can traverse.</p>
     pub fn additional_accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.additional_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.additional_accounts = Some(v);
-        self
+                        v.push(input.into());
+                        self.additional_accounts = Some(v);
+                        self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn set_additional_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.additional_accounts = input;
-        self
+    pub fn set_additional_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.additional_accounts = input; self
     }
     /// Appends an item to `filter_in_arns`.
     ///
@@ -107,17 +98,13 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub fn filter_in_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.filter_in_arns.unwrap_or_default();
-        v.push(input.into());
-        self.filter_in_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.filter_in_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn set_filter_in_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.filter_in_arns = input;
-        self
+    pub fn set_filter_in_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.filter_in_arns = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -126,8 +113,7 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -136,17 +122,13 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     /// <p>The tags to apply.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = Some(v);
+                        self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,25 +137,26 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`StartNetworkInsightsAnalysisInput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput {
-                network_insights_path_id: self.network_insights_path_id,
-                additional_accounts: self.additional_accounts,
-                filter_in_arns: self.filter_in_arns,
-                dry_run: self.dry_run,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-            },
+                network_insights_path_id: self.network_insights_path_id
+                ,
+                additional_accounts: self.additional_accounts
+                ,
+                filter_in_arns: self.filter_in_arns
+                ,
+                dry_run: self.dry_run
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

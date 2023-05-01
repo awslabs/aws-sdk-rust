@@ -2,92 +2,92 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorldGenerationJobOutput {
+pub struct DescribeWorldGenerationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world generation job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The status of the world generation job:</p>
-    /// <dl>
+    /// <p>The status of the world generation job:</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// PartialFailed
-    /// </dt>
-    /// <dd>
-    /// <p>Some worlds did not generate.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Some worlds did not generate.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::WorldGenerationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The failure code of the world generation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world generation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub failure_code: std::option::Option<crate::types::WorldGenerationJobErrorCode>,
@@ -108,152 +108,142 @@ pub struct DescribeWorldGenerationJobOutput {
     pub finished_worlds_summary: std::option::Option<crate::types::FinishedWorldsSummary>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     #[doc(hidden)]
-    pub world_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub world_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeWorldGenerationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the world generation job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The status of the world generation job:</p>
-    /// <dl>
+    /// <p>The status of the world generation job:</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// PartialFailed
-    /// </dt>
-    /// <dd>
-    /// <p>Some worlds did not generate.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Some worlds did not generate.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::types::WorldGenerationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::WorldGenerationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The failure code of the world generation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world generation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason why the world generation job failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>Information about the world count.</p>
-    pub fn world_count(&self) -> std::option::Option<&crate::types::WorldCount> {
+    pub fn world_count(&self) -> std::option::Option<& crate::types::WorldCount> {
         self.world_count.as_ref()
     }
     /// <p>Summary information about finished worlds.</p>
-    pub fn finished_worlds_summary(
-        &self,
-    ) -> std::option::Option<&crate::types::FinishedWorldsSummary> {
+    pub fn finished_worlds_summary(&self) -> std::option::Option<& crate::types::FinishedWorldsSummary> {
         self.finished_worlds_summary.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn world_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.world_tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeWorldGenerationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeWorldGenerationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobOutput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput).
-    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobOutputBuilder {
         crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobOutputBuilder::default()
     }
 }
@@ -271,10 +261,8 @@ pub struct DescribeWorldGenerationJobOutputBuilder {
     pub(crate) template: std::option::Option<std::string::String>,
     pub(crate) world_count: std::option::Option<crate::types::WorldCount>,
     pub(crate) finished_worlds_summary: std::option::Option<crate::types::FinishedWorldsSummary>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) world_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) world_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeWorldGenerationJobOutputBuilder {
@@ -285,109 +273,104 @@ impl DescribeWorldGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world generation job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <p>The status of the world generation job:</p>
-    /// <dl>
+    /// <p>The status of the world generation job:</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// PartialFailed
-    /// </dt>
-    /// <dd>
-    /// <p>Some worlds did not generate.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Some worlds did not generate.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
     pub fn status(mut self, input: crate::types::WorldGenerationJobStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the world generation job:</p>
-    /// <dl>
+    /// <p>The status of the world generation job:</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// PartialFailed
-    /// </dt>
-    /// <dd>
-    /// <p>Some worlds did not generate.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Some worlds did not generate.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world generation job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world generation job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::WorldGenerationJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::WorldGenerationJobStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -395,89 +378,81 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
-    /// <p>The failure code of the world generation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world generation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
     pub fn failure_code(mut self, input: crate::types::WorldGenerationJobErrorCode) -> Self {
         self.failure_code = Some(input);
         self
     }
-    /// <p>The failure code of the world generation job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world generation job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::WorldGenerationJobErrorCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::WorldGenerationJobErrorCode>) -> Self {
+        self.failure_code = input; self
     }
     /// <p>The reason why the world generation job failed.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -486,8 +461,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
     }
     /// <p>The reason why the world generation job failed.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -495,12 +469,8 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -509,8 +479,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>Information about the world count.</p>
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
@@ -519,8 +488,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
     }
     /// <p>Information about the world count.</p>
     pub fn set_world_count(mut self, input: std::option::Option<crate::types::WorldCount>) -> Self {
-        self.world_count = input;
-        self
+        self.world_count = input; self
     }
     /// <p>Summary information about finished worlds.</p>
     pub fn finished_worlds_summary(mut self, input: crate::types::FinishedWorldsSummary) -> Self {
@@ -528,89 +496,75 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// <p>Summary information about finished worlds.</p>
-    pub fn set_finished_worlds_summary(
-        mut self,
-        input: std::option::Option<crate::types::FinishedWorldsSummary>,
-    ) -> Self {
-        self.finished_worlds_summary = input;
-        self
+    pub fn set_finished_worlds_summary(mut self, input: std::option::Option<crate::types::FinishedWorldsSummary>) -> Self {
+        self.finished_worlds_summary = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Adds a key-value pair to `world_tags`.
     ///
     /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn world_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.world_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.world_tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.world_tags = Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn set_world_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.world_tags = input;
-        self
+    pub fn set_world_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.world_tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeWorldGenerationJobOutput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput {
+    pub fn build(self) -> crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput {
         crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput {
-            arn: self.arn,
-            status: self.status,
-            created_at: self.created_at,
-            failure_code: self.failure_code,
-            failure_reason: self.failure_reason,
-            client_request_token: self.client_request_token,
-            template: self.template,
-            world_count: self.world_count,
-            finished_worlds_summary: self.finished_worlds_summary,
-            tags: self.tags,
-            world_tags: self.world_tags,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_reason: self.failure_reason
+            ,
+            client_request_token: self.client_request_token
+            ,
+            template: self.template
+            ,
+            world_count: self.world_count
+            ,
+            finished_worlds_summary: self.finished_worlds_summary
+            ,
+            tags: self.tags
+            ,
+            world_tags: self.world_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

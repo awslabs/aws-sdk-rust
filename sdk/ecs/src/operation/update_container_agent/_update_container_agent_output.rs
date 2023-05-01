@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContainerAgentOutput {
+pub struct UpdateContainerAgentOutput  {
     /// <p>The container instance that the container agent was updated for.</p>
     #[doc(hidden)]
     pub container_instance: std::option::Option<crate::types::ContainerInstance>,
@@ -10,19 +10,18 @@ pub struct UpdateContainerAgentOutput {
 }
 impl UpdateContainerAgentOutput {
     /// <p>The container instance that the container agent was updated for.</p>
-    pub fn container_instance(&self) -> std::option::Option<&crate::types::ContainerInstance> {
+    pub fn container_instance(&self) -> std::option::Option<& crate::types::ContainerInstance> {
         self.container_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateContainerAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateContainerAgentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerAgentOutput`](crate::operation::update_container_agent::UpdateContainerAgentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_container_agent::builders::UpdateContainerAgentOutputBuilder {
+    pub fn builder() -> crate::operation::update_container_agent::builders::UpdateContainerAgentOutputBuilder {
         crate::operation::update_container_agent::builders::UpdateContainerAgentOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateContainerAgentOutputBuilder {
         self
     }
     /// <p>The container instance that the container agent was updated for.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: std::option::Option<crate::types::ContainerInstance>,
-    ) -> Self {
-        self.container_instance = input;
-        self
+    pub fn set_container_instance(mut self, input: std::option::Option<crate::types::ContainerInstance>) -> Self {
+        self.container_instance = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateContainerAgentOutput`](crate::operation::update_container_agent::UpdateContainerAgentOutput).
     pub fn build(self) -> crate::operation::update_container_agent::UpdateContainerAgentOutput {
         crate::operation::update_container_agent::UpdateContainerAgentOutput {
-            container_instance: self.container_instance,
+            container_instance: self.container_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStageInput {
+pub struct DeleteStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteStageInput {
 }
 impl DeleteStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage to delete.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteStageInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// <p>The name of the stage to delete.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteStageInputBuilder {
     }
     /// <p>The name of the stage to delete.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_stage::DeleteStageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_stage::DeleteStageInput {
-            game_name: self.game_name,
-            stage_name: self.stage_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_stage::DeleteStageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_stage::DeleteStageInput {
+                game_name: self.game_name
+                ,
+                stage_name: self.stage_name
+                ,
+            }
+        )
     }
 }
+

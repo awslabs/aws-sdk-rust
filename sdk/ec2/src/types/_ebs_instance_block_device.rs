@@ -3,7 +3,7 @@
 /// <p>Describes a parameter used to set up an EBS volume in a block device mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsInstanceBlockDevice {
+pub struct EbsInstanceBlockDevice  {
     /// <p>The time stamp when the attachment initiated.</p>
     #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,7 +19,7 @@ pub struct EbsInstanceBlockDevice {
 }
 impl EbsInstanceBlockDevice {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
@@ -27,11 +27,11 @@ impl EbsInstanceBlockDevice {
         self.delete_on_termination
     }
     /// <p>The attachment state.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AttachmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the EBS volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl EbsInstanceBlockDeviceBuilder {
         self
     }
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn set_attach_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.attach_time = input;
-        self
+    pub fn set_attach_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.attach_time = input; self
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -72,8 +68,7 @@ impl EbsInstanceBlockDeviceBuilder {
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>The attachment state.</p>
     pub fn status(mut self, input: crate::types::AttachmentStatus) -> Self {
@@ -81,12 +76,8 @@ impl EbsInstanceBlockDeviceBuilder {
         self
     }
     /// <p>The attachment state.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::AttachmentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::AttachmentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The ID of the EBS volume.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,16 +86,20 @@ impl EbsInstanceBlockDeviceBuilder {
     }
     /// <p>The ID of the EBS volume.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// Consumes the builder and constructs a [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
     pub fn build(self) -> crate::types::EbsInstanceBlockDevice {
         crate::types::EbsInstanceBlockDevice {
-            attach_time: self.attach_time,
-            delete_on_termination: self.delete_on_termination,
-            status: self.status,
-            volume_id: self.volume_id,
+            attach_time: self.attach_time
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            status: self.status
+            ,
+            volume_id: self.volume_id
+            ,
         }
     }
 }
+

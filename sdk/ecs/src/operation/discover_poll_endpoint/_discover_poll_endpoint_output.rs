@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoverPollEndpointOutput {
+pub struct DiscoverPollEndpointOutput  {
     /// <p>The endpoint for the Amazon ECS agent to poll.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct DiscoverPollEndpointOutput {
 }
 impl DiscoverPollEndpointOutput {
     /// <p>The endpoint for the Amazon ECS agent to poll.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    pub fn telemetry_endpoint(&self) -> std::option::Option<&str> {
+    pub fn telemetry_endpoint(&self) -> std::option::Option<& str> {
         self.telemetry_endpoint.as_deref()
     }
     /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_endpoint(&self) -> std::option::Option<&str> {
+    pub fn service_connect_endpoint(&self) -> std::option::Option<& str> {
         self.service_connect_endpoint.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DiscoverPollEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DiscoverPollEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverPollEndpointOutput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder {
         crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl DiscoverPollEndpointOutputBuilder {
     }
     /// <p>The endpoint for the Amazon ECS agent to poll.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
     pub fn telemetry_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +65,8 @@ impl DiscoverPollEndpointOutputBuilder {
         self
     }
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    pub fn set_telemetry_endpoint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.telemetry_endpoint = input;
-        self
+    pub fn set_telemetry_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.telemetry_endpoint = input; self
     }
     /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn service_connect_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,29 +74,29 @@ impl DiscoverPollEndpointOutputBuilder {
         self
     }
     /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_service_connect_endpoint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_connect_endpoint = input;
-        self
+    pub fn set_service_connect_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_connect_endpoint = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DiscoverPollEndpointOutput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput).
     pub fn build(self) -> crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput {
         crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput {
-            endpoint: self.endpoint,
-            telemetry_endpoint: self.telemetry_endpoint,
-            service_connect_endpoint: self.service_connect_endpoint,
+            endpoint: self.endpoint
+            ,
+            telemetry_endpoint: self.telemetry_endpoint
+            ,
+            service_connect_endpoint: self.service_connect_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

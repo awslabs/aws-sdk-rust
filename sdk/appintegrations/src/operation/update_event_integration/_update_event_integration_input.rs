@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventIntegrationInput {
+pub struct UpdateEventIntegrationInput  {
     /// <p>The name of the event integration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UpdateEventIntegrationInput {
 }
 impl UpdateEventIntegrationInput {
     /// <p>The name of the event integration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the event inegration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationInput`](crate::operation::update_event_integration::UpdateEventIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder {
         crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl UpdateEventIntegrationInputBuilder {
     }
     /// <p>The name of the event integration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the event inegration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl UpdateEventIntegrationInputBuilder {
     }
     /// <p>The description of the event inegration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateEventIntegrationInput`](crate::operation::update_event_integration::UpdateEventIntegrationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_event_integration::UpdateEventIntegrationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_event_integration::UpdateEventIntegrationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_event_integration::UpdateEventIntegrationInput {
-                name: self.name,
-                description: self.description,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

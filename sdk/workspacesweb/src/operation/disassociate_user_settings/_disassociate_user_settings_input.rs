@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateUserSettingsInput {
+pub struct DisassociateUserSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateUserSettingsInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> std::option::Option<&str> {
+    pub fn portal_arn(&self) -> std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
 }
 impl DisassociateUserSettingsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserSettingsInput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder {
         crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DisassociateUserSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateUserSettingsInput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_user_settings::DisassociateUserSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_user_settings::DisassociateUserSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_user_settings::DisassociateUserSettingsInput {
-                portal_arn: self.portal_arn,
-            },
+                portal_arn: self.portal_arn
+                ,
+            }
         )
     }
 }
+

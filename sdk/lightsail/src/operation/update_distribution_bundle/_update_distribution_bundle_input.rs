@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDistributionBundleInput {
-    /// <p>The name of the distribution for which to update the bundle.</p>
+pub struct UpdateDistributionBundleInput  {
+    /// <p>The name of the distribution for which to update the bundle.</p> 
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     #[doc(hidden)]
     pub distribution_name: std::option::Option<std::string::String>,
-    /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
+    /// <p>The bundle ID of the new bundle to apply to your distribution.</p> 
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
     #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionBundleInput {
-    /// <p>The name of the distribution for which to update the bundle.</p>
+    /// <p>The name of the distribution for which to update the bundle.</p> 
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(&self) -> std::option::Option<&str> {
+    pub fn distribution_name(&self) -> std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
-    /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
+    /// <p>The bundle ID of the new bundle to apply to your distribution.</p> 
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
-    pub fn bundle_id(&self) -> std::option::Option<&str> {
+    pub fn bundle_id(&self) -> std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
 }
 impl UpdateDistributionBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionBundleInput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleInput).
-    pub fn builder(
-    ) -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder {
         crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder::default()
     }
 }
@@ -41,45 +39,38 @@ pub struct UpdateDistributionBundleInputBuilder {
     pub(crate) bundle_id: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionBundleInputBuilder {
-    /// <p>The name of the distribution for which to update the bundle.</p>
+    /// <p>The name of the distribution for which to update the bundle.</p> 
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.distribution_name = Some(input.into());
         self
     }
-    /// <p>The name of the distribution for which to update the bundle.</p>
+    /// <p>The name of the distribution for which to update the bundle.</p> 
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.distribution_name = input;
-        self
+    pub fn set_distribution_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.distribution_name = input; self
     }
-    /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
+    /// <p>The bundle ID of the new bundle to apply to your distribution.</p> 
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
     pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.bundle_id = Some(input.into());
         self
     }
-    /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
+    /// <p>The bundle ID of the new bundle to apply to your distribution.</p> 
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
     pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDistributionBundleInput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_distribution_bundle::UpdateDistributionBundleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_distribution_bundle::UpdateDistributionBundleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_distribution_bundle::UpdateDistributionBundleInput {
-                distribution_name: self.distribution_name,
-                bundle_id: self.bundle_id,
-            },
+                distribution_name: self.distribution_name
+                ,
+                bundle_id: self.bundle_id
+                ,
+            }
         )
     }
 }
+

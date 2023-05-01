@@ -3,7 +3,7 @@
 /// <p>Contains information about the user and authentication details for a database instance involved in the finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDbUserDetails {
+pub struct RdsDbUserDetails  {
     /// <p>The user name used in the anomalous login attempt.</p>
     #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RdsDbUserDetails {
 }
 impl RdsDbUserDetails {
     /// <p>The user name used in the anomalous login attempt.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>The application name used in the anomalous login attempt.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The name of the database instance involved in the anomalous login attempt.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The version of the Secure Socket Layer (SSL) used for the network.</p>
-    pub fn ssl(&self) -> std::option::Option<&str> {
+    pub fn ssl(&self) -> std::option::Option<& str> {
         self.ssl.as_deref()
     }
     /// <p>The authentication method used by the user involved in the finding.</p>
-    pub fn auth_method(&self) -> std::option::Option<&str> {
+    pub fn auth_method(&self) -> std::option::Option<& str> {
         self.auth_method.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl RdsDbUserDetailsBuilder {
     }
     /// <p>The user name used in the anomalous login attempt.</p>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>The application name used in the anomalous login attempt.</p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl RdsDbUserDetailsBuilder {
     }
     /// <p>The application name used in the anomalous login attempt.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The name of the database instance involved in the anomalous login attempt.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl RdsDbUserDetailsBuilder {
     }
     /// <p>The name of the database instance involved in the anomalous login attempt.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The version of the Secure Socket Layer (SSL) used for the network.</p>
     pub fn ssl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl RdsDbUserDetailsBuilder {
     }
     /// <p>The version of the Secure Socket Layer (SSL) used for the network.</p>
     pub fn set_ssl(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssl = input;
-        self
+        self.ssl = input; self
     }
     /// <p>The authentication method used by the user involved in the finding.</p>
     pub fn auth_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,17 +103,22 @@ impl RdsDbUserDetailsBuilder {
     }
     /// <p>The authentication method used by the user involved in the finding.</p>
     pub fn set_auth_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auth_method = input;
-        self
+        self.auth_method = input; self
     }
     /// Consumes the builder and constructs a [`RdsDbUserDetails`](crate::types::RdsDbUserDetails).
     pub fn build(self) -> crate::types::RdsDbUserDetails {
         crate::types::RdsDbUserDetails {
-            user: self.user,
-            application: self.application,
-            database: self.database,
-            ssl: self.ssl,
-            auth_method: self.auth_method,
+            user: self.user
+            ,
+            application: self.application
+            ,
+            database: self.database
+            ,
+            ssl: self.ssl
+            ,
+            auth_method: self.auth_method
+            ,
         }
     }
 }
+

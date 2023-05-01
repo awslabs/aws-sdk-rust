@@ -3,7 +3,7 @@
 /// <p>Contains information about the accounts that weren't processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedAccount {
+pub struct UnprocessedAccount  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UnprocessedAccount {
 }
 impl UnprocessedAccount {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>A reason why the account hasn't been processed.</p>
-    pub fn result(&self) -> std::option::Option<&str> {
+    pub fn result(&self) -> std::option::Option<& str> {
         self.result.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UnprocessedAccountBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>A reason why the account hasn't been processed.</p>
     pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl UnprocessedAccountBuilder {
     }
     /// <p>A reason why the account hasn't been processed.</p>
     pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// Consumes the builder and constructs a [`UnprocessedAccount`](crate::types::UnprocessedAccount).
     pub fn build(self) -> crate::types::UnprocessedAccount {
         crate::types::UnprocessedAccount {
-            account_id: self.account_id,
-            result: self.result,
+            account_id: self.account_id
+            ,
+            result: self.result
+            ,
         }
     }
 }
+

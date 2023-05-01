@@ -3,14 +3,14 @@
 /// <p>Updated properties for the HTTP namespace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpNamespaceChange {
+pub struct HttpNamespaceChange  {
     /// <p>An updated description for the HTTP namespace.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl HttpNamespaceChange {
     /// <p>An updated description for the HTTP namespace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl HttpNamespaceChangeBuilder {
     }
     /// <p>An updated description for the HTTP namespace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`HttpNamespaceChange`](crate::types::HttpNamespaceChange).
     pub fn build(self) -> crate::types::HttpNamespaceChange {
         crate::types::HttpNamespaceChange {
-            description: self.description,
+            description: self.description
+            ,
         }
     }
 }
+

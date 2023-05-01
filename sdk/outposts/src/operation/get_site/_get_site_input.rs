@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSiteInput {
+pub struct GetSiteInput  {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
 }
 impl GetSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    pub fn site_id(&self) -> std::option::Option<&str> {
+    pub fn site_id(&self) -> std::option::Option<& str> {
         self.site_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetSiteInputBuilder {
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_site::GetSiteInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_site::GetSiteInput {
-            site_id: self.site_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_site::GetSiteInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_site::GetSiteInput {
+                site_id: self.site_id
+                ,
+            }
+        )
     }
 }
+

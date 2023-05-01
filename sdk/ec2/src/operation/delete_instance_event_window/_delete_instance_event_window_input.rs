@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceEventWindowInput {
+pub struct DeleteInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -23,13 +23,13 @@ impl DeleteInstanceEventWindowInput {
         self.force_delete
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(&self) -> std::option::Option<&str> {
+    pub fn instance_event_window_id(&self) -> std::option::Option<& str> {
         self.instance_event_window_id.as_deref()
     }
 }
 impl DeleteInstanceEventWindowInput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceEventWindowInput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput).
-    pub fn builder() -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder {
         crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DeleteInstanceEventWindowInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Specify <code>true</code> to force delete the event window. Use the force delete parameter if the event window is currently associated with targets.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -60,8 +59,7 @@ impl DeleteInstanceEventWindowInputBuilder {
     }
     /// <p>Specify <code>true</code> to force delete the event window. Use the force delete parameter if the event window is currently associated with targets.</p>
     pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>The ID of the event window.</p>
     pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,26 +67,21 @@ impl DeleteInstanceEventWindowInputBuilder {
         self
     }
     /// <p>The ID of the event window.</p>
-    pub fn set_instance_event_window_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_event_window_id = input;
-        self
+    pub fn set_instance_event_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_event_window_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInstanceEventWindowInput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput {
-                dry_run: self.dry_run,
-                force_delete: self.force_delete,
-                instance_event_window_id: self.instance_event_window_id,
-            },
+                dry_run: self.dry_run
+                ,
+                force_delete: self.force_delete
+                ,
+                instance_event_window_id: self.instance_event_window_id
+                ,
+            }
         )
     }
 }
+

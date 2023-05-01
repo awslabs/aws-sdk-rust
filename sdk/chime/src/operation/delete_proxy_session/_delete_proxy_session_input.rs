@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProxySessionInput {
+pub struct DeleteProxySessionInput  {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DeleteProxySessionInput {
 }
 impl DeleteProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
+    pub fn proxy_session_id(&self) -> std::option::Option<& str> {
         self.proxy_session_id.as_deref()
     }
 }
 impl DeleteProxySessionInput {
     /// Creates a new builder-style object to manufacture [`DeleteProxySessionInput`](crate::operation::delete_proxy_session::DeleteProxySessionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_proxy_session::builders::DeleteProxySessionInputBuilder {
+    pub fn builder() -> crate::operation::delete_proxy_session::builders::DeleteProxySessionInputBuilder {
         crate::operation::delete_proxy_session::builders::DeleteProxySessionInputBuilder::default()
     }
 }
@@ -42,12 +41,8 @@ impl DeleteProxySessionInputBuilder {
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,21 +51,18 @@ impl DeleteProxySessionInputBuilder {
     }
     /// <p>The proxy session ID.</p>
     pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.proxy_session_id = input;
-        self
+        self.proxy_session_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteProxySessionInput`](crate::operation::delete_proxy_session::DeleteProxySessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_proxy_session::DeleteProxySessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_proxy_session::DeleteProxySessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_proxy_session::DeleteProxySessionInput {
-                voice_connector_id: self.voice_connector_id,
-                proxy_session_id: self.proxy_session_id,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                proxy_session_id: self.proxy_session_id
+                ,
+            }
         )
     }
 }
+

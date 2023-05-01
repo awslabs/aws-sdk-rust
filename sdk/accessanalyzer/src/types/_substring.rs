@@ -3,7 +3,7 @@
 /// <p>A reference to a substring of a literal string in a JSON document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Substring {
+pub struct Substring  {
     /// <p>The start index of the substring, starting from 0.</p>
     #[doc(hidden)]
     pub start: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl SubstringBuilder {
     }
     /// <p>The start index of the substring, starting from 0.</p>
     pub fn set_start(mut self, input: std::option::Option<i32>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The length of the substring.</p>
     pub fn length(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl SubstringBuilder {
     }
     /// <p>The length of the substring.</p>
     pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// Consumes the builder and constructs a [`Substring`](crate::types::Substring).
     pub fn build(self) -> crate::types::Substring {
         crate::types::Substring {
-            start: self.start,
-            length: self.length,
+            start: self.start
+            ,
+            length: self.length
+            ,
         }
     }
 }
+

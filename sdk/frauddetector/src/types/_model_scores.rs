@@ -3,7 +3,7 @@
 /// <p>The fraud prediction scores.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelScores {
+pub struct ModelScores  {
     /// <p>The model version.</p>
     #[doc(hidden)]
     pub model_version: std::option::Option<crate::types::ModelVersion>,
@@ -13,13 +13,11 @@ pub struct ModelScores {
 }
 impl ModelScores {
     /// <p>The model version.</p>
-    pub fn model_version(&self) -> std::option::Option<&crate::types::ModelVersion> {
+    pub fn model_version(&self) -> std::option::Option<& crate::types::ModelVersion> {
         self.model_version.as_ref()
     }
     /// <p>The model's fraud prediction scores.</p>
-    pub fn scores(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f32>> {
+    pub fn scores(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, f32>> {
         self.scores.as_ref()
     }
 }
@@ -44,12 +42,8 @@ impl ModelScoresBuilder {
         self
     }
     /// <p>The model version.</p>
-    pub fn set_model_version(
-        mut self,
-        input: std::option::Option<crate::types::ModelVersion>,
-    ) -> Self {
-        self.model_version = input;
-        self
+    pub fn set_model_version(mut self, input: std::option::Option<crate::types::ModelVersion>) -> Self {
+        self.model_version = input; self
     }
     /// Adds a key-value pair to `scores`.
     ///
@@ -58,23 +52,22 @@ impl ModelScoresBuilder {
     /// <p>The model's fraud prediction scores.</p>
     pub fn scores(mut self, k: impl Into<std::string::String>, v: f32) -> Self {
         let mut hash_map = self.scores.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.scores = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.scores = Some(hash_map);
+                        self
     }
     /// <p>The model's fraud prediction scores.</p>
-    pub fn set_scores(
-        mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
-    ) -> Self {
-        self.scores = input;
-        self
+    pub fn set_scores(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, f32>>) -> Self {
+        self.scores = input; self
     }
     /// Consumes the builder and constructs a [`ModelScores`](crate::types::ModelScores).
     pub fn build(self) -> crate::types::ModelScores {
         crate::types::ModelScores {
-            model_version: self.model_version,
-            scores: self.scores,
+            model_version: self.model_version
+            ,
+            scores: self.scores
+            ,
         }
     }
 }
+

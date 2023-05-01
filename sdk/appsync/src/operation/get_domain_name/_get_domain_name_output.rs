@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainNameOutput {
+pub struct GetDomainNameOutput  {
     /// <p>The configuration for the <code>DomainName</code>.</p>
     #[doc(hidden)]
     pub domain_name_config: std::option::Option<crate::types::DomainNameConfig>,
@@ -10,15 +10,15 @@ pub struct GetDomainNameOutput {
 }
 impl GetDomainNameOutput {
     /// <p>The configuration for the <code>DomainName</code>.</p>
-    pub fn domain_name_config(&self) -> std::option::Option<&crate::types::DomainNameConfig> {
+    pub fn domain_name_config(&self) -> std::option::Option<& crate::types::DomainNameConfig> {
         self.domain_name_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDomainNameOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDomainNameOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput).
     pub fn builder() -> crate::operation::get_domain_name::builders::GetDomainNameOutputBuilder {
@@ -40,27 +40,25 @@ impl GetDomainNameOutputBuilder {
         self
     }
     /// <p>The configuration for the <code>DomainName</code>.</p>
-    pub fn set_domain_name_config(
-        mut self,
-        input: std::option::Option<crate::types::DomainNameConfig>,
-    ) -> Self {
-        self.domain_name_config = input;
-        self
+    pub fn set_domain_name_config(mut self, input: std::option::Option<crate::types::DomainNameConfig>) -> Self {
+        self.domain_name_config = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput).
     pub fn build(self) -> crate::operation::get_domain_name::GetDomainNameOutput {
         crate::operation::get_domain_name::GetDomainNameOutput {
-            domain_name_config: self.domain_name_config,
+            domain_name_config: self.domain_name_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

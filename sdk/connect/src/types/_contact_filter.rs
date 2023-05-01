@@ -3,14 +3,14 @@
 /// <p>Filters user data based on the contact information that is associated to the users. It contains a list of <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactFilter {
+pub struct ContactFilter  {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
     #[doc(hidden)]
     pub contact_states: std::option::Option<std::vec::Vec<crate::types::ContactState>>,
 }
 impl ContactFilter {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-    pub fn contact_states(&self) -> std::option::Option<&[crate::types::ContactState]> {
+    pub fn contact_states(&self) -> std::option::Option<& [crate::types::ContactState]> {
         self.contact_states.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl ContactFilterBuilder {
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
     pub fn contact_states(mut self, input: crate::types::ContactState) -> Self {
         let mut v = self.contact_states.unwrap_or_default();
-        v.push(input);
-        self.contact_states = Some(v);
-        self
+                        v.push(input);
+                        self.contact_states = Some(v);
+                        self
     }
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-    pub fn set_contact_states(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactState>>,
-    ) -> Self {
-        self.contact_states = input;
-        self
+    pub fn set_contact_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContactState>>) -> Self {
+        self.contact_states = input; self
     }
     /// Consumes the builder and constructs a [`ContactFilter`](crate::types::ContactFilter).
     pub fn build(self) -> crate::types::ContactFilter {
         crate::types::ContactFilter {
-            contact_states: self.contact_states,
+            contact_states: self.contact_states
+            ,
         }
     }
 }
+

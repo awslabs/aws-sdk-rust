@@ -3,7 +3,7 @@
 /// <p>Details of what related item data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedItemEventIncludedData {
+pub struct RelatedItemEventIncludedData  {
     /// <p>Details of what related item data is published through the case event stream.</p>
     #[doc(hidden)]
     pub include_content: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl RelatedItemEventIncludedDataBuilder {
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn set_include_content(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_content = input;
-        self
+        self.include_content = input; self
     }
     /// Consumes the builder and constructs a [`RelatedItemEventIncludedData`](crate::types::RelatedItemEventIncludedData).
     pub fn build(self) -> crate::types::RelatedItemEventIncludedData {
         crate::types::RelatedItemEventIncludedData {
-            include_content: self.include_content,
+            include_content: self.include_content
+            ,
         }
     }
 }
+

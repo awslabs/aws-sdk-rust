@@ -3,7 +3,7 @@
 /// <p> Information about a reactive insight. This object is returned by <code>DescribeInsight.</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReactiveInsightSummary {
+pub struct ReactiveInsightSummary  {
     /// <p> The ID of a reactive summary. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct ReactiveInsightSummary {
 }
 impl ReactiveInsightSummary {
     /// <p> The ID of a reactive summary. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The name of a reactive insight. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::types::InsightSeverity> {
+    pub fn severity(&self) -> std::option::Option<& crate::types::InsightSeverity> {
         self.severity.as_ref()
     }
     /// <p> The status of a reactive insight. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::InsightStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::InsightStatus> {
         self.status.as_ref()
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    pub fn insight_time_range(&self) -> std::option::Option<&crate::types::InsightTimeRange> {
+    pub fn insight_time_range(&self) -> std::option::Option<& crate::types::InsightTimeRange> {
         self.insight_time_range.as_ref()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> std::option::Option<& crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    pub fn service_collection(&self) -> std::option::Option<&crate::types::ServiceCollection> {
+    pub fn service_collection(&self) -> std::option::Option<& crate::types::ServiceCollection> {
         self.service_collection.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
-    pub fn associated_resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn associated_resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.associated_resource_arns.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl ReactiveInsightSummaryBuilder {
     }
     /// <p> The ID of a reactive summary. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p> The name of a reactive insight. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl ReactiveInsightSummaryBuilder {
     }
     /// <p> The name of a reactive insight. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn severity(mut self, input: crate::types::InsightSeverity) -> Self {
@@ -110,12 +108,8 @@ impl ReactiveInsightSummaryBuilder {
         self
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn set_severity(
-        mut self,
-        input: std::option::Option<crate::types::InsightSeverity>,
-    ) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: std::option::Option<crate::types::InsightSeverity>) -> Self {
+        self.severity = input; self
     }
     /// <p> The status of a reactive insight. </p>
     pub fn status(mut self, input: crate::types::InsightStatus) -> Self {
@@ -124,8 +118,7 @@ impl ReactiveInsightSummaryBuilder {
     }
     /// <p> The status of a reactive insight. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::InsightStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn insight_time_range(mut self, input: crate::types::InsightTimeRange) -> Self {
@@ -133,12 +126,8 @@ impl ReactiveInsightSummaryBuilder {
         self
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    pub fn set_insight_time_range(
-        mut self,
-        input: std::option::Option<crate::types::InsightTimeRange>,
-    ) -> Self {
-        self.insight_time_range = input;
-        self
+    pub fn set_insight_time_range(mut self, input: std::option::Option<crate::types::InsightTimeRange>) -> Self {
+        self.insight_time_range = input; self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
@@ -146,12 +135,8 @@ impl ReactiveInsightSummaryBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
-        self.resource_collection = input;
-        self
+    pub fn set_resource_collection(mut self, input: std::option::Option<crate::types::ResourceCollection>) -> Self {
+        self.resource_collection = input; self
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn service_collection(mut self, input: crate::types::ServiceCollection) -> Self {
@@ -159,12 +144,8 @@ impl ReactiveInsightSummaryBuilder {
         self
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    pub fn set_service_collection(
-        mut self,
-        input: std::option::Option<crate::types::ServiceCollection>,
-    ) -> Self {
-        self.service_collection = input;
-        self
+    pub fn set_service_collection(mut self, input: std::option::Option<crate::types::ServiceCollection>) -> Self {
+        self.service_collection = input; self
     }
     /// Appends an item to `associated_resource_arns`.
     ///
@@ -173,29 +154,34 @@ impl ReactiveInsightSummaryBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
     pub fn associated_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.associated_resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.associated_resource_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_resource_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated this insight.</p>
-    pub fn set_associated_resource_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.associated_resource_arns = input;
-        self
+    pub fn set_associated_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.associated_resource_arns = input; self
     }
     /// Consumes the builder and constructs a [`ReactiveInsightSummary`](crate::types::ReactiveInsightSummary).
     pub fn build(self) -> crate::types::ReactiveInsightSummary {
         crate::types::ReactiveInsightSummary {
-            id: self.id,
-            name: self.name,
-            severity: self.severity,
-            status: self.status,
-            insight_time_range: self.insight_time_range,
-            resource_collection: self.resource_collection,
-            service_collection: self.service_collection,
-            associated_resource_arns: self.associated_resource_arns,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            severity: self.severity
+            ,
+            status: self.status
+            ,
+            insight_time_range: self.insight_time_range
+            ,
+            resource_collection: self.resource_collection
+            ,
+            service_collection: self.service_collection
+            ,
+            associated_resource_arns: self.associated_resource_arns
+            ,
         }
     }
 }
+

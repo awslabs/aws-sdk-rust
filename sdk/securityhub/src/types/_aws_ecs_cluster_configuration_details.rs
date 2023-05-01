@@ -3,20 +3,14 @@
 /// <p>The run command configuration for the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsClusterConfigurationDetails {
+pub struct AwsEcsClusterConfigurationDetails  {
     /// <p>Contains the run command configuration for the cluster.</p>
     #[doc(hidden)]
-    pub execute_command_configuration: std::option::Option<
-        crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
-    >,
+    pub execute_command_configuration: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
 }
 impl AwsEcsClusterConfigurationDetails {
     /// <p>Contains the run command configuration for the cluster.</p>
-    pub fn execute_command_configuration(
-        &self,
-    ) -> std::option::Option<
-        &crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
-    > {
+    pub fn execute_command_configuration(&self) -> std::option::Option<& crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails> {
         self.execute_command_configuration.as_ref()
     }
 }
@@ -31,33 +25,24 @@ impl AwsEcsClusterConfigurationDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationDetailsBuilder {
-    pub(crate) execute_command_configuration: std::option::Option<
-        crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
-    >,
+    pub(crate) execute_command_configuration: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
 }
 impl AwsEcsClusterConfigurationDetailsBuilder {
     /// <p>Contains the run command configuration for the cluster.</p>
-    pub fn execute_command_configuration(
-        mut self,
-        input: crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
-    ) -> Self {
+    pub fn execute_command_configuration(mut self, input: crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails) -> Self {
         self.execute_command_configuration = Some(input);
         self
     }
     /// <p>Contains the run command configuration for the cluster.</p>
-    pub fn set_execute_command_configuration(
-        mut self,
-        input: std::option::Option<
-            crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
-        >,
-    ) -> Self {
-        self.execute_command_configuration = input;
-        self
+    pub fn set_execute_command_configuration(mut self, input: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>) -> Self {
+        self.execute_command_configuration = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationDetails`](crate::types::AwsEcsClusterConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsClusterConfigurationDetails {
         crate::types::AwsEcsClusterConfigurationDetails {
-            execute_command_configuration: self.execute_command_configuration,
+            execute_command_configuration: self.execute_command_configuration
+            ,
         }
     }
 }
+

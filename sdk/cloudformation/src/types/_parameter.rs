@@ -3,7 +3,7 @@
 /// <p>The Parameter data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Parameter {
+pub struct Parameter  {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
     #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct Parameter {
 }
 impl Parameter {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
-    pub fn parameter_key(&self) -> std::option::Option<&str> {
+    pub fn parameter_key(&self) -> std::option::Option<& str> {
         self.parameter_key.as_deref()
     }
     /// <p>The input value associated with the parameter.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
@@ -31,7 +31,7 @@ impl Parameter {
         self.use_previous_value
     }
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
-    pub fn resolved_value(&self) -> std::option::Option<&str> {
+    pub fn resolved_value(&self) -> std::option::Option<& str> {
         self.resolved_value.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ParameterBuilder {
     }
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
     pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_key = input;
-        self
+        self.parameter_key = input; self
     }
     /// <p>The input value associated with the parameter.</p>
     pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ParameterBuilder {
     }
     /// <p>The input value associated with the parameter.</p>
     pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_value = input;
-        self
+        self.parameter_value = input; self
     }
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     pub fn use_previous_value(mut self, input: bool) -> Self {
@@ -79,8 +77,7 @@ impl ParameterBuilder {
     }
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     pub fn set_use_previous_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_previous_value = input;
-        self
+        self.use_previous_value = input; self
     }
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
     pub fn resolved_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl ParameterBuilder {
     }
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
     pub fn set_resolved_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolved_value = input;
-        self
+        self.resolved_value = input; self
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {
         crate::types::Parameter {
-            parameter_key: self.parameter_key,
-            parameter_value: self.parameter_value,
-            use_previous_value: self.use_previous_value,
-            resolved_value: self.resolved_value,
+            parameter_key: self.parameter_key
+            ,
+            parameter_value: self.parameter_value
+            ,
+            use_previous_value: self.use_previous_value
+            ,
+            resolved_value: self.resolved_value
+            ,
         }
     }
 }
+

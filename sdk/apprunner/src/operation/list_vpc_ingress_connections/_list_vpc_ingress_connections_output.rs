@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcIngressConnectionsOutput {
+pub struct ListVpcIngressConnectionsOutput  {
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     #[doc(hidden)]
-    pub vpc_ingress_connection_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
+    pub vpc_ingress_connection_summary_list: std::option::Option<std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListVpcIngressConnectionsOutput {
 }
 impl ListVpcIngressConnectionsOutput {
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn vpc_ingress_connection_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::VpcIngressConnectionSummary]> {
+    pub fn vpc_ingress_connection_summary_list(&self) -> std::option::Option<& [crate::types::VpcIngressConnectionSummary]> {
         self.vpc_ingress_connection_summary_list.as_deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVpcIngressConnectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVpcIngressConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcIngressConnectionsOutput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput).
-    pub fn builder() -> crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsOutputBuilder {
         crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListVpcIngressConnectionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsOutputBuilder {
-    pub(crate) vpc_ingress_connection_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
+    pub(crate) vpc_ingress_connection_summary_list: std::option::Option<std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListVpcIngressConnectionsOutputBuilder {
     /// To override the contents of this collection use [`set_vpc_ingress_connection_summary_list`](Self::set_vpc_ingress_connection_summary_list).
     ///
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn vpc_ingress_connection_summary_list(
-        mut self,
-        input: crate::types::VpcIngressConnectionSummary,
-    ) -> Self {
+    pub fn vpc_ingress_connection_summary_list(mut self, input: crate::types::VpcIngressConnectionSummary) -> Self {
         let mut v = self.vpc_ingress_connection_summary_list.unwrap_or_default();
-        v.push(input);
-        self.vpc_ingress_connection_summary_list = Some(v);
-        self
+                        v.push(input);
+                        self.vpc_ingress_connection_summary_list = Some(v);
+                        self
     }
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn set_vpc_ingress_connection_summary_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
-    ) -> Self {
-        self.vpc_ingress_connection_summary_list = input;
-        self
+    pub fn set_vpc_ingress_connection_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcIngressConnectionSummary>>) -> Self {
+        self.vpc_ingress_connection_summary_list = input; self
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,26 +64,26 @@ impl ListVpcIngressConnectionsOutputBuilder {
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVpcIngressConnectionsOutput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
+    pub fn build(self) -> crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
         crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
-            vpc_ingress_connection_summary_list: self.vpc_ingress_connection_summary_list,
-            next_token: self.next_token,
+            vpc_ingress_connection_summary_list: self.vpc_ingress_connection_summary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

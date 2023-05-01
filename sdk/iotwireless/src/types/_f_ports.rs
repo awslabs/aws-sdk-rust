@@ -3,7 +3,7 @@
 /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FPorts {
+pub struct FPorts  {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
     pub fuota: std::option::Option<i32>,
@@ -34,11 +34,11 @@ impl FPorts {
         self.clock_sync
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn positioning(&self) -> std::option::Option<&crate::types::Positioning> {
+    pub fn positioning(&self) -> std::option::Option<& crate::types::Positioning> {
         self.positioning.as_ref()
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::types::ApplicationConfig]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::types::ApplicationConfig]> {
         self.applications.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl FPortsBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_fuota(mut self, input: std::option::Option<i32>) -> Self {
-        self.fuota = input;
-        self
+        self.fuota = input; self
     }
     /// <p>The Fport value.</p>
     pub fn multicast(mut self, input: i32) -> Self {
@@ -77,8 +76,7 @@ impl FPortsBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_multicast(mut self, input: std::option::Option<i32>) -> Self {
-        self.multicast = input;
-        self
+        self.multicast = input; self
     }
     /// <p>The Fport value.</p>
     pub fn clock_sync(mut self, input: i32) -> Self {
@@ -87,8 +85,7 @@ impl FPortsBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
-        self.clock_sync = input;
-        self
+        self.clock_sync = input; self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(mut self, input: crate::types::Positioning) -> Self {
@@ -96,12 +93,8 @@ impl FPortsBuilder {
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn set_positioning(
-        mut self,
-        input: std::option::Option<crate::types::Positioning>,
-    ) -> Self {
-        self.positioning = input;
-        self
+    pub fn set_positioning(mut self, input: std::option::Option<crate::types::Positioning>) -> Self {
+        self.positioning = input; self
     }
     /// Appends an item to `applications`.
     ///
@@ -110,26 +103,28 @@ impl FPortsBuilder {
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
     pub fn applications(mut self, input: crate::types::ApplicationConfig) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = Some(v);
-        self
+                        v.push(input);
+                        self.applications = Some(v);
+                        self
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    pub fn set_applications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationConfig>>,
-    ) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationConfig>>) -> Self {
+        self.applications = input; self
     }
     /// Consumes the builder and constructs a [`FPorts`](crate::types::FPorts).
     pub fn build(self) -> crate::types::FPorts {
         crate::types::FPorts {
-            fuota: self.fuota,
-            multicast: self.multicast,
-            clock_sync: self.clock_sync,
-            positioning: self.positioning,
-            applications: self.applications,
+            fuota: self.fuota
+            ,
+            multicast: self.multicast
+            ,
+            clock_sync: self.clock_sync
+            ,
+            positioning: self.positioning
+            ,
+            applications: self.applications
+            ,
         }
     }
 }
+

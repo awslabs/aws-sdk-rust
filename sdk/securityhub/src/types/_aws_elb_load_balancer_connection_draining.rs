@@ -3,7 +3,7 @@
 /// <p>Contains information about the connection draining configuration for the load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsElbLoadBalancerConnectionDraining {
+pub struct AwsElbLoadBalancerConnectionDraining  {
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -43,8 +43,7 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
     }
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -53,14 +52,18 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionDraining`](crate::types::AwsElbLoadBalancerConnectionDraining).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerConnectionDraining {
         crate::types::AwsElbLoadBalancerConnectionDraining {
-            enabled: self.enabled.unwrap_or_default(),
-            timeout: self.timeout.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            timeout: self.timeout
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

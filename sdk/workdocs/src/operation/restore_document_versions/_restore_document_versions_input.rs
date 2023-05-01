@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RestoreDocumentVersionsInput {
+pub struct RestoreDocumentVersionsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct RestoreDocumentVersionsInput {
 }
 impl RestoreDocumentVersionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<&str> {
+    pub fn authentication_token(&self) -> std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<&str> {
+    pub fn document_id(&self) -> std::option::Option<& str> {
         self.document_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreDocumentVersionsInput {
+impl  std::fmt::Debug for RestoreDocumentVersionsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDocumentVersionsInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -30,9 +30,7 @@ impl std::fmt::Debug for RestoreDocumentVersionsInput {
 }
 impl RestoreDocumentVersionsInput {
     /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsInput`](crate::operation::restore_document_versions::RestoreDocumentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::restore_document_versions::builders::RestoreDocumentVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_document_versions::builders::RestoreDocumentVersionsInputBuilder {
         crate::operation::restore_document_versions::builders::RestoreDocumentVersionsInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl RestoreDocumentVersionsInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_token = input; self
     }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,21 +59,17 @@ impl RestoreDocumentVersionsInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// Consumes the builder and constructs a [`RestoreDocumentVersionsInput`](crate::operation::restore_document_versions::RestoreDocumentVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::restore_document_versions::RestoreDocumentVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::restore_document_versions::RestoreDocumentVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::restore_document_versions::RestoreDocumentVersionsInput {
-                authentication_token: self.authentication_token,
-                document_id: self.document_id,
-            },
+                authentication_token: self.authentication_token
+                ,
+                document_id: self.document_id
+                ,
+            }
         )
     }
 }
@@ -91,3 +81,4 @@ impl std::fmt::Debug for RestoreDocumentVersionsInputBuilder {
         formatter.finish()
     }
 }
+

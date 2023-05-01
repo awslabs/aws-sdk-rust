@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about a report plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportPlan {
+pub struct ReportPlan  {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
     pub report_plan_arn: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ReportPlan {
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
     #[doc(hidden)]
     pub report_plan_description: std::option::Option<std::string::String>,
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     #[doc(hidden)]
     pub report_setting: std::option::Option<crate::types::ReportSetting>,
     /// <p>Contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     #[doc(hidden)]
     pub report_delivery_channel: std::option::Option<crate::types::ReportDeliveryChannel>,
-    /// <p>The deployment status of a report plan. The statuses are:</p>
+    /// <p>The deployment status of a report plan. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</code> </p>
     #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
@@ -37,48 +37,42 @@ pub struct ReportPlan {
 }
 impl ReportPlan {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn report_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn report_plan_arn(&self) -> std::option::Option<& str> {
         self.report_plan_arn.as_deref()
     }
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn report_plan_name(&self) -> std::option::Option<&str> {
+    pub fn report_plan_name(&self) -> std::option::Option<& str> {
         self.report_plan_name.as_deref()
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    pub fn report_plan_description(&self) -> std::option::Option<&str> {
+    pub fn report_plan_description(&self) -> std::option::Option<& str> {
         self.report_plan_description.as_deref()
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn report_setting(&self) -> std::option::Option<&crate::types::ReportSetting> {
+    pub fn report_setting(&self) -> std::option::Option<& crate::types::ReportSetting> {
         self.report_setting.as_ref()
     }
     /// <p>Contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn report_delivery_channel(
-        &self,
-    ) -> std::option::Option<&crate::types::ReportDeliveryChannel> {
+    pub fn report_delivery_channel(&self) -> std::option::Option<& crate::types::ReportDeliveryChannel> {
         self.report_delivery_channel.as_ref()
     }
-    /// <p>The deployment status of a report plan. The statuses are:</p>
+    /// <p>The deployment status of a report plan. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</code> </p>
-    pub fn deployment_status(&self) -> std::option::Option<&str> {
+    pub fn deployment_status(&self) -> std::option::Option<& str> {
         self.deployment_status.as_deref()
     }
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that a report job associated with this report plan last attempted to run, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_attempted_execution_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_attempted_execution_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_attempted_execution_time.as_ref()
     }
     /// <p>The date and time that a report job associated with this report plan last successfully ran, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_successful_execution_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_successful_execution_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_successful_execution_time.as_ref()
     }
 }
@@ -111,8 +105,7 @@ impl ReportPlanBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_report_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_plan_arn = input;
-        self
+        self.report_plan_arn = input; self
     }
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn report_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +114,7 @@ impl ReportPlanBuilder {
     }
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn set_report_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_plan_name = input;
-        self
+        self.report_plan_name = input; self
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
     pub fn report_plan_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,29 +122,21 @@ impl ReportPlanBuilder {
         self
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    pub fn set_report_plan_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.report_plan_description = input;
-        self
+    pub fn set_report_plan_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.report_plan_description = input; self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(mut self, input: crate::types::ReportSetting) -> Self {
         self.report_setting = Some(input);
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn set_report_setting(
-        mut self,
-        input: std::option::Option<crate::types::ReportSetting>,
-    ) -> Self {
-        self.report_setting = input;
-        self
+    pub fn set_report_setting(mut self, input: std::option::Option<crate::types::ReportSetting>) -> Self {
+        self.report_setting = input; self
     }
     /// <p>Contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(mut self, input: crate::types::ReportDeliveryChannel) -> Self {
@@ -160,27 +144,19 @@ impl ReportPlanBuilder {
         self
     }
     /// <p>Contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn set_report_delivery_channel(
-        mut self,
-        input: std::option::Option<crate::types::ReportDeliveryChannel>,
-    ) -> Self {
-        self.report_delivery_channel = input;
-        self
+    pub fn set_report_delivery_channel(mut self, input: std::option::Option<crate::types::ReportDeliveryChannel>) -> Self {
+        self.report_delivery_channel = input; self
     }
-    /// <p>The deployment status of a report plan. The statuses are:</p>
+    /// <p>The deployment status of a report plan. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</code> </p>
     pub fn deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.deployment_status = Some(input.into());
         self
     }
-    /// <p>The deployment status of a report plan. The statuses are:</p>
+    /// <p>The deployment status of a report plan. The statuses are:</p> 
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</code> </p>
-    pub fn set_deployment_status(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deployment_status = input;
-        self
+    pub fn set_deployment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deployment_status = input; self
     }
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -188,12 +164,8 @@ impl ReportPlanBuilder {
         self
     }
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The date and time that a report job associated with this report plan last attempted to run, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_attempted_execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -201,12 +173,8 @@ impl ReportPlanBuilder {
         self
     }
     /// <p>The date and time that a report job associated with this report plan last attempted to run, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_last_attempted_execution_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_attempted_execution_time = input;
-        self
+    pub fn set_last_attempted_execution_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_attempted_execution_time = input; self
     }
     /// <p>The date and time that a report job associated with this report plan last successfully ran, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_successful_execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -214,25 +182,31 @@ impl ReportPlanBuilder {
         self
     }
     /// <p>The date and time that a report job associated with this report plan last successfully ran, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_last_successful_execution_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_successful_execution_time = input;
-        self
+    pub fn set_last_successful_execution_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_successful_execution_time = input; self
     }
     /// Consumes the builder and constructs a [`ReportPlan`](crate::types::ReportPlan).
     pub fn build(self) -> crate::types::ReportPlan {
         crate::types::ReportPlan {
-            report_plan_arn: self.report_plan_arn,
-            report_plan_name: self.report_plan_name,
-            report_plan_description: self.report_plan_description,
-            report_setting: self.report_setting,
-            report_delivery_channel: self.report_delivery_channel,
-            deployment_status: self.deployment_status,
-            creation_time: self.creation_time,
-            last_attempted_execution_time: self.last_attempted_execution_time,
-            last_successful_execution_time: self.last_successful_execution_time,
+            report_plan_arn: self.report_plan_arn
+            ,
+            report_plan_name: self.report_plan_name
+            ,
+            report_plan_description: self.report_plan_description
+            ,
+            report_setting: self.report_setting
+            ,
+            report_delivery_channel: self.report_delivery_channel
+            ,
+            deployment_status: self.deployment_status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_attempted_execution_time: self.last_attempted_execution_time
+            ,
+            last_successful_execution_time: self.last_successful_execution_time
+            ,
         }
     }
 }
+

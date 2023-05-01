@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterDbRevisionInput {
-    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+pub struct ModifyClusterDbRevisionInput  {
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p> 
     /// <p>Example: <code>examplecluster</code> </p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -12,21 +12,19 @@ pub struct ModifyClusterDbRevisionInput {
     pub revision_target: std::option::Option<std::string::String>,
 }
 impl ModifyClusterDbRevisionInput {
-    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p> 
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
-    pub fn revision_target(&self) -> std::option::Option<&str> {
+    pub fn revision_target(&self) -> std::option::Option<& str> {
         self.revision_target.as_deref()
     }
 }
 impl ModifyClusterDbRevisionInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterDbRevisionInput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder {
         crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder::default()
     }
 }
@@ -39,20 +37,16 @@ pub struct ModifyClusterDbRevisionInputBuilder {
     pub(crate) revision_target: std::option::Option<std::string::String>,
 }
 impl ModifyClusterDbRevisionInputBuilder {
-    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p> 
     /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
+    /// <p>The unique identifier of a cluster whose database revision you want to modify. </p> 
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub fn revision_target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,21 +55,18 @@ impl ModifyClusterDbRevisionInputBuilder {
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub fn set_revision_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_target = input;
-        self
+        self.revision_target = input; self
     }
     /// Consumes the builder and constructs a [`ModifyClusterDbRevisionInput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput {
-                cluster_identifier: self.cluster_identifier,
-                revision_target: self.revision_target,
-            },
+                cluster_identifier: self.cluster_identifier
+                ,
+                revision_target: self.revision_target
+                ,
+            }
         )
     }
 }
+

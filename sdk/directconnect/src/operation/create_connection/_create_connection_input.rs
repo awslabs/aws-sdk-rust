@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>The location of the connection.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -21,37 +21,37 @@ pub struct CreateConnectionInput {
     /// <p>The name of the service provider associated with the requested connection.</p>
     #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p> 
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     #[doc(hidden)]
     pub request_mac_sec: std::option::Option<bool>,
 }
 impl CreateConnectionInput {
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The tags to associate with the lag.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the requested connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
-    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p> 
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn request_mac_sec(&self) -> std::option::Option<bool> {
         self.request_mac_sec
@@ -59,8 +59,7 @@ impl CreateConnectionInput {
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         crate::operation::create_connection::builders::CreateConnectionInputBuilder::default()
     }
 }
@@ -85,8 +84,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The location of the connection.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The bandwidth of the connection.</p>
     pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The bandwidth of the connection.</p>
     pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// <p>The name of the connection.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +102,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The name of the connection.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +111,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -125,17 +120,13 @@ impl CreateConnectionInputBuilder {
     /// <p>The tags to associate with the lag.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to associate with the lag.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The name of the service provider associated with the requested connection.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,36 +135,39 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The name of the service provider associated with the requested connection.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
-    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p> 
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.request_mac_sec = Some(input);
         self
     }
-    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p> 
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn set_request_mac_sec(mut self, input: std::option::Option<bool>) -> Self {
-        self.request_mac_sec = input;
-        self
+        self.request_mac_sec = input; self
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_connection::CreateConnectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_connection::CreateConnectionInput {
-            location: self.location,
-            bandwidth: self.bandwidth,
-            connection_name: self.connection_name,
-            lag_id: self.lag_id,
-            tags: self.tags,
-            provider_name: self.provider_name,
-            request_mac_sec: self.request_mac_sec,
-        })
+    pub fn build(self) -> Result<crate::operation::create_connection::CreateConnectionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                connection_name: self.connection_name
+                ,
+                lag_id: self.lag_id
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                request_mac_sec: self.request_mac_sec
+                ,
+            }
+        )
     }
 }
+

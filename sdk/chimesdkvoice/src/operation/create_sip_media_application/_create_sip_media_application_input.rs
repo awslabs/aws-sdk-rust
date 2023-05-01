@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSipMediaApplicationInput {
+pub struct CreateSipMediaApplicationInput  {
     /// <p>The AWS Region assigned to the SIP media application.</p>
     #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
@@ -12,24 +12,31 @@ pub struct CreateSipMediaApplicationInput {
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    /// <p>The tags assigned to the SIP media application.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSipMediaApplicationInput {
     /// <p>The AWS Region assigned to the SIP media application.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The SIP media application's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::types::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
+    }
+    /// <p>The tags assigned to the SIP media application.</p>
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+        self.tags.as_deref()
     }
 }
 impl CreateSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
-    pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder{
+    pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder {
         crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder::default()
     }
 }
@@ -40,8 +47,8 @@ impl CreateSipMediaApplicationInput {
 pub struct CreateSipMediaApplicationInputBuilder {
     pub(crate) aws_region: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) endpoints:
-        std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSipMediaApplicationInputBuilder {
     /// <p>The AWS Region assigned to the SIP media application.</p>
@@ -51,8 +58,7 @@ impl CreateSipMediaApplicationInputBuilder {
     }
     /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The SIP media application's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +67,7 @@ impl CreateSipMediaApplicationInputBuilder {
     }
     /// <p>The SIP media application's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `endpoints`.
     ///
@@ -71,31 +76,43 @@ impl CreateSipMediaApplicationInputBuilder {
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = Some(v);
+                        self
     }
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
-    ) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
+        self.endpoints = input; self
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags assigned to the SIP media application.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
+    }
+    /// <p>The tags assigned to the SIP media application.</p>
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationInput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_sip_media_application::CreateSipMediaApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
-                aws_region: self.aws_region,
-                name: self.name,
-                endpoints: self.endpoints,
-            },
+                aws_region: self.aws_region
+                ,
+                name: self.name
+                ,
+                endpoints: self.endpoints
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

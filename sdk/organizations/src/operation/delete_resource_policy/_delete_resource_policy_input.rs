@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput {}
+pub struct DeleteResourcePolicyInput  {
+}
 impl DeleteResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
         crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DeleteResourcePolicyInput {
 /// A builder for [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteResourcePolicyInputBuilder {}
+pub struct DeleteResourcePolicyInputBuilder {
+}
 impl DeleteResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_resource_policy::DeleteResourcePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {})
+    pub fn build(self) -> Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
+            }
+        )
     }
 }
+

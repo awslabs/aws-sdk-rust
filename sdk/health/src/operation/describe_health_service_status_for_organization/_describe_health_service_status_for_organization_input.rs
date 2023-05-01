@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHealthServiceStatusForOrganizationInput {}
+pub struct DescribeHealthServiceStatusForOrganizationInput  {
+}
 impl DescribeHealthServiceStatusForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationInput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput).
-    pub fn builder() -> crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationInputBuilder {
         crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationInputBuilder::default()
     }
 }
@@ -13,13 +14,15 @@ impl DescribeHealthServiceStatusForOrganizationInput {
 /// A builder for [`DescribeHealthServiceStatusForOrganizationInput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeHealthServiceStatusForOrganizationInputBuilder {}
+pub struct DescribeHealthServiceStatusForOrganizationInputBuilder {
+}
 impl DescribeHealthServiceStatusForOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHealthServiceStatusForOrganizationInput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput).
-    pub fn build(self) -> Result<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput {
             }
         )
     }
 }
+

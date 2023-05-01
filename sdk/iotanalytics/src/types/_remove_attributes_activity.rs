@@ -3,7 +3,7 @@
 /// <p>An activity that removes attributes from a message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAttributesActivity {
+pub struct RemoveAttributesActivity  {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct RemoveAttributesActivity {
 }
 impl RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of 1-50 attributes to remove from the message.</p>
-    pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attributes(&self) -> std::option::Option<& [std::string::String]> {
         self.attributes.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl RemoveAttributesActivityBuilder {
     }
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `attributes`.
     ///
@@ -61,17 +60,13 @@ impl RemoveAttributesActivityBuilder {
     /// <p>A list of 1-50 attributes to remove from the message.</p>
     pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input.into());
-        self.attributes = Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>A list of 1-50 attributes to remove from the message.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +75,18 @@ impl RemoveAttributesActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// Consumes the builder and constructs a [`RemoveAttributesActivity`](crate::types::RemoveAttributesActivity).
     pub fn build(self) -> crate::types::RemoveAttributesActivity {
         crate::types::RemoveAttributesActivity {
-            name: self.name,
-            attributes: self.attributes,
-            next: self.next,
+            name: self.name
+            ,
+            attributes: self.attributes
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

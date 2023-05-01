@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sapodataconnectoroperator = unimplemented!();
 /// match sapodataconnectoroperator {
@@ -49,22 +49,14 @@
 /// Specifically, when `sapodataconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SapoDataConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SapoDataConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -109,102 +101,79 @@ pub enum SapoDataConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SapoDataConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SapoDataConnectorOperator::Addition,
-            "BETWEEN" => SapoDataConnectorOperator::Between,
-            "CONTAINS" => SapoDataConnectorOperator::Contains,
-            "DIVISION" => SapoDataConnectorOperator::Division,
-            "EQUAL_TO" => SapoDataConnectorOperator::EqualTo,
-            "GREATER_THAN" => SapoDataConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => SapoDataConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => SapoDataConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SapoDataConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SapoDataConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SapoDataConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => SapoDataConnectorOperator::NotEqualTo,
-            "NO_OP" => SapoDataConnectorOperator::NoOp,
-            "PROJECTION" => SapoDataConnectorOperator::Projection,
-            "SUBTRACTION" => SapoDataConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SapoDataConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SapoDataConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SapoDataConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SapoDataConnectorOperator::ValidateNumeric,
-            other => SapoDataConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SapoDataConnectorOperator::Addition,
+"BETWEEN" => SapoDataConnectorOperator::Between,
+"CONTAINS" => SapoDataConnectorOperator::Contains,
+"DIVISION" => SapoDataConnectorOperator::Division,
+"EQUAL_TO" => SapoDataConnectorOperator::EqualTo,
+"GREATER_THAN" => SapoDataConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => SapoDataConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => SapoDataConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SapoDataConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SapoDataConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SapoDataConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => SapoDataConnectorOperator::NotEqualTo,
+"NO_OP" => SapoDataConnectorOperator::NoOp,
+"PROJECTION" => SapoDataConnectorOperator::Projection,
+"SUBTRACTION" => SapoDataConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SapoDataConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SapoDataConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SapoDataConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SapoDataConnectorOperator::ValidateNumeric,
+other => SapoDataConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SapoDataConnectorOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SapoDataConnectorOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SapoDataConnectorOperator::from(s))
+                }
+            }
 impl SapoDataConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SapoDataConnectorOperator::Addition => "ADDITION",
-            SapoDataConnectorOperator::Between => "BETWEEN",
-            SapoDataConnectorOperator::Contains => "CONTAINS",
-            SapoDataConnectorOperator::Division => "DIVISION",
-            SapoDataConnectorOperator::EqualTo => "EQUAL_TO",
-            SapoDataConnectorOperator::GreaterThan => "GREATER_THAN",
-            SapoDataConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            SapoDataConnectorOperator::LessThan => "LESS_THAN",
-            SapoDataConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            SapoDataConnectorOperator::MaskAll => "MASK_ALL",
-            SapoDataConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SapoDataConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SapoDataConnectorOperator::Multiplication => "MULTIPLICATION",
-            SapoDataConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            SapoDataConnectorOperator::NoOp => "NO_OP",
-            SapoDataConnectorOperator::Projection => "PROJECTION",
-            SapoDataConnectorOperator::Subtraction => "SUBTRACTION",
-            SapoDataConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SapoDataConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SapoDataConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SapoDataConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SapoDataConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "CONTAINS",
-            "DIVISION",
-            "EQUAL_TO",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL_TO",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NOT_EQUAL_TO",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SapoDataConnectorOperator::Addition => "ADDITION",
+    SapoDataConnectorOperator::Between => "BETWEEN",
+    SapoDataConnectorOperator::Contains => "CONTAINS",
+    SapoDataConnectorOperator::Division => "DIVISION",
+    SapoDataConnectorOperator::EqualTo => "EQUAL_TO",
+    SapoDataConnectorOperator::GreaterThan => "GREATER_THAN",
+    SapoDataConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    SapoDataConnectorOperator::LessThan => "LESS_THAN",
+    SapoDataConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    SapoDataConnectorOperator::MaskAll => "MASK_ALL",
+    SapoDataConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SapoDataConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SapoDataConnectorOperator::Multiplication => "MULTIPLICATION",
+    SapoDataConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    SapoDataConnectorOperator::NoOp => "NO_OP",
+    SapoDataConnectorOperator::Projection => "PROJECTION",
+    SapoDataConnectorOperator::Subtraction => "SUBTRACTION",
+    SapoDataConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SapoDataConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SapoDataConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SapoDataConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SapoDataConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SapoDataConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

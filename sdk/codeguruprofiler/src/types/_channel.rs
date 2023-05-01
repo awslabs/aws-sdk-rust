@@ -3,7 +3,7 @@
 /// <p>Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Channel {
+pub struct Channel  {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Channel {
 }
 impl Channel {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn event_publishers(&self) -> std::option::Option<&[crate::types::EventPublisher]> {
+    pub fn event_publishers(&self) -> std::option::Option<& [crate::types::EventPublisher]> {
         self.event_publishers.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ChannelBuilder {
     }
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
     pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ChannelBuilder {
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// Appends an item to `event_publishers`.
     ///
@@ -71,24 +69,24 @@ impl ChannelBuilder {
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
     pub fn event_publishers(mut self, input: crate::types::EventPublisher) -> Self {
         let mut v = self.event_publishers.unwrap_or_default();
-        v.push(input);
-        self.event_publishers = Some(v);
-        self
+                        v.push(input);
+                        self.event_publishers = Some(v);
+                        self
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn set_event_publishers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventPublisher>>,
-    ) -> Self {
-        self.event_publishers = input;
-        self
+    pub fn set_event_publishers(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventPublisher>>) -> Self {
+        self.event_publishers = input; self
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
-            id: self.id,
-            uri: self.uri,
-            event_publishers: self.event_publishers,
+            id: self.id
+            ,
+            uri: self.uri
+            ,
+            event_publishers: self.event_publishers
+            ,
         }
     }
 }
+

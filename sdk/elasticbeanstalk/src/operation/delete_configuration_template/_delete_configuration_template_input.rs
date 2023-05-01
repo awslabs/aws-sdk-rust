@@ -3,7 +3,7 @@
 /// <p>Request to delete a configuration template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationTemplateInput {
+pub struct DeleteConfigurationTemplateInput  {
     /// <p>The name of the application to delete the configuration template from.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct DeleteConfigurationTemplateInput {
 }
 impl DeleteConfigurationTemplateInput {
     /// <p>The name of the application to delete the configuration template from.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the configuration template to delete.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
 impl DeleteConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationTemplateInput`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder {
         crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl DeleteConfigurationTemplateInputBuilder {
     }
     /// <p>The name of the application to delete the configuration template from.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the configuration template to delete.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +52,18 @@ impl DeleteConfigurationTemplateInputBuilder {
     }
     /// <p>The name of the configuration template to delete.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationTemplateInput`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_configuration_template::DeleteConfigurationTemplateInput {
-                application_name: self.application_name,
-                template_name: self.template_name,
-            },
+                application_name: self.application_name
+                ,
+                template_name: self.template_name
+                ,
+            }
         )
     }
 }
+

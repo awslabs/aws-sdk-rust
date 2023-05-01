@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InboxPlacementTrackingOption {
+pub struct InboxPlacementTrackingOption  {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
     #[doc(hidden)]
     pub global: bool,
@@ -17,7 +17,7 @@ impl InboxPlacementTrackingOption {
         self.global
     }
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    pub fn tracked_isps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tracked_isps(&self) -> std::option::Option<& [std::string::String]> {
         self.tracked_isps.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl InboxPlacementTrackingOptionBuilder {
     }
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
     pub fn set_global(mut self, input: std::option::Option<bool>) -> Self {
-        self.global = input;
-        self
+        self.global = input; self
     }
     /// Appends an item to `tracked_isps`.
     ///
@@ -53,23 +52,23 @@ impl InboxPlacementTrackingOptionBuilder {
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
     pub fn tracked_isps(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tracked_isps.unwrap_or_default();
-        v.push(input.into());
-        self.tracked_isps = Some(v);
-        self
+                        v.push(input.into());
+                        self.tracked_isps = Some(v);
+                        self
     }
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    pub fn set_tracked_isps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tracked_isps = input;
-        self
+    pub fn set_tracked_isps(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tracked_isps = input; self
     }
     /// Consumes the builder and constructs a [`InboxPlacementTrackingOption`](crate::types::InboxPlacementTrackingOption).
     pub fn build(self) -> crate::types::InboxPlacementTrackingOption {
         crate::types::InboxPlacementTrackingOption {
-            global: self.global.unwrap_or_default(),
-            tracked_isps: self.tracked_isps,
+            global: self.global
+                .unwrap_or_default()
+            ,
+            tracked_isps: self.tracked_isps
+            ,
         }
     }
 }
+

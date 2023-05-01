@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterGameServerOutput {
+pub struct RegisterGameServerOutput  {
     /// <p>Object that describes the newly registered game server.</p>
     #[doc(hidden)]
     pub game_server: std::option::Option<crate::types::GameServer>,
@@ -10,19 +10,18 @@ pub struct RegisterGameServerOutput {
 }
 impl RegisterGameServerOutput {
     /// <p>Object that describes the newly registered game server.</p>
-    pub fn game_server(&self) -> std::option::Option<&crate::types::GameServer> {
+    pub fn game_server(&self) -> std::option::Option<& crate::types::GameServer> {
         self.game_server.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterGameServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterGameServerOutput {
     /// Creates a new builder-style object to manufacture [`RegisterGameServerOutput`](crate::operation::register_game_server::RegisterGameServerOutput).
-    pub fn builder(
-    ) -> crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder {
+    pub fn builder() -> crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder {
         crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl RegisterGameServerOutputBuilder {
     }
     /// <p>Object that describes the newly registered game server.</p>
     pub fn set_game_server(mut self, input: std::option::Option<crate::types::GameServer>) -> Self {
-        self.game_server = input;
-        self
+        self.game_server = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterGameServerOutput`](crate::operation::register_game_server::RegisterGameServerOutput).
     pub fn build(self) -> crate::operation::register_game_server::RegisterGameServerOutput {
         crate::operation::register_game_server::RegisterGameServerOutput {
-            game_server: self.game_server,
+            game_server: self.game_server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

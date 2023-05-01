@@ -3,7 +3,7 @@
 /// <p>An object that represents a virtual gateway returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayData {
+pub struct VirtualGatewayData  {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct VirtualGatewayData {
 }
 impl VirtualGatewayData {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual gateway.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The specifications of the virtual gateway.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::types::VirtualGatewaySpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::types::VirtualGatewaySpec> {
         self.spec.as_ref()
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status of the virtual gateway.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VirtualGatewayStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::VirtualGatewayStatus> {
         self.status.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl VirtualGatewayDataBuilder {
     }
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the virtual gateway.</p>
     pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,12 +75,8 @@ impl VirtualGatewayDataBuilder {
         self
     }
     /// <p>The name of the virtual gateway.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_name = input;
-        self
+    pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_gateway_name = input; self
     }
     /// <p>The specifications of the virtual gateway.</p>
     pub fn spec(mut self, input: crate::types::VirtualGatewaySpec) -> Self {
@@ -89,12 +84,8 @@ impl VirtualGatewayDataBuilder {
         self
     }
     /// <p>The specifications of the virtual gateway.</p>
-    pub fn set_spec(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewaySpec>,
-    ) -> Self {
-        self.spec = input;
-        self
+    pub fn set_spec(mut self, input: std::option::Option<crate::types::VirtualGatewaySpec>) -> Self {
+        self.spec = input; self
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -102,12 +93,8 @@ impl VirtualGatewayDataBuilder {
         self
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn set_metadata(
-        mut self,
-        input: std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: std::option::Option<crate::types::ResourceMetadata>) -> Self {
+        self.metadata = input; self
     }
     /// <p>The current status of the virtual gateway.</p>
     pub fn status(mut self, input: crate::types::VirtualGatewayStatus) -> Self {
@@ -115,21 +102,23 @@ impl VirtualGatewayDataBuilder {
         self
     }
     /// <p>The current status of the virtual gateway.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::VirtualGatewayStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayData`](crate::types::VirtualGatewayData).
     pub fn build(self) -> crate::types::VirtualGatewayData {
         crate::types::VirtualGatewayData {
-            mesh_name: self.mesh_name,
-            virtual_gateway_name: self.virtual_gateway_name,
-            spec: self.spec,
-            metadata: self.metadata,
-            status: self.status,
+            mesh_name: self.mesh_name
+            ,
+            virtual_gateway_name: self.virtual_gateway_name
+            ,
+            spec: self.spec
+            ,
+            metadata: self.metadata
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

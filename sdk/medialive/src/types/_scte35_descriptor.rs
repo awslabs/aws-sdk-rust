@@ -3,16 +3,14 @@
 /// Holds one set of SCTE-35 Descriptor Settings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scte35Descriptor {
+pub struct Scte35Descriptor  {
     /// SCTE-35 Descriptor Settings.
     #[doc(hidden)]
     pub scte35_descriptor_settings: std::option::Option<crate::types::Scte35DescriptorSettings>,
 }
 impl Scte35Descriptor {
     /// SCTE-35 Descriptor Settings.
-    pub fn scte35_descriptor_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::Scte35DescriptorSettings> {
+    pub fn scte35_descriptor_settings(&self) -> std::option::Option<& crate::types::Scte35DescriptorSettings> {
         self.scte35_descriptor_settings.as_ref()
     }
 }
@@ -27,30 +25,24 @@ impl Scte35Descriptor {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct Scte35DescriptorBuilder {
-    pub(crate) scte35_descriptor_settings:
-        std::option::Option<crate::types::Scte35DescriptorSettings>,
+    pub(crate) scte35_descriptor_settings: std::option::Option<crate::types::Scte35DescriptorSettings>,
 }
 impl Scte35DescriptorBuilder {
     /// SCTE-35 Descriptor Settings.
-    pub fn scte35_descriptor_settings(
-        mut self,
-        input: crate::types::Scte35DescriptorSettings,
-    ) -> Self {
+    pub fn scte35_descriptor_settings(mut self, input: crate::types::Scte35DescriptorSettings) -> Self {
         self.scte35_descriptor_settings = Some(input);
         self
     }
     /// SCTE-35 Descriptor Settings.
-    pub fn set_scte35_descriptor_settings(
-        mut self,
-        input: std::option::Option<crate::types::Scte35DescriptorSettings>,
-    ) -> Self {
-        self.scte35_descriptor_settings = input;
-        self
+    pub fn set_scte35_descriptor_settings(mut self, input: std::option::Option<crate::types::Scte35DescriptorSettings>) -> Self {
+        self.scte35_descriptor_settings = input; self
     }
     /// Consumes the builder and constructs a [`Scte35Descriptor`](crate::types::Scte35Descriptor).
     pub fn build(self) -> crate::types::Scte35Descriptor {
         crate::types::Scte35Descriptor {
-            scte35_descriptor_settings: self.scte35_descriptor_settings,
+            scte35_descriptor_settings: self.scte35_descriptor_settings
+            ,
         }
     }
 }
+

@@ -37,6 +37,9 @@ pub mod disassociate_third_party_firewall;
 /// Types for the `GetAdminAccount` operation.
 pub mod get_admin_account;
 
+/// Types for the `GetAdminScope` operation.
+pub mod get_admin_scope;
+
 /// Types for the `GetAppsList` operation.
 pub mod get_apps_list;
 
@@ -63,6 +66,12 @@ pub mod get_third_party_firewall_association_status;
 
 /// Types for the `GetViolationDetails` operation.
 pub mod get_violation_details;
+
+/// Types for the `ListAdminAccountsForOrganization` operation.
+pub mod list_admin_accounts_for_organization;
+
+/// Types for the `ListAdminsManagingAccount` operation.
+pub mod list_admins_managing_account;
 
 /// Types for the `ListAppsLists` operation.
 pub mod list_apps_lists;
@@ -94,6 +103,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListThirdPartyFirewallFirewallPolicies` operation.
 pub mod list_third_party_firewall_firewall_policies;
 
+/// Types for the `PutAdminAccount` operation.
+pub mod put_admin_account;
+
 /// Types for the `PutAppsList` operation.
 pub mod put_apps_list;
 
@@ -114,3 +126,4 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+

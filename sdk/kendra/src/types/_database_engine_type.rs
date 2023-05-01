@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let databaseenginetype = unimplemented!();
 /// match databaseenginetype {
@@ -32,22 +32,14 @@
 /// Specifically, when `databaseenginetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatabaseEngineType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatabaseEngineType {
     #[allow(missing_docs)] // documentation missing in model
     RdsAuroraMysql,
@@ -58,51 +50,45 @@ pub enum DatabaseEngineType {
     #[allow(missing_docs)] // documentation missing in model
     RdsPostgresql,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatabaseEngineType {
-    fn from(s: &str) -> Self {
-        match s {
-            "RDS_AURORA_MYSQL" => DatabaseEngineType::RdsAuroraMysql,
-            "RDS_AURORA_POSTGRESQL" => DatabaseEngineType::RdsAuroraPostgresql,
-            "RDS_MYSQL" => DatabaseEngineType::RdsMysql,
-            "RDS_POSTGRESQL" => DatabaseEngineType::RdsPostgresql,
-            other => DatabaseEngineType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RDS_AURORA_MYSQL" => DatabaseEngineType::RdsAuroraMysql,
+"RDS_AURORA_POSTGRESQL" => DatabaseEngineType::RdsAuroraPostgresql,
+"RDS_MYSQL" => DatabaseEngineType::RdsMysql,
+"RDS_POSTGRESQL" => DatabaseEngineType::RdsPostgresql,
+other => DatabaseEngineType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DatabaseEngineType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatabaseEngineType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatabaseEngineType::from(s))
+                }
+            }
 impl DatabaseEngineType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DatabaseEngineType::RdsAuroraMysql => "RDS_AURORA_MYSQL",
-            DatabaseEngineType::RdsAuroraPostgresql => "RDS_AURORA_POSTGRESQL",
-            DatabaseEngineType::RdsMysql => "RDS_MYSQL",
-            DatabaseEngineType::RdsPostgresql => "RDS_POSTGRESQL",
-            DatabaseEngineType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RDS_AURORA_MYSQL",
-            "RDS_AURORA_POSTGRESQL",
-            "RDS_MYSQL",
-            "RDS_POSTGRESQL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DatabaseEngineType::RdsAuroraMysql => "RDS_AURORA_MYSQL",
+    DatabaseEngineType::RdsAuroraPostgresql => "RDS_AURORA_POSTGRESQL",
+    DatabaseEngineType::RdsMysql => "RDS_MYSQL",
+    DatabaseEngineType::RdsPostgresql => "RDS_POSTGRESQL",
+    DatabaseEngineType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RDS_AURORA_MYSQL", "RDS_AURORA_POSTGRESQL", "RDS_MYSQL", "RDS_POSTGRESQL"]
+                }
+            }
 impl AsRef<str> for DatabaseEngineType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -4,84 +4,57 @@ pub use crate::operation::list_contact_flows::_list_contact_flows_output::ListCo
 pub use crate::operation::list_contact_flows::_list_contact_flows_input::ListContactFlowsInputBuilder;
 
 /// Fluent builder constructing a request to `ListContactFlows`.
-///
-/// <p>Provides information about the flows for the specified Amazon Connect instance.</p>
-/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
+/// 
+/// <p>Provides information about the flows for the specified Amazon Connect instance.</p> 
+/// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p> 
 /// <p>For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListContactFlowsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_contact_flows::builders::ListContactFlowsInputBuilder,
-}
-impl ListContactFlowsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_contact_flows::builders::ListContactFlowsInputBuilder
+            }
+impl ListContactFlowsFluentBuilder  {
     /// Creates a new `ListContactFlows`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_contact_flows::ListContactFlows,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_flows::ListContactFlowsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_contact_flows::ListContactFlowsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_flows::ListContactFlowsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_contact_flows::ListContactFlows, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_contact_flows::ListContactFlowsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_contact_flows::ListContactFlowsOutput, aws_smithy_http::result::SdkError<crate::operation::list_contact_flows::ListContactFlowsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_contact_flows::paginator::ListContactFlowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_contact_flows::paginator::ListContactFlowsPaginator {
-        crate::operation::list_contact_flows::paginator::ListContactFlowsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_contact_flows::paginator::ListContactFlowsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_contact_flows::paginator::ListContactFlowsPaginator {
+                            crate::operation::list_contact_flows::paginator::ListContactFlowsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -102,10 +75,7 @@ impl ListContactFlowsFluentBuilder {
         self
     }
     /// <p>The type of flow.</p>
-    pub fn set_contact_flow_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactFlowType>>,
-    ) -> Self {
+    pub fn set_contact_flow_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContactFlowType>>) -> Self {
         self.inner = self.inner.set_contact_flow_types(input);
         self
     }
@@ -130,3 +100,4 @@ impl ListContactFlowsFluentBuilder {
         self
     }
 }
+

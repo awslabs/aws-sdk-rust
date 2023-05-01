@@ -3,7 +3,7 @@
 /// <p>Contains information about the Amazon Relational Database Service (RDS) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsSourceConfig {
+pub struct RdsSourceConfig  {
     /// <p>A string identifying the database instance.</p>
     #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
@@ -31,11 +31,11 @@ pub struct RdsSourceConfig {
 }
 impl RdsSourceConfig {
     /// <p>A string identifying the database instance.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The host name of the database.</p>
-    pub fn database_host(&self) -> std::option::Option<&str> {
+    pub fn database_host(&self) -> std::option::Option<& str> {
         self.database_host.as_deref()
     }
     /// <p>The port number where the database can be accessed.</p>
@@ -43,23 +43,23 @@ impl RdsSourceConfig {
         self.database_port
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the RDS database.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table in the database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
@@ -90,12 +90,8 @@ impl RdsSourceConfigBuilder {
         self
     }
     /// <p>A string identifying the database instance.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_instance_identifier = input;
-        self
+    pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_instance_identifier = input; self
     }
     /// <p>The host name of the database.</p>
     pub fn database_host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +100,7 @@ impl RdsSourceConfigBuilder {
     }
     /// <p>The host name of the database.</p>
     pub fn set_database_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_host = input;
-        self
+        self.database_host = input; self
     }
     /// <p>The port number where the database can be accessed.</p>
     pub fn database_port(mut self, input: i32) -> Self {
@@ -114,8 +109,7 @@ impl RdsSourceConfigBuilder {
     }
     /// <p>The port number where the database can be accessed.</p>
     pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.database_port = input;
-        self
+        self.database_port = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
     pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,12 +117,8 @@ impl RdsSourceConfigBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn set_secret_manager_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secret_manager_arn = input;
-        self
+    pub fn set_secret_manager_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secret_manager_arn = input; self
     }
     /// <p>The name of the RDS database.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +127,7 @@ impl RdsSourceConfigBuilder {
     }
     /// <p>The name of the RDS database.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the table in the database.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +136,7 @@ impl RdsSourceConfigBuilder {
     }
     /// <p>The name of the table in the database.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +145,7 @@ impl RdsSourceConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
@@ -166,24 +153,29 @@ impl RdsSourceConfigBuilder {
         self
     }
     /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
-        self.vpc_configuration = input;
-        self
+    pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::types::VpcConfiguration>) -> Self {
+        self.vpc_configuration = input; self
     }
     /// Consumes the builder and constructs a [`RdsSourceConfig`](crate::types::RdsSourceConfig).
     pub fn build(self) -> crate::types::RdsSourceConfig {
         crate::types::RdsSourceConfig {
-            db_instance_identifier: self.db_instance_identifier,
-            database_host: self.database_host,
-            database_port: self.database_port,
-            secret_manager_arn: self.secret_manager_arn,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            role_arn: self.role_arn,
-            vpc_configuration: self.vpc_configuration,
+            db_instance_identifier: self.db_instance_identifier
+            ,
+            database_host: self.database_host
+            ,
+            database_port: self.database_port
+            ,
+            secret_manager_arn: self.secret_manager_arn
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            role_arn: self.role_arn
+            ,
+            vpc_configuration: self.vpc_configuration
+            ,
         }
     }
 }
+

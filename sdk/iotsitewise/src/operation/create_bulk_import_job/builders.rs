@@ -4,73 +4,51 @@ pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_output
 pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_input::CreateBulkImportJobInputBuilder;
 
 /// Fluent builder constructing a request to `CreateBulkImportJob`.
-///
-/// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important>
-/// <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
+/// 
+/// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important> 
+/// <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p> 
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBulkImportJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder,
-}
-impl CreateBulkImportJobFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder
+            }
+impl CreateBulkImportJobFluentBuilder  {
     /// Creates a new `CreateBulkImportJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bulk_import_job::CreateBulkImportJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_bulk_import_job::CreateBulkImportJobOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_bulk_import_job::CreateBulkImportJob, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_bulk_import_job::CreateBulkImportJobError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_bulk_import_job::CreateBulkImportJobOutput, aws_smithy_http::result::SdkError<crate::operation::create_bulk_import_job::CreateBulkImportJobError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -101,10 +79,7 @@ impl CreateBulkImportJobFluentBuilder {
         self
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn set_files(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::File>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: std::option::Option<std::vec::Vec<crate::types::File>>) -> Self {
         self.inner = self.inner.set_files(input);
         self
     }
@@ -114,10 +89,7 @@ impl CreateBulkImportJobFluentBuilder {
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn set_error_report_location(
-        mut self,
-        input: std::option::Option<crate::types::ErrorReportLocation>,
-    ) -> Self {
+    pub fn set_error_report_location(mut self, input: std::option::Option<crate::types::ErrorReportLocation>) -> Self {
         self.inner = self.inner.set_error_report_location(input);
         self
     }
@@ -127,11 +99,9 @@ impl CreateBulkImportJobFluentBuilder {
         self
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    pub fn set_job_configuration(
-        mut self,
-        input: std::option::Option<crate::types::JobConfiguration>,
-    ) -> Self {
+    pub fn set_job_configuration(mut self, input: std::option::Option<crate::types::JobConfiguration>) -> Self {
         self.inner = self.inner.set_job_configuration(input);
         self
     }
 }
+

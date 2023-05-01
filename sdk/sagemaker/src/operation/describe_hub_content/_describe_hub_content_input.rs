@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHubContentInput {
+pub struct DescribeHubContentInput  {
     /// <p>The name of the hub that contains the content to describe.</p>
     #[doc(hidden)]
     pub hub_name: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct DescribeHubContentInput {
 }
 impl DescribeHubContentInput {
     /// <p>The name of the hub that contains the content to describe.</p>
-    pub fn hub_name(&self) -> std::option::Option<&str> {
+    pub fn hub_name(&self) -> std::option::Option<& str> {
         self.hub_name.as_deref()
     }
     /// <p>The type of content in the hub.</p>
-    pub fn hub_content_type(&self) -> std::option::Option<&crate::types::HubContentType> {
+    pub fn hub_content_type(&self) -> std::option::Option<& crate::types::HubContentType> {
         self.hub_content_type.as_ref()
     }
     /// <p>The name of the content to describe.</p>
-    pub fn hub_content_name(&self) -> std::option::Option<&str> {
+    pub fn hub_content_name(&self) -> std::option::Option<& str> {
         self.hub_content_name.as_deref()
     }
     /// <p>The version of the content to describe.</p>
-    pub fn hub_content_version(&self) -> std::option::Option<&str> {
+    pub fn hub_content_version(&self) -> std::option::Option<& str> {
         self.hub_content_version.as_deref()
     }
 }
 impl DescribeHubContentInput {
     /// Creates a new builder-style object to manufacture [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
-    pub fn builder(
-    ) -> crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {
+    pub fn builder() -> crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {
         crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl DescribeHubContentInputBuilder {
     }
     /// <p>The name of the hub that contains the content to describe.</p>
     pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The type of content in the hub.</p>
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
@@ -68,12 +66,8 @@ impl DescribeHubContentInputBuilder {
         self
     }
     /// <p>The type of content in the hub.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
-        self.hub_content_type = input;
-        self
+    pub fn set_hub_content_type(mut self, input: std::option::Option<crate::types::HubContentType>) -> Self {
+        self.hub_content_type = input; self
     }
     /// <p>The name of the content to describe.</p>
     pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl DescribeHubContentInputBuilder {
     }
     /// <p>The name of the content to describe.</p>
     pub fn set_hub_content_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_content_name = input;
-        self
+        self.hub_content_name = input; self
     }
     /// <p>The version of the content to describe.</p>
     pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,27 +84,23 @@ impl DescribeHubContentInputBuilder {
         self
     }
     /// <p>The version of the content to describe.</p>
-    pub fn set_hub_content_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hub_content_version = input;
-        self
+    pub fn set_hub_content_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hub_content_version = input; self
     }
     /// Consumes the builder and constructs a [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_hub_content::DescribeHubContentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_hub_content::DescribeHubContentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_hub_content::DescribeHubContentInput {
-                hub_name: self.hub_name,
-                hub_content_type: self.hub_content_type,
-                hub_content_name: self.hub_content_name,
-                hub_content_version: self.hub_content_version,
-            },
+                hub_name: self.hub_name
+                ,
+                hub_content_type: self.hub_content_type
+                ,
+                hub_content_name: self.hub_content_name
+                ,
+                hub_content_version: self.hub_content_version
+                ,
+            }
         )
     }
 }
+

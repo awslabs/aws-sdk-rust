@@ -3,25 +3,21 @@
 /// <p>Represents a structure for defining parameter conditions. Supported conditions are described here: <a href="https://docs.aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets">Supported conditions for dynamic datasets</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterExpression {
+pub struct FilterExpression  {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
     #[doc(hidden)]
-    pub values_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub values_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FilterExpression {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn values_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn values_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.values_map.as_ref()
     }
 }
@@ -37,8 +33,7 @@ impl FilterExpression {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FilterExpressionBuilder {
     pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) values_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) values_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FilterExpressionBuilder {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
@@ -48,39 +43,31 @@ impl FilterExpressionBuilder {
     }
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// Adds a key-value pair to `values_map`.
     ///
     /// To override the contents of this collection use [`set_values_map`](Self::set_values_map).
     ///
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn values_map(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn values_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.values_map.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.values_map = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.values_map = Some(hash_map);
+                        self
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn set_values_map(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.values_map = input;
-        self
+    pub fn set_values_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.values_map = input; self
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
     pub fn build(self) -> crate::types::FilterExpression {
         crate::types::FilterExpression {
-            expression: self.expression,
-            values_map: self.values_map,
+            expression: self.expression
+            ,
+            values_map: self.values_map
+            ,
         }
     }
 }
+

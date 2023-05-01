@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingEndpointGroupsInput {
+pub struct ListCustomRoutingEndpointGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListCustomRoutingEndpointGroupsInput {
 }
 impl ListCustomRoutingEndpointGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
@@ -23,13 +23,13 @@ impl ListCustomRoutingEndpointGroupsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListCustomRoutingEndpointGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsInput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput).
-    pub fn builder() -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder {
         crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
     pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
     }
     /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,16 +68,10 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingEndpointGroupsInput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput {
                 listener_arn: self.listener_arn
@@ -92,3 +84,4 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
         )
     }
 }
+

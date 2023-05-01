@@ -3,7 +3,7 @@
 /// <p>Dataset configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSetConfiguration {
+pub struct DataSetConfiguration  {
     /// <p>Placeholder.</p>
     #[doc(hidden)]
     pub placeholder: std::option::Option<std::string::String>,
@@ -12,22 +12,19 @@ pub struct DataSetConfiguration {
     pub data_set_schema: std::option::Option<crate::types::DataSetSchema>,
     /// <p>A structure containing the list of column group schemas.</p>
     #[doc(hidden)]
-    pub column_group_schema_list:
-        std::option::Option<std::vec::Vec<crate::types::ColumnGroupSchema>>,
+    pub column_group_schema_list: std::option::Option<std::vec::Vec<crate::types::ColumnGroupSchema>>,
 }
 impl DataSetConfiguration {
     /// <p>Placeholder.</p>
-    pub fn placeholder(&self) -> std::option::Option<&str> {
+    pub fn placeholder(&self) -> std::option::Option<& str> {
         self.placeholder.as_deref()
     }
     /// <p>Dataset schema.</p>
-    pub fn data_set_schema(&self) -> std::option::Option<&crate::types::DataSetSchema> {
+    pub fn data_set_schema(&self) -> std::option::Option<& crate::types::DataSetSchema> {
         self.data_set_schema.as_ref()
     }
     /// <p>A structure containing the list of column group schemas.</p>
-    pub fn column_group_schema_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::ColumnGroupSchema]> {
+    pub fn column_group_schema_list(&self) -> std::option::Option<& [crate::types::ColumnGroupSchema]> {
         self.column_group_schema_list.as_deref()
     }
 }
@@ -44,8 +41,7 @@ impl DataSetConfiguration {
 pub struct DataSetConfigurationBuilder {
     pub(crate) placeholder: std::option::Option<std::string::String>,
     pub(crate) data_set_schema: std::option::Option<crate::types::DataSetSchema>,
-    pub(crate) column_group_schema_list:
-        std::option::Option<std::vec::Vec<crate::types::ColumnGroupSchema>>,
+    pub(crate) column_group_schema_list: std::option::Option<std::vec::Vec<crate::types::ColumnGroupSchema>>,
 }
 impl DataSetConfigurationBuilder {
     /// <p>Placeholder.</p>
@@ -55,8 +51,7 @@ impl DataSetConfigurationBuilder {
     }
     /// <p>Placeholder.</p>
     pub fn set_placeholder(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.placeholder = input;
-        self
+        self.placeholder = input; self
     }
     /// <p>Dataset schema.</p>
     pub fn data_set_schema(mut self, input: crate::types::DataSetSchema) -> Self {
@@ -64,12 +59,8 @@ impl DataSetConfigurationBuilder {
         self
     }
     /// <p>Dataset schema.</p>
-    pub fn set_data_set_schema(
-        mut self,
-        input: std::option::Option<crate::types::DataSetSchema>,
-    ) -> Self {
-        self.data_set_schema = input;
-        self
+    pub fn set_data_set_schema(mut self, input: std::option::Option<crate::types::DataSetSchema>) -> Self {
+        self.data_set_schema = input; self
     }
     /// Appends an item to `column_group_schema_list`.
     ///
@@ -78,24 +69,24 @@ impl DataSetConfigurationBuilder {
     /// <p>A structure containing the list of column group schemas.</p>
     pub fn column_group_schema_list(mut self, input: crate::types::ColumnGroupSchema) -> Self {
         let mut v = self.column_group_schema_list.unwrap_or_default();
-        v.push(input);
-        self.column_group_schema_list = Some(v);
-        self
+                        v.push(input);
+                        self.column_group_schema_list = Some(v);
+                        self
     }
     /// <p>A structure containing the list of column group schemas.</p>
-    pub fn set_column_group_schema_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnGroupSchema>>,
-    ) -> Self {
-        self.column_group_schema_list = input;
-        self
+    pub fn set_column_group_schema_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnGroupSchema>>) -> Self {
+        self.column_group_schema_list = input; self
     }
     /// Consumes the builder and constructs a [`DataSetConfiguration`](crate::types::DataSetConfiguration).
     pub fn build(self) -> crate::types::DataSetConfiguration {
         crate::types::DataSetConfiguration {
-            placeholder: self.placeholder,
-            data_set_schema: self.data_set_schema,
-            column_group_schema_list: self.column_group_schema_list,
+            placeholder: self.placeholder
+            ,
+            data_set_schema: self.data_set_schema
+            ,
+            column_group_schema_list: self.column_group_schema_list
+            ,
         }
     }
 }
+

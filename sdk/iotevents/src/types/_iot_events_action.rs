@@ -3,7 +3,7 @@
 /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IotEventsAction {
+pub struct IotEventsAction  {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IotEventsAction {
 }
 impl IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
-    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl IotEventsActionBuilder {
     }
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
     pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
@@ -53,14 +52,16 @@ impl IotEventsActionBuilder {
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// Consumes the builder and constructs a [`IotEventsAction`](crate::types::IotEventsAction).
     pub fn build(self) -> crate::types::IotEventsAction {
         crate::types::IotEventsAction {
-            input_name: self.input_name,
-            payload: self.payload,
+            input_name: self.input_name
+            ,
+            payload: self.payload
+            ,
         }
     }
 }
+

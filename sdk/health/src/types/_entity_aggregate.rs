@@ -3,9 +3,9 @@
 /// <p>The number of entities that are affected by one or more events. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityAggregate {
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
-    /// <p>For example, an event ARN might look like the following:</p>
+pub struct EntityAggregate  {
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
+    /// <p>For example, an event ARN might look like the following:</p> 
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
@@ -14,10 +14,10 @@ pub struct EntityAggregate {
     pub count: i32,
 }
 impl EntityAggregate {
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
-    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
+    /// <p>For example, an event ARN might look like the following:</p> 
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn event_arn(&self) -> std::option::Option<&str> {
+    pub fn event_arn(&self) -> std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>The number of entities that match the criteria for the specified events.</p>
@@ -40,19 +40,18 @@ pub struct EntityAggregateBuilder {
     pub(crate) count: std::option::Option<i32>,
 }
 impl EntityAggregateBuilder {
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
-    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
+    /// <p>For example, an event ARN might look like the following:</p> 
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn event_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.event_arn = Some(input.into());
         self
     }
-    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
-    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
+    /// <p>For example, an event ARN might look like the following:</p> 
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -61,14 +60,17 @@ impl EntityAggregateBuilder {
     }
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// Consumes the builder and constructs a [`EntityAggregate`](crate::types::EntityAggregate).
     pub fn build(self) -> crate::types::EntityAggregate {
         crate::types::EntityAggregate {
-            event_arn: self.event_arn,
-            count: self.count.unwrap_or_default(),
+            event_arn: self.event_arn
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

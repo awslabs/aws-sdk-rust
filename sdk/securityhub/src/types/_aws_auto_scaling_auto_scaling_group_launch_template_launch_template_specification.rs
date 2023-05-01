@@ -3,7 +3,7 @@
 /// <p>Details about the launch template to use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+pub struct AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification  {
     /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificati
 }
 impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
     /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
-    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuilder{
+    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuilder {
         crate::types::builders::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuilder::default()
     }
 }
@@ -50,12 +50,8 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuil
         self
     }
     /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_id = input;
-        self
+    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_id = input; self
     }
     /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,12 +59,8 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuil
         self
     }
     /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_name = input;
-        self
+    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_name = input; self
     }
     /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,17 +69,18 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationBuil
     }
     /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+    pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
         crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
-            launch_template_id: self.launch_template_id,
-            launch_template_name: self.launch_template_name,
-            version: self.version,
+            launch_template_id: self.launch_template_id
+            ,
+            launch_template_name: self.launch_template_name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A certificate that has been transferred but not yet accepted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutgoingCertificate {
+pub struct OutgoingCertificate  {
     /// <p>The certificate ARN.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct OutgoingCertificate {
 }
 impl OutgoingCertificate {
     /// <p>The certificate ARN.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The certificate ID.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
-    pub fn transferred_to(&self) -> std::option::Option<&str> {
+    pub fn transferred_to(&self) -> std::option::Option<& str> {
         self.transferred_to.as_deref()
     }
     /// <p>The date the transfer was initiated.</p>
-    pub fn transfer_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn transfer_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.transfer_date.as_ref()
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(&self) -> std::option::Option<&str> {
+    pub fn transfer_message(&self) -> std::option::Option<& str> {
         self.transfer_message.as_deref()
     }
     /// <p>The certificate creation date.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl OutgoingCertificateBuilder {
     }
     /// <p>The certificate ARN.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The certificate ID.</p>
     pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl OutgoingCertificateBuilder {
     }
     /// <p>The certificate ID.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
     pub fn transferred_to(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl OutgoingCertificateBuilder {
     }
     /// <p>The Amazon Web Services account to which the transfer was made.</p>
     pub fn set_transferred_to(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transferred_to = input;
-        self
+        self.transferred_to = input; self
     }
     /// <p>The date the transfer was initiated.</p>
     pub fn transfer_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -104,12 +101,8 @@ impl OutgoingCertificateBuilder {
         self
     }
     /// <p>The date the transfer was initiated.</p>
-    pub fn set_transfer_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.transfer_date = input;
-        self
+    pub fn set_transfer_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.transfer_date = input; self
     }
     /// <p>The transfer message.</p>
     pub fn transfer_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +111,7 @@ impl OutgoingCertificateBuilder {
     }
     /// <p>The transfer message.</p>
     pub fn set_transfer_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transfer_message = input;
-        self
+        self.transfer_message = input; self
     }
     /// <p>The certificate creation date.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,22 +119,25 @@ impl OutgoingCertificateBuilder {
         self
     }
     /// <p>The certificate creation date.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// Consumes the builder and constructs a [`OutgoingCertificate`](crate::types::OutgoingCertificate).
     pub fn build(self) -> crate::types::OutgoingCertificate {
         crate::types::OutgoingCertificate {
-            certificate_arn: self.certificate_arn,
-            certificate_id: self.certificate_id,
-            transferred_to: self.transferred_to,
-            transfer_date: self.transfer_date,
-            transfer_message: self.transfer_message,
-            creation_date: self.creation_date,
+            certificate_arn: self.certificate_arn
+            ,
+            certificate_id: self.certificate_id
+            ,
+            transferred_to: self.transferred_to
+            ,
+            transfer_date: self.transfer_date
+            ,
+            transfer_message: self.transfer_message
+            ,
+            creation_date: self.creation_date
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeTarget {
+pub struct UpgradeTarget  {
     /// <p>The name of the upgrade target database engine.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -34,15 +34,15 @@ pub struct UpgradeTarget {
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
@@ -54,7 +54,7 @@ impl UpgradeTarget {
         self.is_major_version_upgrade
     }
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_engine_modes(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
@@ -99,8 +99,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>The name of the upgrade target database engine.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The version number of the upgrade target database engine.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>The version number of the upgrade target database engine.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
@@ -129,8 +126,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn set_auto_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_upgrade = input;
-        self
+        self.auto_upgrade = input; self
     }
     /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
@@ -139,8 +135,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_major_version_upgrade = input;
-        self
+        self.is_major_version_upgrade = input; self
     }
     /// Appends an item to `supported_engine_modes`.
     ///
@@ -149,17 +144,13 @@ impl UpgradeTargetBuilder {
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
     pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_engine_modes.unwrap_or_default();
-        v.push(input.into());
-        self.supported_engine_modes = Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_engine_modes = Some(v);
+                        self
     }
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub fn set_supported_engine_modes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.supported_engine_modes = input;
-        self
+    pub fn set_supported_engine_modes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.supported_engine_modes = input; self
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn supports_parallel_query(mut self, input: bool) -> Self {
@@ -168,8 +159,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
-        self.supports_parallel_query = input;
-        self
+        self.supports_parallel_query = input; self
     }
     /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
@@ -178,8 +168,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
-        self.supports_global_databases = input;
-        self
+        self.supports_global_databases = input; self
     }
     /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn supports_babelfish(mut self, input: bool) -> Self {
@@ -188,21 +177,32 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
-        self.supports_babelfish = input;
-        self
+        self.supports_babelfish = input; self
     }
     /// Consumes the builder and constructs a [`UpgradeTarget`](crate::types::UpgradeTarget).
     pub fn build(self) -> crate::types::UpgradeTarget {
         crate::types::UpgradeTarget {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            description: self.description,
-            auto_upgrade: self.auto_upgrade.unwrap_or_default(),
-            is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
-            supported_engine_modes: self.supported_engine_modes,
-            supports_parallel_query: self.supports_parallel_query,
-            supports_global_databases: self.supports_global_databases,
-            supports_babelfish: self.supports_babelfish,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            description: self.description
+            ,
+            auto_upgrade: self.auto_upgrade
+                .unwrap_or_default()
+            ,
+            is_major_version_upgrade: self.is_major_version_upgrade
+                .unwrap_or_default()
+            ,
+            supported_engine_modes: self.supported_engine_modes
+            ,
+            supports_parallel_query: self.supports_parallel_query
+            ,
+            supports_global_databases: self.supports_global_databases
+            ,
+            supports_babelfish: self.supports_babelfish
+            ,
         }
     }
 }
+

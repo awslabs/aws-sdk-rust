@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelMembershipOutput {
+pub struct DescribeChannelMembershipOutput  {
     /// <p>The details of the membership.</p>
     #[doc(hidden)]
     pub channel_membership: std::option::Option<crate::types::ChannelMembership>,
@@ -10,18 +10,18 @@ pub struct DescribeChannelMembershipOutput {
 }
 impl DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
-    pub fn channel_membership(&self) -> std::option::Option<&crate::types::ChannelMembership> {
+    pub fn channel_membership(&self) -> std::option::Option<& crate::types::ChannelMembership> {
         self.channel_membership.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeChannelMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeChannelMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipOutput`](crate::operation::describe_channel_membership::DescribeChannelMembershipOutput).
-    pub fn builder() -> crate::operation::describe_channel_membership::builders::DescribeChannelMembershipOutputBuilder{
+    pub fn builder() -> crate::operation::describe_channel_membership::builders::DescribeChannelMembershipOutputBuilder {
         crate::operation::describe_channel_membership::builders::DescribeChannelMembershipOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl DescribeChannelMembershipOutputBuilder {
         self
     }
     /// <p>The details of the membership.</p>
-    pub fn set_channel_membership(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMembership>,
-    ) -> Self {
-        self.channel_membership = input;
-        self
+    pub fn set_channel_membership(mut self, input: std::option::Option<crate::types::ChannelMembership>) -> Self {
+        self.channel_membership = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeChannelMembershipOutput`](crate::operation::describe_channel_membership::DescribeChannelMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_channel_membership::DescribeChannelMembershipOutput {
+    pub fn build(self) -> crate::operation::describe_channel_membership::DescribeChannelMembershipOutput {
         crate::operation::describe_channel_membership::DescribeChannelMembershipOutput {
-            channel_membership: self.channel_membership,
+            channel_membership: self.channel_membership
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

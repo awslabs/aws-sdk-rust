@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInvitationConfigurationOutput {
+pub struct GetInvitationConfigurationOutput  {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     #[doc(hidden)]
     pub organization_name: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct GetInvitationConfigurationOutput {
 }
 impl GetInvitationConfigurationOutput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    pub fn organization_name(&self) -> std::option::Option<&str> {
+    pub fn organization_name(&self) -> std::option::Option<& str> {
         self.organization_name.as_deref()
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-    pub fn contact_email(&self) -> std::option::Option<&str> {
+    pub fn contact_email(&self) -> std::option::Option<& str> {
         self.contact_email.as_deref()
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn private_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn private_skill_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.private_skill_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetInvitationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInvitationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetInvitationConfigurationOutput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationOutputBuilder {
         crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationOutputBuilder::default()
     }
 }
@@ -56,12 +56,8 @@ impl GetInvitationConfigurationOutputBuilder {
         self
     }
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    pub fn set_organization_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.organization_name = input;
-        self
+    pub fn set_organization_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.organization_name = input; self
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +66,7 @@ impl GetInvitationConfigurationOutputBuilder {
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn set_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_email = input;
-        self
+        self.contact_email = input; self
     }
     /// Appends an item to `private_skill_ids`.
     ///
@@ -80,36 +75,34 @@ impl GetInvitationConfigurationOutputBuilder {
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.private_skill_ids.unwrap_or_default();
-        v.push(input.into());
-        self.private_skill_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.private_skill_ids = Some(v);
+                        self
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn set_private_skill_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.private_skill_ids = input;
-        self
+    pub fn set_private_skill_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.private_skill_ids = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInvitationConfigurationOutput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput {
         crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput {
-            organization_name: self.organization_name,
-            contact_email: self.contact_email,
-            private_skill_ids: self.private_skill_ids,
+            organization_name: self.organization_name
+            ,
+            contact_email: self.contact_email
+            ,
+            private_skill_ids: self.private_skill_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

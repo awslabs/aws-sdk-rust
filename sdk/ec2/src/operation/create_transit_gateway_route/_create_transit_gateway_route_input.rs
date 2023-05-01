@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitGatewayRouteInput {
+pub struct CreateTransitGatewayRouteInput  {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct CreateTransitGatewayRouteInput {
 }
 impl CreateTransitGatewayRouteInput {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
@@ -43,7 +43,7 @@ impl CreateTransitGatewayRouteInput {
 }
 impl CreateTransitGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteInput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder {
         crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder::default()
     }
 }
@@ -65,12 +65,8 @@ impl CreateTransitGatewayRouteInputBuilder {
         self
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn transit_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +74,8 @@ impl CreateTransitGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+    pub fn set_transit_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +83,8 @@ impl CreateTransitGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+    pub fn set_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn blackhole(mut self, input: bool) -> Self {
@@ -105,8 +93,7 @@ impl CreateTransitGatewayRouteInputBuilder {
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn set_blackhole(mut self, input: std::option::Option<bool>) -> Self {
-        self.blackhole = input;
-        self
+        self.blackhole = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -115,24 +102,24 @@ impl CreateTransitGatewayRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteInput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block,
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-                blackhole: self.blackhole,
-                dry_run: self.dry_run,
-            },
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id
+                ,
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id
+                ,
+                blackhole: self.blackhole
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

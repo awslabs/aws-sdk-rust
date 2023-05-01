@@ -3,40 +3,34 @@
 /// <p>Updates a DomainName.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainNameInput {
+pub struct UpdateDomainNameInput  {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The domain name configurations.</p>
     #[doc(hidden)]
-    pub domain_name_configurations:
-        std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>,
+    pub domain_name_configurations: std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     #[doc(hidden)]
     pub mutual_tls_authentication: std::option::Option<crate::types::MutualTlsAuthenticationInput>,
 }
 impl UpdateDomainNameInput {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The domain name configurations.</p>
-    pub fn domain_name_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::DomainNameConfiguration]> {
+    pub fn domain_name_configurations(&self) -> std::option::Option<& [crate::types::DomainNameConfiguration]> {
         self.domain_name_configurations.as_deref()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn mutual_tls_authentication(
-        &self,
-    ) -> std::option::Option<&crate::types::MutualTlsAuthenticationInput> {
+    pub fn mutual_tls_authentication(&self) -> std::option::Option<& crate::types::MutualTlsAuthenticationInput> {
         self.mutual_tls_authentication.as_ref()
     }
 }
 impl UpdateDomainNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
-    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
         crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder::default()
     }
 }
@@ -46,10 +40,8 @@ impl UpdateDomainNameInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomainNameInputBuilder {
     pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) domain_name_configurations:
-        std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>,
-    pub(crate) mutual_tls_authentication:
-        std::option::Option<crate::types::MutualTlsAuthenticationInput>,
+    pub(crate) domain_name_configurations: std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>,
+    pub(crate) mutual_tls_authentication: std::option::Option<crate::types::MutualTlsAuthenticationInput>,
 }
 impl UpdateDomainNameInputBuilder {
     /// <p>The domain name.</p>
@@ -59,60 +51,44 @@ impl UpdateDomainNameInputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// Appends an item to `domain_name_configurations`.
     ///
     /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
     ///
     /// <p>The domain name configurations.</p>
-    pub fn domain_name_configurations(
-        mut self,
-        input: crate::types::DomainNameConfiguration,
-    ) -> Self {
+    pub fn domain_name_configurations(mut self, input: crate::types::DomainNameConfiguration) -> Self {
         let mut v = self.domain_name_configurations.unwrap_or_default();
-        v.push(input);
-        self.domain_name_configurations = Some(v);
-        self
+                        v.push(input);
+                        self.domain_name_configurations = Some(v);
+                        self
     }
     /// <p>The domain name configurations.</p>
-    pub fn set_domain_name_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>,
-    ) -> Self {
-        self.domain_name_configurations = input;
-        self
+    pub fn set_domain_name_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>) -> Self {
+        self.domain_name_configurations = input; self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn mutual_tls_authentication(
-        mut self,
-        input: crate::types::MutualTlsAuthenticationInput,
-    ) -> Self {
+    pub fn mutual_tls_authentication(mut self, input: crate::types::MutualTlsAuthenticationInput) -> Self {
         self.mutual_tls_authentication = Some(input);
         self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn set_mutual_tls_authentication(
-        mut self,
-        input: std::option::Option<crate::types::MutualTlsAuthenticationInput>,
-    ) -> Self {
-        self.mutual_tls_authentication = input;
-        self
+    pub fn set_mutual_tls_authentication(mut self, input: std::option::Option<crate::types::MutualTlsAuthenticationInput>) -> Self {
+        self.mutual_tls_authentication = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_domain_name::UpdateDomainNameInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_domain_name::UpdateDomainNameInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_domain_name::UpdateDomainNameInput {
-                domain_name: self.domain_name,
-                domain_name_configurations: self.domain_name_configurations,
-                mutual_tls_authentication: self.mutual_tls_authentication,
-            },
+                domain_name: self.domain_name
+                ,
+                domain_name_configurations: self.domain_name_configurations
+                ,
+                mutual_tls_authentication: self.mutual_tls_authentication
+                ,
+            }
         )
     }
 }
+

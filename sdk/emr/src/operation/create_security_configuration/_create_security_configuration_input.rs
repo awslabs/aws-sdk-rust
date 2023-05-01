@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSecurityConfigurationInput {
+pub struct CreateSecurityConfigurationInput  {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct CreateSecurityConfigurationInput {
 }
 impl CreateSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn security_configuration(&self) -> std::option::Option<&str> {
+    pub fn security_configuration(&self) -> std::option::Option<& str> {
         self.security_configuration.as_deref()
     }
 }
 impl CreateSecurityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
-    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder {
         crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl CreateSecurityConfigurationInputBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,25 +50,19 @@ impl CreateSecurityConfigurationInputBuilder {
         self
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_configuration = input;
-        self
+    pub fn set_security_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_configuration = input; self
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_security_configuration::CreateSecurityConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_security_configuration::CreateSecurityConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
-                name: self.name,
-                security_configuration: self.security_configuration,
-            },
+                name: self.name
+                ,
+                security_configuration: self.security_configuration
+                ,
+            }
         )
     }
 }
+

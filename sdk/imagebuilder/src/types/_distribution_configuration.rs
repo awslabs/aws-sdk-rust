@@ -3,7 +3,7 @@
 /// <p>A distribution configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributionConfiguration {
+pub struct DistributionConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -27,24 +27,23 @@ pub struct DistributionConfiguration {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags of the distribution configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DistributionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the distribution configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub fn distributions(&self) -> std::option::Option<&[crate::types::Distribution]> {
+    pub fn distributions(&self) -> std::option::Option<& [crate::types::Distribution]> {
         self.distributions.as_deref()
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
@@ -52,18 +51,15 @@ impl DistributionConfiguration {
         self.timeout_minutes
     }
     /// <p>The date on which this distribution configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -85,8 +81,7 @@ pub struct DistributionConfigurationBuilder {
     pub(crate) timeout_minutes: std::option::Option<i32>,
     pub(crate) date_created: std::option::Option<std::string::String>,
     pub(crate) date_updated: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DistributionConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
@@ -96,8 +91,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +109,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `distributions`.
     ///
@@ -126,17 +118,13 @@ impl DistributionConfigurationBuilder {
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = Some(v);
-        self
+                        v.push(input);
+                        self.distributions = Some(v);
+                        self
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub fn set_distributions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub fn timeout_minutes(mut self, input: i32) -> Self {
@@ -145,8 +133,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub fn set_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_minutes = input;
-        self
+        self.timeout_minutes = input; self
     }
     /// <p>The date on which this distribution configuration was created.</p>
     pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,8 +142,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The date on which this distribution configuration was created.</p>
     pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
     pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,45 +151,43 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
     pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`DistributionConfiguration`](crate::types::DistributionConfiguration).
     pub fn build(self) -> crate::types::DistributionConfiguration {
         crate::types::DistributionConfiguration {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            distributions: self.distributions,
-            timeout_minutes: self.timeout_minutes,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            distributions: self.distributions
+            ,
+            timeout_minutes: self.timeout_minutes
+            ,
+            date_created: self.date_created
+            ,
+            date_updated: self.date_updated
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

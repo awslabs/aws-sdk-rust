@@ -3,7 +3,7 @@
 /// <p>An object representing the TCP route to match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpRouteMatch {
+pub struct TcpRouteMatch  {
     /// <p>The port number to match on.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
@@ -35,11 +35,14 @@ impl TcpRouteMatchBuilder {
     }
     /// <p>The port number to match on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// Consumes the builder and constructs a [`TcpRouteMatch`](crate::types::TcpRouteMatch).
     pub fn build(self) -> crate::types::TcpRouteMatch {
-        crate::types::TcpRouteMatch { port: self.port }
+        crate::types::TcpRouteMatch {
+            port: self.port
+            ,
+        }
     }
 }
+

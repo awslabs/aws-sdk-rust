@@ -3,7 +3,7 @@
 /// <p>Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdvancedSecurityOptions {
+pub struct AdvancedSecurityOptions  {
     /// <p>True if advanced security is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -30,11 +30,11 @@ impl AdvancedSecurityOptions {
         self.internal_user_database_enabled
     }
     /// <p>Describes the SAML application configured for a domain.</p>
-    pub fn saml_options(&self) -> std::option::Option<&crate::types::SamlOptionsOutput> {
+    pub fn saml_options(&self) -> std::option::Option<& crate::types::SamlOptionsOutput> {
         self.saml_options.as_ref()
     }
     /// <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
-    pub fn anonymous_auth_disable_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn anonymous_auth_disable_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.anonymous_auth_disable_date.as_ref()
     }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
@@ -67,8 +67,7 @@ impl AdvancedSecurityOptionsBuilder {
     }
     /// <p>True if advanced security is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True if the internal user database is enabled.</p>
     pub fn internal_user_database_enabled(mut self, input: bool) -> Self {
@@ -77,8 +76,7 @@ impl AdvancedSecurityOptionsBuilder {
     }
     /// <p>True if the internal user database is enabled.</p>
     pub fn set_internal_user_database_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.internal_user_database_enabled = input;
-        self
+        self.internal_user_database_enabled = input; self
     }
     /// <p>Describes the SAML application configured for a domain.</p>
     pub fn saml_options(mut self, input: crate::types::SamlOptionsOutput) -> Self {
@@ -86,12 +84,8 @@ impl AdvancedSecurityOptionsBuilder {
         self
     }
     /// <p>Describes the SAML application configured for a domain.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: std::option::Option<crate::types::SamlOptionsOutput>,
-    ) -> Self {
-        self.saml_options = input;
-        self
+    pub fn set_saml_options(mut self, input: std::option::Option<crate::types::SamlOptionsOutput>) -> Self {
+        self.saml_options = input; self
     }
     /// <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
     pub fn anonymous_auth_disable_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,12 +93,8 @@ impl AdvancedSecurityOptionsBuilder {
         self
     }
     /// <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
-    pub fn set_anonymous_auth_disable_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.anonymous_auth_disable_date = input;
-        self
+    pub fn set_anonymous_auth_disable_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.anonymous_auth_disable_date = input; self
     }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     pub fn anonymous_auth_enabled(mut self, input: bool) -> Self {
@@ -113,17 +103,22 @@ impl AdvancedSecurityOptionsBuilder {
     }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     pub fn set_anonymous_auth_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.anonymous_auth_enabled = input;
-        self
+        self.anonymous_auth_enabled = input; self
     }
     /// Consumes the builder and constructs a [`AdvancedSecurityOptions`](crate::types::AdvancedSecurityOptions).
     pub fn build(self) -> crate::types::AdvancedSecurityOptions {
         crate::types::AdvancedSecurityOptions {
-            enabled: self.enabled,
-            internal_user_database_enabled: self.internal_user_database_enabled,
-            saml_options: self.saml_options,
-            anonymous_auth_disable_date: self.anonymous_auth_disable_date,
-            anonymous_auth_enabled: self.anonymous_auth_enabled,
+            enabled: self.enabled
+            ,
+            internal_user_database_enabled: self.internal_user_database_enabled
+            ,
+            saml_options: self.saml_options
+            ,
+            anonymous_auth_disable_date: self.anonymous_auth_disable_date
+            ,
+            anonymous_auth_enabled: self.anonymous_auth_enabled
+            ,
         }
     }
 }
+

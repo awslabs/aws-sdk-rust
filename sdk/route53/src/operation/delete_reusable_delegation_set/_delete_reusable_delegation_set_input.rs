@@ -3,20 +3,20 @@
 /// <p>A request to delete a reusable delegation set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReusableDelegationSetInput {
+pub struct DeleteReusableDelegationSetInput  {
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteReusableDelegationSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetInput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput).
-    pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder{
+    pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder {
         crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl DeleteReusableDelegationSetInputBuilder {
     }
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteReusableDelegationSetInput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

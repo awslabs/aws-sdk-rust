@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppOutput {
+pub struct DescribeAppOutput  {
     /// <p>The Amazon Resource Name (ARN) of the app.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -43,59 +43,59 @@ pub struct DescribeAppOutput {
 }
 impl DescribeAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the app.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The type of app.</p>
-    pub fn app_type(&self) -> std::option::Option<&crate::types::AppType> {
+    pub fn app_type(&self) -> std::option::Option<& crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p>The name of the app.</p>
-    pub fn app_name(&self) -> std::option::Option<&str> {
+    pub fn app_name(&self) -> std::option::Option<& str> {
         self.app_name.as_deref()
     }
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AppStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AppStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp of the last health check.</p>
-    pub fn last_health_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_health_check_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_health_check_timestamp.as_ref()
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
-    pub fn last_user_activity_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_user_activity_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_user_activity_timestamp.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub fn resource_spec(&self) -> std::option::Option<&crate::types::ResourceSpec> {
+    pub fn resource_spec(&self) -> std::option::Option<& crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAppOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAppOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
     pub fn builder() -> crate::operation::describe_app::builders::DescribeAppOutputBuilder {
@@ -129,8 +129,7 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the app.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
@@ -139,8 +138,7 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The type of app.</p>
     pub fn set_app_type(mut self, input: std::option::Option<crate::types::AppType>) -> Self {
-        self.app_type = input;
-        self
+        self.app_type = input; self
     }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +147,7 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_name = input;
-        self
+        self.app_name = input; self
     }
     /// <p>The domain ID.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +156,7 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The user profile name.</p>
     pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,12 +164,8 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.user_profile_name = input;
-        self
+    pub fn set_user_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.user_profile_name = input; self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::AppStatus) -> Self {
@@ -182,8 +174,7 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AppStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The timestamp of the last health check.</p>
     pub fn last_health_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -191,12 +182,8 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The timestamp of the last health check.</p>
-    pub fn set_last_health_check_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_health_check_timestamp = input;
-        self
+    pub fn set_last_health_check_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_health_check_timestamp = input; self
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub fn last_user_activity_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -204,12 +191,8 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
-    pub fn set_last_user_activity_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_user_activity_timestamp = input;
-        self
+    pub fn set_last_user_activity_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_user_activity_timestamp = input; self
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -217,12 +200,8 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The failure reason.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +210,7 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The failure reason.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
@@ -240,12 +218,8 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub fn set_resource_spec(
-        mut self,
-        input: std::option::Option<crate::types::ResourceSpec>,
-    ) -> Self {
-        self.resource_spec = input;
-        self
+    pub fn set_resource_spec(mut self, input: std::option::Option<crate::types::ResourceSpec>) -> Self {
+        self.resource_spec = input; self
     }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -254,34 +228,46 @@ impl DescribeAppOutputBuilder {
     }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
     pub fn build(self) -> crate::operation::describe_app::DescribeAppOutput {
         crate::operation::describe_app::DescribeAppOutput {
-            app_arn: self.app_arn,
-            app_type: self.app_type,
-            app_name: self.app_name,
-            domain_id: self.domain_id,
-            user_profile_name: self.user_profile_name,
-            status: self.status,
-            last_health_check_timestamp: self.last_health_check_timestamp,
-            last_user_activity_timestamp: self.last_user_activity_timestamp,
-            creation_time: self.creation_time,
-            failure_reason: self.failure_reason,
-            resource_spec: self.resource_spec,
-            space_name: self.space_name,
+            app_arn: self.app_arn
+            ,
+            app_type: self.app_type
+            ,
+            app_name: self.app_name
+            ,
+            domain_id: self.domain_id
+            ,
+            user_profile_name: self.user_profile_name
+            ,
+            status: self.status
+            ,
+            last_health_check_timestamp: self.last_health_check_timestamp
+            ,
+            last_user_activity_timestamp: self.last_user_activity_timestamp
+            ,
+            creation_time: self.creation_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            resource_spec: self.resource_spec
+            ,
+            space_name: self.space_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

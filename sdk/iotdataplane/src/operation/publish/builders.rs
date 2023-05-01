@@ -4,70 +4,52 @@ pub use crate::operation::publish::_publish_output::PublishOutputBuilder;
 pub use crate::operation::publish::_publish_input::PublishInputBuilder;
 
 /// Fluent builder constructing a request to `Publish`.
-///
-/// <p>Publishes an MQTT message.</p>
-/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a> action.</p>
-/// <p>For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the IoT Developer Guide.</p>
+/// 
+/// <p>Publishes an MQTT message.</p> 
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">Publish</a> action.</p> 
+/// <p>For more information about MQTT messages, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT Protocol</a> in the IoT Developer Guide.</p> 
 /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PublishFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::publish::builders::PublishInputBuilder,
-}
-impl PublishFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::publish::builders::PublishInputBuilder
+            }
+impl PublishFluentBuilder  {
     /// Creates a new `Publish`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish::Publish,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::publish::PublishOutput,
-        aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::publish::Publish, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::publish::PublishOutput, aws_smithy_http::result::SdkError<crate::operation::publish::PublishError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the MQTT topic.</p>
     pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.topic(input.into());
@@ -88,43 +70,43 @@ impl PublishFluentBuilder {
         self.inner = self.inner.set_qos(input);
         self
     }
-    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
     /// <p>Default value: <code>false</code> </p>
     pub fn retain(mut self, input: bool) -> Self {
         self.inner = self.inner.retain(input);
         self
     }
-    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
     /// <p>Default value: <code>false</code> </p>
     pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain(input);
         self
     }
-    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
-    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
-    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn user_properties(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_properties(input.into());
         self
     }
-    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn set_user_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_properties(input);
@@ -136,10 +118,7 @@ impl PublishFluentBuilder {
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn set_payload_format_indicator(
-        mut self,
-        input: std::option::Option<crate::types::PayloadFormatIndicator>,
-    ) -> Self {
+    pub fn set_payload_format_indicator(mut self, input: std::option::Option<crate::types::PayloadFormatIndicator>) -> Self {
         self.inner = self.inner.set_payload_format_indicator(input);
         self
     }
@@ -184,3 +163,4 @@ impl PublishFluentBuilder {
         self
     }
 }
+

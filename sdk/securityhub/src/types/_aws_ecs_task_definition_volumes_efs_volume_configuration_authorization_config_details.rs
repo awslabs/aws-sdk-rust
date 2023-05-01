@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
+pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails  {
     /// <p>The Amazon EFS access point identifier to use.</p>
     #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigD
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
     /// <p>The Amazon EFS access point identifier to use.</p>
-    pub fn access_point_id(&self) -> std::option::Option<&str> {
+    pub fn access_point_id(&self) -> std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
-    pub fn iam(&self) -> std::option::Option<&str> {
+    pub fn iam(&self) -> std::option::Option<& str> {
         self.iam.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
     }
     /// <p>The Amazon EFS access point identifier to use.</p>
     pub fn set_access_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_point_id = input;
-        self
+        self.access_point_id = input; self
     }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
     pub fn iam(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,17 +52,16 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
     }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
     pub fn set_iam(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam = input;
-        self
+        self.iam = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
-    {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
         crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
-            access_point_id: self.access_point_id,
-            iam: self.iam,
+            access_point_id: self.access_point_id
+            ,
+            iam: self.iam
+            ,
         }
     }
 }
+

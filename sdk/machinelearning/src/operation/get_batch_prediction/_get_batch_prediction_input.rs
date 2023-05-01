@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBatchPredictionInput {
+pub struct GetBatchPredictionInput  {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
     #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
 impl GetBatchPredictionInput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
 }
 impl GetBatchPredictionInput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
+    pub fn builder() -> crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
         crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetBatchPredictionInputBuilder {
         self
     }
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.batch_prediction_id = input;
-        self
+    pub fn set_batch_prediction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.batch_prediction_id = input; self
     }
     /// Consumes the builder and constructs a [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_batch_prediction::GetBatchPredictionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_batch_prediction::GetBatchPredictionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_batch_prediction::GetBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-            },
+                batch_prediction_id: self.batch_prediction_id
+                ,
+            }
         )
     }
 }
+

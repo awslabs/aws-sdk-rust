@@ -3,21 +3,20 @@
 /// <p>The configuration object for concatenating transcription messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranscriptionMessagesConcatenationConfiguration {
+pub struct TranscriptionMessagesConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl TranscriptionMessagesConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ArtifactsConcatenationState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ArtifactsConcatenationState> {
         self.state.as_ref()
     }
 }
 impl TranscriptionMessagesConcatenationConfiguration {
     /// Creates a new builder-style object to manufacture [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder {
         crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder::default()
     }
 }
@@ -35,15 +34,15 @@ impl TranscriptionMessagesConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::ArtifactsConcatenationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
     pub fn build(self) -> crate::types::TranscriptionMessagesConcatenationConfiguration {
-        crate::types::TranscriptionMessagesConcatenationConfiguration { state: self.state }
+        crate::types::TranscriptionMessagesConcatenationConfiguration {
+            state: self.state
+            ,
+        }
     }
 }
+

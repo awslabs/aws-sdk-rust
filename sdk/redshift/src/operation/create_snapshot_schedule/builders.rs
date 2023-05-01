@@ -4,71 +4,49 @@ pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_ou
 pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_input::CreateSnapshotScheduleInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSnapshotSchedule`.
-///
+/// 
 /// <p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSnapshotScheduleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder,
-}
-impl CreateSnapshotScheduleFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder
+            }
+impl CreateSnapshotScheduleFluentBuilder  {
     /// Creates a new `CreateSnapshotSchedule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_snapshot_schedule::CreateSnapshotSchedule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_snapshot_schedule::CreateSnapshotSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput, aws_smithy_http::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `ScheduleDefinitions`.
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
@@ -79,10 +57,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn set_schedule_definitions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_schedule_definitions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_schedule_definitions(input);
         self
     }
@@ -92,10 +67,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
@@ -105,10 +77,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>The description of the snapshot schedule.</p>
-    pub fn set_schedule_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_description(input);
         self
     }
@@ -122,10 +91,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -150,3 +116,4 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
 }
+

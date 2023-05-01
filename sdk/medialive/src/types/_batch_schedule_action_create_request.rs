@@ -3,14 +3,14 @@
 /// A list of schedule actions to create (in a request) or that have been created (in a response).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchScheduleActionCreateRequest {
+pub struct BatchScheduleActionCreateRequest  {
     /// A list of schedule actions to create.
     #[doc(hidden)]
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionCreateRequest {
     /// A list of schedule actions to create.
-    pub fn schedule_actions(&self) -> std::option::Option<&[crate::types::ScheduleAction]> {
+    pub fn schedule_actions(&self) -> std::option::Option<& [crate::types::ScheduleAction]> {
         self.schedule_actions.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl BatchScheduleActionCreateRequestBuilder {
     /// A list of schedule actions to create.
     pub fn schedule_actions(mut self, input: crate::types::ScheduleAction) -> Self {
         let mut v = self.schedule_actions.unwrap_or_default();
-        v.push(input);
-        self.schedule_actions = Some(v);
-        self
+                        v.push(input);
+                        self.schedule_actions = Some(v);
+                        self
     }
     /// A list of schedule actions to create.
-    pub fn set_schedule_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
-    ) -> Self {
-        self.schedule_actions = input;
-        self
+    pub fn set_schedule_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>) -> Self {
+        self.schedule_actions = input; self
     }
     /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::types::BatchScheduleActionCreateRequest).
     pub fn build(self) -> crate::types::BatchScheduleActionCreateRequest {
         crate::types::BatchScheduleActionCreateRequest {
-            schedule_actions: self.schedule_actions,
+            schedule_actions: self.schedule_actions
+            ,
         }
     }
 }
+

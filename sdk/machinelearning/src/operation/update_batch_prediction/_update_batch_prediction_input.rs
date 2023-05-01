@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBatchPredictionInput {
+pub struct UpdateBatchPredictionInput  {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
     #[doc(hidden)]
     pub batch_prediction_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UpdateBatchPredictionInput {
 }
 impl UpdateBatchPredictionInput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_name(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_name(&self) -> std::option::Option<& str> {
         self.batch_prediction_name.as_deref()
     }
 }
 impl UpdateBatchPredictionInput {
     /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder {
         crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl UpdateBatchPredictionInputBuilder {
         self
     }
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.batch_prediction_id = input;
-        self
+    pub fn set_batch_prediction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.batch_prediction_id = input; self
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,25 +50,19 @@ impl UpdateBatchPredictionInputBuilder {
         self
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.batch_prediction_name = input;
-        self
+    pub fn set_batch_prediction_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.batch_prediction_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_batch_prediction::UpdateBatchPredictionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_batch_prediction::UpdateBatchPredictionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_batch_prediction::UpdateBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-                batch_prediction_name: self.batch_prediction_name,
-            },
+                batch_prediction_id: self.batch_prediction_id
+                ,
+                batch_prediction_name: self.batch_prediction_name
+                ,
+            }
         )
     }
 }
+

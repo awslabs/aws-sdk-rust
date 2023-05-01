@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoverageInput {
+pub struct ListCoverageInput  {
     /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListCoverageInput {
 }
 impl ListCoverageInput {
     /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -33,11 +33,11 @@ impl ListCoverageInput {
         self.max_results
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::types::CoverageFilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::types::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>Represents the criteria used to sort the coverage details.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<&crate::types::CoverageSortCriteria> {
+    pub fn sort_criteria(&self) -> std::option::Option<& crate::types::CoverageSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -66,8 +66,7 @@ impl ListCoverageInputBuilder {
     }
     /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl ListCoverageInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -86,8 +84,7 @@ impl ListCoverageInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
@@ -95,12 +92,8 @@ impl ListCoverageInputBuilder {
         self
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
-        self.filter_criteria = input;
-        self
+    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
+        self.filter_criteria = input; self
     }
     /// <p>Represents the criteria used to sort the coverage details.</p>
     pub fn sort_criteria(mut self, input: crate::types::CoverageSortCriteria) -> Self {
@@ -108,26 +101,25 @@ impl ListCoverageInputBuilder {
         self
     }
     /// <p>Represents the criteria used to sort the coverage details.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: std::option::Option<crate::types::CoverageSortCriteria>,
-    ) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::CoverageSortCriteria>) -> Self {
+        self.sort_criteria = input; self
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_coverage::ListCoverageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_coverage::ListCoverageInput {
-            detector_id: self.detector_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filter_criteria: self.filter_criteria,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> Result<crate::operation::list_coverage::ListCoverageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_coverage::ListCoverageInput {
+                detector_id: self.detector_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

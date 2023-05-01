@@ -3,14 +3,14 @@
 /// <p> Information about the output from a model packaging job. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelPackagingOutputDetails {
+pub struct ModelPackagingOutputDetails  {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
     #[doc(hidden)]
     pub greengrass: std::option::Option<crate::types::GreengrassOutputDetails>,
 }
 impl ModelPackagingOutputDetails {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
-    pub fn greengrass(&self) -> std::option::Option<&crate::types::GreengrassOutputDetails> {
+    pub fn greengrass(&self) -> std::option::Option<& crate::types::GreengrassOutputDetails> {
         self.greengrass.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl ModelPackagingOutputDetailsBuilder {
         self
     }
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
-    pub fn set_greengrass(
-        mut self,
-        input: std::option::Option<crate::types::GreengrassOutputDetails>,
-    ) -> Self {
-        self.greengrass = input;
-        self
+    pub fn set_greengrass(mut self, input: std::option::Option<crate::types::GreengrassOutputDetails>) -> Self {
+        self.greengrass = input; self
     }
     /// Consumes the builder and constructs a [`ModelPackagingOutputDetails`](crate::types::ModelPackagingOutputDetails).
     pub fn build(self) -> crate::types::ModelPackagingOutputDetails {
         crate::types::ModelPackagingOutputDetails {
-            greengrass: self.greengrass,
+            greengrass: self.greengrass
+            ,
         }
     }
 }
+

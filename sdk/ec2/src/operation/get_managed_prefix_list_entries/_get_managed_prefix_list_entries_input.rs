@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetManagedPrefixListEntriesInput {
+pub struct GetManagedPrefixListEntriesInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -25,7 +25,7 @@ impl GetManagedPrefixListEntriesInput {
         self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The version of the prefix list for which to return the entries. The default is the current version.</p>
@@ -37,13 +37,13 @@ impl GetManagedPrefixListEntriesInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetManagedPrefixListEntriesInput {
     /// Creates a new builder-style object to manufacture [`GetManagedPrefixListEntriesInput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput).
-    pub fn builder() -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder{
+    pub fn builder() -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder {
         crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl GetManagedPrefixListEntriesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl GetManagedPrefixListEntriesInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The version of the prefix list for which to return the entries. The default is the current version.</p>
     pub fn target_version(mut self, input: i64) -> Self {
@@ -86,8 +84,7 @@ impl GetManagedPrefixListEntriesInputBuilder {
     }
     /// <p>The version of the prefix list for which to return the entries. The default is the current version.</p>
     pub fn set_target_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.target_version = input;
-        self
+        self.target_version = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,8 +93,7 @@ impl GetManagedPrefixListEntriesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,24 +102,24 @@ impl GetManagedPrefixListEntriesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetManagedPrefixListEntriesInput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput {
-                dry_run: self.dry_run,
-                prefix_list_id: self.prefix_list_id,
-                target_version: self.target_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                dry_run: self.dry_run
+                ,
+                prefix_list_id: self.prefix_list_id
+                ,
+                target_version: self.target_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

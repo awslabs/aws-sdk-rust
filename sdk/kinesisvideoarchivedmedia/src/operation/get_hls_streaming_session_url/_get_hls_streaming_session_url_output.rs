@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHlsStreamingSessionUrlOutput {
+pub struct GetHlsStreamingSessionUrlOutput  {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
     #[doc(hidden)]
     pub hls_streaming_session_url: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct GetHlsStreamingSessionUrlOutput {
 }
 impl GetHlsStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
-    pub fn hls_streaming_session_url(&self) -> std::option::Option<&str> {
+    pub fn hls_streaming_session_url(&self) -> std::option::Option<& str> {
         self.hls_streaming_session_url.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetHlsStreamingSessionUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetHlsStreamingSessionUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlOutput`](crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput).
-    pub fn builder() -> crate::operation::get_hls_streaming_session_url::builders::GetHlsStreamingSessionUrlOutputBuilder{
+    pub fn builder() -> crate::operation::get_hls_streaming_session_url::builders::GetHlsStreamingSessionUrlOutputBuilder {
         crate::operation::get_hls_streaming_session_url::builders::GetHlsStreamingSessionUrlOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl GetHlsStreamingSessionUrlOutputBuilder {
         self
     }
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
-    pub fn set_hls_streaming_session_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hls_streaming_session_url = input;
-        self
+    pub fn set_hls_streaming_session_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hls_streaming_session_url = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetHlsStreamingSessionUrlOutput`](crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput {
+    pub fn build(self) -> crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput {
         crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput {
-            hls_streaming_session_url: self.hls_streaming_session_url,
+            hls_streaming_session_url: self.hls_streaming_session_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

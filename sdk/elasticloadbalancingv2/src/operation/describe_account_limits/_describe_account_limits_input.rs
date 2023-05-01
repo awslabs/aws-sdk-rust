@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountLimitsInput {
+pub struct DescribeAccountLimitsInput  {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeAccountLimitsInput {
 }
 impl DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -22,9 +22,7 @@ impl DescribeAccountLimitsInput {
 }
 impl DescribeAccountLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DescribeAccountLimitsInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -54,21 +51,18 @@ impl DescribeAccountLimitsInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_account_limits::DescribeAccountLimitsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_account_limits::DescribeAccountLimitsInput {
-                marker: self.marker,
-                page_size: self.page_size,
-            },
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

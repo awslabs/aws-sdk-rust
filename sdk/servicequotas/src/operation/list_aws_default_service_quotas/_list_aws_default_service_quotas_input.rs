@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAwsDefaultServiceQuotasInput {
+pub struct ListAwsDefaultServiceQuotasInput  {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListAwsDefaultServiceQuotasInput {
 }
 impl ListAwsDefaultServiceQuotasInput {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
@@ -29,7 +29,7 @@ impl ListAwsDefaultServiceQuotasInput {
 }
 impl ListAwsDefaultServiceQuotasInput {
     /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasInput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput).
-    pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasInputBuilder{
+    pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasInputBuilder {
         crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListAwsDefaultServiceQuotasInputBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListAwsDefaultServiceQuotasInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,22 +68,20 @@ impl ListAwsDefaultServiceQuotasInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAwsDefaultServiceQuotasInput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput {
-                service_code: self.service_code,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                service_code: self.service_code
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

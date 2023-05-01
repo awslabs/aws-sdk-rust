@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriptionDefinitionVersionOutput {
+pub struct CreateSubscriptionDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -19,30 +19,30 @@ pub struct CreateSubscriptionDefinitionVersionOutput {
 }
 impl CreateSubscriptionDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSubscriptionDefinitionVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSubscriptionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionDefinitionVersionOutput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionOutputBuilder {
         crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionOutputBuilder::default()
     }
 }
@@ -65,8 +65,7 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
     }
     /// The ARN of the version.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
     pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,12 +73,8 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
         self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.creation_timestamp = input;
-        self
+    pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.creation_timestamp = input; self
     }
     /// The ID of the parent definition that the version is associated with.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +83,7 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
     }
     /// The ID of the parent definition that the version is associated with.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the version.
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,20 +92,19 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
     }
     /// The ID of the version.
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionVersionOutput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput).
-    pub fn build(self) -> crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput{
+    pub fn build(self) -> crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput {
         crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput {
             arn: self.arn
             ,
@@ -125,3 +118,4 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
         }
     }
 }
+

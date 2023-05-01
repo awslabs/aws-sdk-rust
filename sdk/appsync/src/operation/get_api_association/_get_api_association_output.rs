@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApiAssociationOutput {
+pub struct GetApiAssociationOutput  {
     /// <p>The <code>ApiAssociation</code> object.</p>
     #[doc(hidden)]
     pub api_association: std::option::Option<crate::types::ApiAssociation>,
@@ -10,19 +10,18 @@ pub struct GetApiAssociationOutput {
 }
 impl GetApiAssociationOutput {
     /// <p>The <code>ApiAssociation</code> object.</p>
-    pub fn api_association(&self) -> std::option::Option<&crate::types::ApiAssociation> {
+    pub fn api_association(&self) -> std::option::Option<& crate::types::ApiAssociation> {
         self.api_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetApiAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetApiAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetApiAssociationOutput`](crate::operation::get_api_association::GetApiAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder {
         crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetApiAssociationOutputBuilder {
         self
     }
     /// <p>The <code>ApiAssociation</code> object.</p>
-    pub fn set_api_association(
-        mut self,
-        input: std::option::Option<crate::types::ApiAssociation>,
-    ) -> Self {
-        self.api_association = input;
-        self
+    pub fn set_api_association(mut self, input: std::option::Option<crate::types::ApiAssociation>) -> Self {
+        self.api_association = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetApiAssociationOutput`](crate::operation::get_api_association::GetApiAssociationOutput).
     pub fn build(self) -> crate::operation::get_api_association::GetApiAssociationOutput {
         crate::operation::get_api_association::GetApiAssociationOutput {
-            api_association: self.api_association,
+            api_association: self.api_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

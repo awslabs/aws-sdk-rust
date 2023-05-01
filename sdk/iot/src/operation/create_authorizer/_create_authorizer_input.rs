@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAuthorizerInput {
+pub struct CreateAuthorizerInput  {
     /// <p>The authorizer name.</p>
     #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
@@ -14,63 +14,59 @@ pub struct CreateAuthorizerInput {
     pub token_key_name: std::option::Option<std::string::String>,
     /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
     #[doc(hidden)]
-    pub token_signing_public_keys:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub token_signing_public_keys: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the create authorizer request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AuthorizerStatus>,
-    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     #[doc(hidden)]
     pub signing_disabled: std::option::Option<bool>,
-    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p> 
     /// <p>The default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub enable_caching_for_http: std::option::Option<bool>,
 }
 impl CreateAuthorizerInput {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> std::option::Option<& str> {
         self.authorizer_name.as_deref()
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn authorizer_function_arn(&self) -> std::option::Option<&str> {
+    pub fn authorizer_function_arn(&self) -> std::option::Option<& str> {
         self.authorizer_function_arn.as_deref()
     }
     /// <p>The name of the token key used to extract the token from the HTTP headers.</p>
-    pub fn token_key_name(&self) -> std::option::Option<&str> {
+    pub fn token_key_name(&self) -> std::option::Option<& str> {
         self.token_key_name.as_deref()
     }
     /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
-    pub fn token_signing_public_keys(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn token_signing_public_keys(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.token_signing_public_keys.as_ref()
     }
     /// <p>The status of the create authorizer request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AuthorizerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AuthorizerStatus> {
         self.status.as_ref()
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
     /// </note>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub fn signing_disabled(&self) -> std::option::Option<bool> {
         self.signing_disabled
     }
-    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p> 
     /// <p>The default value is <code>false</code>.</p>
     pub fn enable_caching_for_http(&self) -> std::option::Option<bool> {
         self.enable_caching_for_http
@@ -78,8 +74,7 @@ impl CreateAuthorizerInput {
 }
 impl CreateAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`CreateAuthorizerInput`](crate::operation::create_authorizer::CreateAuthorizerInput).
-    pub fn builder() -> crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder {
         crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder::default()
     }
 }
@@ -91,8 +86,7 @@ pub struct CreateAuthorizerInputBuilder {
     pub(crate) authorizer_name: std::option::Option<std::string::String>,
     pub(crate) authorizer_function_arn: std::option::Option<std::string::String>,
     pub(crate) token_key_name: std::option::Option<std::string::String>,
-    pub(crate) token_signing_public_keys:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) token_signing_public_keys: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) status: std::option::Option<crate::types::AuthorizerStatus>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) signing_disabled: std::option::Option<bool>,
@@ -106,8 +100,7 @@ impl CreateAuthorizerInputBuilder {
     }
     /// <p>The authorizer name.</p>
     pub fn set_authorizer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authorizer_name = input;
-        self
+        self.authorizer_name = input; self
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
     pub fn authorizer_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,12 +108,8 @@ impl CreateAuthorizerInputBuilder {
         self
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn set_authorizer_function_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorizer_function_arn = input;
-        self
+    pub fn set_authorizer_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorizer_function_arn = input; self
     }
     /// <p>The name of the token key used to extract the token from the HTTP headers.</p>
     pub fn token_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,33 +118,22 @@ impl CreateAuthorizerInputBuilder {
     }
     /// <p>The name of the token key used to extract the token from the HTTP headers.</p>
     pub fn set_token_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token_key_name = input;
-        self
+        self.token_key_name = input; self
     }
     /// Adds a key-value pair to `token_signing_public_keys`.
     ///
     /// To override the contents of this collection use [`set_token_signing_public_keys`](Self::set_token_signing_public_keys).
     ///
     /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
-    pub fn token_signing_public_keys(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn token_signing_public_keys(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.token_signing_public_keys.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.token_signing_public_keys = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.token_signing_public_keys = Some(hash_map);
+                        self
     }
     /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
-    pub fn set_token_signing_public_keys(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.token_signing_public_keys = input;
-        self
+    pub fn set_token_signing_public_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.token_signing_public_keys = input; self
     }
     /// <p>The status of the create authorizer request.</p>
     pub fn status(mut self, input: crate::types::AuthorizerStatus) -> Self {
@@ -163,39 +141,31 @@ impl CreateAuthorizerInputBuilder {
         self
     }
     /// <p>The status of the create authorizer request.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::AuthorizerStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::AuthorizerStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note> 
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub fn signing_disabled(mut self, input: bool) -> Self {
@@ -204,37 +174,41 @@ impl CreateAuthorizerInputBuilder {
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub fn set_signing_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.signing_disabled = input;
-        self
+        self.signing_disabled = input; self
     }
-    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p> 
     /// <p>The default value is <code>false</code>.</p>
     pub fn enable_caching_for_http(mut self, input: bool) -> Self {
         self.enable_caching_for_http = Some(input);
         self
     }
-    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p> 
     /// <p>The default value is <code>false</code>.</p>
     pub fn set_enable_caching_for_http(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_caching_for_http = input;
-        self
+        self.enable_caching_for_http = input; self
     }
     /// Consumes the builder and constructs a [`CreateAuthorizerInput`](crate::operation::create_authorizer::CreateAuthorizerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_authorizer::CreateAuthorizerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_authorizer::CreateAuthorizerInput {
-            authorizer_name: self.authorizer_name,
-            authorizer_function_arn: self.authorizer_function_arn,
-            token_key_name: self.token_key_name,
-            token_signing_public_keys: self.token_signing_public_keys,
-            status: self.status,
-            tags: self.tags,
-            signing_disabled: self.signing_disabled,
-            enable_caching_for_http: self.enable_caching_for_http,
-        })
+    pub fn build(self) -> Result<crate::operation::create_authorizer::CreateAuthorizerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_authorizer::CreateAuthorizerInput {
+                authorizer_name: self.authorizer_name
+                ,
+                authorizer_function_arn: self.authorizer_function_arn
+                ,
+                token_key_name: self.token_key_name
+                ,
+                token_signing_public_keys: self.token_signing_public_keys
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
+                signing_disabled: self.signing_disabled
+                ,
+                enable_caching_for_http: self.enable_caching_for_http
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A classifier for <code>XML</code> content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XmlClassifier {
+pub struct XmlClassifier  {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -27,19 +27,19 @@ pub struct XmlClassifier {
 }
 impl XmlClassifier {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(&self) -> std::option::Option<&str> {
+    pub fn classification(&self) -> std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>The time that this classifier was registered.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that this classifier was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The version of this classifier.</p>
@@ -49,7 +49,7 @@ impl XmlClassifier {
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
-    pub fn row_tag(&self) -> std::option::Option<&str> {
+    pub fn row_tag(&self) -> std::option::Option<& str> {
         self.row_tag.as_deref()
     }
 }
@@ -79,8 +79,7 @@ impl XmlClassifierBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +88,7 @@ impl XmlClassifierBuilder {
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub fn set_classification(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.classification = input;
-        self
+        self.classification = input; self
     }
     /// <p>The time that this classifier was registered.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -98,12 +96,8 @@ impl XmlClassifierBuilder {
         self
     }
     /// <p>The time that this classifier was registered.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The time that this classifier was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -111,12 +105,8 @@ impl XmlClassifierBuilder {
         self
     }
     /// <p>The time that this classifier was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// <p>The version of this classifier.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -125,8 +115,7 @@ impl XmlClassifierBuilder {
     }
     /// <p>The version of this classifier.</p>
     pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
@@ -139,18 +128,25 @@ impl XmlClassifierBuilder {
     /// <row item_a="A" item_b="B" /></code> is okay, but <code>
     /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.row_tag = input;
-        self
+        self.row_tag = input; self
     }
     /// Consumes the builder and constructs a [`XmlClassifier`](crate::types::XmlClassifier).
     pub fn build(self) -> crate::types::XmlClassifier {
         crate::types::XmlClassifier {
-            name: self.name,
-            classification: self.classification,
-            creation_time: self.creation_time,
-            last_updated: self.last_updated,
-            version: self.version.unwrap_or_default(),
-            row_tag: self.row_tag,
+            name: self.name
+            ,
+            classification: self.classification
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated: self.last_updated
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            row_tag: self.row_tag
+            ,
         }
     }
 }
+

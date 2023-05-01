@@ -3,14 +3,14 @@
 /// <p>Represents a request to the get run operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRunInput {
+pub struct GetRunInput  {
     /// <p>The run's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRunInput {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,14 +35,16 @@ impl GetRunInputBuilder {
     }
     /// <p>The run's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`GetRunInput`](crate::operation::get_run::GetRunInput).
-    pub fn build(
-        self,
-    ) -> Result<crate::operation::get_run::GetRunInput, aws_smithy_http::operation::error::BuildError>
-    {
-        Ok(crate::operation::get_run::GetRunInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::get_run::GetRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_run::GetRunInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

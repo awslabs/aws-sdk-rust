@@ -3,7 +3,7 @@
 /// <p>Information about the dataflow endpoint <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataflowEndpointConfig {
+pub struct DataflowEndpointConfig  {
     /// <p>Name of a dataflow endpoint.</p>
     #[doc(hidden)]
     pub dataflow_endpoint_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DataflowEndpointConfig {
 }
 impl DataflowEndpointConfig {
     /// <p>Name of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_name(&self) -> std::option::Option<& str> {
         self.dataflow_endpoint_name.as_deref()
     }
     /// <p>Region of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_region(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_region(&self) -> std::option::Option<& str> {
         self.dataflow_endpoint_region.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl DataflowEndpointConfigBuilder {
         self
     }
     /// <p>Name of a dataflow endpoint.</p>
-    pub fn set_dataflow_endpoint_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dataflow_endpoint_name = input;
-        self
+    pub fn set_dataflow_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dataflow_endpoint_name = input; self
     }
     /// <p>Region of a dataflow endpoint.</p>
     pub fn dataflow_endpoint_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl DataflowEndpointConfigBuilder {
         self
     }
     /// <p>Region of a dataflow endpoint.</p>
-    pub fn set_dataflow_endpoint_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dataflow_endpoint_region = input;
-        self
+    pub fn set_dataflow_endpoint_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dataflow_endpoint_region = input; self
     }
     /// Consumes the builder and constructs a [`DataflowEndpointConfig`](crate::types::DataflowEndpointConfig).
     pub fn build(self) -> crate::types::DataflowEndpointConfig {
         crate::types::DataflowEndpointConfig {
-            dataflow_endpoint_name: self.dataflow_endpoint_name,
-            dataflow_endpoint_region: self.dataflow_endpoint_region,
+            dataflow_endpoint_name: self.dataflow_endpoint_name
+            ,
+            dataflow_endpoint_region: self.dataflow_endpoint_region
+            ,
         }
     }
 }
+

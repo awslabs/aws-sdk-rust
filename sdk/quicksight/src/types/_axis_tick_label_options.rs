@@ -3,7 +3,7 @@
 /// <p>The tick label options of an axis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AxisTickLabelOptions {
+pub struct AxisTickLabelOptions  {
     /// <p>Determines whether or not the axis ticks are visible.</p>
     #[doc(hidden)]
     pub label_options: std::option::Option<crate::types::LabelOptions>,
@@ -13,7 +13,7 @@ pub struct AxisTickLabelOptions {
 }
 impl AxisTickLabelOptions {
     /// <p>Determines whether or not the axis ticks are visible.</p>
-    pub fn label_options(&self) -> std::option::Option<&crate::types::LabelOptions> {
+    pub fn label_options(&self) -> std::option::Option<& crate::types::LabelOptions> {
         self.label_options.as_ref()
     }
     /// <p>The rotation angle of the axis tick labels.</p>
@@ -42,12 +42,8 @@ impl AxisTickLabelOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the axis ticks are visible.</p>
-    pub fn set_label_options(
-        mut self,
-        input: std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
-        self.label_options = input;
-        self
+    pub fn set_label_options(mut self, input: std::option::Option<crate::types::LabelOptions>) -> Self {
+        self.label_options = input; self
     }
     /// <p>The rotation angle of the axis tick labels.</p>
     pub fn rotation_angle(mut self, input: f64) -> Self {
@@ -56,14 +52,16 @@ impl AxisTickLabelOptionsBuilder {
     }
     /// <p>The rotation angle of the axis tick labels.</p>
     pub fn set_rotation_angle(mut self, input: std::option::Option<f64>) -> Self {
-        self.rotation_angle = input;
-        self
+        self.rotation_angle = input; self
     }
     /// Consumes the builder and constructs a [`AxisTickLabelOptions`](crate::types::AxisTickLabelOptions).
     pub fn build(self) -> crate::types::AxisTickLabelOptions {
         crate::types::AxisTickLabelOptions {
-            label_options: self.label_options,
-            rotation_angle: self.rotation_angle,
+            label_options: self.label_options
+            ,
+            rotation_angle: self.rotation_angle
+            ,
         }
     }
 }
+

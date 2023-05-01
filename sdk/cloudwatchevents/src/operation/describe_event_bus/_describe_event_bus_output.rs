@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventBusOutput {
+pub struct DescribeEventBusOutput  {
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct DescribeEventBusOutput {
 }
 impl DescribeEventBusOutput {
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventBusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEventBusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventBusOutput`](crate::operation::describe_event_bus::DescribeEventBusOutput).
-    pub fn builder() -> crate::operation::describe_event_bus::builders::DescribeEventBusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_bus::builders::DescribeEventBusOutputBuilder {
         crate::operation::describe_event_bus::builders::DescribeEventBusOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl DescribeEventBusOutputBuilder {
     }
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +66,7 @@ impl DescribeEventBusOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,25 +75,28 @@ impl DescribeEventBusOutputBuilder {
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEventBusOutput`](crate::operation::describe_event_bus::DescribeEventBusOutput).
     pub fn build(self) -> crate::operation::describe_event_bus::DescribeEventBusOutput {
         crate::operation::describe_event_bus::DescribeEventBusOutput {
-            name: self.name,
-            arn: self.arn,
-            policy: self.policy,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

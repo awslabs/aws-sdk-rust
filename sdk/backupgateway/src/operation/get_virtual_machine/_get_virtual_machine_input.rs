@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVirtualMachineInput {
+pub struct GetVirtualMachineInput  {
     /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetVirtualMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl GetVirtualMachineInput {
     /// Creates a new builder-style object to manufacture [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
-    pub fn builder(
-    ) -> crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder {
+    pub fn builder() -> crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder {
         crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetVirtualMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_virtual_machine::GetVirtualMachineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_virtual_machine::GetVirtualMachineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_virtual_machine::GetVirtualMachineInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

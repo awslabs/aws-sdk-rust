@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExperimentInput {
+pub struct CreateExperimentInput  {
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
     #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
@@ -12,32 +12,31 @@ pub struct CreateExperimentInput {
     /// <p>The description of the experiment.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
+    /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateExperimentInput {
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn experiment_name(&self) -> std::option::Option<&str> {
+    pub fn experiment_name(&self) -> std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the experiment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateExperimentInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
-    pub fn builder() -> crate::operation::create_experiment::builders::CreateExperimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
         crate::operation::create_experiment::builders::CreateExperimentInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
     pub fn set_experiment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The description of the experiment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,40 +76,37 @@ impl CreateExperimentInputBuilder {
     }
     /// <p>The description of the experiment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
+    /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_experiment::CreateExperimentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_experiment::CreateExperimentInput {
-            experiment_name: self.experiment_name,
-            display_name: self.display_name,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_experiment::CreateExperimentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_experiment::CreateExperimentInput {
+                experiment_name: self.experiment_name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

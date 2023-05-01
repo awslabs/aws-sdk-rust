@@ -2,29 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAssignmentCreationStatusOutput {
+pub struct DescribeAccountAssignmentCreationStatusOutput  {
     /// <p>The status object for the account assignment creation operation.</p>
     #[doc(hidden)]
-    pub account_assignment_creation_status:
-        std::option::Option<crate::types::AccountAssignmentOperationStatus>,
+    pub account_assignment_creation_status: std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn account_assignment_creation_status(
-        &self,
-    ) -> std::option::Option<&crate::types::AccountAssignmentOperationStatus> {
+    pub fn account_assignment_creation_status(&self) -> std::option::Option<& crate::types::AccountAssignmentOperationStatus> {
         self.account_assignment_creation_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAccountAssignmentCreationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAccountAssignmentCreationStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentCreationStatusOutput`](crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput).
-    pub fn builder() -> crate::operation::describe_account_assignment_creation_status::builders::DescribeAccountAssignmentCreationStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_assignment_creation_status::builders::DescribeAccountAssignmentCreationStatusOutputBuilder {
         crate::operation::describe_account_assignment_creation_status::builders::DescribeAccountAssignmentCreationStatusOutputBuilder::default()
     }
 }
@@ -33,38 +30,30 @@ impl DescribeAccountAssignmentCreationStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountAssignmentCreationStatusOutputBuilder {
-    pub(crate) account_assignment_creation_status:
-        std::option::Option<crate::types::AccountAssignmentOperationStatus>,
+    pub(crate) account_assignment_creation_status: std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAssignmentCreationStatusOutputBuilder {
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn account_assignment_creation_status(
-        mut self,
-        input: crate::types::AccountAssignmentOperationStatus,
-    ) -> Self {
+    pub fn account_assignment_creation_status(mut self, input: crate::types::AccountAssignmentOperationStatus) -> Self {
         self.account_assignment_creation_status = Some(input);
         self
     }
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn set_account_assignment_creation_status(
-        mut self,
-        input: std::option::Option<crate::types::AccountAssignmentOperationStatus>,
-    ) -> Self {
-        self.account_assignment_creation_status = input;
-        self
+    pub fn set_account_assignment_creation_status(mut self, input: std::option::Option<crate::types::AccountAssignmentOperationStatus>) -> Self {
+        self.account_assignment_creation_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAccountAssignmentCreationStatusOutput`](crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput).
-    pub fn build(self) -> crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput{
+    pub fn build(self) -> crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput {
         crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput {
             account_assignment_creation_status: self.account_assignment_creation_status
             ,
@@ -72,3 +61,4 @@ impl DescribeAccountAssignmentCreationStatusOutputBuilder {
         }
     }
 }
+

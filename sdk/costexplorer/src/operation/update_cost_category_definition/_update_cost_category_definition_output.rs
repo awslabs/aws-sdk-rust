@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCostCategoryDefinitionOutput {
+pub struct UpdateCostCategoryDefinitionOutput  {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct UpdateCostCategoryDefinitionOutput {
 }
 impl UpdateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> std::option::Option<& str> {
         self.effective_start.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateCostCategoryDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionOutput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionOutputBuilder {
         crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionOutputBuilder::default()
     }
 }
@@ -48,12 +48,8 @@ impl UpdateCostCategoryDefinitionOutputBuilder {
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cost_category_arn = input;
-        self
+    pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cost_category_arn = input; self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,26 +58,26 @@ impl UpdateCostCategoryDefinitionOutputBuilder {
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.effective_start = input;
-        self
+        self.effective_start = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionOutput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput {
+    pub fn build(self) -> crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput {
         crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput {
-            cost_category_arn: self.cost_category_arn,
-            effective_start: self.effective_start,
+            cost_category_arn: self.cost_category_arn
+            ,
+            effective_start: self.effective_start
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

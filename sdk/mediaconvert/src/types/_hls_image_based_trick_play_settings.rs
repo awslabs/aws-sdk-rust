@@ -3,7 +3,7 @@
 /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsImageBasedTrickPlaySettings {
+pub struct HlsImageBasedTrickPlaySettings  {
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     #[doc(hidden)]
     pub interval_cadence: std::option::Option<crate::types::HlsIntervalCadence>,
@@ -25,7 +25,7 @@ pub struct HlsImageBasedTrickPlaySettings {
 }
 impl HlsImageBasedTrickPlaySettings {
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    pub fn interval_cadence(&self) -> std::option::Option<&crate::types::HlsIntervalCadence> {
+    pub fn interval_cadence(&self) -> std::option::Option<& crate::types::HlsIntervalCadence> {
         self.interval_cadence.as_ref()
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
@@ -74,12 +74,8 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
         self
     }
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    pub fn set_interval_cadence(
-        mut self,
-        input: std::option::Option<crate::types::HlsIntervalCadence>,
-    ) -> Self {
-        self.interval_cadence = input;
-        self
+    pub fn set_interval_cadence(mut self, input: std::option::Option<crate::types::HlsIntervalCadence>) -> Self {
+        self.interval_cadence = input; self
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub fn thumbnail_height(mut self, input: i32) -> Self {
@@ -88,8 +84,7 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
-        self.thumbnail_height = input;
-        self
+        self.thumbnail_height = input; self
     }
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub fn thumbnail_interval(mut self, input: f64) -> Self {
@@ -98,8 +93,7 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
     }
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
-        self.thumbnail_interval = input;
-        self
+        self.thumbnail_interval = input; self
     }
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub fn thumbnail_width(mut self, input: i32) -> Self {
@@ -108,8 +102,7 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
     }
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
-        self.thumbnail_width = input;
-        self
+        self.thumbnail_width = input; self
     }
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     pub fn tile_height(mut self, input: i32) -> Self {
@@ -118,8 +111,7 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
     }
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     pub fn set_tile_height(mut self, input: std::option::Option<i32>) -> Self {
-        self.tile_height = input;
-        self
+        self.tile_height = input; self
     }
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub fn tile_width(mut self, input: i32) -> Self {
@@ -128,18 +120,29 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
     }
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
-        self.tile_width = input;
-        self
+        self.tile_width = input; self
     }
     /// Consumes the builder and constructs a [`HlsImageBasedTrickPlaySettings`](crate::types::HlsImageBasedTrickPlaySettings).
     pub fn build(self) -> crate::types::HlsImageBasedTrickPlaySettings {
         crate::types::HlsImageBasedTrickPlaySettings {
-            interval_cadence: self.interval_cadence,
-            thumbnail_height: self.thumbnail_height.unwrap_or_default(),
-            thumbnail_interval: self.thumbnail_interval.unwrap_or_default(),
-            thumbnail_width: self.thumbnail_width.unwrap_or_default(),
-            tile_height: self.tile_height.unwrap_or_default(),
-            tile_width: self.tile_width.unwrap_or_default(),
+            interval_cadence: self.interval_cadence
+            ,
+            thumbnail_height: self.thumbnail_height
+                .unwrap_or_default()
+            ,
+            thumbnail_interval: self.thumbnail_interval
+                .unwrap_or_default()
+            ,
+            thumbnail_width: self.thumbnail_width
+                .unwrap_or_default()
+            ,
+            tile_height: self.tile_height
+                .unwrap_or_default()
+            ,
+            tile_width: self.tile_width
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

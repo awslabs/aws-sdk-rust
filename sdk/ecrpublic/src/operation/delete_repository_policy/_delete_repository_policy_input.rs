@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRepositoryPolicyInput {
+pub struct DeleteRepositoryPolicyInput  {
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DeleteRepositoryPolicyInput {
 }
 impl DeleteRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository that's associated with the repository policy to delete.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 impl DeleteRepositoryPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyInput`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyInputBuilder {
         crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DeleteRepositoryPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The name of the repository that's associated with the repository policy to delete.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DeleteRepositoryPolicyInputBuilder {
     }
     /// <p>The name of the repository that's associated with the repository policy to delete.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryPolicyInput`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_repository_policy::DeleteRepositoryPolicyInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-            },
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+            }
         )
     }
 }
+

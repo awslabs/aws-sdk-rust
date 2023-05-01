@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSmsChannelOutput {
+pub struct UpdateSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::types::SmsChannelResponse>,
@@ -10,19 +10,18 @@ pub struct UpdateSmsChannelOutput {
 }
 impl UpdateSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn sms_channel_response(&self) -> std::option::Option<&crate::types::SmsChannelResponse> {
+    pub fn sms_channel_response(&self) -> std::option::Option<& crate::types::SmsChannelResponse> {
         self.sms_channel_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSmsChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateSmsChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmsChannelOutput`](crate::operation::update_sms_channel::UpdateSmsChannelOutput).
-    pub fn builder() -> crate::operation::update_sms_channel::builders::UpdateSmsChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_sms_channel::builders::UpdateSmsChannelOutputBuilder {
         crate::operation::update_sms_channel::builders::UpdateSmsChannelOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateSmsChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn set_sms_channel_response(
-        mut self,
-        input: std::option::Option<crate::types::SmsChannelResponse>,
-    ) -> Self {
-        self.sms_channel_response = input;
-        self
+    pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::types::SmsChannelResponse>) -> Self {
+        self.sms_channel_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateSmsChannelOutput`](crate::operation::update_sms_channel::UpdateSmsChannelOutput).
     pub fn build(self) -> crate::operation::update_sms_channel::UpdateSmsChannelOutput {
         crate::operation::update_sms_channel::UpdateSmsChannelOutput {
-            sms_channel_response: self.sms_channel_response,
+            sms_channel_response: self.sms_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

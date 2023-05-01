@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResolverRuleOutput {
+pub struct DeleteResolverRuleOutput  {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::types::ResolverRule>,
@@ -10,19 +10,18 @@ pub struct DeleteResolverRuleOutput {
 }
 impl DeleteResolverRuleOutput {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule(&self) -> std::option::Option<&crate::types::ResolverRule> {
+    pub fn resolver_rule(&self) -> std::option::Option<& crate::types::ResolverRule> {
         self.resolver_rule.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteResolverRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleOutputBuilder {
         crate::operation::delete_resolver_rule::builders::DeleteResolverRuleOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DeleteResolverRuleOutputBuilder {
         self
     }
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
-    pub fn set_resolver_rule(
-        mut self,
-        input: std::option::Option<crate::types::ResolverRule>,
-    ) -> Self {
-        self.resolver_rule = input;
-        self
+    pub fn set_resolver_rule(mut self, input: std::option::Option<crate::types::ResolverRule>) -> Self {
+        self.resolver_rule = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput).
     pub fn build(self) -> crate::operation::delete_resolver_rule::DeleteResolverRuleOutput {
         crate::operation::delete_resolver_rule::DeleteResolverRuleOutput {
-            resolver_rule: self.resolver_rule,
+            resolver_rule: self.resolver_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSyncAttempt {
+pub struct ResourceSyncAttempt  {
     /// <p>Detail data for the initial repository commit, path and push.</p>
     #[doc(hidden)]
     pub initial_revision: std::option::Option<crate::types::Revision>,
@@ -25,27 +25,27 @@ pub struct ResourceSyncAttempt {
 }
 impl ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
-    pub fn initial_revision(&self) -> std::option::Option<&crate::types::Revision> {
+    pub fn initial_revision(&self) -> std::option::Option<& crate::types::Revision> {
         self.initial_revision.as_ref()
     }
     /// <p>Detail data for the target revision.</p>
-    pub fn target_revision(&self) -> std::option::Option<&crate::types::Revision> {
+    pub fn target_revision(&self) -> std::option::Option<& crate::types::Revision> {
         self.target_revision.as_ref()
     }
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceSyncStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ResourceSyncStatus> {
         self.status.as_ref()
     }
     /// <p>An array of events with detail data.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::ResourceSyncEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::types::ResourceSyncEvent]> {
         self.events.as_deref()
     }
 }
@@ -74,12 +74,8 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>Detail data for the initial repository commit, path and push.</p>
-    pub fn set_initial_revision(
-        mut self,
-        input: std::option::Option<crate::types::Revision>,
-    ) -> Self {
-        self.initial_revision = input;
-        self
+    pub fn set_initial_revision(mut self, input: std::option::Option<crate::types::Revision>) -> Self {
+        self.initial_revision = input; self
     }
     /// <p>Detail data for the target revision.</p>
     pub fn target_revision(mut self, input: crate::types::Revision) -> Self {
@@ -87,12 +83,8 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>Detail data for the target revision.</p>
-    pub fn set_target_revision(
-        mut self,
-        input: std::option::Option<crate::types::Revision>,
-    ) -> Self {
-        self.target_revision = input;
-        self
+    pub fn set_target_revision(mut self, input: std::option::Option<crate::types::Revision>) -> Self {
+        self.target_revision = input; self
     }
     /// <p>The resource that is synced to.</p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +93,7 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The resource that is synced to.</p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The time when the sync attempt started.</p>
     pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,12 +101,8 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_at = input;
-        self
+    pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input; self
     }
     /// <p>The status of the sync attempt.</p>
     pub fn status(mut self, input: crate::types::ResourceSyncStatus) -> Self {
@@ -123,12 +110,8 @@ impl ResourceSyncAttemptBuilder {
         self
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ResourceSyncStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceSyncStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `events`.
     ///
@@ -137,27 +120,30 @@ impl ResourceSyncAttemptBuilder {
     /// <p>An array of events with detail data.</p>
     pub fn events(mut self, input: crate::types::ResourceSyncEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = Some(v);
-        self
+                        v.push(input);
+                        self.events = Some(v);
+                        self
     }
     /// <p>An array of events with detail data.</p>
-    pub fn set_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceSyncEvent>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceSyncEvent>>) -> Self {
+        self.events = input; self
     }
     /// Consumes the builder and constructs a [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).
     pub fn build(self) -> crate::types::ResourceSyncAttempt {
         crate::types::ResourceSyncAttempt {
-            initial_revision: self.initial_revision,
-            target_revision: self.target_revision,
-            target: self.target,
-            started_at: self.started_at,
-            status: self.status,
-            events: self.events,
+            initial_revision: self.initial_revision
+            ,
+            target_revision: self.target_revision
+            ,
+            target: self.target
+            ,
+            started_at: self.started_at
+            ,
+            status: self.status
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

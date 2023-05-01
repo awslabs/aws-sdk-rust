@@ -3,7 +3,7 @@
 /// <p>Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDocumentResponseFailedDocument {
+pub struct BatchDeleteDocumentResponseFailedDocument  {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchDeleteDocumentResponseFailedDocument {
 }
 impl BatchDeleteDocumentResponseFailedDocument {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The error code for why the document couldn't be removed from the index.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     }
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The error code for why the document couldn't be removed from the index.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -61,8 +60,7 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     }
     /// <p>The error code for why the document couldn't be removed from the index.</p>
     pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Consumes the builder and constructs a [`BatchDeleteDocumentResponseFailedDocument`](crate::types::BatchDeleteDocumentResponseFailedDocument).
     pub fn build(self) -> crate::types::BatchDeleteDocumentResponseFailedDocument {
         crate::types::BatchDeleteDocumentResponseFailedDocument {
-            id: self.id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            id: self.id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

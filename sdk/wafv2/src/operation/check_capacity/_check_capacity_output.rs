@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckCapacityOutput {
+pub struct CheckCapacityOutput  {
     /// <p>The capacity required by the rules and scope.</p>
     #[doc(hidden)]
     pub capacity: i64,
@@ -15,10 +15,10 @@ impl CheckCapacityOutput {
     }
 }
 impl aws_http::request_id::RequestId for CheckCapacityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CheckCapacityOutput {
     /// Creates a new builder-style object to manufacture [`CheckCapacityOutput`](crate::operation::check_capacity::CheckCapacityOutput).
     pub fn builder() -> crate::operation::check_capacity::builders::CheckCapacityOutputBuilder {
@@ -41,23 +41,25 @@ impl CheckCapacityOutputBuilder {
     }
     /// <p>The capacity required by the rules and scope.</p>
     pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CheckCapacityOutput`](crate::operation::check_capacity::CheckCapacityOutput).
     pub fn build(self) -> crate::operation::check_capacity::CheckCapacityOutput {
         crate::operation::check_capacity::CheckCapacityOutput {
-            capacity: self.capacity.unwrap_or_default(),
+            capacity: self.capacity
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

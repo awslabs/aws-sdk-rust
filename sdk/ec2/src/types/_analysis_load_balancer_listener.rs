@@ -3,7 +3,7 @@
 /// <p>Describes a load balancer listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisLoadBalancerListener {
+pub struct AnalysisLoadBalancerListener  {
     /// <p>The port on which the load balancer is listening.</p>
     #[doc(hidden)]
     pub load_balancer_port: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl AnalysisLoadBalancerListenerBuilder {
     }
     /// <p>The port on which the load balancer is listening.</p>
     pub fn set_load_balancer_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.load_balancer_port = input;
-        self
+        self.load_balancer_port = input; self
     }
     /// <p>[Classic Load Balancers] The back-end port for the listener.</p>
     pub fn instance_port(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl AnalysisLoadBalancerListenerBuilder {
     }
     /// <p>[Classic Load Balancers] The back-end port for the listener.</p>
     pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_port = input;
-        self
+        self.instance_port = input; self
     }
     /// Consumes the builder and constructs a [`AnalysisLoadBalancerListener`](crate::types::AnalysisLoadBalancerListener).
     pub fn build(self) -> crate::types::AnalysisLoadBalancerListener {
         crate::types::AnalysisLoadBalancerListener {
-            load_balancer_port: self.load_balancer_port,
-            instance_port: self.instance_port,
+            load_balancer_port: self.load_balancer_port
+            ,
+            instance_port: self.instance_port
+            ,
         }
     }
 }
+

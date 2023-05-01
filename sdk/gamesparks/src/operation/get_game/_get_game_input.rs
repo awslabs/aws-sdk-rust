@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGameInput {
+pub struct GetGameInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
 }
 impl GetGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetGameInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// Consumes the builder and constructs a [`GetGameInput`](crate::operation::get_game::GetGameInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_game::GetGameInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_game::GetGameInput {
-            game_name: self.game_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_game::GetGameInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_game::GetGameInput {
+                game_name: self.game_name
+                ,
+            }
+        )
     }
 }
+

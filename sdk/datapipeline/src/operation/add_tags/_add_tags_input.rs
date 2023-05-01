@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for AddTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsInput {
+pub struct AddTagsInput  {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AddTagsInput {
 }
 impl AddTagsInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The tags to add, as key/value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AddTagsInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -53,28 +52,24 @@ impl AddTagsInputBuilder {
     /// <p>The tags to add, as key/value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to add, as key/value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_tags::AddTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::add_tags::AddTagsInput {
-            pipeline_id: self.pipeline_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::add_tags::AddTagsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::add_tags::AddTagsInput {
+                pipeline_id: self.pipeline_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportTaskRunnerHeartbeatInput {
+pub struct ReportTaskRunnerHeartbeatInput  {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     #[doc(hidden)]
     pub taskrunner_id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct ReportTaskRunnerHeartbeatInput {
 }
 impl ReportTaskRunnerHeartbeatInput {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-    pub fn taskrunner_id(&self) -> std::option::Option<&str> {
+    pub fn taskrunner_id(&self) -> std::option::Option<& str> {
         self.taskrunner_id.as_deref()
     }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    pub fn worker_group(&self) -> std::option::Option<&str> {
+    pub fn worker_group(&self) -> std::option::Option<& str> {
         self.worker_group.as_deref()
     }
     /// <p>The public DNS name of the task runner.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
 }
 impl ReportTaskRunnerHeartbeatInput {
     /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatInput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput).
-    pub fn builder() -> crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder{
+    pub fn builder() -> crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder {
         crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder::default()
     }
 }
@@ -51,8 +51,7 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
     }
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     pub fn set_taskrunner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.taskrunner_id = input;
-        self
+        self.taskrunner_id = input; self
     }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn worker_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
     }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_group = input;
-        self
+        self.worker_group = input; self
     }
     /// <p>The public DNS name of the task runner.</p>
     pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +69,20 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
     }
     /// <p>The public DNS name of the task runner.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatInput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput {
-                taskrunner_id: self.taskrunner_id,
-                worker_group: self.worker_group,
-                hostname: self.hostname,
-            },
+                taskrunner_id: self.taskrunner_id
+                ,
+                worker_group: self.worker_group
+                ,
+                hostname: self.hostname
+                ,
+            }
         )
     }
 }
+

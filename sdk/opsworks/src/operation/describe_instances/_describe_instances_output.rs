@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeInstances</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancesOutput {
+pub struct DescribeInstancesOutput  {
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
@@ -11,19 +11,18 @@ pub struct DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::types::Instance]> {
         self.instances.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder::default()
     }
 }
@@ -43,32 +42,30 @@ impl DescribeInstancesOutputBuilder {
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = Some(v);
-        self
+                        v.push(input);
+                        self.instances = Some(v);
+                        self
     }
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::Instance>>) -> Self {
+        self.instances = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
     pub fn build(self) -> crate::operation::describe_instances::DescribeInstancesOutput {
         crate::operation::describe_instances::DescribeInstancesOutput {
-            instances: self.instances,
+            instances: self.instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

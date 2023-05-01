@@ -2,38 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachVerifiedAccessTrustProviderOutput {
-    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+pub struct DetachVerifiedAccessTrustProviderOutput  {
+    /// <p>The ID of the Verified Access trust provider.</p>
     #[doc(hidden)]
-    pub verified_access_trust_provider:
-        std::option::Option<crate::types::VerifiedAccessTrustProvider>,
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub verified_access_trust_provider: std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    /// <p>The ID of the Verified Access instance.</p>
     #[doc(hidden)]
     pub verified_access_instance: std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }
 impl DetachVerifiedAccessTrustProviderOutput {
-    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider(
-        &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessTrustProvider> {
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(&self) -> std::option::Option<& crate::types::VerifiedAccessTrustProvider> {
         self.verified_access_trust_provider.as_ref()
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance(
-        &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessInstance> {
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn verified_access_instance(&self) -> std::option::Option<& crate::types::VerifiedAccessInstance> {
         self.verified_access_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DetachVerifiedAccessTrustProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetachVerifiedAccessTrustProviderOutput {
     /// Creates a new builder-style object to manufacture [`DetachVerifiedAccessTrustProviderOutput`](crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput).
-    pub fn builder() -> crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderOutputBuilder{
+    pub fn builder() -> crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderOutputBuilder {
         crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderOutputBuilder::default()
     }
 }
@@ -42,52 +37,40 @@ impl DetachVerifiedAccessTrustProviderOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DetachVerifiedAccessTrustProviderOutputBuilder {
-    pub(crate) verified_access_trust_provider:
-        std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    pub(crate) verified_access_trust_provider: std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     pub(crate) verified_access_instance: std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }
 impl DetachVerifiedAccessTrustProviderOutputBuilder {
-    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider(
-        mut self,
-        input: crate::types::VerifiedAccessTrustProvider,
-    ) -> Self {
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn verified_access_trust_provider(mut self, input: crate::types::VerifiedAccessTrustProvider) -> Self {
         self.verified_access_trust_provider = Some(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
-    pub fn set_verified_access_trust_provider(
-        mut self,
-        input: std::option::Option<crate::types::VerifiedAccessTrustProvider>,
-    ) -> Self {
-        self.verified_access_trust_provider = input;
-        self
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn set_verified_access_trust_provider(mut self, input: std::option::Option<crate::types::VerifiedAccessTrustProvider>) -> Self {
+        self.verified_access_trust_provider = input; self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance(mut self, input: crate::types::VerifiedAccessInstance) -> Self {
         self.verified_access_instance = Some(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance(
-        mut self,
-        input: std::option::Option<crate::types::VerifiedAccessInstance>,
-    ) -> Self {
-        self.verified_access_instance = input;
-        self
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn set_verified_access_instance(mut self, input: std::option::Option<crate::types::VerifiedAccessInstance>) -> Self {
+        self.verified_access_instance = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetachVerifiedAccessTrustProviderOutput`](crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput).
-    pub fn build(self) -> crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput{
+    pub fn build(self) -> crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput {
         crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput {
             verified_access_trust_provider: self.verified_access_trust_provider
             ,
@@ -97,3 +80,4 @@ impl DetachVerifiedAccessTrustProviderOutputBuilder {
         }
     }
 }
+

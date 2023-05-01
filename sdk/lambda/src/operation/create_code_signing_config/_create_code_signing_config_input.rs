@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCodeSigningConfigInput {
+pub struct CreateCodeSigningConfigInput  {
     /// <p>Descriptive name for this code signing configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct CreateCodeSigningConfigInput {
 }
 impl CreateCodeSigningConfigInput {
     /// <p>Descriptive name for this code signing configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Signing profiles for this code signing configuration.</p>
-    pub fn allowed_publishers(&self) -> std::option::Option<&crate::types::AllowedPublishers> {
+    pub fn allowed_publishers(&self) -> std::option::Option<& crate::types::AllowedPublishers> {
         self.allowed_publishers.as_ref()
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn code_signing_policies(&self) -> std::option::Option<&crate::types::CodeSigningPolicies> {
+    pub fn code_signing_policies(&self) -> std::option::Option<& crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
 }
 impl CreateCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder {
         crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl CreateCodeSigningConfigInputBuilder {
     }
     /// <p>Descriptive name for this code signing configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Signing profiles for this code signing configuration.</p>
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
@@ -61,12 +58,8 @@ impl CreateCodeSigningConfigInputBuilder {
         self
     }
     /// <p>Signing profiles for this code signing configuration.</p>
-    pub fn set_allowed_publishers(
-        mut self,
-        input: std::option::Option<crate::types::AllowedPublishers>,
-    ) -> Self {
-        self.allowed_publishers = input;
-        self
+    pub fn set_allowed_publishers(mut self, input: std::option::Option<crate::types::AllowedPublishers>) -> Self {
+        self.allowed_publishers = input; self
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
@@ -74,26 +67,21 @@ impl CreateCodeSigningConfigInputBuilder {
         self
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn set_code_signing_policies(
-        mut self,
-        input: std::option::Option<crate::types::CodeSigningPolicies>,
-    ) -> Self {
-        self.code_signing_policies = input;
-        self
+    pub fn set_code_signing_policies(mut self, input: std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
+        self.code_signing_policies = input; self
     }
     /// Consumes the builder and constructs a [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_code_signing_config::CreateCodeSigningConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_code_signing_config::CreateCodeSigningConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_code_signing_config::CreateCodeSigningConfigInput {
-                description: self.description,
-                allowed_publishers: self.allowed_publishers,
-                code_signing_policies: self.code_signing_policies,
-            },
+                description: self.description
+                ,
+                allowed_publishers: self.allowed_publishers
+                ,
+                code_signing_policies: self.code_signing_policies
+                ,
+            }
         )
     }
 }
+

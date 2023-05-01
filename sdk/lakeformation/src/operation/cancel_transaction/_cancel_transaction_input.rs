@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelTransactionInput {
+pub struct CancelTransactionInput  {
     /// <p>The transaction to cancel.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CancelTransactionInput {
     /// <p>The transaction to cancel.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
 impl CancelTransactionInput {
     /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
-    pub fn builder() -> crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder {
         crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl CancelTransactionInputBuilder {
     }
     /// <p>The transaction to cancel.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_transaction::CancelTransactionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_transaction::CancelTransactionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_transaction::CancelTransactionInput {
-                transaction_id: self.transaction_id,
-            },
+                transaction_id: self.transaction_id
+                ,
+            }
         )
     }
 }
+

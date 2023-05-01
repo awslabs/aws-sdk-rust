@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFastSnapshotRestoresInput {
-    /// <p>The filters. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
-    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
-    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
+pub struct DescribeFastSnapshotRestoresInput  {
+    /// <p>The filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li> 
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li> 
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -23,14 +23,14 @@ pub struct DescribeFastSnapshotRestoresInput {
     pub dry_run: std::option::Option<bool>,
 }
 impl DescribeFastSnapshotRestoresInput {
-    /// <p>The filters. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
-    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
-    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
+    /// <p>The filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li> 
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li> 
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -38,7 +38,7 @@ impl DescribeFastSnapshotRestoresInput {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,7 +48,7 @@ impl DescribeFastSnapshotRestoresInput {
 }
 impl DescribeFastSnapshotRestoresInput {
     /// Creates a new builder-style object to manufacture [`DescribeFastSnapshotRestoresInput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput).
-    pub fn builder() -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder{
+    pub fn builder() -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder {
         crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder::default()
     }
 }
@@ -67,32 +67,28 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
-    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
-    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
+    /// <p>The filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li> 
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li> 
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>The filters. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li>
-    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
-    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
+    /// <p>The filters. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code>: The Availability Zone of the snapshot.</p> </li> 
+    /// <li> <p> <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p> </li> 
+    /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li> 
+    /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -101,8 +97,7 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +106,7 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -121,23 +115,22 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFastSnapshotRestoresInput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

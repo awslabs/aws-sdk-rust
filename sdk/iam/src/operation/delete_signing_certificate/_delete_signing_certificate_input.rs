@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSigningCertificateInput {
-    /// <p>The name of the user the signing certificate belongs to.</p>
+pub struct DeleteSigningCertificateInput  {
+    /// <p>The name of the user the signing certificate belongs to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the signing certificate to delete.</p>
+    /// <p>The ID of the signing certificate to delete.</p> 
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteSigningCertificateInput {
-    /// <p>The name of the user the signing certificate belongs to.</p>
+    /// <p>The name of the user the signing certificate belongs to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
-    /// <p>The ID of the signing certificate to delete.</p>
+    /// <p>The ID of the signing certificate to delete.</p> 
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
 impl DeleteSigningCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteSigningCertificateInput`](crate::operation::delete_signing_certificate::DeleteSigningCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder {
         crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder::default()
     }
 }
@@ -41,42 +39,38 @@ pub struct DeleteSigningCertificateInputBuilder {
     pub(crate) certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteSigningCertificateInputBuilder {
-    /// <p>The name of the user the signing certificate belongs to.</p>
+    /// <p>The name of the user the signing certificate belongs to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the user the signing certificate belongs to.</p>
+    /// <p>The name of the user the signing certificate belongs to.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
-    /// <p>The ID of the signing certificate to delete.</p>
+    /// <p>The ID of the signing certificate to delete.</p> 
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
     pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.certificate_id = Some(input.into());
         self
     }
-    /// <p>The ID of the signing certificate to delete.</p>
+    /// <p>The ID of the signing certificate to delete.</p> 
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSigningCertificateInput`](crate::operation::delete_signing_certificate::DeleteSigningCertificateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_signing_certificate::DeleteSigningCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_signing_certificate::DeleteSigningCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_signing_certificate::DeleteSigningCertificateInput {
-                user_name: self.user_name,
-                certificate_id: self.certificate_id,
-            },
+                user_name: self.user_name
+                ,
+                certificate_id: self.certificate_id
+                ,
+            }
         )
     }
 }
+

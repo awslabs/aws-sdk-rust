@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointSettingsOutput {
+pub struct DescribeEndpointSettingsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct DescribeEndpointSettingsOutput {
 }
 impl DescribeEndpointSettingsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    pub fn endpoint_settings(&self) -> std::option::Option<&[crate::types::EndpointSetting]> {
+    pub fn endpoint_settings(&self) -> std::option::Option<& [crate::types::EndpointSetting]> {
         self.endpoint_settings.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEndpointSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEndpointSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsOutputBuilder {
         crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl DescribeEndpointSettingsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Appends an item to `endpoint_settings`.
     ///
@@ -61,35 +58,32 @@ impl DescribeEndpointSettingsOutputBuilder {
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
     pub fn endpoint_settings(mut self, input: crate::types::EndpointSetting) -> Self {
         let mut v = self.endpoint_settings.unwrap_or_default();
-        v.push(input);
-        self.endpoint_settings = Some(v);
-        self
+                        v.push(input);
+                        self.endpoint_settings = Some(v);
+                        self
     }
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    pub fn set_endpoint_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointSetting>>,
-    ) -> Self {
-        self.endpoint_settings = input;
-        self
+    pub fn set_endpoint_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointSetting>>) -> Self {
+        self.endpoint_settings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput {
+    pub fn build(self) -> crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput {
         crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput {
-            marker: self.marker,
-            endpoint_settings: self.endpoint_settings,
+            marker: self.marker
+            ,
+            endpoint_settings: self.endpoint_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

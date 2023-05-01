@@ -3,7 +3,7 @@
 /// <p>Details for a volume mount point that's used in a container definition. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsMountPoint {
+pub struct AwsMountPoint  {
     /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>. </p>
     #[doc(hidden)]
     pub source_volume: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsMountPoint {
 }
 impl AwsMountPoint {
     /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>. </p>
-    pub fn source_volume(&self) -> std::option::Option<&str> {
+    pub fn source_volume(&self) -> std::option::Option<& str> {
         self.source_volume.as_deref()
     }
     /// <p>The path on the container to mount the host volume at. </p>
-    pub fn container_path(&self) -> std::option::Option<&str> {
+    pub fn container_path(&self) -> std::option::Option<& str> {
         self.container_path.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AwsMountPointBuilder {
     }
     /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>. </p>
     pub fn set_source_volume(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_volume = input;
-        self
+        self.source_volume = input; self
     }
     /// <p>The path on the container to mount the host volume at. </p>
     pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AwsMountPointBuilder {
     }
     /// <p>The path on the container to mount the host volume at. </p>
     pub fn set_container_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_path = input;
-        self
+        self.container_path = input; self
     }
     /// Consumes the builder and constructs a [`AwsMountPoint`](crate::types::AwsMountPoint).
     pub fn build(self) -> crate::types::AwsMountPoint {
         crate::types::AwsMountPoint {
-            source_volume: self.source_volume,
-            container_path: self.container_path,
+            source_volume: self.source_volume
+            ,
+            container_path: self.container_path
+            ,
         }
     }
 }
+

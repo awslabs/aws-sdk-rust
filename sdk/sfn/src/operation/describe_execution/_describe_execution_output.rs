@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeExecutionOutput {
+pub struct DescribeExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the execution.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -36,8 +36,8 @@ pub struct DescribeExecutionOutput {
     /// <p>Provides details about execution input or output.</p>
     #[doc(hidden)]
     pub input_details: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
@@ -60,78 +60,74 @@ pub struct DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
-    /// <p>The name of the execution.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::types::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(
-        &self,
-    ) -> std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
+    pub fn output_details(&self) -> std::option::Option<& crate::types::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    pub fn trace_header(&self) -> std::option::Option<&str> {
+    pub fn trace_header(&self) -> std::option::Option<& str> {
         self.trace_header.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The error string if the state machine execution failed.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The cause string if the state machine execution failed.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> std::option::Option<& str> {
         self.cause.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExecutionOutput {
+impl  std::fmt::Debug for DescribeExecutionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExecutionOutput");
         formatter.field("execution_arn", &self.execution_arn);
@@ -153,14 +149,13 @@ impl std::fmt::Debug for DescribeExecutionOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::default()
     }
 }
@@ -176,11 +171,9 @@ pub struct DescribeExecutionOutputBuilder {
     pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) input_details:
-        std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
+    pub(crate) input_details: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     pub(crate) output: std::option::Option<std::string::String>,
-    pub(crate) output_details:
-        std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
+    pub(crate) output_details: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     pub(crate) trace_header: std::option::Option<std::string::String>,
     pub(crate) map_run_arn: std::option::Option<std::string::String>,
     pub(crate) error: std::option::Option<std::string::String>,
@@ -195,8 +188,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
     pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,40 +196,35 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.state_machine_arn = input;
-        self
+    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.state_machine_arn = input; self
     }
-    /// <p>The name of the execution.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the execution.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The current status of the execution.</p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -246,8 +233,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The current status of the execution.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The date the execution is started.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -255,12 +241,8 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// <p>The date the execution is started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
     pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -269,8 +251,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
     pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_date = input;
-        self
+        self.stop_date = input; self
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -279,54 +260,38 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(
-        mut self,
-        input: crate::types::CloudWatchEventsExecutionDataDetails,
-    ) -> Self {
+    pub fn input_details(mut self, input: crate::types::CloudWatchEventsExecutionDataDetails) -> Self {
         self.input_details = Some(input);
         self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn set_input_details(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    ) -> Self {
-        self.input_details = input;
-        self
+    pub fn set_input_details(mut self, input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>) -> Self {
+        self.input_details = input; self
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
         self.output = Some(input.into());
         self
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(
-        mut self,
-        input: crate::types::CloudWatchEventsExecutionDataDetails,
-    ) -> Self {
+    pub fn output_details(mut self, input: crate::types::CloudWatchEventsExecutionDataDetails) -> Self {
         self.output_details = Some(input);
         self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn set_output_details(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    ) -> Self {
-        self.output_details = input;
-        self
+    pub fn set_output_details(mut self, input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>) -> Self {
+        self.output_details = input; self
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
@@ -335,8 +300,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
     pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -345,8 +309,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
     pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// <p>The error string if the state machine execution failed.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -355,8 +318,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The error string if the state machine execution failed.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The cause string if the state machine execution failed.</p>
     pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -365,35 +327,48 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>The cause string if the state machine execution failed.</p>
     pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
     pub fn build(self) -> crate::operation::describe_execution::DescribeExecutionOutput {
         crate::operation::describe_execution::DescribeExecutionOutput {
-            execution_arn: self.execution_arn,
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            status: self.status,
-            start_date: self.start_date,
-            stop_date: self.stop_date,
-            input: self.input,
-            input_details: self.input_details,
-            output: self.output,
-            output_details: self.output_details,
-            trace_header: self.trace_header,
-            map_run_arn: self.map_run_arn,
-            error: self.error,
-            cause: self.cause,
+            execution_arn: self.execution_arn
+            ,
+            state_machine_arn: self.state_machine_arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            start_date: self.start_date
+            ,
+            stop_date: self.stop_date
+            ,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
+            output: self.output
+            ,
+            output_details: self.output_details
+            ,
+            trace_header: self.trace_header
+            ,
+            map_run_arn: self.map_run_arn
+            ,
+            error: self.error
+            ,
+            cause: self.cause
+            ,
             _request_id: self._request_id,
         }
     }
@@ -419,3 +394,4 @@ impl std::fmt::Debug for DescribeExecutionOutputBuilder {
         formatter.finish()
     }
 }
+

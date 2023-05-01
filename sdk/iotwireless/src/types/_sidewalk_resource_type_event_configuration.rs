@@ -3,17 +3,14 @@
 /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkResourceTypeEventConfiguration {
+pub struct SidewalkResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub wireless_device_event_topic:
-        std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub wireless_device_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl SidewalkResourceTypeEventConfiguration {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_device_event_topic(&self) -> std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl SidewalkResourceTypeEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SidewalkResourceTypeEventConfigurationBuilder {
-    pub(crate) wireless_device_event_topic:
-        std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub(crate) wireless_device_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl SidewalkResourceTypeEventConfigurationBuilder {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(
-        mut self,
-        input: crate::types::EventNotificationTopicStatus,
-    ) -> Self {
+    pub fn wireless_device_event_topic(mut self, input: crate::types::EventNotificationTopicStatus) -> Self {
         self.wireless_device_event_topic = Some(input);
         self
     }
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn set_wireless_device_event_topic(
-        mut self,
-        input: std::option::Option<crate::types::EventNotificationTopicStatus>,
-    ) -> Self {
-        self.wireless_device_event_topic = input;
-        self
+    pub fn set_wireless_device_event_topic(mut self, input: std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
+        self.wireless_device_event_topic = input; self
     }
     /// Consumes the builder and constructs a [`SidewalkResourceTypeEventConfiguration`](crate::types::SidewalkResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::SidewalkResourceTypeEventConfiguration {
         crate::types::SidewalkResourceTypeEventConfiguration {
-            wireless_device_event_topic: self.wireless_device_event_topic,
+            wireless_device_event_topic: self.wireless_device_event_topic
+            ,
         }
     }
 }
+

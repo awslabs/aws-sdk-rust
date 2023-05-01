@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageOutput {
+pub struct DeleteImageOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct DeleteImageOutput {
 }
 impl DeleteImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteImageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput).
     pub fn builder() -> crate::operation::delete_image::builders::DeleteImageOutputBuilder {
@@ -49,8 +49,7 @@ impl DeleteImageOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,28 +57,27 @@ impl DeleteImageOutputBuilder {
         self
     }
     /// <p>The ARN of the Image Builder image resource that this request deleted.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_build_version_arn = input;
-        self
+    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_build_version_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput).
     pub fn build(self) -> crate::operation::delete_image::DeleteImageOutput {
         crate::operation::delete_image::DeleteImageOutput {
-            request_id: self.request_id,
-            image_build_version_arn: self.image_build_version_arn,
+            request_id: self.request_id
+            ,
+            image_build_version_arn: self.image_build_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,44 +3,42 @@
 /// <p>Provides details about the configured <code>SourceConnection</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceConnectionDetail {
+pub struct SourceConnectionDetail  {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SourceType>,
     /// <p>The connection details based on the connection <code>Type</code>.</p>
     #[doc(hidden)]
     pub connection_parameters: std::option::Option<crate::types::SourceConnectionParameters>,
-    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
-    /// <ul>
-    /// <li> <p> <code>LastSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p> 
+    /// <ul> 
+    /// <li> <p> <code>LastSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub last_sync: std::option::Option<crate::types::LastSync>,
 }
 impl SourceConnectionDetail {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SourceType> {
         self.r#type.as_ref()
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn connection_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::SourceConnectionParameters> {
+    pub fn connection_parameters(&self) -> std::option::Option<& crate::types::SourceConnectionParameters> {
         self.connection_parameters.as_ref()
     }
-    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
-    /// <ul>
-    /// <li> <p> <code>LastSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p> 
+    /// <ul> 
+    /// <li> <p> <code>LastSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li> 
     /// </ul>
-    pub fn last_sync(&self) -> std::option::Option<&crate::types::LastSync> {
+    pub fn last_sync(&self) -> std::option::Option<& crate::types::LastSync> {
         self.last_sync.as_ref()
     }
 }
@@ -67,55 +65,50 @@ impl SourceConnectionDetailBuilder {
     }
     /// <p>The only supported <code>SourceConnection</code> type is Codestar.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::SourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn connection_parameters(
-        mut self,
-        input: crate::types::SourceConnectionParameters,
-    ) -> Self {
+    pub fn connection_parameters(mut self, input: crate::types::SourceConnectionParameters) -> Self {
         self.connection_parameters = Some(input);
         self
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn set_connection_parameters(
-        mut self,
-        input: std::option::Option<crate::types::SourceConnectionParameters>,
-    ) -> Self {
-        self.connection_parameters = input;
-        self
+    pub fn set_connection_parameters(mut self, input: std::option::Option<crate::types::SourceConnectionParameters>) -> Self {
+        self.connection_parameters = input; self
     }
-    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
-    /// <ul>
-    /// <li> <p> <code>LastSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p> 
+    /// <ul> 
+    /// <li> <p> <code>LastSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li> 
     /// </ul>
     pub fn last_sync(mut self, input: crate::types::LastSync) -> Self {
         self.last_sync = Some(input);
         self
     }
-    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
-    /// <ul>
-    /// <li> <p> <code>LastSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatus</code> </p> </li>
-    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li>
-    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
+    /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p> 
+    /// <ul> 
+    /// <li> <p> <code>LastSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatus</code> </p> </li> 
+    /// <li> <p> <code>LastSyncStatusMessage</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li> 
+    /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li> 
     /// </ul>
     pub fn set_last_sync(mut self, input: std::option::Option<crate::types::LastSync>) -> Self {
-        self.last_sync = input;
-        self
+        self.last_sync = input; self
     }
     /// Consumes the builder and constructs a [`SourceConnectionDetail`](crate::types::SourceConnectionDetail).
     pub fn build(self) -> crate::types::SourceConnectionDetail {
         crate::types::SourceConnectionDetail {
-            r#type: self.r#type,
-            connection_parameters: self.connection_parameters,
-            last_sync: self.last_sync,
+            r#type: self.r#type
+            ,
+            connection_parameters: self.connection_parameters
+            ,
+            last_sync: self.last_sync
+            ,
         }
     }
 }
+

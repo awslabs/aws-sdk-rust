@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotifyResourceDeploymentStatusChangeInput {
+pub struct NotifyResourceDeploymentStatusChangeInput  {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -21,27 +21,27 @@ pub struct NotifyResourceDeploymentStatusChangeInput {
 }
 impl NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The status of your provisioned resource.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceDeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ResourceDeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::types::Output]> {
         self.outputs.as_deref()
     }
     /// <p>The deployment ID for your provisioned resource.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The deployment status message for your provisioned resource.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
+impl  std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyResourceDeploymentStatusChangeInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -54,7 +54,7 @@ impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
 }
 impl NotifyResourceDeploymentStatusChangeInput {
     /// Creates a new builder-style object to manufacture [`NotifyResourceDeploymentStatusChangeInput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput).
-    pub fn builder() -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder{
+    pub fn builder() -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder {
         crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder::default()
     }
 }
@@ -77,8 +77,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
     }
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The status of your provisioned resource.</p>
     pub fn status(mut self, input: crate::types::ResourceDeploymentStatus) -> Self {
@@ -86,12 +85,8 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         self
     }
     /// <p>The status of your provisioned resource.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ResourceDeploymentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceDeploymentStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `outputs`.
     ///
@@ -100,17 +95,13 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = Some(v);
-        self
+                        v.push(input);
+                        self.outputs = Some(v);
+                        self
     }
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>The deployment ID for your provisioned resource.</p>
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +110,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
     }
     /// <p>The deployment ID for your provisioned resource.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The deployment status message for your provisioned resource.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,11 +119,10 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
     }
     /// <p>The deployment status message for your provisioned resource.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// Consumes the builder and constructs a [`NotifyResourceDeploymentStatusChangeInput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput).
-    pub fn build(self) -> Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput {
                 resource_arn: self.resource_arn
@@ -161,3 +150,4 @@ impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInputBuilder {
         formatter.finish()
     }
 }
+

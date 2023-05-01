@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelReplayInput {
+pub struct CancelReplayInput  {
     /// <p>The name of the replay to cancel.</p>
     #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
 }
 impl CancelReplayInput {
     /// <p>The name of the replay to cancel.</p>
-    pub fn replay_name(&self) -> std::option::Option<&str> {
+    pub fn replay_name(&self) -> std::option::Option<& str> {
         self.replay_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl CancelReplayInputBuilder {
     }
     /// <p>The name of the replay to cancel.</p>
     pub fn set_replay_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replay_name = input;
-        self
+        self.replay_name = input; self
     }
     /// Consumes the builder and constructs a [`CancelReplayInput`](crate::operation::cancel_replay::CancelReplayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_replay::CancelReplayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::cancel_replay::CancelReplayInput {
-            replay_name: self.replay_name,
-        })
+    pub fn build(self) -> Result<crate::operation::cancel_replay::CancelReplayInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::cancel_replay::CancelReplayInput {
+                replay_name: self.replay_name
+                ,
+            }
+        )
     }
 }
+

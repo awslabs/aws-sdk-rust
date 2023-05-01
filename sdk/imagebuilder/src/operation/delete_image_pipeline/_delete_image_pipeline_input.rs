@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImagePipelineInput {
+pub struct DeleteImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
 }
 impl DeleteImagePipelineInput {
     /// Creates a new builder-style object to manufacture [`DeleteImagePipelineInput`](crate::operation::delete_image_pipeline::DeleteImagePipelineInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInputBuilder {
-        crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInputBuilder {
+        crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInputBuilder::default()
     }
 }
 
@@ -35,24 +33,17 @@ impl DeleteImagePipelineInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_pipeline_arn = input;
-        self
+    pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_pipeline_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteImagePipelineInput`](crate::operation::delete_image_pipeline::DeleteImagePipelineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_image_pipeline::DeleteImagePipelineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_image_pipeline::DeleteImagePipelineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_image_pipeline::DeleteImagePipelineInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-            },
+                image_pipeline_arn: self.image_pipeline_arn
+                ,
+            }
         )
     }
 }
+

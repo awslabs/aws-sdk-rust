@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbSubnetGroupOutput {
+pub struct DeleteDbSubnetGroupOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteDbSubnetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder {
         crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteDbSubnetGroupOutputBuilder {
 }
 impl DeleteDbSubnetGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput).
     pub fn build(self) -> crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput {
         crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput {
@@ -41,3 +40,4 @@ impl DeleteDbSubnetGroupOutputBuilder {
         }
     }
 }
+

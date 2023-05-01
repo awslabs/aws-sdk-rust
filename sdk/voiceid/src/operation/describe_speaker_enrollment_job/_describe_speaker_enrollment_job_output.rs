@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpeakerEnrollmentJobOutput {
+pub struct DescribeSpeakerEnrollmentJobOutput  {
     /// <p>Contains details about the specified speaker enrollment job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::types::SpeakerEnrollmentJob>,
@@ -10,18 +10,18 @@ pub struct DescribeSpeakerEnrollmentJobOutput {
 }
 impl DescribeSpeakerEnrollmentJobOutput {
     /// <p>Contains details about the specified speaker enrollment job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::types::SpeakerEnrollmentJob> {
+    pub fn job(&self) -> std::option::Option<& crate::types::SpeakerEnrollmentJob> {
         self.job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSpeakerEnrollmentJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSpeakerEnrollmentJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpeakerEnrollmentJobOutput`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput).
-    pub fn builder() -> crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobOutputBuilder {
         crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl DescribeSpeakerEnrollmentJobOutputBuilder {
         self
     }
     /// <p>Contains details about the specified speaker enrollment job.</p>
-    pub fn set_job(
-        mut self,
-        input: std::option::Option<crate::types::SpeakerEnrollmentJob>,
-    ) -> Self {
-        self.job = input;
-        self
+    pub fn set_job(mut self, input: std::option::Option<crate::types::SpeakerEnrollmentJob>) -> Self {
+        self.job = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSpeakerEnrollmentJobOutput`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput {
+    pub fn build(self) -> crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput {
         crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput {
-            job: self.job,
+            job: self.job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCoreNetworkPolicyVersionInput {
+pub struct DeleteCoreNetworkPolicyVersionInput  {
     /// <p>The ID of a core network for the deleted policy.</p>
     #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteCoreNetworkPolicyVersionInput {
 }
 impl DeleteCoreNetworkPolicyVersionInput {
     /// <p>The ID of a core network for the deleted policy.</p>
-    pub fn core_network_id(&self) -> std::option::Option<&str> {
+    pub fn core_network_id(&self) -> std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The version ID of the deleted policy.</p>
@@ -22,7 +22,7 @@ impl DeleteCoreNetworkPolicyVersionInput {
 }
 impl DeleteCoreNetworkPolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkPolicyVersionInput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput).
-    pub fn builder() -> crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder {
         crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteCoreNetworkPolicyVersionInputBuilder {
     }
     /// <p>The ID of a core network for the deleted policy.</p>
     pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The version ID of the deleted policy.</p>
     pub fn policy_version_id(mut self, input: i32) -> Self {
@@ -52,16 +51,10 @@ impl DeleteCoreNetworkPolicyVersionInputBuilder {
     }
     /// <p>The version ID of the deleted policy.</p>
     pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCoreNetworkPolicyVersionInput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput {
                 core_network_id: self.core_network_id
@@ -72,3 +65,4 @@ impl DeleteCoreNetworkPolicyVersionInputBuilder {
         )
     }
 }
+

@@ -2,52 +2,50 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetImportJobsInput {
+pub struct ListDatasetImportJobsInput  {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
-    /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
-    /// </ul>
-    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p> 
+    /// <p> <b>Filter properties</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li> 
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li> 
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li> 
+    /// </ul> 
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p> 
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
 }
 impl ListDatasetImportJobsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of items to return in the response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
-    /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
-    /// </ul>
-    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p> 
+    /// <p> <b>Filter properties</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li> 
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li> 
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li> 
+    /// </ul> 
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p> 
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl ListDatasetImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetImportJobsInput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder {
         crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl ListDatasetImportJobsInputBuilder {
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The number of items to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,57 +75,51 @@ impl ListDatasetImportJobsInputBuilder {
     }
     /// <p>The number of items to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
-    /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
-    /// </ul>
-    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p> 
+    /// <p> <b>Filter properties</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li> 
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li> 
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li> 
+    /// </ul> 
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p> 
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
-    /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
-    /// </ul>
-    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p> 
+    /// <p> <b>Filter properties</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li> 
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li> 
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li> 
+    /// </ul> 
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p> 
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Consumes the builder and constructs a [`ListDatasetImportJobsInput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

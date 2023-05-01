@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -17,12 +17,10 @@ pub struct DescribeProjectOutput {
     pub project_description: std::option::Option<std::string::String>,
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     #[doc(hidden)]
-    pub service_catalog_provisioning_details:
-        std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    pub service_catalog_provisioning_details: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     /// <p>Information about a provisioned service catalog product.</p>
     #[doc(hidden)]
-    pub service_catalog_provisioned_product_details:
-        std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
+    pub service_catalog_provisioned_product_details: std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     /// <p>The status of the project.</p>
     #[doc(hidden)]
     pub project_status: std::option::Option<crate::types::ProjectStatus>,
@@ -42,59 +40,55 @@ pub struct DescribeProjectOutput {
 }
 impl DescribeProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn project_description(&self) -> std::option::Option<&str> {
+    pub fn project_description(&self) -> std::option::Option<& str> {
         self.project_description.as_deref()
     }
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceCatalogProvisioningDetails> {
+    pub fn service_catalog_provisioning_details(&self) -> std::option::Option<& crate::types::ServiceCatalogProvisioningDetails> {
         self.service_catalog_provisioning_details.as_ref()
     }
     /// <p>Information about a provisioned service catalog product.</p>
-    pub fn service_catalog_provisioned_product_details(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceCatalogProvisionedProductDetails> {
+    pub fn service_catalog_provisioned_product_details(&self) -> std::option::Option<& crate::types::ServiceCatalogProvisionedProductDetails> {
         self.service_catalog_provisioned_product_details.as_ref()
     }
     /// <p>The status of the project.</p>
-    pub fn project_status(&self) -> std::option::Option<&crate::types::ProjectStatus> {
+    pub fn project_status(&self) -> std::option::Option<& crate::types::ProjectStatus> {
         self.project_status.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>The time when the project was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp when project was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn builder() -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
@@ -110,10 +104,8 @@ pub struct DescribeProjectOutputBuilder {
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) project_id: std::option::Option<std::string::String>,
     pub(crate) project_description: std::option::Option<std::string::String>,
-    pub(crate) service_catalog_provisioning_details:
-        std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
-    pub(crate) service_catalog_provisioned_product_details:
-        std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
+    pub(crate) service_catalog_provisioning_details: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
+    pub(crate) service_catalog_provisioned_product_details: std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     pub(crate) project_status: std::option::Option<crate::types::ProjectStatus>,
     pub(crate) created_by: std::option::Option<crate::types::UserContext>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -129,8 +121,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +130,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The ID of the project.</p>
     pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +139,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The description of the project.</p>
     pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,44 +147,26 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The description of the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.project_description = input;
-        self
+    pub fn set_project_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.project_description = input; self
     }
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisioningDetails,
-    ) -> Self {
+    pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.service_catalog_provisioning_details = Some(input);
         self
     }
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn set_service_catalog_provisioning_details(
-        mut self,
-        input: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
-    ) -> Self {
-        self.service_catalog_provisioning_details = input;
-        self
+    pub fn set_service_catalog_provisioning_details(mut self, input: std::option::Option<crate::types::ServiceCatalogProvisioningDetails>) -> Self {
+        self.service_catalog_provisioning_details = input; self
     }
     /// <p>Information about a provisioned service catalog product.</p>
-    pub fn service_catalog_provisioned_product_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisionedProductDetails,
-    ) -> Self {
+    pub fn service_catalog_provisioned_product_details(mut self, input: crate::types::ServiceCatalogProvisionedProductDetails) -> Self {
         self.service_catalog_provisioned_product_details = Some(input);
         self
     }
     /// <p>Information about a provisioned service catalog product.</p>
-    pub fn set_service_catalog_provisioned_product_details(
-        mut self,
-        input: std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
-    ) -> Self {
-        self.service_catalog_provisioned_product_details = input;
-        self
+    pub fn set_service_catalog_provisioned_product_details(mut self, input: std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>) -> Self {
+        self.service_catalog_provisioned_product_details = input; self
     }
     /// <p>The status of the project.</p>
     pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
@@ -203,12 +174,8 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The status of the project.</p>
-    pub fn set_project_status(
-        mut self,
-        input: std::option::Option<crate::types::ProjectStatus>,
-    ) -> Self {
-        self.project_status = input;
-        self
+    pub fn set_project_status(mut self, input: std::option::Option<crate::types::ProjectStatus>) -> Self {
+        self.project_status = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -217,8 +184,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The time when the project was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -226,12 +192,8 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The time when the project was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The timestamp when project was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -239,12 +201,8 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The timestamp when project was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
@@ -252,38 +210,45 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: std::option::Option<crate::types::UserContext>,
-    ) -> Self {
-        self.last_modified_by = input;
-        self
+    pub fn set_last_modified_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+        self.last_modified_by = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn build(self) -> crate::operation::describe_project::DescribeProjectOutput {
         crate::operation::describe_project::DescribeProjectOutput {
-            project_arn: self.project_arn,
-            project_name: self.project_name,
-            project_id: self.project_id,
-            project_description: self.project_description,
-            service_catalog_provisioning_details: self.service_catalog_provisioning_details,
-            service_catalog_provisioned_product_details: self
-                .service_catalog_provisioned_product_details,
-            project_status: self.project_status,
-            created_by: self.created_by,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
+            project_arn: self.project_arn
+            ,
+            project_name: self.project_name
+            ,
+            project_id: self.project_id
+            ,
+            project_description: self.project_description
+            ,
+            service_catalog_provisioning_details: self.service_catalog_provisioning_details
+            ,
+            service_catalog_provisioned_product_details: self.service_catalog_provisioned_product_details
+            ,
+            project_status: self.project_status
+            ,
+            created_by: self.created_by
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

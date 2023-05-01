@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScheduledActionInput {
+pub struct UpdateScheduledActionInput  {
     /// <p>The name of the domain to reschedule an action for.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateScheduledActionInput {
     /// <p>The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>, <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::types::ActionType>,
-    /// <p>When to schedule the action.</p>
-    /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <p>When to schedule the action.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li> 
+    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li> 
+    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub schedule_at: std::option::Option<crate::types::ScheduleAt>,
@@ -26,24 +26,24 @@ pub struct UpdateScheduledActionInput {
 }
 impl UpdateScheduledActionInput {
     /// <p>The name of the domain to reschedule an action for.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of the action to reschedule. To retrieve this ID, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>, <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>When to schedule the action.</p>
-    /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <p>When to schedule the action.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li> 
+    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li> 
+    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li> 
     /// </ul>
-    pub fn schedule_at(&self) -> std::option::Option<&crate::types::ScheduleAt> {
+    pub fn schedule_at(&self) -> std::option::Option<& crate::types::ScheduleAt> {
         self.schedule_at.as_ref()
     }
     /// <p>The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.</p>
@@ -53,9 +53,7 @@ impl UpdateScheduledActionInput {
 }
 impl UpdateScheduledActionInput {
     /// Creates a new builder-style object to manufacture [`UpdateScheduledActionInput`](crate::operation::update_scheduled_action::UpdateScheduledActionInput).
-    pub fn builder(
-    ) -> crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder {
         crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder::default()
     }
 }
@@ -78,8 +76,7 @@ impl UpdateScheduledActionInputBuilder {
     }
     /// <p>The name of the domain to reschedule an action for.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique identifier of the action to reschedule. To retrieve this ID, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
     pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +85,7 @@ impl UpdateScheduledActionInputBuilder {
     }
     /// <p>The unique identifier of the action to reschedule. To retrieve this ID, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
     pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>, <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
@@ -98,28 +94,26 @@ impl UpdateScheduledActionInputBuilder {
     }
     /// <p>The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>, <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a> request.</p>
     pub fn set_action_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
-    /// <p>When to schedule the action.</p>
-    /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <p>When to schedule the action.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li> 
+    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li> 
+    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li> 
     /// </ul>
     pub fn schedule_at(mut self, input: crate::types::ScheduleAt) -> Self {
         self.schedule_at = Some(input);
         self
     }
-    /// <p>When to schedule the action.</p>
-    /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <p>When to schedule the action.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li> 
+    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li> 
+    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li> 
     /// </ul>
     pub fn set_schedule_at(mut self, input: std::option::Option<crate::types::ScheduleAt>) -> Self {
-        self.schedule_at = input;
-        self
+        self.schedule_at = input; self
     }
     /// <p>The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.</p>
     pub fn desired_start_time(mut self, input: i64) -> Self {
@@ -128,24 +122,24 @@ impl UpdateScheduledActionInputBuilder {
     }
     /// <p>The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.</p>
     pub fn set_desired_start_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.desired_start_time = input;
-        self
+        self.desired_start_time = input; self
     }
     /// Consumes the builder and constructs a [`UpdateScheduledActionInput`](crate::operation::update_scheduled_action::UpdateScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_scheduled_action::UpdateScheduledActionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_scheduled_action::UpdateScheduledActionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_scheduled_action::UpdateScheduledActionInput {
-                domain_name: self.domain_name,
-                action_id: self.action_id,
-                action_type: self.action_type,
-                schedule_at: self.schedule_at,
-                desired_start_time: self.desired_start_time,
-            },
+                domain_name: self.domain_name
+                ,
+                action_id: self.action_id
+                ,
+                action_type: self.action_type
+                ,
+                schedule_at: self.schedule_at
+                ,
+                desired_start_time: self.desired_start_time
+                ,
+            }
         )
     }
 }
+

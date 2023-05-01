@@ -3,7 +3,7 @@
 /// <p>Represents a new global secondary index to be added to an existing table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalSecondaryIndexAction {
+pub struct CreateGlobalSecondaryIndexAction  {
     /// <p>The name of the global secondary index to be created.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
@@ -13,29 +13,27 @@ pub struct CreateGlobalSecondaryIndexAction {
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     #[doc(hidden)]
     pub projection: std::option::Option<crate::types::Projection>,
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p> 
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
 }
 impl CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The key schema for the global secondary index.</p>
-    pub fn key_schema(&self) -> std::option::Option<&[crate::types::KeySchemaElement]> {
+    pub fn key_schema(&self) -> std::option::Option<& [crate::types::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
-    pub fn projection(&self) -> std::option::Option<&crate::types::Projection> {
+    pub fn projection(&self) -> std::option::Option<& crate::types::Projection> {
         self.projection.as_ref()
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p> 
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> std::option::Option<& crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
 }
@@ -63,8 +61,7 @@ impl CreateGlobalSecondaryIndexActionBuilder {
     }
     /// <p>The name of the global secondary index to be created.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// Appends an item to `key_schema`.
     ///
@@ -73,17 +70,13 @@ impl CreateGlobalSecondaryIndexActionBuilder {
     /// <p>The key schema for the global secondary index.</p>
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
-        v.push(input);
-        self.key_schema = Some(v);
-        self
+                        v.push(input);
+                        self.key_schema = Some(v);
+                        self
     }
     /// <p>The key schema for the global secondary index.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
-    ) -> Self {
-        self.key_schema = input;
-        self
+    pub fn set_key_schema(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
+        self.key_schema = input; self
     }
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn projection(mut self, input: crate::types::Projection) -> Self {
@@ -92,31 +85,31 @@ impl CreateGlobalSecondaryIndexActionBuilder {
     }
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn set_projection(mut self, input: std::option::Option<crate::types::Projection>) -> Self {
-        self.projection = input;
-        self
+        self.projection = input; self
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p> 
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
         self.provisioned_throughput = Some(input);
         self
     }
-    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p> 
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
-        self.provisioned_throughput = input;
-        self
+    pub fn set_provisioned_throughput(mut self, input: std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
+        self.provisioned_throughput = input; self
     }
     /// Consumes the builder and constructs a [`CreateGlobalSecondaryIndexAction`](crate::types::CreateGlobalSecondaryIndexAction).
     pub fn build(self) -> crate::types::CreateGlobalSecondaryIndexAction {
         crate::types::CreateGlobalSecondaryIndexAction {
-            index_name: self.index_name,
-            key_schema: self.key_schema,
-            projection: self.projection,
-            provisioned_throughput: self.provisioned_throughput,
+            index_name: self.index_name
+            ,
+            key_schema: self.key_schema
+            ,
+            projection: self.projection
+            ,
+            provisioned_throughput: self.provisioned_throughput
+            ,
         }
     }
 }
+

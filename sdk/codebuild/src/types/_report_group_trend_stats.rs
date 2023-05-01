@@ -3,7 +3,7 @@
 /// <p>Contains trend statistics for a set of reports. The actual values depend on the type of trend being collected. For more information, see .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportGroupTrendStats {
+pub struct ReportGroupTrendStats  {
     /// <p>Contains the average of all values analyzed.</p>
     #[doc(hidden)]
     pub average: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ReportGroupTrendStats {
 }
 impl ReportGroupTrendStats {
     /// <p>Contains the average of all values analyzed.</p>
-    pub fn average(&self) -> std::option::Option<&str> {
+    pub fn average(&self) -> std::option::Option<& str> {
         self.average.as_deref()
     }
     /// <p>Contains the maximum value analyzed.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> std::option::Option<& str> {
         self.max.as_deref()
     }
     /// <p>Contains the minimum value analyzed.</p>
-    pub fn min(&self) -> std::option::Option<&str> {
+    pub fn min(&self) -> std::option::Option<& str> {
         self.min.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ReportGroupTrendStatsBuilder {
     }
     /// <p>Contains the average of all values analyzed.</p>
     pub fn set_average(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.average = input;
-        self
+        self.average = input; self
     }
     /// <p>Contains the maximum value analyzed.</p>
     pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ReportGroupTrendStatsBuilder {
     }
     /// <p>Contains the maximum value analyzed.</p>
     pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>Contains the minimum value analyzed.</p>
     pub fn min(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ReportGroupTrendStatsBuilder {
     }
     /// <p>Contains the minimum value analyzed.</p>
     pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// Consumes the builder and constructs a [`ReportGroupTrendStats`](crate::types::ReportGroupTrendStats).
     pub fn build(self) -> crate::types::ReportGroupTrendStats {
         crate::types::ReportGroupTrendStats {
-            average: self.average,
-            max: self.max,
-            min: self.min,
+            average: self.average
+            ,
+            max: self.max
+            ,
+            min: self.min
+            ,
         }
     }
 }
+

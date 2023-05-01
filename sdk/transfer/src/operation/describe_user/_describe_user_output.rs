@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct DescribeUserOutput {
 }
 impl DescribeUserOutput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::DescribedUser> {
+    pub fn user(&self) -> std::option::Option<& crate::types::DescribedUser> {
         self.user.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -49,8 +49,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
     pub fn user(mut self, input: crate::types::DescribedUser) -> Self {
@@ -59,24 +58,26 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
     pub fn set_user(mut self, input: std::option::Option<crate::types::DescribedUser>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
-            server_id: self.server_id,
-            user: self.user,
+            server_id: self.server_id
+            ,
+            user: self.user
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

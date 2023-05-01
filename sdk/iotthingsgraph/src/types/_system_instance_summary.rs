@@ -3,7 +3,7 @@
 /// <p>An object that contains summary information about a system instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemInstanceSummary {
+pub struct SystemInstanceSummary  {
     /// <p>The ID of the system instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct SystemInstanceSummary {
 }
 impl SystemInstanceSummary {
     /// <p>The ID of the system instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the system instance.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the system instance.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SystemInstanceDeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::SystemInstanceDeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The target of the system instance.</p>
-    pub fn target(&self) -> std::option::Option<&crate::types::DeploymentTarget> {
+    pub fn target(&self) -> std::option::Option<& crate::types::DeploymentTarget> {
         self.target.as_ref()
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_name(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_name(&self) -> std::option::Option<& str> {
         self.greengrass_group_name.as_deref()
     }
     /// <p>The date when the system instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The date and time when the system instance was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_id(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_id(&self) -> std::option::Option<& str> {
         self.greengrass_group_id.as_deref()
     }
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_version_id(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_version_id(&self) -> std::option::Option<& str> {
         self.greengrass_group_version_id.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl SystemInstanceSummaryBuilder {
     }
     /// <p>The ID of the system instance.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ARN of the system instance.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl SystemInstanceSummaryBuilder {
     }
     /// <p>The ARN of the system instance.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The status of the system instance.</p>
     pub fn status(mut self, input: crate::types::SystemInstanceDeploymentStatus) -> Self {
@@ -118,12 +116,8 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The status of the system instance.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::SystemInstanceDeploymentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::SystemInstanceDeploymentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The target of the system instance.</p>
     pub fn target(mut self, input: crate::types::DeploymentTarget) -> Self {
@@ -131,12 +125,8 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The target of the system instance.</p>
-    pub fn set_target(
-        mut self,
-        input: std::option::Option<crate::types::DeploymentTarget>,
-    ) -> Self {
-        self.target = input;
-        self
+    pub fn set_target(mut self, input: std::option::Option<crate::types::DeploymentTarget>) -> Self {
+        self.target = input; self
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub fn greengrass_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,12 +134,8 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn set_greengrass_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.greengrass_group_name = input;
-        self
+    pub fn set_greengrass_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.greengrass_group_name = input; self
     }
     /// <p>The date when the system instance was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -157,12 +143,8 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The date when the system instance was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p> The date and time when the system instance was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -170,12 +152,8 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p> The date and time when the system instance was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub fn greengrass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,12 +161,8 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn set_greengrass_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.greengrass_group_id = input;
-        self
+    pub fn set_greengrass_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.greengrass_group_id = input; self
     }
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
     pub fn greengrass_group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,25 +170,31 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-    pub fn set_greengrass_group_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.greengrass_group_version_id = input;
-        self
+    pub fn set_greengrass_group_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.greengrass_group_version_id = input; self
     }
     /// Consumes the builder and constructs a [`SystemInstanceSummary`](crate::types::SystemInstanceSummary).
     pub fn build(self) -> crate::types::SystemInstanceSummary {
         crate::types::SystemInstanceSummary {
-            id: self.id,
-            arn: self.arn,
-            status: self.status,
-            target: self.target,
-            greengrass_group_name: self.greengrass_group_name,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            greengrass_group_id: self.greengrass_group_id,
-            greengrass_group_version_id: self.greengrass_group_version_id,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            target: self.target
+            ,
+            greengrass_group_name: self.greengrass_group_name
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            greengrass_group_id: self.greengrass_group_id
+            ,
+            greengrass_group_version_id: self.greengrass_group_version_id
+            ,
         }
     }
 }
+

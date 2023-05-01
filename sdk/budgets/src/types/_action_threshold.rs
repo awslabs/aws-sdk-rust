@@ -3,7 +3,7 @@
 /// <p>The trigger threshold of the action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionThreshold {
+pub struct ActionThreshold  {
     /// <p> The threshold of a notification.</p>
     #[doc(hidden)]
     pub action_threshold_value: f64,
@@ -17,7 +17,7 @@ impl ActionThreshold {
         self.action_threshold_value
     }
     /// <p> The type of threshold for a notification.</p>
-    pub fn action_threshold_type(&self) -> std::option::Option<&crate::types::ThresholdType> {
+    pub fn action_threshold_type(&self) -> std::option::Option<& crate::types::ThresholdType> {
         self.action_threshold_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ActionThresholdBuilder {
     }
     /// <p> The threshold of a notification.</p>
     pub fn set_action_threshold_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.action_threshold_value = input;
-        self
+        self.action_threshold_value = input; self
     }
     /// <p> The type of threshold for a notification.</p>
     pub fn action_threshold_type(mut self, input: crate::types::ThresholdType) -> Self {
@@ -52,18 +51,18 @@ impl ActionThresholdBuilder {
         self
     }
     /// <p> The type of threshold for a notification.</p>
-    pub fn set_action_threshold_type(
-        mut self,
-        input: std::option::Option<crate::types::ThresholdType>,
-    ) -> Self {
-        self.action_threshold_type = input;
-        self
+    pub fn set_action_threshold_type(mut self, input: std::option::Option<crate::types::ThresholdType>) -> Self {
+        self.action_threshold_type = input; self
     }
     /// Consumes the builder and constructs a [`ActionThreshold`](crate::types::ActionThreshold).
     pub fn build(self) -> crate::types::ActionThreshold {
         crate::types::ActionThreshold {
-            action_threshold_value: self.action_threshold_value.unwrap_or_default(),
-            action_threshold_type: self.action_threshold_type,
+            action_threshold_value: self.action_threshold_value
+                .unwrap_or_default()
+            ,
+            action_threshold_type: self.action_threshold_type
+            ,
         }
     }
 }
+

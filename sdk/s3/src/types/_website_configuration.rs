@@ -3,15 +3,15 @@
 /// <p>Specifies website configuration parameters for an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebsiteConfiguration {
+pub struct WebsiteConfiguration  {
     /// <p>The name of the error document for the website.</p>
     #[doc(hidden)]
     pub error_document: std::option::Option<crate::types::ErrorDocument>,
     /// <p>The name of the index document for the website.</p>
     #[doc(hidden)]
     pub index_document: std::option::Option<crate::types::IndexDocument>,
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
-    /// <p>If you specify this property, you can't specify any other property.</p>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important> 
+    /// <p>If you specify this property, you can't specify any other property.</p> 
     /// </important>
     #[doc(hidden)]
     pub redirect_all_requests_to: std::option::Option<crate::types::RedirectAllRequestsTo>,
@@ -21,23 +21,21 @@ pub struct WebsiteConfiguration {
 }
 impl WebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
-    pub fn error_document(&self) -> std::option::Option<&crate::types::ErrorDocument> {
+    pub fn error_document(&self) -> std::option::Option<& crate::types::ErrorDocument> {
         self.error_document.as_ref()
     }
     /// <p>The name of the index document for the website.</p>
-    pub fn index_document(&self) -> std::option::Option<&crate::types::IndexDocument> {
+    pub fn index_document(&self) -> std::option::Option<& crate::types::IndexDocument> {
         self.index_document.as_ref()
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
-    /// <p>If you specify this property, you can't specify any other property.</p>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important> 
+    /// <p>If you specify this property, you can't specify any other property.</p> 
     /// </important>
-    pub fn redirect_all_requests_to(
-        &self,
-    ) -> std::option::Option<&crate::types::RedirectAllRequestsTo> {
+    pub fn redirect_all_requests_to(&self) -> std::option::Option<& crate::types::RedirectAllRequestsTo> {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn routing_rules(&self) -> std::option::Option<&[crate::types::RoutingRule]> {
+    pub fn routing_rules(&self) -> std::option::Option<& [crate::types::RoutingRule]> {
         self.routing_rules.as_deref()
     }
 }
@@ -64,12 +62,8 @@ impl WebsiteConfigurationBuilder {
         self
     }
     /// <p>The name of the error document for the website.</p>
-    pub fn set_error_document(
-        mut self,
-        input: std::option::Option<crate::types::ErrorDocument>,
-    ) -> Self {
-        self.error_document = input;
-        self
+    pub fn set_error_document(mut self, input: std::option::Option<crate::types::ErrorDocument>) -> Self {
+        self.error_document = input; self
     }
     /// <p>The name of the index document for the website.</p>
     pub fn index_document(mut self, input: crate::types::IndexDocument) -> Self {
@@ -77,29 +71,21 @@ impl WebsiteConfigurationBuilder {
         self
     }
     /// <p>The name of the index document for the website.</p>
-    pub fn set_index_document(
-        mut self,
-        input: std::option::Option<crate::types::IndexDocument>,
-    ) -> Self {
-        self.index_document = input;
-        self
+    pub fn set_index_document(mut self, input: std::option::Option<crate::types::IndexDocument>) -> Self {
+        self.index_document = input; self
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
-    /// <p>If you specify this property, you can't specify any other property.</p>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important> 
+    /// <p>If you specify this property, you can't specify any other property.</p> 
     /// </important>
     pub fn redirect_all_requests_to(mut self, input: crate::types::RedirectAllRequestsTo) -> Self {
         self.redirect_all_requests_to = Some(input);
         self
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
-    /// <p>If you specify this property, you can't specify any other property.</p>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important> 
+    /// <p>If you specify this property, you can't specify any other property.</p> 
     /// </important>
-    pub fn set_redirect_all_requests_to(
-        mut self,
-        input: std::option::Option<crate::types::RedirectAllRequestsTo>,
-    ) -> Self {
-        self.redirect_all_requests_to = input;
-        self
+    pub fn set_redirect_all_requests_to(mut self, input: std::option::Option<crate::types::RedirectAllRequestsTo>) -> Self {
+        self.redirect_all_requests_to = input; self
     }
     /// Appends an item to `routing_rules`.
     ///
@@ -108,25 +94,26 @@ impl WebsiteConfigurationBuilder {
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     pub fn routing_rules(mut self, input: crate::types::RoutingRule) -> Self {
         let mut v = self.routing_rules.unwrap_or_default();
-        v.push(input);
-        self.routing_rules = Some(v);
-        self
+                        v.push(input);
+                        self.routing_rules = Some(v);
+                        self
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn set_routing_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>,
-    ) -> Self {
-        self.routing_rules = input;
-        self
+    pub fn set_routing_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>) -> Self {
+        self.routing_rules = input; self
     }
     /// Consumes the builder and constructs a [`WebsiteConfiguration`](crate::types::WebsiteConfiguration).
     pub fn build(self) -> crate::types::WebsiteConfiguration {
         crate::types::WebsiteConfiguration {
-            error_document: self.error_document,
-            index_document: self.index_document,
-            redirect_all_requests_to: self.redirect_all_requests_to,
-            routing_rules: self.routing_rules,
+            error_document: self.error_document
+            ,
+            index_document: self.index_document
+            ,
+            redirect_all_requests_to: self.redirect_all_requests_to
+            ,
+            routing_rules: self.routing_rules
+            ,
         }
     }
 }
+

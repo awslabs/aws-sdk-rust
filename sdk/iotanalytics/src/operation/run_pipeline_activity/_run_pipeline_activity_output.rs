@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunPipelineActivityOutput {
+pub struct RunPipelineActivityOutput  {
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
     #[doc(hidden)]
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
@@ -13,25 +13,23 @@ pub struct RunPipelineActivityOutput {
 }
 impl RunPipelineActivityOutput {
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
-    pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
+    pub fn payloads(&self) -> std::option::Option<& [aws_smithy_types::Blob]> {
         self.payloads.as_deref()
     }
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
-    pub fn log_result(&self) -> std::option::Option<&str> {
+    pub fn log_result(&self) -> std::option::Option<& str> {
         self.log_result.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RunPipelineActivityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RunPipelineActivityOutput {
     /// Creates a new builder-style object to manufacture [`RunPipelineActivityOutput`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput).
-    pub fn builder(
-    ) -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder {
-        crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder {
+        crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl RunPipelineActivityOutputBuilder {
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
     pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
         let mut v = self.payloads.unwrap_or_default();
-        v.push(input);
-        self.payloads = Some(v);
-        self
+                        v.push(input);
+                        self.payloads = Some(v);
+                        self
     }
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
-    pub fn set_payloads(
-        mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
-    ) -> Self {
-        self.payloads = input;
-        self
+    pub fn set_payloads(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>) -> Self {
+        self.payloads = input; self
     }
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
     pub fn log_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl RunPipelineActivityOutputBuilder {
     }
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
     pub fn set_log_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_result = input;
-        self
+        self.log_result = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RunPipelineActivityOutput`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput).
     pub fn build(self) -> crate::operation::run_pipeline_activity::RunPipelineActivityOutput {
         crate::operation::run_pipeline_activity::RunPipelineActivityOutput {
-            payloads: self.payloads,
-            log_result: self.log_result,
+            payloads: self.payloads
+            ,
+            log_result: self.log_result
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that represents the outlier detection for a virtual node's listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutlierDetection {
+pub struct OutlierDetection  {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     #[doc(hidden)]
     pub max_server_errors: std::option::Option<i64>,
@@ -23,11 +23,11 @@ impl OutlierDetection {
         self.max_server_errors
     }
     /// <p>The time interval between ejection sweep analysis.</p>
-    pub fn interval(&self) -> std::option::Option<&crate::types::Duration> {
+    pub fn interval(&self) -> std::option::Option<& crate::types::Duration> {
         self.interval.as_ref()
     }
     /// <p>The base amount of time for which a host is ejected.</p>
-    pub fn base_ejection_duration(&self) -> std::option::Option<&crate::types::Duration> {
+    pub fn base_ejection_duration(&self) -> std::option::Option<& crate::types::Duration> {
         self.base_ejection_duration.as_ref()
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
@@ -59,8 +59,7 @@ impl OutlierDetectionBuilder {
     }
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     pub fn set_max_server_errors(mut self, input: std::option::Option<i64>) -> Self {
-        self.max_server_errors = input;
-        self
+        self.max_server_errors = input; self
     }
     /// <p>The time interval between ejection sweep analysis.</p>
     pub fn interval(mut self, input: crate::types::Duration) -> Self {
@@ -69,8 +68,7 @@ impl OutlierDetectionBuilder {
     }
     /// <p>The time interval between ejection sweep analysis.</p>
     pub fn set_interval(mut self, input: std::option::Option<crate::types::Duration>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The base amount of time for which a host is ejected.</p>
     pub fn base_ejection_duration(mut self, input: crate::types::Duration) -> Self {
@@ -78,12 +76,8 @@ impl OutlierDetectionBuilder {
         self
     }
     /// <p>The base amount of time for which a host is ejected.</p>
-    pub fn set_base_ejection_duration(
-        mut self,
-        input: std::option::Option<crate::types::Duration>,
-    ) -> Self {
-        self.base_ejection_duration = input;
-        self
+    pub fn set_base_ejection_duration(mut self, input: std::option::Option<crate::types::Duration>) -> Self {
+        self.base_ejection_duration = input; self
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub fn max_ejection_percent(mut self, input: i32) -> Self {
@@ -92,16 +86,20 @@ impl OutlierDetectionBuilder {
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub fn set_max_ejection_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_ejection_percent = input;
-        self
+        self.max_ejection_percent = input; self
     }
     /// Consumes the builder and constructs a [`OutlierDetection`](crate::types::OutlierDetection).
     pub fn build(self) -> crate::types::OutlierDetection {
         crate::types::OutlierDetection {
-            max_server_errors: self.max_server_errors,
-            interval: self.interval,
-            base_ejection_duration: self.base_ejection_duration,
-            max_ejection_percent: self.max_ejection_percent,
+            max_server_errors: self.max_server_errors
+            ,
+            interval: self.interval
+            ,
+            base_ejection_duration: self.base_ejection_duration
+            ,
+            max_ejection_percent: self.max_ejection_percent
+            ,
         }
     }
 }
+

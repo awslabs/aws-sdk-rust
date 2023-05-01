@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceLinkedRoleOutput {
+pub struct DeleteServiceLinkedRoleOutput  {
     /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
     /// <service-principal-name>
     /// /
@@ -24,20 +24,18 @@ impl DeleteServiceLinkedRoleOutput {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn deletion_task_id(&self) -> std::option::Option<&str> {
+    pub fn deletion_task_id(&self) -> std::option::Option<& str> {
         self.deletion_task_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteServiceLinkedRoleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteServiceLinkedRoleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceLinkedRoleOutput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder {
         crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder::default()
     }
 }
@@ -71,25 +69,24 @@ impl DeleteServiceLinkedRoleOutputBuilder {
     /// </role-name>
     /// </service-principal-name></code>.</p>
     pub fn set_deletion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deletion_task_id = input;
-        self
+        self.deletion_task_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleOutput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
+    pub fn build(self) -> crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
         crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
-            deletion_task_id: self.deletion_task_id,
+            deletion_task_id: self.deletion_task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

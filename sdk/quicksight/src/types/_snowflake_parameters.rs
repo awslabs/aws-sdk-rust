@@ -3,7 +3,7 @@
 /// <p>The parameters for Snowflake.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnowflakeParameters {
+pub struct SnowflakeParameters  {
     /// <p>Host.</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SnowflakeParameters {
 }
 impl SnowflakeParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>Warehouse.</p>
-    pub fn warehouse(&self) -> std::option::Option<&str> {
+    pub fn warehouse(&self) -> std::option::Option<& str> {
         self.warehouse.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl SnowflakeParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl SnowflakeParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>Warehouse.</p>
     pub fn warehouse(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl SnowflakeParametersBuilder {
     }
     /// <p>Warehouse.</p>
     pub fn set_warehouse(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.warehouse = input;
-        self
+        self.warehouse = input; self
     }
     /// Consumes the builder and constructs a [`SnowflakeParameters`](crate::types::SnowflakeParameters).
     pub fn build(self) -> crate::types::SnowflakeParameters {
         crate::types::SnowflakeParameters {
-            host: self.host,
-            database: self.database,
-            warehouse: self.warehouse,
+            host: self.host
+            ,
+            database: self.database
+            ,
+            warehouse: self.warehouse
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAccountsOutput {
+pub struct AssociateAccountsOutput  {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct AssociateAccountsOutput {
 }
 impl AssociateAccountsOutput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateAccountsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateAccountsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAccountsOutput`](crate::operation::associate_accounts::AssociateAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_accounts::builders::AssociateAccountsOutputBuilder {
+    pub fn builder() -> crate::operation::associate_accounts::builders::AssociateAccountsOutputBuilder {
         crate::operation::associate_accounts::builders::AssociateAccountsOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl AssociateAccountsOutputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateAccountsOutput`](crate::operation::associate_accounts::AssociateAccountsOutput).
     pub fn build(self) -> crate::operation::associate_accounts::AssociateAccountsOutput {
         crate::operation::associate_accounts::AssociateAccountsOutput {
-            arn: self.arn,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

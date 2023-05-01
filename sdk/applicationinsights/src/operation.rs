@@ -81,3 +81,4 @@ pub mod update_component_configuration;
 
 /// Types for the `UpdateLogPattern` operation.
 pub mod update_log_pattern;
+

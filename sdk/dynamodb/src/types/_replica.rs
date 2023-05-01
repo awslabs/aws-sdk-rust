@@ -3,14 +3,14 @@
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Replica {
+pub struct Replica  {
     /// <p>The Region where the replica needs to be created.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl Replica {
     /// <p>The Region where the replica needs to be created.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ReplicaBuilder {
     }
     /// <p>The Region where the replica needs to be created.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// Consumes the builder and constructs a [`Replica`](crate::types::Replica).
     pub fn build(self) -> crate::types::Replica {
         crate::types::Replica {
-            region_name: self.region_name,
+            region_name: self.region_name
+            ,
         }
     }
 }
+

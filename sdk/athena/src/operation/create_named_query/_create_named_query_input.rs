@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNamedQueryInput {
+pub struct CreateNamedQueryInput  {
     /// <p>The query name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,8 +15,8 @@ pub struct CreateNamedQueryInput {
     /// <p>The contents of the query with all query statements.</p>
     #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -26,36 +26,35 @@ pub struct CreateNamedQueryInput {
 }
 impl CreateNamedQueryInput {
     /// <p>The query name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The query description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The database to which the query belongs.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The contents of the query with all query statements.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name of the workgroup in which the named query is being created.</p>
-    pub fn work_group(&self) -> std::option::Option<&str> {
+    pub fn work_group(&self) -> std::option::Option<& str> {
         self.work_group.as_deref()
     }
 }
 impl CreateNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
-    pub fn builder() -> crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder {
         crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder::default()
     }
 }
@@ -79,8 +78,7 @@ impl CreateNamedQueryInputBuilder {
     }
     /// <p>The query name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The query description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +87,7 @@ impl CreateNamedQueryInputBuilder {
     }
     /// <p>The query description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The database to which the query belongs.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +96,7 @@ impl CreateNamedQueryInputBuilder {
     }
     /// <p>The database to which the query belongs.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The contents of the query with all query statements.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,25 +105,20 @@ impl CreateNamedQueryInputBuilder {
     }
     /// <p>The contents of the query with all query statements.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The name of the workgroup in which the named query is being created.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,25 +127,26 @@ impl CreateNamedQueryInputBuilder {
     }
     /// <p>The name of the workgroup in which the named query is being created.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// Consumes the builder and constructs a [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_named_query::CreateNamedQueryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_named_query::CreateNamedQueryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_named_query::CreateNamedQueryInput {
-                name: self.name,
-                description: self.description,
-                database: self.database,
-                query_string: self.query_string,
-                client_request_token: self.client_request_token,
-                work_group: self.work_group,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+                database: self.database
+                ,
+                query_string: self.query_string
+                ,
+                client_request_token: self.client_request_token
+                ,
+                work_group: self.work_group
+                ,
+            }
         )
     }
 }
+

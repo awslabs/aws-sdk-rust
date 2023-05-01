@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateActionInput {
+pub struct CreateActionInput  {
     /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -20,8 +20,7 @@ pub struct CreateActionInput {
     pub status: std::option::Option<crate::types::ActionStatus>,
     /// <p>A list of properties to add to the action.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     #[doc(hidden)]
     pub metadata_properties: std::option::Option<crate::types::MetadataProperties>,
@@ -31,38 +30,35 @@ pub struct CreateActionInput {
 }
 impl CreateActionInput {
     /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The source type, ID, and URI.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::ActionSource> {
+    pub fn source(&self) -> std::option::Option<& crate::types::ActionSource> {
         self.source.as_ref()
     }
     /// <p>The action type.</p>
-    pub fn action_type(&self) -> std::option::Option<&str> {
+    pub fn action_type(&self) -> std::option::Option<& str> {
         self.action_type.as_deref()
     }
     /// <p>The description of the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ActionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>A list of properties to add to the action.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> std::option::Option<&crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> std::option::Option<& crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
     /// <p>A list of tags to apply to the action.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -82,8 +78,7 @@ pub struct CreateActionInputBuilder {
     pub(crate) action_type: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::ActionStatus>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) metadata_properties: std::option::Option<crate::types::MetadataProperties>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
@@ -95,8 +90,7 @@ impl CreateActionInputBuilder {
     }
     /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The source type, ID, and URI.</p>
     pub fn source(mut self, input: crate::types::ActionSource) -> Self {
@@ -105,8 +99,7 @@ impl CreateActionInputBuilder {
     }
     /// <p>The source type, ID, and URI.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::ActionSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The action type.</p>
     pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +108,7 @@ impl CreateActionInputBuilder {
     }
     /// <p>The action type.</p>
     pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The description of the action.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +117,7 @@ impl CreateActionInputBuilder {
     }
     /// <p>The description of the action.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
@@ -135,33 +126,22 @@ impl CreateActionInputBuilder {
     }
     /// <p>The status of the action.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of properties to add to the action.</p>
-    pub fn properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = Some(hash_map);
+                        self
     }
     /// <p>A list of properties to add to the action.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
@@ -169,12 +149,8 @@ impl CreateActionInputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
-        self.metadata_properties = input;
-        self
+    pub fn set_metadata_properties(mut self, input: std::option::Option<crate::types::MetadataProperties>) -> Self {
+        self.metadata_properties = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -183,34 +159,36 @@ impl CreateActionInputBuilder {
     /// <p>A list of tags to apply to the action.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags to apply to the action.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateActionInput`](crate::operation::create_action::CreateActionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_action::CreateActionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_action::CreateActionInput {
-            action_name: self.action_name,
-            source: self.source,
-            action_type: self.action_type,
-            description: self.description,
-            status: self.status,
-            properties: self.properties,
-            metadata_properties: self.metadata_properties,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_action::CreateActionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_action::CreateActionInput {
+                action_name: self.action_name
+                ,
+                source: self.source
+                ,
+                action_type: self.action_type
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                properties: self.properties
+                ,
+                metadata_properties: self.metadata_properties
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

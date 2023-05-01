@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMediaCapturePipelineInput {
+pub struct DeleteMediaCapturePipelineInput  {
     /// <p>The ID of the media pipeline being deleted. </p>
     #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
 }
 impl DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media pipeline being deleted. </p>
-    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn media_pipeline_id(&self) -> std::option::Option<& str> {
         self.media_pipeline_id.as_deref()
     }
 }
 impl DeleteMediaCapturePipelineInput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineInput`](crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput).
-    pub fn builder() -> crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder{
+    pub fn builder() -> crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder {
         crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteMediaCapturePipelineInputBuilder {
         self
     }
     /// <p>The ID of the media pipeline being deleted. </p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.media_pipeline_id = input;
-        self
+    pub fn set_media_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.media_pipeline_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineInput`](crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput {
-                media_pipeline_id: self.media_pipeline_id,
-            },
+                media_pipeline_id: self.media_pipeline_id
+                ,
+            }
         )
     }
 }
+

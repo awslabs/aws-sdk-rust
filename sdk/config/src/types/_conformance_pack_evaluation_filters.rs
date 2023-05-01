@@ -3,43 +3,41 @@
 /// <p>Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConformancePackEvaluationFilters {
+pub struct ConformancePackEvaluationFilters  {
     /// <p>Filters the results by Config rule names.</p>
     #[doc(hidden)]
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters the results by compliance.</p>
+    /// <p>Filters the results by compliance.</p> 
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>Filters the results by resource IDs.</p> <note>
-    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+    /// <p>Filters the results by resource IDs.</p> <note> 
+    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p> 
     /// </note>
     #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConformancePackEvaluationFilters {
     /// <p>Filters the results by Config rule names.</p>
-    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn config_rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.config_rule_names.as_deref()
     }
-    /// <p>Filters the results by compliance.</p>
+    /// <p>Filters the results by compliance.</p> 
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn compliance_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(&self) -> std::option::Option<& crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
-    /// <p>Filters the results by resource IDs.</p> <note>
-    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+    /// <p>Filters the results by resource IDs.</p> <note> 
+    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p> 
     /// </note>
-    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_ids.as_deref()
     }
 }
@@ -67,32 +65,24 @@ impl ConformancePackEvaluationFiltersBuilder {
     /// <p>Filters the results by Config rule names.</p>
     pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.config_rule_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.config_rule_names = Some(v);
+                        self
     }
     /// <p>Filters the results by Config rule names.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.config_rule_names = input;
-        self
+    pub fn set_config_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.config_rule_names = input; self
     }
-    /// <p>Filters the results by compliance.</p>
+    /// <p>Filters the results by compliance.</p> 
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.compliance_type = Some(input);
         self
     }
-    /// <p>Filters the results by compliance.</p>
+    /// <p>Filters the results by compliance.</p> 
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: std::option::Option<crate::types::ConformancePackComplianceType>,
-    ) -> Self {
-        self.compliance_type = input;
-        self
+    pub fn set_compliance_type(mut self, input: std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
+        self.compliance_type = input; self
     }
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,39 +91,39 @@ impl ConformancePackEvaluationFiltersBuilder {
     }
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// Appends an item to `resource_ids`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
-    /// <p>Filters the results by resource IDs.</p> <note>
-    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+    /// <p>Filters the results by resource IDs.</p> <note> 
+    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p> 
     /// </note>
     pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = Some(v);
+                        self
     }
-    /// <p>Filters the results by resource IDs.</p> <note>
-    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+    /// <p>Filters the results by resource IDs.</p> <note> 
+    /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p> 
     /// </note>
-    pub fn set_resource_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// Consumes the builder and constructs a [`ConformancePackEvaluationFilters`](crate::types::ConformancePackEvaluationFilters).
     pub fn build(self) -> crate::types::ConformancePackEvaluationFilters {
         crate::types::ConformancePackEvaluationFilters {
-            config_rule_names: self.config_rule_names,
-            compliance_type: self.compliance_type,
-            resource_type: self.resource_type,
-            resource_ids: self.resource_ids,
+            config_rule_names: self.config_rule_names
+            ,
+            compliance_type: self.compliance_type
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_ids: self.resource_ids
+            ,
         }
     }
 }
+

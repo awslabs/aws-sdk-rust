@@ -4,67 +4,49 @@ pub use crate::operation::create_endpoint::_create_endpoint_output::CreateEndpoi
 pub use crate::operation::create_endpoint::_create_endpoint_input::CreateEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEndpoint`.
-///
+/// 
 /// <p>Creates a global endpoint. Global endpoints improve your application's availability by making it regional-fault tolerant. To do this, you define a primary and secondary Region with event buses in each Region. You also create a Amazon Route&nbsp;53 health check that will tell EventBridge to route events to the secondary Region when an "unhealthy" state is encountered and events will be routed back to the primary Region when the health check reports a "healthy" state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEndpointFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_endpoint::builders::CreateEndpointInputBuilder,
-}
-impl CreateEndpointFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_endpoint::builders::CreateEndpointInputBuilder
+            }
+impl CreateEndpointFluentBuilder  {
     /// Creates a new `CreateEndpoint`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_endpoint::CreateEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_endpoint::CreateEndpointOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_endpoint::CreateEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_endpoint::CreateEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -91,10 +73,7 @@ impl CreateEndpointFluentBuilder {
         self
     }
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
-    pub fn set_routing_config(
-        mut self,
-        input: std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.inner = self.inner.set_routing_config(input);
         self
     }
@@ -104,10 +83,7 @@ impl CreateEndpointFluentBuilder {
         self
     }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.inner = self.inner.set_replication_config(input);
         self
     }
@@ -115,20 +91,17 @@ impl CreateEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
     ///
-    /// <p>Define the event buses used. </p> <important>
-    /// <p>The names of the event buses must be identical in each Region.</p>
+    /// <p>Define the event buses used. </p> <important> 
+    /// <p>The names of the event buses must be identical in each Region.</p> 
     /// </important>
     pub fn event_buses(mut self, input: crate::types::EndpointEventBus) -> Self {
         self.inner = self.inner.event_buses(input);
         self
     }
-    /// <p>Define the event buses used. </p> <important>
-    /// <p>The names of the event buses must be identical in each Region.</p>
+    /// <p>Define the event buses used. </p> <important> 
+    /// <p>The names of the event buses must be identical in each Region.</p> 
     /// </important>
-    pub fn set_event_buses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.inner = self.inner.set_event_buses(input);
         self
     }
@@ -143,3 +116,4 @@ impl CreateEndpointFluentBuilder {
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregateConformancePackComplianceFilters {
+pub struct AggregateConformancePackComplianceFilters  {
     /// <p>The name of the conformance pack.</p>
     #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
@@ -19,21 +19,19 @@ pub struct AggregateConformancePackComplianceFilters {
 }
 impl AggregateConformancePackComplianceFilters {
     /// <p>The name of the conformance pack.</p>
-    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+    pub fn conformance_pack_name(&self) -> std::option::Option<& str> {
         self.conformance_pack_name.as_deref()
     }
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn compliance_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(&self) -> std::option::Option<& crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
@@ -60,12 +58,8 @@ impl AggregateConformancePackComplianceFiltersBuilder {
         self
     }
     /// <p>The name of the conformance pack.</p>
-    pub fn set_conformance_pack_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.conformance_pack_name = input;
-        self
+    pub fn set_conformance_pack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.conformance_pack_name = input; self
     }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
@@ -73,12 +67,8 @@ impl AggregateConformancePackComplianceFiltersBuilder {
         self
     }
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: std::option::Option<crate::types::ConformancePackComplianceType>,
-    ) -> Self {
-        self.compliance_type = input;
-        self
+    pub fn set_compliance_type(mut self, input: std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
+        self.compliance_type = input; self
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +77,7 @@ impl AggregateConformancePackComplianceFiltersBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,16 +86,20 @@ impl AggregateConformancePackComplianceFiltersBuilder {
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceFilters`](crate::types::AggregateConformancePackComplianceFilters).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceFilters {
         crate::types::AggregateConformancePackComplianceFilters {
-            conformance_pack_name: self.conformance_pack_name,
-            compliance_type: self.compliance_type,
-            account_id: self.account_id,
-            aws_region: self.aws_region,
+            conformance_pack_name: self.conformance_pack_name
+            ,
+            compliance_type: self.compliance_type
+            ,
+            account_id: self.account_id
+            ,
+            aws_region: self.aws_region
+            ,
         }
     }
 }
+

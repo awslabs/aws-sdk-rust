@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectDataShareInput {
+pub struct RejectDataShareInput  {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
     #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
 }
 impl RejectDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
-    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+    pub fn data_share_arn(&self) -> std::option::Option<& str> {
         self.data_share_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl RejectDataShareInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
     pub fn set_data_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_share_arn = input;
-        self
+        self.data_share_arn = input; self
     }
     /// Consumes the builder and constructs a [`RejectDataShareInput`](crate::operation::reject_data_share::RejectDataShareInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reject_data_share::RejectDataShareInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::reject_data_share::RejectDataShareInput {
-            data_share_arn: self.data_share_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::reject_data_share::RejectDataShareInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::reject_data_share::RejectDataShareInput {
+                data_share_arn: self.data_share_arn
+                ,
+            }
+        )
     }
 }
+

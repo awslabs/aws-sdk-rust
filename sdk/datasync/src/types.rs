@@ -35,6 +35,10 @@ pub use crate::types::_filter_type::FilterType;
 
 pub use crate::types::_task_schedule::TaskSchedule;
 
+pub use crate::types::_credentials::Credentials;
+
+pub use crate::types::_discovery_server_configuration::DiscoveryServerConfiguration;
+
 pub use crate::types::_smb_mount_options::SmbMountOptions;
 
 pub use crate::types::_smb_version::SmbVersion;
@@ -73,19 +77,59 @@ pub use crate::types::_task_execution_list_entry::TaskExecutionListEntry;
 
 pub use crate::types::_task_execution_status::TaskExecutionStatus;
 
+pub use crate::types::_storage_system_list_entry::StorageSystemListEntry;
+
 pub use crate::types::_location_list_entry::LocationListEntry;
 
 pub use crate::types::_location_filter::LocationFilter;
 
 pub use crate::types::_location_filter_name::LocationFilterName;
 
+pub use crate::types::_discovery_job_list_entry::DiscoveryJobListEntry;
+
+pub use crate::types::_discovery_job_status::DiscoveryJobStatus;
+
 pub use crate::types::_agent_list_entry::AgentListEntry;
 
 pub use crate::types::_agent_status::AgentStatus;
 
+pub use crate::types::_discovery_resource_type::DiscoveryResourceType;
+
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetail;
 
 pub use crate::types::_phase_status::PhaseStatus;
+
+pub use crate::types::_resource_details::ResourceDetails;
+
+pub use crate::types::_net_app_ontap_cluster::NetAppOntapCluster;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
+
+pub use crate::types::_recommendation::Recommendation;
+
+pub use crate::types::_max_p95_performance::MaxP95Performance;
+
+pub use crate::types::_net_app_ontap_volume::NetAppOntapVolume;
+
+pub use crate::types::_net_app_ontapsvm::NetAppOntapsvm;
+
+pub use crate::types::_discovery_resource_filter::DiscoveryResourceFilter;
+
+pub use crate::types::_resource_metrics::ResourceMetrics;
+
+pub use crate::types::_capacity::Capacity;
+
+pub use crate::types::_p95_metrics::P95Metrics;
+
+pub use crate::types::_latency::Latency;
+
+pub use crate::types::_throughput::Throughput;
+
+pub use crate::types::_iops::Iops;
+
+pub use crate::types::_storage_system_connectivity_status::StorageSystemConnectivityStatus;
+
+pub use crate::types::_discovery_system_type::DiscoverySystemType;
 
 pub use crate::types::_s3_config::S3Config;
 
@@ -110,6 +154,22 @@ mod _agent_list_entry;
 mod _agent_status;
 
 mod _atime;
+
+mod _capacity;
+
+mod _credentials;
+
+mod _discovery_job_list_entry;
+
+mod _discovery_job_status;
+
+mod _discovery_resource_filter;
+
+mod _discovery_resource_type;
+
+mod _discovery_server_configuration;
+
+mod _discovery_system_type;
 
 mod _ec2_config;
 
@@ -137,6 +197,10 @@ mod _hdfs_name_node;
 
 mod _hdfs_rpc_protection;
 
+mod _iops;
+
+mod _latency;
+
 mod _location_filter;
 
 mod _location_filter_name;
@@ -145,7 +209,15 @@ mod _location_list_entry;
 
 mod _log_level;
 
+mod _max_p95_performance;
+
 mod _mtime;
+
+mod _net_app_ontap_cluster;
+
+mod _net_app_ontap_volume;
+
+mod _net_app_ontapsvm;
 
 mod _nfs_mount_options;
 
@@ -163,6 +235,8 @@ mod _options;
 
 mod _overwrite_mode;
 
+mod _p95_metrics;
+
 mod _phase_status;
 
 mod _posix_permissions;
@@ -175,6 +249,14 @@ mod _private_link_config;
 
 mod _qop_configuration;
 
+mod _recommendation;
+
+mod _recommendation_status;
+
+mod _resource_details;
+
+mod _resource_metrics;
+
 mod _s3_config;
 
 mod _s3_storage_class;
@@ -184,6 +266,10 @@ mod _smb_mount_options;
 mod _smb_security_descriptor_copy_flags;
 
 mod _smb_version;
+
+mod _storage_system_connectivity_status;
+
+mod _storage_system_list_entry;
 
 mod _tag_list_entry;
 
@@ -205,6 +291,8 @@ mod _task_schedule;
 
 mod _task_status;
 
+mod _throughput;
+
 mod _transfer_mode;
 
 mod _uid;
@@ -216,3 +304,4 @@ pub mod builders;
 
 /// Error types that AWS DataSync can respond with.
 pub mod error;
+

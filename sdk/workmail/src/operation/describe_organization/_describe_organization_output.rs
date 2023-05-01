@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationOutput {
+pub struct DescribeOrganizationOutput  {
     /// <p>The identifier of an organization.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -34,51 +34,50 @@ pub struct DescribeOrganizationOutput {
 }
 impl DescribeOrganizationOutput {
     /// <p>The identifier of an organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The alias for an organization.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The state of an organization.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The identifier for the directory associated with an WorkMail organization.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of directory associated with the WorkMail organization.</p>
-    pub fn directory_type(&self) -> std::option::Option<&str> {
+    pub fn directory_type(&self) -> std::option::Option<& str> {
         self.directory_type.as_deref()
     }
     /// <p>The default mail domain associated with the organization.</p>
-    pub fn default_mail_domain(&self) -> std::option::Option<&str> {
+    pub fn default_mail_domain(&self) -> std::option::Option<& str> {
         self.default_mail_domain.as_deref()
     }
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
-    pub fn completed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_date.as_ref()
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
         crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder::default()
     }
 }
@@ -106,8 +105,7 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>The identifier of an organization.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The alias for an organization.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +114,7 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>The alias for an organization.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The state of an organization.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +123,7 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>The state of an organization.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The identifier for the directory associated with an WorkMail organization.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +132,7 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>The identifier for the directory associated with an WorkMail organization.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The type of directory associated with the WorkMail organization.</p>
     pub fn directory_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +141,7 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>The type of directory associated with the WorkMail organization.</p>
     pub fn set_directory_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_type = input;
-        self
+        self.directory_type = input; self
     }
     /// <p>The default mail domain associated with the organization.</p>
     pub fn default_mail_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,12 +149,8 @@ impl DescribeOrganizationOutputBuilder {
         self
     }
     /// <p>The default mail domain associated with the organization.</p>
-    pub fn set_default_mail_domain(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.default_mail_domain = input;
-        self
+    pub fn set_default_mail_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.default_mail_domain = input; self
     }
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
     pub fn completed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -168,12 +158,8 @@ impl DescribeOrganizationOutputBuilder {
         self
     }
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
-    pub fn set_completed_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.completed_date = input;
-        self
+    pub fn set_completed_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.completed_date = input; self
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,8 +168,7 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,31 +177,40 @@ impl DescribeOrganizationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
     pub fn build(self) -> crate::operation::describe_organization::DescribeOrganizationOutput {
         crate::operation::describe_organization::DescribeOrganizationOutput {
-            organization_id: self.organization_id,
-            alias: self.alias,
-            state: self.state,
-            directory_id: self.directory_id,
-            directory_type: self.directory_type,
-            default_mail_domain: self.default_mail_domain,
-            completed_date: self.completed_date,
-            error_message: self.error_message,
-            arn: self.arn,
+            organization_id: self.organization_id
+            ,
+            alias: self.alias
+            ,
+            state: self.state
+            ,
+            directory_id: self.directory_id
+            ,
+            directory_type: self.directory_type
+            ,
+            default_mail_domain: self.default_mail_domain
+            ,
+            completed_date: self.completed_date
+            ,
+            error_message: self.error_message
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

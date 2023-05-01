@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTargetsWithJobOutput {
+pub struct AssociateTargetsWithJobOutput  {
     /// <p>An ARN identifying the job.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -16,28 +16,26 @@ pub struct AssociateTargetsWithJobOutput {
 }
 impl AssociateTargetsWithJobOutput {
     /// <p>An ARN identifying the job.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>A short text description of the job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateTargetsWithJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateTargetsWithJobOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTargetsWithJobOutput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobOutputBuilder {
         crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobOutputBuilder::default()
     }
 }
@@ -59,8 +57,7 @@ impl AssociateTargetsWithJobOutputBuilder {
     }
     /// <p>An ARN identifying the job.</p>
     pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +66,7 @@ impl AssociateTargetsWithJobOutputBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>A short text description of the job.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,27 +75,28 @@ impl AssociateTargetsWithJobOutputBuilder {
     }
     /// <p>A short text description of the job.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateTargetsWithJobOutput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput {
+    pub fn build(self) -> crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput {
         crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput {
-            job_arn: self.job_arn,
-            job_id: self.job_id,
-            description: self.description,
+            job_arn: self.job_arn
+            ,
+            job_id: self.job_id
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

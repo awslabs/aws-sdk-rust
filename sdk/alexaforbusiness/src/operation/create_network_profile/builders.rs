@@ -4,81 +4,56 @@ pub use crate::operation::create_network_profile::_create_network_profile_output
 pub use crate::operation::create_network_profile::_create_network_profile_input::CreateNetworkProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateNetworkProfile`.
-///
+/// 
 /// <p>Creates a network profile with the specified details.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkProfileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder,
-}
-impl CreateNetworkProfileFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder
+            }
+impl CreateNetworkProfileFluentBuilder  {
     /// Creates a new `CreateNetworkProfile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_network_profile::CreateNetworkProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_network_profile::CreateNetworkProfileError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_network_profile::CreateNetworkProfileOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_network_profile::CreateNetworkProfileError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_network_profile::CreateNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_network_profile::CreateNetworkProfileError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_network_profile::CreateNetworkProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_network_profile::CreateNetworkProfileError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.network_profile_name(input.into());
         self
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn set_network_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_network_profile_name(input);
         self
     }
@@ -108,10 +83,7 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn set_security_type(
-        mut self,
-        input: std::option::Option<crate::types::NetworkSecurityType>,
-    ) -> Self {
+    pub fn set_security_type(mut self, input: std::option::Option<crate::types::NetworkSecurityType>) -> Self {
         self.inner = self.inner.set_security_type(input);
         self
     }
@@ -121,10 +93,7 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-    pub fn set_eap_method(
-        mut self,
-        input: std::option::Option<crate::types::NetworkEapMethod>,
-    ) -> Self {
+    pub fn set_eap_method(mut self, input: std::option::Option<crate::types::NetworkEapMethod>) -> Self {
         self.inner = self.inner.set_eap_method(input);
         self
     }
@@ -154,10 +123,7 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
@@ -171,10 +137,7 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-    pub fn set_trust_anchors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_trust_anchors(input);
         self
     }
@@ -184,10 +147,7 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -201,11 +161,9 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

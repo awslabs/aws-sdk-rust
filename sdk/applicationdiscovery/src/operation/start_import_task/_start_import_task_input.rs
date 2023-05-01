@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportTaskInput {
-    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+pub struct StartImportTaskInput  {
+    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p> 
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note> 
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
     /// </note>
     #[doc(hidden)]
     pub import_url: std::option::Option<std::string::String>,
 }
 impl StartImportTaskInput {
-    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p> 
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note> 
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
     /// </note>
-    pub fn import_url(&self) -> std::option::Option<&str> {
+    pub fn import_url(&self) -> std::option::Option<& str> {
         self.import_url.as_deref()
     }
 }
@@ -49,20 +49,16 @@ pub struct StartImportTaskInputBuilder {
     pub(crate) import_url: std::option::Option<std::string::String>,
 }
 impl StartImportTaskInputBuilder {
-    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p> 
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p> 
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,34 +67,33 @@ impl StartImportTaskInputBuilder {
     }
     /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note> 
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
     /// </note>
     pub fn import_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.import_url = Some(input.into());
         self
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
-    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note> 
+    /// <p>If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
     /// </note>
     pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_url = input;
-        self
+        self.import_url = input; self
     }
     /// Consumes the builder and constructs a [`StartImportTaskInput`](crate::operation::start_import_task::StartImportTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_import_task::StartImportTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_import_task::StartImportTaskInput {
-            client_request_token: self.client_request_token,
-            name: self.name,
-            import_url: self.import_url,
-        })
+    pub fn build(self) -> Result<crate::operation::start_import_task::StartImportTaskInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_import_task::StartImportTaskInput {
+                client_request_token: self.client_request_token
+                ,
+                name: self.name
+                ,
+                import_url: self.import_url
+                ,
+            }
+        )
     }
 }
+

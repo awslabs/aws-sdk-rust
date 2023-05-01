@@ -3,7 +3,7 @@
 /// <p>Describes a port range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterPortRange {
+pub struct FilterPortRange  {
     /// <p>The first port in the range.</p>
     #[doc(hidden)]
     pub from_port: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl FilterPortRangeBuilder {
     }
     /// <p>The first port in the range.</p>
     pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>The last port in the range.</p>
     pub fn to_port(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl FilterPortRangeBuilder {
     }
     /// <p>The last port in the range.</p>
     pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// Consumes the builder and constructs a [`FilterPortRange`](crate::types::FilterPortRange).
     pub fn build(self) -> crate::types::FilterPortRange {
         crate::types::FilterPortRange {
-            from_port: self.from_port,
-            to_port: self.to_port,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
         }
     }
 }
+

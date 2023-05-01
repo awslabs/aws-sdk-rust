@@ -3,21 +3,20 @@
 /// <p> A filter that specifies the type of resource associations that should be retrieved for a custom line item. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesAssociatedToCustomLineItemFilter {
+pub struct ListResourcesAssociatedToCustomLineItemFilter  {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     #[doc(hidden)]
     pub relationship: std::option::Option<crate::types::CustomLineItemRelationship>,
 }
 impl ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn relationship(&self) -> std::option::Option<&crate::types::CustomLineItemRelationship> {
+    pub fn relationship(&self) -> std::option::Option<& crate::types::CustomLineItemRelationship> {
         self.relationship.as_ref()
     }
 }
 impl ListResourcesAssociatedToCustomLineItemFilter {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
-    pub fn builder() -> crate::types::builders::ListResourcesAssociatedToCustomLineItemFilterBuilder
-    {
+    pub fn builder() -> crate::types::builders::ListResourcesAssociatedToCustomLineItemFilterBuilder {
         crate::types::builders::ListResourcesAssociatedToCustomLineItemFilterBuilder::default()
     }
 }
@@ -35,17 +34,15 @@ impl ListResourcesAssociatedToCustomLineItemFilterBuilder {
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn set_relationship(
-        mut self,
-        input: std::option::Option<crate::types::CustomLineItemRelationship>,
-    ) -> Self {
-        self.relationship = input;
-        self
+    pub fn set_relationship(mut self, input: std::option::Option<crate::types::CustomLineItemRelationship>) -> Self {
+        self.relationship = input; self
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
     pub fn build(self) -> crate::types::ListResourcesAssociatedToCustomLineItemFilter {
         crate::types::ListResourcesAssociatedToCustomLineItemFilter {
-            relationship: self.relationship,
+            relationship: self.relationship
+            ,
         }
     }
 }
+

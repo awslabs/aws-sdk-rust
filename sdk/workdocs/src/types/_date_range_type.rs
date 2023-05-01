@@ -3,7 +3,7 @@
 /// <p>Filters results based on timestamp range (in epochs).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateRangeType {
+pub struct DateRangeType  {
     /// <p>Timestamp range start value (in epochs)</p>
     #[doc(hidden)]
     pub start_value: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct DateRangeType {
 }
 impl DateRangeType {
     /// <p>Timestamp range start value (in epochs)</p>
-    pub fn start_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_value(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_value.as_ref()
     }
     /// <p>Timestamp range end value (in epochs).</p>
-    pub fn end_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_value(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_value.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl DateRangeTypeBuilder {
         self
     }
     /// <p>Timestamp range start value (in epochs)</p>
-    pub fn set_start_value(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_value = input;
-        self
+    pub fn set_start_value(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_value = input; self
     }
     /// <p>Timestamp range end value (in epochs).</p>
     pub fn end_value(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -56,14 +52,16 @@ impl DateRangeTypeBuilder {
     }
     /// <p>Timestamp range end value (in epochs).</p>
     pub fn set_end_value(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_value = input;
-        self
+        self.end_value = input; self
     }
     /// Consumes the builder and constructs a [`DateRangeType`](crate::types::DateRangeType).
     pub fn build(self) -> crate::types::DateRangeType {
         crate::types::DateRangeType {
-            start_value: self.start_value,
-            end_value: self.end_value,
+            start_value: self.start_value
+            ,
+            end_value: self.end_value
+            ,
         }
     }
 }
+

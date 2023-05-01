@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentVersionsInput {
+pub struct ListComponentVersionsInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListComponentVersionsInput {
 }
 impl ListComponentVersionsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -23,15 +23,13 @@ impl ListComponentVersionsInput {
         self.max_results
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListComponentVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder {
         crate::operation::list_component_versions::builders::ListComponentVersionsInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListComponentVersionsInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +59,7 @@ impl ListComponentVersionsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl ListComponentVersionsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_component_versions::ListComponentVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_component_versions::ListComponentVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_component_versions::ListComponentVersionsInput {
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                arn: self.arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

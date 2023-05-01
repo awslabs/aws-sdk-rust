@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterSnapshotInput {
+pub struct CreateClusterSnapshotInput  {
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -11,31 +11,25 @@ pub struct CreateClusterSnapshotInput {
     pub snapshot_name: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder {
         crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder::default()
     }
 }
@@ -46,8 +40,7 @@ impl CreateClusterSnapshotInput {
 pub struct CreateClusterSnapshotInputBuilder {
     pub(crate) cluster_arn: std::option::Option<std::string::String>,
     pub(crate) snapshot_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateClusterSnapshotInputBuilder {
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
@@ -57,8 +50,7 @@ impl CreateClusterSnapshotInputBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,47 +59,35 @@ impl CreateClusterSnapshotInputBuilder {
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
-                cluster_arn: self.cluster_arn,
-                snapshot_name: self.snapshot_name,
-                tags: self.tags,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

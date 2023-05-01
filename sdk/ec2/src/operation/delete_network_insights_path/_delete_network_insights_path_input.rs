@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkInsightsPathInput {
+pub struct DeleteNetworkInsightsPathInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,13 +16,13 @@ impl DeleteNetworkInsightsPathInput {
         self.dry_run
     }
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_path_id(&self) -> std::option::Option<& str> {
         self.network_insights_path_id.as_deref()
     }
 }
 impl DeleteNetworkInsightsPathInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsPathInput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput).
-    pub fn builder() -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder {
         crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteNetworkInsightsPathInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the path.</p>
     pub fn network_insights_path_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,25 +50,19 @@ impl DeleteNetworkInsightsPathInputBuilder {
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_insights_path_id = input;
-        self
+    pub fn set_network_insights_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_insights_path_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsPathInput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput {
-                dry_run: self.dry_run,
-                network_insights_path_id: self.network_insights_path_id,
-            },
+                dry_run: self.dry_run
+                ,
+                network_insights_path_id: self.network_insights_path_id
+                ,
+            }
         )
     }
 }
+

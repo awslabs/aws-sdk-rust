@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetManagedScalingPolicyInput {
+pub struct GetManagedScalingPolicyInput  {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl GetManagedScalingPolicyInput {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
 impl GetManagedScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetManagedScalingPolicyInput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder {
         crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetManagedScalingPolicyInputBuilder {
     }
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// Consumes the builder and constructs a [`GetManagedScalingPolicyInput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyInput {
-                cluster_id: self.cluster_id,
-            },
+                cluster_id: self.cluster_id
+                ,
+            }
         )
     }
 }
+

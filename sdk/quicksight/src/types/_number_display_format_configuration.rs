@@ -3,7 +3,7 @@
 /// <p>The options that determine the number display format configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NumberDisplayFormatConfiguration {
+pub struct NumberDisplayFormatConfiguration  {
     /// <p>Determines the prefix value of the number format.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -24,66 +24,48 @@ pub struct NumberDisplayFormatConfiguration {
     pub negative_value_configuration: std::option::Option<crate::types::NegativeValueConfiguration>,
     /// <p>The options that determine the null value format configuration.</p>
     #[doc(hidden)]
-    pub null_value_format_configuration:
-        std::option::Option<crate::types::NullValueFormatConfiguration>,
+    pub null_value_format_configuration: std::option::Option<crate::types::NullValueFormatConfiguration>,
 }
 impl NumberDisplayFormatConfiguration {
     /// <p>Determines the prefix value of the number format.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Determines the suffix value of the number format.</p>
-    pub fn suffix(&self) -> std::option::Option<&str> {
+    pub fn suffix(&self) -> std::option::Option<& str> {
         self.suffix.as_deref()
     }
     /// <p>The options that determine the numeric separator configuration.</p>
-    pub fn separator_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::NumericSeparatorConfiguration> {
+    pub fn separator_configuration(&self) -> std::option::Option<& crate::types::NumericSeparatorConfiguration> {
         self.separator_configuration.as_ref()
     }
     /// <p>The option that determines the decimal places configuration.</p>
-    pub fn decimal_places_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::DecimalPlacesConfiguration> {
+    pub fn decimal_places_configuration(&self) -> std::option::Option<& crate::types::DecimalPlacesConfiguration> {
         self.decimal_places_configuration.as_ref()
     }
     /// <p>Determines the number scale value of the number format.</p>
-    pub fn number_scale(&self) -> std::option::Option<&crate::types::NumberScale> {
+    pub fn number_scale(&self) -> std::option::Option<& crate::types::NumberScale> {
         self.number_scale.as_ref()
     }
     /// <p>The options that determine the negative value configuration.</p>
-    pub fn negative_value_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::NegativeValueConfiguration> {
+    pub fn negative_value_configuration(&self) -> std::option::Option<& crate::types::NegativeValueConfiguration> {
         self.negative_value_configuration.as_ref()
     }
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn null_value_format_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::NullValueFormatConfiguration> {
+    pub fn null_value_format_configuration(&self) -> std::option::Option<& crate::types::NullValueFormatConfiguration> {
         self.null_value_format_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for NumberDisplayFormatConfiguration {
+impl  std::fmt::Debug for NumberDisplayFormatConfiguration  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NumberDisplayFormatConfiguration");
         formatter.field("prefix", &"*** Sensitive Data Redacted ***");
         formatter.field("suffix", &"*** Sensitive Data Redacted ***");
         formatter.field("separator_configuration", &self.separator_configuration);
-        formatter.field(
-            "decimal_places_configuration",
-            &self.decimal_places_configuration,
-        );
+        formatter.field("decimal_places_configuration", &self.decimal_places_configuration);
         formatter.field("number_scale", &self.number_scale);
-        formatter.field(
-            "negative_value_configuration",
-            &self.negative_value_configuration,
-        );
-        formatter.field(
-            "null_value_format_configuration",
-            &self.null_value_format_configuration,
-        );
+        formatter.field("negative_value_configuration", &self.negative_value_configuration);
+        formatter.field("null_value_format_configuration", &self.null_value_format_configuration);
         formatter.finish()
     }
 }
@@ -100,15 +82,11 @@ impl NumberDisplayFormatConfiguration {
 pub struct NumberDisplayFormatConfigurationBuilder {
     pub(crate) prefix: std::option::Option<std::string::String>,
     pub(crate) suffix: std::option::Option<std::string::String>,
-    pub(crate) separator_configuration:
-        std::option::Option<crate::types::NumericSeparatorConfiguration>,
-    pub(crate) decimal_places_configuration:
-        std::option::Option<crate::types::DecimalPlacesConfiguration>,
+    pub(crate) separator_configuration: std::option::Option<crate::types::NumericSeparatorConfiguration>,
+    pub(crate) decimal_places_configuration: std::option::Option<crate::types::DecimalPlacesConfiguration>,
     pub(crate) number_scale: std::option::Option<crate::types::NumberScale>,
-    pub(crate) negative_value_configuration:
-        std::option::Option<crate::types::NegativeValueConfiguration>,
-    pub(crate) null_value_format_configuration:
-        std::option::Option<crate::types::NullValueFormatConfiguration>,
+    pub(crate) negative_value_configuration: std::option::Option<crate::types::NegativeValueConfiguration>,
+    pub(crate) null_value_format_configuration: std::option::Option<crate::types::NullValueFormatConfiguration>,
 }
 impl NumberDisplayFormatConfigurationBuilder {
     /// <p>Determines the prefix value of the number format.</p>
@@ -118,8 +96,7 @@ impl NumberDisplayFormatConfigurationBuilder {
     }
     /// <p>Determines the prefix value of the number format.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Determines the suffix value of the number format.</p>
     pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,40 +105,25 @@ impl NumberDisplayFormatConfigurationBuilder {
     }
     /// <p>Determines the suffix value of the number format.</p>
     pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
     }
     /// <p>The options that determine the numeric separator configuration.</p>
-    pub fn separator_configuration(
-        mut self,
-        input: crate::types::NumericSeparatorConfiguration,
-    ) -> Self {
+    pub fn separator_configuration(mut self, input: crate::types::NumericSeparatorConfiguration) -> Self {
         self.separator_configuration = Some(input);
         self
     }
     /// <p>The options that determine the numeric separator configuration.</p>
-    pub fn set_separator_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NumericSeparatorConfiguration>,
-    ) -> Self {
-        self.separator_configuration = input;
-        self
+    pub fn set_separator_configuration(mut self, input: std::option::Option<crate::types::NumericSeparatorConfiguration>) -> Self {
+        self.separator_configuration = input; self
     }
     /// <p>The option that determines the decimal places configuration.</p>
-    pub fn decimal_places_configuration(
-        mut self,
-        input: crate::types::DecimalPlacesConfiguration,
-    ) -> Self {
+    pub fn decimal_places_configuration(mut self, input: crate::types::DecimalPlacesConfiguration) -> Self {
         self.decimal_places_configuration = Some(input);
         self
     }
     /// <p>The option that determines the decimal places configuration.</p>
-    pub fn set_decimal_places_configuration(
-        mut self,
-        input: std::option::Option<crate::types::DecimalPlacesConfiguration>,
-    ) -> Self {
-        self.decimal_places_configuration = input;
-        self
+    pub fn set_decimal_places_configuration(mut self, input: std::option::Option<crate::types::DecimalPlacesConfiguration>) -> Self {
+        self.decimal_places_configuration = input; self
     }
     /// <p>Determines the number scale value of the number format.</p>
     pub fn number_scale(mut self, input: crate::types::NumberScale) -> Self {
@@ -169,55 +131,44 @@ impl NumberDisplayFormatConfigurationBuilder {
         self
     }
     /// <p>Determines the number scale value of the number format.</p>
-    pub fn set_number_scale(
-        mut self,
-        input: std::option::Option<crate::types::NumberScale>,
-    ) -> Self {
-        self.number_scale = input;
-        self
+    pub fn set_number_scale(mut self, input: std::option::Option<crate::types::NumberScale>) -> Self {
+        self.number_scale = input; self
     }
     /// <p>The options that determine the negative value configuration.</p>
-    pub fn negative_value_configuration(
-        mut self,
-        input: crate::types::NegativeValueConfiguration,
-    ) -> Self {
+    pub fn negative_value_configuration(mut self, input: crate::types::NegativeValueConfiguration) -> Self {
         self.negative_value_configuration = Some(input);
         self
     }
     /// <p>The options that determine the negative value configuration.</p>
-    pub fn set_negative_value_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NegativeValueConfiguration>,
-    ) -> Self {
-        self.negative_value_configuration = input;
-        self
+    pub fn set_negative_value_configuration(mut self, input: std::option::Option<crate::types::NegativeValueConfiguration>) -> Self {
+        self.negative_value_configuration = input; self
     }
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn null_value_format_configuration(
-        mut self,
-        input: crate::types::NullValueFormatConfiguration,
-    ) -> Self {
+    pub fn null_value_format_configuration(mut self, input: crate::types::NullValueFormatConfiguration) -> Self {
         self.null_value_format_configuration = Some(input);
         self
     }
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn set_null_value_format_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NullValueFormatConfiguration>,
-    ) -> Self {
-        self.null_value_format_configuration = input;
-        self
+    pub fn set_null_value_format_configuration(mut self, input: std::option::Option<crate::types::NullValueFormatConfiguration>) -> Self {
+        self.null_value_format_configuration = input; self
     }
     /// Consumes the builder and constructs a [`NumberDisplayFormatConfiguration`](crate::types::NumberDisplayFormatConfiguration).
     pub fn build(self) -> crate::types::NumberDisplayFormatConfiguration {
         crate::types::NumberDisplayFormatConfiguration {
-            prefix: self.prefix,
-            suffix: self.suffix,
-            separator_configuration: self.separator_configuration,
-            decimal_places_configuration: self.decimal_places_configuration,
-            number_scale: self.number_scale,
-            negative_value_configuration: self.negative_value_configuration,
-            null_value_format_configuration: self.null_value_format_configuration,
+            prefix: self.prefix
+            ,
+            suffix: self.suffix
+            ,
+            separator_configuration: self.separator_configuration
+            ,
+            decimal_places_configuration: self.decimal_places_configuration
+            ,
+            number_scale: self.number_scale
+            ,
+            negative_value_configuration: self.negative_value_configuration
+            ,
+            null_value_format_configuration: self.null_value_format_configuration
+            ,
         }
     }
 }
@@ -227,19 +178,11 @@ impl std::fmt::Debug for NumberDisplayFormatConfigurationBuilder {
         formatter.field("prefix", &"*** Sensitive Data Redacted ***");
         formatter.field("suffix", &"*** Sensitive Data Redacted ***");
         formatter.field("separator_configuration", &self.separator_configuration);
-        formatter.field(
-            "decimal_places_configuration",
-            &self.decimal_places_configuration,
-        );
+        formatter.field("decimal_places_configuration", &self.decimal_places_configuration);
         formatter.field("number_scale", &self.number_scale);
-        formatter.field(
-            "negative_value_configuration",
-            &self.negative_value_configuration,
-        );
-        formatter.field(
-            "null_value_format_configuration",
-            &self.null_value_format_configuration,
-        );
+        formatter.field("negative_value_configuration", &self.negative_value_configuration);
+        formatter.field("null_value_format_configuration", &self.null_value_format_configuration);
         formatter.finish()
     }
 }
+

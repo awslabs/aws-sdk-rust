@@ -3,7 +3,7 @@
 /// <p>This structure contains information about one Evidently feature in your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FeatureSummary {
+pub struct FeatureSummary  {
     /// <p>The ARN of the feature.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -33,53 +33,47 @@ pub struct FeatureSummary {
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values associated with this feature.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FeatureSummary {
     /// <p>The ARN of the feature.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the feature.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub fn project(&self) -> std::option::Option<&str> {
+    pub fn project(&self) -> std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The current state of the feature.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the feature is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the feature was most recently updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn evaluation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::types::FeatureEvaluationStrategy> {
+    pub fn evaluation_strategy(&self) -> std::option::Option<& crate::types::FeatureEvaluationStrategy> {
         self.evaluation_strategy.as_ref()
     }
     /// <p>An array of structures that define</p>
-    pub fn evaluation_rules(&self) -> std::option::Option<&[crate::types::EvaluationRule]> {
+    pub fn evaluation_rules(&self) -> std::option::Option<& [crate::types::EvaluationRule]> {
         self.evaluation_rules.as_deref()
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    pub fn default_variation(&self) -> std::option::Option<&str> {
+    pub fn default_variation(&self) -> std::option::Option<& str> {
         self.default_variation.as_deref()
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -103,8 +97,7 @@ pub struct FeatureSummaryBuilder {
     pub(crate) evaluation_strategy: std::option::Option<crate::types::FeatureEvaluationStrategy>,
     pub(crate) evaluation_rules: std::option::Option<std::vec::Vec<crate::types::EvaluationRule>>,
     pub(crate) default_variation: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FeatureSummaryBuilder {
     /// <p>The ARN of the feature.</p>
@@ -114,8 +107,7 @@ impl FeatureSummaryBuilder {
     }
     /// <p>The ARN of the feature.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the feature.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +116,7 @@ impl FeatureSummaryBuilder {
     }
     /// <p>The name of the feature.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +125,7 @@ impl FeatureSummaryBuilder {
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The current state of the feature.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
@@ -144,8 +134,7 @@ impl FeatureSummaryBuilder {
     }
     /// <p>The current state of the feature.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The date and time that the feature is created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,12 +142,8 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>The date and time that the feature is created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The date and time that the feature was most recently updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -166,12 +151,8 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>The date and time that the feature was most recently updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub fn evaluation_strategy(mut self, input: crate::types::FeatureEvaluationStrategy) -> Self {
@@ -179,12 +160,8 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn set_evaluation_strategy(
-        mut self,
-        input: std::option::Option<crate::types::FeatureEvaluationStrategy>,
-    ) -> Self {
-        self.evaluation_strategy = input;
-        self
+    pub fn set_evaluation_strategy(mut self, input: std::option::Option<crate::types::FeatureEvaluationStrategy>) -> Self {
+        self.evaluation_strategy = input; self
     }
     /// Appends an item to `evaluation_rules`.
     ///
@@ -193,17 +170,13 @@ impl FeatureSummaryBuilder {
     /// <p>An array of structures that define</p>
     pub fn evaluation_rules(mut self, input: crate::types::EvaluationRule) -> Self {
         let mut v = self.evaluation_rules.unwrap_or_default();
-        v.push(input);
-        self.evaluation_rules = Some(v);
-        self
+                        v.push(input);
+                        self.evaluation_rules = Some(v);
+                        self
     }
     /// <p>An array of structures that define</p>
-    pub fn set_evaluation_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EvaluationRule>>,
-    ) -> Self {
-        self.evaluation_rules = input;
-        self
+    pub fn set_evaluation_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::EvaluationRule>>) -> Self {
+        self.evaluation_rules = input; self
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,51 +184,48 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    pub fn set_default_variation(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.default_variation = input;
-        self
+    pub fn set_default_variation(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.default_variation = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`FeatureSummary`](crate::types::FeatureSummary).
     pub fn build(self) -> crate::types::FeatureSummary {
         crate::types::FeatureSummary {
-            arn: self.arn,
-            name: self.name,
-            project: self.project,
-            status: self.status,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            evaluation_strategy: self.evaluation_strategy,
-            evaluation_rules: self.evaluation_rules,
-            default_variation: self.default_variation,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            project: self.project
+            ,
+            status: self.status
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            evaluation_strategy: self.evaluation_strategy
+            ,
+            evaluation_rules: self.evaluation_rules
+            ,
+            default_variation: self.default_variation
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

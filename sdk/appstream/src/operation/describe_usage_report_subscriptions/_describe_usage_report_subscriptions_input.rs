@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUsageReportSubscriptionsInput {
+pub struct DescribeUsageReportSubscriptionsInput  {
     /// <p>The maximum size of each page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,13 @@ impl DescribeUsageReportSubscriptionsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeUsageReportSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeUsageReportSubscriptionsInput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsInput).
-    pub fn builder() -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsInputBuilder {
         crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeUsageReportSubscriptionsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,11 +51,10 @@ impl DescribeUsageReportSubscriptionsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeUsageReportSubscriptionsInput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsInput {
                 max_results: self.max_results
@@ -67,3 +65,4 @@ impl DescribeUsageReportSubscriptionsInputBuilder {
         )
     }
 }
+

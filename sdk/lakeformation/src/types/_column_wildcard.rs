@@ -3,14 +3,14 @@
 /// <p>A wildcard object, consisting of an optional list of excluded column names or indexes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnWildcard {
+pub struct ColumnWildcard  {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     #[doc(hidden)]
     pub excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    pub fn excluded_column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn excluded_column_names(&self) -> std::option::Option<& [std::string::String]> {
         self.excluded_column_names.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl ColumnWildcardBuilder {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     pub fn excluded_column_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.excluded_column_names.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_column_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_column_names = Some(v);
+                        self
     }
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    pub fn set_excluded_column_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.excluded_column_names = input;
-        self
+    pub fn set_excluded_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.excluded_column_names = input; self
     }
     /// Consumes the builder and constructs a [`ColumnWildcard`](crate::types::ColumnWildcard).
     pub fn build(self) -> crate::types::ColumnWildcard {
         crate::types::ColumnWildcard {
-            excluded_column_names: self.excluded_column_names,
+            excluded_column_names: self.excluded_column_names
+            ,
         }
     }
 }
+

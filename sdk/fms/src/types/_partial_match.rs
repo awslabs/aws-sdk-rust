@@ -3,7 +3,7 @@
 /// <p>The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartialMatch {
+pub struct PartialMatch  {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     #[doc(hidden)]
     pub reference: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PartialMatch {
 }
 impl PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
-    pub fn reference(&self) -> std::option::Option<&str> {
+    pub fn reference(&self) -> std::option::Option<& str> {
         self.reference.as_deref()
     }
     /// <p>The violation reason.</p>
-    pub fn target_violation_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_violation_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.target_violation_reasons.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PartialMatchBuilder {
     }
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     pub fn set_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference = input;
-        self
+        self.reference = input; self
     }
     /// Appends an item to `target_violation_reasons`.
     ///
@@ -53,23 +52,22 @@ impl PartialMatchBuilder {
     /// <p>The violation reason.</p>
     pub fn target_violation_reasons(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_violation_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.target_violation_reasons = Some(v);
-        self
+                        v.push(input.into());
+                        self.target_violation_reasons = Some(v);
+                        self
     }
     /// <p>The violation reason.</p>
-    pub fn set_target_violation_reasons(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.target_violation_reasons = input;
-        self
+    pub fn set_target_violation_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.target_violation_reasons = input; self
     }
     /// Consumes the builder and constructs a [`PartialMatch`](crate::types::PartialMatch).
     pub fn build(self) -> crate::types::PartialMatch {
         crate::types::PartialMatch {
-            reference: self.reference,
-            target_violation_reasons: self.target_violation_reasons,
+            reference: self.reference
+            ,
+            target_violation_reasons: self.target_violation_reasons
+            ,
         }
     }
 }
+

@@ -3,77 +3,77 @@
 /// <p>Information about the build output artifacts for the build project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectArtifacts {
-    /// <p>The type of build output artifact. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note>
-    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p>
-    /// </note> </li>
-    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
-    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
+pub struct ProjectArtifacts  {
+    /// <p>The type of build output artifact. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note> 
+    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p> 
+    /// </note> </li> 
+    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li> 
+    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ArtifactsType>,
-    /// <p>Information about the build output artifact location:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
+    /// <p>Information about the build output artifact location:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
-    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
-    /// </ul>
+    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li>
-    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li>
-    /// </ul> </li>
-    /// </ul>
+    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li> 
+    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
     #[doc(hidden)]
     pub namespace_type: std::option::Option<crate::types::ArtifactNamespace>,
-    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li>
-    /// </ul>
-    /// <p>For example:</p>
-    /// <ul>
+    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li> 
+    /// </ul> 
+    /// <p>For example:</p> 
+    /// <ul> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
-    /// </build-id></code>. </p> </li>
-    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li>
+    /// </build-id></code>. </p> </li> 
+    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
-    /// <build-id></build-id></code>. </p> </li>
+    /// <build-id></build-id></code>. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of build output artifact to create:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li>
-    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
-    /// </ul> </li>
+    /// <p>The type of build output artifact to create:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li> 
+    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     #[doc(hidden)]
     pub packaging: std::option::Option<crate::types::ArtifactPackaging>,
@@ -86,116 +86,116 @@ pub struct ProjectArtifacts {
     /// <p> An identifier for this artifact definition. </p>
     #[doc(hidden)]
     pub artifact_identifier: std::option::Option<std::string::String>,
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
-    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
-    /// </note>
-    /// <p>This property can be one of the following values:</p>
-    /// <dl>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note> 
+    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p> 
+    /// </note> 
+    /// <p>This property can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// NONE
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner does not have access to the objects. This is the default.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner does not have access to the objects. This is the default.</p> 
+    /// </dd> 
     /// <dt>
     /// READ_ONLY
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p> 
+    /// </dd> 
     /// <dt>
     /// FULL
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
-    /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
-    /// </ul>
-    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li> 
+    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub bucket_owner_access: std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl ProjectArtifacts {
-    /// <p>The type of build output artifact. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note>
-    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p>
-    /// </note> </li>
-    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
-    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
+    /// <p>The type of build output artifact. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note> 
+    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p> 
+    /// </note> </li> 
+    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li> 
+    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ArtifactsType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ArtifactsType> {
         self.r#type.as_ref()
     }
-    /// <p>Information about the build output artifact location:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
+    /// <p>Information about the build output artifact location:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li> 
     /// </ul>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
-    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
-    /// </ul>
+    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
-    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li>
-    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li>
-    /// </ul> </li>
-    /// </ul>
+    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li> 
+    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
-    pub fn namespace_type(&self) -> std::option::Option<&crate::types::ArtifactNamespace> {
+    pub fn namespace_type(&self) -> std::option::Option<& crate::types::ArtifactNamespace> {
         self.namespace_type.as_ref()
     }
-    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li>
-    /// </ul>
-    /// <p>For example:</p>
-    /// <ul>
+    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li> 
+    /// </ul> 
+    /// <p>For example:</p> 
+    /// <ul> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
-    /// </build-id></code>. </p> </li>
-    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li>
+    /// </build-id></code>. </p> </li> 
+    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
-    /// <build-id></build-id></code>. </p> </li>
+    /// <build-id></build-id></code>. </p> </li> 
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of build output artifact to create:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li>
-    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
-    /// </ul> </li>
+    /// <p>The type of build output artifact to create:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li> 
+    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn packaging(&self) -> std::option::Option<&crate::types::ArtifactPackaging> {
+    pub fn packaging(&self) -> std::option::Option<& crate::types::ArtifactPackaging> {
         self.packaging.as_ref()
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
@@ -207,39 +207,39 @@ impl ProjectArtifacts {
         self.encryption_disabled
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn artifact_identifier(&self) -> std::option::Option<&str> {
+    pub fn artifact_identifier(&self) -> std::option::Option<& str> {
         self.artifact_identifier.as_deref()
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
-    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
-    /// </note>
-    /// <p>This property can be one of the following values:</p>
-    /// <dl>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note> 
+    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p> 
+    /// </note> 
+    /// <p>This property can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// NONE
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner does not have access to the objects. This is the default.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner does not have access to the objects. This is the default.</p> 
+    /// </dd> 
     /// <dt>
     /// READ_ONLY
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p> 
+    /// </dd> 
     /// <dt>
     /// FULL
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
-    /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
-    /// </ul>
-    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li> 
+    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn bucket_owner_access(&self) -> std::option::Option<&crate::types::BucketOwnerAccess> {
+    pub fn bucket_owner_access(&self) -> std::option::Option<& crate::types::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
     }
 }
@@ -266,82 +266,79 @@ pub struct ProjectArtifactsBuilder {
     pub(crate) bucket_owner_access: std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl ProjectArtifactsBuilder {
-    /// <p>The type of build output artifact. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note>
-    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p>
-    /// </note> </li>
-    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
-    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
+    /// <p>The type of build output artifact. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note> 
+    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p> 
+    /// </note> </li> 
+    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li> 
+    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ArtifactsType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of build output artifact. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note>
-    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p>
-    /// </note> </li>
-    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
-    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
+    /// <p>The type of build output artifact. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CODEPIPELINE</code>: The build project has build output generated through CodePipeline. </p> <note> 
+    /// <p>The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.</p> 
+    /// </note> </li> 
+    /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li> 
+    /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ArtifactsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
-    /// <p>Information about the build output artifact location:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
+    /// <p>Information about the build output artifact location:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li> 
     /// </ul>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
         self.location = Some(input.into());
         self
     }
-    /// <p>Information about the build output artifact location:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
+    /// <p>Information about the build output artifact location:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li> 
     /// </ul>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
-    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
-    /// </ul>
+    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
         self.path = Some(input.into());
         self
     }
-    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
-    /// </ul>
+    /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
-    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li>
-    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li>
-    /// </ul> </li>
-    /// </ul>
+    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li> 
+    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
@@ -350,97 +347,88 @@ impl ProjectArtifactsBuilder {
         self.namespace_type = Some(input);
         self
     }
-    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li>
-    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li>
-    /// </ul> </li>
-    /// </ul>
+    /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BUILD_ID</code>: Include the build ID in the location of the build output artifact.</p> </li> 
+    /// <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if <code>namespaceType</code> is not specified.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
-    pub fn set_namespace_type(
-        mut self,
-        input: std::option::Option<crate::types::ArtifactNamespace>,
-    ) -> Self {
-        self.namespace_type = input;
-        self
+    pub fn set_namespace_type(mut self, input: std::option::Option<crate::types::ArtifactNamespace>) -> Self {
+        self.namespace_type = input; self
     }
-    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li>
-    /// </ul>
-    /// <p>For example:</p>
-    /// <ul>
+    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li> 
+    /// </ul> 
+    /// <p>For example:</p> 
+    /// <ul> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
-    /// </build-id></code>. </p> </li>
-    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li>
+    /// </build-id></code>. </p> </li> 
+    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
-    /// <build-id></build-id></code>. </p> </li>
+    /// <build-id></build-id></code>. </p> </li> 
     /// </ul>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li>
-    /// </ul>
-    /// <p>For example:</p>
-    /// <ul>
+    /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.</p> </li> 
+    /// </ul> 
+    /// <p>For example:</p> 
+    /// <ul> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is stored in <code>MyArtifacts/
     /// <build-id>
     /// /MyArtifact.zip
-    /// </build-id></code>. </p> </li>
-    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li>
+    /// </build-id></code>. </p> </li> 
+    /// <li> <p> If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output bucket. </p> </li> 
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
-    /// <build-id></build-id></code>. </p> </li>
+    /// <build-id></build-id></code>. </p> </li> 
     /// </ul>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The type of build output artifact to create:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li>
-    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
-    /// </ul> </li>
+    /// <p>The type of build output artifact to create:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li> 
+    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     pub fn packaging(mut self, input: crate::types::ArtifactPackaging) -> Self {
         self.packaging = Some(input);
         self
     }
-    /// <p>The type of build output artifact to create:</p>
-    /// <ul>
-    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
-    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li>
-    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
-    /// </ul> </li>
+    /// <p>The type of build output artifact to create:</p> 
+    /// <ul> 
+    /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li> 
+    /// <li> <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: CodeBuild creates in the output bucket a folder that contains the build output. This is the default if <code>packaging</code> is not specified.</p> </li> 
+    /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn set_packaging(
-        mut self,
-        input: std::option::Option<crate::types::ArtifactPackaging>,
-    ) -> Self {
-        self.packaging = input;
-        self
+    pub fn set_packaging(mut self, input: std::option::Option<crate::types::ArtifactPackaging>) -> Self {
+        self.packaging = input; self
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub fn override_artifact_name(mut self, input: bool) -> Self {
@@ -449,8 +437,7 @@ impl ProjectArtifactsBuilder {
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub fn set_override_artifact_name(mut self, input: std::option::Option<bool>) -> Self {
-        self.override_artifact_name = input;
-        self
+        self.override_artifact_name = input; self
     }
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
@@ -459,8 +446,7 @@ impl ProjectArtifactsBuilder {
     }
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
     pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.encryption_disabled = input;
-        self
+        self.encryption_disabled = input; self
     }
     /// <p> An identifier for this artifact definition. </p>
     pub fn artifact_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -468,95 +454,98 @@ impl ProjectArtifactsBuilder {
         self
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn set_artifact_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.artifact_identifier = input;
-        self
+    pub fn set_artifact_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.artifact_identifier = input; self
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
-    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
-    /// </note>
-    /// <p>This property can be one of the following values:</p>
-    /// <dl>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note> 
+    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p> 
+    /// </note> 
+    /// <p>This property can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// NONE
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner does not have access to the objects. This is the default.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner does not have access to the objects. This is the default.</p> 
+    /// </dd> 
     /// <dt>
     /// READ_ONLY
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p> 
+    /// </dd> 
     /// <dt>
     /// FULL
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
-    /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
-    /// </ul>
-    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li> 
+    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+    /// </dd> 
     /// </dl>
     pub fn bucket_owner_access(mut self, input: crate::types::BucketOwnerAccess) -> Self {
         self.bucket_owner_access = Some(input);
         self
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
-    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
-    /// </note>
-    /// <p>This property can be one of the following values:</p>
-    /// <dl>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note> 
+    /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p> 
+    /// </note> 
+    /// <p>This property can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// NONE
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner does not have access to the objects. This is the default.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner does not have access to the objects. This is the default.</p> 
+    /// </dd> 
     /// <dt>
     /// READ_ONLY
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects.</p> 
+    /// </dd> 
     /// <dt>
     /// FULL
-    /// </dt>
-    /// <dd>
-    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
-    /// <ul>
-    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li>
-    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li>
-    /// </ul>
-    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p> </li> 
+    /// <li> <p>Otherwise, the uploading account retains ownership of the objects.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_bucket_owner_access(
-        mut self,
-        input: std::option::Option<crate::types::BucketOwnerAccess>,
-    ) -> Self {
-        self.bucket_owner_access = input;
-        self
+    pub fn set_bucket_owner_access(mut self, input: std::option::Option<crate::types::BucketOwnerAccess>) -> Self {
+        self.bucket_owner_access = input; self
     }
     /// Consumes the builder and constructs a [`ProjectArtifacts`](crate::types::ProjectArtifacts).
     pub fn build(self) -> crate::types::ProjectArtifacts {
         crate::types::ProjectArtifacts {
-            r#type: self.r#type,
-            location: self.location,
-            path: self.path,
-            namespace_type: self.namespace_type,
-            name: self.name,
-            packaging: self.packaging,
-            override_artifact_name: self.override_artifact_name,
-            encryption_disabled: self.encryption_disabled,
-            artifact_identifier: self.artifact_identifier,
-            bucket_owner_access: self.bucket_owner_access,
+            r#type: self.r#type
+            ,
+            location: self.location
+            ,
+            path: self.path
+            ,
+            namespace_type: self.namespace_type
+            ,
+            name: self.name
+            ,
+            packaging: self.packaging
+            ,
+            override_artifact_name: self.override_artifact_name
+            ,
+            encryption_disabled: self.encryption_disabled
+            ,
+            artifact_identifier: self.artifact_identifier
+            ,
+            bucket_owner_access: self.bucket_owner_access
+            ,
         }
     }
 }
+

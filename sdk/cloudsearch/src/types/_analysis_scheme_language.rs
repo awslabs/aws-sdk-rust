@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analysisschemelanguage = unimplemented!();
 /// match analysisschemelanguage {
@@ -63,22 +63,14 @@
 /// Specifically, when `analysisschemelanguage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalysisSchemeLanguage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalysisSchemeLanguage {
     #[allow(missing_docs)] // documentation missing in model
     Ar,
@@ -151,112 +143,107 @@ pub enum AnalysisSchemeLanguage {
     #[allow(missing_docs)] // documentation missing in model
     ZhHant,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisSchemeLanguage {
-    fn from(s: &str) -> Self {
-        match s {
-            "ar" => AnalysisSchemeLanguage::Ar,
-            "bg" => AnalysisSchemeLanguage::Bg,
-            "ca" => AnalysisSchemeLanguage::Ca,
-            "cs" => AnalysisSchemeLanguage::Cs,
-            "da" => AnalysisSchemeLanguage::Da,
-            "de" => AnalysisSchemeLanguage::De,
-            "el" => AnalysisSchemeLanguage::El,
-            "en" => AnalysisSchemeLanguage::En,
-            "es" => AnalysisSchemeLanguage::Es,
-            "eu" => AnalysisSchemeLanguage::Eu,
-            "fa" => AnalysisSchemeLanguage::Fa,
-            "fi" => AnalysisSchemeLanguage::Fi,
-            "fr" => AnalysisSchemeLanguage::Fr,
-            "ga" => AnalysisSchemeLanguage::Ga,
-            "gl" => AnalysisSchemeLanguage::Gl,
-            "he" => AnalysisSchemeLanguage::He,
-            "hi" => AnalysisSchemeLanguage::Hi,
-            "hu" => AnalysisSchemeLanguage::Hu,
-            "hy" => AnalysisSchemeLanguage::Hy,
-            "id" => AnalysisSchemeLanguage::Id,
-            "it" => AnalysisSchemeLanguage::It,
-            "ja" => AnalysisSchemeLanguage::Ja,
-            "ko" => AnalysisSchemeLanguage::Ko,
-            "lv" => AnalysisSchemeLanguage::Lv,
-            "mul" => AnalysisSchemeLanguage::Mul,
-            "nl" => AnalysisSchemeLanguage::Nl,
-            "no" => AnalysisSchemeLanguage::No,
-            "pt" => AnalysisSchemeLanguage::Pt,
-            "ro" => AnalysisSchemeLanguage::Ro,
-            "ru" => AnalysisSchemeLanguage::Ru,
-            "sv" => AnalysisSchemeLanguage::Sv,
-            "th" => AnalysisSchemeLanguage::Th,
-            "tr" => AnalysisSchemeLanguage::Tr,
-            "zh-Hans" => AnalysisSchemeLanguage::ZhHans,
-            "zh-Hant" => AnalysisSchemeLanguage::ZhHant,
-            other => AnalysisSchemeLanguage::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ar" => AnalysisSchemeLanguage::Ar,
+"bg" => AnalysisSchemeLanguage::Bg,
+"ca" => AnalysisSchemeLanguage::Ca,
+"cs" => AnalysisSchemeLanguage::Cs,
+"da" => AnalysisSchemeLanguage::Da,
+"de" => AnalysisSchemeLanguage::De,
+"el" => AnalysisSchemeLanguage::El,
+"en" => AnalysisSchemeLanguage::En,
+"es" => AnalysisSchemeLanguage::Es,
+"eu" => AnalysisSchemeLanguage::Eu,
+"fa" => AnalysisSchemeLanguage::Fa,
+"fi" => AnalysisSchemeLanguage::Fi,
+"fr" => AnalysisSchemeLanguage::Fr,
+"ga" => AnalysisSchemeLanguage::Ga,
+"gl" => AnalysisSchemeLanguage::Gl,
+"he" => AnalysisSchemeLanguage::He,
+"hi" => AnalysisSchemeLanguage::Hi,
+"hu" => AnalysisSchemeLanguage::Hu,
+"hy" => AnalysisSchemeLanguage::Hy,
+"id" => AnalysisSchemeLanguage::Id,
+"it" => AnalysisSchemeLanguage::It,
+"ja" => AnalysisSchemeLanguage::Ja,
+"ko" => AnalysisSchemeLanguage::Ko,
+"lv" => AnalysisSchemeLanguage::Lv,
+"mul" => AnalysisSchemeLanguage::Mul,
+"nl" => AnalysisSchemeLanguage::Nl,
+"no" => AnalysisSchemeLanguage::No,
+"pt" => AnalysisSchemeLanguage::Pt,
+"ro" => AnalysisSchemeLanguage::Ro,
+"ru" => AnalysisSchemeLanguage::Ru,
+"sv" => AnalysisSchemeLanguage::Sv,
+"th" => AnalysisSchemeLanguage::Th,
+"tr" => AnalysisSchemeLanguage::Tr,
+"zh-Hans" => AnalysisSchemeLanguage::ZhHans,
+"zh-Hant" => AnalysisSchemeLanguage::ZhHant,
+other => AnalysisSchemeLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AnalysisSchemeLanguage {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisSchemeLanguage::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalysisSchemeLanguage::from(s))
+                }
+            }
 impl AnalysisSchemeLanguage {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AnalysisSchemeLanguage::Ar => "ar",
-            AnalysisSchemeLanguage::Bg => "bg",
-            AnalysisSchemeLanguage::Ca => "ca",
-            AnalysisSchemeLanguage::Cs => "cs",
-            AnalysisSchemeLanguage::Da => "da",
-            AnalysisSchemeLanguage::De => "de",
-            AnalysisSchemeLanguage::El => "el",
-            AnalysisSchemeLanguage::En => "en",
-            AnalysisSchemeLanguage::Es => "es",
-            AnalysisSchemeLanguage::Eu => "eu",
-            AnalysisSchemeLanguage::Fa => "fa",
-            AnalysisSchemeLanguage::Fi => "fi",
-            AnalysisSchemeLanguage::Fr => "fr",
-            AnalysisSchemeLanguage::Ga => "ga",
-            AnalysisSchemeLanguage::Gl => "gl",
-            AnalysisSchemeLanguage::He => "he",
-            AnalysisSchemeLanguage::Hi => "hi",
-            AnalysisSchemeLanguage::Hu => "hu",
-            AnalysisSchemeLanguage::Hy => "hy",
-            AnalysisSchemeLanguage::Id => "id",
-            AnalysisSchemeLanguage::It => "it",
-            AnalysisSchemeLanguage::Ja => "ja",
-            AnalysisSchemeLanguage::Ko => "ko",
-            AnalysisSchemeLanguage::Lv => "lv",
-            AnalysisSchemeLanguage::Mul => "mul",
-            AnalysisSchemeLanguage::Nl => "nl",
-            AnalysisSchemeLanguage::No => "no",
-            AnalysisSchemeLanguage::Pt => "pt",
-            AnalysisSchemeLanguage::Ro => "ro",
-            AnalysisSchemeLanguage::Ru => "ru",
-            AnalysisSchemeLanguage::Sv => "sv",
-            AnalysisSchemeLanguage::Th => "th",
-            AnalysisSchemeLanguage::Tr => "tr",
-            AnalysisSchemeLanguage::ZhHans => "zh-Hans",
-            AnalysisSchemeLanguage::ZhHant => "zh-Hant",
-            AnalysisSchemeLanguage::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga",
-            "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt",
-            "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AnalysisSchemeLanguage::Ar => "ar",
+    AnalysisSchemeLanguage::Bg => "bg",
+    AnalysisSchemeLanguage::Ca => "ca",
+    AnalysisSchemeLanguage::Cs => "cs",
+    AnalysisSchemeLanguage::Da => "da",
+    AnalysisSchemeLanguage::De => "de",
+    AnalysisSchemeLanguage::El => "el",
+    AnalysisSchemeLanguage::En => "en",
+    AnalysisSchemeLanguage::Es => "es",
+    AnalysisSchemeLanguage::Eu => "eu",
+    AnalysisSchemeLanguage::Fa => "fa",
+    AnalysisSchemeLanguage::Fi => "fi",
+    AnalysisSchemeLanguage::Fr => "fr",
+    AnalysisSchemeLanguage::Ga => "ga",
+    AnalysisSchemeLanguage::Gl => "gl",
+    AnalysisSchemeLanguage::He => "he",
+    AnalysisSchemeLanguage::Hi => "hi",
+    AnalysisSchemeLanguage::Hu => "hu",
+    AnalysisSchemeLanguage::Hy => "hy",
+    AnalysisSchemeLanguage::Id => "id",
+    AnalysisSchemeLanguage::It => "it",
+    AnalysisSchemeLanguage::Ja => "ja",
+    AnalysisSchemeLanguage::Ko => "ko",
+    AnalysisSchemeLanguage::Lv => "lv",
+    AnalysisSchemeLanguage::Mul => "mul",
+    AnalysisSchemeLanguage::Nl => "nl",
+    AnalysisSchemeLanguage::No => "no",
+    AnalysisSchemeLanguage::Pt => "pt",
+    AnalysisSchemeLanguage::Ro => "ro",
+    AnalysisSchemeLanguage::Ru => "ru",
+    AnalysisSchemeLanguage::Sv => "sv",
+    AnalysisSchemeLanguage::Th => "th",
+    AnalysisSchemeLanguage::Tr => "tr",
+    AnalysisSchemeLanguage::ZhHans => "zh-Hans",
+    AnalysisSchemeLanguage::ZhHant => "zh-Hant",
+    AnalysisSchemeLanguage::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga", "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt", "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant"]
+                }
+            }
 impl AsRef<str> for AnalysisSchemeLanguage {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

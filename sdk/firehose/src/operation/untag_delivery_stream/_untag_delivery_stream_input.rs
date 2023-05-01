@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagDeliveryStreamInput {
+pub struct UntagDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct UntagDeliveryStreamInput {
 }
 impl UntagDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
 impl UntagDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
-    pub fn builder(
-    ) -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
-        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
+        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder::default()
     }
 }
 
@@ -43,12 +41,8 @@ impl UntagDeliveryStreamInputBuilder {
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -57,30 +51,24 @@ impl UntagDeliveryStreamInputBuilder {
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = Some(v);
+                        self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::untag_delivery_stream::UntagDeliveryStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::untag_delivery_stream::UntagDeliveryStreamInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::untag_delivery_stream::UntagDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                tag_keys: self.tag_keys,
-            },
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
         )
     }
 }
+

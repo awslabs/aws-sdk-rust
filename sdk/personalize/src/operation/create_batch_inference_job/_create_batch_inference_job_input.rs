@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBatchInferenceJobInput {
+pub struct CreateBatchInferenceJobInput  {
     /// <p>The name of the batch inference job to create.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -33,15 +33,15 @@ pub struct CreateBatchInferenceJobInput {
 }
 impl CreateBatchInferenceJobInput {
     /// <p>The name of the batch inference job to create.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
-    pub fn filter_arn(&self) -> std::option::Option<&str> {
+    pub fn filter_arn(&self) -> std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>The number of recommendations to retrieve.</p>
@@ -49,33 +49,29 @@ impl CreateBatchInferenceJobInput {
         self.num_results
     }
     /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
-    pub fn job_input(&self) -> std::option::Option<&crate::types::BatchInferenceJobInput> {
+    pub fn job_input(&self) -> std::option::Option<& crate::types::BatchInferenceJobInput> {
         self.job_input.as_ref()
     }
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
-    pub fn job_output(&self) -> std::option::Option<&crate::types::BatchInferenceJobOutput> {
+    pub fn job_output(&self) -> std::option::Option<& crate::types::BatchInferenceJobOutput> {
         self.job_output.as_ref()
     }
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The configuration details of a batch inference job.</p>
-    pub fn batch_inference_job_config(
-        &self,
-    ) -> std::option::Option<&crate::types::BatchInferenceJobConfig> {
+    pub fn batch_inference_job_config(&self) -> std::option::Option<& crate::types::BatchInferenceJobConfig> {
         self.batch_inference_job_config.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateBatchInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBatchInferenceJobInput`](crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobInputBuilder {
         crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobInputBuilder::default()
     }
 }
@@ -91,8 +87,7 @@ pub struct CreateBatchInferenceJobInputBuilder {
     pub(crate) job_input: std::option::Option<crate::types::BatchInferenceJobInput>,
     pub(crate) job_output: std::option::Option<crate::types::BatchInferenceJobOutput>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) batch_inference_job_config:
-        std::option::Option<crate::types::BatchInferenceJobConfig>,
+    pub(crate) batch_inference_job_config: std::option::Option<crate::types::BatchInferenceJobConfig>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBatchInferenceJobInputBuilder {
@@ -103,8 +98,7 @@ impl CreateBatchInferenceJobInputBuilder {
     }
     /// <p>The name of the batch inference job to create.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
     pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,12 +106,8 @@ impl CreateBatchInferenceJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.solution_version_arn = input;
-        self
+    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.solution_version_arn = input; self
     }
     /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
     pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +116,7 @@ impl CreateBatchInferenceJobInputBuilder {
     }
     /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
     pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_arn = input;
-        self
+        self.filter_arn = input; self
     }
     /// <p>The number of recommendations to retrieve.</p>
     pub fn num_results(mut self, input: i32) -> Self {
@@ -136,8 +125,7 @@ impl CreateBatchInferenceJobInputBuilder {
     }
     /// <p>The number of recommendations to retrieve.</p>
     pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
     pub fn job_input(mut self, input: crate::types::BatchInferenceJobInput) -> Self {
@@ -145,12 +133,8 @@ impl CreateBatchInferenceJobInputBuilder {
         self
     }
     /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
-    pub fn set_job_input(
-        mut self,
-        input: std::option::Option<crate::types::BatchInferenceJobInput>,
-    ) -> Self {
-        self.job_input = input;
-        self
+    pub fn set_job_input(mut self, input: std::option::Option<crate::types::BatchInferenceJobInput>) -> Self {
+        self.job_input = input; self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
     pub fn job_output(mut self, input: crate::types::BatchInferenceJobOutput) -> Self {
@@ -158,12 +142,8 @@ impl CreateBatchInferenceJobInputBuilder {
         self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
-    pub fn set_job_output(
-        mut self,
-        input: std::option::Option<crate::types::BatchInferenceJobOutput>,
-    ) -> Self {
-        self.job_output = input;
-        self
+    pub fn set_job_output(mut self, input: std::option::Option<crate::types::BatchInferenceJobOutput>) -> Self {
+        self.job_output = input; self
     }
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,24 +152,16 @@ impl CreateBatchInferenceJobInputBuilder {
     }
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The configuration details of a batch inference job.</p>
-    pub fn batch_inference_job_config(
-        mut self,
-        input: crate::types::BatchInferenceJobConfig,
-    ) -> Self {
+    pub fn batch_inference_job_config(mut self, input: crate::types::BatchInferenceJobConfig) -> Self {
         self.batch_inference_job_config = Some(input);
         self
     }
     /// <p>The configuration details of a batch inference job.</p>
-    pub fn set_batch_inference_job_config(
-        mut self,
-        input: std::option::Option<crate::types::BatchInferenceJobConfig>,
-    ) -> Self {
-        self.batch_inference_job_config = input;
-        self
+    pub fn set_batch_inference_job_config(mut self, input: std::option::Option<crate::types::BatchInferenceJobConfig>) -> Self {
+        self.batch_inference_job_config = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -198,37 +170,38 @@ impl CreateBatchInferenceJobInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateBatchInferenceJobInput`](crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_batch_inference_job::CreateBatchInferenceJobInput {
-                job_name: self.job_name,
-                solution_version_arn: self.solution_version_arn,
-                filter_arn: self.filter_arn,
-                num_results: self.num_results,
-                job_input: self.job_input,
-                job_output: self.job_output,
-                role_arn: self.role_arn,
-                batch_inference_job_config: self.batch_inference_job_config,
-                tags: self.tags,
-            },
+                job_name: self.job_name
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                filter_arn: self.filter_arn
+                ,
+                num_results: self.num_results
+                ,
+                job_input: self.job_input
+                ,
+                job_output: self.job_output
+                ,
+                role_arn: self.role_arn
+                ,
+                batch_inference_job_config: self.batch_inference_job_config
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

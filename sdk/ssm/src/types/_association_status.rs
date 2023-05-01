@@ -3,7 +3,7 @@
 /// <p>Describes an association status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociationStatus {
+pub struct AssociationStatus  {
     /// <p>The date when the status changed.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,19 +19,19 @@ pub struct AssociationStatus {
 }
 impl AssociationStatus {
     /// <p>The date when the status changed.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The status.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::AssociationStatusName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::AssociationStatusName> {
         self.name.as_ref()
     }
     /// <p>The reason for the status.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>A user-defined string.</p>
-    pub fn additional_info(&self) -> std::option::Option<&str> {
+    pub fn additional_info(&self) -> std::option::Option<& str> {
         self.additional_info.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>The date when the status changed.</p>
     pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The status.</p>
     pub fn name(mut self, input: crate::types::AssociationStatusName) -> Self {
@@ -68,12 +67,8 @@ impl AssociationStatusBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::AssociationStatusName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::AssociationStatusName>) -> Self {
+        self.name = input; self
     }
     /// <p>The reason for the status.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +77,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>The reason for the status.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A user-defined string.</p>
     pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl AssociationStatusBuilder {
     }
     /// <p>A user-defined string.</p>
     pub fn set_additional_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.additional_info = input;
-        self
+        self.additional_info = input; self
     }
     /// Consumes the builder and constructs a [`AssociationStatus`](crate::types::AssociationStatus).
     pub fn build(self) -> crate::types::AssociationStatus {
         crate::types::AssociationStatus {
-            date: self.date,
-            name: self.name,
-            message: self.message,
-            additional_info: self.additional_info,
+            date: self.date
+            ,
+            name: self.name
+            ,
+            message: self.message
+            ,
+            additional_info: self.additional_info
+            ,
         }
     }
 }
+

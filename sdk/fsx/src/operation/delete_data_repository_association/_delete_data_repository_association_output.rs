@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataRepositoryAssociationOutput {
+pub struct DeleteDataRepositoryAssociationOutput  {
     /// <p>The ID of the data repository association being deleted.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct DeleteDataRepositoryAssociationOutput {
 }
 impl DeleteDataRepositoryAssociationOutput {
     /// <p>The ID of the data repository association being deleted.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::types::DataRepositoryLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::types::DataRepositoryLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
@@ -29,13 +29,13 @@ impl DeleteDataRepositoryAssociationOutput {
     }
 }
 impl aws_http::request_id::RequestId for DeleteDataRepositoryAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteDataRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationOutput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput).
-    pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationOutputBuilder {
         crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
     }
     /// <p>The ID of the data repository association being deleted.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
     pub fn lifecycle(mut self, input: crate::types::DataRepositoryLifecycle) -> Self {
@@ -66,12 +65,8 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
         self
     }
     /// <p>Describes the lifecycle state of the data repository association being deleted.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: std::option::Option<crate::types::DataRepositoryLifecycle>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::DataRepositoryLifecycle>) -> Self {
+        self.lifecycle = input; self
     }
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
     pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
@@ -80,23 +75,19 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
     }
     /// <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
     pub fn set_delete_data_in_file_system(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_data_in_file_system = input;
-        self
+        self.delete_data_in_file_system = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteDataRepositoryAssociationOutput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput {
         crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput {
             association_id: self.association_id
             ,
@@ -108,3 +99,4 @@ impl DeleteDataRepositoryAssociationOutputBuilder {
         }
     }
 }
+

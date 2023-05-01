@@ -3,7 +3,7 @@
 /// A request to update flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowInput {
+pub struct UpdateFlowInput  {
     /// The flow that you want to update.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -16,17 +16,15 @@ pub struct UpdateFlowInput {
 }
 impl UpdateFlowInput {
     /// The flow that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateFailoverConfig> {
+    pub fn source_failover_config(&self) -> std::option::Option<& crate::types::UpdateFailoverConfig> {
         self.source_failover_config.as_ref()
     }
     /// Update maintenance setting for a flow
-    pub fn maintenance(&self) -> std::option::Option<&crate::types::UpdateMaintenance> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::types::UpdateMaintenance> {
         self.maintenance.as_ref()
     }
 }
@@ -53,8 +51,7 @@ impl UpdateFlowInputBuilder {
     }
     /// The flow that you want to update.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The settings for source failover.
     pub fn source_failover_config(mut self, input: crate::types::UpdateFailoverConfig) -> Self {
@@ -62,12 +59,8 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// The settings for source failover.
-    pub fn set_source_failover_config(
-        mut self,
-        input: std::option::Option<crate::types::UpdateFailoverConfig>,
-    ) -> Self {
-        self.source_failover_config = input;
-        self
+    pub fn set_source_failover_config(mut self, input: std::option::Option<crate::types::UpdateFailoverConfig>) -> Self {
+        self.source_failover_config = input; self
     }
     /// Update maintenance setting for a flow
     pub fn maintenance(mut self, input: crate::types::UpdateMaintenance) -> Self {
@@ -75,24 +68,21 @@ impl UpdateFlowInputBuilder {
         self
     }
     /// Update maintenance setting for a flow
-    pub fn set_maintenance(
-        mut self,
-        input: std::option::Option<crate::types::UpdateMaintenance>,
-    ) -> Self {
-        self.maintenance = input;
-        self
+    pub fn set_maintenance(mut self, input: std::option::Option<crate::types::UpdateMaintenance>) -> Self {
+        self.maintenance = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_flow::UpdateFlowInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_flow::UpdateFlowInput {
-            flow_arn: self.flow_arn,
-            source_failover_config: self.source_failover_config,
-            maintenance: self.maintenance,
-        })
+    pub fn build(self) -> Result<crate::operation::update_flow::UpdateFlowInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_flow::UpdateFlowInput {
+                flow_arn: self.flow_arn
+                ,
+                source_failover_config: self.source_failover_config
+                ,
+                maintenance: self.maintenance
+                ,
+            }
+        )
     }
 }
+

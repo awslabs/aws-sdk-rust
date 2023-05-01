@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningPlatformsInput {
+pub struct ListSigningPlatformsInput  {
     /// <p>The category type of a signing platform.</p>
     #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListSigningPlatformsInput {
 }
 impl ListSigningPlatformsInput {
     /// <p>The category type of a signing platform.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>Any partner entities connected to a signing platform.</p>
-    pub fn partner(&self) -> std::option::Option<&str> {
+    pub fn partner(&self) -> std::option::Option<& str> {
         self.partner.as_deref()
     }
     /// <p>The validation template that is used by the target signing platform.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The maximum number of results to be returned by this operation.</p>
@@ -37,14 +37,13 @@ impl ListSigningPlatformsInput {
         self.max_results
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListSigningPlatformsInput {
     /// Creates a new builder-style object to manufacture [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
-    pub fn builder(
-    ) -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder {
+    pub fn builder() -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder {
         crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl ListSigningPlatformsInputBuilder {
     }
     /// <p>The category type of a signing platform.</p>
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Any partner entities connected to a signing platform.</p>
     pub fn partner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +75,7 @@ impl ListSigningPlatformsInputBuilder {
     }
     /// <p>Any partner entities connected to a signing platform.</p>
     pub fn set_partner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner = input;
-        self
+        self.partner = input; self
     }
     /// <p>The validation template that is used by the target signing platform.</p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +84,7 @@ impl ListSigningPlatformsInputBuilder {
     }
     /// <p>The validation template that is used by the target signing platform.</p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The maximum number of results to be returned by this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -97,8 +93,7 @@ impl ListSigningPlatformsInputBuilder {
     }
     /// <p>The maximum number of results to be returned by this operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,24 +102,24 @@ impl ListSigningPlatformsInputBuilder {
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_signing_platforms::ListSigningPlatformsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_signing_platforms::ListSigningPlatformsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_signing_platforms::ListSigningPlatformsInput {
-                category: self.category,
-                partner: self.partner,
-                target: self.target,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                category: self.category
+                ,
+                partner: self.partner
+                ,
+                target: self.target
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

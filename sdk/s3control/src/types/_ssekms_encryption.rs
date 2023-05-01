@@ -3,14 +3,14 @@
 /// <p>Configuration for the use of SSE-KMS to encrypt generated manifest objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsekmsEncryption {
+pub struct SsekmsEncryption  {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl SsekmsEncryption {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl SsekmsEncryptionBuilder {
     }
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// Consumes the builder and constructs a [`SsekmsEncryption`](crate::types::SsekmsEncryption).
     pub fn build(self) -> crate::types::SsekmsEncryption {
         crate::types::SsekmsEncryption {
-            key_id: self.key_id,
+            key_id: self.key_id
+            ,
         }
     }
 }
+

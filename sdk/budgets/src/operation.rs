@@ -69,3 +69,4 @@ pub mod update_notification;
 
 /// Types for the `UpdateSubscriber` operation.
 pub mod update_subscriber;
+

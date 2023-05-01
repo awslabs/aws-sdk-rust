@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcePoliciesOutput {
+pub struct ListResourcePoliciesOutput  {
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
     #[doc(hidden)]
     pub resource_policies: std::option::Option<std::vec::Vec<crate::types::ResourcePolicy>>,
@@ -13,23 +13,22 @@ pub struct ListResourcePoliciesOutput {
 }
 impl ListResourcePoliciesOutput {
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
-    pub fn resource_policies(&self) -> std::option::Option<&[crate::types::ResourcePolicy]> {
+    pub fn resource_policies(&self) -> std::option::Option<& [crate::types::ResourcePolicy]> {
         self.resource_policies.as_deref()
     }
     /// <p>Pagination token. Not currently supported.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListResourcePoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcePoliciesOutput`](crate::operation::list_resource_policies::ListResourcePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_policies::builders::ListResourcePoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_resource_policies::builders::ListResourcePoliciesOutputBuilder {
         crate::operation::list_resource_policies::builders::ListResourcePoliciesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListResourcePoliciesOutputBuilder {
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
     pub fn resource_policies(mut self, input: crate::types::ResourcePolicy) -> Self {
         let mut v = self.resource_policies.unwrap_or_default();
-        v.push(input);
-        self.resource_policies = Some(v);
-        self
+                        v.push(input);
+                        self.resource_policies = Some(v);
+                        self
     }
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
-    pub fn set_resource_policies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePolicy>>,
-    ) -> Self {
-        self.resource_policies = input;
-        self
+    pub fn set_resource_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePolicy>>) -> Self {
+        self.resource_policies = input; self
     }
     /// <p>Pagination token. Not currently supported.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListResourcePoliciesOutputBuilder {
     }
     /// <p>Pagination token. Not currently supported.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListResourcePoliciesOutput`](crate::operation::list_resource_policies::ListResourcePoliciesOutput).
     pub fn build(self) -> crate::operation::list_resource_policies::ListResourcePoliciesOutput {
         crate::operation::list_resource_policies::ListResourcePoliciesOutput {
-            resource_policies: self.resource_policies,
-            next_token: self.next_token,
+            resource_policies: self.resource_policies
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

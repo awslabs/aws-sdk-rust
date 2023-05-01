@@ -3,7 +3,7 @@
 /// <p>Specifies an Glue Data Catalog target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogTarget {
+pub struct CatalogTarget  {
     /// <p>The name of the database to be synchronized.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct CatalogTarget {
 }
 impl CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A list of the tables to be synchronized.</p>
-    pub fn tables(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tables(&self) -> std::option::Option<& [std::string::String]> {
         self.tables.as_deref()
     }
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
-    pub fn event_queue_arn(&self) -> std::option::Option<&str> {
+    pub fn event_queue_arn(&self) -> std::option::Option<& str> {
         self.event_queue_arn.as_deref()
     }
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
-    pub fn dlq_event_queue_arn(&self) -> std::option::Option<&str> {
+    pub fn dlq_event_queue_arn(&self) -> std::option::Option<& str> {
         self.dlq_event_queue_arn.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl CatalogTargetBuilder {
     }
     /// <p>The name of the database to be synchronized.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// Appends an item to `tables`.
     ///
@@ -77,17 +76,13 @@ impl CatalogTargetBuilder {
     /// <p>A list of the tables to be synchronized.</p>
     pub fn tables(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tables.unwrap_or_default();
-        v.push(input.into());
-        self.tables = Some(v);
-        self
+                        v.push(input.into());
+                        self.tables = Some(v);
+                        self
     }
     /// <p>A list of the tables to be synchronized.</p>
-    pub fn set_tables(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tables = input;
-        self
+    pub fn set_tables(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tables = input; self
     }
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +91,7 @@ impl CatalogTargetBuilder {
     }
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
     pub fn event_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl CatalogTargetBuilder {
     }
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
     pub fn set_event_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_queue_arn = input;
-        self
+        self.event_queue_arn = input; self
     }
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
     pub fn dlq_event_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,21 +108,23 @@ impl CatalogTargetBuilder {
         self
     }
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
-    pub fn set_dlq_event_queue_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dlq_event_queue_arn = input;
-        self
+    pub fn set_dlq_event_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dlq_event_queue_arn = input; self
     }
     /// Consumes the builder and constructs a [`CatalogTarget`](crate::types::CatalogTarget).
     pub fn build(self) -> crate::types::CatalogTarget {
         crate::types::CatalogTarget {
-            database_name: self.database_name,
-            tables: self.tables,
-            connection_name: self.connection_name,
-            event_queue_arn: self.event_queue_arn,
-            dlq_event_queue_arn: self.dlq_event_queue_arn,
+            database_name: self.database_name
+            ,
+            tables: self.tables
+            ,
+            connection_name: self.connection_name
+            ,
+            event_queue_arn: self.event_queue_arn
+            ,
+            dlq_event_queue_arn: self.dlq_event_queue_arn
+            ,
         }
     }
 }
+

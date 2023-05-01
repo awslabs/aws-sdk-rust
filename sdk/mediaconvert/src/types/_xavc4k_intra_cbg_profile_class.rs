@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let xavc4kintracbgprofileclass = unimplemented!();
 /// match xavc4kintracbgprofileclass {
@@ -31,22 +31,14 @@
 /// Specifically, when `xavc4kintracbgprofileclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Xavc4kIntraCbgProfileClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Xavc4kIntraCbgProfileClass {
     #[allow(missing_docs)] // documentation missing in model
     Class100,
@@ -55,44 +47,43 @@ pub enum Xavc4kIntraCbgProfileClass {
     #[allow(missing_docs)] // documentation missing in model
     Class480,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Xavc4kIntraCbgProfileClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLASS_100" => Xavc4kIntraCbgProfileClass::Class100,
-            "CLASS_300" => Xavc4kIntraCbgProfileClass::Class300,
-            "CLASS_480" => Xavc4kIntraCbgProfileClass::Class480,
-            other => Xavc4kIntraCbgProfileClass::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLASS_100" => Xavc4kIntraCbgProfileClass::Class100,
+"CLASS_300" => Xavc4kIntraCbgProfileClass::Class300,
+"CLASS_480" => Xavc4kIntraCbgProfileClass::Class480,
+other => Xavc4kIntraCbgProfileClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Xavc4kIntraCbgProfileClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Xavc4kIntraCbgProfileClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Xavc4kIntraCbgProfileClass::from(s))
+                }
+            }
 impl Xavc4kIntraCbgProfileClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Xavc4kIntraCbgProfileClass::Class100 => "CLASS_100",
-            Xavc4kIntraCbgProfileClass::Class300 => "CLASS_300",
-            Xavc4kIntraCbgProfileClass::Class480 => "CLASS_480",
-            Xavc4kIntraCbgProfileClass::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CLASS_100", "CLASS_300", "CLASS_480"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Xavc4kIntraCbgProfileClass::Class100 => "CLASS_100",
+    Xavc4kIntraCbgProfileClass::Class300 => "CLASS_300",
+    Xavc4kIntraCbgProfileClass::Class480 => "CLASS_480",
+    Xavc4kIntraCbgProfileClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLASS_100", "CLASS_300", "CLASS_480"]
+                }
+            }
 impl AsRef<str> for Xavc4kIntraCbgProfileClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

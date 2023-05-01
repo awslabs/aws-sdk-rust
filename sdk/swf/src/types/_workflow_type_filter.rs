@@ -3,7 +3,7 @@
 /// <p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowTypeFilter {
+pub struct WorkflowTypeFilter  {
     /// <p> Name of the workflow type.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct WorkflowTypeFilter {
 }
 impl WorkflowTypeFilter {
     /// <p> Name of the workflow type.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Version of the workflow type.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl WorkflowTypeFilterBuilder {
     }
     /// <p> Name of the workflow type.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Version of the workflow type.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl WorkflowTypeFilterBuilder {
     }
     /// <p>Version of the workflow type.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`WorkflowTypeFilter`](crate::types::WorkflowTypeFilter).
     pub fn build(self) -> crate::types::WorkflowTypeFilter {
         crate::types::WorkflowTypeFilter {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

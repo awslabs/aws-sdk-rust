@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRunInput {
+pub struct StartRunInput  {
     /// <p>The run's workflow ID.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -38,35 +38,34 @@ pub struct StartRunInput {
     pub log_level: std::option::Option<crate::types::RunLogLevel>,
     /// <p>Tags for the run.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The run's workflows type.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The run's ID.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>A service role for the run.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A name for the run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The run's group ID.</p>
-    pub fn run_group_id(&self) -> std::option::Option<&str> {
+    pub fn run_group_id(&self) -> std::option::Option<& str> {
         self.run_group_id.as_deref()
     }
     /// <p>A priority for the run.</p>
@@ -74,7 +73,7 @@ impl StartRunInput {
         self.priority
     }
     /// <p>Parameters for the run.</p>
-    pub fn parameters(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn parameters(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
     /// <p>A storage capacity for the run in gigabytes.</p>
@@ -82,22 +81,19 @@ impl StartRunInput {
         self.storage_capacity
     }
     /// <p>An output URI for the run.</p>
-    pub fn output_uri(&self) -> std::option::Option<&str> {
+    pub fn output_uri(&self) -> std::option::Option<& str> {
         self.output_uri.as_deref()
     }
     /// <p>A log level for the run.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::RunLogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::types::RunLogLevel> {
         self.log_level.as_ref()
     }
     /// <p>Tags for the run.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
@@ -123,8 +119,7 @@ pub struct StartRunInputBuilder {
     pub(crate) storage_capacity: std::option::Option<i32>,
     pub(crate) output_uri: std::option::Option<std::string::String>,
     pub(crate) log_level: std::option::Option<crate::types::RunLogLevel>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) request_id: std::option::Option<std::string::String>,
 }
 impl StartRunInputBuilder {
@@ -135,8 +130,7 @@ impl StartRunInputBuilder {
     }
     /// <p>The run's workflow ID.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The run's workflows type.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -144,12 +138,8 @@ impl StartRunInputBuilder {
         self
     }
     /// <p>The run's workflows type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
     }
     /// <p>The run's ID.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +148,7 @@ impl StartRunInputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>A service role for the run.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +157,7 @@ impl StartRunInputBuilder {
     }
     /// <p>A service role for the run.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>A name for the run.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +166,7 @@ impl StartRunInputBuilder {
     }
     /// <p>A name for the run.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The run's group ID.</p>
     pub fn run_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,8 +175,7 @@ impl StartRunInputBuilder {
     }
     /// <p>The run's group ID.</p>
     pub fn set_run_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_group_id = input;
-        self
+        self.run_group_id = input; self
     }
     /// <p>A priority for the run.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -198,8 +184,7 @@ impl StartRunInputBuilder {
     }
     /// <p>A priority for the run.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Parameters for the run.</p>
     pub fn parameters(mut self, input: aws_smithy_types::Document) -> Self {
@@ -207,12 +192,8 @@ impl StartRunInputBuilder {
         self
     }
     /// <p>Parameters for the run.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Document>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A storage capacity for the run in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
@@ -221,8 +202,7 @@ impl StartRunInputBuilder {
     }
     /// <p>A storage capacity for the run in gigabytes.</p>
     pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_capacity = input;
-        self
+        self.storage_capacity = input; self
     }
     /// <p>An output URI for the run.</p>
     pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +211,7 @@ impl StartRunInputBuilder {
     }
     /// <p>An output URI for the run.</p>
     pub fn set_output_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_uri = input;
-        self
+        self.output_uri = input; self
     }
     /// <p>A log level for the run.</p>
     pub fn log_level(mut self, input: crate::types::RunLogLevel) -> Self {
@@ -241,33 +220,22 @@ impl StartRunInputBuilder {
     }
     /// <p>A log level for the run.</p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::RunLogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the run.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Tags for the run.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,30 +244,40 @@ impl StartRunInputBuilder {
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_run::StartRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_run::StartRunInput {
-            workflow_id: self.workflow_id,
-            workflow_type: self.workflow_type,
-            run_id: self.run_id,
-            role_arn: self.role_arn,
-            name: self.name,
-            run_group_id: self.run_group_id,
-            priority: self.priority,
-            parameters: self.parameters,
-            storage_capacity: self.storage_capacity,
-            output_uri: self.output_uri,
-            log_level: self.log_level,
-            tags: self.tags,
-            request_id: self.request_id,
-        })
+    pub fn build(self) -> Result<crate::operation::start_run::StartRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_run::StartRunInput {
+                workflow_id: self.workflow_id
+                ,
+                workflow_type: self.workflow_type
+                ,
+                run_id: self.run_id
+                ,
+                role_arn: self.role_arn
+                ,
+                name: self.name
+                ,
+                run_group_id: self.run_group_id
+                ,
+                priority: self.priority
+                ,
+                parameters: self.parameters
+                ,
+                storage_capacity: self.storage_capacity
+                ,
+                output_uri: self.output_uri
+                ,
+                log_level: self.log_level
+                ,
+                tags: self.tags
+                ,
+                request_id: self.request_id
+                ,
+            }
+        )
     }
 }
+

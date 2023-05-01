@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTestGridUrlInput {
+pub struct CreateTestGridUrlInput  {
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateTestGridUrlInput {
 }
 impl CreateTestGridUrlInput {
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>Lifetime, in seconds, of the URL.</p>
@@ -22,8 +22,7 @@ impl CreateTestGridUrlInput {
 }
 impl CreateTestGridUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
-    pub fn builder(
-    ) -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder {
+    pub fn builder() -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder {
         crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl CreateTestGridUrlInputBuilder {
     }
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>Lifetime, in seconds, of the URL.</p>
     pub fn expires_in_seconds(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl CreateTestGridUrlInputBuilder {
     }
     /// <p>Lifetime, in seconds, of the URL.</p>
     pub fn set_expires_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.expires_in_seconds = input;
-        self
+        self.expires_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_test_grid_url::CreateTestGridUrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_test_grid_url::CreateTestGridUrlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_test_grid_url::CreateTestGridUrlInput {
-                project_arn: self.project_arn,
-                expires_in_seconds: self.expires_in_seconds,
-            },
+                project_arn: self.project_arn
+                ,
+                expires_in_seconds: self.expires_in_seconds
+                ,
+            }
         )
     }
 }
+

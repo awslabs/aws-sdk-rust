@@ -3,7 +3,7 @@
 /// <p>Source server CPU information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cpu {
+pub struct Cpu  {
     /// <p>The number of CPU cores on the source server.</p>
     #[doc(hidden)]
     pub cores: i64,
@@ -17,7 +17,7 @@ impl Cpu {
         self.cores
     }
     /// <p>The source server's CPU model name.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CpuBuilder {
     }
     /// <p>The number of CPU cores on the source server.</p>
     pub fn set_cores(mut self, input: std::option::Option<i64>) -> Self {
-        self.cores = input;
-        self
+        self.cores = input; self
     }
     /// <p>The source server's CPU model name.</p>
     pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,17 @@ impl CpuBuilder {
     }
     /// <p>The source server's CPU model name.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// Consumes the builder and constructs a [`Cpu`](crate::types::Cpu).
     pub fn build(self) -> crate::types::Cpu {
         crate::types::Cpu {
-            cores: self.cores.unwrap_or_default(),
-            model_name: self.model_name,
+            cores: self.cores
+                .unwrap_or_default()
+            ,
+            model_name: self.model_name
+            ,
         }
     }
 }
+

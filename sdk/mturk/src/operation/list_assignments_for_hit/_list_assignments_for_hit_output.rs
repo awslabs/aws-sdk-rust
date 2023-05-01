@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssignmentsForHitOutput {
+pub struct ListAssignmentsForHitOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListAssignmentsForHitOutput {
 }
 impl ListAssignmentsForHitOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
@@ -24,20 +24,18 @@ impl ListAssignmentsForHitOutput {
         self.num_results
     }
     /// <p> The collection of Assignment data structures returned by this call.</p>
-    pub fn assignments(&self) -> std::option::Option<&[crate::types::Assignment]> {
+    pub fn assignments(&self) -> std::option::Option<& [crate::types::Assignment]> {
         self.assignments.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssignmentsForHitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssignmentsForHitOutput {
     /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitOutput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitOutputBuilder {
         crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitOutputBuilder::default()
     }
 }
@@ -59,8 +57,7 @@ impl ListAssignmentsForHitOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn num_results(mut self, input: i32) -> Self {
@@ -69,8 +66,7 @@ impl ListAssignmentsForHitOutputBuilder {
     }
     /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// Appends an item to `assignments`.
     ///
@@ -79,34 +75,34 @@ impl ListAssignmentsForHitOutputBuilder {
     /// <p> The collection of Assignment data structures returned by this call.</p>
     pub fn assignments(mut self, input: crate::types::Assignment) -> Self {
         let mut v = self.assignments.unwrap_or_default();
-        v.push(input);
-        self.assignments = Some(v);
-        self
+                        v.push(input);
+                        self.assignments = Some(v);
+                        self
     }
     /// <p> The collection of Assignment data structures returned by this call.</p>
-    pub fn set_assignments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Assignment>>,
-    ) -> Self {
-        self.assignments = input;
-        self
+    pub fn set_assignments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Assignment>>) -> Self {
+        self.assignments = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssignmentsForHitOutput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput).
     pub fn build(self) -> crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput {
         crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput {
-            next_token: self.next_token,
-            num_results: self.num_results,
-            assignments: self.assignments,
+            next_token: self.next_token
+            ,
+            num_results: self.num_results
+            ,
+            assignments: self.assignments
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

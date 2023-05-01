@@ -4,73 +4,51 @@ pub use crate::operation::import_hub_content::_import_hub_content_output::Import
 pub use crate::operation::import_hub_content::_import_hub_content_input::ImportHubContentInputBuilder;
 
 /// Fluent builder constructing a request to `ImportHubContent`.
-///
-/// <p>Import hub content.</p> <note>
-/// <p>Hub APIs are only callable through SageMaker Studio.</p>
+/// 
+/// <p>Import hub content.</p> <note> 
+/// <p>Hub APIs are only callable through SageMaker Studio.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportHubContentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::import_hub_content::builders::ImportHubContentInputBuilder,
-}
-impl ImportHubContentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::import_hub_content::builders::ImportHubContentInputBuilder
+            }
+impl ImportHubContentFluentBuilder  {
     /// Creates a new `ImportHubContent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_hub_content::ImportHubContent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::import_hub_content::ImportHubContentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::import_hub_content::ImportHubContentOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::import_hub_content::ImportHubContentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::import_hub_content::ImportHubContent, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::import_hub_content::ImportHubContentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::import_hub_content::ImportHubContentOutput, aws_smithy_http::result::SdkError<crate::operation::import_hub_content::ImportHubContentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the hub content to import.</p>
     pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hub_content_name(input.into());
@@ -87,10 +65,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>The version of the hub content to import.</p>
-    pub fn set_hub_content_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_version(input);
         self
     }
@@ -100,10 +75,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>The type of hub content to import.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: std::option::Option<crate::types::HubContentType>) -> Self {
         self.inner = self.inner.set_hub_content_type(input);
         self
     }
@@ -113,10 +85,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>The version of the hub content schema to import.</p>
-    pub fn set_document_schema_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_document_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_document_schema_version(input);
         self
     }
@@ -136,10 +105,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>The display name of the hub content to import.</p>
-    pub fn set_hub_content_display_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_display_name(input);
         self
     }
@@ -149,10 +115,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>A description of the hub content to import.</p>
-    pub fn set_hub_content_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_description(input);
         self
     }
@@ -162,10 +125,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
-    pub fn set_hub_content_markdown(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_markdown(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_markdown(input);
         self
     }
@@ -175,10 +135,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
-    pub fn set_hub_content_document(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_document(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_document(input);
         self
     }
@@ -192,10 +149,7 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>The searchable keywords of the hub content.</p>
-    pub fn set_hub_content_search_keywords(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_content_search_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_hub_content_search_keywords(input);
         self
     }
@@ -209,11 +163,9 @@ impl ImportHubContentFluentBuilder {
         self
     }
     /// <p>Any tags associated with the hub content.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

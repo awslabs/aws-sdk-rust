@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomRoutingAcceleratorOutput {
+pub struct DeleteCustomRoutingAcceleratorOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteCustomRoutingAcceleratorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput).
-    pub fn builder() -> crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorOutputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorOutputBuilder {
         crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorOutputBuilder::default()
     }
 }
@@ -25,21 +25,19 @@ pub struct DeleteCustomRoutingAcceleratorOutputBuilder {
 }
 impl DeleteCustomRoutingAcceleratorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput
-    {
+    pub fn build(self) -> crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput {
         crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput {
             _request_id: self._request_id,
         }
     }
 }
+

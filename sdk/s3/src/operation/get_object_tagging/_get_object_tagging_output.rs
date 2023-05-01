@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetObjectTaggingOutput {
+pub struct GetObjectTaggingOutput  {
     /// <p>The versionId of the object for which you got the tagging information.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
@@ -14,28 +14,27 @@ pub struct GetObjectTaggingOutput {
 }
 impl GetObjectTaggingOutput {
     /// <p>The versionId of the object for which you got the tagging information.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>Contains the tag set.</p>
-    pub fn tag_set(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_set(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tag_set.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetObjectTaggingOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for GetObjectTaggingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetObjectTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectTaggingOutput`](crate::operation::get_object_tagging::GetObjectTaggingOutput).
-    pub fn builder() -> crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder {
         crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder::default()
     }
 }
@@ -57,8 +56,7 @@ impl GetObjectTaggingOutputBuilder {
     }
     /// <p>The versionId of the object for which you got the tagging information.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Appends an item to `tag_set`.
     ///
@@ -67,46 +65,42 @@ impl GetObjectTaggingOutputBuilder {
     /// <p>Contains the tag set.</p>
     pub fn tag_set(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_set.unwrap_or_default();
-        v.push(input);
-        self.tag_set = Some(v);
-        self
+                        v.push(input);
+                        self.tag_set = Some(v);
+                        self
     }
     /// <p>Contains the tag set.</p>
-    pub fn set_tag_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tag_set = input;
-        self
+    pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tag_set = input; self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetObjectTaggingOutput`](crate::operation::get_object_tagging::GetObjectTaggingOutput).
     pub fn build(self) -> crate::operation::get_object_tagging::GetObjectTaggingOutput {
         crate::operation::get_object_tagging::GetObjectTaggingOutput {
-            version_id: self.version_id,
-            tag_set: self.tag_set,
+            version_id: self.version_id
+            ,
+            tag_set: self.tag_set
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

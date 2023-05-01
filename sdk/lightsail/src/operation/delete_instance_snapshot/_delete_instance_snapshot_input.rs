@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceSnapshotInput {
+pub struct DeleteInstanceSnapshotInput  {
     /// <p>The name of the snapshot to delete.</p>
     #[doc(hidden)]
     pub instance_snapshot_name: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceSnapshotInput {
     /// <p>The name of the snapshot to delete.</p>
-    pub fn instance_snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn instance_snapshot_name(&self) -> std::option::Option<& str> {
         self.instance_snapshot_name.as_deref()
     }
 }
 impl DeleteInstanceSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceSnapshotInput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotInputBuilder {
         crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteInstanceSnapshotInputBuilder {
         self
     }
     /// <p>The name of the snapshot to delete.</p>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_snapshot_name = input;
-        self
+    pub fn set_instance_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_snapshot_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInstanceSnapshotInput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput {
-                instance_snapshot_name: self.instance_snapshot_name,
-            },
+                instance_snapshot_name: self.instance_snapshot_name
+                ,
+            }
         )
     }
 }
+

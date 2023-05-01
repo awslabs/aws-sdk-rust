@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelImageCreationOutput {
+pub struct CancelImageCreationOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -16,29 +16,27 @@ pub struct CancelImageCreationOutput {
 }
 impl CancelImageCreationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The idempotency token that was used for this request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ARN of the image whose creation this request canceled.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CancelImageCreationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelImageCreationOutput {
     /// Creates a new builder-style object to manufacture [`CancelImageCreationOutput`](crate::operation::cancel_image_creation::CancelImageCreationOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder {
-        crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder {
+        crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder::default()
     }
 }
 
@@ -59,8 +57,7 @@ impl CancelImageCreationOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The idempotency token that was used for this request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +66,7 @@ impl CancelImageCreationOutputBuilder {
     }
     /// <p>The idempotency token that was used for this request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The ARN of the image whose creation this request canceled.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,29 +74,29 @@ impl CancelImageCreationOutputBuilder {
         self
     }
     /// <p>The ARN of the image whose creation this request canceled.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_build_version_arn = input;
-        self
+    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_build_version_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelImageCreationOutput`](crate::operation::cancel_image_creation::CancelImageCreationOutput).
     pub fn build(self) -> crate::operation::cancel_image_creation::CancelImageCreationOutput {
         crate::operation::cancel_image_creation::CancelImageCreationOutput {
-            request_id: self.request_id,
-            client_token: self.client_token,
-            image_build_version_arn: self.image_build_version_arn,
+            request_id: self.request_id
+            ,
+            client_token: self.client_token
+            ,
+            image_build_version_arn: self.image_build_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

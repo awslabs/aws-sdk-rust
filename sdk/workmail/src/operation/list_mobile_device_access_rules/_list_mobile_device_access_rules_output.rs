@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMobileDeviceAccessRulesOutput {
+pub struct ListMobileDeviceAccessRulesOutput  {
     /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessRule>>,
@@ -10,18 +10,18 @@ pub struct ListMobileDeviceAccessRulesOutput {
 }
 impl ListMobileDeviceAccessRulesOutput {
     /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::MobileDeviceAccessRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::MobileDeviceAccessRule]> {
         self.rules.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMobileDeviceAccessRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMobileDeviceAccessRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessRulesOutput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput).
-    pub fn builder() -> crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesOutputBuilder{
+    pub fn builder() -> crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesOutputBuilder {
         crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesOutputBuilder::default()
     }
 }
@@ -41,34 +41,30 @@ impl ListMobileDeviceAccessRulesOutputBuilder {
     /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     pub fn rules(mut self, input: crate::types::MobileDeviceAccessRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessRule>>) -> Self {
+        self.rules = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMobileDeviceAccessRulesOutput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput {
+    pub fn build(self) -> crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput {
         crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput {
-            rules: self.rules,
+            rules: self.rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

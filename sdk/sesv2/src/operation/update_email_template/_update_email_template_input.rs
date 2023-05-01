@@ -3,7 +3,7 @@
 /// <p>Represents a request to update an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEmailTemplateInput {
+pub struct UpdateEmailTemplateInput  {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -13,20 +13,18 @@ pub struct UpdateEmailTemplateInput {
 }
 impl UpdateEmailTemplateInput {
     /// <p>The name of the template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn template_content(&self) -> std::option::Option<&crate::types::EmailTemplateContent> {
+    pub fn template_content(&self) -> std::option::Option<& crate::types::EmailTemplateContent> {
         self.template_content.as_ref()
     }
 }
 impl UpdateEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder {
-        crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder {
+        crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder::default()
     }
 }
 
@@ -45,8 +43,7 @@ impl UpdateEmailTemplateInputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(mut self, input: crate::types::EmailTemplateContent) -> Self {
@@ -54,25 +51,19 @@ impl UpdateEmailTemplateInputBuilder {
         self
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn set_template_content(
-        mut self,
-        input: std::option::Option<crate::types::EmailTemplateContent>,
-    ) -> Self {
-        self.template_content = input;
-        self
+    pub fn set_template_content(mut self, input: std::option::Option<crate::types::EmailTemplateContent>) -> Self {
+        self.template_content = input; self
     }
     /// Consumes the builder and constructs a [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_email_template::UpdateEmailTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_email_template::UpdateEmailTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_email_template::UpdateEmailTemplateInput {
-                template_name: self.template_name,
-                template_content: self.template_content,
-            },
+                template_name: self.template_name
+                ,
+                template_content: self.template_content
+                ,
+            }
         )
     }
 }
+

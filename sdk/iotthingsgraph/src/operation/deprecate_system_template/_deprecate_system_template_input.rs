@@ -2,26 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateSystemTemplateInput {
-    /// <p>The ID of the system to delete.</p>
-    /// <p>The ID should be in the following format.</p>
+pub struct DeprecateSystemTemplateInput  {
+    /// <p>The ID of the system to delete.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateSystemTemplateInput {
-    /// <p>The ID of the system to delete.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to delete.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeprecateSystemTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeprecateSystemTemplateInput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder {
         crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder::default()
     }
 }
@@ -33,31 +31,27 @@ pub struct DeprecateSystemTemplateInputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
 }
 impl DeprecateSystemTemplateInputBuilder {
-    /// <p>The ID of the system to delete.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to delete.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID of the system to delete.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to delete.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeprecateSystemTemplateInput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deprecate_system_template::DeprecateSystemTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deprecate_system_template::DeprecateSystemTemplateInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

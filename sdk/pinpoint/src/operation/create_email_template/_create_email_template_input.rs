@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEmailTemplateInput {
+pub struct CreateEmailTemplateInput  {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     #[doc(hidden)]
     pub email_template_request: std::option::Option<crate::types::EmailTemplateRequest>,
@@ -12,22 +12,18 @@ pub struct CreateEmailTemplateInput {
 }
 impl CreateEmailTemplateInput {
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn email_template_request(
-        &self,
-    ) -> std::option::Option<&crate::types::EmailTemplateRequest> {
+    pub fn email_template_request(&self) -> std::option::Option<& crate::types::EmailTemplateRequest> {
         self.email_template_request.as_ref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
 impl CreateEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder {
-        crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder {
+        crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder::default()
     }
 }
 
@@ -45,12 +41,8 @@ impl CreateEmailTemplateInputBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn set_email_template_request(
-        mut self,
-        input: std::option::Option<crate::types::EmailTemplateRequest>,
-    ) -> Self {
-        self.email_template_request = input;
-        self
+    pub fn set_email_template_request(mut self, input: std::option::Option<crate::types::EmailTemplateRequest>) -> Self {
+        self.email_template_request = input; self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,21 +51,18 @@ impl CreateEmailTemplateInputBuilder {
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// Consumes the builder and constructs a [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_email_template::CreateEmailTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_email_template::CreateEmailTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_email_template::CreateEmailTemplateInput {
-                email_template_request: self.email_template_request,
-                template_name: self.template_name,
-            },
+                email_template_request: self.email_template_request
+                ,
+                template_name: self.template_name
+                ,
+            }
         )
     }
 }
+

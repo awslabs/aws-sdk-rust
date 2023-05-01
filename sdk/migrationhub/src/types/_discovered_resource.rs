@@ -3,7 +3,7 @@
 /// <p>Object representing the on-premises resource being migrated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoveredResource {
+pub struct DiscoveredResource  {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
     #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DiscoveredResource {
 }
 impl DiscoveredResource {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
-    pub fn configuration_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_id(&self) -> std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
     pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`DiscoveredResource`](crate::types::DiscoveredResource).
     pub fn build(self) -> crate::types::DiscoveredResource {
         crate::types::DiscoveredResource {
-            configuration_id: self.configuration_id,
-            description: self.description,
+            configuration_id: self.configuration_id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

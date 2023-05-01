@@ -3,7 +3,7 @@
 /// <p>Provides details about the management of a security standard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StandardsManagedBy {
+pub struct StandardsManagedBy  {
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
     #[doc(hidden)]
     pub company: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct StandardsManagedBy {
 }
 impl StandardsManagedBy {
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-    pub fn company(&self) -> std::option::Option<&str> {
+    pub fn company(&self) -> std::option::Option<& str> {
         self.company.as_deref()
     }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> std::option::Option<& str> {
         self.product.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl StandardsManagedByBuilder {
     }
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
     pub fn set_company(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.company = input;
-        self
+        self.company = input; self
     }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
     pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl StandardsManagedByBuilder {
     }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
     pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// Consumes the builder and constructs a [`StandardsManagedBy`](crate::types::StandardsManagedBy).
     pub fn build(self) -> crate::types::StandardsManagedBy {
         crate::types::StandardsManagedBy {
-            company: self.company,
-            product: self.product,
+            company: self.company
+            ,
+            product: self.product
+            ,
         }
     }
 }
+

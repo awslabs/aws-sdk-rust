@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchContentInput {
+pub struct SearchContentInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct SearchContentInput {
 }
 impl SearchContentInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -26,11 +26,11 @@ impl SearchContentInput {
         self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The search expression to filter results.</p>
-    pub fn search_expression(&self) -> std::option::Option<&crate::types::SearchExpression> {
+    pub fn search_expression(&self) -> std::option::Option<& crate::types::SearchExpression> {
         self.search_expression.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl SearchContentInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +67,7 @@ impl SearchContentInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +75,8 @@ impl SearchContentInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.knowledge_base_id = input;
-        self
+    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.knowledge_base_id = input; self
     }
     /// <p>The search expression to filter results.</p>
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
@@ -90,25 +84,23 @@ impl SearchContentInputBuilder {
         self
     }
     /// <p>The search expression to filter results.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: std::option::Option<crate::types::SearchExpression>,
-    ) -> Self {
-        self.search_expression = input;
-        self
+    pub fn set_search_expression(mut self, input: std::option::Option<crate::types::SearchExpression>) -> Self {
+        self.search_expression = input; self
     }
     /// Consumes the builder and constructs a [`SearchContentInput`](crate::operation::search_content::SearchContentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_content::SearchContentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::search_content::SearchContentInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            knowledge_base_id: self.knowledge_base_id,
-            search_expression: self.search_expression,
-        })
+    pub fn build(self) -> Result<crate::operation::search_content::SearchContentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::search_content::SearchContentInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                search_expression: self.search_expression
+                ,
+            }
+        )
     }
 }
+

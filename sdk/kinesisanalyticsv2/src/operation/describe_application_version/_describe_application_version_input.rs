@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationVersionInput {
+pub struct DescribeApplicationVersionInput  {
     /// <p>The name of the application for which you want to get the version description.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeApplicationVersionInput {
 }
 impl DescribeApplicationVersionInput {
     /// <p>The name of the application for which you want to get the version description.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
@@ -22,7 +22,7 @@ impl DescribeApplicationVersionInput {
 }
 impl DescribeApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionInput`](crate::operation::describe_application_version::DescribeApplicationVersionInput).
-    pub fn builder() -> crate::operation::describe_application_version::builders::DescribeApplicationVersionInputBuilder{
+    pub fn builder() -> crate::operation::describe_application_version::builders::DescribeApplicationVersionInputBuilder {
         crate::operation::describe_application_version::builders::DescribeApplicationVersionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeApplicationVersionInputBuilder {
     }
     /// <p>The name of the application for which you want to get the version description.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
@@ -52,21 +51,18 @@ impl DescribeApplicationVersionInputBuilder {
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionInput`](crate::operation::describe_application_version::DescribeApplicationVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_application_version::DescribeApplicationVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_application_version::DescribeApplicationVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_application_version::DescribeApplicationVersionInput {
-                application_name: self.application_name,
-                application_version_id: self.application_version_id,
-            },
+                application_name: self.application_name
+                ,
+                application_version_id: self.application_version_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaCluster {
+pub struct KafkaCluster  {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
     #[doc(hidden)]
     pub apache_kafka_cluster: std::option::Option<crate::types::ApacheKafkaCluster>,
 }
 impl KafkaCluster {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(&self) -> std::option::Option<&crate::types::ApacheKafkaCluster> {
+    pub fn apache_kafka_cluster(&self) -> std::option::Option<& crate::types::ApacheKafkaCluster> {
         self.apache_kafka_cluster.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl KafkaClusterBuilder {
         self
     }
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn set_apache_kafka_cluster(
-        mut self,
-        input: std::option::Option<crate::types::ApacheKafkaCluster>,
-    ) -> Self {
-        self.apache_kafka_cluster = input;
-        self
+    pub fn set_apache_kafka_cluster(mut self, input: std::option::Option<crate::types::ApacheKafkaCluster>) -> Self {
+        self.apache_kafka_cluster = input; self
     }
     /// Consumes the builder and constructs a [`KafkaCluster`](crate::types::KafkaCluster).
     pub fn build(self) -> crate::types::KafkaCluster {
         crate::types::KafkaCluster {
-            apache_kafka_cluster: self.apache_kafka_cluster,
+            apache_kafka_cluster: self.apache_kafka_cluster
+            ,
         }
     }
 }
+

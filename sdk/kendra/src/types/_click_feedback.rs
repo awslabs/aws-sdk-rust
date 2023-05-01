@@ -3,7 +3,7 @@
 /// <p>Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> API to provide click information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClickFeedback {
+pub struct ClickFeedback  {
     /// <p>The identifier of the search result that was clicked.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ClickFeedback {
 }
 impl ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> std::option::Option<& str> {
         self.result_id.as_deref()
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn click_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn click_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.click_time.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ClickFeedbackBuilder {
     }
     /// <p>The identifier of the search result that was clicked.</p>
     pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn click_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -52,18 +51,17 @@ impl ClickFeedbackBuilder {
         self
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn set_click_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.click_time = input;
-        self
+    pub fn set_click_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.click_time = input; self
     }
     /// Consumes the builder and constructs a [`ClickFeedback`](crate::types::ClickFeedback).
     pub fn build(self) -> crate::types::ClickFeedback {
         crate::types::ClickFeedback {
-            result_id: self.result_id,
-            click_time: self.click_time,
+            result_id: self.result_id
+            ,
+            click_time: self.click_time
+            ,
         }
     }
 }
+

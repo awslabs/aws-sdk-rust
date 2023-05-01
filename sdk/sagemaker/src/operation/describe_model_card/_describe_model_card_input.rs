@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelCardInput {
+pub struct DescribeModelCardInput  {
     /// <p>The name of the model card to describe.</p>
     #[doc(hidden)]
     pub model_card_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeModelCardInput {
 }
 impl DescribeModelCardInput {
     /// <p>The name of the model card to describe.</p>
-    pub fn model_card_name(&self) -> std::option::Option<&str> {
+    pub fn model_card_name(&self) -> std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
@@ -22,8 +22,7 @@ impl DescribeModelCardInput {
 }
 impl DescribeModelCardInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
+    pub fn builder() -> crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
         crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeModelCardInputBuilder {
     }
     /// <p>The name of the model card to describe.</p>
     pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_card_name = input;
-        self
+        self.model_card_name = input; self
     }
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl DescribeModelCardInputBuilder {
     }
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.model_card_version = input;
-        self
+        self.model_card_version = input; self
     }
     /// Consumes the builder and constructs a [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_model_card::DescribeModelCardInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_model_card::DescribeModelCardInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_model_card::DescribeModelCardInput {
-                model_card_name: self.model_card_name,
-                model_card_version: self.model_card_version,
-            },
+                model_card_name: self.model_card_name
+                ,
+                model_card_version: self.model_card_version
+                ,
+            }
         )
     }
 }
+

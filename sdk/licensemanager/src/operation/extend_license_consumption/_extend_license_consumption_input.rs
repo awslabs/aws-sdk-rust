@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtendLicenseConsumptionInput {
+pub struct ExtendLicenseConsumptionInput  {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ExtendLicenseConsumptionInput {
 }
 impl ExtendLicenseConsumptionInput {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
@@ -22,9 +22,7 @@ impl ExtendLicenseConsumptionInput {
 }
 impl ExtendLicenseConsumptionInput {
     /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionInput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput).
-    pub fn builder(
-    ) -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder {
         crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl ExtendLicenseConsumptionInputBuilder {
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.license_consumption_token = input;
-        self
+    pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.license_consumption_token = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -57,21 +51,18 @@ impl ExtendLicenseConsumptionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`ExtendLicenseConsumptionInput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput {
-                license_consumption_token: self.license_consumption_token,
-                dry_run: self.dry_run,
-            },
+                license_consumption_token: self.license_consumption_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

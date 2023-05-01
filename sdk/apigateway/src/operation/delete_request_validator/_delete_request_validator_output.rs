@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRequestValidatorOutput {
+pub struct DeleteRequestValidatorOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteRequestValidatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRequestValidatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRequestValidatorOutput`](crate::operation::delete_request_validator::DeleteRequestValidatorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_request_validator::builders::DeleteRequestValidatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_request_validator::builders::DeleteRequestValidatorOutputBuilder {
         crate::operation::delete_request_validator::builders::DeleteRequestValidatorOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteRequestValidatorOutputBuilder {
 }
 impl DeleteRequestValidatorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRequestValidatorOutput`](crate::operation::delete_request_validator::DeleteRequestValidatorOutput).
     pub fn build(self) -> crate::operation::delete_request_validator::DeleteRequestValidatorOutput {
         crate::operation::delete_request_validator::DeleteRequestValidatorOutput {
@@ -42,3 +40,4 @@ impl DeleteRequestValidatorOutputBuilder {
         }
     }
 }
+

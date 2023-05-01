@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDefaultRetentionPolicyInput {
+pub struct GetDefaultRetentionPolicyInput  {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
 }
 impl GetDefaultRetentionPolicyInput {
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
 impl GetDefaultRetentionPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDefaultRetentionPolicyInput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput).
-    pub fn builder() -> crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder {
         crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl GetDefaultRetentionPolicyInputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// Consumes the builder and constructs a [`GetDefaultRetentionPolicyInput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput {
-                organization_id: self.organization_id,
-            },
+                organization_id: self.organization_id
+                ,
+            }
         )
     }
 }
+

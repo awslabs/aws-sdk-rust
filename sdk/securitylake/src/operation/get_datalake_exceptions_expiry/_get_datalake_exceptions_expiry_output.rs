@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeExceptionsExpiryOutput {
+pub struct GetDatalakeExceptionsExpiryOutput  {
     /// <p>The expiration period and time-to-live (TTL).</p>
     #[doc(hidden)]
     pub exception_message_expiry: std::option::Option<i64>,
@@ -15,13 +15,13 @@ impl GetDatalakeExceptionsExpiryOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetDatalakeExceptionsExpiryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDatalakeExceptionsExpiryOutput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsExpiryOutput`](crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryOutput).
-    pub fn builder() -> crate::operation::get_datalake_exceptions_expiry::builders::GetDatalakeExceptionsExpiryOutputBuilder{
+    pub fn builder() -> crate::operation::get_datalake_exceptions_expiry::builders::GetDatalakeExceptionsExpiryOutputBuilder {
         crate::operation::get_datalake_exceptions_expiry::builders::GetDatalakeExceptionsExpiryOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl GetDatalakeExceptionsExpiryOutputBuilder {
     }
     /// <p>The expiration period and time-to-live (TTL).</p>
     pub fn set_exception_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
-        self.exception_message_expiry = input;
-        self
+        self.exception_message_expiry = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDatalakeExceptionsExpiryOutput`](crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryOutput {
+    pub fn build(self) -> crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryOutput {
         crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryOutput {
-            exception_message_expiry: self.exception_message_expiry,
+            exception_message_expiry: self.exception_message_expiry
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

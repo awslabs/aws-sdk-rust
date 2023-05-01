@@ -3,7 +3,7 @@
 /// <p>Details for associating a license configuration with a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseSpecification {
+pub struct LicenseSpecification  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LicenseSpecification {
 }
 impl LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn ami_association_scope(&self) -> std::option::Option<&str> {
+    pub fn ami_association_scope(&self) -> std::option::Option<& str> {
         self.ami_association_scope.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl LicenseSpecificationBuilder {
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.license_configuration_arn = input;
-        self
+    pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.license_configuration_arn = input; self
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn ami_association_scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl LicenseSpecificationBuilder {
         self
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn set_ami_association_scope(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ami_association_scope = input;
-        self
+    pub fn set_ami_association_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ami_association_scope = input; self
     }
     /// Consumes the builder and constructs a [`LicenseSpecification`](crate::types::LicenseSpecification).
     pub fn build(self) -> crate::types::LicenseSpecification {
         crate::types::LicenseSpecification {
-            license_configuration_arn: self.license_configuration_arn,
-            ami_association_scope: self.ami_association_scope,
+            license_configuration_arn: self.license_configuration_arn
+            ,
+            ami_association_scope: self.ami_association_scope
+            ,
         }
     }
 }
+

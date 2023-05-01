@@ -3,14 +3,14 @@
 /// <p>The customer's details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParticipantDetails {
+pub struct ParticipantDetails  {
     /// <p>Display name of the participant.</p>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
 }
 impl ParticipantDetails {
     /// <p>Display name of the participant.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ParticipantDetailsBuilder {
     }
     /// <p>Display name of the participant.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// Consumes the builder and constructs a [`ParticipantDetails`](crate::types::ParticipantDetails).
     pub fn build(self) -> crate::types::ParticipantDetails {
         crate::types::ParticipantDetails {
-            display_name: self.display_name,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

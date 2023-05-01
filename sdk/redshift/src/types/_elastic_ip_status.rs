@@ -3,7 +3,7 @@
 /// <p>Describes the status of the elastic IP (EIP) address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticIpStatus {
+pub struct ElasticIpStatus  {
     /// <p>The elastic IP (EIP) address for the cluster.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ElasticIpStatus {
 }
 impl ElasticIpStatus {
     /// <p>The elastic IP (EIP) address for the cluster.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The status of the elastic IP (EIP) address.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ElasticIpStatusBuilder {
     }
     /// <p>The elastic IP (EIP) address for the cluster.</p>
     pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     /// <p>The status of the elastic IP (EIP) address.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ElasticIpStatusBuilder {
     }
     /// <p>The status of the elastic IP (EIP) address.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ElasticIpStatus`](crate::types::ElasticIpStatus).
     pub fn build(self) -> crate::types::ElasticIpStatus {
         crate::types::ElasticIpStatus {
-            elastic_ip: self.elastic_ip,
-            status: self.status,
+            elastic_ip: self.elastic_ip
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

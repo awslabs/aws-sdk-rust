@@ -4,68 +4,50 @@ pub use crate::operation::create_function::_create_function_output::CreateFuncti
 pub use crate::operation::create_function::_create_function_input::CreateFunctionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateFunction`.
-///
-/// <p>Creates a <code>Function</code> object.</p>
+/// 
+/// <p>Creates a <code>Function</code> object.</p> 
 /// <p>A function is a reusable entity. You can use multiple functions to compose the resolver logic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFunctionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_function::builders::CreateFunctionInputBuilder,
-}
-impl CreateFunctionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_function::builders::CreateFunctionInputBuilder
+            }
+impl CreateFunctionFluentBuilder  {
     /// Creates a new `CreateFunction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_function::CreateFunction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_function::CreateFunctionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_function::CreateFunction, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_function::CreateFunctionOutput, aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The GraphQL API ID.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -112,10 +94,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn set_request_mapping_template(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_request_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_request_mapping_template(input);
         self
     }
@@ -125,10 +104,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn set_response_mapping_template(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_response_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_response_mapping_template(input);
         self
     }
@@ -142,13 +118,13 @@ impl CreateFunctionFluentBuilder {
         self.inner = self.inner.set_function_version(input);
         self
     }
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub fn sync_config(mut self, input: crate::types::SyncConfig) -> Self {
         self.inner = self.inner.sync_config(input);
         self
     }
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub fn set_sync_config(mut self, input: std::option::Option<crate::types::SyncConfig>) -> Self {
         self.inner = self.inner.set_sync_config(input);
@@ -185,3 +161,4 @@ impl CreateFunctionFluentBuilder {
         self
     }
 }
+

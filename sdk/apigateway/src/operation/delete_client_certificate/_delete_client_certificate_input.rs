@@ -3,22 +3,20 @@
 /// <p>A request to delete the ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClientCertificateInput {
+pub struct DeleteClientCertificateInput  {
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
     #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
-    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn client_certificate_id(&self) -> std::option::Option<& str> {
         self.client_certificate_id.as_deref()
     }
 }
 impl DeleteClientCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteClientCertificateInput`](crate::operation::delete_client_certificate::DeleteClientCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_client_certificate::builders::DeleteClientCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_client_certificate::builders::DeleteClientCertificateInputBuilder {
         crate::operation::delete_client_certificate::builders::DeleteClientCertificateInputBuilder::default()
     }
 }
@@ -36,24 +34,17 @@ impl DeleteClientCertificateInputBuilder {
         self
     }
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_certificate_id = input;
-        self
+    pub fn set_client_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_certificate_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteClientCertificateInput`](crate::operation::delete_client_certificate::DeleteClientCertificateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_client_certificate::DeleteClientCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_client_certificate::DeleteClientCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_client_certificate::DeleteClientCertificateInput {
-                client_certificate_id: self.client_certificate_id,
-            },
+                client_certificate_id: self.client_certificate_id
+                ,
+            }
         )
     }
 }
+

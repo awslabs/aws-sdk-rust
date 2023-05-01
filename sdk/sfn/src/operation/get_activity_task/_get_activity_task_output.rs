@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetActivityTaskOutput {
+pub struct GetActivityTaskOutput  {
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct GetActivityTaskOutput {
 }
 impl GetActivityTaskOutput {
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
 }
-impl std::fmt::Debug for GetActivityTaskOutput {
+impl  std::fmt::Debug for GetActivityTaskOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActivityTaskOutput");
         formatter.field("task_token", &self.task_token);
@@ -31,14 +31,13 @@ impl std::fmt::Debug for GetActivityTaskOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetActivityTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetActivityTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetActivityTaskOutput`](crate::operation::get_activity_task::GetActivityTaskOutput).
-    pub fn builder() -> crate::operation::get_activity_task::builders::GetActivityTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_activity_task::builders::GetActivityTaskOutputBuilder {
         crate::operation::get_activity_task::builders::GetActivityTaskOutputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl GetActivityTaskOutputBuilder {
     }
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_token = input;
-        self
+        self.task_token = input; self
     }
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,23 +67,24 @@ impl GetActivityTaskOutputBuilder {
     }
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetActivityTaskOutput`](crate::operation::get_activity_task::GetActivityTaskOutput).
     pub fn build(self) -> crate::operation::get_activity_task::GetActivityTaskOutput {
         crate::operation::get_activity_task::GetActivityTaskOutput {
-            task_token: self.task_token,
-            input: self.input,
+            task_token: self.task_token
+            ,
+            input: self.input
+            ,
             _request_id: self._request_id,
         }
     }
@@ -99,3 +98,4 @@ impl std::fmt::Debug for GetActivityTaskOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceLocationInput {
+pub struct DescribeSourceLocationInput  {
     /// <p>The name of the source location.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl DescribeSourceLocationInput {
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
 }
 impl DescribeSourceLocationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_location::builders::DescribeSourceLocationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_location::builders::DescribeSourceLocationInputBuilder {
         crate::operation::describe_source_location::builders::DescribeSourceLocationInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DescribeSourceLocationInputBuilder {
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_location_name = input;
-        self
+    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_location_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_source_location::DescribeSourceLocationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_source_location::DescribeSourceLocationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_source_location::DescribeSourceLocationInput {
-                source_location_name: self.source_location_name,
-            },
+                source_location_name: self.source_location_name
+                ,
+            }
         )
     }
 }
+

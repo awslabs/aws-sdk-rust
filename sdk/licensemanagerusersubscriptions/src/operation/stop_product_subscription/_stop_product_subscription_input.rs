@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopProductSubscriptionInput {
+pub struct StopProductSubscriptionInput  {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct StopProductSubscriptionInput {
 }
 impl StopProductSubscriptionInput {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> std::option::Option<& str> {
         self.product.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
 impl StopProductSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`StopProductSubscriptionInput`](crate::operation::stop_product_subscription::StopProductSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder {
         crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl StopProductSubscriptionInputBuilder {
     }
     /// <p>The user name from the identity provider for the user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -69,12 +66,8 @@ impl StopProductSubscriptionInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
-        self.identity_provider = input;
-        self
+    pub fn set_identity_provider(mut self, input: std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input; self
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +76,7 @@ impl StopProductSubscriptionInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,23 +85,22 @@ impl StopProductSubscriptionInputBuilder {
     }
     /// <p>The domain name of the user.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// Consumes the builder and constructs a [`StopProductSubscriptionInput`](crate::operation::stop_product_subscription::StopProductSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_product_subscription::StopProductSubscriptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_product_subscription::StopProductSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_product_subscription::StopProductSubscriptionInput {
-                username: self.username,
-                identity_provider: self.identity_provider,
-                product: self.product,
-                domain: self.domain,
-            },
+                username: self.username
+                ,
+                identity_provider: self.identity_provider
+                ,
+                product: self.product
+                ,
+                domain: self.domain
+                ,
+            }
         )
     }
 }
+

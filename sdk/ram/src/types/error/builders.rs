@@ -31,7 +31,11 @@ pub use crate::types::error::_resource_share_invitation_already_rejected_excepti
 
 pub use crate::types::error::_resource_share_invitation_already_accepted_exception::ResourceShareInvitationAlreadyAcceptedExceptionBuilder;
 
+pub use crate::types::error::_unmatched_policy_permission_exception::UnmatchedPolicyPermissionExceptionBuilder;
+
 pub use crate::types::error::_resource_share_limit_exceeded_exception::ResourceShareLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionExceptionBuilder;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
@@ -39,6 +43,15 @@ pub use crate::types::error::_invalid_resource_type_exception::InvalidResourceTy
 
 pub use crate::types::error::_invalid_max_results_exception::InvalidMaxResultsExceptionBuilder;
 
-pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionExceptionBuilder;
+pub use crate::types::error::_permission_versions_limit_exceeded_exception::PermissionVersionsLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_malformed_policy_template_exception::MalformedPolicyTemplateExceptionBuilder;
+
+pub use crate::types::error::_invalid_policy_exception::InvalidPolicyExceptionBuilder;
+
+pub use crate::types::error::_permission_limit_exceeded_exception::PermissionLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_permission_already_exists_exception::PermissionAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+

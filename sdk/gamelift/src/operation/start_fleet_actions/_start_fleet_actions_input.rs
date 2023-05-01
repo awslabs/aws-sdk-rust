@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFleetActionsInput {
+pub struct StartFleetActionsInput  {
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct StartFleetActionsInput {
 }
 impl StartFleetActionsInput {
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::FleetAction]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::types::FleetAction]> {
         self.actions.as_deref()
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 impl StartFleetActionsInput {
     /// Creates a new builder-style object to manufacture [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
-    pub fn builder(
-    ) -> crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder {
+    pub fn builder() -> crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder {
         crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl StartFleetActionsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// Appends an item to `actions`.
     ///
@@ -61,17 +59,13 @@ impl StartFleetActionsInputBuilder {
     /// <p>List of actions to restart on the fleet.</p>
     pub fn actions(mut self, input: crate::types::FleetAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = Some(v);
-        self
+                        v.push(input);
+                        self.actions = Some(v);
+                        self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn set_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FleetAction>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FleetAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,22 +74,20 @@ impl StartFleetActionsInputBuilder {
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// Consumes the builder and constructs a [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_fleet_actions::StartFleetActionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_fleet_actions::StartFleetActionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_fleet_actions::StartFleetActionsInput {
-                fleet_id: self.fleet_id,
-                actions: self.actions,
-                location: self.location,
-            },
+                fleet_id: self.fleet_id
+                ,
+                actions: self.actions
+                ,
+                location: self.location
+                ,
+            }
         )
     }
 }
+

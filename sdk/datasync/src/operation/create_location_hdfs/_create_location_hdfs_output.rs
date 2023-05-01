@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationHdfsOutput {
+pub struct CreateLocationHdfsOutput  {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct CreateLocationHdfsOutput {
 }
 impl CreateLocationHdfsOutput {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLocationHdfsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLocationHdfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationHdfsOutput`](crate::operation::create_location_hdfs::CreateLocationHdfsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsOutputBuilder {
+    pub fn builder() -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsOutputBuilder {
         crate::operation::create_location_hdfs::builders::CreateLocationHdfsOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl CreateLocationHdfsOutputBuilder {
     }
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLocationHdfsOutput`](crate::operation::create_location_hdfs::CreateLocationHdfsOutput).
     pub fn build(self) -> crate::operation::create_location_hdfs::CreateLocationHdfsOutput {
         crate::operation::create_location_hdfs::CreateLocationHdfsOutput {
-            location_arn: self.location_arn,
+            location_arn: self.location_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

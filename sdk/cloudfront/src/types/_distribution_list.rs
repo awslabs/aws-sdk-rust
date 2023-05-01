@@ -3,7 +3,7 @@
 /// <p>A distribution list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributionList {
+pub struct DistributionList  {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct DistributionList {
 }
 impl DistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your distributions where they left off.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
@@ -45,7 +45,7 @@ impl DistributionList {
         self.quantity
     }
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::DistributionSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::DistributionSummary]> {
         self.items.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl DistributionListBuilder {
     }
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your distributions where they left off.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl DistributionListBuilder {
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your distributions where they left off.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -95,8 +93,7 @@ impl DistributionListBuilder {
     }
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -105,8 +102,7 @@ impl DistributionListBuilder {
     }
     /// <p>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -115,8 +111,7 @@ impl DistributionListBuilder {
     }
     /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -125,27 +120,30 @@ impl DistributionListBuilder {
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
     pub fn items(mut self, input: crate::types::DistributionSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DistributionSummary>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::DistributionSummary>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`DistributionList`](crate::types::DistributionList).
     pub fn build(self) -> crate::types::DistributionList {
         crate::types::DistributionList {
-            marker: self.marker,
-            next_marker: self.next_marker,
-            max_items: self.max_items,
-            is_truncated: self.is_truncated,
-            quantity: self.quantity,
-            items: self.items,
+            marker: self.marker
+            ,
+            next_marker: self.next_marker
+            ,
+            max_items: self.max_items
+            ,
+            is_truncated: self.is_truncated
+            ,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

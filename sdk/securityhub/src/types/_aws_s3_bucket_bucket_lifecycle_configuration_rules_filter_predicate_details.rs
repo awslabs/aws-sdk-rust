@@ -19,29 +19,25 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails  {
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
     /// <p>The values to use for the filter.</p>
-    pub fn operands(&self) -> std::option::Option<& [crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails]>{
+    pub fn operands(&self) -> std::option::Option<& [crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails]> {
         self.operands.as_deref()
     }
     /// <p>A prefix filter.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A tag filter.</p>
-    pub fn tag(
-        &self,
-    ) -> std::option::Option<
-        &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails,
-    > {
+    pub fn tag(&self) -> std::option::Option<& crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails> {
         self.tag.as_ref()
     }
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder::default()
     }
 }
@@ -61,22 +57,15 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     /// To override the contents of this collection use [`set_operands`](Self::set_operands).
     ///
     /// <p>The values to use for the filter.</p>
-    pub fn operands(
-        mut self,
-        input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails,
-    ) -> Self {
+    pub fn operands(mut self, input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails) -> Self {
         let mut v = self.operands.unwrap_or_default();
-        v.push(input);
-        self.operands = Some(v);
-        self
+                        v.push(input);
+                        self.operands = Some(v);
+                        self
     }
     /// <p>The values to use for the filter.</p>
-    pub fn set_operands(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
-    ) -> Self {
-        self.operands = input;
-        self
+    pub fn set_operands(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>) -> Self {
+        self.operands = input; self
     }
     /// <p>A prefix filter.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,26 +74,16 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     }
     /// <p>A prefix filter.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>A tag filter.</p>
-    pub fn tag(
-        mut self,
-        input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails,
-    ) -> Self {
+    pub fn tag(mut self, input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails) -> Self {
         self.tag = Some(input);
         self
     }
     /// <p>A tag filter.</p>
-    pub fn set_tag(
-        mut self,
-        input: std::option::Option<
-            crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails,
-        >,
-    ) -> Self {
-        self.tag = input;
-        self
+    pub fn set_tag(mut self, input: std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>) -> Self {
+        self.tag = input; self
     }
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,18 +92,20 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     }
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
-            operands: self.operands,
-            prefix: self.prefix,
-            tag: self.tag,
-            r#type: self.r#type,
+            operands: self.operands
+            ,
+            prefix: self.prefix
+            ,
+            tag: self.tag
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

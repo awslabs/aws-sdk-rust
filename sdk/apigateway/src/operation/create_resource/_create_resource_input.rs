@@ -3,7 +3,7 @@
 /// <p>Requests API Gateway to create a Resource resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceInput {
+pub struct CreateResourceInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CreateResourceInput {
 }
 impl CreateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn parent_id(&self) -> std::option::Option<&str> {
+    pub fn parent_id(&self) -> std::option::Option<& str> {
         self.parent_id.as_deref()
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn path_part(&self) -> std::option::Option<&str> {
+    pub fn path_part(&self) -> std::option::Option<& str> {
         self.path_part.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CreateResourceInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The parent resource's identifier.</p>
     pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CreateResourceInputBuilder {
     }
     /// <p>The parent resource's identifier.</p>
     pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_id = input;
-        self
+        self.parent_id = input; self
     }
     /// <p>The last path segment for this resource.</p>
     pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,20 +69,20 @@ impl CreateResourceInputBuilder {
     }
     /// <p>The last path segment for this resource.</p>
     pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path_part = input;
-        self
+        self.path_part = input; self
     }
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_resource::CreateResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_resource::CreateResourceInput {
-            rest_api_id: self.rest_api_id,
-            parent_id: self.parent_id,
-            path_part: self.path_part,
-        })
+    pub fn build(self) -> Result<crate::operation::create_resource::CreateResourceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_resource::CreateResourceInput {
+                rest_api_id: self.rest_api_id
+                ,
+                parent_id: self.parent_id
+                ,
+                path_part: self.path_part
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DeleteSpotDatafeedSubscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSpotDatafeedSubscriptionInput {
+pub struct DeleteSpotDatafeedSubscriptionInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl DeleteSpotDatafeedSubscriptionInput {
 }
 impl DeleteSpotDatafeedSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSpotDatafeedSubscriptionInput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder {
         crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder::default()
     }
 }
@@ -35,16 +35,10 @@ impl DeleteSpotDatafeedSubscriptionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSpotDatafeedSubscriptionInput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput {
                 dry_run: self.dry_run
@@ -53,3 +47,4 @@ impl DeleteSpotDatafeedSubscriptionInputBuilder {
         )
     }
 }
+

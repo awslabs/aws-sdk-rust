@@ -3,7 +3,7 @@
 /// <p>The response from the server when Amazon Cognito makes the request to resend a confirmation code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResendConfirmationCodeOutput {
+pub struct ResendConfirmationCodeOutput  {
     /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
     #[doc(hidden)]
     pub code_delivery_details: std::option::Option<crate::types::CodeDeliveryDetailsType>,
@@ -11,22 +11,18 @@ pub struct ResendConfirmationCodeOutput {
 }
 impl ResendConfirmationCodeOutput {
     /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
-    pub fn code_delivery_details(
-        &self,
-    ) -> std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    pub fn code_delivery_details(&self) -> std::option::Option<& crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ResendConfirmationCodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResendConfirmationCodeOutput {
     /// Creates a new builder-style object to manufacture [`ResendConfirmationCodeOutput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeOutputBuilder {
         crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeOutputBuilder::default()
     }
 }
@@ -45,27 +41,25 @@ impl ResendConfirmationCodeOutputBuilder {
         self
     }
     /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
-    pub fn set_code_delivery_details(
-        mut self,
-        input: std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    ) -> Self {
-        self.code_delivery_details = input;
-        self
+    pub fn set_code_delivery_details(mut self, input: std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
+        self.code_delivery_details = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResendConfirmationCodeOutput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput).
     pub fn build(self) -> crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput {
         crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput {
-            code_delivery_details: self.code_delivery_details,
+            code_delivery_details: self.code_delivery_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

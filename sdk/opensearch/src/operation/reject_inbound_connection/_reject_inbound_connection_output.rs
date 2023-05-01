@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>RejectInboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectInboundConnectionOutput {
+pub struct RejectInboundConnectionOutput  {
     /// <p>Contains details about the rejected inbound connection.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::types::InboundConnection>,
@@ -11,20 +11,18 @@ pub struct RejectInboundConnectionOutput {
 }
 impl RejectInboundConnectionOutput {
     /// <p>Contains details about the rejected inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::types::InboundConnection> {
+    pub fn connection(&self) -> std::option::Option<& crate::types::InboundConnection> {
         self.connection.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RejectInboundConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RejectInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder {
         crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder::default()
     }
 }
@@ -43,29 +41,25 @@ impl RejectInboundConnectionOutputBuilder {
         self
     }
     /// <p>Contains details about the rejected inbound connection.</p>
-    pub fn set_connection(
-        mut self,
-        input: std::option::Option<crate::types::InboundConnection>,
-    ) -> Self {
-        self.connection = input;
-        self
+    pub fn set_connection(mut self, input: std::option::Option<crate::types::InboundConnection>) -> Self {
+        self.connection = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reject_inbound_connection::RejectInboundConnectionOutput {
+    pub fn build(self) -> crate::operation::reject_inbound_connection::RejectInboundConnectionOutput {
         crate::operation::reject_inbound_connection::RejectInboundConnectionOutput {
-            connection: self.connection,
+            connection: self.connection
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

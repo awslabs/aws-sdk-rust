@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntrospectionSchemaOutput {
-    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
+pub struct GetIntrospectionSchemaOutput  {
+    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> 
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetIntrospectionSchemaOutput {
-    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
+    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> 
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
-    pub fn schema(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn schema(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.schema.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetIntrospectionSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetIntrospectionSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetIntrospectionSchemaOutput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput).
-    pub fn builder(
-    ) -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder {
         crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder::default()
     }
 }
@@ -38,32 +36,33 @@ pub struct GetIntrospectionSchemaOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetIntrospectionSchemaOutputBuilder {
-    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
+    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> 
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn schema(mut self, input: aws_smithy_types::Blob) -> Self {
         self.schema = Some(input);
         self
     }
-    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
+    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> 
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn set_schema(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetIntrospectionSchemaOutput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput).
     pub fn build(self) -> crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput {
         crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput {
-            schema: self.schema,
+            schema: self.schema
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

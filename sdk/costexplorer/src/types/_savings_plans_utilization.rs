@@ -3,7 +3,7 @@
 /// <p>The measurement of how well you're using your existing Savings Plans.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlansUtilization {
+pub struct SavingsPlansUtilization  {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
     #[doc(hidden)]
     pub total_commitment: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SavingsPlansUtilization {
 }
 impl SavingsPlansUtilization {
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
-    pub fn total_commitment(&self) -> std::option::Option<&str> {
+    pub fn total_commitment(&self) -> std::option::Option<& str> {
         self.total_commitment.as_deref()
     }
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
-    pub fn used_commitment(&self) -> std::option::Option<&str> {
+    pub fn used_commitment(&self) -> std::option::Option<& str> {
         self.used_commitment.as_deref()
     }
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
-    pub fn unused_commitment(&self) -> std::option::Option<&str> {
+    pub fn unused_commitment(&self) -> std::option::Option<& str> {
         self.unused_commitment.as_deref()
     }
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
-    pub fn utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn utilization_percentage(&self) -> std::option::Option<& str> {
         self.utilization_percentage.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl SavingsPlansUtilizationBuilder {
     }
     /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or set of accounts).</p>
     pub fn set_total_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.total_commitment = input;
-        self
+        self.total_commitment = input; self
     }
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
     pub fn used_commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl SavingsPlansUtilizationBuilder {
     }
     /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific period.</p>
     pub fn set_used_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.used_commitment = input;
-        self
+        self.used_commitment = input; self
     }
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
     pub fn unused_commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +76,8 @@ impl SavingsPlansUtilizationBuilder {
         self
     }
     /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans eligible usage in a specific period.</p>
-    pub fn set_unused_commitment(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.unused_commitment = input;
-        self
+    pub fn set_unused_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.unused_commitment = input; self
     }
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
     pub fn utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,20 +85,21 @@ impl SavingsPlansUtilizationBuilder {
         self
     }
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code> for your Savings Plans.</p>
-    pub fn set_utilization_percentage(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.utilization_percentage = input;
-        self
+    pub fn set_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.utilization_percentage = input; self
     }
     /// Consumes the builder and constructs a [`SavingsPlansUtilization`](crate::types::SavingsPlansUtilization).
     pub fn build(self) -> crate::types::SavingsPlansUtilization {
         crate::types::SavingsPlansUtilization {
-            total_commitment: self.total_commitment,
-            used_commitment: self.used_commitment,
-            unused_commitment: self.unused_commitment,
-            utilization_percentage: self.utilization_percentage,
+            total_commitment: self.total_commitment
+            ,
+            used_commitment: self.used_commitment
+            ,
+            unused_commitment: self.unused_commitment
+            ,
+            utilization_percentage: self.utilization_percentage
+            ,
         }
     }
 }
+

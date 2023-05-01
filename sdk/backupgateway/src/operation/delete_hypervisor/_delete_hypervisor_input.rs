@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHypervisorInput {
+pub struct DeleteHypervisorInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 impl DeleteHypervisorInput {
     /// Creates a new builder-style object to manufacture [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
-    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder {
         crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl DeleteHypervisorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_hypervisor::DeleteHypervisorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_hypervisor::DeleteHypervisorInput {
-            hypervisor_arn: self.hypervisor_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_hypervisor::DeleteHypervisorInput {
+                hypervisor_arn: self.hypervisor_arn
+                ,
+            }
+        )
     }
 }
+

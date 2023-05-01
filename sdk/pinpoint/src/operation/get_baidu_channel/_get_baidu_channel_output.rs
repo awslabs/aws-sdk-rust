@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBaiduChannelOutput {
+pub struct GetBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::types::BaiduChannelResponse>,
@@ -10,21 +10,18 @@ pub struct GetBaiduChannelOutput {
 }
 impl GetBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn baidu_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::types::BaiduChannelResponse> {
+    pub fn baidu_channel_response(&self) -> std::option::Option<& crate::types::BaiduChannelResponse> {
         self.baidu_channel_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetBaiduChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBaiduChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetBaiduChannelOutput`](crate::operation::get_baidu_channel::GetBaiduChannelOutput).
-    pub fn builder() -> crate::operation::get_baidu_channel::builders::GetBaiduChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_baidu_channel::builders::GetBaiduChannelOutputBuilder {
         crate::operation::get_baidu_channel::builders::GetBaiduChannelOutputBuilder::default()
     }
 }
@@ -43,27 +40,25 @@ impl GetBaiduChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn set_baidu_channel_response(
-        mut self,
-        input: std::option::Option<crate::types::BaiduChannelResponse>,
-    ) -> Self {
-        self.baidu_channel_response = input;
-        self
+    pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::types::BaiduChannelResponse>) -> Self {
+        self.baidu_channel_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBaiduChannelOutput`](crate::operation::get_baidu_channel::GetBaiduChannelOutput).
     pub fn build(self) -> crate::operation::get_baidu_channel::GetBaiduChannelOutput {
         crate::operation::get_baidu_channel::GetBaiduChannelOutput {
-            baidu_channel_response: self.baidu_channel_response,
+            baidu_channel_response: self.baidu_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

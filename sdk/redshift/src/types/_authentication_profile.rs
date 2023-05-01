@@ -3,7 +3,7 @@
 /// <p>Describes an authentication profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationProfile {
+pub struct AuthenticationProfile  {
     /// <p>The name of the authentication profile.</p>
     #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AuthenticationProfile {
 }
 impl AuthenticationProfile {
     /// <p>The name of the authentication profile.</p>
-    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+    pub fn authentication_profile_content(&self) -> std::option::Option<& str> {
         self.authentication_profile_content.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl AuthenticationProfileBuilder {
         self
     }
     /// <p>The name of the authentication profile.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_profile_name = input;
-        self
+    pub fn set_authentication_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_profile_name = input; self
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn authentication_profile_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl AuthenticationProfileBuilder {
         self
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn set_authentication_profile_content(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_profile_content = input;
-        self
+    pub fn set_authentication_profile_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_profile_content = input; self
     }
     /// Consumes the builder and constructs a [`AuthenticationProfile`](crate::types::AuthenticationProfile).
     pub fn build(self) -> crate::types::AuthenticationProfile {
         crate::types::AuthenticationProfile {
-            authentication_profile_name: self.authentication_profile_name,
-            authentication_profile_content: self.authentication_profile_content,
+            authentication_profile_name: self.authentication_profile_name
+            ,
+            authentication_profile_content: self.authentication_profile_content
+            ,
         }
     }
 }
+

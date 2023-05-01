@@ -3,7 +3,7 @@
 /// <p>Provides information about sorting a list of exports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSortBy {
+pub struct ExportSortBy  {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::ExportSortAttribute>,
@@ -13,11 +13,11 @@ pub struct ExportSortBy {
 }
 impl ExportSortBy {
     /// <p>The export field to use for sorting.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::ExportSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::ExportSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list.</p>
-    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ExportSortByBuilder {
         self
     }
     /// <p>The export field to use for sorting.</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::ExportSortAttribute>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::ExportSortAttribute>) -> Self {
+        self.attribute = input; self
     }
     /// <p>The order to sort the list.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -56,14 +52,16 @@ impl ExportSortByBuilder {
     }
     /// <p>The order to sort the list.</p>
     pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// Consumes the builder and constructs a [`ExportSortBy`](crate::types::ExportSortBy).
     pub fn build(self) -> crate::types::ExportSortBy {
         crate::types::ExportSortBy {
-            attribute: self.attribute,
-            order: self.order,
+            attribute: self.attribute
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

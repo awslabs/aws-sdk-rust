@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCapacityReservationFleetsOutput {
+pub struct DescribeCapacityReservationFleetsOutput  {
     /// <p>Information about the Capacity Reservation Fleets.</p>
     #[doc(hidden)]
-    pub capacity_reservation_fleets:
-        std::option::Option<std::vec::Vec<crate::types::CapacityReservationFleet>>,
+    pub capacity_reservation_fleets: std::option::Option<std::vec::Vec<crate::types::CapacityReservationFleet>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeCapacityReservationFleetsOutput {
 }
 impl DescribeCapacityReservationFleetsOutput {
     /// <p>Information about the Capacity Reservation Fleets.</p>
-    pub fn capacity_reservation_fleets(
-        &self,
-    ) -> std::option::Option<&[crate::types::CapacityReservationFleet]> {
+    pub fn capacity_reservation_fleets(&self) -> std::option::Option<& [crate::types::CapacityReservationFleet]> {
         self.capacity_reservation_fleets.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCapacityReservationFleetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCapacityReservationFleetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityReservationFleetsOutput`](crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput).
-    pub fn builder() -> crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsOutputBuilder {
         crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeCapacityReservationFleetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCapacityReservationFleetsOutputBuilder {
-    pub(crate) capacity_reservation_fleets:
-        std::option::Option<std::vec::Vec<crate::types::CapacityReservationFleet>>,
+    pub(crate) capacity_reservation_fleets: std::option::Option<std::vec::Vec<crate::types::CapacityReservationFleet>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl DescribeCapacityReservationFleetsOutputBuilder {
     /// To override the contents of this collection use [`set_capacity_reservation_fleets`](Self::set_capacity_reservation_fleets).
     ///
     /// <p>Information about the Capacity Reservation Fleets.</p>
-    pub fn capacity_reservation_fleets(
-        mut self,
-        input: crate::types::CapacityReservationFleet,
-    ) -> Self {
+    pub fn capacity_reservation_fleets(mut self, input: crate::types::CapacityReservationFleet) -> Self {
         let mut v = self.capacity_reservation_fleets.unwrap_or_default();
-        v.push(input);
-        self.capacity_reservation_fleets = Some(v);
-        self
+                        v.push(input);
+                        self.capacity_reservation_fleets = Some(v);
+                        self
     }
     /// <p>Information about the Capacity Reservation Fleets.</p>
-    pub fn set_capacity_reservation_fleets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CapacityReservationFleet>>,
-    ) -> Self {
-        self.capacity_reservation_fleets = input;
-        self
+    pub fn set_capacity_reservation_fleets(mut self, input: std::option::Option<std::vec::Vec<crate::types::CapacityReservationFleet>>) -> Self {
+        self.capacity_reservation_fleets = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl DescribeCapacityReservationFleetsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCapacityReservationFleetsOutput`](crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput).
-    pub fn build(self) -> crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput{
+    pub fn build(self) -> crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput {
         crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput {
             capacity_reservation_fleets: self.capacity_reservation_fleets
             ,
@@ -98,3 +86,4 @@ impl DescribeCapacityReservationFleetsOutputBuilder {
         }
     }
 }
+

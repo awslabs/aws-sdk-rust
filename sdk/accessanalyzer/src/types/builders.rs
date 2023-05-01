@@ -100,3 +100,4 @@ pub use crate::types::_iam_role_configuration::IamRoleConfigurationBuilder;
 pub use crate::types::_ecr_repository_configuration::EcrRepositoryConfigurationBuilder;
 
 pub use crate::types::_ebs_snapshot_configuration::EbsSnapshotConfigurationBuilder;
+

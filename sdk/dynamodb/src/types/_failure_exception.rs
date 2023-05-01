@@ -3,7 +3,7 @@
 /// <p>Represents a failure a contributor insights operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureException {
+pub struct FailureException  {
     /// <p>Exception name.</p>
     #[doc(hidden)]
     pub exception_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FailureException {
 }
 impl FailureException {
     /// <p>Exception name.</p>
-    pub fn exception_name(&self) -> std::option::Option<&str> {
+    pub fn exception_name(&self) -> std::option::Option<& str> {
         self.exception_name.as_deref()
     }
     /// <p>Description of the failure.</p>
-    pub fn exception_description(&self) -> std::option::Option<&str> {
+    pub fn exception_description(&self) -> std::option::Option<& str> {
         self.exception_description.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FailureExceptionBuilder {
     }
     /// <p>Exception name.</p>
     pub fn set_exception_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.exception_name = input;
-        self
+        self.exception_name = input; self
     }
     /// <p>Description of the failure.</p>
     pub fn exception_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl FailureExceptionBuilder {
         self
     }
     /// <p>Description of the failure.</p>
-    pub fn set_exception_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.exception_description = input;
-        self
+    pub fn set_exception_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.exception_description = input; self
     }
     /// Consumes the builder and constructs a [`FailureException`](crate::types::FailureException).
     pub fn build(self) -> crate::types::FailureException {
         crate::types::FailureException {
-            exception_name: self.exception_name,
-            exception_description: self.exception_description,
+            exception_name: self.exception_name
+            ,
+            exception_description: self.exception_description
+            ,
         }
     }
 }
+

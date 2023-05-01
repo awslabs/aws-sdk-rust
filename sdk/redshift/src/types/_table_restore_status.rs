@@ -3,11 +3,11 @@
 /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableRestoreStatus {
+pub struct TableRestoreStatus  {
     /// <p>The unique identifier for the table restore request.</p>
     #[doc(hidden)]
     pub table_restore_request_id: std::option::Option<std::string::String>,
-    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>A value that describes the current state of the table restore request.</p> 
     /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::TableRestoreStatusType>,
@@ -50,20 +50,20 @@ pub struct TableRestoreStatus {
 }
 impl TableRestoreStatus {
     /// <p>The unique identifier for the table restore request.</p>
-    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+    pub fn table_restore_request_id(&self) -> std::option::Option<& str> {
         self.table_restore_request_id.as_deref()
     }
-    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>A value that describes the current state of the table restore request.</p> 
     /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TableRestoreStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TableRestoreStatusType> {
         self.status.as_ref()
     }
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
@@ -75,35 +75,35 @@ impl TableRestoreStatus {
         self.total_data_in_mega_bytes
     }
     /// <p>The identifier of the Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the snapshot that the table is being restored from.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The name of the source database that contains the table being restored.</p>
-    pub fn source_database_name(&self) -> std::option::Option<&str> {
+    pub fn source_database_name(&self) -> std::option::Option<& str> {
         self.source_database_name.as_deref()
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
-    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+    pub fn source_schema_name(&self) -> std::option::Option<& str> {
         self.source_schema_name.as_deref()
     }
     /// <p>The name of the source table being restored.</p>
-    pub fn source_table_name(&self) -> std::option::Option<&str> {
+    pub fn source_table_name(&self) -> std::option::Option<& str> {
         self.source_table_name.as_deref()
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn target_database_name(&self) -> std::option::Option<&str> {
+    pub fn target_database_name(&self) -> std::option::Option<& str> {
         self.target_database_name.as_deref()
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+    pub fn target_schema_name(&self) -> std::option::Option<& str> {
         self.target_schema_name.as_deref()
     }
     /// <p>The name of the table to create as a result of the table restore request.</p>
-    pub fn new_table_name(&self) -> std::option::Option<&str> {
+    pub fn new_table_name(&self) -> std::option::Option<& str> {
         self.new_table_name.as_deref()
     }
 }
@@ -140,27 +140,19 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The unique identifier for the table restore request.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.table_restore_request_id = input;
-        self
+    pub fn set_table_restore_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.table_restore_request_id = input; self
     }
-    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>A value that describes the current state of the table restore request.</p> 
     /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
     pub fn status(mut self, input: crate::types::TableRestoreStatusType) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>A value that describes the current state of the table restore request.</p> 
     /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TableRestoreStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TableRestoreStatusType>) -> Self {
+        self.status = input; self
     }
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +161,7 @@ impl TableRestoreStatusBuilder {
     }
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
     pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -178,12 +169,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-    pub fn set_request_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.request_time = input;
-        self
+    pub fn set_request_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.request_time = input; self
     }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
     pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
@@ -192,8 +179,7 @@ impl TableRestoreStatusBuilder {
     }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
     pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.progress_in_mega_bytes = input;
-        self
+        self.progress_in_mega_bytes = input; self
     }
     /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
     pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
@@ -202,8 +188,7 @@ impl TableRestoreStatusBuilder {
     }
     /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
     pub fn set_total_data_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_data_in_mega_bytes = input;
-        self
+        self.total_data_in_mega_bytes = input; self
     }
     /// <p>The identifier of the Amazon Redshift cluster that the table is being restored to.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,12 +196,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The identifier of the Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the snapshot that the table is being restored from.</p>
     pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,12 +205,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The identifier of the snapshot that the table is being restored from.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.snapshot_identifier = input;
-        self
+    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.snapshot_identifier = input; self
     }
     /// <p>The name of the source database that contains the table being restored.</p>
     pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -237,12 +214,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The name of the source database that contains the table being restored.</p>
-    pub fn set_source_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_database_name = input;
-        self
+    pub fn set_source_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_database_name = input; self
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
     pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -250,12 +223,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
-    pub fn set_source_schema_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_schema_name = input;
-        self
+    pub fn set_source_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_schema_name = input; self
     }
     /// <p>The name of the source table being restored.</p>
     pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -263,12 +232,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The name of the source table being restored.</p>
-    pub fn set_source_table_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_table_name = input;
-        self
+    pub fn set_source_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_table_name = input; self
     }
     /// <p>The name of the database to restore the table to.</p>
     pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,12 +241,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn set_target_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_database_name = input;
-        self
+    pub fn set_target_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_database_name = input; self
     }
     /// <p>The name of the schema to restore the table to.</p>
     pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,12 +250,8 @@ impl TableRestoreStatusBuilder {
         self
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn set_target_schema_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_schema_name = input;
-        self
+    pub fn set_target_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_schema_name = input; self
     }
     /// <p>The name of the table to create as a result of the table restore request.</p>
     pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,26 +260,40 @@ impl TableRestoreStatusBuilder {
     }
     /// <p>The name of the table to create as a result of the table restore request.</p>
     pub fn set_new_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.new_table_name = input;
-        self
+        self.new_table_name = input; self
     }
     /// Consumes the builder and constructs a [`TableRestoreStatus`](crate::types::TableRestoreStatus).
     pub fn build(self) -> crate::types::TableRestoreStatus {
         crate::types::TableRestoreStatus {
-            table_restore_request_id: self.table_restore_request_id,
-            status: self.status,
-            message: self.message,
-            request_time: self.request_time,
-            progress_in_mega_bytes: self.progress_in_mega_bytes,
-            total_data_in_mega_bytes: self.total_data_in_mega_bytes,
-            cluster_identifier: self.cluster_identifier,
-            snapshot_identifier: self.snapshot_identifier,
-            source_database_name: self.source_database_name,
-            source_schema_name: self.source_schema_name,
-            source_table_name: self.source_table_name,
-            target_database_name: self.target_database_name,
-            target_schema_name: self.target_schema_name,
-            new_table_name: self.new_table_name,
+            table_restore_request_id: self.table_restore_request_id
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
+            request_time: self.request_time
+            ,
+            progress_in_mega_bytes: self.progress_in_mega_bytes
+            ,
+            total_data_in_mega_bytes: self.total_data_in_mega_bytes
+            ,
+            cluster_identifier: self.cluster_identifier
+            ,
+            snapshot_identifier: self.snapshot_identifier
+            ,
+            source_database_name: self.source_database_name
+            ,
+            source_schema_name: self.source_schema_name
+            ,
+            source_table_name: self.source_table_name
+            ,
+            target_database_name: self.target_database_name
+            ,
+            target_schema_name: self.target_schema_name
+            ,
+            new_table_name: self.new_table_name
+            ,
         }
     }
 }
+

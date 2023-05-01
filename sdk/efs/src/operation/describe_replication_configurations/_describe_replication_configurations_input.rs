@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationConfigurationsInput {
+pub struct DescribeReplicationConfigurationsInput  {
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeReplicationConfigurationsInput {
 }
 impl DescribeReplicationConfigurationsInput {
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
@@ -29,7 +29,7 @@ impl DescribeReplicationConfigurationsInput {
 }
 impl DescribeReplicationConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsInputBuilder {
         crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeReplicationConfigurationsInputBuilder {
     }
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DescribeReplicationConfigurationsInputBuilder {
     }
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of output.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,11 +68,10 @@ impl DescribeReplicationConfigurationsInputBuilder {
     }
     /// <p>(Optional) To limit the number of objects returned in a response, you can specify the <code>MaxItems</code> parameter. The default value is 100. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput {
                 file_system_id: self.file_system_id
@@ -87,3 +84,4 @@ impl DescribeReplicationConfigurationsInputBuilder {
         )
     }
 }
+

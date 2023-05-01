@@ -3,7 +3,7 @@
 /// <p>Configuration information required for custom authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomAuthConfig {
+pub struct CustomAuthConfig  {
     /// <p>The authentication type that the custom connector uses.</p>
     #[doc(hidden)]
     pub custom_authentication_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CustomAuthConfig {
 }
 impl CustomAuthConfig {
     /// <p>The authentication type that the custom connector uses.</p>
-    pub fn custom_authentication_type(&self) -> std::option::Option<&str> {
+    pub fn custom_authentication_type(&self) -> std::option::Option<& str> {
         self.custom_authentication_type.as_deref()
     }
     /// <p>Information about authentication parameters required for authentication.</p>
-    pub fn auth_parameters(&self) -> std::option::Option<&[crate::types::AuthParameter]> {
+    pub fn auth_parameters(&self) -> std::option::Option<& [crate::types::AuthParameter]> {
         self.auth_parameters.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl CustomAuthConfigBuilder {
         self
     }
     /// <p>The authentication type that the custom connector uses.</p>
-    pub fn set_custom_authentication_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.custom_authentication_type = input;
-        self
+    pub fn set_custom_authentication_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.custom_authentication_type = input; self
     }
     /// Appends an item to `auth_parameters`.
     ///
@@ -56,23 +52,22 @@ impl CustomAuthConfigBuilder {
     /// <p>Information about authentication parameters required for authentication.</p>
     pub fn auth_parameters(mut self, input: crate::types::AuthParameter) -> Self {
         let mut v = self.auth_parameters.unwrap_or_default();
-        v.push(input);
-        self.auth_parameters = Some(v);
-        self
+                        v.push(input);
+                        self.auth_parameters = Some(v);
+                        self
     }
     /// <p>Information about authentication parameters required for authentication.</p>
-    pub fn set_auth_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AuthParameter>>,
-    ) -> Self {
-        self.auth_parameters = input;
-        self
+    pub fn set_auth_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuthParameter>>) -> Self {
+        self.auth_parameters = input; self
     }
     /// Consumes the builder and constructs a [`CustomAuthConfig`](crate::types::CustomAuthConfig).
     pub fn build(self) -> crate::types::CustomAuthConfig {
         crate::types::CustomAuthConfig {
-            custom_authentication_type: self.custom_authentication_type,
-            auth_parameters: self.auth_parameters,
+            custom_authentication_type: self.custom_authentication_type
+            ,
+            auth_parameters: self.auth_parameters
+            ,
         }
     }
 }
+

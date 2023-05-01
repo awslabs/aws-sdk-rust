@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGraphqlApisInput {
+pub struct ListGraphqlApisInput  {
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListGraphqlApisInput {
 }
 impl ListGraphqlApisInput {
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want the request to return.</p>
@@ -42,8 +42,7 @@ impl ListGraphqlApisInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,19 +51,19 @@ impl ListGraphqlApisInputBuilder {
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListGraphqlApisInput`](crate::operation::list_graphql_apis::ListGraphqlApisInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_graphql_apis::ListGraphqlApisInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_graphql_apis::ListGraphqlApisInput {
-            next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::list_graphql_apis::ListGraphqlApisInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_graphql_apis::ListGraphqlApisInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

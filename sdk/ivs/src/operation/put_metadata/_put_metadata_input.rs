@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutMetadataInput {
+pub struct PutMetadataInput  {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct PutMetadataInput {
 }
 impl PutMetadataInput {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for PutMetadataInput {
+impl  std::fmt::Debug for PutMetadataInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMetadataInput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -50,8 +50,7 @@ impl PutMetadataInputBuilder {
     }
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,20 +59,18 @@ impl PutMetadataInputBuilder {
     }
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// Consumes the builder and constructs a [`PutMetadataInput`](crate::operation::put_metadata::PutMetadataInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_metadata::PutMetadataInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_metadata::PutMetadataInput {
-            channel_arn: self.channel_arn,
-            metadata: self.metadata,
-        })
+    pub fn build(self) -> Result<crate::operation::put_metadata::PutMetadataInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_metadata::PutMetadataInput {
+                channel_arn: self.channel_arn
+                ,
+                metadata: self.metadata
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for PutMetadataInputBuilder {
@@ -84,3 +81,4 @@ impl std::fmt::Debug for PutMetadataInputBuilder {
         formatter.finish()
     }
 }
+

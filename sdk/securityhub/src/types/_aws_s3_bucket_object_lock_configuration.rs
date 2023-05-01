@@ -3,7 +3,7 @@
 /// <p> The container element for S3 Object Lock configuration parameters. In Amazon S3, Object Lock can help prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsS3BucketObjectLockConfiguration {
+pub struct AwsS3BucketObjectLockConfiguration  {
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
     #[doc(hidden)]
     pub object_lock_enabled: std::option::Option<std::string::String>,
@@ -13,13 +13,11 @@ pub struct AwsS3BucketObjectLockConfiguration {
 }
 impl AwsS3BucketObjectLockConfiguration {
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
-    pub fn object_lock_enabled(&self) -> std::option::Option<&str> {
+    pub fn object_lock_enabled(&self) -> std::option::Option<& str> {
         self.object_lock_enabled.as_deref()
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn rule(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsS3BucketObjectLockConfigurationRuleDetails> {
+    pub fn rule(&self) -> std::option::Option<& crate::types::AwsS3BucketObjectLockConfigurationRuleDetails> {
         self.rule.as_ref()
     }
 }
@@ -35,8 +33,7 @@ impl AwsS3BucketObjectLockConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationBuilder {
     pub(crate) object_lock_enabled: std::option::Option<std::string::String>,
-    pub(crate) rule:
-        std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
+    pub(crate) rule: std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
 }
 impl AwsS3BucketObjectLockConfigurationBuilder {
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
@@ -45,34 +42,26 @@ impl AwsS3BucketObjectLockConfigurationBuilder {
         self
     }
     /// <p> Indicates whether the bucket has an Object Lock configuration enabled. </p>
-    pub fn set_object_lock_enabled(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.object_lock_enabled = input;
-        self
+    pub fn set_object_lock_enabled(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.object_lock_enabled = input; self
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn rule(
-        mut self,
-        input: crate::types::AwsS3BucketObjectLockConfigurationRuleDetails,
-    ) -> Self {
+    pub fn rule(mut self, input: crate::types::AwsS3BucketObjectLockConfigurationRuleDetails) -> Self {
         self.rule = Some(input);
         self
     }
     /// <p> Specifies the Object Lock rule for the specified object. </p>
-    pub fn set_rule(
-        mut self,
-        input: std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,
-    ) -> Self {
-        self.rule = input;
-        self
+    pub fn set_rule(mut self, input: std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>) -> Self {
+        self.rule = input; self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfiguration`](crate::types::AwsS3BucketObjectLockConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketObjectLockConfiguration {
         crate::types::AwsS3BucketObjectLockConfiguration {
-            object_lock_enabled: self.object_lock_enabled,
-            rule: self.rule,
+            object_lock_enabled: self.object_lock_enabled
+            ,
+            rule: self.rule
+            ,
         }
     }
 }
+

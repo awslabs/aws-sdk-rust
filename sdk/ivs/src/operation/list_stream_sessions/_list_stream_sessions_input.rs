@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamSessionsInput {
+pub struct ListStreamSessionsInput  {
     /// <p>Channel ARN used to filter the list.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListStreamSessionsInput {
 }
 impl ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
@@ -29,8 +29,7 @@ impl ListStreamSessionsInput {
 }
 impl ListStreamSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder {
+    pub fn builder() -> crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder {
         crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListStreamSessionsInputBuilder {
     }
     /// <p>Channel ARN used to filter the list.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl ListStreamSessionsInputBuilder {
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,22 +68,21 @@ impl ListStreamSessionsInputBuilder {
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_stream_sessions::ListStreamSessionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_stream_sessions::ListStreamSessionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_stream_sessions::ListStreamSessionsInput {
-                channel_arn: self.channel_arn,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
+                channel_arn: self.channel_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

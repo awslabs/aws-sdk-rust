@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminRemoveUserFromGroupInput {
+pub struct AdminRemoveUserFromGroupInput  {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct AdminRemoveUserFromGroupInput {
 }
 impl AdminRemoveUserFromGroupInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username for the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The group name.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
-impl std::fmt::Debug for AdminRemoveUserFromGroupInput {
+impl  std::fmt::Debug for AdminRemoveUserFromGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminRemoveUserFromGroupInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -38,7 +38,7 @@ impl std::fmt::Debug for AdminRemoveUserFromGroupInput {
 }
 impl AdminRemoveUserFromGroupInput {
     /// Creates a new builder-style object to manufacture [`AdminRemoveUserFromGroupInput`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput).
-    pub fn builder() -> crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder{
+    pub fn builder() -> crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder {
         crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder::default()
     }
 }
@@ -59,8 +59,7 @@ impl AdminRemoveUserFromGroupInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The username for the user.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl AdminRemoveUserFromGroupInputBuilder {
     }
     /// <p>The username for the user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The group name.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,22 +77,19 @@ impl AdminRemoveUserFromGroupInputBuilder {
     }
     /// <p>The group name.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// Consumes the builder and constructs a [`AdminRemoveUserFromGroupInput`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                group_name: self.group_name,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                group_name: self.group_name
+                ,
+            }
         )
     }
 }
@@ -107,3 +102,4 @@ impl std::fmt::Debug for AdminRemoveUserFromGroupInputBuilder {
         formatter.finish()
     }
 }
+

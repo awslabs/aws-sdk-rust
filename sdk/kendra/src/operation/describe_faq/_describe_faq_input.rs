@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFaqInput {
+pub struct DescribeFaqInput  {
     /// <p>The identifier of the FAQ you want to get information on.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeFaqInput {
 }
 impl DescribeFaqInput {
     /// <p>The identifier of the FAQ you want to get information on.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for the FAQ.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeFaqInputBuilder {
     }
     /// <p>The identifier of the FAQ you want to get information on.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeFaqInputBuilder {
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFaqInput`](crate::operation::describe_faq::DescribeFaqInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_faq::DescribeFaqInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_faq::DescribeFaqInput {
-            id: self.id,
-            index_id: self.index_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_faq::DescribeFaqInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_faq::DescribeFaqInput {
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

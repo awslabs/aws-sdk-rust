@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResourceSharePermissionOutput {
+pub struct DisassociateResourceSharePermissionOutput  {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
@@ -17,18 +17,18 @@ impl DisassociateResourceSharePermissionOutput {
         self.return_value
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateResourceSharePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateResourceSharePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionOutput`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput).
-    pub fn builder() -> crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionOutputBuilder {
         crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl DisassociateResourceSharePermissionOutputBuilder {
     }
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_value = input;
-        self
+        self.return_value = input; self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,20 +58,19 @@ impl DisassociateResourceSharePermissionOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateResourceSharePermissionOutput`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput).
-    pub fn build(self) -> crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput{
+    pub fn build(self) -> crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput {
         crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput {
             return_value: self.return_value
             ,
@@ -82,3 +80,4 @@ impl DisassociateResourceSharePermissionOutputBuilder {
         }
     }
 }
+

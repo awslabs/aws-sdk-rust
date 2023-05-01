@@ -3,7 +3,7 @@
 /// <p>Deletes an analyzer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnalyzerInput {
+pub struct DeleteAnalyzerInput  {
     /// <p>The name of the analyzer to delete.</p>
     #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeleteAnalyzerInput {
 }
 impl DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
-    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> std::option::Option<& str> {
         self.analyzer_name.as_deref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DeleteAnalyzerInputBuilder {
     }
     /// <p>The name of the analyzer to delete.</p>
     pub fn set_analyzer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_name = input;
-        self
+        self.analyzer_name = input; self
     }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +52,18 @@ impl DeleteAnalyzerInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAnalyzerInput`](crate::operation::delete_analyzer::DeleteAnalyzerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_analyzer::DeleteAnalyzerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_analyzer::DeleteAnalyzerInput {
-            analyzer_name: self.analyzer_name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_analyzer::DeleteAnalyzerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_analyzer::DeleteAnalyzerInput {
+                analyzer_name: self.analyzer_name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

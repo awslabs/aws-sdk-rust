@@ -21,6 +21,16 @@ pub use crate::types::_apps_list_data::AppsListDataBuilder;
 
 pub use crate::types::_app::AppBuilder;
 
+pub use crate::types::_admin_scope::AdminScopeBuilder;
+
+pub use crate::types::_policy_type_scope::PolicyTypeScopeBuilder;
+
+pub use crate::types::_region_scope::RegionScopeBuilder;
+
+pub use crate::types::_organizational_unit_scope::OrganizationalUnitScopeBuilder;
+
+pub use crate::types::_account_scope::AccountScopeBuilder;
+
 pub use crate::types::_third_party_firewall_firewall_policy::ThirdPartyFirewallFirewallPolicyBuilder;
 
 pub use crate::types::_resource_set_summary::ResourceSetSummaryBuilder;
@@ -38,6 +48,8 @@ pub use crate::types::_policy_compliance_status::PolicyComplianceStatusBuilder;
 pub use crate::types::_evaluation_result::EvaluationResultBuilder;
 
 pub use crate::types::_apps_list_data_summary::AppsListDataSummaryBuilder;
+
+pub use crate::types::_admin_account_summary::AdminAccountSummaryBuilder;
 
 pub use crate::types::_violation_detail::ViolationDetailBuilder;
 
@@ -138,3 +150,4 @@ pub use crate::types::_policy_compliance_detail::PolicyComplianceDetailBuilder;
 pub use crate::types::_compliance_violator::ComplianceViolatorBuilder;
 
 pub use crate::types::_failed_item::FailedItemBuilder;
+

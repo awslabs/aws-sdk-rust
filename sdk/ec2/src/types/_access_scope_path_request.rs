@@ -3,7 +3,7 @@
 /// <p>Describes a path.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessScopePathRequest {
+pub struct AccessScopePathRequest  {
     /// <p>The source.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::PathStatementRequest>,
@@ -12,22 +12,19 @@ pub struct AccessScopePathRequest {
     pub destination: std::option::Option<crate::types::PathStatementRequest>,
     /// <p>The through resources.</p>
     #[doc(hidden)]
-    pub through_resources:
-        std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+    pub through_resources: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequest {
     /// <p>The source.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::PathStatementRequest> {
+    pub fn source(&self) -> std::option::Option<& crate::types::PathStatementRequest> {
         self.source.as_ref()
     }
     /// <p>The destination.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::PathStatementRequest> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::PathStatementRequest> {
         self.destination.as_ref()
     }
     /// <p>The through resources.</p>
-    pub fn through_resources(
-        &self,
-    ) -> std::option::Option<&[crate::types::ThroughResourcesStatementRequest]> {
+    pub fn through_resources(&self) -> std::option::Option<& [crate::types::ThroughResourcesStatementRequest]> {
         self.through_resources.as_deref()
     }
 }
@@ -44,8 +41,7 @@ impl AccessScopePathRequest {
 pub struct AccessScopePathRequestBuilder {
     pub(crate) source: std::option::Option<crate::types::PathStatementRequest>,
     pub(crate) destination: std::option::Option<crate::types::PathStatementRequest>,
-    pub(crate) through_resources:
-        std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+    pub(crate) through_resources: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequestBuilder {
     /// <p>The source.</p>
@@ -54,12 +50,8 @@ impl AccessScopePathRequestBuilder {
         self
     }
     /// <p>The source.</p>
-    pub fn set_source(
-        mut self,
-        input: std::option::Option<crate::types::PathStatementRequest>,
-    ) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: std::option::Option<crate::types::PathStatementRequest>) -> Self {
+        self.source = input; self
     }
     /// <p>The destination.</p>
     pub fn destination(mut self, input: crate::types::PathStatementRequest) -> Self {
@@ -67,41 +59,34 @@ impl AccessScopePathRequestBuilder {
         self
     }
     /// <p>The destination.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::PathStatementRequest>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::PathStatementRequest>) -> Self {
+        self.destination = input; self
     }
     /// Appends an item to `through_resources`.
     ///
     /// To override the contents of this collection use [`set_through_resources`](Self::set_through_resources).
     ///
     /// <p>The through resources.</p>
-    pub fn through_resources(
-        mut self,
-        input: crate::types::ThroughResourcesStatementRequest,
-    ) -> Self {
+    pub fn through_resources(mut self, input: crate::types::ThroughResourcesStatementRequest) -> Self {
         let mut v = self.through_resources.unwrap_or_default();
-        v.push(input);
-        self.through_resources = Some(v);
-        self
+                        v.push(input);
+                        self.through_resources = Some(v);
+                        self
     }
     /// <p>The through resources.</p>
-    pub fn set_through_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
-    ) -> Self {
-        self.through_resources = input;
-        self
+    pub fn set_through_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>) -> Self {
+        self.through_resources = input; self
     }
     /// Consumes the builder and constructs a [`AccessScopePathRequest`](crate::types::AccessScopePathRequest).
     pub fn build(self) -> crate::types::AccessScopePathRequest {
         crate::types::AccessScopePathRequest {
-            source: self.source,
-            destination: self.destination,
-            through_resources: self.through_resources,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            through_resources: self.through_resources
+            ,
         }
     }
 }
+

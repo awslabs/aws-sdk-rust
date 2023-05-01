@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelVersionsInput {
+pub struct DescribeModelVersionsInput  {
     /// <p>The model ID.</p>
     #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct DescribeModelVersionsInput {
 }
 impl DescribeModelVersionsInput {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(&self) -> std::option::Option<&str> {
+    pub fn model_version_number(&self) -> std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The next token from the previous results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -43,9 +43,7 @@ impl DescribeModelVersionsInput {
 }
 impl DescribeModelVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder {
         crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl DescribeModelVersionsInputBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model version number.</p>
     pub fn model_version_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +74,8 @@ impl DescribeModelVersionsInputBuilder {
         self
     }
     /// <p>The model version number.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_version_number = input;
-        self
+    pub fn set_model_version_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_version_number = input; self
     }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
@@ -90,12 +83,8 @@ impl DescribeModelVersionsInputBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
-        self.model_type = input;
-        self
+    pub fn set_model_type(mut self, input: std::option::Option<crate::types::ModelTypeEnum>) -> Self {
+        self.model_type = input; self
     }
     /// <p>The next token from the previous results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +93,7 @@ impl DescribeModelVersionsInputBuilder {
     }
     /// <p>The next token from the previous results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -114,24 +102,24 @@ impl DescribeModelVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_model_versions::DescribeModelVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_model_versions::DescribeModelVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_model_versions::DescribeModelVersionsInput {
-                model_id: self.model_id,
-                model_version_number: self.model_version_number,
-                model_type: self.model_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                model_id: self.model_id
+                ,
+                model_version_number: self.model_version_number
+                ,
+                model_type: self.model_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

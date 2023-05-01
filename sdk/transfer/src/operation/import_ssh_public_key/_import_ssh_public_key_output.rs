@@ -3,7 +3,7 @@
 /// <p>Identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSshPublicKeyOutput {
+pub struct ImportSshPublicKeyOutput  {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -17,29 +17,27 @@ pub struct ImportSshPublicKeyOutput {
 }
 impl ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key_id(&self) -> std::option::Option<& str> {
         self.ssh_public_key_id.as_deref()
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportSshPublicKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportSshPublicKeyOutput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder {
-        crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder {
+        crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::default()
     }
 }
 
@@ -60,8 +58,7 @@ impl ImportSshPublicKeyOutputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The name given to a public key by the system that was imported.</p>
     pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +66,8 @@ impl ImportSshPublicKeyOutputBuilder {
         self
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ssh_public_key_id = input;
-        self
+    pub fn set_ssh_public_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ssh_public_key_id = input; self
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,25 +76,28 @@ impl ImportSshPublicKeyOutputBuilder {
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportSshPublicKeyOutput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput).
     pub fn build(self) -> crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput {
         crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput {
-            server_id: self.server_id,
-            ssh_public_key_id: self.ssh_public_key_id,
-            user_name: self.user_name,
+            server_id: self.server_id
+            ,
+            ssh_public_key_id: self.ssh_public_key_id
+            ,
+            user_name: self.user_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

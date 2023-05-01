@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagStreamInput {
+pub struct UntagStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UntagStreamInput {
 }
 impl UntagStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The name of the stream that you want to remove tags from.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>A list of the keys of the tags that you want to remove.</p>
-    pub fn tag_key_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_key_list(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_key_list.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl UntagStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The name of the stream that you want to remove tags from.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl UntagStreamInputBuilder {
     }
     /// <p>The name of the stream that you want to remove tags from.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// Appends an item to `tag_key_list`.
     ///
@@ -70,29 +68,26 @@ impl UntagStreamInputBuilder {
     /// <p>A list of the keys of the tags that you want to remove.</p>
     pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_key_list.unwrap_or_default();
-        v.push(input.into());
-        self.tag_key_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_key_list = Some(v);
+                        self
     }
     /// <p>A list of the keys of the tags that you want to remove.</p>
-    pub fn set_tag_key_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_key_list = input;
-        self
+    pub fn set_tag_key_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_key_list = input; self
     }
     /// Consumes the builder and constructs a [`UntagStreamInput`](crate::operation::untag_stream::UntagStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::untag_stream::UntagStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::untag_stream::UntagStreamInput {
-            stream_arn: self.stream_arn,
-            stream_name: self.stream_name,
-            tag_key_list: self.tag_key_list,
-        })
+    pub fn build(self) -> Result<crate::operation::untag_stream::UntagStreamInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::untag_stream::UntagStreamInput {
+                stream_arn: self.stream_arn
+                ,
+                stream_name: self.stream_name
+                ,
+                tag_key_list: self.tag_key_list
+                ,
+            }
+        )
     }
 }
+

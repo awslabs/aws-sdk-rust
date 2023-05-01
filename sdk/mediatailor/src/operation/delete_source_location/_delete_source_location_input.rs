@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSourceLocationInput {
+pub struct DeleteSourceLocationInput  {
     /// <p>The name of the source location.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
 }
 impl DeleteSourceLocationInput {
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
 }
 impl DeleteSourceLocationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder {
+    pub fn builder() -> crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder {
         crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteSourceLocationInputBuilder {
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_location_name = input;
-        self
+    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_location_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_source_location::DeleteSourceLocationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_source_location::DeleteSourceLocationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_source_location::DeleteSourceLocationInput {
-                source_location_name: self.source_location_name,
-            },
+                source_location_name: self.source_location_name
+                ,
+            }
         )
     }
 }
+

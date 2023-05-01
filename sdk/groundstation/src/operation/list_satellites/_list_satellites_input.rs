@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSatellitesInput {
+pub struct ListSatellitesInput  {
     /// <p>Maximum number of satellites returned.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListSatellitesInput {
         self.max_results
     }
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ListSatellitesInputBuilder {
     }
     /// <p>Maximum number of satellites returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +52,18 @@ impl ListSatellitesInputBuilder {
     }
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListSatellitesInput`](crate::operation::list_satellites::ListSatellitesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_satellites::ListSatellitesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_satellites::ListSatellitesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_satellites::ListSatellitesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_satellites::ListSatellitesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

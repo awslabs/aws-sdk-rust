@@ -3,7 +3,7 @@
 /// <p>A document attribute or metadata field. To create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom attributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentAttribute {
+pub struct DocumentAttribute  {
     /// <p>The identifier for the attribute.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DocumentAttribute {
 }
 impl DocumentAttribute {
     /// <p>The identifier for the attribute.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::DocumentAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DocumentAttributeBuilder {
     }
     /// <p>The identifier for the attribute.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn value(mut self, input: crate::types::DocumentAttributeValue) -> Self {
@@ -52,18 +51,17 @@ impl DocumentAttributeBuilder {
         self
     }
     /// <p>The value of the attribute.</p>
-    pub fn set_value(
-        mut self,
-        input: std::option::Option<crate::types::DocumentAttributeValue>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`DocumentAttribute`](crate::types::DocumentAttribute).
     pub fn build(self) -> crate::types::DocumentAttribute {
         crate::types::DocumentAttribute {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

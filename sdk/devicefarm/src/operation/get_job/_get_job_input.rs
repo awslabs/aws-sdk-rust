@@ -3,14 +3,14 @@
 /// <p>Represents a request to the get job operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobInput {
+pub struct GetJobInput  {
     /// <p>The job's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
     /// <p>The job's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,14 +35,16 @@ impl GetJobInputBuilder {
     }
     /// <p>The job's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
-    pub fn build(
-        self,
-    ) -> Result<crate::operation::get_job::GetJobInput, aws_smithy_http::operation::error::BuildError>
-    {
-        Ok(crate::operation::get_job::GetJobInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::get_job::GetJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_job::GetJobInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

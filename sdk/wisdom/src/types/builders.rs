@@ -48,3 +48,4 @@ pub use crate::types::_assistant_association_summary::AssistantAssociationSummar
 pub use crate::types::_knowledge_base_association_data::KnowledgeBaseAssociationDataBuilder;
 
 pub use crate::types::_assistant_association_data::AssistantAssociationDataBuilder;
+

@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeAutoEnableInput {}
+pub struct GetDatalakeAutoEnableInput  {
+}
 impl GetDatalakeAutoEnableInput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeAutoEnableInput`](crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput).
-    pub fn builder(
-    ) -> crate::operation::get_datalake_auto_enable::builders::GetDatalakeAutoEnableInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_datalake_auto_enable::builders::GetDatalakeAutoEnableInputBuilder {
         crate::operation::get_datalake_auto_enable::builders::GetDatalakeAutoEnableInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl GetDatalakeAutoEnableInput {
 /// A builder for [`GetDatalakeAutoEnableInput`](crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetDatalakeAutoEnableInputBuilder {}
+pub struct GetDatalakeAutoEnableInputBuilder {
+}
 impl GetDatalakeAutoEnableInputBuilder {
     /// Consumes the builder and constructs a [`GetDatalakeAutoEnableInput`](crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput {})
+    pub fn build(self) -> Result<crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableInput {
+            }
+        )
     }
 }
+

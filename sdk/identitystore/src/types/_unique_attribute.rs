@@ -3,7 +3,7 @@
 /// <p>An entity attribute that's unique to a specific entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UniqueAttribute {
+pub struct UniqueAttribute  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     #[doc(hidden)]
     pub attribute_path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UniqueAttribute {
 }
 impl UniqueAttribute {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> std::option::Option<&str> {
+    pub fn attribute_path(&self) -> std::option::Option<& str> {
         self.attribute_path.as_deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn attribute_value(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.attribute_value.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UniqueAttributeBuilder {
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub fn set_attribute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_path = input;
-        self
+        self.attribute_path = input; self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
     pub fn attribute_value(mut self, input: aws_smithy_types::Document) -> Self {
@@ -52,18 +51,17 @@ impl UniqueAttributeBuilder {
         self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Document>,
-    ) -> Self {
-        self.attribute_value = input;
-        self
+    pub fn set_attribute_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+        self.attribute_value = input; self
     }
     /// Consumes the builder and constructs a [`UniqueAttribute`](crate::types::UniqueAttribute).
     pub fn build(self) -> crate::types::UniqueAttribute {
         crate::types::UniqueAttribute {
-            attribute_path: self.attribute_path,
-            attribute_value: self.attribute_value,
+            attribute_path: self.attribute_path
+            ,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
+

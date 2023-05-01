@@ -3,14 +3,14 @@
 /// <p>Represents a request to delete one of your Amazon SES identities (an email address or domain).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentityInput {
+pub struct DeleteIdentityInput  {
     /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
     #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityInput {
     /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
-    pub fn identity(&self) -> std::option::Option<&str> {
+    pub fn identity(&self) -> std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DeleteIdentityInputBuilder {
     }
     /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
     pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// Consumes the builder and constructs a [`DeleteIdentityInput`](crate::operation::delete_identity::DeleteIdentityInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_identity::DeleteIdentityInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_identity::DeleteIdentityInput {
-            identity: self.identity,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_identity::DeleteIdentityInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_identity::DeleteIdentityInput {
+                identity: self.identity
+                ,
+            }
+        )
     }
 }
+

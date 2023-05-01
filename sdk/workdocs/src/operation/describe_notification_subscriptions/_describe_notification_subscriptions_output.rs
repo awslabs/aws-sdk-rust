@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotificationSubscriptionsOutput {
+pub struct DescribeNotificationSubscriptionsOutput  {
     /// <p>The subscriptions.</p>
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
@@ -13,22 +13,22 @@ pub struct DescribeNotificationSubscriptionsOutput {
 }
 impl DescribeNotificationSubscriptionsOutput {
     /// <p>The subscriptions.</p>
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::types::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<& [crate::types::Subscription]> {
         self.subscriptions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeNotificationSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeNotificationSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput).
-    pub fn builder() -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder {
         crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl DescribeNotificationSubscriptionsOutputBuilder {
     /// <p>The subscriptions.</p>
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = Some(v);
+                        self
     }
     /// <p>The subscriptions.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +64,19 @@ impl DescribeNotificationSubscriptionsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput).
-    pub fn build(self) -> crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput{
+    pub fn build(self) -> crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput {
         crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput {
             subscriptions: self.subscriptions
             ,
@@ -91,3 +86,4 @@ impl DescribeNotificationSubscriptionsOutputBuilder {
         }
     }
 }
+

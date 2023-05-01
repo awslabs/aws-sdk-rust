@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAuthenticationProfileInput {
+pub struct DeleteAuthenticationProfileInput  {
     /// <p>The name of the authentication profile to delete.</p>
     #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
 }
 impl DeleteAuthenticationProfileInput {
     /// <p>The name of the authentication profile to delete.</p>
-    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
 }
 impl DeleteAuthenticationProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteAuthenticationProfileInput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput).
-    pub fn builder() -> crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder{
+    pub fn builder() -> crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder {
         crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteAuthenticationProfileInputBuilder {
         self
     }
     /// <p>The name of the authentication profile to delete.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_profile_name = input;
-        self
+    pub fn set_authentication_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_profile_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAuthenticationProfileInput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput {
-                authentication_profile_name: self.authentication_profile_name,
-            },
+                authentication_profile_name: self.authentication_profile_name
+                ,
+            }
         )
     }
 }
+

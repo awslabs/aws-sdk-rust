@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateSyncStatusOutput {
+pub struct GetTemplateSyncStatusOutput  {
     /// <p>The details of the last sync that's returned by Proton.</p>
     #[doc(hidden)]
     pub latest_sync: std::option::Option<crate::types::ResourceSyncAttempt>,
@@ -16,30 +16,26 @@ pub struct GetTemplateSyncStatusOutput {
 }
 impl GetTemplateSyncStatusOutput {
     /// <p>The details of the last sync that's returned by Proton.</p>
-    pub fn latest_sync(&self) -> std::option::Option<&crate::types::ResourceSyncAttempt> {
+    pub fn latest_sync(&self) -> std::option::Option<& crate::types::ResourceSyncAttempt> {
         self.latest_sync.as_ref()
     }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
-    pub fn latest_successful_sync(
-        &self,
-    ) -> std::option::Option<&crate::types::ResourceSyncAttempt> {
+    pub fn latest_successful_sync(&self) -> std::option::Option<& crate::types::ResourceSyncAttempt> {
         self.latest_successful_sync.as_ref()
     }
     /// <p>The template sync desired state that's returned by Proton.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::Revision> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::types::Revision> {
         self.desired_state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetTemplateSyncStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTemplateSyncStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSyncStatusOutput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusOutputBuilder {
         crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusOutputBuilder::default()
     }
 }
@@ -60,12 +56,8 @@ impl GetTemplateSyncStatusOutputBuilder {
         self
     }
     /// <p>The details of the last sync that's returned by Proton.</p>
-    pub fn set_latest_sync(
-        mut self,
-        input: std::option::Option<crate::types::ResourceSyncAttempt>,
-    ) -> Self {
-        self.latest_sync = input;
-        self
+    pub fn set_latest_sync(mut self, input: std::option::Option<crate::types::ResourceSyncAttempt>) -> Self {
+        self.latest_sync = input; self
     }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
     pub fn latest_successful_sync(mut self, input: crate::types::ResourceSyncAttempt) -> Self {
@@ -73,12 +65,8 @@ impl GetTemplateSyncStatusOutputBuilder {
         self
     }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
-    pub fn set_latest_successful_sync(
-        mut self,
-        input: std::option::Option<crate::types::ResourceSyncAttempt>,
-    ) -> Self {
-        self.latest_successful_sync = input;
-        self
+    pub fn set_latest_successful_sync(mut self, input: std::option::Option<crate::types::ResourceSyncAttempt>) -> Self {
+        self.latest_successful_sync = input; self
     }
     /// <p>The template sync desired state that's returned by Proton.</p>
     pub fn desired_state(mut self, input: crate::types::Revision) -> Self {
@@ -87,25 +75,28 @@ impl GetTemplateSyncStatusOutputBuilder {
     }
     /// <p>The template sync desired state that's returned by Proton.</p>
     pub fn set_desired_state(mut self, input: std::option::Option<crate::types::Revision>) -> Self {
-        self.desired_state = input;
-        self
+        self.desired_state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTemplateSyncStatusOutput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput).
     pub fn build(self) -> crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput {
         crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput {
-            latest_sync: self.latest_sync,
-            latest_successful_sync: self.latest_successful_sync,
-            desired_state: self.desired_state,
+            latest_sync: self.latest_sync
+            ,
+            latest_successful_sync: self.latest_successful_sync
+            ,
+            desired_state: self.desired_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

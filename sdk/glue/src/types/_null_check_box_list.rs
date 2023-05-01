@@ -3,7 +3,7 @@
 /// <p>Represents whether certain values are recognized as null values for removal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NullCheckBoxList {
+pub struct NullCheckBoxList  {
     /// <p>Specifies that an empty string is considered as a null value.</p>
     #[doc(hidden)]
     pub is_empty: std::option::Option<bool>,
@@ -51,8 +51,7 @@ impl NullCheckBoxListBuilder {
     }
     /// <p>Specifies that an empty string is considered as a null value.</p>
     pub fn set_is_empty(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_empty = input;
-        self
+        self.is_empty = input; self
     }
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
     pub fn is_null_string(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl NullCheckBoxListBuilder {
     }
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
     pub fn set_is_null_string(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_null_string = input;
-        self
+        self.is_null_string = input; self
     }
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
     pub fn is_neg_one(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl NullCheckBoxListBuilder {
     }
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
     pub fn set_is_neg_one(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_neg_one = input;
-        self
+        self.is_neg_one = input; self
     }
     /// Consumes the builder and constructs a [`NullCheckBoxList`](crate::types::NullCheckBoxList).
     pub fn build(self) -> crate::types::NullCheckBoxList {
         crate::types::NullCheckBoxList {
-            is_empty: self.is_empty,
-            is_null_string: self.is_null_string,
-            is_neg_one: self.is_neg_one,
+            is_empty: self.is_empty
+            ,
+            is_null_string: self.is_null_string
+            ,
+            is_neg_one: self.is_neg_one
+            ,
         }
     }
 }
+

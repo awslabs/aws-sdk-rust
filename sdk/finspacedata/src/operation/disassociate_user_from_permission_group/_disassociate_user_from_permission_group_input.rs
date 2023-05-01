@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateUserFromPermissionGroupInput {
+pub struct DisassociateUserFromPermissionGroupInput  {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DisassociateUserFromPermissionGroupInput {
 }
 impl DisassociateUserFromPermissionGroupInput {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DisassociateUserFromPermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
-    pub fn builder() -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder {
         crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_group_id = input;
-        self
+    pub fn set_permission_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_group_id = input; self
     }
     /// <p>The unique identifier for the user.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
     }
     /// <p>The unique identifier for the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,11 +68,10 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput {
                 permission_group_id: self.permission_group_id
@@ -90,3 +84,4 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
         )
     }
 }
+

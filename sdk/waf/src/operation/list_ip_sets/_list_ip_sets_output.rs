@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIpSetsOutput {
+pub struct ListIpSetsOutput  {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListIpSetsOutput {
 }
 impl ListIpSetsOutput {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
-    pub fn ip_sets(&self) -> std::option::Option<&[crate::types::IpSetSummary]> {
+    pub fn ip_sets(&self) -> std::option::Option<& [crate::types::IpSetSummary]> {
         self.ip_sets.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListIpSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListIpSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput).
     pub fn builder() -> crate::operation::list_ip_sets::builders::ListIpSetsOutputBuilder {
@@ -49,8 +49,7 @@ impl ListIpSetsOutputBuilder {
     }
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// Appends an item to `ip_sets`.
     ///
@@ -59,33 +58,32 @@ impl ListIpSetsOutputBuilder {
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
     pub fn ip_sets(mut self, input: crate::types::IpSetSummary) -> Self {
         let mut v = self.ip_sets.unwrap_or_default();
-        v.push(input);
-        self.ip_sets = Some(v);
-        self
+                        v.push(input);
+                        self.ip_sets = Some(v);
+                        self
     }
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
-    pub fn set_ip_sets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpSetSummary>>,
-    ) -> Self {
-        self.ip_sets = input;
-        self
+    pub fn set_ip_sets(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpSetSummary>>) -> Self {
+        self.ip_sets = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput).
     pub fn build(self) -> crate::operation::list_ip_sets::ListIpSetsOutput {
         crate::operation::list_ip_sets::ListIpSetsOutput {
-            next_marker: self.next_marker,
-            ip_sets: self.ip_sets,
+            next_marker: self.next_marker
+            ,
+            ip_sets: self.ip_sets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

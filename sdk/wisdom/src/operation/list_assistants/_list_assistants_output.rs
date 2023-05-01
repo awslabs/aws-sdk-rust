@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssistantsOutput {
+pub struct ListAssistantsOutput  {
     /// <p>Information about the assistants.</p>
     #[doc(hidden)]
     pub assistant_summaries: std::option::Option<std::vec::Vec<crate::types::AssistantSummary>>,
@@ -13,19 +13,19 @@ pub struct ListAssistantsOutput {
 }
 impl ListAssistantsOutput {
     /// <p>Information about the assistants.</p>
-    pub fn assistant_summaries(&self) -> std::option::Option<&[crate::types::AssistantSummary]> {
+    pub fn assistant_summaries(&self) -> std::option::Option<& [crate::types::AssistantSummary]> {
         self.assistant_summaries.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssistantsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssistantsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssistantsOutput`](crate::operation::list_assistants::ListAssistantsOutput).
     pub fn builder() -> crate::operation::list_assistants::builders::ListAssistantsOutputBuilder {
@@ -37,8 +37,7 @@ impl ListAssistantsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAssistantsOutputBuilder {
-    pub(crate) assistant_summaries:
-        std::option::Option<std::vec::Vec<crate::types::AssistantSummary>>,
+    pub(crate) assistant_summaries: std::option::Option<std::vec::Vec<crate::types::AssistantSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListAssistantsOutputBuilder {
     /// <p>Information about the assistants.</p>
     pub fn assistant_summaries(mut self, input: crate::types::AssistantSummary) -> Self {
         let mut v = self.assistant_summaries.unwrap_or_default();
-        v.push(input);
-        self.assistant_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.assistant_summaries = Some(v);
+                        self
     }
     /// <p>Information about the assistants.</p>
-    pub fn set_assistant_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssistantSummary>>,
-    ) -> Self {
-        self.assistant_summaries = input;
-        self
+    pub fn set_assistant_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssistantSummary>>) -> Self {
+        self.assistant_summaries = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListAssistantsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssistantsOutput`](crate::operation::list_assistants::ListAssistantsOutput).
     pub fn build(self) -> crate::operation::list_assistants::ListAssistantsOutput {
         crate::operation::list_assistants::ListAssistantsOutput {
-            assistant_summaries: self.assistant_summaries,
-            next_token: self.next_token,
+            assistant_summaries: self.assistant_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

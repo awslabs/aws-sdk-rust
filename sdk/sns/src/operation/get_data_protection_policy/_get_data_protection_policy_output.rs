@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataProtectionPolicyOutput {
+pub struct GetDataProtectionPolicyOutput  {
     /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
     #[doc(hidden)]
     pub data_protection_policy: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct GetDataProtectionPolicyOutput {
 }
 impl GetDataProtectionPolicyOutput {
     /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-    pub fn data_protection_policy(&self) -> std::option::Option<&str> {
+    pub fn data_protection_policy(&self) -> std::option::Option<& str> {
         self.data_protection_policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataProtectionPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDataProtectionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyOutput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder {
         crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl GetDataProtectionPolicyOutputBuilder {
         self
     }
     /// <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-    pub fn set_data_protection_policy(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_protection_policy = input;
-        self
+    pub fn set_data_protection_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_protection_policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDataProtectionPolicyOutput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput {
+    pub fn build(self) -> crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput {
         crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput {
-            data_protection_policy: self.data_protection_policy,
+            data_protection_policy: self.data_protection_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

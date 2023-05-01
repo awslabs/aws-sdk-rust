@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput {
+pub struct DeleteResourcePolicyInput  {
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
         crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_resource_policy::DeleteResourcePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-                identifier: self.identifier,
-            },
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

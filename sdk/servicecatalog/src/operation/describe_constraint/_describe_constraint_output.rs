@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConstraintOutput {
+pub struct DescribeConstraintOutput  {
     /// <p>Information about the constraint.</p>
     #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::types::ConstraintDetail>,
@@ -16,27 +16,26 @@ pub struct DescribeConstraintOutput {
 }
 impl DescribeConstraintOutput {
     /// <p>Information about the constraint.</p>
-    pub fn constraint_detail(&self) -> std::option::Option<&crate::types::ConstraintDetail> {
+    pub fn constraint_detail(&self) -> std::option::Option<& crate::types::ConstraintDetail> {
         self.constraint_detail.as_ref()
     }
     /// <p>The constraint parameters.</p>
-    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+    pub fn constraint_parameters(&self) -> std::option::Option<& str> {
         self.constraint_parameters.as_deref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeConstraintOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeConstraintOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConstraintOutput`](crate::operation::describe_constraint::DescribeConstraintOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_constraint::builders::DescribeConstraintOutputBuilder {
+    pub fn builder() -> crate::operation::describe_constraint::builders::DescribeConstraintOutputBuilder {
         crate::operation::describe_constraint::builders::DescribeConstraintOutputBuilder::default()
     }
 }
@@ -57,12 +56,8 @@ impl DescribeConstraintOutputBuilder {
         self
     }
     /// <p>Information about the constraint.</p>
-    pub fn set_constraint_detail(
-        mut self,
-        input: std::option::Option<crate::types::ConstraintDetail>,
-    ) -> Self {
-        self.constraint_detail = input;
-        self
+    pub fn set_constraint_detail(mut self, input: std::option::Option<crate::types::ConstraintDetail>) -> Self {
+        self.constraint_detail = input; self
     }
     /// <p>The constraint parameters.</p>
     pub fn constraint_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,12 +65,8 @@ impl DescribeConstraintOutputBuilder {
         self
     }
     /// <p>The constraint parameters.</p>
-    pub fn set_constraint_parameters(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.constraint_parameters = input;
-        self
+    pub fn set_constraint_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.constraint_parameters = input; self
     }
     /// <p>The status of the current request.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -84,25 +75,28 @@ impl DescribeConstraintOutputBuilder {
     }
     /// <p>The status of the current request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeConstraintOutput`](crate::operation::describe_constraint::DescribeConstraintOutput).
     pub fn build(self) -> crate::operation::describe_constraint::DescribeConstraintOutput {
         crate::operation::describe_constraint::DescribeConstraintOutput {
-            constraint_detail: self.constraint_detail,
-            constraint_parameters: self.constraint_parameters,
-            status: self.status,
+            constraint_detail: self.constraint_detail
+            ,
+            constraint_parameters: self.constraint_parameters
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

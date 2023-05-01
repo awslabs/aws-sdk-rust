@@ -3,7 +3,7 @@
 /// <p>The conditional formatting that determines the shape of the filled map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilledMapShapeConditionalFormatting {
+pub struct FilledMapShapeConditionalFormatting  {
     /// <p>The field ID of the filled map shape.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FilledMapShapeConditionalFormatting {
 }
 impl FilledMapShapeConditionalFormatting {
     /// <p>The field ID of the filled map shape.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::ShapeConditionalFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::ShapeConditionalFormat> {
         self.format.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl FilledMapShapeConditionalFormattingBuilder {
     }
     /// <p>The field ID of the filled map shape.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub fn format(mut self, input: crate::types::ShapeConditionalFormat) -> Self {
@@ -52,18 +51,17 @@ impl FilledMapShapeConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
-    pub fn set_format(
-        mut self,
-        input: std::option::Option<crate::types::ShapeConditionalFormat>,
-    ) -> Self {
-        self.format = input;
-        self
+    pub fn set_format(mut self, input: std::option::Option<crate::types::ShapeConditionalFormat>) -> Self {
+        self.format = input; self
     }
     /// Consumes the builder and constructs a [`FilledMapShapeConditionalFormatting`](crate::types::FilledMapShapeConditionalFormatting).
     pub fn build(self) -> crate::types::FilledMapShapeConditionalFormatting {
         crate::types::FilledMapShapeConditionalFormatting {
-            field_id: self.field_id,
-            format: self.format,
+            field_id: self.field_id
+            ,
+            format: self.format
+            ,
         }
     }
 }
+

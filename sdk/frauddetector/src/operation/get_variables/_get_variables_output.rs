@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVariablesOutput {
+pub struct GetVariablesOutput  {
     /// <p>The names of the variables returned. </p>
     #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::types::Variable>>,
@@ -13,19 +13,19 @@ pub struct GetVariablesOutput {
 }
 impl GetVariablesOutput {
     /// <p>The names of the variables returned. </p>
-    pub fn variables(&self) -> std::option::Option<&[crate::types::Variable]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::types::Variable]> {
         self.variables.as_deref()
     }
     /// <p>The next page token to be used in subsequent requests. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetVariablesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetVariablesOutput {
     /// Creates a new builder-style object to manufacture [`GetVariablesOutput`](crate::operation::get_variables::GetVariablesOutput).
     pub fn builder() -> crate::operation::get_variables::builders::GetVariablesOutputBuilder {
@@ -49,17 +49,13 @@ impl GetVariablesOutputBuilder {
     /// <p>The names of the variables returned. </p>
     pub fn variables(mut self, input: crate::types::Variable) -> Self {
         let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = Some(v);
-        self
+                        v.push(input);
+                        self.variables = Some(v);
+                        self
     }
     /// <p>The names of the variables returned. </p>
-    pub fn set_variables(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Variable>>,
-    ) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::types::Variable>>) -> Self {
+        self.variables = input; self
     }
     /// <p>The next page token to be used in subsequent requests. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl GetVariablesOutputBuilder {
     }
     /// <p>The next page token to be used in subsequent requests. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetVariablesOutput`](crate::operation::get_variables::GetVariablesOutput).
     pub fn build(self) -> crate::operation::get_variables::GetVariablesOutput {
         crate::operation::get_variables::GetVariablesOutput {
-            variables: self.variables,
-            next_token: self.next_token,
+            variables: self.variables
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

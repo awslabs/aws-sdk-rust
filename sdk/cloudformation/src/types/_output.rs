@@ -3,7 +3,7 @@
 /// <p>The Output data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Output {
+pub struct Output  {
     /// <p>The key associated with the output.</p>
     #[doc(hidden)]
     pub output_key: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Output {
 }
 impl Output {
     /// <p>The key associated with the output.</p>
-    pub fn output_key(&self) -> std::option::Option<&str> {
+    pub fn output_key(&self) -> std::option::Option<& str> {
         self.output_key.as_deref()
     }
     /// <p>The value associated with the output.</p>
-    pub fn output_value(&self) -> std::option::Option<&str> {
+    pub fn output_value(&self) -> std::option::Option<& str> {
         self.output_value.as_deref()
     }
     /// <p>User defined description associated with the output.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the export associated with the output.</p>
-    pub fn export_name(&self) -> std::option::Option<&str> {
+    pub fn export_name(&self) -> std::option::Option<& str> {
         self.export_name.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl OutputBuilder {
     }
     /// <p>The key associated with the output.</p>
     pub fn set_output_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_key = input;
-        self
+        self.output_key = input; self
     }
     /// <p>The value associated with the output.</p>
     pub fn output_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl OutputBuilder {
     }
     /// <p>The value associated with the output.</p>
     pub fn set_output_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_value = input;
-        self
+        self.output_value = input; self
     }
     /// <p>User defined description associated with the output.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl OutputBuilder {
     }
     /// <p>User defined description associated with the output.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the export associated with the output.</p>
     pub fn export_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl OutputBuilder {
     }
     /// <p>The name of the export associated with the output.</p>
     pub fn set_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_name = input;
-        self
+        self.export_name = input; self
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {
         crate::types::Output {
-            output_key: self.output_key,
-            output_value: self.output_value,
-            description: self.description,
-            export_name: self.export_name,
+            output_key: self.output_key
+            ,
+            output_value: self.output_value
+            ,
+            description: self.description
+            ,
+            export_name: self.export_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetObjectInformationInput {
+pub struct GetObjectInformationInput  {
     /// <p>The ARN of the directory being retrieved.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct GetObjectInformationInput {
 }
 impl GetObjectInformationInput {
     /// <p>The ARN of the directory being retrieved.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A reference to the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
-    pub fn consistency_level(&self) -> std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
 }
 impl GetObjectInformationInput {
     /// Creates a new builder-style object to manufacture [`GetObjectInformationInput`](crate::operation::get_object_information::GetObjectInformationInput).
-    pub fn builder(
-    ) -> crate::operation::get_object_information::builders::GetObjectInformationInputBuilder {
+    pub fn builder() -> crate::operation::get_object_information::builders::GetObjectInformationInputBuilder {
         crate::operation::get_object_information::builders::GetObjectInformationInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl GetObjectInformationInputBuilder {
     }
     /// <p>The ARN of the directory being retrieved.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>A reference to the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -60,12 +58,8 @@ impl GetObjectInformationInputBuilder {
         self
     }
     /// <p>A reference to the object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -73,26 +67,21 @@ impl GetObjectInformationInputBuilder {
         self
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
-        self.consistency_level = input;
-        self
+    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+        self.consistency_level = input; self
     }
     /// Consumes the builder and constructs a [`GetObjectInformationInput`](crate::operation::get_object_information::GetObjectInformationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_object_information::GetObjectInformationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_object_information::GetObjectInformationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_object_information::GetObjectInformationInput {
-                directory_arn: self.directory_arn,
-                object_reference: self.object_reference,
-                consistency_level: self.consistency_level,
-            },
+                directory_arn: self.directory_arn
+                ,
+                object_reference: self.object_reference
+                ,
+                consistency_level: self.consistency_level
+                ,
+            }
         )
     }
 }
+

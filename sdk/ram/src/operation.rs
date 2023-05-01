@@ -10,8 +10,20 @@ pub mod associate_resource_share;
 /// Types for the `AssociateResourceSharePermission` operation.
 pub mod associate_resource_share_permission;
 
+/// Types for the `CreatePermission` operation.
+pub mod create_permission;
+
+/// Types for the `CreatePermissionVersion` operation.
+pub mod create_permission_version;
+
 /// Types for the `CreateResourceShare` operation.
 pub mod create_resource_share;
+
+/// Types for the `DeletePermission` operation.
+pub mod delete_permission;
+
+/// Types for the `DeletePermissionVersion` operation.
+pub mod delete_permission_version;
 
 /// Types for the `DeleteResourceShare` operation.
 pub mod delete_resource_share;
@@ -43,6 +55,9 @@ pub mod get_resource_shares;
 /// Types for the `ListPendingInvitationResources` operation.
 pub mod list_pending_invitation_resources;
 
+/// Types for the `ListPermissionAssociations` operation.
+pub mod list_permission_associations;
+
 /// Types for the `ListPermissionVersions` operation.
 pub mod list_permission_versions;
 
@@ -51,6 +66,9 @@ pub mod list_permissions;
 
 /// Types for the `ListPrincipals` operation.
 pub mod list_principals;
+
+/// Types for the `ListReplacePermissionAssociationsWork` operation.
+pub mod list_replace_permission_associations_work;
 
 /// Types for the `ListResourceSharePermissions` operation.
 pub mod list_resource_share_permissions;
@@ -61,11 +79,20 @@ pub mod list_resource_types;
 /// Types for the `ListResources` operation.
 pub mod list_resources;
 
+/// Types for the `PromotePermissionCreatedFromPolicy` operation.
+pub mod promote_permission_created_from_policy;
+
 /// Types for the `PromoteResourceShareCreatedFromPolicy` operation.
 pub mod promote_resource_share_created_from_policy;
 
 /// Types for the `RejectResourceShareInvitation` operation.
 pub mod reject_resource_share_invitation;
+
+/// Types for the `ReplacePermissionAssociations` operation.
+pub mod replace_permission_associations;
+
+/// Types for the `SetDefaultPermissionVersion` operation.
+pub mod set_default_permission_version;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -75,3 +102,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateResourceShare` operation.
 pub mod update_resource_share;
+

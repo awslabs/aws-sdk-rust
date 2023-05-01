@@ -3,7 +3,7 @@
 /// <p>A description of the identity pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityPoolShortDescription {
+pub struct IdentityPoolShortDescription  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IdentityPoolShortDescription {
 }
 impl IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_name(&self) -> std::option::Option<& str> {
         self.identity_pool_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl IdentityPoolShortDescriptionBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>A string that you provide.</p>
     pub fn identity_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl IdentityPoolShortDescriptionBuilder {
         self
     }
     /// <p>A string that you provide.</p>
-    pub fn set_identity_pool_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identity_pool_name = input;
-        self
+    pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identity_pool_name = input; self
     }
     /// Consumes the builder and constructs a [`IdentityPoolShortDescription`](crate::types::IdentityPoolShortDescription).
     pub fn build(self) -> crate::types::IdentityPoolShortDescription {
         crate::types::IdentityPoolShortDescription {
-            identity_pool_id: self.identity_pool_id,
-            identity_pool_name: self.identity_pool_name,
+            identity_pool_id: self.identity_pool_id
+            ,
+            identity_pool_name: self.identity_pool_name
+            ,
         }
     }
 }
+

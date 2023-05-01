@@ -3,7 +3,7 @@
 /// <p>Information about S3 keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3KeyOutput {
+pub struct S3KeyOutput  {
     /// <p>The S3 key.</p>
     #[doc(hidden)]
     pub s3_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3KeyOutput {
 }
 impl S3KeyOutput {
     /// <p>The S3 key.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The etag for the object.</p>
-    pub fn etag(&self) -> std::option::Option<&str> {
+    pub fn etag(&self) -> std::option::Option<& str> {
         self.etag.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3KeyOutputBuilder {
     }
     /// <p>The S3 key.</p>
     pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The etag for the object.</p>
     pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3KeyOutputBuilder {
     }
     /// <p>The etag for the object.</p>
     pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.etag = input;
-        self
+        self.etag = input; self
     }
     /// Consumes the builder and constructs a [`S3KeyOutput`](crate::types::S3KeyOutput).
     pub fn build(self) -> crate::types::S3KeyOutput {
         crate::types::S3KeyOutput {
-            s3_key: self.s3_key,
-            etag: self.etag,
+            s3_key: self.s3_key
+            ,
+            etag: self.etag
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWebsiteAuthorizationProviderInput {
+pub struct DisassociateWebsiteAuthorizationProviderInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateWebsiteAuthorizationProviderInput {
 }
 impl DisassociateWebsiteAuthorizationProviderInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+    pub fn authorization_provider_id(&self) -> std::option::Option<& str> {
         self.authorization_provider_id.as_deref()
     }
 }
 impl DisassociateWebsiteAuthorizationProviderInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebsiteAuthorizationProviderInput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput).
-    pub fn builder() -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderInputBuilder {
         crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DisassociateWebsiteAuthorizationProviderInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>A unique identifier for the authorization provider.</p>
     pub fn authorization_provider_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,15 +50,11 @@ impl DisassociateWebsiteAuthorizationProviderInputBuilder {
         self
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn set_authorization_provider_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorization_provider_id = input;
-        self
+    pub fn set_authorization_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorization_provider_id = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateWebsiteAuthorizationProviderInput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput {
                 fleet_arn: self.fleet_arn
@@ -70,3 +65,4 @@ impl DisassociateWebsiteAuthorizationProviderInputBuilder {
         )
     }
 }
+

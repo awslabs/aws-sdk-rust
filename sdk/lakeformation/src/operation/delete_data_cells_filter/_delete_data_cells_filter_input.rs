@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataCellsFilterInput {
+pub struct DeleteDataCellsFilterInput  {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct DeleteDataCellsFilterInput {
 }
 impl DeleteDataCellsFilterInput {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(&self) -> std::option::Option<&str> {
+    pub fn table_catalog_id(&self) -> std::option::Option<& str> {
         self.table_catalog_id.as_deref()
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A table in the database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name given by the user to the data filter cell.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteDataCellsFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterInput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterInputBuilder {
         crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl DeleteDataCellsFilterInputBuilder {
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
     pub fn set_table_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_catalog_id = input;
-        self
+        self.table_catalog_id = input; self
     }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl DeleteDataCellsFilterInputBuilder {
     }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>A table in the database.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl DeleteDataCellsFilterInputBuilder {
     }
     /// <p>A table in the database.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,23 +85,22 @@ impl DeleteDataCellsFilterInputBuilder {
     }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDataCellsFilterInput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_data_cells_filter::DeleteDataCellsFilterInput {
-                table_catalog_id: self.table_catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                name: self.name,
-            },
+                table_catalog_id: self.table_catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

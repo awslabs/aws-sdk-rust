@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCodeBindingOutput {
+pub struct PutCodeBindingOutput  {
     /// <p>The time and date that the code binding was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,27 +19,27 @@ pub struct PutCodeBindingOutput {
 }
 impl PutCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The current status of code binding generation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CodeGenerationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::CodeGenerationStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutCodeBindingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutCodeBindingOutput {
     /// Creates a new builder-style object to manufacture [`PutCodeBindingOutput`](crate::operation::put_code_binding::PutCodeBindingOutput).
     pub fn builder() -> crate::operation::put_code_binding::builders::PutCodeBindingOutputBuilder {
@@ -64,12 +64,8 @@ impl PutCodeBindingOutputBuilder {
         self
     }
     /// <p>The time and date that the code binding was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// <p>The date and time that code bindings were modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -77,12 +73,8 @@ impl PutCodeBindingOutputBuilder {
         self
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     /// <p>The version number of the schema.</p>
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +83,7 @@ impl PutCodeBindingOutputBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The current status of code binding generation.</p>
     pub fn status(mut self, input: crate::types::CodeGenerationStatus) -> Self {
@@ -100,30 +91,31 @@ impl PutCodeBindingOutputBuilder {
         self
     }
     /// <p>The current status of code binding generation.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::CodeGenerationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::CodeGenerationStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutCodeBindingOutput`](crate::operation::put_code_binding::PutCodeBindingOutput).
     pub fn build(self) -> crate::operation::put_code_binding::PutCodeBindingOutput {
         crate::operation::put_code_binding::PutCodeBindingOutput {
-            creation_date: self.creation_date,
-            last_modified: self.last_modified,
-            schema_version: self.schema_version,
-            status: self.status,
+            creation_date: self.creation_date
+            ,
+            last_modified: self.last_modified
+            ,
+            schema_version: self.schema_version
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

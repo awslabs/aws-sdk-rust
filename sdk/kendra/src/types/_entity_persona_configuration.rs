@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityPersonaConfiguration {
+pub struct EntityPersonaConfiguration  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EntityPersonaConfiguration {
 }
 impl EntityPersonaConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn persona(&self) -> std::option::Option<&crate::types::Persona> {
+    pub fn persona(&self) -> std::option::Option<& crate::types::Persona> {
         self.persona.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl EntityPersonaConfigurationBuilder {
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn persona(mut self, input: crate::types::Persona) -> Self {
@@ -53,14 +52,16 @@ impl EntityPersonaConfigurationBuilder {
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn set_persona(mut self, input: std::option::Option<crate::types::Persona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// Consumes the builder and constructs a [`EntityPersonaConfiguration`](crate::types::EntityPersonaConfiguration).
     pub fn build(self) -> crate::types::EntityPersonaConfiguration {
         crate::types::EntityPersonaConfiguration {
-            entity_id: self.entity_id,
-            persona: self.persona,
+            entity_id: self.entity_id
+            ,
+            persona: self.persona
+            ,
         }
     }
 }
+

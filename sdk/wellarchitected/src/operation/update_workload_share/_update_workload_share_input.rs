@@ -3,7 +3,7 @@
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkloadShareInput {
+pub struct UpdateWorkloadShareInput  {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
@@ -16,24 +16,22 @@ pub struct UpdateWorkloadShareInput {
 }
 impl UpdateWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(&self) -> std::option::Option<&str> {
+    pub fn share_id(&self) -> std::option::Option<& str> {
         self.share_id.as_deref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>Permission granted on a workload share.</p>
-    pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
+    pub fn permission_type(&self) -> std::option::Option<& crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
 }
 impl UpdateWorkloadShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
-    pub fn builder(
-    ) -> crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
-        crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
+        crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder::default()
     }
 }
 
@@ -53,8 +51,7 @@ impl UpdateWorkloadShareInputBuilder {
     }
     /// <p>The ID associated with the workload share.</p>
     pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +60,7 @@ impl UpdateWorkloadShareInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>Permission granted on a workload share.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -72,26 +68,21 @@ impl UpdateWorkloadShareInputBuilder {
         self
     }
     /// <p>Permission granted on a workload share.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: std::option::Option<crate::types::PermissionType>,
-    ) -> Self {
-        self.permission_type = input;
-        self
+    pub fn set_permission_type(mut self, input: std::option::Option<crate::types::PermissionType>) -> Self {
+        self.permission_type = input; self
     }
     /// Consumes the builder and constructs a [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_workload_share::UpdateWorkloadShareInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_workload_share::UpdateWorkloadShareInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_workload_share::UpdateWorkloadShareInput {
-                share_id: self.share_id,
-                workload_id: self.workload_id,
-                permission_type: self.permission_type,
-            },
+                share_id: self.share_id
+                ,
+                workload_id: self.workload_id
+                ,
+                permission_type: self.permission_type
+                ,
+            }
         )
     }
 }
+

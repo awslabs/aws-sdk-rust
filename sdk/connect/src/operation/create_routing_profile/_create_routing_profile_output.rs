@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRoutingProfileOutput {
+pub struct CreateRoutingProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     #[doc(hidden)]
     pub routing_profile_arn: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct CreateRoutingProfileOutput {
 }
 impl CreateRoutingProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn routing_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_arn(&self) -> std::option::Option<& str> {
         self.routing_profile_arn.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateRoutingProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRoutingProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingProfileOutput`](crate::operation::create_routing_profile::CreateRoutingProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_routing_profile::builders::CreateRoutingProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_routing_profile::builders::CreateRoutingProfileOutputBuilder {
         crate::operation::create_routing_profile::builders::CreateRoutingProfileOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl CreateRoutingProfileOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn set_routing_profile_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.routing_profile_arn = input;
-        self
+    pub fn set_routing_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.routing_profile_arn = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,28 +57,27 @@ impl CreateRoutingProfileOutputBuilder {
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.routing_profile_id = input;
-        self
+    pub fn set_routing_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.routing_profile_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRoutingProfileOutput`](crate::operation::create_routing_profile::CreateRoutingProfileOutput).
     pub fn build(self) -> crate::operation::create_routing_profile::CreateRoutingProfileOutput {
         crate::operation::create_routing_profile::CreateRoutingProfileOutput {
-            routing_profile_arn: self.routing_profile_arn,
-            routing_profile_id: self.routing_profile_id,
+            routing_profile_arn: self.routing_profile_arn
+            ,
+            routing_profile_id: self.routing_profile_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

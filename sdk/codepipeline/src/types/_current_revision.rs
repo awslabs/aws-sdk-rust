@@ -3,7 +3,7 @@
 /// <p>Represents information about a current revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CurrentRevision {
+pub struct CurrentRevision  {
     /// <p>The revision ID of the current version of an artifact.</p>
     #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct CurrentRevision {
 }
 impl CurrentRevision {
     /// <p>The revision ID of the current version of an artifact.</p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn change_identifier(&self) -> std::option::Option<&str> {
+    pub fn change_identifier(&self) -> std::option::Option<& str> {
         self.change_identifier.as_deref()
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
-    pub fn revision_summary(&self) -> std::option::Option<&str> {
+    pub fn revision_summary(&self) -> std::option::Option<& str> {
         self.revision_summary.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The revision ID of the current version of an artifact.</p>
     pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The change identifier for the current revision.</p>
     pub fn change_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,12 +67,8 @@ impl CurrentRevisionBuilder {
         self
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn set_change_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.change_identifier = input;
-        self
+    pub fn set_change_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.change_identifier = input; self
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +77,7 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub fn revision_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl CurrentRevisionBuilder {
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub fn set_revision_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_summary = input;
-        self
+        self.revision_summary = input; self
     }
     /// Consumes the builder and constructs a [`CurrentRevision`](crate::types::CurrentRevision).
     pub fn build(self) -> crate::types::CurrentRevision {
         crate::types::CurrentRevision {
-            revision: self.revision,
-            change_identifier: self.change_identifier,
-            created: self.created,
-            revision_summary: self.revision_summary,
+            revision: self.revision
+            ,
+            change_identifier: self.change_identifier
+            ,
+            created: self.created
+            ,
+            revision_summary: self.revision_summary
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInsightSelectorsInput {
+pub struct PutInsightSelectorsInput  {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     #[doc(hidden)]
     pub trail_name: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct PutInsightSelectorsInput {
 }
 impl PutInsightSelectorsInput {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
-    pub fn trail_name(&self) -> std::option::Option<&str> {
+    pub fn trail_name(&self) -> std::option::Option<& str> {
         self.trail_name.as_deref()
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
-    pub fn insight_selectors(&self) -> std::option::Option<&[crate::types::InsightSelector]> {
+    pub fn insight_selectors(&self) -> std::option::Option<& [crate::types::InsightSelector]> {
         self.insight_selectors.as_deref()
     }
 }
 impl PutInsightSelectorsInput {
     /// Creates a new builder-style object to manufacture [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
-    pub fn builder(
-    ) -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
-        crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
+        crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl PutInsightSelectorsInputBuilder {
     }
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trail_name = input;
-        self
+        self.trail_name = input; self
     }
     /// Appends an item to `insight_selectors`.
     ///
@@ -54,30 +51,24 @@ impl PutInsightSelectorsInputBuilder {
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
-        v.push(input);
-        self.insight_selectors = Some(v);
-        self
+                        v.push(input);
+                        self.insight_selectors = Some(v);
+                        self
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
-    pub fn set_insight_selectors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>,
-    ) -> Self {
-        self.insight_selectors = input;
-        self
+    pub fn set_insight_selectors(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>) -> Self {
+        self.insight_selectors = input; self
     }
     /// Consumes the builder and constructs a [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_insight_selectors::PutInsightSelectorsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_insight_selectors::PutInsightSelectorsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_insight_selectors::PutInsightSelectorsInput {
-                trail_name: self.trail_name,
-                insight_selectors: self.insight_selectors,
-            },
+                trail_name: self.trail_name
+                ,
+                insight_selectors: self.insight_selectors
+                ,
+            }
         )
     }
 }
+

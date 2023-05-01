@@ -3,14 +3,14 @@
 /// <p>Describes the status of the production variant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductionVariantStatus {
-    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
-    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
-    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
+pub struct ProductionVariantStatus  {
+    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li> 
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li> 
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::VariantStatus>,
@@ -22,23 +22,23 @@ pub struct ProductionVariantStatus {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProductionVariantStatus {
-    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
-    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
-    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
+    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li> 
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li> 
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::VariantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::VariantStatus> {
         self.status.as_ref()
     }
     /// <p>A message that describes the status of the production variant.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The start time of the current status change.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -58,29 +58,28 @@ pub struct ProductionVariantStatusBuilder {
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProductionVariantStatusBuilder {
-    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
-    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
-    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
+    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li> 
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li> 
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::VariantStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
-    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
-    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
-    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
+    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li> 
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li> 
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li> 
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::VariantStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A message that describes the status of the production variant.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +88,7 @@ impl ProductionVariantStatusBuilder {
     }
     /// <p>A message that describes the status of the production variant.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The start time of the current status change.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -98,19 +96,19 @@ impl ProductionVariantStatusBuilder {
         self
     }
     /// <p>The start time of the current status change.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// Consumes the builder and constructs a [`ProductionVariantStatus`](crate::types::ProductionVariantStatus).
     pub fn build(self) -> crate::types::ProductionVariantStatus {
         crate::types::ProductionVariantStatus {
-            status: self.status,
-            status_message: self.status_message,
-            start_time: self.start_time,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            start_time: self.start_time
+            ,
         }
     }
 }
+

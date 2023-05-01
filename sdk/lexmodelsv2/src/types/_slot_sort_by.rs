@@ -3,7 +3,7 @@
 /// <p>Specifies attributes for sorting a list of bots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotSortBy {
+pub struct SlotSortBy  {
     /// <p>The attribute to use to sort the list.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::SlotSortAttribute>,
@@ -13,11 +13,11 @@ pub struct SlotSortBy {
 }
 impl SlotSortBy {
     /// <p>The attribute to use to sort the list.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::SlotSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::SlotSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl SlotSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list.</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::SlotSortAttribute>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::SlotSortAttribute>) -> Self {
+        self.attribute = input; self
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -56,14 +52,16 @@ impl SlotSortByBuilder {
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// Consumes the builder and constructs a [`SlotSortBy`](crate::types::SlotSortBy).
     pub fn build(self) -> crate::types::SlotSortBy {
         crate::types::SlotSortBy {
-            attribute: self.attribute,
-            order: self.order,
+            attribute: self.attribute
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

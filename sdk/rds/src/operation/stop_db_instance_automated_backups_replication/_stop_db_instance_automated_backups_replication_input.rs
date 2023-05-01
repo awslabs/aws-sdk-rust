@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbInstanceAutomatedBackupsReplicationInput {
+pub struct StopDbInstanceAutomatedBackupsReplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     #[doc(hidden)]
     pub source_db_instance_arn: std::option::Option<std::string::String>,
 }
 impl StopDbInstanceAutomatedBackupsReplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    pub fn source_db_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn source_db_instance_arn(&self) -> std::option::Option<& str> {
         self.source_db_instance_arn.as_deref()
     }
 }
 impl StopDbInstanceAutomatedBackupsReplicationInput {
     /// Creates a new builder-style object to manufacture [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationInput).
-    pub fn builder() -> crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder{
+    pub fn builder() -> crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder {
         crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl StopDbInstanceAutomatedBackupsReplicationInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    pub fn set_source_db_instance_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_db_instance_arn = input;
-        self
+    pub fn set_source_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_db_instance_arn = input; self
     }
     /// Consumes the builder and constructs a [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationInput).
-    pub fn build(self) -> Result<crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationInput {
                 source_db_instance_arn: self.source_db_instance_arn
@@ -50,3 +46,4 @@ impl StopDbInstanceAutomatedBackupsReplicationInputBuilder {
         )
     }
 }
+

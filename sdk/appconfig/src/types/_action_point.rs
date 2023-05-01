@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actionpoint = unimplemented!();
 /// match actionpoint {
@@ -35,22 +35,14 @@
 /// Specifically, when `actionpoint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionPoint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionPoint {
     #[allow(missing_docs)] // documentation missing in model
     OnDeploymentBaking,
@@ -67,62 +59,51 @@ pub enum ActionPoint {
     #[allow(missing_docs)] // documentation missing in model
     PreStartDeployment,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionPoint {
-    fn from(s: &str) -> Self {
-        match s {
-            "ON_DEPLOYMENT_BAKING" => ActionPoint::OnDeploymentBaking,
-            "ON_DEPLOYMENT_COMPLETE" => ActionPoint::OnDeploymentComplete,
-            "ON_DEPLOYMENT_ROLLED_BACK" => ActionPoint::OnDeploymentRolledBack,
-            "ON_DEPLOYMENT_START" => ActionPoint::OnDeploymentStart,
-            "ON_DEPLOYMENT_STEP" => ActionPoint::OnDeploymentStep,
-            "PRE_CREATE_HOSTED_CONFIGURATION_VERSION" => {
-                ActionPoint::PreCreateHostedConfigurationVersion
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ON_DEPLOYMENT_BAKING" => ActionPoint::OnDeploymentBaking,
+"ON_DEPLOYMENT_COMPLETE" => ActionPoint::OnDeploymentComplete,
+"ON_DEPLOYMENT_ROLLED_BACK" => ActionPoint::OnDeploymentRolledBack,
+"ON_DEPLOYMENT_START" => ActionPoint::OnDeploymentStart,
+"ON_DEPLOYMENT_STEP" => ActionPoint::OnDeploymentStep,
+"PRE_CREATE_HOSTED_CONFIGURATION_VERSION" => ActionPoint::PreCreateHostedConfigurationVersion,
+"PRE_START_DEPLOYMENT" => ActionPoint::PreStartDeployment,
+other => ActionPoint::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "PRE_START_DEPLOYMENT" => ActionPoint::PreStartDeployment,
-            other => ActionPoint::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
 impl std::str::FromStr for ActionPoint {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionPoint::from(s))
-    }
-}
-impl ActionPoint {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ActionPoint::OnDeploymentBaking => "ON_DEPLOYMENT_BAKING",
-            ActionPoint::OnDeploymentComplete => "ON_DEPLOYMENT_COMPLETE",
-            ActionPoint::OnDeploymentRolledBack => "ON_DEPLOYMENT_ROLLED_BACK",
-            ActionPoint::OnDeploymentStart => "ON_DEPLOYMENT_START",
-            ActionPoint::OnDeploymentStep => "ON_DEPLOYMENT_STEP",
-            ActionPoint::PreCreateHostedConfigurationVersion => {
-                "PRE_CREATE_HOSTED_CONFIGURATION_VERSION"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionPoint::from(s))
+                }
             }
-            ActionPoint::PreStartDeployment => "PRE_START_DEPLOYMENT",
-            ActionPoint::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ON_DEPLOYMENT_BAKING",
-            "ON_DEPLOYMENT_COMPLETE",
-            "ON_DEPLOYMENT_ROLLED_BACK",
-            "ON_DEPLOYMENT_START",
-            "ON_DEPLOYMENT_STEP",
-            "PRE_CREATE_HOSTED_CONFIGURATION_VERSION",
-            "PRE_START_DEPLOYMENT",
-        ]
-    }
+impl ActionPoint {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ActionPoint::OnDeploymentBaking => "ON_DEPLOYMENT_BAKING",
+    ActionPoint::OnDeploymentComplete => "ON_DEPLOYMENT_COMPLETE",
+    ActionPoint::OnDeploymentRolledBack => "ON_DEPLOYMENT_ROLLED_BACK",
+    ActionPoint::OnDeploymentStart => "ON_DEPLOYMENT_START",
+    ActionPoint::OnDeploymentStep => "ON_DEPLOYMENT_STEP",
+    ActionPoint::PreCreateHostedConfigurationVersion => "PRE_CREATE_HOSTED_CONFIGURATION_VERSION",
+    ActionPoint::PreStartDeployment => "PRE_START_DEPLOYMENT",
+    ActionPoint::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ON_DEPLOYMENT_BAKING", "ON_DEPLOYMENT_COMPLETE", "ON_DEPLOYMENT_ROLLED_BACK", "ON_DEPLOYMENT_START", "ON_DEPLOYMENT_STEP", "PRE_CREATE_HOSTED_CONFIGURATION_VERSION", "PRE_START_DEPLOYMENT"]
+                }
+            }
 impl AsRef<str> for ActionPoint {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

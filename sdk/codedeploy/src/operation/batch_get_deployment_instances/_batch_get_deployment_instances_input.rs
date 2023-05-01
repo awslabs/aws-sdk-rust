@@ -3,7 +3,7 @@
 /// <p> Represents the input of a <code>BatchGetDeploymentInstances</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentInstancesInput {
+pub struct BatchGetDeploymentInstancesInput  {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct BatchGetDeploymentInstancesInput {
 }
 impl BatchGetDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_ids.as_deref()
     }
 }
 impl BatchGetDeploymentInstancesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesInput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput).
-    pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder {
         crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl BatchGetDeploymentInstancesInputBuilder {
     }
     /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -53,30 +52,24 @@ impl BatchGetDeploymentInstancesInputBuilder {
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = Some(v);
+                        self
     }
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentInstancesInput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput {
-                deployment_id: self.deployment_id,
-                instance_ids: self.instance_ids,
-            },
+                deployment_id: self.deployment_id
+                ,
+                instance_ids: self.instance_ids
+                ,
+            }
         )
     }
 }
+

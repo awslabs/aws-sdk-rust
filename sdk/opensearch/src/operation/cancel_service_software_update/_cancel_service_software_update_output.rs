@@ -3,7 +3,7 @@
 /// <p>Container for the response to a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelServiceSoftwareUpdateOutput {
+pub struct CancelServiceSoftwareUpdateOutput  {
     /// <p>Container for the state of your domain relative to the latest service software.</p>
     #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
@@ -11,20 +11,18 @@ pub struct CancelServiceSoftwareUpdateOutput {
 }
 impl CancelServiceSoftwareUpdateOutput {
     /// <p>Container for the state of your domain relative to the latest service software.</p>
-    pub fn service_software_options(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceSoftwareOptions> {
+    pub fn service_software_options(&self) -> std::option::Option<& crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelServiceSoftwareUpdateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelServiceSoftwareUpdateOutput {
     /// Creates a new builder-style object to manufacture [`CancelServiceSoftwareUpdateOutput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput).
-    pub fn builder() -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateOutputBuilder {
         crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateOutputBuilder::default()
     }
 }
@@ -43,29 +41,25 @@ impl CancelServiceSoftwareUpdateOutputBuilder {
         self
     }
     /// <p>Container for the state of your domain relative to the latest service software.</p>
-    pub fn set_service_software_options(
-        mut self,
-        input: std::option::Option<crate::types::ServiceSoftwareOptions>,
-    ) -> Self {
-        self.service_software_options = input;
-        self
+    pub fn set_service_software_options(mut self, input: std::option::Option<crate::types::ServiceSoftwareOptions>) -> Self {
+        self.service_software_options = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelServiceSoftwareUpdateOutput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput {
+    pub fn build(self) -> crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput {
         crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput {
-            service_software_options: self.service_software_options,
+            service_software_options: self.service_software_options
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

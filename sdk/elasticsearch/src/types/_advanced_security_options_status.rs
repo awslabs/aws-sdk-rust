@@ -3,7 +3,7 @@
 /// <p> Specifies the status of advanced security options for the specified Elasticsearch domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdvancedSecurityOptionsStatus {
+pub struct AdvancedSecurityOptionsStatus  {
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::types::AdvancedSecurityOptions>,
@@ -13,11 +13,11 @@ pub struct AdvancedSecurityOptionsStatus {
 }
 impl AdvancedSecurityOptionsStatus {
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::AdvancedSecurityOptions> {
+    pub fn options(&self) -> std::option::Option<& crate::types::AdvancedSecurityOptions> {
         self.options.as_ref()
     }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl AdvancedSecurityOptionsStatusBuilder {
         self
     }
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptions>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<crate::types::AdvancedSecurityOptions>) -> Self {
+        self.options = input; self
     }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -56,14 +52,16 @@ impl AdvancedSecurityOptionsStatusBuilder {
     }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AdvancedSecurityOptionsStatus`](crate::types::AdvancedSecurityOptionsStatus).
     pub fn build(self) -> crate::types::AdvancedSecurityOptionsStatus {
         crate::types::AdvancedSecurityOptionsStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

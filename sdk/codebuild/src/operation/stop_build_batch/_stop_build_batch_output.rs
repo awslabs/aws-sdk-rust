@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopBuildBatchOutput {
+pub struct StopBuildBatchOutput  {
     /// <p>Contains information about a batch build.</p>
     #[doc(hidden)]
     pub build_batch: std::option::Option<crate::types::BuildBatch>,
@@ -10,15 +10,15 @@ pub struct StopBuildBatchOutput {
 }
 impl StopBuildBatchOutput {
     /// <p>Contains information about a batch build.</p>
-    pub fn build_batch(&self) -> std::option::Option<&crate::types::BuildBatch> {
+    pub fn build_batch(&self) -> std::option::Option<& crate::types::BuildBatch> {
         self.build_batch.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopBuildBatchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopBuildBatchOutput {
     /// Creates a new builder-style object to manufacture [`StopBuildBatchOutput`](crate::operation::stop_build_batch::StopBuildBatchOutput).
     pub fn builder() -> crate::operation::stop_build_batch::builders::StopBuildBatchOutputBuilder {
@@ -41,23 +41,24 @@ impl StopBuildBatchOutputBuilder {
     }
     /// <p>Contains information about a batch build.</p>
     pub fn set_build_batch(mut self, input: std::option::Option<crate::types::BuildBatch>) -> Self {
-        self.build_batch = input;
-        self
+        self.build_batch = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopBuildBatchOutput`](crate::operation::stop_build_batch::StopBuildBatchOutput).
     pub fn build(self) -> crate::operation::stop_build_batch::StopBuildBatchOutput {
         crate::operation::stop_build_batch::StopBuildBatchOutput {
-            build_batch: self.build_batch,
+            build_batch: self.build_batch
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

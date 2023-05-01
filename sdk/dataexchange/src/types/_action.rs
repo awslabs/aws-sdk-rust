@@ -3,17 +3,14 @@
 /// <p>What occurs after a certain event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>Details for the export revision to Amazon S3 action.</p>
     #[doc(hidden)]
-    pub export_revision_to_s3:
-        std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
+    pub export_revision_to_s3: std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
 }
 impl Action {
     /// <p>Details for the export revision to Amazon S3 action.</p>
-    pub fn export_revision_to_s3(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoExportRevisionToS3RequestDetails> {
+    pub fn export_revision_to_s3(&self) -> std::option::Option<& crate::types::AutoExportRevisionToS3RequestDetails> {
         self.export_revision_to_s3.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl Action {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ActionBuilder {
-    pub(crate) export_revision_to_s3:
-        std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
+    pub(crate) export_revision_to_s3: std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
 }
 impl ActionBuilder {
     /// <p>Details for the export revision to Amazon S3 action.</p>
-    pub fn export_revision_to_s3(
-        mut self,
-        input: crate::types::AutoExportRevisionToS3RequestDetails,
-    ) -> Self {
+    pub fn export_revision_to_s3(mut self, input: crate::types::AutoExportRevisionToS3RequestDetails) -> Self {
         self.export_revision_to_s3 = Some(input);
         self
     }
     /// <p>Details for the export revision to Amazon S3 action.</p>
-    pub fn set_export_revision_to_s3(
-        mut self,
-        input: std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
-    ) -> Self {
-        self.export_revision_to_s3 = input;
-        self
+    pub fn set_export_revision_to_s3(mut self, input: std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>) -> Self {
+        self.export_revision_to_s3 = input; self
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
-            export_revision_to_s3: self.export_revision_to_s3,
+            export_revision_to_s3: self.export_revision_to_s3
+            ,
         }
     }
 }
+

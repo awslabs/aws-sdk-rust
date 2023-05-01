@@ -3,7 +3,7 @@
 /// <p>An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportTask {
+pub struct ImportTask  {
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub import_task_id: std::option::Option<std::string::String>,
@@ -40,43 +40,43 @@ pub struct ImportTask {
     /// <p>The total number of application records in the import file that failed to be imported.</p>
     #[doc(hidden)]
     pub application_import_failure: i32,
-    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
-    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
+    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p> 
+    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p> 
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
     #[doc(hidden)]
     pub errors_and_failed_entries_zip: std::option::Option<std::string::String>,
 }
 impl ImportTask {
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
-    pub fn import_task_id(&self) -> std::option::Option<&str> {
+    pub fn import_task_id(&self) -> std::option::Option<& str> {
         self.import_task_id.as_deref()
     }
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A descriptive name for an import task. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-    pub fn import_url(&self) -> std::option::Option<&str> {
+    pub fn import_url(&self) -> std::option::Option<& str> {
         self.import_url.as_deref()
     }
     /// <p>The status of the import task. An import can have the status of <code>IMPORT_COMPLETE</code> and still have some records fail to import from the overall request. More information can be found in the downloadable archive defined in the <code>errorsAndFailedEntriesZip</code> field, or in the Migration Hub management console.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ImportStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ImportStatus> {
         self.status.as_ref()
     }
     /// <p>The time that the import task request was made, presented in the Unix time stamp format.</p>
-    pub fn import_request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn import_request_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.import_request_time.as_ref()
     }
     /// <p>The time that the import task request finished, presented in the Unix time stamp format.</p>
-    pub fn import_completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn import_completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.import_completion_time.as_ref()
     }
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
-    pub fn import_deleted_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn import_deleted_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.import_deleted_time.as_ref()
     }
     /// <p>The total number of server records in the import file that were successfully imported.</p>
@@ -95,10 +95,10 @@ impl ImportTask {
     pub fn application_import_failure(&self) -> i32 {
         self.application_import_failure
     }
-    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
-    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
+    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p> 
+    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p> 
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
-    pub fn errors_and_failed_entries_zip(&self) -> std::option::Option<&str> {
+    pub fn errors_and_failed_entries_zip(&self) -> std::option::Option<& str> {
         self.errors_and_failed_entries_zip.as_deref()
     }
 }
@@ -135,8 +135,7 @@ impl ImportTaskBuilder {
     }
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
     pub fn set_import_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_task_id = input;
-        self
+        self.import_task_id = input; self
     }
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,12 +143,8 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>A descriptive name for an import task. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +153,7 @@ impl ImportTaskBuilder {
     }
     /// <p>A descriptive name for an import task. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
     pub fn import_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +162,7 @@ impl ImportTaskBuilder {
     }
     /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
     pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_url = input;
-        self
+        self.import_url = input; self
     }
     /// <p>The status of the import task. An import can have the status of <code>IMPORT_COMPLETE</code> and still have some records fail to import from the overall request. More information can be found in the downloadable archive defined in the <code>errorsAndFailedEntriesZip</code> field, or in the Migration Hub management console.</p>
     pub fn status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -178,8 +171,7 @@ impl ImportTaskBuilder {
     }
     /// <p>The status of the import task. An import can have the status of <code>IMPORT_COMPLETE</code> and still have some records fail to import from the overall request. More information can be found in the downloadable archive defined in the <code>errorsAndFailedEntriesZip</code> field, or in the Migration Hub management console.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The time that the import task request was made, presented in the Unix time stamp format.</p>
     pub fn import_request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -187,12 +179,8 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>The time that the import task request was made, presented in the Unix time stamp format.</p>
-    pub fn set_import_request_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.import_request_time = input;
-        self
+    pub fn set_import_request_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.import_request_time = input; self
     }
     /// <p>The time that the import task request finished, presented in the Unix time stamp format.</p>
     pub fn import_completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -200,12 +188,8 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>The time that the import task request finished, presented in the Unix time stamp format.</p>
-    pub fn set_import_completion_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.import_completion_time = input;
-        self
+    pub fn set_import_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.import_completion_time = input; self
     }
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
     pub fn import_deleted_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -213,12 +197,8 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
-    pub fn set_import_deleted_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.import_deleted_time = input;
-        self
+    pub fn set_import_deleted_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.import_deleted_time = input; self
     }
     /// <p>The total number of server records in the import file that were successfully imported.</p>
     pub fn server_import_success(mut self, input: i32) -> Self {
@@ -227,8 +207,7 @@ impl ImportTaskBuilder {
     }
     /// <p>The total number of server records in the import file that were successfully imported.</p>
     pub fn set_server_import_success(mut self, input: std::option::Option<i32>) -> Self {
-        self.server_import_success = input;
-        self
+        self.server_import_success = input; self
     }
     /// <p>The total number of server records in the import file that failed to be imported.</p>
     pub fn server_import_failure(mut self, input: i32) -> Self {
@@ -237,8 +216,7 @@ impl ImportTaskBuilder {
     }
     /// <p>The total number of server records in the import file that failed to be imported.</p>
     pub fn set_server_import_failure(mut self, input: std::option::Option<i32>) -> Self {
-        self.server_import_failure = input;
-        self
+        self.server_import_failure = input; self
     }
     /// <p>The total number of application records in the import file that were successfully imported.</p>
     pub fn application_import_success(mut self, input: i32) -> Self {
@@ -247,8 +225,7 @@ impl ImportTaskBuilder {
     }
     /// <p>The total number of application records in the import file that were successfully imported.</p>
     pub fn set_application_import_success(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_import_success = input;
-        self
+        self.application_import_success = input; self
     }
     /// <p>The total number of application records in the import file that failed to be imported.</p>
     pub fn application_import_failure(mut self, input: i32) -> Self {
@@ -257,42 +234,55 @@ impl ImportTaskBuilder {
     }
     /// <p>The total number of application records in the import file that failed to be imported.</p>
     pub fn set_application_import_failure(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_import_failure = input;
-        self
+        self.application_import_failure = input; self
     }
-    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
-    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
+    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p> 
+    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p> 
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
     pub fn errors_and_failed_entries_zip(mut self, input: impl Into<std::string::String>) -> Self {
         self.errors_and_failed_entries_zip = Some(input.into());
         self
     }
-    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
-    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
+    /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p> 
+    /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p> 
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
-    pub fn set_errors_and_failed_entries_zip(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.errors_and_failed_entries_zip = input;
-        self
+    pub fn set_errors_and_failed_entries_zip(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.errors_and_failed_entries_zip = input; self
     }
     /// Consumes the builder and constructs a [`ImportTask`](crate::types::ImportTask).
     pub fn build(self) -> crate::types::ImportTask {
         crate::types::ImportTask {
-            import_task_id: self.import_task_id,
-            client_request_token: self.client_request_token,
-            name: self.name,
-            import_url: self.import_url,
-            status: self.status,
-            import_request_time: self.import_request_time,
-            import_completion_time: self.import_completion_time,
-            import_deleted_time: self.import_deleted_time,
-            server_import_success: self.server_import_success.unwrap_or_default(),
-            server_import_failure: self.server_import_failure.unwrap_or_default(),
-            application_import_success: self.application_import_success.unwrap_or_default(),
-            application_import_failure: self.application_import_failure.unwrap_or_default(),
-            errors_and_failed_entries_zip: self.errors_and_failed_entries_zip,
+            import_task_id: self.import_task_id
+            ,
+            client_request_token: self.client_request_token
+            ,
+            name: self.name
+            ,
+            import_url: self.import_url
+            ,
+            status: self.status
+            ,
+            import_request_time: self.import_request_time
+            ,
+            import_completion_time: self.import_completion_time
+            ,
+            import_deleted_time: self.import_deleted_time
+            ,
+            server_import_success: self.server_import_success
+                .unwrap_or_default()
+            ,
+            server_import_failure: self.server_import_failure
+                .unwrap_or_default()
+            ,
+            application_import_success: self.application_import_success
+                .unwrap_or_default()
+            ,
+            application_import_failure: self.application_import_failure
+                .unwrap_or_default()
+            ,
+            errors_and_failed_entries_zip: self.errors_and_failed_entries_zip
+            ,
         }
     }
 }
+

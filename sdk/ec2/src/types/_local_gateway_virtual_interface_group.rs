@@ -3,14 +3,13 @@
 /// <p>Describes a local gateway virtual interface group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalGatewayVirtualInterfaceGroup {
+pub struct LocalGatewayVirtualInterfaceGroup  {
     /// <p>The ID of the virtual interface group.</p>
     #[doc(hidden)]
     pub local_gateway_virtual_interface_group_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the virtual interfaces.</p>
     #[doc(hidden)]
-    pub local_gateway_virtual_interface_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub local_gateway_virtual_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the local gateway.</p>
     #[doc(hidden)]
     pub local_gateway_id: std::option::Option<std::string::String>,
@@ -23,25 +22,23 @@ pub struct LocalGatewayVirtualInterfaceGroup {
 }
 impl LocalGatewayVirtualInterfaceGroup {
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<& str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn local_gateway_virtual_interface_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.local_gateway_virtual_interface_ids.as_deref()
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_id(&self) -> std::option::Option<& str> {
         self.local_gateway_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The tags assigned to the virtual interface group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -57,50 +54,35 @@ impl LocalGatewayVirtualInterfaceGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LocalGatewayVirtualInterfaceGroupBuilder {
     pub(crate) local_gateway_virtual_interface_group_id: std::option::Option<std::string::String>,
-    pub(crate) local_gateway_virtual_interface_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) local_gateway_virtual_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) local_gateway_id: std::option::Option<std::string::String>,
     pub(crate) owner_id: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.local_gateway_virtual_interface_group_id = input;
-        self
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_virtual_interface_group_id = input; self
     }
     /// Appends an item to `local_gateway_virtual_interface_ids`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_ids`](Self::set_local_gateway_virtual_interface_ids).
     ///
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.local_gateway_virtual_interface_ids.unwrap_or_default();
-        v.push(input.into());
-        self.local_gateway_virtual_interface_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.local_gateway_virtual_interface_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn set_local_gateway_virtual_interface_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.local_gateway_virtual_interface_ids = input;
-        self
+    pub fn set_local_gateway_virtual_interface_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.local_gateway_virtual_interface_ids = input; self
     }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +91,7 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     }
     /// <p>The ID of the local gateway.</p>
     pub fn set_local_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_id = input;
-        self
+        self.local_gateway_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +100,7 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -129,26 +109,28 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// <p>The tags assigned to the virtual interface group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags assigned to the virtual interface group.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`LocalGatewayVirtualInterfaceGroup`](crate::types::LocalGatewayVirtualInterfaceGroup).
     pub fn build(self) -> crate::types::LocalGatewayVirtualInterfaceGroup {
         crate::types::LocalGatewayVirtualInterfaceGroup {
-            local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id,
-            local_gateway_virtual_interface_ids: self.local_gateway_virtual_interface_ids,
-            local_gateway_id: self.local_gateway_id,
-            owner_id: self.owner_id,
-            tags: self.tags,
+            local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id
+            ,
+            local_gateway_virtual_interface_ids: self.local_gateway_virtual_interface_ids
+            ,
+            local_gateway_id: self.local_gateway_id
+            ,
+            owner_id: self.owner_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

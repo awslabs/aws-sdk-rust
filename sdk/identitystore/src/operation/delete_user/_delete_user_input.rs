@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteUserInput {
 }
 impl DeleteUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl DeleteUserInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identity_store_id = input;
-        self
+    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identity_store_id = input; self
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,19 +51,18 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_user::DeleteUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_user::DeleteUserInput {
-            identity_store_id: self.identity_store_id,
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_user::DeleteUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                identity_store_id: self.identity_store_id
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

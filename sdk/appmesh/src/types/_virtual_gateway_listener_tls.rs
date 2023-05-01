@@ -3,12 +3,12 @@
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+pub struct VirtualGatewayListenerTls  {
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::VirtualGatewayListenerTlsMode>,
@@ -20,25 +20,21 @@ pub struct VirtualGatewayListenerTls {
     pub certificate: std::option::Option<crate::types::VirtualGatewayListenerTlsCertificate>,
 }
 impl VirtualGatewayListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&crate::types::VirtualGatewayListenerTlsMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::types::VirtualGatewayListenerTlsMode> {
         self.mode.as_ref()
     }
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(
-        &self,
-    ) -> std::option::Option<&crate::types::VirtualGatewayListenerTlsValidationContext> {
+    pub fn validation(&self) -> std::option::Option<& crate::types::VirtualGatewayListenerTlsValidationContext> {
         self.validation.as_ref()
     }
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(
-        &self,
-    ) -> std::option::Option<&crate::types::VirtualGatewayListenerTlsCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::types::VirtualGatewayListenerTlsCertificate> {
         self.certificate.as_ref()
     }
 }
@@ -54,72 +50,57 @@ impl VirtualGatewayListenerTls {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsBuilder {
     pub(crate) mode: std::option::Option<crate::types::VirtualGatewayListenerTlsMode>,
-    pub(crate) validation:
-        std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContext>,
+    pub(crate) validation: std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContext>,
     pub(crate) certificate: std::option::Option<crate::types::VirtualGatewayListenerTlsCertificate>,
 }
 impl VirtualGatewayListenerTlsBuilder {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     pub fn mode(mut self, input: crate::types::VirtualGatewayListenerTlsMode) -> Self {
         self.mode = Some(input);
         self
     }
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
-    pub fn set_mode(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayListenerTlsMode>,
-    ) -> Self {
-        self.mode = input;
-        self
+    pub fn set_mode(mut self, input: std::option::Option<crate::types::VirtualGatewayListenerTlsMode>) -> Self {
+        self.mode = input; self
     }
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(
-        mut self,
-        input: crate::types::VirtualGatewayListenerTlsValidationContext,
-    ) -> Self {
+    pub fn validation(mut self, input: crate::types::VirtualGatewayListenerTlsValidationContext) -> Self {
         self.validation = Some(input);
         self
     }
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn set_validation(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContext>,
-    ) -> Self {
-        self.validation = input;
-        self
+    pub fn set_validation(mut self, input: std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContext>) -> Self {
+        self.validation = input; self
     }
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(
-        mut self,
-        input: crate::types::VirtualGatewayListenerTlsCertificate,
-    ) -> Self {
+    pub fn certificate(mut self, input: crate::types::VirtualGatewayListenerTlsCertificate) -> Self {
         self.certificate = Some(input);
         self
     }
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayListenerTlsCertificate>,
-    ) -> Self {
-        self.certificate = input;
-        self
+    pub fn set_certificate(mut self, input: std::option::Option<crate::types::VirtualGatewayListenerTlsCertificate>) -> Self {
+        self.certificate = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTls`](crate::types::VirtualGatewayListenerTls).
     pub fn build(self) -> crate::types::VirtualGatewayListenerTls {
         crate::types::VirtualGatewayListenerTls {
-            mode: self.mode,
-            validation: self.validation,
-            certificate: self.certificate,
+            mode: self.mode
+            ,
+            validation: self.validation
+            ,
+            certificate: self.certificate
+            ,
         }
     }
 }
+

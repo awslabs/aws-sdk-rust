@@ -3,28 +3,27 @@
 /// <p>The input to the GetRegistrationCode operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegistrationCodeInput {}
+pub struct GetRegistrationCodeInput  {
+}
 impl GetRegistrationCodeInput {
     /// Creates a new builder-style object to manufacture [`GetRegistrationCodeInput`](crate::operation::get_registration_code::GetRegistrationCodeInput).
-    pub fn builder(
-    ) -> crate::operation::get_registration_code::builders::GetRegistrationCodeInputBuilder {
-        crate::operation::get_registration_code::builders::GetRegistrationCodeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_registration_code::builders::GetRegistrationCodeInputBuilder {
+        crate::operation::get_registration_code::builders::GetRegistrationCodeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegistrationCodeInput`](crate::operation::get_registration_code::GetRegistrationCodeInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetRegistrationCodeInputBuilder {}
+pub struct GetRegistrationCodeInputBuilder {
+}
 impl GetRegistrationCodeInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistrationCodeInput`](crate::operation::get_registration_code::GetRegistrationCodeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_registration_code::GetRegistrationCodeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_registration_code::GetRegistrationCodeInput {})
+    pub fn build(self) -> Result<crate::operation::get_registration_code::GetRegistrationCodeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_registration_code::GetRegistrationCodeInput {
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p> Represents the output of a <code>StopDeployment</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDeploymentOutput {
-    /// <p>The status of the stop deployment operation:</p>
-    /// <ul>
-    /// <li> <p>Pending: The stop operation is pending.</p> </li>
-    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+pub struct StopDeploymentOutput  {
+    /// <p>The status of the stop deployment operation:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::StopStatus>,
@@ -17,24 +17,24 @@ pub struct StopDeploymentOutput {
     _request_id: Option<String>,
 }
 impl StopDeploymentOutput {
-    /// <p>The status of the stop deployment operation:</p>
-    /// <ul>
-    /// <li> <p>Pending: The stop operation is pending.</p> </li>
-    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+    /// <p>The status of the stop deployment operation:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::StopStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::StopStatus> {
         self.status.as_ref()
     }
     /// <p>An accompanying status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StopDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput).
     pub fn builder() -> crate::operation::stop_deployment::builders::StopDeploymentOutputBuilder {
@@ -51,23 +51,22 @@ pub struct StopDeploymentOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopDeploymentOutputBuilder {
-    /// <p>The status of the stop deployment operation:</p>
-    /// <ul>
-    /// <li> <p>Pending: The stop operation is pending.</p> </li>
-    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+    /// <p>The status of the stop deployment operation:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::StopStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the stop deployment operation:</p>
-    /// <ul>
-    /// <li> <p>Pending: The stop operation is pending.</p> </li>
-    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+    /// <p>The status of the stop deployment operation:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The stop operation is pending.</p> </li> 
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::StopStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>An accompanying status message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,24 +75,26 @@ impl StopDeploymentOutputBuilder {
     }
     /// <p>An accompanying status message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput).
     pub fn build(self) -> crate::operation::stop_deployment::StopDeploymentOutput {
         crate::operation::stop_deployment::StopDeploymentOutput {
-            status: self.status,
-            status_message: self.status_message,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

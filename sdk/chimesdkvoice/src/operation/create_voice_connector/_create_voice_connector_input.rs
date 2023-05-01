@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVoiceConnectorInput {
+pub struct CreateVoiceConnectorInput  {
     /// <p>The name of the Voice Connector.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,25 +12,31 @@ pub struct CreateVoiceConnectorInput {
     /// <p>Enables or disables encryption for the Voice Connector.</p>
     #[doc(hidden)]
     pub require_encryption: std::option::Option<bool>,
+    /// <p>The tags assigned to the Voice Connector.</p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVoiceConnectorInput {
     /// <p>The name of the Voice Connector.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
-    pub fn aws_region(&self) -> std::option::Option<&crate::types::VoiceConnectorAwsRegion> {
+    pub fn aws_region(&self) -> std::option::Option<& crate::types::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
     /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn require_encryption(&self) -> std::option::Option<bool> {
         self.require_encryption
     }
+    /// <p>The tags assigned to the Voice Connector.</p>
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl CreateVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
+    pub fn builder() -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
         crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder::default()
     }
 }
@@ -42,6 +48,7 @@ pub struct CreateVoiceConnectorInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) aws_region: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
     pub(crate) require_encryption: std::option::Option<bool>,
+    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVoiceConnectorInputBuilder {
     /// <p>The name of the Voice Connector.</p>
@@ -51,8 +58,7 @@ impl CreateVoiceConnectorInputBuilder {
     }
     /// <p>The name of the Voice Connector.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
@@ -60,12 +66,8 @@ impl CreateVoiceConnectorInputBuilder {
         self
     }
     /// <p>The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value: <code>us-east-1</code> .</p>
-    pub fn set_aws_region(
-        mut self,
-        input: std::option::Option<crate::types::VoiceConnectorAwsRegion>,
-    ) -> Self {
-        self.aws_region = input;
-        self
+    pub fn set_aws_region(mut self, input: std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
+        self.aws_region = input; self
     }
     /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
@@ -74,22 +76,37 @@ impl CreateVoiceConnectorInputBuilder {
     }
     /// <p>Enables or disables encryption for the Voice Connector.</p>
     pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
-        self.require_encryption = input;
-        self
+        self.require_encryption = input; self
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags assigned to the Voice Connector.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
+    }
+    /// <p>The tags assigned to the Voice Connector.</p>
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_voice_connector::CreateVoiceConnectorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_voice_connector::CreateVoiceConnectorInput {
-                name: self.name,
-                aws_region: self.aws_region,
-                require_encryption: self.require_encryption,
-            },
+                name: self.name
+                ,
+                aws_region: self.aws_region
+                ,
+                require_encryption: self.require_encryption
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

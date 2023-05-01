@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlywheelIterationInput {
+pub struct DescribeFlywheelIterationInput  {
     /// <p></p>
     #[doc(hidden)]
     pub flywheel_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeFlywheelIterationInput {
 }
 impl DescribeFlywheelIterationInput {
     /// <p></p>
-    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(&self) -> std::option::Option<&str> {
+    pub fn flywheel_iteration_id(&self) -> std::option::Option<& str> {
         self.flywheel_iteration_id.as_deref()
     }
 }
 impl DescribeFlywheelIterationInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
-    pub fn builder() -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder{
+    pub fn builder() -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder {
         crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeFlywheelIterationInputBuilder {
     }
     /// <p></p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// <p></p>
     pub fn flywheel_iteration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,25 +50,19 @@ impl DescribeFlywheelIterationInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_flywheel_iteration_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.flywheel_iteration_id = input;
-        self
+    pub fn set_flywheel_iteration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flywheel_iteration_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput {
-                flywheel_arn: self.flywheel_arn,
-                flywheel_iteration_id: self.flywheel_iteration_id,
-            },
+                flywheel_arn: self.flywheel_arn
+                ,
+                flywheel_iteration_id: self.flywheel_iteration_id
+                ,
+            }
         )
     }
 }
+

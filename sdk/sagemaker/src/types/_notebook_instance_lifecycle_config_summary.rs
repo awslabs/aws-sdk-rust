@@ -3,7 +3,7 @@
 /// <p>Provides a summary of a notebook instance lifecycle configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotebookInstanceLifecycleConfigSummary {
+pub struct NotebookInstanceLifecycleConfigSummary  {
     /// <p>The name of the lifecycle configuration.</p>
     #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct NotebookInstanceLifecycleConfigSummary {
 }
 impl NotebookInstanceLifecycleConfigSummary {
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<& str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_arn(&self) -> std::option::Option<&str> {
+    pub fn notebook_instance_lifecycle_config_arn(&self) -> std::option::Option<& str> {
         self.notebook_instance_lifecycle_config_arn.as_deref()
     }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -53,36 +53,22 @@ pub struct NotebookInstanceLifecycleConfigSummaryBuilder {
 }
 impl NotebookInstanceLifecycleConfigSummaryBuilder {
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = Some(input.into());
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.notebook_instance_lifecycle_config_name = input;
-        self
+    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.notebook_instance_lifecycle_config_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.notebook_instance_lifecycle_config_arn = input;
-        self
+    pub fn set_notebook_instance_lifecycle_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.notebook_instance_lifecycle_config_arn = input; self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -90,12 +76,8 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -103,20 +85,21 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// Consumes the builder and constructs a [`NotebookInstanceLifecycleConfigSummary`](crate::types::NotebookInstanceLifecycleConfigSummary).
     pub fn build(self) -> crate::types::NotebookInstanceLifecycleConfigSummary {
         crate::types::NotebookInstanceLifecycleConfigSummary {
-            notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name,
-            notebook_instance_lifecycle_config_arn: self.notebook_instance_lifecycle_config_arn,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name
+            ,
+            notebook_instance_lifecycle_config_arn: self.notebook_instance_lifecycle_config_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

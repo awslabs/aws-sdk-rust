@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDataIngestionJobOutput {
+pub struct StartDataIngestionJobOutput  {
     /// <p>Indicates the job ID of the data ingestion job. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct StartDataIngestionJobOutput {
 }
 impl StartDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::IngestionJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::IngestionJobStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartDataIngestionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartDataIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDataIngestionJobOutput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobOutputBuilder {
         crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl StartDataIngestionJobOutputBuilder {
     }
     /// <p>Indicates the job ID of the data ingestion job. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
@@ -60,28 +57,27 @@ impl StartDataIngestionJobOutputBuilder {
         self
     }
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::IngestionJobStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartDataIngestionJobOutput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput).
     pub fn build(self) -> crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput {
         crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput {
-            job_id: self.job_id,
-            status: self.status,
+            job_id: self.job_id
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

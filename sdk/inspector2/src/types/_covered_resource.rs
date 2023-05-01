@@ -3,7 +3,7 @@
 /// <p>An object that contains details about a resource covered by Amazon Inspector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoveredResource {
+pub struct CoveredResource  {
     /// <p>The type of the covered resource.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::CoverageResourceType>,
@@ -25,27 +25,27 @@ pub struct CoveredResource {
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::CoverageResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::CoverageResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the covered resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    pub fn scan_type(&self) -> std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> std::option::Option<& crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The status of the scan covering the resource.</p>
-    pub fn scan_status(&self) -> std::option::Option<&crate::types::ScanStatus> {
+    pub fn scan_status(&self) -> std::option::Option<& crate::types::ScanStatus> {
         self.scan_status.as_ref()
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn resource_metadata(&self) -> std::option::Option<&crate::types::ResourceScanMetadata> {
+    pub fn resource_metadata(&self) -> std::option::Option<& crate::types::ResourceScanMetadata> {
         self.resource_metadata.as_ref()
     }
 }
@@ -74,12 +74,8 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>The type of the covered resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::CoverageResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::CoverageResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The ID of the covered resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +84,7 @@ impl CoveredResourceBuilder {
     }
     /// <p>The ID of the covered resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl CoveredResourceBuilder {
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
@@ -108,8 +102,7 @@ impl CoveredResourceBuilder {
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
     pub fn set_scan_type(mut self, input: std::option::Option<crate::types::ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// <p>The status of the scan covering the resource.</p>
     pub fn scan_status(mut self, input: crate::types::ScanStatus) -> Self {
@@ -118,8 +111,7 @@ impl CoveredResourceBuilder {
     }
     /// <p>The status of the scan covering the resource.</p>
     pub fn set_scan_status(mut self, input: std::option::Option<crate::types::ScanStatus>) -> Self {
-        self.scan_status = input;
-        self
+        self.scan_status = input; self
     }
     /// <p>An object that contains details about the metadata.</p>
     pub fn resource_metadata(mut self, input: crate::types::ResourceScanMetadata) -> Self {
@@ -127,22 +119,25 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn set_resource_metadata(
-        mut self,
-        input: std::option::Option<crate::types::ResourceScanMetadata>,
-    ) -> Self {
-        self.resource_metadata = input;
-        self
+    pub fn set_resource_metadata(mut self, input: std::option::Option<crate::types::ResourceScanMetadata>) -> Self {
+        self.resource_metadata = input; self
     }
     /// Consumes the builder and constructs a [`CoveredResource`](crate::types::CoveredResource).
     pub fn build(self) -> crate::types::CoveredResource {
         crate::types::CoveredResource {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            account_id: self.account_id,
-            scan_type: self.scan_type,
-            scan_status: self.scan_status,
-            resource_metadata: self.resource_metadata,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            account_id: self.account_id
+            ,
+            scan_type: self.scan_type
+            ,
+            scan_status: self.scan_status
+            ,
+            resource_metadata: self.resource_metadata
+            ,
         }
     }
 }
+

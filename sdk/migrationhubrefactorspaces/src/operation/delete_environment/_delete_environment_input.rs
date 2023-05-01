@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentInput {
+pub struct DeleteEnvironmentInput  {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(&self) -> std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
 }
 impl DeleteEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteEnvironmentInputBuilder {
         self
     }
     /// <p>The ID of the environment. </p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.environment_identifier = input;
-        self
+    pub fn set_environment_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.environment_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_environment::DeleteEnvironmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_environment::DeleteEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_environment::DeleteEnvironmentInput {
-                environment_identifier: self.environment_identifier,
-            },
+                environment_identifier: self.environment_identifier
+                ,
+            }
         )
     }
 }
+

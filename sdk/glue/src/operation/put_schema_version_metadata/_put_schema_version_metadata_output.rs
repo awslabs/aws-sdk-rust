@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSchemaVersionMetadataOutput {
+pub struct PutSchemaVersionMetadataOutput  {
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -31,15 +31,15 @@ pub struct PutSchemaVersionMetadataOutput {
 }
 impl PutSchemaVersionMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name for the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The name for the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The latest version of the schema.</p>
@@ -51,26 +51,26 @@ impl PutSchemaVersionMetadataOutput {
         self.version_number
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> std::option::Option<& str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The metadata key.</p>
-    pub fn metadata_key(&self) -> std::option::Option<&str> {
+    pub fn metadata_key(&self) -> std::option::Option<& str> {
         self.metadata_key.as_deref()
     }
     /// <p>The value of the metadata key.</p>
-    pub fn metadata_value(&self) -> std::option::Option<&str> {
+    pub fn metadata_value(&self) -> std::option::Option<& str> {
         self.metadata_value.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutSchemaVersionMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutSchemaVersionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`PutSchemaVersionMetadataOutput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput).
-    pub fn builder() -> crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataOutputBuilder {
         crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataOutputBuilder::default()
     }
 }
@@ -97,8 +97,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The name for the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +106,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The name for the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name for the registry.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +115,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The name for the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The latest version of the schema.</p>
     pub fn latest_version(mut self, input: bool) -> Self {
@@ -127,8 +124,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The latest version of the schema.</p>
     pub fn set_latest_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.latest_version = input;
-        self
+        self.latest_version = input; self
     }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -137,8 +133,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The unique version ID of the schema version.</p>
     pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,12 +141,8 @@ impl PutSchemaVersionMetadataOutputBuilder {
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.schema_version_id = input;
-        self
+    pub fn set_schema_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.schema_version_id = input; self
     }
     /// <p>The metadata key.</p>
     pub fn metadata_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,8 +151,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The metadata key.</p>
     pub fn set_metadata_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata_key = input;
-        self
+        self.metadata_key = input; self
     }
     /// <p>The value of the metadata key.</p>
     pub fn metadata_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,32 +160,40 @@ impl PutSchemaVersionMetadataOutputBuilder {
     }
     /// <p>The value of the metadata key.</p>
     pub fn set_metadata_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata_value = input;
-        self
+        self.metadata_value = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutSchemaVersionMetadataOutput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput {
+    pub fn build(self) -> crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput {
         crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput {
-            schema_arn: self.schema_arn,
-            schema_name: self.schema_name,
-            registry_name: self.registry_name,
-            latest_version: self.latest_version.unwrap_or_default(),
-            version_number: self.version_number.unwrap_or_default(),
-            schema_version_id: self.schema_version_id,
-            metadata_key: self.metadata_key,
-            metadata_value: self.metadata_value,
+            schema_arn: self.schema_arn
+            ,
+            schema_name: self.schema_name
+            ,
+            registry_name: self.registry_name
+            ,
+            latest_version: self.latest_version
+                .unwrap_or_default()
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            schema_version_id: self.schema_version_id
+            ,
+            metadata_key: self.metadata_key
+            ,
+            metadata_value: self.metadata_value
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

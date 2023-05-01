@@ -1051,6 +1051,8 @@ pub use crate::types::_file_source_time_delta_units::FileSourceTimeDeltaUnits;
 
 pub use crate::types::_caption_source_framerate::CaptionSourceFramerate;
 
+pub use crate::types::_caption_source_convert_paint_on_to_pop_on::CaptionSourceConvertPaintOnToPopOn;
+
 pub use crate::types::_file_source_convert608_to708::FileSourceConvert608To708;
 
 pub use crate::types::_embedded_source_settings::EmbeddedSourceSettings;
@@ -1078,6 +1080,14 @@ pub use crate::types::_audio_default_selection::AudioDefaultSelection;
 pub use crate::types::_audio_duration_correction::AudioDurationCorrection;
 
 pub use crate::types::_audio_selector_group::AudioSelectorGroup;
+
+pub use crate::types::_advanced_input_filter_settings::AdvancedInputFilterSettings;
+
+pub use crate::types::_advanced_input_filter_sharpen::AdvancedInputFilterSharpen;
+
+pub use crate::types::_advanced_input_filter_add_texture::AdvancedInputFilterAddTexture;
+
+pub use crate::types::_advanced_input_filter::AdvancedInputFilter;
 
 pub use crate::types::_extended_data_services::ExtendedDataServices;
 
@@ -1190,6 +1200,14 @@ mod _acceleration_mode;
 mod _acceleration_settings;
 
 mod _acceleration_status;
+
+mod _advanced_input_filter;
+
+mod _advanced_input_filter_add_texture;
+
+mod _advanced_input_filter_settings;
+
+mod _advanced_input_filter_sharpen;
 
 mod _afd_signaling;
 
@@ -1322,6 +1340,8 @@ mod _caption_destination_settings;
 mod _caption_destination_type;
 
 mod _caption_selector;
+
+mod _caption_source_convert_paint_on_to_pop_on;
 
 mod _caption_source_framerate;
 
@@ -2312,3 +2332,4 @@ pub mod builders;
 
 /// Error types that AWS Elemental MediaConvert can respond with.
 pub mod error;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDefaultClusterParametersOutput {
+pub struct DescribeDefaultClusterParametersOutput  {
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
     #[doc(hidden)]
     pub default_cluster_parameters: std::option::Option<crate::types::DefaultClusterParameters>,
@@ -10,20 +10,18 @@ pub struct DescribeDefaultClusterParametersOutput {
 }
 impl DescribeDefaultClusterParametersOutput {
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
-    pub fn default_cluster_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::DefaultClusterParameters> {
+    pub fn default_cluster_parameters(&self) -> std::option::Option<& crate::types::DefaultClusterParameters> {
         self.default_cluster_parameters.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDefaultClusterParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDefaultClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDefaultClusterParametersOutput`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput).
-    pub fn builder() -> crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersOutputBuilder {
         crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersOutputBuilder::default()
     }
 }
@@ -32,41 +30,30 @@ impl DescribeDefaultClusterParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDefaultClusterParametersOutputBuilder {
-    pub(crate) default_cluster_parameters:
-        std::option::Option<crate::types::DefaultClusterParameters>,
+    pub(crate) default_cluster_parameters: std::option::Option<crate::types::DefaultClusterParameters>,
     _request_id: Option<String>,
 }
 impl DescribeDefaultClusterParametersOutputBuilder {
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
-    pub fn default_cluster_parameters(
-        mut self,
-        input: crate::types::DefaultClusterParameters,
-    ) -> Self {
+    pub fn default_cluster_parameters(mut self, input: crate::types::DefaultClusterParameters) -> Self {
         self.default_cluster_parameters = Some(input);
         self
     }
     /// <p>Describes the default cluster parameters for a parameter group family.</p>
-    pub fn set_default_cluster_parameters(
-        mut self,
-        input: std::option::Option<crate::types::DefaultClusterParameters>,
-    ) -> Self {
-        self.default_cluster_parameters = input;
-        self
+    pub fn set_default_cluster_parameters(mut self, input: std::option::Option<crate::types::DefaultClusterParameters>) -> Self {
+        self.default_cluster_parameters = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDefaultClusterParametersOutput`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput
-    {
+    pub fn build(self) -> crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput {
         crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersOutput {
             default_cluster_parameters: self.default_cluster_parameters
             ,
@@ -74,3 +61,4 @@ impl DescribeDefaultClusterParametersOutputBuilder {
         }
     }
 }
+

@@ -3,18 +3,17 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateReceiptRuleOutput {
+pub struct UpdateReceiptRuleOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateReceiptRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateReceiptRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReceiptRuleOutput`](crate::operation::update_receipt_rule::UpdateReceiptRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_receipt_rule::builders::UpdateReceiptRuleOutputBuilder {
+    pub fn builder() -> crate::operation::update_receipt_rule::builders::UpdateReceiptRuleOutputBuilder {
         crate::operation::update_receipt_rule::builders::UpdateReceiptRuleOutputBuilder::default()
     }
 }
@@ -27,14 +26,14 @@ pub struct UpdateReceiptRuleOutputBuilder {
 }
 impl UpdateReceiptRuleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateReceiptRuleOutput`](crate::operation::update_receipt_rule::UpdateReceiptRuleOutput).
     pub fn build(self) -> crate::operation::update_receipt_rule::UpdateReceiptRuleOutput {
         crate::operation::update_receipt_rule::UpdateReceiptRuleOutput {
@@ -42,3 +41,4 @@ impl UpdateReceiptRuleOutputBuilder {
         }
     }
 }
+

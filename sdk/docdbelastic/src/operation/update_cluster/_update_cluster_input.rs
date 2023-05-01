@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateClusterInput {
+pub struct UpdateClusterInput  {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -21,28 +21,28 @@ pub struct UpdateClusterInput {
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p> 
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     #[doc(hidden)]
     pub admin_user_password: std::option::Option<std::string::String>,
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> 
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> 
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> 
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
 }
 impl UpdateClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::types::Auth> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::types::Auth> {
         self.auth_type.as_ref()
     }
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
@@ -54,32 +54,32 @@ impl UpdateClusterInput {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p> 
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
-    pub fn admin_user_password(&self) -> std::option::Option<&str> {
+    pub fn admin_user_password(&self) -> std::option::Option<& str> {
         self.admin_user_password.as_deref()
     }
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> 
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> 
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> 
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateClusterInput {
+impl  std::fmt::Debug for UpdateClusterInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterInput");
         formatter.field("cluster_arn", &self.cluster_arn);
@@ -90,10 +90,7 @@ impl std::fmt::Debug for UpdateClusterInput {
         formatter.field("subnet_ids", &self.subnet_ids);
         formatter.field("admin_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.finish()
     }
 }
@@ -126,8 +123,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub fn auth_type(mut self, input: crate::types::Auth) -> Self {
@@ -136,8 +132,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::Auth>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
     pub fn shard_capacity(mut self, input: i32) -> Self {
@@ -146,8 +141,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
     pub fn set_shard_capacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.shard_capacity = input;
-        self
+        self.shard_capacity = input; self
     }
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
     pub fn shard_count(mut self, input: i32) -> Self {
@@ -156,8 +150,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
     pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.shard_count = input;
-        self
+        self.shard_count = input; self
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -166,17 +159,13 @@ impl UpdateClusterInputBuilder {
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
     pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = Some(v);
+                        self
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -185,32 +174,24 @@ impl UpdateClusterInputBuilder {
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p> 
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn admin_user_password(mut self, input: impl Into<std::string::String>) -> Self {
         self.admin_user_password = Some(input.into());
         self
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p> 
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
-    pub fn set_admin_user_password(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.admin_user_password = input;
-        self
+    pub fn set_admin_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.admin_user_password = input; self
     }
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,48 +200,49 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The client token for the Elastic DocumentDB cluster.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> 
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> 
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> 
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
         self.preferred_maintenance_window = Some(input.into());
         self
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
-    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> 
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> 
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> 
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+    pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.preferred_maintenance_window = input; self
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_cluster::UpdateClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_cluster::UpdateClusterInput {
-            cluster_arn: self.cluster_arn,
-            auth_type: self.auth_type,
-            shard_capacity: self.shard_capacity,
-            shard_count: self.shard_count,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            subnet_ids: self.subnet_ids,
-            admin_user_password: self.admin_user_password,
-            client_token: self.client_token,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-        })
+    pub fn build(self) -> Result<crate::operation::update_cluster::UpdateClusterInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_cluster::UpdateClusterInput {
+                cluster_arn: self.cluster_arn
+                ,
+                auth_type: self.auth_type
+                ,
+                shard_capacity: self.shard_capacity
+                ,
+                shard_count: self.shard_count
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                admin_user_password: self.admin_user_password
+                ,
+                client_token: self.client_token
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for UpdateClusterInputBuilder {
@@ -274,10 +256,8 @@ impl std::fmt::Debug for UpdateClusterInputBuilder {
         formatter.field("subnet_ids", &self.subnet_ids);
         formatter.field("admin_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.finish()
     }
 }
+

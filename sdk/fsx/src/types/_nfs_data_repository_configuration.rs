@@ -3,7 +3,7 @@
 /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NfsDataRepositoryConfiguration {
+pub struct NfsDataRepositoryConfiguration  {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     #[doc(hidden)]
     pub version: std::option::Option<crate::types::NfsVersion>,
@@ -16,15 +16,15 @@ pub struct NfsDataRepositoryConfiguration {
 }
 impl NfsDataRepositoryConfiguration {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
-    pub fn version(&self) -> std::option::Option<&crate::types::NfsVersion> {
+    pub fn version(&self) -> std::option::Option<& crate::types::NfsVersion> {
         self.version.as_ref()
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dns_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.dns_ips.as_deref()
     }
     /// <p>This parameter is not supported for Amazon File Cache.</p>
-    pub fn auto_export_policy(&self) -> std::option::Option<&crate::types::AutoExportPolicy> {
+    pub fn auto_export_policy(&self) -> std::option::Option<& crate::types::AutoExportPolicy> {
         self.auto_export_policy.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl NfsDataRepositoryConfigurationBuilder {
     }
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. Currently, the only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     pub fn set_version(mut self, input: std::option::Option<crate::types::NfsVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Appends an item to `dns_ips`.
     ///
@@ -61,17 +60,13 @@ impl NfsDataRepositoryConfigurationBuilder {
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
     pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
-        v.push(input.into());
-        self.dns_ips = Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_ips = Some(v);
+                        self
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub fn set_dns_ips(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.dns_ips = input;
-        self
+    pub fn set_dns_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.dns_ips = input; self
     }
     /// <p>This parameter is not supported for Amazon File Cache.</p>
     pub fn auto_export_policy(mut self, input: crate::types::AutoExportPolicy) -> Self {
@@ -79,19 +74,19 @@ impl NfsDataRepositoryConfigurationBuilder {
         self
     }
     /// <p>This parameter is not supported for Amazon File Cache.</p>
-    pub fn set_auto_export_policy(
-        mut self,
-        input: std::option::Option<crate::types::AutoExportPolicy>,
-    ) -> Self {
-        self.auto_export_policy = input;
-        self
+    pub fn set_auto_export_policy(mut self, input: std::option::Option<crate::types::AutoExportPolicy>) -> Self {
+        self.auto_export_policy = input; self
     }
     /// Consumes the builder and constructs a [`NfsDataRepositoryConfiguration`](crate::types::NfsDataRepositoryConfiguration).
     pub fn build(self) -> crate::types::NfsDataRepositoryConfiguration {
         crate::types::NfsDataRepositoryConfiguration {
-            version: self.version,
-            dns_ips: self.dns_ips,
-            auto_export_policy: self.auto_export_policy,
+            version: self.version
+            ,
+            dns_ips: self.dns_ips
+            ,
+            auto_export_policy: self.auto_export_policy
+            ,
         }
     }
 }
+

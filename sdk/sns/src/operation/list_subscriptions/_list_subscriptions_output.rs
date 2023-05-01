@@ -3,7 +3,7 @@
 /// <p>Response for ListSubscriptions action</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscriptionsOutput {
+pub struct ListSubscriptionsOutput  {
     /// <p>A list of subscriptions.</p>
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
@@ -14,23 +14,22 @@ pub struct ListSubscriptionsOutput {
 }
 impl ListSubscriptionsOutput {
     /// <p>A list of subscriptions.</p>
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::types::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<& [crate::types::Subscription]> {
         self.subscriptions.as_deref()
     }
     /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element is returned if there are more subscriptions to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionsOutput`](crate::operation::list_subscriptions::ListSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder {
         crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListSubscriptionsOutputBuilder {
     /// <p>A list of subscriptions.</p>
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = Some(v);
+                        self
     }
     /// <p>A list of subscriptions.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListSubscriptionsOutputBuilder {
     }
     /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSubscriptionsOutput`](crate::operation::list_subscriptions::ListSubscriptionsOutput).
     pub fn build(self) -> crate::operation::list_subscriptions::ListSubscriptionsOutput {
         crate::operation::list_subscriptions::ListSubscriptionsOutput {
-            subscriptions: self.subscriptions,
-            next_token: self.next_token,
+            subscriptions: self.subscriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

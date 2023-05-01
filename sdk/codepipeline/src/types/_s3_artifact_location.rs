@@ -3,7 +3,7 @@
 /// <p>The location of the S3 bucket that contains a revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ArtifactLocation {
+pub struct S3ArtifactLocation  {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3ArtifactLocation {
 }
 impl S3ArtifactLocation {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3ArtifactLocationBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
     pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3ArtifactLocationBuilder {
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
     pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// Consumes the builder and constructs a [`S3ArtifactLocation`](crate::types::S3ArtifactLocation).
     pub fn build(self) -> crate::types::S3ArtifactLocation {
         crate::types::S3ArtifactLocation {
-            bucket_name: self.bucket_name,
-            object_key: self.object_key,
+            bucket_name: self.bucket_name
+            ,
+            object_key: self.object_key
+            ,
         }
     }
 }
+

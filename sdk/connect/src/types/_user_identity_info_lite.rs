@@ -3,7 +3,7 @@
 /// <p>The user's first name and last name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserIdentityInfoLite {
+pub struct UserIdentityInfoLite  {
     /// <p>The user's first name.</p>
     #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UserIdentityInfoLite {
 }
 impl UserIdentityInfoLite {
     /// <p>The user's first name.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The user's last name.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UserIdentityInfoLiteBuilder {
     }
     /// <p>The user's first name.</p>
     pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The user's last name.</p>
     pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl UserIdentityInfoLiteBuilder {
     }
     /// <p>The user's last name.</p>
     pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// Consumes the builder and constructs a [`UserIdentityInfoLite`](crate::types::UserIdentityInfoLite).
     pub fn build(self) -> crate::types::UserIdentityInfoLite {
         crate::types::UserIdentityInfoLite {
-            first_name: self.first_name,
-            last_name: self.last_name,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
         }
     }
 }
+

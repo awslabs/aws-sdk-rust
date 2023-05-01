@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInsightRulesInput {
+pub struct DeleteInsightRulesInput  {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteInsightRulesInput {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_names.as_deref()
     }
 }
 impl DeleteInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`DeleteInsightRulesInput`](crate::operation::delete_insight_rules::DeleteInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::delete_insight_rules::builders::DeleteInsightRulesInputBuilder {
+    pub fn builder() -> crate::operation::delete_insight_rules::builders::DeleteInsightRulesInputBuilder {
         crate::operation::delete_insight_rules::builders::DeleteInsightRulesInputBuilder::default()
     }
 }
@@ -35,29 +34,22 @@ impl DeleteInsightRulesInputBuilder {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.rule_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.rule_names = Some(v);
+                        self
     }
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.rule_names = input;
-        self
+    pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.rule_names = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInsightRulesInput`](crate::operation::delete_insight_rules::DeleteInsightRulesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_insight_rules::DeleteInsightRulesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_insight_rules::DeleteInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_insight_rules::DeleteInsightRulesInput {
-                rule_names: self.rule_names,
-            },
+                rule_names: self.rule_names
+                ,
+            }
         )
     }
 }
+

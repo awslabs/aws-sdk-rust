@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteListenerInput {
+pub struct DeleteListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
 }
 impl DeleteListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteListenerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_listener::DeleteListenerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_listener::DeleteListenerInput {
-            listener_arn: self.listener_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_listener::DeleteListenerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_listener::DeleteListenerInput {
+                listener_arn: self.listener_arn
+                ,
+            }
+        )
     }
 }
+

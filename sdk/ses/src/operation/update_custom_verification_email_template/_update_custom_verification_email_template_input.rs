@@ -3,7 +3,7 @@
 /// <p>Represents a request to update an existing custom verification email template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomVerificationEmailTemplateInput {
+pub struct UpdateCustomVerificationEmailTemplateInput  {
     /// <p>The name of the custom verification email template that you want to update.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -25,33 +25,33 @@ pub struct UpdateCustomVerificationEmailTemplateInput {
 }
 impl UpdateCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to update.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The email address that the custom verification email is sent from.</p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The subject line of the custom verification email.</p>
-    pub fn template_subject(&self) -> std::option::Option<&str> {
+    pub fn template_subject(&self) -> std::option::Option<& str> {
         self.template_subject.as_deref()
     }
     /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
-    pub fn template_content(&self) -> std::option::Option<&str> {
+    pub fn template_content(&self) -> std::option::Option<& str> {
         self.template_content.as_deref()
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+    pub fn success_redirection_url(&self) -> std::option::Option<& str> {
         self.success_redirection_url.as_deref()
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
-    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+    pub fn failure_redirection_url(&self) -> std::option::Option<& str> {
         self.failure_redirection_url.as_deref()
     }
 }
 impl UpdateCustomVerificationEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateInput`](crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateInput).
-    pub fn builder() -> crate::operation::update_custom_verification_email_template::builders::UpdateCustomVerificationEmailTemplateInputBuilder{
+    pub fn builder() -> crate::operation::update_custom_verification_email_template::builders::UpdateCustomVerificationEmailTemplateInputBuilder {
         crate::operation::update_custom_verification_email_template::builders::UpdateCustomVerificationEmailTemplateInputBuilder::default()
     }
 }
@@ -75,8 +75,7 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
     }
     /// <p>The name of the custom verification email template that you want to update.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The email address that the custom verification email is sent from.</p>
     pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +83,8 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
         self
     }
     /// <p>The email address that the custom verification email is sent from.</p>
-    pub fn set_from_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_email_address = input;
-        self
+    pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_email_address = input; self
     }
     /// <p>The subject line of the custom verification email.</p>
     pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
     }
     /// <p>The subject line of the custom verification email.</p>
     pub fn set_template_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_subject = input;
-        self
+        self.template_subject = input; self
     }
     /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +102,7 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
     }
     /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn set_template_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_content = input;
-        self
+        self.template_content = input; self
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,12 +110,8 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
         self
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    pub fn set_success_redirection_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.success_redirection_url = input;
-        self
+    pub fn set_success_redirection_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.success_redirection_url = input; self
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,15 +119,11 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
         self
     }
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
-    pub fn set_failure_redirection_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.failure_redirection_url = input;
-        self
+    pub fn set_failure_redirection_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.failure_redirection_url = input; self
     }
     /// Consumes the builder and constructs a [`UpdateCustomVerificationEmailTemplateInput`](crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateInput).
-    pub fn build(self) -> Result<crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateInput {
                 template_name: self.template_name
@@ -157,3 +142,4 @@ impl UpdateCustomVerificationEmailTemplateInputBuilder {
         )
     }
 }
+

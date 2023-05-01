@@ -3,7 +3,7 @@
 /// <p>Information about the login attempts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoginAttribute {
+pub struct LoginAttribute  {
     /// <p>Indicates the user name which attempted to log in.</p>
     #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct LoginAttribute {
 }
 impl LoginAttribute {
     /// <p>Indicates the user name which attempted to log in.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>Indicates the application name used to attempt log in.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
@@ -59,8 +59,7 @@ impl LoginAttributeBuilder {
     }
     /// <p>Indicates the user name which attempted to log in.</p>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Indicates the application name used to attempt log in.</p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl LoginAttributeBuilder {
     }
     /// <p>Indicates the application name used to attempt log in.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
     pub fn failed_login_attempts(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl LoginAttributeBuilder {
     }
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
     pub fn set_failed_login_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_login_attempts = input;
-        self
+        self.failed_login_attempts = input; self
     }
     /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
     pub fn successful_login_attempts(mut self, input: i32) -> Self {
@@ -89,16 +86,22 @@ impl LoginAttributeBuilder {
     }
     /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
     pub fn set_successful_login_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.successful_login_attempts = input;
-        self
+        self.successful_login_attempts = input; self
     }
     /// Consumes the builder and constructs a [`LoginAttribute`](crate::types::LoginAttribute).
     pub fn build(self) -> crate::types::LoginAttribute {
         crate::types::LoginAttribute {
-            user: self.user,
-            application: self.application,
-            failed_login_attempts: self.failed_login_attempts.unwrap_or_default(),
-            successful_login_attempts: self.successful_login_attempts.unwrap_or_default(),
+            user: self.user
+            ,
+            application: self.application
+            ,
+            failed_login_attempts: self.failed_login_attempts
+                .unwrap_or_default()
+            ,
+            successful_login_attempts: self.successful_login_attempts
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

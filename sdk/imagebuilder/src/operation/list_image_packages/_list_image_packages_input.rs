@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagePackagesInput {
+pub struct ListImagePackagesInput  {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListImagePackagesInput {
 }
 impl ListImagePackagesInput {
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -23,14 +23,13 @@ impl ListImagePackagesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListImagePackagesInput {
     /// Creates a new builder-style object to manufacture [`ListImagePackagesInput`](crate::operation::list_image_packages::ListImagePackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_image_packages::builders::ListImagePackagesInputBuilder {
+    pub fn builder() -> crate::operation::list_image_packages::builders::ListImagePackagesInputBuilder {
         crate::operation::list_image_packages::builders::ListImagePackagesInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl ListImagePackagesInputBuilder {
         self
     }
     /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_build_version_arn = input;
-        self
+    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_build_version_arn = input; self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -64,8 +59,7 @@ impl ListImagePackagesInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,22 +68,20 @@ impl ListImagePackagesInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListImagePackagesInput`](crate::operation::list_image_packages::ListImagePackagesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_image_packages::ListImagePackagesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_image_packages::ListImagePackagesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_image_packages::ListImagePackagesInput {
-                image_build_version_arn: self.image_build_version_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                image_build_version_arn: self.image_build_version_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

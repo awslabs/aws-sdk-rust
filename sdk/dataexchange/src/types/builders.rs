@@ -108,3 +108,4 @@ pub use crate::types::_export_revisions_to_s3_request_details::ExportRevisionsTo
 pub use crate::types::_export_assets_to_s3_request_details::ExportAssetsToS3RequestDetailsBuilder;
 
 pub use crate::types::_export_asset_to_signed_url_request_details::ExportAssetToSignedUrlRequestDetailsBuilder;
+

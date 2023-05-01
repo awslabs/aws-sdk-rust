@@ -3,7 +3,7 @@
 /// <p>Values for use in player attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
     #[doc(hidden)]
     pub s: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct AttributeValue {
 }
 impl AttributeValue {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
-    pub fn s(&self) -> std::option::Option<&str> {
+    pub fn s(&self) -> std::option::Option<& str> {
         self.s.as_deref()
     }
     /// <p>For number values, expressed as double.</p>
@@ -27,11 +27,11 @@ impl AttributeValue {
         self.n
     }
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    pub fn sl(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sl(&self) -> std::option::Option<& [std::string::String]> {
         self.sl.as_deref()
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn sdm(&self) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+    pub fn sdm(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, f64>> {
         self.sdm.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl AttributeValueBuilder {
     }
     /// <p>For single string values. Maximum string length is 100 characters.</p>
     pub fn set_s(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s = input;
-        self
+        self.s = input; self
     }
     /// <p>For number values, expressed as double.</p>
     pub fn n(mut self, input: f64) -> Self {
@@ -69,8 +68,7 @@ impl AttributeValueBuilder {
     }
     /// <p>For number values, expressed as double.</p>
     pub fn set_n(mut self, input: std::option::Option<f64>) -> Self {
-        self.n = input;
-        self
+        self.n = input; self
     }
     /// Appends an item to `sl`.
     ///
@@ -79,17 +77,13 @@ impl AttributeValueBuilder {
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
     pub fn sl(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sl.unwrap_or_default();
-        v.push(input.into());
-        self.sl = Some(v);
-        self
+                        v.push(input.into());
+                        self.sl = Some(v);
+                        self
     }
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    pub fn set_sl(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.sl = input;
-        self
+    pub fn set_sl(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.sl = input; self
     }
     /// Adds a key-value pair to `sdm`.
     ///
@@ -98,25 +92,26 @@ impl AttributeValueBuilder {
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn sdm(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
         let mut hash_map = self.sdm.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.sdm = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.sdm = Some(hash_map);
+                        self
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn set_sdm(
-        mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
-    ) -> Self {
-        self.sdm = input;
-        self
+    pub fn set_sdm(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, f64>>) -> Self {
+        self.sdm = input; self
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {
         crate::types::AttributeValue {
-            s: self.s,
-            n: self.n,
-            sl: self.sl,
-            sdm: self.sdm,
+            s: self.s
+            ,
+            n: self.n
+            ,
+            sl: self.sl
+            ,
+            sdm: self.sdm
+            ,
         }
     }
 }
+

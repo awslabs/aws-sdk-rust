@@ -3,7 +3,7 @@
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserStorageMetadata {
+pub struct UserStorageMetadata  {
     /// <p>The amount of storage used, in bytes.</p>
     #[doc(hidden)]
     pub storage_utilized_in_bytes: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl UserStorageMetadata {
         self.storage_utilized_in_bytes
     }
     /// <p>The storage for a user.</p>
-    pub fn storage_rule(&self) -> std::option::Option<&crate::types::StorageRuleType> {
+    pub fn storage_rule(&self) -> std::option::Option<& crate::types::StorageRuleType> {
         self.storage_rule.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UserStorageMetadataBuilder {
     }
     /// <p>The amount of storage used, in bytes.</p>
     pub fn set_storage_utilized_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.storage_utilized_in_bytes = input;
-        self
+        self.storage_utilized_in_bytes = input; self
     }
     /// <p>The storage for a user.</p>
     pub fn storage_rule(mut self, input: crate::types::StorageRuleType) -> Self {
@@ -52,18 +51,17 @@ impl UserStorageMetadataBuilder {
         self
     }
     /// <p>The storage for a user.</p>
-    pub fn set_storage_rule(
-        mut self,
-        input: std::option::Option<crate::types::StorageRuleType>,
-    ) -> Self {
-        self.storage_rule = input;
-        self
+    pub fn set_storage_rule(mut self, input: std::option::Option<crate::types::StorageRuleType>) -> Self {
+        self.storage_rule = input; self
     }
     /// Consumes the builder and constructs a [`UserStorageMetadata`](crate::types::UserStorageMetadata).
     pub fn build(self) -> crate::types::UserStorageMetadata {
         crate::types::UserStorageMetadata {
-            storage_utilized_in_bytes: self.storage_utilized_in_bytes,
-            storage_rule: self.storage_rule,
+            storage_utilized_in_bytes: self.storage_utilized_in_bytes
+            ,
+            storage_rule: self.storage_rule
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrailProperties {
+pub struct TrailProperties  {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     #[doc(hidden)]
     pub cloud_trail_arn: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct TrailProperties {
 }
 impl TrailProperties {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_trail_arn(&self) -> std::option::Option<& str> {
         self.cloud_trail_arn.as_deref()
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
@@ -51,8 +51,7 @@ impl TrailPropertiesBuilder {
     }
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub fn set_cloud_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_trail_arn = input;
-        self
+        self.cloud_trail_arn = input; self
     }
     /// Appends an item to `regions`.
     ///
@@ -61,17 +60,13 @@ impl TrailPropertiesBuilder {
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
     pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = Some(v);
+                        self
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn set_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(mut self, input: bool) -> Self {
@@ -80,15 +75,18 @@ impl TrailPropertiesBuilder {
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn set_all_regions(mut self, input: std::option::Option<bool>) -> Self {
-        self.all_regions = input;
-        self
+        self.all_regions = input; self
     }
     /// Consumes the builder and constructs a [`TrailProperties`](crate::types::TrailProperties).
     pub fn build(self) -> crate::types::TrailProperties {
         crate::types::TrailProperties {
-            cloud_trail_arn: self.cloud_trail_arn,
-            regions: self.regions,
-            all_regions: self.all_regions,
+            cloud_trail_arn: self.cloud_trail_arn
+            ,
+            regions: self.regions
+            ,
+            all_regions: self.all_regions
+            ,
         }
     }
 }
+

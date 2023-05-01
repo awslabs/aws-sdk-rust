@@ -3,7 +3,7 @@
 /// <p>An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetOnDeviceService {
+pub struct TargetOnDeviceService  {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<crate::types::DeviceServiceName>,
@@ -13,11 +13,11 @@ pub struct TargetOnDeviceService {
 }
 impl TargetOnDeviceService {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::types::DeviceServiceName> {
+    pub fn service_name(&self) -> std::option::Option<& crate::types::DeviceServiceName> {
         self.service_name.as_ref()
     }
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
-    pub fn transfer_option(&self) -> std::option::Option<&crate::types::TransferOption> {
+    pub fn transfer_option(&self) -> std::option::Option<& crate::types::TransferOption> {
         self.transfer_option.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl TargetOnDeviceServiceBuilder {
         self
     }
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
-    pub fn set_service_name(
-        mut self,
-        input: std::option::Option<crate::types::DeviceServiceName>,
-    ) -> Self {
-        self.service_name = input;
-        self
+    pub fn set_service_name(mut self, input: std::option::Option<crate::types::DeviceServiceName>) -> Self {
+        self.service_name = input; self
     }
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
     pub fn transfer_option(mut self, input: crate::types::TransferOption) -> Self {
@@ -55,18 +51,17 @@ impl TargetOnDeviceServiceBuilder {
         self
     }
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
-    pub fn set_transfer_option(
-        mut self,
-        input: std::option::Option<crate::types::TransferOption>,
-    ) -> Self {
-        self.transfer_option = input;
-        self
+    pub fn set_transfer_option(mut self, input: std::option::Option<crate::types::TransferOption>) -> Self {
+        self.transfer_option = input; self
     }
     /// Consumes the builder and constructs a [`TargetOnDeviceService`](crate::types::TargetOnDeviceService).
     pub fn build(self) -> crate::types::TargetOnDeviceService {
         crate::types::TargetOnDeviceService {
-            service_name: self.service_name,
-            transfer_option: self.transfer_option,
+            service_name: self.service_name
+            ,
+            transfer_option: self.transfer_option
+            ,
         }
     }
 }
+

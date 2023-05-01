@@ -4,83 +4,56 @@ pub use crate::operation::list_catalog_items::_list_catalog_items_output::ListCa
 pub use crate::operation::list_catalog_items::_list_catalog_items_input::ListCatalogItemsInputBuilder;
 
 /// Fluent builder constructing a request to `ListCatalogItems`.
-///
-/// <p>Lists the items in the catalog.</p>
+/// 
+/// <p>Lists the items in the catalog.</p> 
 /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCatalogItemsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder,
-}
-impl ListCatalogItemsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder
+            }
+impl ListCatalogItemsFluentBuilder  {
     /// Creates a new `ListCatalogItems`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_catalog_items::ListCatalogItems,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_catalog_items::ListCatalogItemsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_catalog_items::ListCatalogItemsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_catalog_items::ListCatalogItems, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsOutput, aws_smithy_http::result::SdkError<crate::operation::list_catalog_items::ListCatalogItemsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator {
-        crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator {
+                            crate::operation::list_catalog_items::paginator::ListCatalogItemsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -111,10 +84,7 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by item class.</p>
-    pub fn set_item_class_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CatalogItemClass>>,
-    ) -> Self {
+    pub fn set_item_class_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::CatalogItemClass>>) -> Self {
         self.inner = self.inner.set_item_class_filter(input);
         self
     }
@@ -128,10 +98,7 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn set_supported_storage_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SupportedStorageEnum>>,
-    ) -> Self {
+    pub fn set_supported_storage_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::SupportedStorageEnum>>) -> Self {
         self.inner = self.inner.set_supported_storage_filter(input);
         self
     }
@@ -145,11 +112,9 @@ impl ListCatalogItemsFluentBuilder {
         self
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn set_ec2_family_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_family_filter(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_ec2_family_filter(input);
         self
     }
 }
+

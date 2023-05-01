@@ -3,7 +3,7 @@
 /// <p>The location of an output object in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutPutS3Location {
+pub struct OutPutS3Location  {
     /// <p>The object's bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OutPutS3Location {
 }
 impl OutPutS3Location {
     /// <p>The object's bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The object's key.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl OutPutS3LocationBuilder {
     }
     /// <p>The object's bucket.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The object's key.</p>
     pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl OutPutS3LocationBuilder {
     }
     /// <p>The object's key.</p>
     pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// Consumes the builder and constructs a [`OutPutS3Location`](crate::types::OutPutS3Location).
     pub fn build(self) -> crate::types::OutPutS3Location {
         crate::types::OutPutS3Location {
-            bucket_name: self.bucket_name,
-            object_key: self.object_key,
+            bucket_name: self.bucket_name
+            ,
+            object_key: self.object_key
+            ,
         }
     }
 }
+

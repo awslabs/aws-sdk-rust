@@ -3,14 +3,14 @@
 /// <p> <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArchiveRule {
+pub struct ArchiveRule  {
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
     #[doc(hidden)]
     pub retain_rule: std::option::Option<crate::types::ArchiveRetainRule>,
 }
 impl ArchiveRule {
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
-    pub fn retain_rule(&self) -> std::option::Option<&crate::types::ArchiveRetainRule> {
+    pub fn retain_rule(&self) -> std::option::Option<& crate::types::ArchiveRetainRule> {
         self.retain_rule.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl ArchiveRuleBuilder {
         self
     }
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
-    pub fn set_retain_rule(
-        mut self,
-        input: std::option::Option<crate::types::ArchiveRetainRule>,
-    ) -> Self {
-        self.retain_rule = input;
-        self
+    pub fn set_retain_rule(mut self, input: std::option::Option<crate::types::ArchiveRetainRule>) -> Self {
+        self.retain_rule = input; self
     }
     /// Consumes the builder and constructs a [`ArchiveRule`](crate::types::ArchiveRule).
     pub fn build(self) -> crate::types::ArchiveRule {
         crate::types::ArchiveRule {
-            retain_rule: self.retain_rule,
+            retain_rule: self.retain_rule
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The S3 bucket and folder location where training output is placed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputConfig {
+pub struct OutputConfig  {
     /// <p>The S3 bucket where training output is placed.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OutputConfig {
 }
 impl OutputConfig {
     /// <p>The S3 bucket where training output is placed.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The prefix applied to the training output files. </p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl OutputConfigBuilder {
     }
     /// <p>The S3 bucket where training output is placed.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The prefix applied to the training output files. </p>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl OutputConfigBuilder {
     }
     /// <p>The prefix applied to the training output files. </p>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
     pub fn build(self) -> crate::types::OutputConfig {
         crate::types::OutputConfig {
-            s3_bucket: self.s3_bucket,
-            s3_key_prefix: self.s3_key_prefix,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key_prefix: self.s3_key_prefix
+            ,
         }
     }
 }
+

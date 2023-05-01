@@ -3,7 +3,7 @@
 /// <p>Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemAssociationInfo {
+pub struct FileSystemAssociationInfo  {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
@@ -25,58 +25,52 @@ pub struct FileSystemAssociationInfo {
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::types::CacheAttributes>,
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
     /// </note>
     #[doc(hidden)]
-    pub endpoint_network_configuration:
-        std::option::Option<crate::types::EndpointNetworkConfiguration>,
+    pub endpoint_network_configuration: std::option::Option<crate::types::EndpointNetworkConfiguration>,
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
     #[doc(hidden)]
-    pub file_system_association_status_details:
-        std::option::Option<std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>,
+    pub file_system_association_status_details: std::option::Option<std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>,
 }
 impl FileSystemAssociationInfo {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_arn(&self) -> std::option::Option<& str> {
         self.file_system_association_arn.as_deref()
     }
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    pub fn file_system_association_status(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_status(&self) -> std::option::Option<& str> {
         self.file_system_association_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn audit_destination_arn(&self) -> std::option::Option<& str> {
         self.audit_destination_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn cache_attributes(&self) -> std::option::Option<&crate::types::CacheAttributes> {
+    pub fn cache_attributes(&self) -> std::option::Option<& crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
     /// </note>
-    pub fn endpoint_network_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::EndpointNetworkConfiguration> {
+    pub fn endpoint_network_configuration(&self) -> std::option::Option<& crate::types::EndpointNetworkConfiguration> {
         self.endpoint_network_configuration.as_ref()
     }
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-    pub fn file_system_association_status_details(
-        &self,
-    ) -> std::option::Option<&[crate::types::FileSystemAssociationStatusDetail]> {
+    pub fn file_system_association_status_details(&self) -> std::option::Option<& [crate::types::FileSystemAssociationStatusDetail]> {
         self.file_system_association_status_details.as_deref()
     }
 }
@@ -98,10 +92,8 @@ pub struct FileSystemAssociationInfoBuilder {
     pub(crate) gateway_arn: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) cache_attributes: std::option::Option<crate::types::CacheAttributes>,
-    pub(crate) endpoint_network_configuration:
-        std::option::Option<crate::types::EndpointNetworkConfiguration>,
-    pub(crate) file_system_association_status_details:
-        std::option::Option<std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>,
+    pub(crate) endpoint_network_configuration: std::option::Option<crate::types::EndpointNetworkConfiguration>,
+    pub(crate) file_system_association_status_details: std::option::Option<std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>,
 }
 impl FileSystemAssociationInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
@@ -110,12 +102,8 @@ impl FileSystemAssociationInfoBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    pub fn set_file_system_association_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.file_system_association_arn = input;
-        self
+    pub fn set_file_system_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.file_system_association_arn = input; self
     }
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
     pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +112,7 @@ impl FileSystemAssociationInfoBuilder {
     }
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn file_system_association_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,12 +120,8 @@ impl FileSystemAssociationInfoBuilder {
         self
     }
     /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    pub fn set_file_system_association_status(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.file_system_association_status = input;
-        self
+    pub fn set_file_system_association_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.file_system_association_status = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub fn audit_destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,12 +129,8 @@ impl FileSystemAssociationInfoBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.audit_destination_arn = input;
-        self
+    pub fn set_audit_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.audit_destination_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,8 +139,7 @@ impl FileSystemAssociationInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -170,17 +148,13 @@ impl FileSystemAssociationInfoBuilder {
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub fn cache_attributes(mut self, input: crate::types::CacheAttributes) -> Self {
@@ -188,69 +162,59 @@ impl FileSystemAssociationInfoBuilder {
         self
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
-        self.cache_attributes = input;
-        self
+    pub fn set_cache_attributes(mut self, input: std::option::Option<crate::types::CacheAttributes>) -> Self {
+        self.cache_attributes = input; self
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
     /// </note>
-    pub fn endpoint_network_configuration(
-        mut self,
-        input: crate::types::EndpointNetworkConfiguration,
-    ) -> Self {
+    pub fn endpoint_network_configuration(mut self, input: crate::types::EndpointNetworkConfiguration) -> Self {
         self.endpoint_network_configuration = Some(input);
         self
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
     /// </note>
-    pub fn set_endpoint_network_configuration(
-        mut self,
-        input: std::option::Option<crate::types::EndpointNetworkConfiguration>,
-    ) -> Self {
-        self.endpoint_network_configuration = input;
-        self
+    pub fn set_endpoint_network_configuration(mut self, input: std::option::Option<crate::types::EndpointNetworkConfiguration>) -> Self {
+        self.endpoint_network_configuration = input; self
     }
     /// Appends an item to `file_system_association_status_details`.
     ///
     /// To override the contents of this collection use [`set_file_system_association_status_details`](Self::set_file_system_association_status_details).
     ///
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-    pub fn file_system_association_status_details(
-        mut self,
-        input: crate::types::FileSystemAssociationStatusDetail,
-    ) -> Self {
-        let mut v = self
-            .file_system_association_status_details
-            .unwrap_or_default();
-        v.push(input);
-        self.file_system_association_status_details = Some(v);
-        self
+    pub fn file_system_association_status_details(mut self, input: crate::types::FileSystemAssociationStatusDetail) -> Self {
+        let mut v = self.file_system_association_status_details.unwrap_or_default();
+                        v.push(input);
+                        self.file_system_association_status_details = Some(v);
+                        self
     }
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-    pub fn set_file_system_association_status_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>,
-    ) -> Self {
-        self.file_system_association_status_details = input;
-        self
+    pub fn set_file_system_association_status_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>) -> Self {
+        self.file_system_association_status_details = input; self
     }
     /// Consumes the builder and constructs a [`FileSystemAssociationInfo`](crate::types::FileSystemAssociationInfo).
     pub fn build(self) -> crate::types::FileSystemAssociationInfo {
         crate::types::FileSystemAssociationInfo {
-            file_system_association_arn: self.file_system_association_arn,
-            location_arn: self.location_arn,
-            file_system_association_status: self.file_system_association_status,
-            audit_destination_arn: self.audit_destination_arn,
-            gateway_arn: self.gateway_arn,
-            tags: self.tags,
-            cache_attributes: self.cache_attributes,
-            endpoint_network_configuration: self.endpoint_network_configuration,
-            file_system_association_status_details: self.file_system_association_status_details,
+            file_system_association_arn: self.file_system_association_arn
+            ,
+            location_arn: self.location_arn
+            ,
+            file_system_association_status: self.file_system_association_status
+            ,
+            audit_destination_arn: self.audit_destination_arn
+            ,
+            gateway_arn: self.gateway_arn
+            ,
+            tags: self.tags
+            ,
+            cache_attributes: self.cache_attributes
+            ,
+            endpoint_network_configuration: self.endpoint_network_configuration
+            ,
+            file_system_association_status_details: self.file_system_association_status_details
+            ,
         }
     }
 }
+

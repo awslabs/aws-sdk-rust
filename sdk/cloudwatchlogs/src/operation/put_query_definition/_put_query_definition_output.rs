@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutQueryDefinitionOutput {
+pub struct PutQueryDefinitionOutput  {
     /// <p>The ID of the query definition.</p>
     #[doc(hidden)]
     pub query_definition_id: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct PutQueryDefinitionOutput {
 }
 impl PutQueryDefinitionOutput {
     /// <p>The ID of the query definition.</p>
-    pub fn query_definition_id(&self) -> std::option::Option<&str> {
+    pub fn query_definition_id(&self) -> std::option::Option<& str> {
         self.query_definition_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutQueryDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutQueryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutQueryDefinitionOutput`](crate::operation::put_query_definition::PutQueryDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_query_definition::builders::PutQueryDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::put_query_definition::builders::PutQueryDefinitionOutputBuilder {
         crate::operation::put_query_definition::builders::PutQueryDefinitionOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl PutQueryDefinitionOutputBuilder {
         self
     }
     /// <p>The ID of the query definition.</p>
-    pub fn set_query_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.query_definition_id = input;
-        self
+    pub fn set_query_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.query_definition_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutQueryDefinitionOutput`](crate::operation::put_query_definition::PutQueryDefinitionOutput).
     pub fn build(self) -> crate::operation::put_query_definition::PutQueryDefinitionOutput {
         crate::operation::put_query_definition::PutQueryDefinitionOutput {
-            query_definition_id: self.query_definition_id,
+            query_definition_id: self.query_definition_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThemeAliasInput {
+pub struct DeleteThemeAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct DeleteThemeAliasInput {
 }
 impl DeleteThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the theme that the specified alias is for.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The unique name for the theme alias to delete.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
 impl DeleteThemeAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteThemeAliasInput`](crate::operation::delete_theme_alias::DeleteThemeAliasInput).
-    pub fn builder() -> crate::operation::delete_theme_alias::builders::DeleteThemeAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_theme_alias::builders::DeleteThemeAliasInputBuilder {
         crate::operation::delete_theme_alias::builders::DeleteThemeAliasInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DeleteThemeAliasInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the theme that the specified alias is for.</p>
     pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl DeleteThemeAliasInputBuilder {
     }
     /// <p>The ID for the theme that the specified alias is for.</p>
     pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>The unique name for the theme alias to delete.</p>
     pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl DeleteThemeAliasInputBuilder {
     }
     /// <p>The unique name for the theme alias to delete.</p>
     pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteThemeAliasInput`](crate::operation::delete_theme_alias::DeleteThemeAliasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_theme_alias::DeleteThemeAliasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_theme_alias::DeleteThemeAliasInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_theme_alias::DeleteThemeAliasInput {
-                aws_account_id: self.aws_account_id,
-                theme_id: self.theme_id,
-                alias_name: self.alias_name,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                theme_id: self.theme_id
+                ,
+                alias_name: self.alias_name
+                ,
+            }
         )
     }
 }
+

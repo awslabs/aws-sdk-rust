@@ -2,32 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSystemTemplateInput {
-    /// <p>The ID of the system to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+pub struct UpdateSystemTemplateInput  {
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::types::DefinitionDocument>,
-    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default.</p>
     #[doc(hidden)]
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl UpdateSystemTemplateInput {
-    /// <p>The ID of the system to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
-    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
         self.compatible_namespace_version
@@ -35,8 +35,7 @@ impl UpdateSystemTemplateInput {
 }
 impl UpdateSystemTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateSystemTemplateInput`](crate::operation::update_system_template::UpdateSystemTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder {
+    pub fn builder() -> crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder {
         crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder::default()
     }
 }
@@ -50,19 +49,18 @@ pub struct UpdateSystemTemplateInputBuilder {
     pub(crate) compatible_namespace_version: std::option::Option<i64>,
 }
 impl UpdateSystemTemplateInputBuilder {
-    /// <p>The ID of the system to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID of the system to be updated.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the system to be updated.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
@@ -70,38 +68,32 @@ impl UpdateSystemTemplateInputBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
-    pub fn set_definition(
-        mut self,
-        input: std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: std::option::Option<crate::types::DefinitionDocument>) -> Self {
+        self.definition = input; self
     }
-    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
         self.compatible_namespace_version = Some(input);
         self
     }
-    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p> 
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn set_compatible_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.compatible_namespace_version = input;
-        self
+        self.compatible_namespace_version = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSystemTemplateInput`](crate::operation::update_system_template::UpdateSystemTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_system_template::UpdateSystemTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_system_template::UpdateSystemTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_system_template::UpdateSystemTemplateInput {
-                id: self.id,
-                definition: self.definition,
-                compatible_namespace_version: self.compatible_namespace_version,
-            },
+                id: self.id
+                ,
+                definition: self.definition
+                ,
+                compatible_namespace_version: self.compatible_namespace_version
+                ,
+            }
         )
     }
 }
+

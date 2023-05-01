@@ -3,7 +3,7 @@
 /// <p>Describes how many instances a stack has for each status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstancesCount {
+pub struct InstancesCount  {
     /// <p>The number of instances in the Assigning state.</p>
     #[doc(hidden)]
     pub assigning: std::option::Option<i32>,
@@ -187,8 +187,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances in the Assigning state.</p>
     pub fn set_assigning(mut self, input: std::option::Option<i32>) -> Self {
-        self.assigning = input;
-        self
+        self.assigning = input; self
     }
     /// <p>The number of instances with <code>booting</code> status.</p>
     pub fn booting(mut self, input: i32) -> Self {
@@ -197,8 +196,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>booting</code> status.</p>
     pub fn set_booting(mut self, input: std::option::Option<i32>) -> Self {
-        self.booting = input;
-        self
+        self.booting = input; self
     }
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
     pub fn connection_lost(mut self, input: i32) -> Self {
@@ -207,8 +205,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
     pub fn set_connection_lost(mut self, input: std::option::Option<i32>) -> Self {
-        self.connection_lost = input;
-        self
+        self.connection_lost = input; self
     }
     /// <p>The number of instances in the Deregistering state.</p>
     pub fn deregistering(mut self, input: i32) -> Self {
@@ -217,8 +214,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances in the Deregistering state.</p>
     pub fn set_deregistering(mut self, input: std::option::Option<i32>) -> Self {
-        self.deregistering = input;
-        self
+        self.deregistering = input; self
     }
     /// <p>The number of instances with <code>online</code> status.</p>
     pub fn online(mut self, input: i32) -> Self {
@@ -227,8 +223,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>online</code> status.</p>
     pub fn set_online(mut self, input: std::option::Option<i32>) -> Self {
-        self.online = input;
-        self
+        self.online = input; self
     }
     /// <p>The number of instances with <code>pending</code> status.</p>
     pub fn pending(mut self, input: i32) -> Self {
@@ -237,8 +232,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>pending</code> status.</p>
     pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
-        self.pending = input;
-        self
+        self.pending = input; self
     }
     /// <p>The number of instances with <code>rebooting</code> status.</p>
     pub fn rebooting(mut self, input: i32) -> Self {
@@ -247,8 +241,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>rebooting</code> status.</p>
     pub fn set_rebooting(mut self, input: std::option::Option<i32>) -> Self {
-        self.rebooting = input;
-        self
+        self.rebooting = input; self
     }
     /// <p>The number of instances in the Registered state.</p>
     pub fn registered(mut self, input: i32) -> Self {
@@ -257,8 +250,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances in the Registered state.</p>
     pub fn set_registered(mut self, input: std::option::Option<i32>) -> Self {
-        self.registered = input;
-        self
+        self.registered = input; self
     }
     /// <p>The number of instances in the Registering state.</p>
     pub fn registering(mut self, input: i32) -> Self {
@@ -267,8 +259,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances in the Registering state.</p>
     pub fn set_registering(mut self, input: std::option::Option<i32>) -> Self {
-        self.registering = input;
-        self
+        self.registering = input; self
     }
     /// <p>The number of instances with <code>requested</code> status.</p>
     pub fn requested(mut self, input: i32) -> Self {
@@ -277,8 +268,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>requested</code> status.</p>
     pub fn set_requested(mut self, input: std::option::Option<i32>) -> Self {
-        self.requested = input;
-        self
+        self.requested = input; self
     }
     /// <p>The number of instances with <code>running_setup</code> status.</p>
     pub fn running_setup(mut self, input: i32) -> Self {
@@ -287,8 +277,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>running_setup</code> status.</p>
     pub fn set_running_setup(mut self, input: std::option::Option<i32>) -> Self {
-        self.running_setup = input;
-        self
+        self.running_setup = input; self
     }
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
     pub fn setup_failed(mut self, input: i32) -> Self {
@@ -297,8 +286,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
     pub fn set_setup_failed(mut self, input: std::option::Option<i32>) -> Self {
-        self.setup_failed = input;
-        self
+        self.setup_failed = input; self
     }
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
     pub fn shutting_down(mut self, input: i32) -> Self {
@@ -307,8 +295,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
     pub fn set_shutting_down(mut self, input: std::option::Option<i32>) -> Self {
-        self.shutting_down = input;
-        self
+        self.shutting_down = input; self
     }
     /// <p>The number of instances with <code>start_failed</code> status.</p>
     pub fn start_failed(mut self, input: i32) -> Self {
@@ -317,8 +304,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>start_failed</code> status.</p>
     pub fn set_start_failed(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_failed = input;
-        self
+        self.start_failed = input; self
     }
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
     pub fn stop_failed(mut self, input: i32) -> Self {
@@ -327,8 +313,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
     pub fn set_stop_failed(mut self, input: std::option::Option<i32>) -> Self {
-        self.stop_failed = input;
-        self
+        self.stop_failed = input; self
     }
     /// <p>The number of instances with <code>stopped</code> status.</p>
     pub fn stopped(mut self, input: i32) -> Self {
@@ -337,8 +322,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>stopped</code> status.</p>
     pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
-        self.stopped = input;
-        self
+        self.stopped = input; self
     }
     /// <p>The number of instances with <code>stopping</code> status.</p>
     pub fn stopping(mut self, input: i32) -> Self {
@@ -347,8 +331,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>stopping</code> status.</p>
     pub fn set_stopping(mut self, input: std::option::Option<i32>) -> Self {
-        self.stopping = input;
-        self
+        self.stopping = input; self
     }
     /// <p>The number of instances with <code>terminated</code> status.</p>
     pub fn terminated(mut self, input: i32) -> Self {
@@ -357,8 +340,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>terminated</code> status.</p>
     pub fn set_terminated(mut self, input: std::option::Option<i32>) -> Self {
-        self.terminated = input;
-        self
+        self.terminated = input; self
     }
     /// <p>The number of instances with <code>terminating</code> status.</p>
     pub fn terminating(mut self, input: i32) -> Self {
@@ -367,8 +349,7 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances with <code>terminating</code> status.</p>
     pub fn set_terminating(mut self, input: std::option::Option<i32>) -> Self {
-        self.terminating = input;
-        self
+        self.terminating = input; self
     }
     /// <p>The number of instances in the Unassigning state.</p>
     pub fn unassigning(mut self, input: i32) -> Self {
@@ -377,32 +358,52 @@ impl InstancesCountBuilder {
     }
     /// <p>The number of instances in the Unassigning state.</p>
     pub fn set_unassigning(mut self, input: std::option::Option<i32>) -> Self {
-        self.unassigning = input;
-        self
+        self.unassigning = input; self
     }
     /// Consumes the builder and constructs a [`InstancesCount`](crate::types::InstancesCount).
     pub fn build(self) -> crate::types::InstancesCount {
         crate::types::InstancesCount {
-            assigning: self.assigning,
-            booting: self.booting,
-            connection_lost: self.connection_lost,
-            deregistering: self.deregistering,
-            online: self.online,
-            pending: self.pending,
-            rebooting: self.rebooting,
-            registered: self.registered,
-            registering: self.registering,
-            requested: self.requested,
-            running_setup: self.running_setup,
-            setup_failed: self.setup_failed,
-            shutting_down: self.shutting_down,
-            start_failed: self.start_failed,
-            stop_failed: self.stop_failed,
-            stopped: self.stopped,
-            stopping: self.stopping,
-            terminated: self.terminated,
-            terminating: self.terminating,
-            unassigning: self.unassigning,
+            assigning: self.assigning
+            ,
+            booting: self.booting
+            ,
+            connection_lost: self.connection_lost
+            ,
+            deregistering: self.deregistering
+            ,
+            online: self.online
+            ,
+            pending: self.pending
+            ,
+            rebooting: self.rebooting
+            ,
+            registered: self.registered
+            ,
+            registering: self.registering
+            ,
+            requested: self.requested
+            ,
+            running_setup: self.running_setup
+            ,
+            setup_failed: self.setup_failed
+            ,
+            shutting_down: self.shutting_down
+            ,
+            start_failed: self.start_failed
+            ,
+            stop_failed: self.stop_failed
+            ,
+            stopped: self.stopped
+            ,
+            stopping: self.stopping
+            ,
+            terminated: self.terminated
+            ,
+            terminating: self.terminating
+            ,
+            unassigning: self.unassigning
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The status of an automatic scaling policy. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicyStatus {
+pub struct AutoScalingPolicyStatus  {
     /// <p>Indicates the status of the automatic scaling policy.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::AutoScalingPolicyState>,
@@ -13,13 +13,11 @@ pub struct AutoScalingPolicyStatus {
 }
 impl AutoScalingPolicyStatus {
     /// <p>Indicates the status of the automatic scaling policy.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AutoScalingPolicyState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::AutoScalingPolicyState> {
         self.state.as_ref()
     }
     /// <p>The reason for a change in status.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoScalingPolicyStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::types::AutoScalingPolicyStateChangeReason> {
         self.state_change_reason.as_ref()
     }
 }
@@ -35,8 +33,7 @@ impl AutoScalingPolicyStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AutoScalingPolicyStatusBuilder {
     pub(crate) state: std::option::Option<crate::types::AutoScalingPolicyState>,
-    pub(crate) state_change_reason:
-        std::option::Option<crate::types::AutoScalingPolicyStateChangeReason>,
+    pub(crate) state_change_reason: std::option::Option<crate::types::AutoScalingPolicyStateChangeReason>,
 }
 impl AutoScalingPolicyStatusBuilder {
     /// <p>Indicates the status of the automatic scaling policy.</p>
@@ -45,34 +42,26 @@ impl AutoScalingPolicyStatusBuilder {
         self
     }
     /// <p>Indicates the status of the automatic scaling policy.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingPolicyState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::AutoScalingPolicyState>) -> Self {
+        self.state = input; self
     }
     /// <p>The reason for a change in status.</p>
-    pub fn state_change_reason(
-        mut self,
-        input: crate::types::AutoScalingPolicyStateChangeReason,
-    ) -> Self {
+    pub fn state_change_reason(mut self, input: crate::types::AutoScalingPolicyStateChangeReason) -> Self {
         self.state_change_reason = Some(input);
         self
     }
     /// <p>The reason for a change in status.</p>
-    pub fn set_state_change_reason(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingPolicyStateChangeReason>,
-    ) -> Self {
-        self.state_change_reason = input;
-        self
+    pub fn set_state_change_reason(mut self, input: std::option::Option<crate::types::AutoScalingPolicyStateChangeReason>) -> Self {
+        self.state_change_reason = input; self
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicyStatus`](crate::types::AutoScalingPolicyStatus).
     pub fn build(self) -> crate::types::AutoScalingPolicyStatus {
         crate::types::AutoScalingPolicyStatus {
-            state: self.state,
-            state_change_reason: self.state_change_reason,
+            state: self.state
+            ,
+            state_change_reason: self.state_change_reason
+            ,
         }
     }
 }
+

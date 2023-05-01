@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetCapacityInput {
+pub struct DescribeFleetCapacityInput  {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
     #[doc(hidden)]
     pub fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeFleetCapacityInput {
 }
 impl DescribeFleetCapacityInput {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fn fleet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn fleet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.fleet_ids.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
@@ -23,15 +23,13 @@ impl DescribeFleetCapacityInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeFleetCapacityInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetCapacityInput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityInputBuilder {
         crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityInputBuilder::default()
     }
 }
@@ -52,17 +50,13 @@ impl DescribeFleetCapacityInputBuilder {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
     pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.fleet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.fleet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.fleet_ids = Some(v);
+                        self
     }
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.fleet_ids = input;
-        self
+    pub fn set_fleet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.fleet_ids = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -71,8 +65,7 @@ impl DescribeFleetCapacityInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +74,20 @@ impl DescribeFleetCapacityInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFleetCapacityInput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput {
-                fleet_ids: self.fleet_ids,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                fleet_ids: self.fleet_ids
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

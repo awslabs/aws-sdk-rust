@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayCapabilityConfigurationOutput {
+pub struct DescribeGatewayCapabilityConfigurationOutput  {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
     pub capability_configuration: std::option::Option<std::string::String>,
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::types::CapabilitySyncStatus>,
@@ -24,37 +24,35 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
 }
 impl DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The namespace of the gateway capability.</p>
-    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+    pub fn capability_namespace(&self) -> std::option::Option<& str> {
         self.capability_namespace.as_deref()
     }
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn capability_configuration(&self) -> std::option::Option<&str> {
+    pub fn capability_configuration(&self) -> std::option::Option<& str> {
         self.capability_configuration.as_deref()
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
-    pub fn capability_sync_status(
-        &self,
-    ) -> std::option::Option<&crate::types::CapabilitySyncStatus> {
+    pub fn capability_sync_status(&self) -> std::option::Option<& crate::types::CapabilitySyncStatus> {
         self.capability_sync_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeGatewayCapabilityConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeGatewayCapabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayCapabilityConfigurationOutput`](crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder {
         crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder::default()
     }
 }
@@ -77,8 +75,7 @@ impl DescribeGatewayCapabilityConfigurationOutputBuilder {
     }
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The namespace of the gateway capability.</p>
     pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,12 +83,8 @@ impl DescribeGatewayCapabilityConfigurationOutputBuilder {
         self
     }
     /// <p>The namespace of the gateway capability.</p>
-    pub fn set_capability_namespace(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capability_namespace = input;
-        self
+    pub fn set_capability_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capability_namespace = input; self
     }
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,47 +92,39 @@ impl DescribeGatewayCapabilityConfigurationOutputBuilder {
         self
     }
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_capability_configuration(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capability_configuration = input;
-        self
+    pub fn set_capability_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capability_configuration = input; self
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
     pub fn capability_sync_status(mut self, input: crate::types::CapabilitySyncStatus) -> Self {
         self.capability_sync_status = Some(input);
         self
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
-    pub fn set_capability_sync_status(
-        mut self,
-        input: std::option::Option<crate::types::CapabilitySyncStatus>,
-    ) -> Self {
-        self.capability_sync_status = input;
-        self
+    pub fn set_capability_sync_status(mut self, input: std::option::Option<crate::types::CapabilitySyncStatus>) -> Self {
+        self.capability_sync_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeGatewayCapabilityConfigurationOutput`](crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput {
         crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput {
             gateway_id: self.gateway_id
             ,
@@ -153,3 +138,4 @@ impl DescribeGatewayCapabilityConfigurationOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScalingPlanResourceForecastDataOutput {
+pub struct GetScalingPlanResourceForecastDataOutput  {
     /// <p>The data points to return.</p>
     #[doc(hidden)]
     pub datapoints: std::option::Option<std::vec::Vec<crate::types::Datapoint>>,
@@ -10,18 +10,18 @@ pub struct GetScalingPlanResourceForecastDataOutput {
 }
 impl GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
-    pub fn datapoints(&self) -> std::option::Option<&[crate::types::Datapoint]> {
+    pub fn datapoints(&self) -> std::option::Option<& [crate::types::Datapoint]> {
         self.datapoints.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetScalingPlanResourceForecastDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetScalingPlanResourceForecastDataOutput {
     /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
-    pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder{
+    pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder {
         crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder::default()
     }
 }
@@ -41,29 +41,25 @@ impl GetScalingPlanResourceForecastDataOutputBuilder {
     /// <p>The data points to return.</p>
     pub fn datapoints(mut self, input: crate::types::Datapoint) -> Self {
         let mut v = self.datapoints.unwrap_or_default();
-        v.push(input);
-        self.datapoints = Some(v);
-        self
+                        v.push(input);
+                        self.datapoints = Some(v);
+                        self
     }
     /// <p>The data points to return.</p>
-    pub fn set_datapoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Datapoint>>,
-    ) -> Self {
-        self.datapoints = input;
-        self
+    pub fn set_datapoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Datapoint>>) -> Self {
+        self.datapoints = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
-    pub fn build(self) -> crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput{
+    pub fn build(self) -> crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
         crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
             datapoints: self.datapoints
             ,
@@ -71,3 +67,4 @@ impl GetScalingPlanResourceForecastDataOutputBuilder {
         }
     }
 }
+

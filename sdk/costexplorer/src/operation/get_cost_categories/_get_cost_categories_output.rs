@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCostCategoriesOutput {
+pub struct GetCostCategoriesOutput  {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The names of the Cost Categories.</p>
     #[doc(hidden)]
     pub cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Cost Category values.</p>
+    /// <p>The Cost Category values.</p> 
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
     #[doc(hidden)]
     pub cost_category_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -23,16 +23,16 @@ pub struct GetCostCategoriesOutput {
 }
 impl GetCostCategoriesOutput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The names of the Cost Categories.</p>
-    pub fn cost_category_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cost_category_names(&self) -> std::option::Option<& [std::string::String]> {
         self.cost_category_names.as_deref()
     }
-    /// <p>The Cost Category values.</p>
+    /// <p>The Cost Category values.</p> 
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn cost_category_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cost_category_values(&self) -> std::option::Option<& [std::string::String]> {
         self.cost_category_values.as_deref()
     }
     /// <p>The number of objects that are returned.</p>
@@ -45,14 +45,13 @@ impl GetCostCategoriesOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetCostCategoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCostCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`GetCostCategoriesOutput`](crate::operation::get_cost_categories::GetCostCategoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder {
+    pub fn builder() -> crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder {
         crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder::default()
     }
 }
@@ -76,8 +75,7 @@ impl GetCostCategoriesOutputBuilder {
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// Appends an item to `cost_category_names`.
     ///
@@ -86,38 +84,30 @@ impl GetCostCategoriesOutputBuilder {
     /// <p>The names of the Cost Categories.</p>
     pub fn cost_category_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cost_category_names.unwrap_or_default();
-        v.push(input.into());
-        self.cost_category_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.cost_category_names = Some(v);
+                        self
     }
     /// <p>The names of the Cost Categories.</p>
-    pub fn set_cost_category_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.cost_category_names = input;
-        self
+    pub fn set_cost_category_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.cost_category_names = input; self
     }
     /// Appends an item to `cost_category_values`.
     ///
     /// To override the contents of this collection use [`set_cost_category_values`](Self::set_cost_category_values).
     ///
-    /// <p>The Cost Category values.</p>
+    /// <p>The Cost Category values.</p> 
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
     pub fn cost_category_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cost_category_values.unwrap_or_default();
-        v.push(input.into());
-        self.cost_category_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.cost_category_values = Some(v);
+                        self
     }
-    /// <p>The Cost Category values.</p>
+    /// <p>The Cost Category values.</p> 
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn set_cost_category_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.cost_category_values = input;
-        self
+    pub fn set_cost_category_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.cost_category_values = input; self
     }
     /// <p>The number of objects that are returned.</p>
     pub fn return_size(mut self, input: i32) -> Self {
@@ -126,8 +116,7 @@ impl GetCostCategoriesOutputBuilder {
     }
     /// <p>The number of objects that are returned.</p>
     pub fn set_return_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.return_size = input;
-        self
+        self.return_size = input; self
     }
     /// <p>The total number of objects.</p>
     pub fn total_size(mut self, input: i32) -> Self {
@@ -136,27 +125,32 @@ impl GetCostCategoriesOutputBuilder {
     }
     /// <p>The total number of objects.</p>
     pub fn set_total_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_size = input;
-        self
+        self.total_size = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCostCategoriesOutput`](crate::operation::get_cost_categories::GetCostCategoriesOutput).
     pub fn build(self) -> crate::operation::get_cost_categories::GetCostCategoriesOutput {
         crate::operation::get_cost_categories::GetCostCategoriesOutput {
-            next_page_token: self.next_page_token,
-            cost_category_names: self.cost_category_names,
-            cost_category_values: self.cost_category_values,
-            return_size: self.return_size,
-            total_size: self.total_size,
+            next_page_token: self.next_page_token
+            ,
+            cost_category_names: self.cost_category_names
+            ,
+            cost_category_values: self.cost_category_values
+            ,
+            return_size: self.return_size
+            ,
+            total_size: self.total_size
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

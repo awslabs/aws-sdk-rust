@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTaskOutput {
+pub struct StartTaskOutput  {
     /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
     #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::types::Task>>,
@@ -13,19 +13,19 @@ pub struct StartTaskOutput {
 }
 impl StartTaskOutput {
     /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::types::Task]> {
+    pub fn tasks(&self) -> std::option::Option<& [crate::types::Task]> {
         self.tasks.as_deref()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::Failure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::types::Failure]> {
         self.failures.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartTaskOutput`](crate::operation::start_task::StartTaskOutput).
     pub fn builder() -> crate::operation::start_task::builders::StartTaskOutputBuilder {
@@ -49,17 +49,13 @@ impl StartTaskOutputBuilder {
     /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = Some(v);
-        self
+                        v.push(input);
+                        self.tasks = Some(v);
+                        self
     }
     /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
-    pub fn set_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Task>>) -> Self {
+        self.tasks = input; self
     }
     /// Appends an item to `failures`.
     ///
@@ -68,33 +64,32 @@ impl StartTaskOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = Some(v);
-        self
+                        v.push(input);
+                        self.failures = Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartTaskOutput`](crate::operation::start_task::StartTaskOutput).
     pub fn build(self) -> crate::operation::start_task::StartTaskOutput {
         crate::operation::start_task::StartTaskOutput {
-            tasks: self.tasks,
-            failures: self.failures,
+            tasks: self.tasks
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

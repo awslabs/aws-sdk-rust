@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpcAssociationAuthorizationOutput {
+pub struct CreateVpcAssociationAuthorizationOutput  {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -14,22 +14,22 @@ pub struct CreateVpcAssociationAuthorizationOutput {
 }
 impl CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> std::option::Option<& crate::types::Vpc> {
         self.vpc.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVpcAssociationAuthorizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVpcAssociationAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationOutput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput).
-    pub fn builder() -> crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationOutputBuilder {
         crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationOutputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
     }
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
@@ -60,20 +59,19 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVpcAssociationAuthorizationOutput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput).
-    pub fn build(self) -> crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput{
+    pub fn build(self) -> crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput {
         crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput {
             hosted_zone_id: self.hosted_zone_id
             ,
@@ -83,3 +81,4 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
         }
     }
 }
+

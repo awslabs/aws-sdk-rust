@@ -3,7 +3,7 @@
 /// <p>Provides summary information for an operation that occurred on an App Runner service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationSummary {
+pub struct OperationSummary  {
     /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct OperationSummary {
 }
 impl OperationSummary {
     /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of operation. It indicates a specific action that occured.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The current state of the operation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The type of operation. It indicates a specific action that occured.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
@@ -93,8 +92,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The type of operation. It indicates a specific action that occured.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The current state of the operation.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
@@ -103,8 +101,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The current state of the operation.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
     pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +110,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
     pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
     pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,12 +118,8 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    pub fn set_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_at = input;
-        self
+    pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input; self
     }
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
     pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,8 +128,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
     pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.ended_at = input;
-        self
+        self.ended_at = input; self
     }
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -145,23 +136,27 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// Consumes the builder and constructs a [`OperationSummary`](crate::types::OperationSummary).
     pub fn build(self) -> crate::types::OperationSummary {
         crate::types::OperationSummary {
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            target_arn: self.target_arn,
-            started_at: self.started_at,
-            ended_at: self.ended_at,
-            updated_at: self.updated_at,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            target_arn: self.target_arn
+            ,
+            started_at: self.started_at
+            ,
+            ended_at: self.ended_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

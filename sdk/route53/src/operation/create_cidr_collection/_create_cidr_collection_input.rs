@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCidrCollectionInput {
+pub struct CreateCidrCollectionInput  {
     /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct CreateCidrCollectionInput {
 }
 impl CreateCidrCollectionInput {
     /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
-    pub fn caller_reference(&self) -> std::option::Option<&str> {
+    pub fn caller_reference(&self) -> std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
 }
 impl CreateCidrCollectionInput {
     /// Creates a new builder-style object to manufacture [`CreateCidrCollectionInput`](crate::operation::create_cidr_collection::CreateCidrCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
+    pub fn builder() -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
         crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl CreateCidrCollectionInputBuilder {
     }
     /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
     pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl CreateCidrCollectionInputBuilder {
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
     pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// Consumes the builder and constructs a [`CreateCidrCollectionInput`](crate::operation::create_cidr_collection::CreateCidrCollectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_cidr_collection::CreateCidrCollectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_cidr_collection::CreateCidrCollectionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_cidr_collection::CreateCidrCollectionInput {
-                name: self.name,
-                caller_reference: self.caller_reference,
-            },
+                name: self.name
+                ,
+                caller_reference: self.caller_reference
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that contains summary information about a product view and a provisioning artifact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisioningArtifactView {
+pub struct ProvisioningArtifactView  {
     /// <p>Summary information about a product view.</p>
     #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::types::ProductViewSummary>,
@@ -13,13 +13,11 @@ pub struct ProvisioningArtifactView {
 }
 impl ProvisioningArtifactView {
     /// <p>Summary information about a product view.</p>
-    pub fn product_view_summary(&self) -> std::option::Option<&crate::types::ProductViewSummary> {
+    pub fn product_view_summary(&self) -> std::option::Option<& crate::types::ProductViewSummary> {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
-    pub fn provisioning_artifact(
-        &self,
-    ) -> std::option::Option<&crate::types::ProvisioningArtifact> {
+    pub fn provisioning_artifact(&self) -> std::option::Option<& crate::types::ProvisioningArtifact> {
         self.provisioning_artifact.as_ref()
     }
 }
@@ -44,12 +42,8 @@ impl ProvisioningArtifactViewBuilder {
         self
     }
     /// <p>Summary information about a product view.</p>
-    pub fn set_product_view_summary(
-        mut self,
-        input: std::option::Option<crate::types::ProductViewSummary>,
-    ) -> Self {
-        self.product_view_summary = input;
-        self
+    pub fn set_product_view_summary(mut self, input: std::option::Option<crate::types::ProductViewSummary>) -> Self {
+        self.product_view_summary = input; self
     }
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
     pub fn provisioning_artifact(mut self, input: crate::types::ProvisioningArtifact) -> Self {
@@ -57,18 +51,17 @@ impl ProvisioningArtifactViewBuilder {
         self
     }
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
-    pub fn set_provisioning_artifact(
-        mut self,
-        input: std::option::Option<crate::types::ProvisioningArtifact>,
-    ) -> Self {
-        self.provisioning_artifact = input;
-        self
+    pub fn set_provisioning_artifact(mut self, input: std::option::Option<crate::types::ProvisioningArtifact>) -> Self {
+        self.provisioning_artifact = input; self
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactView`](crate::types::ProvisioningArtifactView).
     pub fn build(self) -> crate::types::ProvisioningArtifactView {
         crate::types::ProvisioningArtifactView {
-            product_view_summary: self.product_view_summary,
-            provisioning_artifact: self.provisioning_artifact,
+            product_view_summary: self.product_view_summary
+            ,
+            provisioning_artifact: self.provisioning_artifact
+            ,
         }
     }
 }
+

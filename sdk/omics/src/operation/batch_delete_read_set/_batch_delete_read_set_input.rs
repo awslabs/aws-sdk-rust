@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteReadSetInput {
+pub struct BatchDeleteReadSetInput  {
     /// <p>The read sets' IDs.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,18 +12,17 @@ pub struct BatchDeleteReadSetInput {
 }
 impl BatchDeleteReadSetInput {
     /// <p>The read sets' IDs.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>The read sets' sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
 }
 impl BatchDeleteReadSetInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteReadSetInput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder {
         crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder::default()
     }
 }
@@ -43,17 +42,13 @@ impl BatchDeleteReadSetInputBuilder {
     /// <p>The read sets' IDs.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
     /// <p>The read sets' IDs.</p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>The read sets' sequence store ID.</p>
     pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,25 +56,19 @@ impl BatchDeleteReadSetInputBuilder {
         self
     }
     /// <p>The read sets' sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sequence_store_id = input; self
     }
     /// Consumes the builder and constructs a [`BatchDeleteReadSetInput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_delete_read_set::BatchDeleteReadSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_delete_read_set::BatchDeleteReadSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_delete_read_set::BatchDeleteReadSetInput {
-                ids: self.ids,
-                sequence_store_id: self.sequence_store_id,
-            },
+                ids: self.ids
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+            }
         )
     }
 }
+

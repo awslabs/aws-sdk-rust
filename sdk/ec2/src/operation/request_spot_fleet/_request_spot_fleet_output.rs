@@ -3,7 +3,7 @@
 /// <p>Contains the output of RequestSpotFleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestSpotFleetOutput {
+pub struct RequestSpotFleetOutput  {
     /// <p>The ID of the Spot Fleet request.</p>
     #[doc(hidden)]
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
@@ -11,19 +11,18 @@ pub struct RequestSpotFleetOutput {
 }
 impl RequestSpotFleetOutput {
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
+    pub fn spot_fleet_request_id(&self) -> std::option::Option<& str> {
         self.spot_fleet_request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RequestSpotFleetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RequestSpotFleetOutput {
     /// Creates a new builder-style object to manufacture [`RequestSpotFleetOutput`](crate::operation::request_spot_fleet::RequestSpotFleetOutput).
-    pub fn builder() -> crate::operation::request_spot_fleet::builders::RequestSpotFleetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::request_spot_fleet::builders::RequestSpotFleetOutputBuilder {
         crate::operation::request_spot_fleet::builders::RequestSpotFleetOutputBuilder::default()
     }
 }
@@ -42,27 +41,25 @@ impl RequestSpotFleetOutputBuilder {
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.spot_fleet_request_id = input;
-        self
+    pub fn set_spot_fleet_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.spot_fleet_request_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RequestSpotFleetOutput`](crate::operation::request_spot_fleet::RequestSpotFleetOutput).
     pub fn build(self) -> crate::operation::request_spot_fleet::RequestSpotFleetOutput {
         crate::operation::request_spot_fleet::RequestSpotFleetOutput {
-            spot_fleet_request_id: self.spot_fleet_request_id,
+            spot_fleet_request_id: self.spot_fleet_request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A typed link facet attribute update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkFacetAttributeUpdate {
+pub struct TypedLinkFacetAttributeUpdate  {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::TypedLinkAttributeDefinition>,
@@ -13,11 +13,11 @@ pub struct TypedLinkFacetAttributeUpdate {
 }
 impl TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::TypedLinkAttributeDefinition> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::TypedLinkAttributeDefinition> {
         self.attribute.as_ref()
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::UpdateActionType> {
+    pub fn action(&self) -> std::option::Option<& crate::types::UpdateActionType> {
         self.action.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl TypedLinkFacetAttributeUpdateBuilder {
         self
     }
     /// <p>The attribute to update.</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::TypedLinkAttributeDefinition>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::TypedLinkAttributeDefinition>) -> Self {
+        self.attribute = input; self
     }
     /// <p>The action to perform when updating the attribute.</p>
     pub fn action(mut self, input: crate::types::UpdateActionType) -> Self {
@@ -55,18 +51,17 @@ impl TypedLinkFacetAttributeUpdateBuilder {
         self
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn set_action(
-        mut self,
-        input: std::option::Option<crate::types::UpdateActionType>,
-    ) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: std::option::Option<crate::types::UpdateActionType>) -> Self {
+        self.action = input; self
     }
     /// Consumes the builder and constructs a [`TypedLinkFacetAttributeUpdate`](crate::types::TypedLinkFacetAttributeUpdate).
     pub fn build(self) -> crate::types::TypedLinkFacetAttributeUpdate {
         crate::types::TypedLinkFacetAttributeUpdate {
-            attribute: self.attribute,
-            action: self.action,
+            attribute: self.attribute
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

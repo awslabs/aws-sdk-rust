@@ -4,84 +4,66 @@ pub use crate::operation::create_document::_create_document_output::CreateDocume
 pub use crate::operation::create_document::_create_document_input::CreateDocumentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDocument`.
-///
+/// 
 /// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDocumentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_document::builders::CreateDocumentInputBuilder,
-}
-impl CreateDocumentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_document::builders::CreateDocumentInputBuilder
+            }
+impl CreateDocumentFluentBuilder  {
     /// Creates a new `CreateDocument`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_document::CreateDocument,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_document::CreateDocumentError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_document::CreateDocumentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_document::CreateDocumentError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
-    /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_document::CreateDocument, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_document::CreateDocumentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_document::CreateDocumentOutput, aws_smithy_http::result::SdkError<crate::operation::create_document::CreateDocumentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
+    /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p> 
+    /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li> 
     /// </ul>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
-    /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p> 
+    /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li> 
     /// </ul>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
@@ -97,10 +79,7 @@ impl CreateDocumentFluentBuilder {
         self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_requires(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>,
-    ) -> Self {
+    pub fn set_requires(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
         self.inner = self.inner.set_requires(input);
         self
     }
@@ -114,32 +93,29 @@ impl CreateDocumentFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttachmentsSource>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
-    /// <p>A name for the SSM document.</p> <important>
-    /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
-    /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
-    /// </ul>
+    /// <p>A name for the SSM document.</p> <important> 
+    /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aws</code> </p> </li> 
+    /// <li> <p> <code>amazon</code> </p> </li> 
+    /// <li> <p> <code>amzn</code> </p> </li> 
+    /// </ul> 
     /// </important>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A name for the SSM document.</p> <important>
-    /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
-    /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
-    /// </ul>
+    /// <p>A name for the SSM document.</p> <important> 
+    /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>aws</code> </p> </li> 
+    /// <li> <p> <code>amazon</code> </p> </li> 
+    /// <li> <p> <code>amzn</code> </p> </li> 
+    /// </ul> 
     /// </important>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
@@ -165,20 +141,17 @@ impl CreateDocumentFluentBuilder {
         self.inner = self.inner.set_version_name(input);
         self
     }
-    /// <p>The type of document to create.</p> <note>
-    /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
+    /// <p>The type of document to create.</p> <note> 
+    /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p> 
     /// </note>
     pub fn document_type(mut self, input: crate::types::DocumentType) -> Self {
         self.inner = self.inner.document_type(input);
         self
     }
-    /// <p>The type of document to create.</p> <note>
-    /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
+    /// <p>The type of document to create.</p> <note> 
+    /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p> 
     /// </note>
-    pub fn set_document_type(
-        mut self,
-        input: std::option::Option<crate::types::DocumentType>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: std::option::Option<crate::types::DocumentType>) -> Self {
         self.inner = self.inner.set_document_type(input);
         self
     }
@@ -188,10 +161,7 @@ impl CreateDocumentFluentBuilder {
         self
     }
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
-    pub fn set_document_format(
-        mut self,
-        input: std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.inner = self.inner.set_document_format(input);
         self
     }
@@ -209,29 +179,27 @@ impl CreateDocumentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
-    /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// </ul> <note>
-    /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> 
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
-    /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// </ul> <note>
-    /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> 
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

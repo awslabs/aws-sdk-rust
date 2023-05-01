@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hostenvironment = unimplemented!();
 /// match hostenvironment {
@@ -34,22 +34,14 @@
 /// Specifically, when `hostenvironment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HostEnvironment::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HostEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
@@ -64,50 +56,49 @@ pub enum HostEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Vmware,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HostEnvironment {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC2" => HostEnvironment::Ec2,
-            "HYPER-V" => HostEnvironment::HyperV,
-            "KVM" => HostEnvironment::Kvm,
-            "OTHER" => HostEnvironment::Other,
-            "SNOWBALL" => HostEnvironment::Snowball,
-            "VMWARE" => HostEnvironment::Vmware,
-            other => {
-                HostEnvironment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EC2" => HostEnvironment::Ec2,
+"HYPER-V" => HostEnvironment::HyperV,
+"KVM" => HostEnvironment::Kvm,
+"OTHER" => HostEnvironment::Other,
+"SNOWBALL" => HostEnvironment::Snowball,
+"VMWARE" => HostEnvironment::Vmware,
+other => HostEnvironment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for HostEnvironment {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HostEnvironment::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HostEnvironment::from(s))
+                }
+            }
 impl HostEnvironment {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HostEnvironment::Ec2 => "EC2",
-            HostEnvironment::HyperV => "HYPER-V",
-            HostEnvironment::Kvm => "KVM",
-            HostEnvironment::Other => "OTHER",
-            HostEnvironment::Snowball => "SNOWBALL",
-            HostEnvironment::Vmware => "VMWARE",
-            HostEnvironment::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HostEnvironment::Ec2 => "EC2",
+    HostEnvironment::HyperV => "HYPER-V",
+    HostEnvironment::Kvm => "KVM",
+    HostEnvironment::Other => "OTHER",
+    HostEnvironment::Snowball => "SNOWBALL",
+    HostEnvironment::Vmware => "VMWARE",
+    HostEnvironment::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
+                }
+            }
 impl AsRef<str> for HostEnvironment {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

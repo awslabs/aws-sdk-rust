@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopNotebookInstanceInput {
+pub struct StopNotebookInstanceInput  {
     /// <p>The name of the notebook instance to terminate.</p>
     #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl StopNotebookInstanceInput {
     /// <p>The name of the notebook instance to terminate.</p>
-    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+    pub fn notebook_instance_name(&self) -> std::option::Option<& str> {
         self.notebook_instance_name.as_deref()
     }
 }
 impl StopNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`StopNotebookInstanceInput`](crate::operation::stop_notebook_instance::StopNotebookInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder {
+    pub fn builder() -> crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder {
         crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl StopNotebookInstanceInputBuilder {
         self
     }
     /// <p>The name of the notebook instance to terminate.</p>
-    pub fn set_notebook_instance_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.notebook_instance_name = input;
-        self
+    pub fn set_notebook_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.notebook_instance_name = input; self
     }
     /// Consumes the builder and constructs a [`StopNotebookInstanceInput`](crate::operation::stop_notebook_instance::StopNotebookInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_notebook_instance::StopNotebookInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_notebook_instance::StopNotebookInstanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_notebook_instance::StopNotebookInstanceInput {
-                notebook_instance_name: self.notebook_instance_name,
-            },
+                notebook_instance_name: self.notebook_instance_name
+                ,
+            }
         )
     }
 }
+

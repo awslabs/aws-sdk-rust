@@ -3,7 +3,7 @@
 /// <p>A workflow graph represents the complete workflow containing all the Glue components present in the workflow and all the directed connections between them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowGraph {
+pub struct WorkflowGraph  {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
     #[doc(hidden)]
     pub nodes: std::option::Option<std::vec::Vec<crate::types::Node>>,
@@ -13,11 +13,11 @@ pub struct WorkflowGraph {
 }
 impl WorkflowGraph {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
-    pub fn nodes(&self) -> std::option::Option<&[crate::types::Node]> {
+    pub fn nodes(&self) -> std::option::Option<& [crate::types::Node]> {
         self.nodes.as_deref()
     }
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
-    pub fn edges(&self) -> std::option::Option<&[crate::types::Edge]> {
+    pub fn edges(&self) -> std::option::Option<& [crate::types::Edge]> {
         self.edges.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl WorkflowGraphBuilder {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
     pub fn nodes(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes.unwrap_or_default();
-        v.push(input);
-        self.nodes = Some(v);
-        self
+                        v.push(input);
+                        self.nodes = Some(v);
+                        self
     }
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
-    pub fn set_nodes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
-        self.nodes = input;
-        self
+    pub fn set_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Node>>) -> Self {
+        self.nodes = input; self
     }
     /// Appends an item to `edges`.
     ///
@@ -62,23 +58,22 @@ impl WorkflowGraphBuilder {
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
     pub fn edges(mut self, input: crate::types::Edge) -> Self {
         let mut v = self.edges.unwrap_or_default();
-        v.push(input);
-        self.edges = Some(v);
-        self
+                        v.push(input);
+                        self.edges = Some(v);
+                        self
     }
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
-    pub fn set_edges(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Edge>>,
-    ) -> Self {
-        self.edges = input;
-        self
+    pub fn set_edges(mut self, input: std::option::Option<std::vec::Vec<crate::types::Edge>>) -> Self {
+        self.edges = input; self
     }
     /// Consumes the builder and constructs a [`WorkflowGraph`](crate::types::WorkflowGraph).
     pub fn build(self) -> crate::types::WorkflowGraph {
         crate::types::WorkflowGraph {
-            nodes: self.nodes,
-            edges: self.edges,
+            nodes: self.nodes
+            ,
+            edges: self.edges
+            ,
         }
     }
 }
+

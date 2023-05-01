@@ -3,14 +3,14 @@
 /// <p>Synchronize Amazon Web Services Systems Manager Inventory data from multiple Amazon Web Services accounts defined in Organizations to a centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different Amazon Web Services account ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDataSyncDestinationDataSharing {
+pub struct ResourceDataSyncDestinationDataSharing  {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
     #[doc(hidden)]
     pub destination_data_sharing_type: std::option::Option<std::string::String>,
 }
 impl ResourceDataSyncDestinationDataSharing {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-    pub fn destination_data_sharing_type(&self) -> std::option::Option<&str> {
+    pub fn destination_data_sharing_type(&self) -> std::option::Option<& str> {
         self.destination_data_sharing_type.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl ResourceDataSyncDestinationDataSharingBuilder {
         self
     }
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-    pub fn set_destination_data_sharing_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_data_sharing_type = input;
-        self
+    pub fn set_destination_data_sharing_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_data_sharing_type = input; self
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncDestinationDataSharing`](crate::types::ResourceDataSyncDestinationDataSharing).
     pub fn build(self) -> crate::types::ResourceDataSyncDestinationDataSharing {
         crate::types::ResourceDataSyncDestinationDataSharing {
-            destination_data_sharing_type: self.destination_data_sharing_type,
+            destination_data_sharing_type: self.destination_data_sharing_type
+            ,
         }
     }
 }
+

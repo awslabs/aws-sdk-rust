@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCrawlerMetricsOutput {
+pub struct GetCrawlerMetricsOutput  {
     /// <p>A list of metrics for the specified crawler.</p>
     #[doc(hidden)]
     pub crawler_metrics_list: std::option::Option<std::vec::Vec<crate::types::CrawlerMetrics>>,
@@ -13,23 +13,22 @@ pub struct GetCrawlerMetricsOutput {
 }
 impl GetCrawlerMetricsOutput {
     /// <p>A list of metrics for the specified crawler.</p>
-    pub fn crawler_metrics_list(&self) -> std::option::Option<&[crate::types::CrawlerMetrics]> {
+    pub fn crawler_metrics_list(&self) -> std::option::Option<& [crate::types::CrawlerMetrics]> {
         self.crawler_metrics_list.as_deref()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCrawlerMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCrawlerMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetCrawlerMetricsOutput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsOutputBuilder {
         crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsOutputBuilder::default()
     }
 }
@@ -38,8 +37,7 @@ impl GetCrawlerMetricsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetCrawlerMetricsOutputBuilder {
-    pub(crate) crawler_metrics_list:
-        std::option::Option<std::vec::Vec<crate::types::CrawlerMetrics>>,
+    pub(crate) crawler_metrics_list: std::option::Option<std::vec::Vec<crate::types::CrawlerMetrics>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +49,13 @@ impl GetCrawlerMetricsOutputBuilder {
     /// <p>A list of metrics for the specified crawler.</p>
     pub fn crawler_metrics_list(mut self, input: crate::types::CrawlerMetrics) -> Self {
         let mut v = self.crawler_metrics_list.unwrap_or_default();
-        v.push(input);
-        self.crawler_metrics_list = Some(v);
-        self
+                        v.push(input);
+                        self.crawler_metrics_list = Some(v);
+                        self
     }
     /// <p>A list of metrics for the specified crawler.</p>
-    pub fn set_crawler_metrics_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CrawlerMetrics>>,
-    ) -> Self {
-        self.crawler_metrics_list = input;
-        self
+    pub fn set_crawler_metrics_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::CrawlerMetrics>>) -> Self {
+        self.crawler_metrics_list = input; self
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl GetCrawlerMetricsOutputBuilder {
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCrawlerMetricsOutput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput).
     pub fn build(self) -> crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput {
         crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput {
-            crawler_metrics_list: self.crawler_metrics_list,
-            next_token: self.next_token,
+            crawler_metrics_list: self.crawler_metrics_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

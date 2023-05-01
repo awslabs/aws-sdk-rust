@@ -3,7 +3,7 @@
 /// <p>An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html">Process Data and Evaluate Models</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessingJob {
+pub struct ProcessingJob  {
     /// <p>List of input configurations for the processing job.</p>
     #[doc(hidden)]
     pub processing_inputs: std::option::Option<std::vec::Vec<crate::types::ProcessingInput>>,
@@ -24,19 +24,18 @@ pub struct ProcessingJob {
     pub app_specification: std::option::Option<crate::types::AppSpecification>,
     /// <p>Sets the environment variables in the Docker container.</p>
     #[doc(hidden)]
-    pub environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.</p>
     #[doc(hidden)]
     pub network_config: std::option::Option<crate::types::NetworkConfig>,
     /// <p>The ARN of the role used to create the processing job.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTransformJob</code> </p> </li>
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub experiment_config: std::option::Option<crate::types::ExperimentConfig>,
@@ -79,103 +78,96 @@ pub struct ProcessingJob {
 }
 impl ProcessingJob {
     /// <p>List of input configurations for the processing job.</p>
-    pub fn processing_inputs(&self) -> std::option::Option<&[crate::types::ProcessingInput]> {
+    pub fn processing_inputs(&self) -> std::option::Option<& [crate::types::ProcessingInput]> {
         self.processing_inputs.as_deref()
     }
     /// <p>Configuration for uploading output from the processing container.</p>
-    pub fn processing_output_config(
-        &self,
-    ) -> std::option::Option<&crate::types::ProcessingOutputConfig> {
+    pub fn processing_output_config(&self) -> std::option::Option<& crate::types::ProcessingOutputConfig> {
         self.processing_output_config.as_ref()
     }
     /// <p>The name of the processing job.</p>
-    pub fn processing_job_name(&self) -> std::option::Option<&str> {
+    pub fn processing_job_name(&self) -> std::option::Option<& str> {
         self.processing_job_name.as_deref()
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn processing_resources(&self) -> std::option::Option<&crate::types::ProcessingResources> {
+    pub fn processing_resources(&self) -> std::option::Option<& crate::types::ProcessingResources> {
         self.processing_resources.as_ref()
     }
     /// <p>Configures conditions under which the processing job should be stopped, such as how long the processing job has been running. After the condition is met, the processing job is stopped.</p>
-    pub fn stopping_condition(
-        &self,
-    ) -> std::option::Option<&crate::types::ProcessingStoppingCondition> {
+    pub fn stopping_condition(&self) -> std::option::Option<& crate::types::ProcessingStoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>Configuration to run a processing job in a specified container image.</p>
-    pub fn app_specification(&self) -> std::option::Option<&crate::types::AppSpecification> {
+    pub fn app_specification(&self) -> std::option::Option<& crate::types::AppSpecification> {
         self.app_specification.as_ref()
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.</p>
-    pub fn network_config(&self) -> std::option::Option<&crate::types::NetworkConfig> {
+    pub fn network_config(&self) -> std::option::Option<& crate::types::NetworkConfig> {
         self.network_config.as_ref()
     }
     /// <p>The ARN of the role used to create the processing job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTransformJob</code> </p> </li>
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li> 
     /// </ul>
-    pub fn experiment_config(&self) -> std::option::Option<&crate::types::ExperimentConfig> {
+    pub fn experiment_config(&self) -> std::option::Option<& crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
     /// <p>The ARN of the processing job.</p>
-    pub fn processing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn processing_job_arn(&self) -> std::option::Option<& str> {
         self.processing_job_arn.as_deref()
     }
     /// <p>The status of the processing job.</p>
-    pub fn processing_job_status(&self) -> std::option::Option<&crate::types::ProcessingJobStatus> {
+    pub fn processing_job_status(&self) -> std::option::Option<& crate::types::ProcessingJobStatus> {
         self.processing_job_status.as_ref()
     }
     /// <p>A string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
-    pub fn exit_message(&self) -> std::option::Option<&str> {
+    pub fn exit_message(&self) -> std::option::Option<& str> {
         self.exit_message.as_deref()
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The time that the processing job ended.</p>
-    pub fn processing_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn processing_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.processing_end_time.as_ref()
     }
     /// <p>The time that the processing job started.</p>
-    pub fn processing_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn processing_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.processing_start_time.as_ref()
     }
     /// <p>The time the processing job was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The time the processing job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
-    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<& str> {
         self.monitoring_schedule_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job associated with this processing job.</p>
-    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+    pub fn auto_ml_job_arn(&self) -> std::option::Option<& str> {
         self.auto_ml_job_arn.as_deref()
     }
     /// <p>The ARN of the training job associated with this processing job.</p>
-    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+    pub fn training_job_arn(&self) -> std::option::Option<& str> {
         self.training_job_arn.as_deref()
     }
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -196,8 +188,7 @@ pub struct ProcessingJobBuilder {
     pub(crate) processing_resources: std::option::Option<crate::types::ProcessingResources>,
     pub(crate) stopping_condition: std::option::Option<crate::types::ProcessingStoppingCondition>,
     pub(crate) app_specification: std::option::Option<crate::types::AppSpecification>,
-    pub(crate) environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) environment: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) network_config: std::option::Option<crate::types::NetworkConfig>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) experiment_config: std::option::Option<crate::types::ExperimentConfig>,
@@ -222,17 +213,13 @@ impl ProcessingJobBuilder {
     /// <p>List of input configurations for the processing job.</p>
     pub fn processing_inputs(mut self, input: crate::types::ProcessingInput) -> Self {
         let mut v = self.processing_inputs.unwrap_or_default();
-        v.push(input);
-        self.processing_inputs = Some(v);
-        self
+                        v.push(input);
+                        self.processing_inputs = Some(v);
+                        self
     }
     /// <p>List of input configurations for the processing job.</p>
-    pub fn set_processing_inputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProcessingInput>>,
-    ) -> Self {
-        self.processing_inputs = input;
-        self
+    pub fn set_processing_inputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProcessingInput>>) -> Self {
+        self.processing_inputs = input; self
     }
     /// <p>Configuration for uploading output from the processing container.</p>
     pub fn processing_output_config(mut self, input: crate::types::ProcessingOutputConfig) -> Self {
@@ -240,12 +227,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>Configuration for uploading output from the processing container.</p>
-    pub fn set_processing_output_config(
-        mut self,
-        input: std::option::Option<crate::types::ProcessingOutputConfig>,
-    ) -> Self {
-        self.processing_output_config = input;
-        self
+    pub fn set_processing_output_config(mut self, input: std::option::Option<crate::types::ProcessingOutputConfig>) -> Self {
+        self.processing_output_config = input; self
     }
     /// <p>The name of the processing job.</p>
     pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,12 +236,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The name of the processing job.</p>
-    pub fn set_processing_job_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.processing_job_name = input;
-        self
+    pub fn set_processing_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.processing_job_name = input; self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
     pub fn processing_resources(mut self, input: crate::types::ProcessingResources) -> Self {
@@ -266,12 +245,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn set_processing_resources(
-        mut self,
-        input: std::option::Option<crate::types::ProcessingResources>,
-    ) -> Self {
-        self.processing_resources = input;
-        self
+    pub fn set_processing_resources(mut self, input: std::option::Option<crate::types::ProcessingResources>) -> Self {
+        self.processing_resources = input; self
     }
     /// <p>Configures conditions under which the processing job should be stopped, such as how long the processing job has been running. After the condition is met, the processing job is stopped.</p>
     pub fn stopping_condition(mut self, input: crate::types::ProcessingStoppingCondition) -> Self {
@@ -279,12 +254,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>Configures conditions under which the processing job should be stopped, such as how long the processing job has been running. After the condition is met, the processing job is stopped.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: std::option::Option<crate::types::ProcessingStoppingCondition>,
-    ) -> Self {
-        self.stopping_condition = input;
-        self
+    pub fn set_stopping_condition(mut self, input: std::option::Option<crate::types::ProcessingStoppingCondition>) -> Self {
+        self.stopping_condition = input; self
     }
     /// <p>Configuration to run a processing job in a specified container image.</p>
     pub fn app_specification(mut self, input: crate::types::AppSpecification) -> Self {
@@ -292,37 +263,23 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>Configuration to run a processing job in a specified container image.</p>
-    pub fn set_app_specification(
-        mut self,
-        input: std::option::Option<crate::types::AppSpecification>,
-    ) -> Self {
-        self.app_specification = input;
-        self
+    pub fn set_app_specification(mut self, input: std::option::Option<crate::types::AppSpecification>) -> Self {
+        self.app_specification = input; self
     }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = Some(hash_map);
+                        self
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.</p>
     pub fn network_config(mut self, input: crate::types::NetworkConfig) -> Self {
@@ -330,12 +287,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.</p>
-    pub fn set_network_config(
-        mut self,
-        input: std::option::Option<crate::types::NetworkConfig>,
-    ) -> Self {
-        self.network_config = input;
-        self
+    pub fn set_network_config(mut self, input: std::option::Option<crate::types::NetworkConfig>) -> Self {
+        self.network_config = input; self
     }
     /// <p>The ARN of the role used to create the processing job.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,31 +297,26 @@ impl ProcessingJobBuilder {
     }
     /// <p>The ARN of the role used to create the processing job.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
-    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTransformJob</code> </p> </li>
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li> 
     /// </ul>
     pub fn experiment_config(mut self, input: crate::types::ExperimentConfig) -> Self {
         self.experiment_config = Some(input);
         self
     }
-    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
-    /// <li> <p> <code>CreateTransformJob</code> </p> </li>
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li> 
     /// </ul>
-    pub fn set_experiment_config(
-        mut self,
-        input: std::option::Option<crate::types::ExperimentConfig>,
-    ) -> Self {
-        self.experiment_config = input;
-        self
+    pub fn set_experiment_config(mut self, input: std::option::Option<crate::types::ExperimentConfig>) -> Self {
+        self.experiment_config = input; self
     }
     /// <p>The ARN of the processing job.</p>
     pub fn processing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -376,12 +324,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The ARN of the processing job.</p>
-    pub fn set_processing_job_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.processing_job_arn = input;
-        self
+    pub fn set_processing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.processing_job_arn = input; self
     }
     /// <p>The status of the processing job.</p>
     pub fn processing_job_status(mut self, input: crate::types::ProcessingJobStatus) -> Self {
@@ -389,12 +333,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The status of the processing job.</p>
-    pub fn set_processing_job_status(
-        mut self,
-        input: std::option::Option<crate::types::ProcessingJobStatus>,
-    ) -> Self {
-        self.processing_job_status = input;
-        self
+    pub fn set_processing_job_status(mut self, input: std::option::Option<crate::types::ProcessingJobStatus>) -> Self {
+        self.processing_job_status = input; self
     }
     /// <p>A string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
     pub fn exit_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -403,8 +343,7 @@ impl ProcessingJobBuilder {
     }
     /// <p>A string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
     pub fn set_exit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.exit_message = input;
-        self
+        self.exit_message = input; self
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -413,8 +352,7 @@ impl ProcessingJobBuilder {
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The time that the processing job ended.</p>
     pub fn processing_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -422,12 +360,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The time that the processing job ended.</p>
-    pub fn set_processing_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.processing_end_time = input;
-        self
+    pub fn set_processing_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.processing_end_time = input; self
     }
     /// <p>The time that the processing job started.</p>
     pub fn processing_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -435,12 +369,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The time that the processing job started.</p>
-    pub fn set_processing_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.processing_start_time = input;
-        self
+    pub fn set_processing_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.processing_start_time = input; self
     }
     /// <p>The time the processing job was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -448,12 +378,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The time the processing job was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>The time the processing job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -461,12 +387,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The time the processing job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
     pub fn monitoring_schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -474,12 +396,8 @@ impl ProcessingJobBuilder {
         self
     }
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
-    pub fn set_monitoring_schedule_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.monitoring_schedule_arn = input;
-        self
+    pub fn set_monitoring_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.monitoring_schedule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job associated with this processing job.</p>
     pub fn auto_ml_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -488,8 +406,7 @@ impl ProcessingJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job associated with this processing job.</p>
     pub fn set_auto_ml_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_ml_job_arn = input;
-        self
+        self.auto_ml_job_arn = input; self
     }
     /// <p>The ARN of the training job associated with this processing job.</p>
     pub fn training_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -498,8 +415,7 @@ impl ProcessingJobBuilder {
     }
     /// <p>The ARN of the training job associated with this processing job.</p>
     pub fn set_training_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.training_job_arn = input;
-        self
+        self.training_job_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -508,43 +424,62 @@ impl ProcessingJobBuilder {
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`ProcessingJob`](crate::types::ProcessingJob).
     pub fn build(self) -> crate::types::ProcessingJob {
         crate::types::ProcessingJob {
-            processing_inputs: self.processing_inputs,
-            processing_output_config: self.processing_output_config,
-            processing_job_name: self.processing_job_name,
-            processing_resources: self.processing_resources,
-            stopping_condition: self.stopping_condition,
-            app_specification: self.app_specification,
-            environment: self.environment,
-            network_config: self.network_config,
-            role_arn: self.role_arn,
-            experiment_config: self.experiment_config,
-            processing_job_arn: self.processing_job_arn,
-            processing_job_status: self.processing_job_status,
-            exit_message: self.exit_message,
-            failure_reason: self.failure_reason,
-            processing_end_time: self.processing_end_time,
-            processing_start_time: self.processing_start_time,
-            last_modified_time: self.last_modified_time,
-            creation_time: self.creation_time,
-            monitoring_schedule_arn: self.monitoring_schedule_arn,
-            auto_ml_job_arn: self.auto_ml_job_arn,
-            training_job_arn: self.training_job_arn,
-            tags: self.tags,
+            processing_inputs: self.processing_inputs
+            ,
+            processing_output_config: self.processing_output_config
+            ,
+            processing_job_name: self.processing_job_name
+            ,
+            processing_resources: self.processing_resources
+            ,
+            stopping_condition: self.stopping_condition
+            ,
+            app_specification: self.app_specification
+            ,
+            environment: self.environment
+            ,
+            network_config: self.network_config
+            ,
+            role_arn: self.role_arn
+            ,
+            experiment_config: self.experiment_config
+            ,
+            processing_job_arn: self.processing_job_arn
+            ,
+            processing_job_status: self.processing_job_status
+            ,
+            exit_message: self.exit_message
+            ,
+            failure_reason: self.failure_reason
+            ,
+            processing_end_time: self.processing_end_time
+            ,
+            processing_start_time: self.processing_start_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            creation_time: self.creation_time
+            ,
+            monitoring_schedule_arn: self.monitoring_schedule_arn
+            ,
+            auto_ml_job_arn: self.auto_ml_job_arn
+            ,
+            training_job_arn: self.training_job_arn
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

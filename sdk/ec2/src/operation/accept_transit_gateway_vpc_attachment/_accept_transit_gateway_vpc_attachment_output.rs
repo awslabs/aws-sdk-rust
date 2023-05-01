@@ -2,29 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptTransitGatewayVpcAttachmentOutput {
+pub struct AcceptTransitGatewayVpcAttachmentOutput  {
     /// <p>The VPC attachment.</p>
     #[doc(hidden)]
-    pub transit_gateway_vpc_attachment:
-        std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    pub transit_gateway_vpc_attachment: std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }
 impl AcceptTransitGatewayVpcAttachmentOutput {
     /// <p>The VPC attachment.</p>
-    pub fn transit_gateway_vpc_attachment(
-        &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayVpcAttachment> {
+    pub fn transit_gateway_vpc_attachment(&self) -> std::option::Option<& crate::types::TransitGatewayVpcAttachment> {
         self.transit_gateway_vpc_attachment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AcceptTransitGatewayVpcAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AcceptTransitGatewayVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`AcceptTransitGatewayVpcAttachmentOutput`](crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput).
-    pub fn builder() -> crate::operation::accept_transit_gateway_vpc_attachment::builders::AcceptTransitGatewayVpcAttachmentOutputBuilder{
+    pub fn builder() -> crate::operation::accept_transit_gateway_vpc_attachment::builders::AcceptTransitGatewayVpcAttachmentOutputBuilder {
         crate::operation::accept_transit_gateway_vpc_attachment::builders::AcceptTransitGatewayVpcAttachmentOutputBuilder::default()
     }
 }
@@ -33,38 +30,30 @@ impl AcceptTransitGatewayVpcAttachmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AcceptTransitGatewayVpcAttachmentOutputBuilder {
-    pub(crate) transit_gateway_vpc_attachment:
-        std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    pub(crate) transit_gateway_vpc_attachment: std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }
 impl AcceptTransitGatewayVpcAttachmentOutputBuilder {
     /// <p>The VPC attachment.</p>
-    pub fn transit_gateway_vpc_attachment(
-        mut self,
-        input: crate::types::TransitGatewayVpcAttachment,
-    ) -> Self {
+    pub fn transit_gateway_vpc_attachment(mut self, input: crate::types::TransitGatewayVpcAttachment) -> Self {
         self.transit_gateway_vpc_attachment = Some(input);
         self
     }
     /// <p>The VPC attachment.</p>
-    pub fn set_transit_gateway_vpc_attachment(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayVpcAttachment>,
-    ) -> Self {
-        self.transit_gateway_vpc_attachment = input;
-        self
+    pub fn set_transit_gateway_vpc_attachment(mut self, input: std::option::Option<crate::types::TransitGatewayVpcAttachment>) -> Self {
+        self.transit_gateway_vpc_attachment = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AcceptTransitGatewayVpcAttachmentOutput`](crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput).
-    pub fn build(self) -> crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput{
+    pub fn build(self) -> crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput {
         crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput {
             transit_gateway_vpc_attachment: self.transit_gateway_vpc_attachment
             ,
@@ -72,3 +61,4 @@ impl AcceptTransitGatewayVpcAttachmentOutputBuilder {
         }
     }
 }
+

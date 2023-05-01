@@ -2,29 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceActionExecutionParametersOutput {
+pub struct DescribeServiceActionExecutionParametersOutput  {
     /// <p>The parameters of the self-service action.</p>
     #[doc(hidden)]
-    pub service_action_parameters:
-        std::option::Option<std::vec::Vec<crate::types::ExecutionParameter>>,
+    pub service_action_parameters: std::option::Option<std::vec::Vec<crate::types::ExecutionParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeServiceActionExecutionParametersOutput {
     /// <p>The parameters of the self-service action.</p>
-    pub fn service_action_parameters(
-        &self,
-    ) -> std::option::Option<&[crate::types::ExecutionParameter]> {
+    pub fn service_action_parameters(&self) -> std::option::Option<& [crate::types::ExecutionParameter]> {
         self.service_action_parameters.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeServiceActionExecutionParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeServiceActionExecutionParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceActionExecutionParametersOutput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput).
-    pub fn builder() -> crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersOutputBuilder {
         crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersOutputBuilder::default()
     }
 }
@@ -33,8 +30,7 @@ impl DescribeServiceActionExecutionParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeServiceActionExecutionParametersOutputBuilder {
-    pub(crate) service_action_parameters:
-        std::option::Option<std::vec::Vec<crate::types::ExecutionParameter>>,
+    pub(crate) service_action_parameters: std::option::Option<std::vec::Vec<crate::types::ExecutionParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeServiceActionExecutionParametersOutputBuilder {
@@ -45,29 +41,25 @@ impl DescribeServiceActionExecutionParametersOutputBuilder {
     /// <p>The parameters of the self-service action.</p>
     pub fn service_action_parameters(mut self, input: crate::types::ExecutionParameter) -> Self {
         let mut v = self.service_action_parameters.unwrap_or_default();
-        v.push(input);
-        self.service_action_parameters = Some(v);
-        self
+                        v.push(input);
+                        self.service_action_parameters = Some(v);
+                        self
     }
     /// <p>The parameters of the self-service action.</p>
-    pub fn set_service_action_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExecutionParameter>>,
-    ) -> Self {
-        self.service_action_parameters = input;
-        self
+    pub fn set_service_action_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExecutionParameter>>) -> Self {
+        self.service_action_parameters = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeServiceActionExecutionParametersOutput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput).
-    pub fn build(self) -> crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput{
+    pub fn build(self) -> crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput {
         crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput {
             service_action_parameters: self.service_action_parameters
             ,
@@ -75,3 +67,4 @@ impl DescribeServiceActionExecutionParametersOutputBuilder {
         }
     }
 }
+

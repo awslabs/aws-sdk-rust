@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServicesInput {
+pub struct ListServicesInput  {
     /// <p>The ID of the environment. </p>
     #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListServicesInput {
 }
 impl ListServicesInput {
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(&self) -> std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application. </p>
-    pub fn application_identifier(&self) -> std::option::Option<&str> {
+    pub fn application_identifier(&self) -> std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -57,12 +57,8 @@ impl ListServicesInputBuilder {
         self
     }
     /// <p>The ID of the environment. </p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.environment_identifier = input;
-        self
+    pub fn set_environment_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the application. </p>
     pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,12 +66,8 @@ impl ListServicesInputBuilder {
         self
     }
     /// <p>The ID of the application. </p>
-    pub fn set_application_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_identifier = input;
-        self
+    pub fn set_application_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_identifier = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +76,7 @@ impl ListServicesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -94,21 +85,22 @@ impl ListServicesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_services::ListServicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_services::ListServicesInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_services::ListServicesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_services::ListServicesInput {
+                environment_identifier: self.environment_identifier
+                ,
+                application_identifier: self.application_identifier
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

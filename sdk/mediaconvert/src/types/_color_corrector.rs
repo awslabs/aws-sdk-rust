@@ -3,7 +3,7 @@
 /// Settings for color correction.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColorCorrector {
+pub struct ColorCorrector  {
     /// Brightness level.
     #[doc(hidden)]
     pub brightness: i32,
@@ -41,13 +41,11 @@ impl ColorCorrector {
         self.brightness
     }
     /// Specify YUV limits and RGB tolerances when you set Sample range conversion to Limited range clip.
-    pub fn clip_limits(&self) -> std::option::Option<&crate::types::ClipLimits> {
+    pub fn clip_limits(&self) -> std::option::Option<& crate::types::ClipLimits> {
         self.clip_limits.as_ref()
     }
     /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
-    pub fn color_space_conversion(
-        &self,
-    ) -> std::option::Option<&crate::types::ColorSpaceConversion> {
+    pub fn color_space_conversion(&self) -> std::option::Option<& crate::types::ColorSpaceConversion> {
         self.color_space_conversion.as_ref()
     }
     /// Contrast level.
@@ -55,11 +53,11 @@ impl ColorCorrector {
         self.contrast
     }
     /// Use these settings when you convert to the HDR 10 color space. Specify the SMPTE ST 2086 Mastering Display Color Volume static metadata that you want signaled in the output. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. When you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10), these settings are required. You must set values for Max frame average light level (maxFrameAverageLightLevel) and Max content light level (maxContentLightLevel); these settings don't have a default value. The default values for the other HDR 10 metadata settings are defined by the P3D65 color space. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
-    pub fn hdr10_metadata(&self) -> std::option::Option<&crate::types::Hdr10Metadata> {
+    pub fn hdr10_metadata(&self) -> std::option::Option<& crate::types::Hdr10Metadata> {
         self.hdr10_metadata.as_ref()
     }
     /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
-    pub fn hdr_to_sdr_tone_mapper(&self) -> std::option::Option<&crate::types::HdrToSdrToneMapper> {
+    pub fn hdr_to_sdr_tone_mapper(&self) -> std::option::Option<& crate::types::HdrToSdrToneMapper> {
         self.hdr_to_sdr_tone_mapper.as_ref()
     }
     /// Hue in degrees.
@@ -67,9 +65,7 @@ impl ColorCorrector {
         self.hue
     }
     /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
-    pub fn sample_range_conversion(
-        &self,
-    ) -> std::option::Option<&crate::types::SampleRangeConversion> {
+    pub fn sample_range_conversion(&self) -> std::option::Option<& crate::types::SampleRangeConversion> {
         self.sample_range_conversion.as_ref()
     }
     /// Saturation level.
@@ -111,8 +107,7 @@ impl ColorCorrectorBuilder {
     }
     /// Brightness level.
     pub fn set_brightness(mut self, input: std::option::Option<i32>) -> Self {
-        self.brightness = input;
-        self
+        self.brightness = input; self
     }
     /// Specify YUV limits and RGB tolerances when you set Sample range conversion to Limited range clip.
     pub fn clip_limits(mut self, input: crate::types::ClipLimits) -> Self {
@@ -121,8 +116,7 @@ impl ColorCorrectorBuilder {
     }
     /// Specify YUV limits and RGB tolerances when you set Sample range conversion to Limited range clip.
     pub fn set_clip_limits(mut self, input: std::option::Option<crate::types::ClipLimits>) -> Self {
-        self.clip_limits = input;
-        self
+        self.clip_limits = input; self
     }
     /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
     pub fn color_space_conversion(mut self, input: crate::types::ColorSpaceConversion) -> Self {
@@ -130,12 +124,8 @@ impl ColorCorrectorBuilder {
         self
     }
     /// Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate the outcome of manually regrading from HDR to SDR. When you specify an output color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
-    pub fn set_color_space_conversion(
-        mut self,
-        input: std::option::Option<crate::types::ColorSpaceConversion>,
-    ) -> Self {
-        self.color_space_conversion = input;
-        self
+    pub fn set_color_space_conversion(mut self, input: std::option::Option<crate::types::ColorSpaceConversion>) -> Self {
+        self.color_space_conversion = input; self
     }
     /// Contrast level.
     pub fn contrast(mut self, input: i32) -> Self {
@@ -144,8 +134,7 @@ impl ColorCorrectorBuilder {
     }
     /// Contrast level.
     pub fn set_contrast(mut self, input: std::option::Option<i32>) -> Self {
-        self.contrast = input;
-        self
+        self.contrast = input; self
     }
     /// Use these settings when you convert to the HDR 10 color space. Specify the SMPTE ST 2086 Mastering Display Color Volume static metadata that you want signaled in the output. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. When you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10), these settings are required. You must set values for Max frame average light level (maxFrameAverageLightLevel) and Max content light level (maxContentLightLevel); these settings don't have a default value. The default values for the other HDR 10 metadata settings are defined by the P3D65 color space. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub fn hdr10_metadata(mut self, input: crate::types::Hdr10Metadata) -> Self {
@@ -153,12 +142,8 @@ impl ColorCorrectorBuilder {
         self
     }
     /// Use these settings when you convert to the HDR 10 color space. Specify the SMPTE ST 2086 Mastering Display Color Volume static metadata that you want signaled in the output. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. When you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10), these settings are required. You must set values for Max frame average light level (maxFrameAverageLightLevel) and Max content light level (maxContentLightLevel); these settings don't have a default value. The default values for the other HDR 10 metadata settings are defined by the P3D65 color space. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
-    pub fn set_hdr10_metadata(
-        mut self,
-        input: std::option::Option<crate::types::Hdr10Metadata>,
-    ) -> Self {
-        self.hdr10_metadata = input;
-        self
+    pub fn set_hdr10_metadata(mut self, input: std::option::Option<crate::types::Hdr10Metadata>) -> Self {
+        self.hdr10_metadata = input; self
     }
     /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
     pub fn hdr_to_sdr_tone_mapper(mut self, input: crate::types::HdrToSdrToneMapper) -> Self {
@@ -166,12 +151,8 @@ impl ColorCorrectorBuilder {
         self
     }
     /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
-    pub fn set_hdr_to_sdr_tone_mapper(
-        mut self,
-        input: std::option::Option<crate::types::HdrToSdrToneMapper>,
-    ) -> Self {
-        self.hdr_to_sdr_tone_mapper = input;
-        self
+    pub fn set_hdr_to_sdr_tone_mapper(mut self, input: std::option::Option<crate::types::HdrToSdrToneMapper>) -> Self {
+        self.hdr_to_sdr_tone_mapper = input; self
     }
     /// Hue in degrees.
     pub fn hue(mut self, input: i32) -> Self {
@@ -180,8 +161,7 @@ impl ColorCorrectorBuilder {
     }
     /// Hue in degrees.
     pub fn set_hue(mut self, input: std::option::Option<i32>) -> Self {
-        self.hue = input;
-        self
+        self.hue = input; self
     }
     /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
     pub fn sample_range_conversion(mut self, input: crate::types::SampleRangeConversion) -> Self {
@@ -189,12 +169,8 @@ impl ColorCorrectorBuilder {
         self
     }
     /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
-    pub fn set_sample_range_conversion(
-        mut self,
-        input: std::option::Option<crate::types::SampleRangeConversion>,
-    ) -> Self {
-        self.sample_range_conversion = input;
-        self
+    pub fn set_sample_range_conversion(mut self, input: std::option::Option<crate::types::SampleRangeConversion>) -> Self {
+        self.sample_range_conversion = input; self
     }
     /// Saturation level.
     pub fn saturation(mut self, input: i32) -> Self {
@@ -203,8 +179,7 @@ impl ColorCorrectorBuilder {
     }
     /// Saturation level.
     pub fn set_saturation(mut self, input: std::option::Option<i32>) -> Self {
-        self.saturation = input;
-        self
+        self.saturation = input; self
     }
     /// Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels within HDR10 outputs. The following color metadata must be present in your SDR input: color primaries, transfer characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you want to correct input color metadata, manually specify a color space in the input video selector. For 1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
     pub fn sdr_reference_white_level(mut self, input: i32) -> Self {
@@ -213,22 +188,37 @@ impl ColorCorrectorBuilder {
     }
     /// Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels within HDR10 outputs. The following color metadata must be present in your SDR input: color primaries, transfer characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you want to correct input color metadata, manually specify a color space in the input video selector. For 1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
     pub fn set_sdr_reference_white_level(mut self, input: std::option::Option<i32>) -> Self {
-        self.sdr_reference_white_level = input;
-        self
+        self.sdr_reference_white_level = input; self
     }
     /// Consumes the builder and constructs a [`ColorCorrector`](crate::types::ColorCorrector).
     pub fn build(self) -> crate::types::ColorCorrector {
         crate::types::ColorCorrector {
-            brightness: self.brightness.unwrap_or_default(),
-            clip_limits: self.clip_limits,
-            color_space_conversion: self.color_space_conversion,
-            contrast: self.contrast.unwrap_or_default(),
-            hdr10_metadata: self.hdr10_metadata,
-            hdr_to_sdr_tone_mapper: self.hdr_to_sdr_tone_mapper,
-            hue: self.hue.unwrap_or_default(),
-            sample_range_conversion: self.sample_range_conversion,
-            saturation: self.saturation.unwrap_or_default(),
-            sdr_reference_white_level: self.sdr_reference_white_level.unwrap_or_default(),
+            brightness: self.brightness
+                .unwrap_or_default()
+            ,
+            clip_limits: self.clip_limits
+            ,
+            color_space_conversion: self.color_space_conversion
+            ,
+            contrast: self.contrast
+                .unwrap_or_default()
+            ,
+            hdr10_metadata: self.hdr10_metadata
+            ,
+            hdr_to_sdr_tone_mapper: self.hdr_to_sdr_tone_mapper
+            ,
+            hue: self.hue
+                .unwrap_or_default()
+            ,
+            sample_range_conversion: self.sample_range_conversion
+            ,
+            saturation: self.saturation
+                .unwrap_or_default()
+            ,
+            sdr_reference_white_level: self.sdr_reference_white_level
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

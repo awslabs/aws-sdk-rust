@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNamespaceDeletionStatusOutput {
+pub struct GetNamespaceDeletionStatusOutput  {
     /// <p>The ARN of the namespace that is being deleted.</p>
     #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
@@ -22,36 +22,34 @@ pub struct GetNamespaceDeletionStatusOutput {
 }
 impl GetNamespaceDeletionStatusOutput {
     /// <p>The ARN of the namespace that is being deleted.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The name of the namespace that is being deleted.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The status of the deletion request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::NamespaceDeletionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::NamespaceDeletionStatus> {
         self.status.as_ref()
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::types::NamespaceDeletionStatusErrorCodes> {
+    pub fn error_code(&self) -> std::option::Option<& crate::types::NamespaceDeletionStatusErrorCodes> {
         self.error_code.as_ref()
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetNamespaceDeletionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetNamespaceDeletionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetNamespaceDeletionStatusOutput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput).
-    pub fn builder() -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusOutputBuilder {
         crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusOutputBuilder::default()
     }
 }
@@ -75,8 +73,7 @@ impl GetNamespaceDeletionStatusOutputBuilder {
     }
     /// <p>The ARN of the namespace that is being deleted.</p>
     pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_arn = input;
-        self
+        self.namespace_arn = input; self
     }
     /// <p>The name of the namespace that is being deleted.</p>
     pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +82,7 @@ impl GetNamespaceDeletionStatusOutputBuilder {
     }
     /// <p>The name of the namespace that is being deleted.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The status of the deletion request.</p>
     pub fn status(mut self, input: crate::types::NamespaceDeletionStatus) -> Self {
@@ -94,12 +90,8 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self
     }
     /// <p>The status of the deletion request.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::NamespaceDeletionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::NamespaceDeletionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>An error code returned by the namespace deletion task.</p>
     pub fn error_code(mut self, input: crate::types::NamespaceDeletionStatusErrorCodes) -> Self {
@@ -107,12 +99,8 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn set_error_code(
-        mut self,
-        input: std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes>,
-    ) -> Self {
-        self.error_code = input;
-        self
+    pub fn set_error_code(mut self, input: std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes>) -> Self {
+        self.error_code = input; self
     }
     /// <p>An error code returned by the namespace deletion task.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,29 +109,32 @@ impl GetNamespaceDeletionStatusOutputBuilder {
     }
     /// <p>An error code returned by the namespace deletion task.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetNamespaceDeletionStatusOutput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput {
+    pub fn build(self) -> crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput {
         crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput {
-            namespace_arn: self.namespace_arn,
-            namespace_name: self.namespace_name,
-            status: self.status,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            namespace_arn: self.namespace_arn
+            ,
+            namespace_name: self.namespace_name
+            ,
+            status: self.status
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

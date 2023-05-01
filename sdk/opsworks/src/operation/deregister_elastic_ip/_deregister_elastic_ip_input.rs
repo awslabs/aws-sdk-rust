@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterElasticIpInput {
+pub struct DeregisterElasticIpInput  {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
 }
 impl DeregisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
 }
 impl DeregisterElasticIpInput {
     /// Creates a new builder-style object to manufacture [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder {
-        crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder {
+        crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl DeregisterElasticIpInputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     /// Consumes the builder and constructs a [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deregister_elastic_ip::DeregisterElasticIpInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deregister_elastic_ip::DeregisterElasticIpInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deregister_elastic_ip::DeregisterElasticIpInput {
-                elastic_ip: self.elastic_ip,
-            },
+                elastic_ip: self.elastic_ip
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyIpamResourceCidrOutput {
+pub struct ModifyIpamResourceCidrOutput  {
     /// <p>The CIDR of the resource.</p>
     #[doc(hidden)]
     pub ipam_resource_cidr: std::option::Option<crate::types::IpamResourceCidr>,
@@ -10,20 +10,18 @@ pub struct ModifyIpamResourceCidrOutput {
 }
 impl ModifyIpamResourceCidrOutput {
     /// <p>The CIDR of the resource.</p>
-    pub fn ipam_resource_cidr(&self) -> std::option::Option<&crate::types::IpamResourceCidr> {
+    pub fn ipam_resource_cidr(&self) -> std::option::Option<& crate::types::IpamResourceCidr> {
         self.ipam_resource_cidr.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyIpamResourceCidrOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyIpamResourceCidrOutput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrOutputBuilder {
         crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl ModifyIpamResourceCidrOutputBuilder {
         self
     }
     /// <p>The CIDR of the resource.</p>
-    pub fn set_ipam_resource_cidr(
-        mut self,
-        input: std::option::Option<crate::types::IpamResourceCidr>,
-    ) -> Self {
-        self.ipam_resource_cidr = input;
-        self
+    pub fn set_ipam_resource_cidr(mut self, input: std::option::Option<crate::types::IpamResourceCidr>) -> Self {
+        self.ipam_resource_cidr = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput {
+    pub fn build(self) -> crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput {
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput {
-            ipam_resource_cidr: self.ipam_resource_cidr,
+            ipam_resource_cidr: self.ipam_resource_cidr
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Fields to be used while uploading the attachment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadMetadata {
+pub struct UploadMetadata  {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -12,23 +12,19 @@ pub struct UploadMetadata {
     pub url_expiry: std::option::Option<std::string::String>,
     /// <p>The headers to be provided while uploading the file to the URL.</p>
     #[doc(hidden)]
-    pub headers_to_include:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub headers_to_include: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UploadMetadata {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn url_expiry(&self) -> std::option::Option<&str> {
+    pub fn url_expiry(&self) -> std::option::Option<& str> {
         self.url_expiry.as_deref()
     }
     /// <p>The headers to be provided while uploading the file to the URL.</p>
-    pub fn headers_to_include(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn headers_to_include(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.headers_to_include.as_ref()
     }
 }
@@ -45,8 +41,7 @@ impl UploadMetadata {
 pub struct UploadMetadataBuilder {
     pub(crate) url: std::option::Option<std::string::String>,
     pub(crate) url_expiry: std::option::Option<std::string::String>,
-    pub(crate) headers_to_include:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) headers_to_include: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UploadMetadataBuilder {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
@@ -56,8 +51,7 @@ impl UploadMetadataBuilder {
     }
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn url_expiry(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,40 +60,33 @@ impl UploadMetadataBuilder {
     }
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn set_url_expiry(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url_expiry = input;
-        self
+        self.url_expiry = input; self
     }
     /// Adds a key-value pair to `headers_to_include`.
     ///
     /// To override the contents of this collection use [`set_headers_to_include`](Self::set_headers_to_include).
     ///
     /// <p>The headers to be provided while uploading the file to the URL.</p>
-    pub fn headers_to_include(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn headers_to_include(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.headers_to_include.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.headers_to_include = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.headers_to_include = Some(hash_map);
+                        self
     }
     /// <p>The headers to be provided while uploading the file to the URL.</p>
-    pub fn set_headers_to_include(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.headers_to_include = input;
-        self
+    pub fn set_headers_to_include(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.headers_to_include = input; self
     }
     /// Consumes the builder and constructs a [`UploadMetadata`](crate::types::UploadMetadata).
     pub fn build(self) -> crate::types::UploadMetadata {
         crate::types::UploadMetadata {
-            url: self.url,
-            url_expiry: self.url_expiry,
-            headers_to_include: self.headers_to_include,
+            url: self.url
+            ,
+            url_expiry: self.url_expiry
+            ,
+            headers_to_include: self.headers_to_include
+            ,
         }
     }
 }
+

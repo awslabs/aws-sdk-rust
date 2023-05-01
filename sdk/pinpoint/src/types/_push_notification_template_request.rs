@@ -3,7 +3,7 @@
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PushNotificationTemplateRequest {
+pub struct PushNotificationTemplateRequest  {
     /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     #[doc(hidden)]
     pub adm: std::option::Option<crate::types::AndroidPushNotificationTemplate>,
@@ -29,54 +29,48 @@ pub struct PushNotificationTemplateRequest {
     pub recommender_id: std::option::Option<std::string::String>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A custom description of the message template.</p>
     #[doc(hidden)]
     pub template_description: std::option::Option<std::string::String>,
 }
 impl PushNotificationTemplateRequest {
     /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn adm(&self) -> std::option::Option<&crate::types::AndroidPushNotificationTemplate> {
+    pub fn adm(&self) -> std::option::Option<& crate::types::AndroidPushNotificationTemplate> {
         self.adm.as_ref()
     }
     /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn apns(&self) -> std::option::Option<&crate::types::ApnsPushNotificationTemplate> {
+    pub fn apns(&self) -> std::option::Option<& crate::types::ApnsPushNotificationTemplate> {
         self.apns.as_ref()
     }
     /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn baidu(&self) -> std::option::Option<&crate::types::AndroidPushNotificationTemplate> {
+    pub fn baidu(&self) -> std::option::Option<& crate::types::AndroidPushNotificationTemplate> {
         self.baidu.as_ref()
     }
     /// <p>The default message template to use for push notification channels.</p>
     ///
     /// _Note: This member has been renamed from `default`._
-    pub fn default_value(
-        &self,
-    ) -> std::option::Option<&crate::types::DefaultPushNotificationTemplate> {
+    pub fn default_value(&self) -> std::option::Option<& crate::types::DefaultPushNotificationTemplate> {
         self.default_value.as_ref()
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
-    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+    pub fn default_substitutions(&self) -> std::option::Option<& str> {
         self.default_substitutions.as_deref()
     }
     /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn gcm(&self) -> std::option::Option<&crate::types::AndroidPushNotificationTemplate> {
+    pub fn gcm(&self) -> std::option::Option<& crate::types::AndroidPushNotificationTemplate> {
         self.gcm.as_ref()
     }
     /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
-    pub fn recommender_id(&self) -> std::option::Option<&str> {
+    pub fn recommender_id(&self) -> std::option::Option<& str> {
         self.recommender_id.as_deref()
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A custom description of the message template.</p>
-    pub fn template_description(&self) -> std::option::Option<&str> {
+    pub fn template_description(&self) -> std::option::Option<& str> {
         self.template_description.as_deref()
     }
 }
@@ -98,8 +92,7 @@ pub struct PushNotificationTemplateRequestBuilder {
     pub(crate) default_substitutions: std::option::Option<std::string::String>,
     pub(crate) gcm: std::option::Option<crate::types::AndroidPushNotificationTemplate>,
     pub(crate) recommender_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) template_description: std::option::Option<std::string::String>,
 }
 impl PushNotificationTemplateRequestBuilder {
@@ -109,12 +102,8 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn set_adm(
-        mut self,
-        input: std::option::Option<crate::types::AndroidPushNotificationTemplate>,
-    ) -> Self {
-        self.adm = input;
-        self
+    pub fn set_adm(mut self, input: std::option::Option<crate::types::AndroidPushNotificationTemplate>) -> Self {
+        self.adm = input; self
     }
     /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn apns(mut self, input: crate::types::ApnsPushNotificationTemplate) -> Self {
@@ -122,12 +111,8 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn set_apns(
-        mut self,
-        input: std::option::Option<crate::types::ApnsPushNotificationTemplate>,
-    ) -> Self {
-        self.apns = input;
-        self
+    pub fn set_apns(mut self, input: std::option::Option<crate::types::ApnsPushNotificationTemplate>) -> Self {
+        self.apns = input; self
     }
     /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn baidu(mut self, input: crate::types::AndroidPushNotificationTemplate) -> Self {
@@ -135,12 +120,8 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn set_baidu(
-        mut self,
-        input: std::option::Option<crate::types::AndroidPushNotificationTemplate>,
-    ) -> Self {
-        self.baidu = input;
-        self
+    pub fn set_baidu(mut self, input: std::option::Option<crate::types::AndroidPushNotificationTemplate>) -> Self {
+        self.baidu = input; self
     }
     /// <p>The default message template to use for push notification channels.</p>
     pub fn default_value(mut self, input: crate::types::DefaultPushNotificationTemplate) -> Self {
@@ -148,12 +129,8 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>The default message template to use for push notification channels.</p>
-    pub fn set_default(
-        mut self,
-        input: std::option::Option<crate::types::DefaultPushNotificationTemplate>,
-    ) -> Self {
-        self.default_value = input;
-        self
+    pub fn set_default(mut self, input: std::option::Option<crate::types::DefaultPushNotificationTemplate>) -> Self {
+        self.default_value = input; self
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     pub fn default_substitutions(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,12 +138,8 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
-    pub fn set_default_substitutions(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.default_substitutions = input;
-        self
+    pub fn set_default_substitutions(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.default_substitutions = input; self
     }
     /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn gcm(mut self, input: crate::types::AndroidPushNotificationTemplate) -> Self {
@@ -174,12 +147,8 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    pub fn set_gcm(
-        mut self,
-        input: std::option::Option<crate::types::AndroidPushNotificationTemplate>,
-    ) -> Self {
-        self.gcm = input;
-        self
+    pub fn set_gcm(mut self, input: std::option::Option<crate::types::AndroidPushNotificationTemplate>) -> Self {
+        self.gcm = input; self
     }
     /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
     pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,33 +157,22 @@ impl PushNotificationTemplateRequestBuilder {
     }
     /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
     pub fn set_recommender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommender_id = input;
-        self
+        self.recommender_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A custom description of the message template.</p>
     pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,25 +180,31 @@ impl PushNotificationTemplateRequestBuilder {
         self
     }
     /// <p>A custom description of the message template.</p>
-    pub fn set_template_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.template_description = input;
-        self
+    pub fn set_template_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.template_description = input; self
     }
     /// Consumes the builder and constructs a [`PushNotificationTemplateRequest`](crate::types::PushNotificationTemplateRequest).
     pub fn build(self) -> crate::types::PushNotificationTemplateRequest {
         crate::types::PushNotificationTemplateRequest {
-            adm: self.adm,
-            apns: self.apns,
-            baidu: self.baidu,
-            default_value: self.default_value,
-            default_substitutions: self.default_substitutions,
-            gcm: self.gcm,
-            recommender_id: self.recommender_id,
-            tags: self.tags,
-            template_description: self.template_description,
+            adm: self.adm
+            ,
+            apns: self.apns
+            ,
+            baidu: self.baidu
+            ,
+            default_value: self.default_value
+            ,
+            default_substitutions: self.default_substitutions
+            ,
+            gcm: self.gcm
+            ,
+            recommender_id: self.recommender_id
+            ,
+            tags: self.tags
+            ,
+            template_description: self.template_description
+            ,
         }
     }
 }
+

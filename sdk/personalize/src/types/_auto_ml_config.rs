@@ -3,7 +3,7 @@
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlConfig {
+pub struct AutoMlConfig  {
     /// <p>The metric to optimize.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AutoMlConfig {
 }
 impl AutoMlConfig {
     /// <p>The metric to optimize.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn recipe_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recipe_list(&self) -> std::option::Option<& [std::string::String]> {
         self.recipe_list.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AutoMlConfigBuilder {
     }
     /// <p>The metric to optimize.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// Appends an item to `recipe_list`.
     ///
@@ -53,23 +52,22 @@ impl AutoMlConfigBuilder {
     /// <p>The list of candidate recipes.</p>
     pub fn recipe_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recipe_list.unwrap_or_default();
-        v.push(input.into());
-        self.recipe_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.recipe_list = Some(v);
+                        self
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn set_recipe_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.recipe_list = input;
-        self
+    pub fn set_recipe_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.recipe_list = input; self
     }
     /// Consumes the builder and constructs a [`AutoMlConfig`](crate::types::AutoMlConfig).
     pub fn build(self) -> crate::types::AutoMlConfig {
         crate::types::AutoMlConfig {
-            metric_name: self.metric_name,
-            recipe_list: self.recipe_list,
+            metric_name: self.metric_name
+            ,
+            recipe_list: self.recipe_list
+            ,
         }
     }
 }
+

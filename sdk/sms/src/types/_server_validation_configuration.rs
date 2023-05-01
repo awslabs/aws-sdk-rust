@@ -3,7 +3,7 @@
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerValidationConfiguration {
+pub struct ServerValidationConfiguration  {
     /// <p>Represents a server.</p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::types::Server>,
@@ -18,32 +18,27 @@ pub struct ServerValidationConfiguration {
     pub server_validation_strategy: std::option::Option<crate::types::ServerValidationStrategy>,
     /// <p>The validation parameters.</p>
     #[doc(hidden)]
-    pub user_data_validation_parameters:
-        std::option::Option<crate::types::UserDataValidationParameters>,
+    pub user_data_validation_parameters: std::option::Option<crate::types::UserDataValidationParameters>,
 }
 impl ServerValidationConfiguration {
     /// <p>Represents a server.</p>
-    pub fn server(&self) -> std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::types::Server> {
         self.server.as_ref()
     }
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> std::option::Option<&str> {
+    pub fn validation_id(&self) -> std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The validation strategy.</p>
-    pub fn server_validation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::types::ServerValidationStrategy> {
+    pub fn server_validation_strategy(&self) -> std::option::Option<& crate::types::ServerValidationStrategy> {
         self.server_validation_strategy.as_ref()
     }
     /// <p>The validation parameters.</p>
-    pub fn user_data_validation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::UserDataValidationParameters> {
+    pub fn user_data_validation_parameters(&self) -> std::option::Option<& crate::types::UserDataValidationParameters> {
         self.user_data_validation_parameters.as_ref()
     }
 }
@@ -61,10 +56,8 @@ pub struct ServerValidationConfigurationBuilder {
     pub(crate) server: std::option::Option<crate::types::Server>,
     pub(crate) validation_id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) server_validation_strategy:
-        std::option::Option<crate::types::ServerValidationStrategy>,
-    pub(crate) user_data_validation_parameters:
-        std::option::Option<crate::types::UserDataValidationParameters>,
+    pub(crate) server_validation_strategy: std::option::Option<crate::types::ServerValidationStrategy>,
+    pub(crate) user_data_validation_parameters: std::option::Option<crate::types::UserDataValidationParameters>,
 }
 impl ServerValidationConfigurationBuilder {
     /// <p>Represents a server.</p>
@@ -74,8 +67,7 @@ impl ServerValidationConfigurationBuilder {
     }
     /// <p>Represents a server.</p>
     pub fn set_server(mut self, input: std::option::Option<crate::types::Server>) -> Self {
-        self.server = input;
-        self
+        self.server = input; self
     }
     /// <p>The ID of the validation.</p>
     pub fn validation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +76,7 @@ impl ServerValidationConfigurationBuilder {
     }
     /// <p>The ID of the validation.</p>
     pub fn set_validation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.validation_id = input;
-        self
+        self.validation_id = input; self
     }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,49 +85,40 @@ impl ServerValidationConfigurationBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The validation strategy.</p>
-    pub fn server_validation_strategy(
-        mut self,
-        input: crate::types::ServerValidationStrategy,
-    ) -> Self {
+    pub fn server_validation_strategy(mut self, input: crate::types::ServerValidationStrategy) -> Self {
         self.server_validation_strategy = Some(input);
         self
     }
     /// <p>The validation strategy.</p>
-    pub fn set_server_validation_strategy(
-        mut self,
-        input: std::option::Option<crate::types::ServerValidationStrategy>,
-    ) -> Self {
-        self.server_validation_strategy = input;
-        self
+    pub fn set_server_validation_strategy(mut self, input: std::option::Option<crate::types::ServerValidationStrategy>) -> Self {
+        self.server_validation_strategy = input; self
     }
     /// <p>The validation parameters.</p>
-    pub fn user_data_validation_parameters(
-        mut self,
-        input: crate::types::UserDataValidationParameters,
-    ) -> Self {
+    pub fn user_data_validation_parameters(mut self, input: crate::types::UserDataValidationParameters) -> Self {
         self.user_data_validation_parameters = Some(input);
         self
     }
     /// <p>The validation parameters.</p>
-    pub fn set_user_data_validation_parameters(
-        mut self,
-        input: std::option::Option<crate::types::UserDataValidationParameters>,
-    ) -> Self {
-        self.user_data_validation_parameters = input;
-        self
+    pub fn set_user_data_validation_parameters(mut self, input: std::option::Option<crate::types::UserDataValidationParameters>) -> Self {
+        self.user_data_validation_parameters = input; self
     }
     /// Consumes the builder and constructs a [`ServerValidationConfiguration`](crate::types::ServerValidationConfiguration).
     pub fn build(self) -> crate::types::ServerValidationConfiguration {
         crate::types::ServerValidationConfiguration {
-            server: self.server,
-            validation_id: self.validation_id,
-            name: self.name,
-            server_validation_strategy: self.server_validation_strategy,
-            user_data_validation_parameters: self.user_data_validation_parameters,
+            server: self.server
+            ,
+            validation_id: self.validation_id
+            ,
+            name: self.name
+            ,
+            server_validation_strategy: self.server_validation_strategy
+            ,
+            user_data_validation_parameters: self.user_data_validation_parameters
+            ,
         }
     }
 }
+

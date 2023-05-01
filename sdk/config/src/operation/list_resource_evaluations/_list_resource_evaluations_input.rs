@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceEvaluationsInput {
+pub struct ListResourceEvaluationsInput  {
     /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::ResourceEvaluationFilters>,
@@ -15,7 +15,7 @@ pub struct ListResourceEvaluationsInput {
 }
 impl ListResourceEvaluationsInput {
     /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ResourceEvaluationFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ResourceEvaluationFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -23,15 +23,13 @@ impl ListResourceEvaluationsInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListResourceEvaluationsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceEvaluationsInput`](crate::operation::list_resource_evaluations::ListResourceEvaluationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder {
         crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl ListResourceEvaluationsInputBuilder {
         self
     }
     /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ResourceEvaluationFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ResourceEvaluationFilters>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,8 +59,7 @@ impl ListResourceEvaluationsInputBuilder {
     }
     /// <p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl ListResourceEvaluationsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListResourceEvaluationsInput`](crate::operation::list_resource_evaluations::ListResourceEvaluationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_resource_evaluations::ListResourceEvaluationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_resource_evaluations::ListResourceEvaluationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_resource_evaluations::ListResourceEvaluationsInput {
-                filters: self.filters,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

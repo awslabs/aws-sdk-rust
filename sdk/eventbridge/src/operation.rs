@@ -168,3 +168,4 @@ pub mod update_connection;
 
 /// Types for the `UpdateEndpoint` operation.
 pub mod update_endpoint;
+

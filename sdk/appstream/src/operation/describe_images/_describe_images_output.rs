@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImagesOutput {
+pub struct DescribeImagesOutput  {
     /// <p>Information about the images.</p>
     #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::types::Image>>,
@@ -13,19 +13,19 @@ pub struct DescribeImagesOutput {
 }
 impl DescribeImagesOutput {
     /// <p>Information about the images.</p>
-    pub fn images(&self) -> std::option::Option<&[crate::types::Image]> {
+    pub fn images(&self) -> std::option::Option<& [crate::types::Image]> {
         self.images.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput).
     pub fn builder() -> crate::operation::describe_images::builders::DescribeImagesOutputBuilder {
@@ -49,17 +49,13 @@ impl DescribeImagesOutputBuilder {
     /// <p>Information about the images.</p>
     pub fn images(mut self, input: crate::types::Image) -> Self {
         let mut v = self.images.unwrap_or_default();
-        v.push(input);
-        self.images = Some(v);
-        self
+                        v.push(input);
+                        self.images = Some(v);
+                        self
     }
     /// <p>Information about the images.</p>
-    pub fn set_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Image>>,
-    ) -> Self {
-        self.images = input;
-        self
+    pub fn set_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::Image>>) -> Self {
+        self.images = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl DescribeImagesOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput).
     pub fn build(self) -> crate::operation::describe_images::DescribeImagesOutput {
         crate::operation::describe_images::DescribeImagesOutput {
-            images: self.images,
-            next_token: self.next_token,
+            images: self.images
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

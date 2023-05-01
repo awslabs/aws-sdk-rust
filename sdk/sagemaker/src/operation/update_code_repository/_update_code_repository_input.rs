@@ -2,30 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCodeRepositoryInput {
+pub struct UpdateCodeRepositoryInput  {
     /// <p>The name of the Git repository to update.</p>
     #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
-    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p> 
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     #[doc(hidden)]
     pub git_config: std::option::Option<crate::types::GitConfigForUpdate>,
 }
 impl UpdateCodeRepositoryInput {
     /// <p>The name of the Git repository to update.</p>
-    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+    pub fn code_repository_name(&self) -> std::option::Option<& str> {
         self.code_repository_name.as_deref()
     }
-    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p> 
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
-    pub fn git_config(&self) -> std::option::Option<&crate::types::GitConfigForUpdate> {
+    pub fn git_config(&self) -> std::option::Option<& crate::types::GitConfigForUpdate> {
         self.git_config.as_ref()
     }
 }
 impl UpdateCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
         crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder::default()
     }
 }
@@ -44,40 +43,30 @@ impl UpdateCodeRepositoryInputBuilder {
         self
     }
     /// <p>The name of the Git repository to update.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_repository_name = input;
-        self
+    pub fn set_code_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_repository_name = input; self
     }
-    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p> 
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     pub fn git_config(mut self, input: crate::types::GitConfigForUpdate) -> Self {
         self.git_config = Some(input);
         self
     }
-    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p> 
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
-    pub fn set_git_config(
-        mut self,
-        input: std::option::Option<crate::types::GitConfigForUpdate>,
-    ) -> Self {
-        self.git_config = input;
-        self
+    pub fn set_git_config(mut self, input: std::option::Option<crate::types::GitConfigForUpdate>) -> Self {
+        self.git_config = input; self
     }
     /// Consumes the builder and constructs a [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_code_repository::UpdateCodeRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_code_repository::UpdateCodeRepositoryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_code_repository::UpdateCodeRepositoryInput {
-                code_repository_name: self.code_repository_name,
-                git_config: self.git_config,
-            },
+                code_repository_name: self.code_repository_name
+                ,
+                git_config: self.git_config
+                ,
+            }
         )
     }
 }
+

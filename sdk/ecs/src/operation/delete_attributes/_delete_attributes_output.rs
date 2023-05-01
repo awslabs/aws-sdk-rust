@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAttributesOutput {
+pub struct DeleteAttributesOutput  {
     /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
@@ -10,19 +10,18 @@ pub struct DeleteAttributesOutput {
 }
 impl DeleteAttributesOutput {
     /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::types::Attribute]> {
         self.attributes.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAttributesOutput`](crate::operation::delete_attributes::DeleteAttributesOutput).
-    pub fn builder() -> crate::operation::delete_attributes::builders::DeleteAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_attributes::builders::DeleteAttributesOutputBuilder {
         crate::operation::delete_attributes::builders::DeleteAttributesOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl DeleteAttributesOutputBuilder {
     /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = Some(v);
-        self
+                        v.push(input);
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAttributesOutput`](crate::operation::delete_attributes::DeleteAttributesOutput).
     pub fn build(self) -> crate::operation::delete_attributes::DeleteAttributesOutput {
         crate::operation::delete_attributes::DeleteAttributesOutput {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

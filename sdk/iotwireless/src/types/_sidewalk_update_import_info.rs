@@ -3,14 +3,14 @@
 /// <p>Sidewalk object information for updating an import task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkUpdateImportInfo {
+pub struct SidewalkUpdateImportInfo  {
     /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
     #[doc(hidden)]
     pub device_creation_file: std::option::Option<std::string::String>,
 }
 impl SidewalkUpdateImportInfo {
     /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
-    pub fn device_creation_file(&self) -> std::option::Option<&str> {
+    pub fn device_creation_file(&self) -> std::option::Option<& str> {
         self.device_creation_file.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl SidewalkUpdateImportInfoBuilder {
         self
     }
     /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
-    pub fn set_device_creation_file(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_creation_file = input;
-        self
+    pub fn set_device_creation_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_creation_file = input; self
     }
     /// Consumes the builder and constructs a [`SidewalkUpdateImportInfo`](crate::types::SidewalkUpdateImportInfo).
     pub fn build(self) -> crate::types::SidewalkUpdateImportInfo {
         crate::types::SidewalkUpdateImportInfo {
-            device_creation_file: self.device_creation_file,
+            device_creation_file: self.device_creation_file
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>A request to retrieve information about an email address that's on the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSuppressedDestinationInput {
+pub struct GetSuppressedDestinationInput  {
     /// <p>The email address that's on the account suppression list.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
 }
 impl GetSuppressedDestinationInput {
     /// <p>The email address that's on the account suppression list.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
 impl GetSuppressedDestinationInput {
     /// Creates a new builder-style object to manufacture [`GetSuppressedDestinationInput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder {
         crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl GetSuppressedDestinationInputBuilder {
     }
     /// <p>The email address that's on the account suppression list.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// Consumes the builder and constructs a [`GetSuppressedDestinationInput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_suppressed_destination::GetSuppressedDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_suppressed_destination::GetSuppressedDestinationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_suppressed_destination::GetSuppressedDestinationInput {
-                email_address: self.email_address,
-            },
+                email_address: self.email_address
+                ,
+            }
         )
     }
 }
+

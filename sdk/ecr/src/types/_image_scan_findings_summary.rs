@@ -3,7 +3,7 @@
 /// <p>A summary of the last completed image scan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageScanFindingsSummary {
+pub struct ImageScanFindingsSummary  {
     /// <p>The time of the last completed image scan.</p>
     #[doc(hidden)]
     pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -12,24 +12,19 @@ pub struct ImageScanFindingsSummary {
     pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
     #[doc(hidden)]
-    pub finding_severity_counts:
-        std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
+    pub finding_severity_counts: std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
 }
 impl ImageScanFindingsSummary {
     /// <p>The time of the last completed image scan.</p>
-    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn image_scan_completed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.image_scan_completed_at.as_ref()
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
-    pub fn vulnerability_source_updated_at(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn vulnerability_source_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.vulnerability_source_updated_at.as_ref()
     }
     /// <p>The image vulnerability counts, sorted by severity.</p>
-    pub fn finding_severity_counts(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::types::FindingSeverity, i32>> {
+    pub fn finding_severity_counts(&self) -> std::option::Option<& std::collections::HashMap<crate::types::FindingSeverity, i32>> {
         self.finding_severity_counts.as_ref()
     }
 }
@@ -46,8 +41,7 @@ impl ImageScanFindingsSummary {
 pub struct ImageScanFindingsSummaryBuilder {
     pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) finding_severity_counts:
-        std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
+    pub(crate) finding_severity_counts: std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
 }
 impl ImageScanFindingsSummaryBuilder {
     /// <p>The time of the last completed image scan.</p>
@@ -56,12 +50,8 @@ impl ImageScanFindingsSummaryBuilder {
         self
     }
     /// <p>The time of the last completed image scan.</p>
-    pub fn set_image_scan_completed_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.image_scan_completed_at = input;
-        self
+    pub fn set_image_scan_completed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.image_scan_completed_at = input; self
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub fn vulnerability_source_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -69,12 +59,8 @@ impl ImageScanFindingsSummaryBuilder {
         self
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
-    pub fn set_vulnerability_source_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.vulnerability_source_updated_at = input;
-        self
+    pub fn set_vulnerability_source_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.vulnerability_source_updated_at = input; self
     }
     /// Adds a key-value pair to `finding_severity_counts`.
     ///
@@ -83,24 +69,24 @@ impl ImageScanFindingsSummaryBuilder {
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub fn finding_severity_counts(mut self, k: crate::types::FindingSeverity, v: i32) -> Self {
         let mut hash_map = self.finding_severity_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.finding_severity_counts = Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.finding_severity_counts = Some(hash_map);
+                        self
     }
     /// <p>The image vulnerability counts, sorted by severity.</p>
-    pub fn set_finding_severity_counts(
-        mut self,
-        input: std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
-    ) -> Self {
-        self.finding_severity_counts = input;
-        self
+    pub fn set_finding_severity_counts(mut self, input: std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>) -> Self {
+        self.finding_severity_counts = input; self
     }
     /// Consumes the builder and constructs a [`ImageScanFindingsSummary`](crate::types::ImageScanFindingsSummary).
     pub fn build(self) -> crate::types::ImageScanFindingsSummary {
         crate::types::ImageScanFindingsSummary {
-            image_scan_completed_at: self.image_scan_completed_at,
-            vulnerability_source_updated_at: self.vulnerability_source_updated_at,
-            finding_severity_counts: self.finding_severity_counts,
+            image_scan_completed_at: self.image_scan_completed_at
+            ,
+            vulnerability_source_updated_at: self.vulnerability_source_updated_at
+            ,
+            finding_severity_counts: self.finding_severity_counts
+            ,
         }
     }
 }
+

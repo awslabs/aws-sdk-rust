@@ -7,6 +7,10 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_resource_share_status::ResourceShareStatus;
 
+pub use crate::types::_replace_permission_associations_work::ReplacePermissionAssociationsWork;
+
+pub use crate::types::_replace_permission_associations_work_status::ReplacePermissionAssociationsWorkStatus;
+
 pub use crate::types::_resource_share_invitation::ResourceShareInvitation;
 
 pub use crate::types::_resource_share_association::ResourceShareAssociation;
@@ -17,13 +21,17 @@ pub use crate::types::_resource_share_association_type::ResourceShareAssociation
 
 pub use crate::types::_resource_share_invitation_status::ResourceShareInvitationStatus;
 
+pub use crate::types::_resource_share_permission_summary::ResourceSharePermissionSummary;
+
+pub use crate::types::_permission_feature_set::PermissionFeatureSet;
+
+pub use crate::types::_permission_type::PermissionType;
+
 pub use crate::types::_service_name_and_resource_type::ServiceNameAndResourceType;
 
 pub use crate::types::_resource_region_scope::ResourceRegionScope;
 
 pub use crate::types::_resource_region_scope_filter::ResourceRegionScopeFilter;
-
-pub use crate::types::_resource_share_permission_summary::ResourceSharePermissionSummary;
 
 pub use crate::types::_resource::Resource;
 
@@ -33,11 +41,31 @@ pub use crate::types::_resource_owner::ResourceOwner;
 
 pub use crate::types::_principal::Principal;
 
+pub use crate::types::_permission_type_filter::PermissionTypeFilter;
+
+pub use crate::types::_associated_permission::AssociatedPermission;
+
 pub use crate::types::_tag_filter::TagFilter;
 
 pub use crate::types::_resource_share_permission_detail::ResourceSharePermissionDetail;
 
+pub use crate::types::_permission_status::PermissionStatus;
+
+mod _associated_permission;
+
+mod _permission_feature_set;
+
+mod _permission_status;
+
+mod _permission_type;
+
+mod _permission_type_filter;
+
 mod _principal;
+
+mod _replace_permission_associations_work;
+
+mod _replace_permission_associations_work_status;
 
 mod _resource;
 
@@ -80,3 +108,4 @@ pub mod builders;
 
 /// Error types that AWS Resource Access Manager can respond with.
 pub mod error;
+

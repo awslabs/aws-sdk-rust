@@ -3,7 +3,7 @@
 /// <p>An object that contains the failure details about an import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureInfo {
+pub struct FailureInfo  {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
     #[doc(hidden)]
     pub failed_records_s3_url: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FailureInfo {
 }
 impl FailureInfo {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    pub fn failed_records_s3_url(&self) -> std::option::Option<&str> {
+    pub fn failed_records_s3_url(&self) -> std::option::Option<& str> {
         self.failed_records_s3_url.as_deref()
     }
     /// <p>A message about why the import job failed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl FailureInfoBuilder {
         self
     }
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    pub fn set_failed_records_s3_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.failed_records_s3_url = input;
-        self
+    pub fn set_failed_records_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.failed_records_s3_url = input; self
     }
     /// <p>A message about why the import job failed.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl FailureInfoBuilder {
     }
     /// <p>A message about why the import job failed.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Consumes the builder and constructs a [`FailureInfo`](crate::types::FailureInfo).
     pub fn build(self) -> crate::types::FailureInfo {
         crate::types::FailureInfo {
-            failed_records_s3_url: self.failed_records_s3_url,
-            error_message: self.error_message,
+            failed_records_s3_url: self.failed_records_s3_url
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

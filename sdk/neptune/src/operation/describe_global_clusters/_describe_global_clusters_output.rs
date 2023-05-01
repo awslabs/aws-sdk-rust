@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalClustersOutput {
+pub struct DescribeGlobalClustersOutput  {
     /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct DescribeGlobalClustersOutput {
 }
 impl DescribeGlobalClustersOutput {
     /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The list of global clusters and instances returned by this request.</p>
-    pub fn global_clusters(&self) -> std::option::Option<&[crate::types::GlobalCluster]> {
+    pub fn global_clusters(&self) -> std::option::Option<& [crate::types::GlobalCluster]> {
         self.global_clusters.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeGlobalClustersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeGlobalClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersOutputBuilder {
         crate::operation::describe_global_clusters::builders::DescribeGlobalClustersOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl DescribeGlobalClustersOutputBuilder {
     }
     /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Appends an item to `global_clusters`.
     ///
@@ -61,33 +58,32 @@ impl DescribeGlobalClustersOutputBuilder {
     /// <p>The list of global clusters and instances returned by this request.</p>
     pub fn global_clusters(mut self, input: crate::types::GlobalCluster) -> Self {
         let mut v = self.global_clusters.unwrap_or_default();
-        v.push(input);
-        self.global_clusters = Some(v);
-        self
+                        v.push(input);
+                        self.global_clusters = Some(v);
+                        self
     }
     /// <p>The list of global clusters and instances returned by this request.</p>
-    pub fn set_global_clusters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlobalCluster>>,
-    ) -> Self {
-        self.global_clusters = input;
-        self
+    pub fn set_global_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlobalCluster>>) -> Self {
+        self.global_clusters = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput).
     pub fn build(self) -> crate::operation::describe_global_clusters::DescribeGlobalClustersOutput {
         crate::operation::describe_global_clusters::DescribeGlobalClustersOutput {
-            marker: self.marker,
-            global_clusters: self.global_clusters,
+            marker: self.marker
+            ,
+            global_clusters: self.global_clusters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

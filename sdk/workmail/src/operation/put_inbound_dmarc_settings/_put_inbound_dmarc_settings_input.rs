@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInboundDmarcSettingsInput {
+pub struct PutInboundDmarcSettingsInput  {
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct PutInboundDmarcSettingsInput {
 }
 impl PutInboundDmarcSettingsInput {
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>Enforces or suspends a policy after it's applied.</p>
@@ -22,9 +22,7 @@ impl PutInboundDmarcSettingsInput {
 }
 impl PutInboundDmarcSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutInboundDmarcSettingsInput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder {
         crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl PutInboundDmarcSettingsInputBuilder {
     }
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>Enforces or suspends a policy after it's applied.</p>
     pub fn enforced(mut self, input: bool) -> Self {
@@ -54,21 +51,18 @@ impl PutInboundDmarcSettingsInputBuilder {
     }
     /// <p>Enforces or suspends a policy after it's applied.</p>
     pub fn set_enforced(mut self, input: std::option::Option<bool>) -> Self {
-        self.enforced = input;
-        self
+        self.enforced = input; self
     }
     /// Consumes the builder and constructs a [`PutInboundDmarcSettingsInput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput {
-                organization_id: self.organization_id,
-                enforced: self.enforced,
-            },
+                organization_id: self.organization_id
+                ,
+                enforced: self.enforced
+                ,
+            }
         )
     }
 }
+

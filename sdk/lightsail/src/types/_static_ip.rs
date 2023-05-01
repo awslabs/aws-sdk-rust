@@ -3,7 +3,7 @@
 /// <p>Describes a static IP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StaticIp {
+pub struct StaticIp  {
     /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -34,35 +34,35 @@ pub struct StaticIp {
 }
 impl StaticIp {
     /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> std::option::Option<&str> {
+    pub fn support_code(&self) -> std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region and Availability Zone where the static IP was created.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The static IP address.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
-    pub fn attached_to(&self) -> std::option::Option<&str> {
+    pub fn attached_to(&self) -> std::option::Option<& str> {
         self.attached_to.as_deref()
     }
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
@@ -99,8 +99,7 @@ impl StaticIpBuilder {
     }
     /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl StaticIpBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl StaticIpBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -128,12 +125,8 @@ impl StaticIpBuilder {
         self
     }
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The region and Availability Zone where the static IP was created.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
@@ -141,12 +134,8 @@ impl StaticIpBuilder {
         self
     }
     /// <p>The region and Availability Zone where the static IP was created.</p>
-    pub fn set_location(
-        mut self,
-        input: std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
-        self.location = input;
-        self
+    pub fn set_location(mut self, input: std::option::Option<crate::types::ResourceLocation>) -> Self {
+        self.location = input; self
     }
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -154,12 +143,8 @@ impl StaticIpBuilder {
         self
     }
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The static IP address.</p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +153,7 @@ impl StaticIpBuilder {
     }
     /// <p>The static IP address.</p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn attached_to(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +162,7 @@ impl StaticIpBuilder {
     }
     /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn set_attached_to(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attached_to = input;
-        self
+        self.attached_to = input; self
     }
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
     pub fn is_attached(mut self, input: bool) -> Self {
@@ -188,21 +171,30 @@ impl StaticIpBuilder {
     }
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
     pub fn set_is_attached(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_attached = input;
-        self
+        self.is_attached = input; self
     }
     /// Consumes the builder and constructs a [`StaticIp`](crate::types::StaticIp).
     pub fn build(self) -> crate::types::StaticIp {
         crate::types::StaticIp {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            ip_address: self.ip_address,
-            attached_to: self.attached_to,
-            is_attached: self.is_attached,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            ip_address: self.ip_address
+            ,
+            attached_to: self.attached_to
+            ,
+            is_attached: self.is_attached
+            ,
         }
     }
 }
+

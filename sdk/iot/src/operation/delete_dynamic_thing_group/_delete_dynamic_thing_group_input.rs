@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDynamicThingGroupInput {
+pub struct DeleteDynamicThingGroupInput  {
     /// <p>The name of the dynamic thing group to delete.</p>
     #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteDynamicThingGroupInput {
 }
 impl DeleteDynamicThingGroupInput {
     /// <p>The name of the dynamic thing group to delete.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The expected version of the dynamic thing group to delete.</p>
@@ -22,9 +22,7 @@ impl DeleteDynamicThingGroupInput {
 }
 impl DeleteDynamicThingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDynamicThingGroupInput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder {
         crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DeleteDynamicThingGroupInputBuilder {
     }
     /// <p>The name of the dynamic thing group to delete.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The expected version of the dynamic thing group to delete.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -54,21 +51,18 @@ impl DeleteDynamicThingGroupInputBuilder {
     }
     /// <p>The expected version of the dynamic thing group to delete.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDynamicThingGroupInput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                expected_version: self.expected_version,
-            },
+                thing_group_name: self.thing_group_name
+                ,
+                expected_version: self.expected_version
+                ,
+            }
         )
     }
 }
+

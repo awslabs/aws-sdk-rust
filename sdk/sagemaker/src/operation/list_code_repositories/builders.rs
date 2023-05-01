@@ -4,92 +4,62 @@ pub use crate::operation::list_code_repositories::_list_code_repositories_output
 pub use crate::operation::list_code_repositories::_list_code_repositories_input::ListCodeRepositoriesInputBuilder;
 
 /// Fluent builder constructing a request to `ListCodeRepositories`.
-///
+/// 
 /// <p>Gets a list of the Git repositories in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCodeRepositoriesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder,
-}
-impl ListCodeRepositoriesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder
+            }
+impl ListCodeRepositoriesFluentBuilder  {
     /// Creates a new `ListCodeRepositories`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_code_repositories::ListCodeRepositories,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_code_repositories::ListCodeRepositoriesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_code_repositories::ListCodeRepositoriesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_code_repositories::ListCodeRepositoriesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_code_repositories::ListCodeRepositories, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesOutput, aws_smithy_http::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator {
-        crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator {
+                            crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -99,10 +69,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -112,10 +79,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -125,10 +89,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -168,10 +129,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::CodeRepositorySortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::CodeRepositorySortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -181,11 +139,9 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: std::option::Option<crate::types::CodeRepositorySortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::CodeRepositorySortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
 }
+

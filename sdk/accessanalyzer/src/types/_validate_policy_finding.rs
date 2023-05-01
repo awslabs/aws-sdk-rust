@@ -3,14 +3,14 @@
 /// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidatePolicyFinding {
+pub struct ValidatePolicyFinding  {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     #[doc(hidden)]
     pub finding_details: std::option::Option<std::string::String>,
-    /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-    /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>The impact of the finding.</p> 
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+    /// <p>Errors report when a part of the policy is not functional.</p> 
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
     #[doc(hidden)]
     pub finding_type: std::option::Option<crate::types::ValidatePolicyFindingType>,
@@ -26,27 +26,27 @@ pub struct ValidatePolicyFinding {
 }
 impl ValidatePolicyFinding {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn finding_details(&self) -> std::option::Option<&str> {
+    pub fn finding_details(&self) -> std::option::Option<& str> {
         self.finding_details.as_deref()
     }
-    /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-    /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>The impact of the finding.</p> 
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+    /// <p>Errors report when a part of the policy is not functional.</p> 
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    pub fn finding_type(&self) -> std::option::Option<&crate::types::ValidatePolicyFindingType> {
+    pub fn finding_type(&self) -> std::option::Option<& crate::types::ValidatePolicyFindingType> {
         self.finding_type.as_ref()
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
-    pub fn issue_code(&self) -> std::option::Option<&str> {
+    pub fn issue_code(&self) -> std::option::Option<& str> {
         self.issue_code.as_deref()
     }
     /// <p>A link to additional documentation about the type of finding.</p>
-    pub fn learn_more_link(&self) -> std::option::Option<&str> {
+    pub fn learn_more_link(&self) -> std::option::Option<& str> {
         self.learn_more_link.as_deref()
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::types::Location]> {
+    pub fn locations(&self) -> std::option::Option<& [crate::types::Location]> {
         self.locations.as_deref()
     }
 }
@@ -75,29 +75,24 @@ impl ValidatePolicyFindingBuilder {
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub fn set_finding_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.finding_details = input;
-        self
+        self.finding_details = input; self
     }
-    /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-    /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>The impact of the finding.</p> 
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+    /// <p>Errors report when a part of the policy is not functional.</p> 
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
     pub fn finding_type(mut self, input: crate::types::ValidatePolicyFindingType) -> Self {
         self.finding_type = Some(input);
         self
     }
-    /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-    /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>The impact of the finding.</p> 
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+    /// <p>Errors report when a part of the policy is not functional.</p> 
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    pub fn set_finding_type(
-        mut self,
-        input: std::option::Option<crate::types::ValidatePolicyFindingType>,
-    ) -> Self {
-        self.finding_type = input;
-        self
+    pub fn set_finding_type(mut self, input: std::option::Option<crate::types::ValidatePolicyFindingType>) -> Self {
+        self.finding_type = input; self
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
     pub fn issue_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +101,7 @@ impl ValidatePolicyFindingBuilder {
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
     pub fn set_issue_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issue_code = input;
-        self
+        self.issue_code = input; self
     }
     /// <p>A link to additional documentation about the type of finding.</p>
     pub fn learn_more_link(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +110,7 @@ impl ValidatePolicyFindingBuilder {
     }
     /// <p>A link to additional documentation about the type of finding.</p>
     pub fn set_learn_more_link(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.learn_more_link = input;
-        self
+        self.learn_more_link = input; self
     }
     /// Appends an item to `locations`.
     ///
@@ -126,26 +119,28 @@ impl ValidatePolicyFindingBuilder {
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
     pub fn locations(mut self, input: crate::types::Location) -> Self {
         let mut v = self.locations.unwrap_or_default();
-        v.push(input);
-        self.locations = Some(v);
-        self
+                        v.push(input);
+                        self.locations = Some(v);
+                        self
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn set_locations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Location>>,
-    ) -> Self {
-        self.locations = input;
-        self
+    pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Location>>) -> Self {
+        self.locations = input; self
     }
     /// Consumes the builder and constructs a [`ValidatePolicyFinding`](crate::types::ValidatePolicyFinding).
     pub fn build(self) -> crate::types::ValidatePolicyFinding {
         crate::types::ValidatePolicyFinding {
-            finding_details: self.finding_details,
-            finding_type: self.finding_type,
-            issue_code: self.issue_code,
-            learn_more_link: self.learn_more_link,
-            locations: self.locations,
+            finding_details: self.finding_details
+            ,
+            finding_type: self.finding_type
+            ,
+            issue_code: self.issue_code
+            ,
+            learn_more_link: self.learn_more_link
+            ,
+            locations: self.locations
+            ,
         }
     }
 }
+

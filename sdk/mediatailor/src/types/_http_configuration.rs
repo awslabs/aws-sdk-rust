@@ -3,14 +3,14 @@
 /// <p>The HTTP configuration for the source location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpConfiguration {
+pub struct HttpConfiguration  {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     #[doc(hidden)]
     pub base_url: std::option::Option<std::string::String>,
 }
 impl HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn base_url(&self) -> std::option::Option<&str> {
+    pub fn base_url(&self) -> std::option::Option<& str> {
         self.base_url.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl HttpConfigurationBuilder {
     }
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn set_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_url = input;
-        self
+        self.base_url = input; self
     }
     /// Consumes the builder and constructs a [`HttpConfiguration`](crate::types::HttpConfiguration).
     pub fn build(self) -> crate::types::HttpConfiguration {
         crate::types::HttpConfiguration {
-            base_url: self.base_url,
+            base_url: self.base_url
+            ,
         }
     }
 }
+

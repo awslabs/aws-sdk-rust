@@ -3,7 +3,7 @@
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommitDiffSourceCodeType {
+pub struct CommitDiffSourceCodeType  {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
     #[doc(hidden)]
     pub source_commit: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CommitDiffSourceCodeType {
 }
 impl CommitDiffSourceCodeType {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn source_commit(&self) -> std::option::Option<&str> {
+    pub fn source_commit(&self) -> std::option::Option<& str> {
         self.source_commit.as_deref()
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn destination_commit(&self) -> std::option::Option<&str> {
+    pub fn destination_commit(&self) -> std::option::Option<& str> {
         self.destination_commit.as_deref()
     }
     /// <p>The SHA of the merge base of a commit.</p>
-    pub fn merge_base_commit(&self) -> std::option::Option<&str> {
+    pub fn merge_base_commit(&self) -> std::option::Option<& str> {
         self.merge_base_commit.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CommitDiffSourceCodeTypeBuilder {
     }
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
     pub fn set_source_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_commit = input;
-        self
+        self.source_commit = input; self
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
     pub fn destination_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl CommitDiffSourceCodeTypeBuilder {
         self
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn set_destination_commit(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_commit = input;
-        self
+    pub fn set_destination_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_commit = input; self
     }
     /// <p>The SHA of the merge base of a commit.</p>
     pub fn merge_base_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,19 +68,19 @@ impl CommitDiffSourceCodeTypeBuilder {
         self
     }
     /// <p>The SHA of the merge base of a commit.</p>
-    pub fn set_merge_base_commit(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.merge_base_commit = input;
-        self
+    pub fn set_merge_base_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.merge_base_commit = input; self
     }
     /// Consumes the builder and constructs a [`CommitDiffSourceCodeType`](crate::types::CommitDiffSourceCodeType).
     pub fn build(self) -> crate::types::CommitDiffSourceCodeType {
         crate::types::CommitDiffSourceCodeType {
-            source_commit: self.source_commit,
-            destination_commit: self.destination_commit,
-            merge_base_commit: self.merge_base_commit,
+            source_commit: self.source_commit
+            ,
+            destination_commit: self.destination_commit
+            ,
+            merge_base_commit: self.merge_base_commit
+            ,
         }
     }
 }
+

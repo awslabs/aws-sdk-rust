@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceOutput {
+pub struct UpdateWorkspaceOutput  {
     /// <p>The date and time of the current update.</p>
     #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -10,15 +10,15 @@ pub struct UpdateWorkspaceOutput {
 }
 impl UpdateWorkspaceOutput {
     /// <p>The date and time of the current update.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateWorkspaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput).
     pub fn builder() -> crate::operation::update_workspace::builders::UpdateWorkspaceOutputBuilder {
@@ -40,27 +40,25 @@ impl UpdateWorkspaceOutputBuilder {
         self
     }
     /// <p>The date and time of the current update.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date_time = input;
-        self
+    pub fn set_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_date_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput).
     pub fn build(self) -> crate::operation::update_workspace::UpdateWorkspaceOutput {
         crate::operation::update_workspace::UpdateWorkspaceOutput {
-            update_date_time: self.update_date_time,
+            update_date_time: self.update_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

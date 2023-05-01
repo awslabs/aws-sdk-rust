@@ -3,14 +3,14 @@
 /// <p>Detailed information on file system association status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemAssociationStatusDetail {
+pub struct FileSystemAssociationStatusDetail  {
     /// <p>The error code for a given file system association status.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
 }
 impl FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl FileSystemAssociationStatusDetailBuilder {
     }
     /// <p>The error code for a given file system association status.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// Consumes the builder and constructs a [`FileSystemAssociationStatusDetail`](crate::types::FileSystemAssociationStatusDetail).
     pub fn build(self) -> crate::types::FileSystemAssociationStatusDetail {
         crate::types::FileSystemAssociationStatusDetail {
-            error_code: self.error_code,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

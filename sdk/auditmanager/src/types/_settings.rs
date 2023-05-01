@@ -3,7 +3,7 @@
 /// <p> The settings object that holds all supported Audit Manager settings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Settings {
+pub struct Settings  {
     /// <p> Specifies whether Organizations is enabled. </p>
     #[doc(hidden)]
     pub is_aws_org_enabled: std::option::Option<bool>,
@@ -12,8 +12,7 @@ pub struct Settings {
     pub sns_topic: std::option::Option<std::string::String>,
     /// <p> The default storage destination for assessment reports. </p>
     #[doc(hidden)]
-    pub default_assessment_reports_destination:
-        std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub default_assessment_reports_destination: std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The designated default audit owners. </p>
     #[doc(hidden)]
     pub default_process_owners: std::option::Option<std::vec::Vec<crate::types::Role>>,
@@ -33,33 +32,27 @@ impl Settings {
         self.is_aws_org_enabled
     }
     /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
-    pub fn sns_topic(&self) -> std::option::Option<&str> {
+    pub fn sns_topic(&self) -> std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
     /// <p> The default storage destination for assessment reports. </p>
-    pub fn default_assessment_reports_destination(
-        &self,
-    ) -> std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn default_assessment_reports_destination(&self) -> std::option::Option<& crate::types::AssessmentReportsDestination> {
         self.default_assessment_reports_destination.as_ref()
     }
     /// <p> The designated default audit owners. </p>
-    pub fn default_process_owners(&self) -> std::option::Option<&[crate::types::Role]> {
+    pub fn default_process_owners(&self) -> std::option::Option<& [crate::types::Role]> {
         self.default_process_owners.as_deref()
     }
     /// <p> The KMS key details. </p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn evidence_finder_enablement(
-        &self,
-    ) -> std::option::Option<&crate::types::EvidenceFinderEnablement> {
+    pub fn evidence_finder_enablement(&self) -> std::option::Option<& crate::types::EvidenceFinderEnablement> {
         self.evidence_finder_enablement.as_ref()
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn deregistration_policy(
-        &self,
-    ) -> std::option::Option<&crate::types::DeregistrationPolicy> {
+    pub fn deregistration_policy(&self) -> std::option::Option<& crate::types::DeregistrationPolicy> {
         self.deregistration_policy.as_ref()
     }
 }
@@ -76,12 +69,10 @@ impl Settings {
 pub struct SettingsBuilder {
     pub(crate) is_aws_org_enabled: std::option::Option<bool>,
     pub(crate) sns_topic: std::option::Option<std::string::String>,
-    pub(crate) default_assessment_reports_destination:
-        std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub(crate) default_assessment_reports_destination: std::option::Option<crate::types::AssessmentReportsDestination>,
     pub(crate) default_process_owners: std::option::Option<std::vec::Vec<crate::types::Role>>,
     pub(crate) kms_key: std::option::Option<std::string::String>,
-    pub(crate) evidence_finder_enablement:
-        std::option::Option<crate::types::EvidenceFinderEnablement>,
+    pub(crate) evidence_finder_enablement: std::option::Option<crate::types::EvidenceFinderEnablement>,
     pub(crate) deregistration_policy: std::option::Option<crate::types::DeregistrationPolicy>,
 }
 impl SettingsBuilder {
@@ -92,8 +83,7 @@ impl SettingsBuilder {
     }
     /// <p> Specifies whether Organizations is enabled. </p>
     pub fn set_is_aws_org_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_aws_org_enabled = input;
-        self
+        self.is_aws_org_enabled = input; self
     }
     /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
     pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,24 +92,16 @@ impl SettingsBuilder {
     }
     /// <p> The designated Amazon Simple Notification Service (Amazon SNS) topic. </p>
     pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_topic = input;
-        self
+        self.sns_topic = input; self
     }
     /// <p> The default storage destination for assessment reports. </p>
-    pub fn default_assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn default_assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.default_assessment_reports_destination = Some(input);
         self
     }
     /// <p> The default storage destination for assessment reports. </p>
-    pub fn set_default_assessment_reports_destination(
-        mut self,
-        input: std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
-        self.default_assessment_reports_destination = input;
-        self
+    pub fn set_default_assessment_reports_destination(mut self, input: std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
+        self.default_assessment_reports_destination = input; self
     }
     /// Appends an item to `default_process_owners`.
     ///
@@ -128,17 +110,13 @@ impl SettingsBuilder {
     /// <p> The designated default audit owners. </p>
     pub fn default_process_owners(mut self, input: crate::types::Role) -> Self {
         let mut v = self.default_process_owners.unwrap_or_default();
-        v.push(input);
-        self.default_process_owners = Some(v);
-        self
+                        v.push(input);
+                        self.default_process_owners = Some(v);
+                        self
     }
     /// <p> The designated default audit owners. </p>
-    pub fn set_default_process_owners(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
-        self.default_process_owners = input;
-        self
+    pub fn set_default_process_owners(mut self, input: std::option::Option<std::vec::Vec<crate::types::Role>>) -> Self {
+        self.default_process_owners = input; self
     }
     /// <p> The KMS key details. </p>
     pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,24 +125,16 @@ impl SettingsBuilder {
     }
     /// <p> The KMS key details. </p>
     pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn evidence_finder_enablement(
-        mut self,
-        input: crate::types::EvidenceFinderEnablement,
-    ) -> Self {
+    pub fn evidence_finder_enablement(mut self, input: crate::types::EvidenceFinderEnablement) -> Self {
         self.evidence_finder_enablement = Some(input);
         self
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn set_evidence_finder_enablement(
-        mut self,
-        input: std::option::Option<crate::types::EvidenceFinderEnablement>,
-    ) -> Self {
-        self.evidence_finder_enablement = input;
-        self
+    pub fn set_evidence_finder_enablement(mut self, input: std::option::Option<crate::types::EvidenceFinderEnablement>) -> Self {
+        self.evidence_finder_enablement = input; self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
     pub fn deregistration_policy(mut self, input: crate::types::DeregistrationPolicy) -> Self {
@@ -172,23 +142,27 @@ impl SettingsBuilder {
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn set_deregistration_policy(
-        mut self,
-        input: std::option::Option<crate::types::DeregistrationPolicy>,
-    ) -> Self {
-        self.deregistration_policy = input;
-        self
+    pub fn set_deregistration_policy(mut self, input: std::option::Option<crate::types::DeregistrationPolicy>) -> Self {
+        self.deregistration_policy = input; self
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
     pub fn build(self) -> crate::types::Settings {
         crate::types::Settings {
-            is_aws_org_enabled: self.is_aws_org_enabled,
-            sns_topic: self.sns_topic,
-            default_assessment_reports_destination: self.default_assessment_reports_destination,
-            default_process_owners: self.default_process_owners,
-            kms_key: self.kms_key,
-            evidence_finder_enablement: self.evidence_finder_enablement,
-            deregistration_policy: self.deregistration_policy,
+            is_aws_org_enabled: self.is_aws_org_enabled
+            ,
+            sns_topic: self.sns_topic
+            ,
+            default_assessment_reports_destination: self.default_assessment_reports_destination
+            ,
+            default_process_owners: self.default_process_owners
+            ,
+            kms_key: self.kms_key
+            ,
+            evidence_finder_enablement: self.evidence_finder_enablement
+            ,
+            deregistration_policy: self.deregistration_policy
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateInput {
+pub struct GetTemplateInput  {
     /// <p>The name of the template you want to retrieve.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl GetTemplateInput {
     /// <p>The name of the template you want to retrieve.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetTemplateInputBuilder {
     }
     /// <p>The name of the template you want to retrieve.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_template::GetTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_template::GetTemplateInput {
-            template_name: self.template_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_template::GetTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_template::GetTemplateInput {
+                template_name: self.template_name
+                ,
+            }
+        )
     }
 }
+

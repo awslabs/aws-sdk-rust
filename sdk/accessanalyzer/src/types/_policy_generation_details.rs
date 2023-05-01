@@ -3,14 +3,14 @@
 /// <p>Contains the ARN details about the IAM entity for which the policy is generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyGenerationDetails {
+pub struct PolicyGenerationDetails  {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
 }
 impl PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> std::option::Option<&str> {
+    pub fn principal_arn(&self) -> std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl PolicyGenerationDetailsBuilder {
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// Consumes the builder and constructs a [`PolicyGenerationDetails`](crate::types::PolicyGenerationDetails).
     pub fn build(self) -> crate::types::PolicyGenerationDetails {
         crate::types::PolicyGenerationDetails {
-            principal_arn: self.principal_arn,
+            principal_arn: self.principal_arn
+            ,
         }
     }
 }
+

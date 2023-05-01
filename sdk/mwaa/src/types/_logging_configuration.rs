@@ -3,7 +3,7 @@
 /// <p>Describes the Apache Airflow log types that are published to CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
     #[doc(hidden)]
     pub dag_processing_logs: std::option::Option<crate::types::ModuleLoggingConfiguration>,
@@ -22,25 +22,23 @@ pub struct LoggingConfiguration {
 }
 impl LoggingConfiguration {
     /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
-    pub fn dag_processing_logs(
-        &self,
-    ) -> std::option::Option<&crate::types::ModuleLoggingConfiguration> {
+    pub fn dag_processing_logs(&self) -> std::option::Option<& crate::types::ModuleLoggingConfiguration> {
         self.dag_processing_logs.as_ref()
     }
     /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
-    pub fn scheduler_logs(&self) -> std::option::Option<&crate::types::ModuleLoggingConfiguration> {
+    pub fn scheduler_logs(&self) -> std::option::Option<& crate::types::ModuleLoggingConfiguration> {
         self.scheduler_logs.as_ref()
     }
     /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
-    pub fn webserver_logs(&self) -> std::option::Option<&crate::types::ModuleLoggingConfiguration> {
+    pub fn webserver_logs(&self) -> std::option::Option<& crate::types::ModuleLoggingConfiguration> {
         self.webserver_logs.as_ref()
     }
     /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
-    pub fn worker_logs(&self) -> std::option::Option<&crate::types::ModuleLoggingConfiguration> {
+    pub fn worker_logs(&self) -> std::option::Option<& crate::types::ModuleLoggingConfiguration> {
         self.worker_logs.as_ref()
     }
     /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-    pub fn task_logs(&self) -> std::option::Option<&crate::types::ModuleLoggingConfiguration> {
+    pub fn task_logs(&self) -> std::option::Option<& crate::types::ModuleLoggingConfiguration> {
         self.task_logs.as_ref()
     }
 }
@@ -68,12 +66,8 @@ impl LoggingConfigurationBuilder {
         self
     }
     /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
-    pub fn set_dag_processing_logs(
-        mut self,
-        input: std::option::Option<crate::types::ModuleLoggingConfiguration>,
-    ) -> Self {
-        self.dag_processing_logs = input;
-        self
+    pub fn set_dag_processing_logs(mut self, input: std::option::Option<crate::types::ModuleLoggingConfiguration>) -> Self {
+        self.dag_processing_logs = input; self
     }
     /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
     pub fn scheduler_logs(mut self, input: crate::types::ModuleLoggingConfiguration) -> Self {
@@ -81,12 +75,8 @@ impl LoggingConfigurationBuilder {
         self
     }
     /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
-    pub fn set_scheduler_logs(
-        mut self,
-        input: std::option::Option<crate::types::ModuleLoggingConfiguration>,
-    ) -> Self {
-        self.scheduler_logs = input;
-        self
+    pub fn set_scheduler_logs(mut self, input: std::option::Option<crate::types::ModuleLoggingConfiguration>) -> Self {
+        self.scheduler_logs = input; self
     }
     /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
     pub fn webserver_logs(mut self, input: crate::types::ModuleLoggingConfiguration) -> Self {
@@ -94,12 +84,8 @@ impl LoggingConfigurationBuilder {
         self
     }
     /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
-    pub fn set_webserver_logs(
-        mut self,
-        input: std::option::Option<crate::types::ModuleLoggingConfiguration>,
-    ) -> Self {
-        self.webserver_logs = input;
-        self
+    pub fn set_webserver_logs(mut self, input: std::option::Option<crate::types::ModuleLoggingConfiguration>) -> Self {
+        self.webserver_logs = input; self
     }
     /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
     pub fn worker_logs(mut self, input: crate::types::ModuleLoggingConfiguration) -> Self {
@@ -107,12 +93,8 @@ impl LoggingConfigurationBuilder {
         self
     }
     /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
-    pub fn set_worker_logs(
-        mut self,
-        input: std::option::Option<crate::types::ModuleLoggingConfiguration>,
-    ) -> Self {
-        self.worker_logs = input;
-        self
+    pub fn set_worker_logs(mut self, input: std::option::Option<crate::types::ModuleLoggingConfiguration>) -> Self {
+        self.worker_logs = input; self
     }
     /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
     pub fn task_logs(mut self, input: crate::types::ModuleLoggingConfiguration) -> Self {
@@ -120,21 +102,23 @@ impl LoggingConfigurationBuilder {
         self
     }
     /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-    pub fn set_task_logs(
-        mut self,
-        input: std::option::Option<crate::types::ModuleLoggingConfiguration>,
-    ) -> Self {
-        self.task_logs = input;
-        self
+    pub fn set_task_logs(mut self, input: std::option::Option<crate::types::ModuleLoggingConfiguration>) -> Self {
+        self.task_logs = input; self
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {
-            dag_processing_logs: self.dag_processing_logs,
-            scheduler_logs: self.scheduler_logs,
-            webserver_logs: self.webserver_logs,
-            worker_logs: self.worker_logs,
-            task_logs: self.task_logs,
+            dag_processing_logs: self.dag_processing_logs
+            ,
+            scheduler_logs: self.scheduler_logs
+            ,
+            webserver_logs: self.webserver_logs
+            ,
+            worker_logs: self.worker_logs
+            ,
+            task_logs: self.task_logs
+            ,
         }
     }
 }
+

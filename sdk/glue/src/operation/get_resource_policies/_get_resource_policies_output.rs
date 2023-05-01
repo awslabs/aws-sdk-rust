@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePoliciesOutput {
+pub struct GetResourcePoliciesOutput  {
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
     #[doc(hidden)]
-    pub get_resource_policies_response_list:
-        std::option::Option<std::vec::Vec<crate::types::GluePolicy>>,
+    pub get_resource_policies_response_list: std::option::Option<std::vec::Vec<crate::types::GluePolicy>>,
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,27 +13,23 @@ pub struct GetResourcePoliciesOutput {
 }
 impl GetResourcePoliciesOutput {
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
-    pub fn get_resource_policies_response_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::GluePolicy]> {
+    pub fn get_resource_policies_response_list(&self) -> std::option::Option<& [crate::types::GluePolicy]> {
         self.get_resource_policies_response_list.as_deref()
     }
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourcePoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default()
     }
 }
 
@@ -42,8 +37,7 @@ impl GetResourcePoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetResourcePoliciesOutputBuilder {
-    pub(crate) get_resource_policies_response_list:
-        std::option::Option<std::vec::Vec<crate::types::GluePolicy>>,
+    pub(crate) get_resource_policies_response_list: std::option::Option<std::vec::Vec<crate::types::GluePolicy>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl GetResourcePoliciesOutputBuilder {
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
     pub fn get_resource_policies_response_list(mut self, input: crate::types::GluePolicy) -> Self {
         let mut v = self.get_resource_policies_response_list.unwrap_or_default();
-        v.push(input);
-        self.get_resource_policies_response_list = Some(v);
-        self
+                        v.push(input);
+                        self.get_resource_policies_response_list = Some(v);
+                        self
     }
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
-    pub fn set_get_resource_policies_response_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GluePolicy>>,
-    ) -> Self {
-        self.get_resource_policies_response_list = input;
-        self
+    pub fn set_get_resource_policies_response_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::GluePolicy>>) -> Self {
+        self.get_resource_policies_response_list = input; self
     }
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,24 +64,26 @@ impl GetResourcePoliciesOutputBuilder {
     }
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
     pub fn build(self) -> crate::operation::get_resource_policies::GetResourcePoliciesOutput {
         crate::operation::get_resource_policies::GetResourcePoliciesOutput {
-            get_resource_policies_response_list: self.get_resource_policies_response_list,
-            next_token: self.next_token,
+            get_resource_policies_response_list: self.get_resource_policies_response_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

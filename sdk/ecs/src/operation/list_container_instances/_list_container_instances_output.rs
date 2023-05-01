@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContainerInstancesOutput {
+pub struct ListContainerInstancesOutput  {
     /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
     #[doc(hidden)]
     pub container_instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,24 +13,22 @@ pub struct ListContainerInstancesOutput {
 }
 impl ListContainerInstancesOutput {
     /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
-    pub fn container_instance_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn container_instance_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.container_instance_arns.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContainerInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListContainerInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListContainerInstancesOutput`](crate::operation::list_container_instances::ListContainerInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_container_instances::builders::ListContainerInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_container_instances::builders::ListContainerInstancesOutputBuilder {
         crate::operation::list_container_instances::builders::ListContainerInstancesOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListContainerInstancesOutputBuilder {
     /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
     pub fn container_instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.container_instance_arns.unwrap_or_default();
-        v.push(input.into());
-        self.container_instance_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.container_instance_arns = Some(v);
+                        self
     }
     /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
-    pub fn set_container_instance_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.container_instance_arns = input;
-        self
+    pub fn set_container_instance_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.container_instance_arns = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListContainerInstancesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListContainerInstancesOutput`](crate::operation::list_container_instances::ListContainerInstancesOutput).
     pub fn build(self) -> crate::operation::list_container_instances::ListContainerInstancesOutput {
         crate::operation::list_container_instances::ListContainerInstancesOutput {
-            container_instance_arns: self.container_instance_arns,
-            next_token: self.next_token,
+            container_instance_arns: self.container_instance_arns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A socket address with a port range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RangedSocketAddress {
+pub struct RangedSocketAddress  {
     /// <p>IPv4 socket address.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RangedSocketAddress {
 }
 impl RangedSocketAddress {
     /// <p>IPv4 socket address.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Port range of a socket address.</p>
-    pub fn port_range(&self) -> std::option::Option<&crate::types::IntegerRange> {
+    pub fn port_range(&self) -> std::option::Option<& crate::types::IntegerRange> {
         self.port_range.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl RangedSocketAddressBuilder {
     }
     /// <p>IPv4 socket address.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Port range of a socket address.</p>
     pub fn port_range(mut self, input: crate::types::IntegerRange) -> Self {
@@ -52,18 +51,17 @@ impl RangedSocketAddressBuilder {
         self
     }
     /// <p>Port range of a socket address.</p>
-    pub fn set_port_range(
-        mut self,
-        input: std::option::Option<crate::types::IntegerRange>,
-    ) -> Self {
-        self.port_range = input;
-        self
+    pub fn set_port_range(mut self, input: std::option::Option<crate::types::IntegerRange>) -> Self {
+        self.port_range = input; self
     }
     /// Consumes the builder and constructs a [`RangedSocketAddress`](crate::types::RangedSocketAddress).
     pub fn build(self) -> crate::types::RangedSocketAddress {
         crate::types::RangedSocketAddress {
-            name: self.name,
-            port_range: self.port_range,
+            name: self.name
+            ,
+            port_range: self.port_range
+            ,
         }
     }
 }
+

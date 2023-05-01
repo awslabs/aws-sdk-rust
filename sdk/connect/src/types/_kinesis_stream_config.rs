@@ -3,14 +3,14 @@
 /// <p>Configuration information of a Kinesis data stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisStreamConfig {
+pub struct KinesisStreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl KinesisStreamConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// Consumes the builder and constructs a [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
     pub fn build(self) -> crate::types::KinesisStreamConfig {
         crate::types::KinesisStreamConfig {
-            stream_arn: self.stream_arn,
+            stream_arn: self.stream_arn
+            ,
         }
     }
 }
+

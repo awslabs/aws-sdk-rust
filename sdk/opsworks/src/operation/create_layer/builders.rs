@@ -4,70 +4,52 @@ pub use crate::operation::create_layer::_create_layer_output::CreateLayerOutputB
 pub use crate::operation::create_layer::_create_layer_input::CreateLayerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateLayer`.
-///
-/// <p>Creates a layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p> <note>
-/// <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p>
-/// </note>
+/// 
+/// <p>Creates a layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p> <note> 
+/// <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p> 
+/// </note> 
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLayerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_layer::builders::CreateLayerInputBuilder,
-}
-impl CreateLayerFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_layer::builders::CreateLayerInputBuilder
+            }
+impl CreateLayerFluentBuilder  {
     /// Creates a new `CreateLayer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_layer::CreateLayer,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_layer::CreateLayerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_layer::CreateLayer, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_layer::CreateLayerOutput, aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The layer stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -98,13 +80,13 @@ impl CreateLayerFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p> 
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
     pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.shortname(input.into());
         self
     }
-    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p> 
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
     pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_shortname(input);
@@ -114,40 +96,25 @@ impl CreateLayerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p> 
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::LayerAttributesKeys,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::LayerAttributesKeys, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
     }
-    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p> 
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn cloud_watch_logs_configuration(
-        mut self,
-        input: crate::types::CloudWatchLogsConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfiguration) -> Self {
         self.inner = self.inner.cloud_watch_logs_configuration(input);
         self
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_configuration(mut self, input: std::option::Option<crate::types::CloudWatchLogsConfiguration>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_configuration(input);
         self
     }
@@ -157,10 +124,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_custom_instance_profile_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_custom_instance_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_custom_instance_profile_arn(input);
         self
     }
@@ -184,10 +148,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn set_custom_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_custom_security_group_ids(input);
         self
     }
@@ -201,10 +162,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn set_packages(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_packages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_packages(input);
         self
     }
@@ -218,10 +176,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn set_volume_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeConfiguration>>,
-    ) -> Self {
+    pub fn set_volume_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::VolumeConfiguration>>) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
@@ -265,15 +220,15 @@ impl CreateLayerFluentBuilder {
         self.inner = self.inner.set_custom_recipes(input);
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p> 
     /// </note>
     pub fn install_updates_on_boot(mut self, input: bool) -> Self {
         self.inner = self.inner.install_updates_on_boot(input);
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p> 
     /// </note>
     pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_install_updates_on_boot(input);
@@ -290,19 +245,14 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn lifecycle_event_configuration(
-        mut self,
-        input: crate::types::LifecycleEventConfiguration,
-    ) -> Self {
+    pub fn lifecycle_event_configuration(mut self, input: crate::types::LifecycleEventConfiguration) -> Self {
         self.inner = self.inner.lifecycle_event_configuration(input);
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn set_lifecycle_event_configuration(
-        mut self,
-        input: std::option::Option<crate::types::LifecycleEventConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_event_configuration(mut self, input: std::option::Option<crate::types::LifecycleEventConfiguration>) -> Self {
         self.inner = self.inner.set_lifecycle_event_configuration(input);
         self
     }
 }
+

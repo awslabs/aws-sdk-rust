@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHealthEventsOutput {
+pub struct ListHealthEventsOutput  {
     /// <p>A list of health events.</p>
     #[doc(hidden)]
     pub health_events: std::option::Option<std::vec::Vec<crate::types::HealthEvent>>,
@@ -13,23 +13,22 @@ pub struct ListHealthEventsOutput {
 }
 impl ListHealthEventsOutput {
     /// <p>A list of health events.</p>
-    pub fn health_events(&self) -> std::option::Option<&[crate::types::HealthEvent]> {
+    pub fn health_events(&self) -> std::option::Option<& [crate::types::HealthEvent]> {
         self.health_events.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListHealthEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListHealthEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
-    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder {
         crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListHealthEventsOutputBuilder {
     /// <p>A list of health events.</p>
     pub fn health_events(mut self, input: crate::types::HealthEvent) -> Self {
         let mut v = self.health_events.unwrap_or_default();
-        v.push(input);
-        self.health_events = Some(v);
-        self
+                        v.push(input);
+                        self.health_events = Some(v);
+                        self
     }
     /// <p>A list of health events.</p>
-    pub fn set_health_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HealthEvent>>,
-    ) -> Self {
-        self.health_events = input;
-        self
+    pub fn set_health_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::HealthEvent>>) -> Self {
+        self.health_events = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListHealthEventsOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
     pub fn build(self) -> crate::operation::list_health_events::ListHealthEventsOutput {
         crate::operation::list_health_events::ListHealthEventsOutput {
-            health_events: self.health_events,
-            next_token: self.next_token,
+            health_events: self.health_events
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

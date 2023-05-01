@@ -3,24 +3,24 @@
 /// <p>The dimension type field with date type columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateDimensionField {
+pub struct DateDimensionField  {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
     #[doc(hidden)]
     pub column: std::option::Option<crate::types::ColumnIdentifier>,
-    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>YEAR</code> </p> </li>
-    /// <li> <p> <code>QUARTER</code> </p> </li>
-    /// <li> <p> <code>MONTH</code> </p> </li>
-    /// <li> <p> <code>WEEK</code> </p> </li>
-    /// <li> <p> <code>DAY</code> </p> </li>
-    /// <li> <p> <code>HOUR</code> </p> </li>
-    /// <li> <p> <code>MINUTE</code> </p> </li>
-    /// <li> <p> <code>SECOND</code> </p> </li>
-    /// <li> <p> <code>MILLISECOND</code> </p> </li>
+    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>YEAR</code> </p> </li> 
+    /// <li> <p> <code>QUARTER</code> </p> </li> 
+    /// <li> <p> <code>MONTH</code> </p> </li> 
+    /// <li> <p> <code>WEEK</code> </p> </li> 
+    /// <li> <p> <code>DAY</code> </p> </li> 
+    /// <li> <p> <code>HOUR</code> </p> </li> 
+    /// <li> <p> <code>MINUTE</code> </p> </li> 
+    /// <li> <p> <code>SECOND</code> </p> </li> 
+    /// <li> <p> <code>MILLISECOND</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub date_granularity: std::option::Option<crate::types::TimeGranularity>,
@@ -33,36 +33,34 @@ pub struct DateDimensionField {
 }
 impl DateDimensionField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
-    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>YEAR</code> </p> </li>
-    /// <li> <p> <code>QUARTER</code> </p> </li>
-    /// <li> <p> <code>MONTH</code> </p> </li>
-    /// <li> <p> <code>WEEK</code> </p> </li>
-    /// <li> <p> <code>DAY</code> </p> </li>
-    /// <li> <p> <code>HOUR</code> </p> </li>
-    /// <li> <p> <code>MINUTE</code> </p> </li>
-    /// <li> <p> <code>SECOND</code> </p> </li>
-    /// <li> <p> <code>MILLISECOND</code> </p> </li>
+    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>YEAR</code> </p> </li> 
+    /// <li> <p> <code>QUARTER</code> </p> </li> 
+    /// <li> <p> <code>MONTH</code> </p> </li> 
+    /// <li> <p> <code>WEEK</code> </p> </li> 
+    /// <li> <p> <code>DAY</code> </p> </li> 
+    /// <li> <p> <code>HOUR</code> </p> </li> 
+    /// <li> <p> <code>MINUTE</code> </p> </li> 
+    /// <li> <p> <code>SECOND</code> </p> </li> 
+    /// <li> <p> <code>MILLISECOND</code> </p> </li> 
     /// </ul>
-    pub fn date_granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
+    pub fn date_granularity(&self) -> std::option::Option<& crate::types::TimeGranularity> {
         self.date_granularity.as_ref()
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::DateTimeFormatConfiguration> {
+    pub fn format_configuration(&self) -> std::option::Option<& crate::types::DateTimeFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -91,8 +89,7 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -100,47 +97,39 @@ impl DateDimensionFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
-    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>YEAR</code> </p> </li>
-    /// <li> <p> <code>QUARTER</code> </p> </li>
-    /// <li> <p> <code>MONTH</code> </p> </li>
-    /// <li> <p> <code>WEEK</code> </p> </li>
-    /// <li> <p> <code>DAY</code> </p> </li>
-    /// <li> <p> <code>HOUR</code> </p> </li>
-    /// <li> <p> <code>MINUTE</code> </p> </li>
-    /// <li> <p> <code>SECOND</code> </p> </li>
-    /// <li> <p> <code>MILLISECOND</code> </p> </li>
+    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>YEAR</code> </p> </li> 
+    /// <li> <p> <code>QUARTER</code> </p> </li> 
+    /// <li> <p> <code>MONTH</code> </p> </li> 
+    /// <li> <p> <code>WEEK</code> </p> </li> 
+    /// <li> <p> <code>DAY</code> </p> </li> 
+    /// <li> <p> <code>HOUR</code> </p> </li> 
+    /// <li> <p> <code>MINUTE</code> </p> </li> 
+    /// <li> <p> <code>SECOND</code> </p> </li> 
+    /// <li> <p> <code>MILLISECOND</code> </p> </li> 
     /// </ul>
     pub fn date_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.date_granularity = Some(input);
         self
     }
-    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>YEAR</code> </p> </li>
-    /// <li> <p> <code>QUARTER</code> </p> </li>
-    /// <li> <p> <code>MONTH</code> </p> </li>
-    /// <li> <p> <code>WEEK</code> </p> </li>
-    /// <li> <p> <code>DAY</code> </p> </li>
-    /// <li> <p> <code>HOUR</code> </p> </li>
-    /// <li> <p> <code>MINUTE</code> </p> </li>
-    /// <li> <p> <code>SECOND</code> </p> </li>
-    /// <li> <p> <code>MILLISECOND</code> </p> </li>
+    /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>YEAR</code> </p> </li> 
+    /// <li> <p> <code>QUARTER</code> </p> </li> 
+    /// <li> <p> <code>MONTH</code> </p> </li> 
+    /// <li> <p> <code>WEEK</code> </p> </li> 
+    /// <li> <p> <code>DAY</code> </p> </li> 
+    /// <li> <p> <code>HOUR</code> </p> </li> 
+    /// <li> <p> <code>MINUTE</code> </p> </li> 
+    /// <li> <p> <code>SECOND</code> </p> </li> 
+    /// <li> <p> <code>MILLISECOND</code> </p> </li> 
     /// </ul>
-    pub fn set_date_granularity(
-        mut self,
-        input: std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
-        self.date_granularity = input;
-        self
+    pub fn set_date_granularity(mut self, input: std::option::Option<crate::types::TimeGranularity>) -> Self {
+        self.date_granularity = input; self
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,33 +138,31 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        mut self,
-        input: crate::types::DateTimeFormatConfiguration,
-    ) -> Self {
+    pub fn format_configuration(mut self, input: crate::types::DateTimeFormatConfiguration) -> Self {
         self.format_configuration = Some(input);
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: std::option::Option<crate::types::DateTimeFormatConfiguration>,
-    ) -> Self {
-        self.format_configuration = input;
-        self
+    pub fn set_format_configuration(mut self, input: std::option::Option<crate::types::DateTimeFormatConfiguration>) -> Self {
+        self.format_configuration = input; self
     }
     /// Consumes the builder and constructs a [`DateDimensionField`](crate::types::DateDimensionField).
     pub fn build(self) -> crate::types::DateDimensionField {
         crate::types::DateDimensionField {
-            field_id: self.field_id,
-            column: self.column,
-            date_granularity: self.date_granularity,
-            hierarchy_id: self.hierarchy_id,
-            format_configuration: self.format_configuration,
+            field_id: self.field_id
+            ,
+            column: self.column
+            ,
+            date_granularity: self.date_granularity
+            ,
+            hierarchy_id: self.hierarchy_id
+            ,
+            format_configuration: self.format_configuration
+            ,
         }
     }
 }
+

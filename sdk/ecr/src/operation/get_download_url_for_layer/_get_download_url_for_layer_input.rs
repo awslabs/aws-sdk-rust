@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDownloadUrlForLayerInput {
+pub struct GetDownloadUrlForLayerInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct GetDownloadUrlForLayerInput {
 }
 impl GetDownloadUrlForLayerInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The digest of the image layer to download.</p>
-    pub fn layer_digest(&self) -> std::option::Option<&str> {
+    pub fn layer_digest(&self) -> std::option::Option<& str> {
         self.layer_digest.as_deref()
     }
 }
 impl GetDownloadUrlForLayerInput {
     /// Creates a new builder-style object to manufacture [`GetDownloadUrlForLayerInput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput).
-    pub fn builder(
-    ) -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder {
         crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl GetDownloadUrlForLayerInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl GetDownloadUrlForLayerInputBuilder {
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The digest of the image layer to download.</p>
     pub fn layer_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl GetDownloadUrlForLayerInputBuilder {
     }
     /// <p>The digest of the image layer to download.</p>
     pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_digest = input;
-        self
+        self.layer_digest = input; self
     }
     /// Consumes the builder and constructs a [`GetDownloadUrlForLayerInput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                layer_digest: self.layer_digest,
-            },
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                layer_digest: self.layer_digest
+                ,
+            }
         )
     }
 }
+

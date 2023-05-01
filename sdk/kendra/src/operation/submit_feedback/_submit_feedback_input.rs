@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitFeedbackInput {
+pub struct SubmitFeedbackInput  {
     /// <p>The identifier of the index that was queried.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -14,26 +14,23 @@ pub struct SubmitFeedbackInput {
     pub click_feedback_items: std::option::Option<std::vec::Vec<crate::types::ClickFeedback>>,
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     #[doc(hidden)]
-    pub relevance_feedback_items:
-        std::option::Option<std::vec::Vec<crate::types::RelevanceFeedback>>,
+    pub relevance_feedback_items: std::option::Option<std::vec::Vec<crate::types::RelevanceFeedback>>,
 }
 impl SubmitFeedbackInput {
     /// <p>The identifier of the index that was queried.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
-    pub fn query_id(&self) -> std::option::Option<&str> {
+    pub fn query_id(&self) -> std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    pub fn click_feedback_items(&self) -> std::option::Option<&[crate::types::ClickFeedback]> {
+    pub fn click_feedback_items(&self) -> std::option::Option<& [crate::types::ClickFeedback]> {
         self.click_feedback_items.as_deref()
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn relevance_feedback_items(
-        &self,
-    ) -> std::option::Option<&[crate::types::RelevanceFeedback]> {
+    pub fn relevance_feedback_items(&self) -> std::option::Option<& [crate::types::RelevanceFeedback]> {
         self.relevance_feedback_items.as_deref()
     }
 }
@@ -50,10 +47,8 @@ impl SubmitFeedbackInput {
 pub struct SubmitFeedbackInputBuilder {
     pub(crate) index_id: std::option::Option<std::string::String>,
     pub(crate) query_id: std::option::Option<std::string::String>,
-    pub(crate) click_feedback_items:
-        std::option::Option<std::vec::Vec<crate::types::ClickFeedback>>,
-    pub(crate) relevance_feedback_items:
-        std::option::Option<std::vec::Vec<crate::types::RelevanceFeedback>>,
+    pub(crate) click_feedback_items: std::option::Option<std::vec::Vec<crate::types::ClickFeedback>>,
+    pub(crate) relevance_feedback_items: std::option::Option<std::vec::Vec<crate::types::RelevanceFeedback>>,
 }
 impl SubmitFeedbackInputBuilder {
     /// <p>The identifier of the index that was queried.</p>
@@ -63,8 +58,7 @@ impl SubmitFeedbackInputBuilder {
     }
     /// <p>The identifier of the index that was queried.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +67,7 @@ impl SubmitFeedbackInputBuilder {
     }
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// Appends an item to `click_feedback_items`.
     ///
@@ -83,17 +76,13 @@ impl SubmitFeedbackInputBuilder {
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub fn click_feedback_items(mut self, input: crate::types::ClickFeedback) -> Self {
         let mut v = self.click_feedback_items.unwrap_or_default();
-        v.push(input);
-        self.click_feedback_items = Some(v);
-        self
+                        v.push(input);
+                        self.click_feedback_items = Some(v);
+                        self
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    pub fn set_click_feedback_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClickFeedback>>,
-    ) -> Self {
-        self.click_feedback_items = input;
-        self
+    pub fn set_click_feedback_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClickFeedback>>) -> Self {
+        self.click_feedback_items = input; self
     }
     /// Appends an item to `relevance_feedback_items`.
     ///
@@ -102,30 +91,28 @@ impl SubmitFeedbackInputBuilder {
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     pub fn relevance_feedback_items(mut self, input: crate::types::RelevanceFeedback) -> Self {
         let mut v = self.relevance_feedback_items.unwrap_or_default();
-        v.push(input);
-        self.relevance_feedback_items = Some(v);
-        self
+                        v.push(input);
+                        self.relevance_feedback_items = Some(v);
+                        self
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn set_relevance_feedback_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelevanceFeedback>>,
-    ) -> Self {
-        self.relevance_feedback_items = input;
-        self
+    pub fn set_relevance_feedback_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RelevanceFeedback>>) -> Self {
+        self.relevance_feedback_items = input; self
     }
     /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::submit_feedback::SubmitFeedbackInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::submit_feedback::SubmitFeedbackInput {
-            index_id: self.index_id,
-            query_id: self.query_id,
-            click_feedback_items: self.click_feedback_items,
-            relevance_feedback_items: self.relevance_feedback_items,
-        })
+    pub fn build(self) -> Result<crate::operation::submit_feedback::SubmitFeedbackInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::submit_feedback::SubmitFeedbackInput {
+                index_id: self.index_id
+                ,
+                query_id: self.query_id
+                ,
+                click_feedback_items: self.click_feedback_items
+                ,
+                relevance_feedback_items: self.relevance_feedback_items
+                ,
+            }
+        )
     }
 }
+

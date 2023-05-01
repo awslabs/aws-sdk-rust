@@ -3,7 +3,7 @@
 /// <p>The UpdateDomainContact response includes the following element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainContactOutput {
+pub struct UpdateDomainContactOutput  {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -11,21 +11,19 @@ pub struct UpdateDomainContactOutput {
 }
 impl UpdateDomainContactOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDomainContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDomainContactOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactOutput`](crate::operation::update_domain_contact::UpdateDomainContactOutput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder {
-        crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder {
+        crate::operation::update_domain_contact::builders::UpdateDomainContactOutputBuilder::default()
     }
 }
 
@@ -44,23 +42,24 @@ impl UpdateDomainContactOutputBuilder {
     }
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDomainContactOutput`](crate::operation::update_domain_contact::UpdateDomainContactOutput).
     pub fn build(self) -> crate::operation::update_domain_contact::UpdateDomainContactOutput {
         crate::operation::update_domain_contact::UpdateDomainContactOutput {
-            operation_id: self.operation_id,
+            operation_id: self.operation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

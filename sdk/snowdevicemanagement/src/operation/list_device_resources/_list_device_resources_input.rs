@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceResourcesInput {
+pub struct ListDeviceResourcesInput  {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
     #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListDeviceResourcesInput {
 }
 impl ListDeviceResourcesInput {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> std::option::Option<& str> {
         self.managed_device_id.as_deref()
     }
     /// <p>A structure used to filter the results by type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The maximum number of resources per page.</p>
@@ -30,16 +30,14 @@ impl ListDeviceResourcesInput {
         self.max_results
     }
     /// <p>A pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListDeviceResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder {
-        crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder {
+        crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder::default()
     }
 }
 
@@ -59,12 +57,8 @@ impl ListDeviceResourcesInputBuilder {
         self
     }
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.managed_device_id = input;
-        self
+    pub fn set_managed_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.managed_device_id = input; self
     }
     /// <p>A structure used to filter the results by type of resource.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +67,7 @@ impl ListDeviceResourcesInputBuilder {
     }
     /// <p>A structure used to filter the results by type of resource.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The maximum number of resources per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,8 +76,7 @@ impl ListDeviceResourcesInputBuilder {
     }
     /// <p>The maximum number of resources per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,23 +85,22 @@ impl ListDeviceResourcesInputBuilder {
     }
     /// <p>A pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_device_resources::ListDeviceResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_device_resources::ListDeviceResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_device_resources::ListDeviceResourcesInput {
-                managed_device_id: self.managed_device_id,
-                r#type: self.r#type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                managed_device_id: self.managed_device_id
+                ,
+                r#type: self.r#type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>DescribeOrderableDBInstanceOptions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrderableDbInstanceOptionsInput {
+pub struct DescribeOrderableDbInstanceOptionsInput  {
     /// <p>The name of the engine to retrieve instance options for.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -22,8 +22,8 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>This parameter is not currently supported.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -33,19 +33,19 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
 }
 impl DescribeOrderableDbInstanceOptionsInput {
     /// <p>The name of the engine to retrieve instance options for.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings that match the specified engine version.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
-    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings that match the specified license model.</p>
-    pub fn license_model(&self) -> std::option::Option<&str> {
+    pub fn license_model(&self) -> std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>The virtual private cloud (VPC) filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
@@ -53,23 +53,23 @@ impl DescribeOrderableDbInstanceOptionsInput {
         self.vpc
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeOrderableDbInstanceOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder {
         crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder::default()
     }
 }
@@ -95,8 +95,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>The name of the engine to retrieve instance options for.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings that match the specified engine version.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +104,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings that match the specified engine version.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
     pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,12 +112,8 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         self
     }
     /// <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_instance_class = input;
-        self
+    pub fn set_db_instance_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_instance_class = input; self
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings that match the specified license model.</p>
     pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,8 +122,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings that match the specified license model.</p>
     pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The virtual private cloud (VPC) filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
     pub fn vpc(mut self, input: bool) -> Self {
@@ -138,8 +131,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>The virtual private cloud (VPC) filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
     pub fn set_vpc(mut self, input: std::option::Option<bool>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -148,31 +140,26 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,11 +168,10 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput {
                 engine: self.engine
@@ -208,3 +194,4 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         )
     }
 }
+

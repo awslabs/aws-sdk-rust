@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutModelPackageGroupPolicyOutput {
+pub struct PutModelPackageGroupPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the model package group.</p>
     #[doc(hidden)]
     pub model_package_group_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct PutModelPackageGroupPolicyOutput {
 }
 impl PutModelPackageGroupPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the model package group.</p>
-    pub fn model_package_group_arn(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_arn(&self) -> std::option::Option<& str> {
         self.model_package_group_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutModelPackageGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutModelPackageGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutModelPackageGroupPolicyOutput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput).
-    pub fn builder() -> crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyOutputBuilder {
         crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl PutModelPackageGroupPolicyOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package group.</p>
-    pub fn set_model_package_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_group_arn = input;
-        self
+    pub fn set_model_package_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_group_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutModelPackageGroupPolicyOutput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput {
+    pub fn build(self) -> crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput {
         crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput {
-            model_package_group_arn: self.model_package_group_arn,
+            model_package_group_arn: self.model_package_group_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

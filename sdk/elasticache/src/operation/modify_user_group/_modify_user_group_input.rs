@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyUserGroupInput {
+pub struct ModifyUserGroupInput  {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct ModifyUserGroupInput {
 }
 impl ModifyUserGroupInput {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> std::option::Option<&str> {
+    pub fn user_group_id(&self) -> std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>The list of user IDs to add to the user group.</p>
-    pub fn user_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids_to_add(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids_to_add.as_deref()
     }
     /// <p>The list of user IDs to remove from the user group.</p>
-    pub fn user_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids_to_remove.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ModifyUserGroupInputBuilder {
     }
     /// <p>The ID of the user group.</p>
     pub fn set_user_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_group_id = input;
-        self
+        self.user_group_id = input; self
     }
     /// Appends an item to `user_ids_to_add`.
     ///
@@ -60,17 +59,13 @@ impl ModifyUserGroupInputBuilder {
     /// <p>The list of user IDs to add to the user group.</p>
     pub fn user_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids_to_add = Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids_to_add = Some(v);
+                        self
     }
     /// <p>The list of user IDs to add to the user group.</p>
-    pub fn set_user_ids_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.user_ids_to_add = input;
-        self
+    pub fn set_user_ids_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.user_ids_to_add = input; self
     }
     /// Appends an item to `user_ids_to_remove`.
     ///
@@ -79,29 +74,26 @@ impl ModifyUserGroupInputBuilder {
     /// <p>The list of user IDs to remove from the user group.</p>
     pub fn user_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids_to_remove = Some(v);
+                        self
     }
     /// <p>The list of user IDs to remove from the user group.</p>
-    pub fn set_user_ids_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.user_ids_to_remove = input;
-        self
+    pub fn set_user_ids_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.user_ids_to_remove = input; self
     }
     /// Consumes the builder and constructs a [`ModifyUserGroupInput`](crate::operation::modify_user_group::ModifyUserGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_user_group::ModifyUserGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::modify_user_group::ModifyUserGroupInput {
-            user_group_id: self.user_group_id,
-            user_ids_to_add: self.user_ids_to_add,
-            user_ids_to_remove: self.user_ids_to_remove,
-        })
+    pub fn build(self) -> Result<crate::operation::modify_user_group::ModifyUserGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::modify_user_group::ModifyUserGroupInput {
+                user_group_id: self.user_group_id
+                ,
+                user_ids_to_add: self.user_ids_to_add
+                ,
+                user_ids_to_remove: self.user_ids_to_remove
+                ,
+            }
+        )
     }
 }
+

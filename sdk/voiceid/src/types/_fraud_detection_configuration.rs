@@ -3,7 +3,7 @@
 /// <p>The configuration used for performing fraud detection over a speaker during a session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FraudDetectionConfiguration {
+pub struct FraudDetectionConfiguration  {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     #[doc(hidden)]
     pub risk_threshold: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl FraudDetectionConfiguration {
         self.risk_threshold
     }
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
-    pub fn watchlist_id(&self) -> std::option::Option<&str> {
+    pub fn watchlist_id(&self) -> std::option::Option<& str> {
         self.watchlist_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FraudDetectionConfigurationBuilder {
     }
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.risk_threshold = input;
-        self
+        self.risk_threshold = input; self
     }
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
     pub fn watchlist_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl FraudDetectionConfigurationBuilder {
     }
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
     pub fn set_watchlist_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.watchlist_id = input;
-        self
+        self.watchlist_id = input; self
     }
     /// Consumes the builder and constructs a [`FraudDetectionConfiguration`](crate::types::FraudDetectionConfiguration).
     pub fn build(self) -> crate::types::FraudDetectionConfiguration {
         crate::types::FraudDetectionConfiguration {
-            risk_threshold: self.risk_threshold,
-            watchlist_id: self.watchlist_id,
+            risk_threshold: self.risk_threshold
+            ,
+            watchlist_id: self.watchlist_id
+            ,
         }
     }
 }
+

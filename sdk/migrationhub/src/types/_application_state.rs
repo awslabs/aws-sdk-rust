@@ -3,7 +3,7 @@
 /// <p>The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationState {
+pub struct ApplicationState  {
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ApplicationState {
 }
 impl ApplicationState {
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The current status of an application.</p>
-    pub fn application_status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn application_status(&self) -> std::option::Option<& crate::types::ApplicationStatus> {
         self.application_status.as_ref()
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ApplicationStateBuilder {
     }
     /// <p>The configurationId from the Application Discovery Service that uniquely identifies an application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The current status of an application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -60,12 +59,8 @@ impl ApplicationStateBuilder {
         self
     }
     /// <p>The current status of an application.</p>
-    pub fn set_application_status(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
-        self.application_status = input;
-        self
+    pub fn set_application_status(mut self, input: std::option::Option<crate::types::ApplicationStatus>) -> Self {
+        self.application_status = input; self
     }
     /// <p>The timestamp when the application status was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -73,19 +68,19 @@ impl ApplicationStateBuilder {
         self
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// Consumes the builder and constructs a [`ApplicationState`](crate::types::ApplicationState).
     pub fn build(self) -> crate::types::ApplicationState {
         crate::types::ApplicationState {
-            application_id: self.application_id,
-            application_status: self.application_status,
-            last_updated_time: self.last_updated_time,
+            application_id: self.application_id
+            ,
+            application_status: self.application_status
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

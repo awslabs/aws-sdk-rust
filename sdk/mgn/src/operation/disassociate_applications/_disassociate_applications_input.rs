@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApplicationsInput {
+pub struct DisassociateApplicationsInput  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DisassociateApplicationsInput {
 }
 impl DisassociateApplicationsInput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn application_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.application_i_ds.as_deref()
     }
 }
 impl DisassociateApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationsInput`](crate::operation::disassociate_applications::DisassociateApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder {
         crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DisassociateApplicationsInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// Appends an item to `application_i_ds`.
     ///
@@ -54,30 +51,24 @@ impl DisassociateApplicationsInputBuilder {
     /// <p>Application IDs list.</p>
     pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.application_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.application_i_ds = Some(v);
-        self
+                        v.push(input.into());
+                        self.application_i_ds = Some(v);
+                        self
     }
     /// <p>Application IDs list.</p>
-    pub fn set_application_i_ds(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.application_i_ds = input;
-        self
+    pub fn set_application_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.application_i_ds = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationsInput`](crate::operation::disassociate_applications::DisassociateApplicationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_applications::DisassociateApplicationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_applications::DisassociateApplicationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_applications::DisassociateApplicationsInput {
-                wave_id: self.wave_id,
-                application_i_ds: self.application_i_ds,
-            },
+                wave_id: self.wave_id
+                ,
+                application_i_ds: self.application_i_ds
+                ,
+            }
         )
     }
 }
+

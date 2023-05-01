@@ -4,82 +4,55 @@ pub use crate::operation::list_ops_metadata::_list_ops_metadata_output::ListOpsM
 pub use crate::operation::list_ops_metadata::_list_ops_metadata_input::ListOpsMetadataInputBuilder;
 
 /// Fluent builder constructing a request to `ListOpsMetadata`.
-///
+/// 
 /// <p>Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or blobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsMetadataFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_ops_metadata::builders::ListOpsMetadataInputBuilder,
-}
-impl ListOpsMetadataFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_ops_metadata::builders::ListOpsMetadataInputBuilder
+            }
+impl ListOpsMetadataFluentBuilder  {
     /// Creates a new `ListOpsMetadata`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_ops_metadata::ListOpsMetadata,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_ops_metadata::ListOpsMetadataOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_metadata::ListOpsMetadataError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_ops_metadata::ListOpsMetadata, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_ops_metadata::ListOpsMetadataOutput, aws_smithy_http::result::SdkError<crate::operation::list_ops_metadata::ListOpsMetadataError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator {
-        crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator {
+                            crate::operation::list_ops_metadata::paginator::ListOpsMetadataPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -90,10 +63,7 @@ impl ListOpsMetadataFluentBuilder {
         self
     }
     /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsMetadataFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsMetadataFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -118,3 +88,4 @@ impl ListOpsMetadataFluentBuilder {
         self
     }
 }
+

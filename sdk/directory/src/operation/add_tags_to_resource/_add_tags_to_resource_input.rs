@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceInput {
+pub struct AddTagsToResourceInput  {
     /// <p>Identifier (ID) for the directory to which to add the tag.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct AddTagsToResourceInput {
 }
 impl AddTagsToResourceInput {
     /// <p>Identifier (ID) for the directory to which to add the tag.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The tags to be assigned to the directory.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl AddTagsToResourceInput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn builder(
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn builder() -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl AddTagsToResourceInputBuilder {
     }
     /// <p>Identifier (ID) for the directory to which to add the tag.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -53,30 +51,24 @@ impl AddTagsToResourceInputBuilder {
     /// <p>The tags to be assigned to the directory.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to be assigned to the directory.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_tags_to_resource::AddTagsToResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::add_tags_to_resource::AddTagsToResourceInput {
-                resource_id: self.resource_id,
-                tags: self.tags,
-            },
+                resource_id: self.resource_id
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

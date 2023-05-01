@@ -3,7 +3,7 @@
 /// <p>A Selenium testing project. Projects are used to collect and collate sessions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestGridProject {
+pub struct TestGridProject  {
     /// <p>The ARN for the project.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct TestGridProject {
 }
 impl TestGridProject {
     /// <p>The ARN for the project.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A human-readable name for the project.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A human-readable description for the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::TestGridVpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::types::TestGridVpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>When the project was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl TestGridProjectBuilder {
     }
     /// <p>The ARN for the project.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>A human-readable name for the project.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl TestGridProjectBuilder {
     }
     /// <p>A human-readable name for the project.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A human-readable description for the project.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl TestGridProjectBuilder {
     }
     /// <p>A human-readable description for the project.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::TestGridVpcConfig) -> Self {
@@ -96,12 +93,8 @@ impl TestGridProjectBuilder {
         self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: std::option::Option<crate::types::TestGridVpcConfig>,
-    ) -> Self {
-        self.vpc_config = input;
-        self
+    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::TestGridVpcConfig>) -> Self {
+        self.vpc_config = input; self
     }
     /// <p>When the project was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,17 +103,22 @@ impl TestGridProjectBuilder {
     }
     /// <p>When the project was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// Consumes the builder and constructs a [`TestGridProject`](crate::types::TestGridProject).
     pub fn build(self) -> crate::types::TestGridProject {
         crate::types::TestGridProject {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            vpc_config: self.vpc_config,
-            created: self.created,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            vpc_config: self.vpc_config
+            ,
+            created: self.created
+            ,
         }
     }
 }
+

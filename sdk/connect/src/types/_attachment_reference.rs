@@ -3,7 +3,7 @@
 /// <p>Information about a reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachmentReference {
+pub struct AttachmentReference  {
     /// <p>Identifier of the attachment reference.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AttachmentReference {
 }
 impl AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The location path of the attachment reference.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Status of the attachment reference type.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReferenceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ReferenceStatus> {
         self.status.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl AttachmentReferenceBuilder {
     }
     /// <p>Identifier of the attachment reference.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The location path of the attachment reference.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl AttachmentReferenceBuilder {
     }
     /// <p>The location path of the attachment reference.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Status of the attachment reference type.</p>
     pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
@@ -71,15 +69,18 @@ impl AttachmentReferenceBuilder {
     }
     /// <p>Status of the attachment reference type.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ReferenceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AttachmentReference`](crate::types::AttachmentReference).
     pub fn build(self) -> crate::types::AttachmentReference {
         crate::types::AttachmentReference {
-            name: self.name,
-            value: self.value,
-            status: self.status,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

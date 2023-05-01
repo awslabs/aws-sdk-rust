@@ -4,97 +4,74 @@ pub use crate::operation::lookup_events::_lookup_events_output::LookupEventsOutp
 pub use crate::operation::lookup_events::_lookup_events_input::LookupEventsInputBuilder;
 
 /// Fluent builder constructing a request to `LookupEvents`.
-///
-/// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region within the last 90 days. Lookup supports the following attributes for management events:</p>
-/// <ul>
-/// <li> <p>Amazon Web Services access key</p> </li>
-/// <li> <p>Event ID</p> </li>
-/// <li> <p>Event name</p> </li>
-/// <li> <p>Event source</p> </li>
-/// <li> <p>Read only</p> </li>
-/// <li> <p>Resource name</p> </li>
-/// <li> <p>Resource type</p> </li>
-/// <li> <p>User name</p> </li>
-/// </ul>
-/// <p>Lookup supports the following attributes for Insights events:</p>
-/// <ul>
-/// <li> <p>Event ID</p> </li>
-/// <li> <p>Event name</p> </li>
-/// <li> <p>Event source</p> </li>
-/// </ul>
-/// <p>All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p> <important>
-/// <p>The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a throttling error occurs.</p>
+/// 
+/// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region within the last 90 days. Lookup supports the following attributes for management events:</p> 
+/// <ul> 
+/// <li> <p>Amazon Web Services access key</p> </li> 
+/// <li> <p>Event ID</p> </li> 
+/// <li> <p>Event name</p> </li> 
+/// <li> <p>Event source</p> </li> 
+/// <li> <p>Read only</p> </li> 
+/// <li> <p>Resource name</p> </li> 
+/// <li> <p>Resource type</p> </li> 
+/// <li> <p>User name</p> </li> 
+/// </ul> 
+/// <p>Lookup supports the following attributes for Insights events:</p> 
+/// <ul> 
+/// <li> <p>Event ID</p> </li> 
+/// <li> <p>Event name</p> </li> 
+/// <li> <p>Event source</p> </li> 
+/// </ul> 
+/// <p>All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p> <important> 
+/// <p>The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a throttling error occurs.</p> 
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LookupEventsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::lookup_events::builders::LookupEventsInputBuilder,
-}
-impl LookupEventsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::lookup_events::builders::LookupEventsInputBuilder
+            }
+impl LookupEventsFluentBuilder  {
     /// Creates a new `LookupEvents`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lookup_events::LookupEvents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::lookup_events::LookupEventsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::lookup_events::LookupEvents, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::lookup_events::LookupEventsOutput, aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::lookup_events::paginator::LookupEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::lookup_events::paginator::LookupEventsPaginator {
-        crate::operation::lookup_events::paginator::LookupEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::lookup_events::paginator::LookupEventsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::lookup_events::paginator::LookupEventsPaginator {
+                            crate::operation::lookup_events::paginator::LookupEventsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `LookupAttributes`.
     ///
     /// To override the contents of this collection use [`set_lookup_attributes`](Self::set_lookup_attributes).
@@ -105,10 +82,7 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn set_lookup_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LookupAttribute>>,
-    ) -> Self {
+    pub fn set_lookup_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::LookupAttribute>>) -> Self {
         self.inner = self.inner.set_lookup_attributes(input);
         self
     }
@@ -118,10 +92,7 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -141,10 +112,7 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
-    pub fn set_event_category(
-        mut self,
-        input: std::option::Option<crate::types::EventCategory>,
-    ) -> Self {
+    pub fn set_event_category(mut self, input: std::option::Option<crate::types::EventCategory>) -> Self {
         self.inner = self.inner.set_event_category(input);
         self
     }
@@ -169,3 +137,4 @@ impl LookupEventsFluentBuilder {
         self
     }
 }
+

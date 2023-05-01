@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntityPersonasInput {
+pub struct ListEntityPersonasInput  {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListEntityPersonasInput {
 }
 impl ListEntityPersonasInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of returned users or groups.</p>
@@ -36,8 +36,7 @@ impl ListEntityPersonasInput {
 }
 impl ListEntityPersonasInput {
     /// Creates a new builder-style object to manufacture [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
-    pub fn builder(
-    ) -> crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder {
+    pub fn builder() -> crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder {
         crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListEntityPersonasInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl ListEntityPersonasInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl ListEntityPersonasInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of returned users or groups.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,23 +85,22 @@ impl ListEntityPersonasInputBuilder {
     }
     /// <p>The maximum number of returned users or groups.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_entity_personas::ListEntityPersonasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_entity_personas::ListEntityPersonasInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_entity_personas::ListEntityPersonasInput {
-                id: self.id,
-                index_id: self.index_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

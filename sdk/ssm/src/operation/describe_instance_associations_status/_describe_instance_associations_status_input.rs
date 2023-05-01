@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceAssociationsStatusInput {
+pub struct DescribeInstanceAssociationsStatusInput  {
     /// <p>The managed node IDs for which you want association status information.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeInstanceAssociationsStatusInput {
 }
 impl DescribeInstanceAssociationsStatusInput {
     /// <p>The managed node IDs for which you want association status information.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -23,13 +23,13 @@ impl DescribeInstanceAssociationsStatusInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeInstanceAssociationsStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAssociationsStatusInput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput).
-    pub fn builder() -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusInputBuilder {
         crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
     }
     /// <p>The managed node IDs for which you want association status information.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,11 +68,10 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceAssociationsStatusInput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput {
                 instance_id: self.instance_id
@@ -87,3 +84,4 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
         )
     }
 }
+

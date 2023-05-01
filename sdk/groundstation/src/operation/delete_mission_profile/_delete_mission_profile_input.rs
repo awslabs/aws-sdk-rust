@@ -3,21 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMissionProfileInput {
+pub struct DeleteMissionProfileInput  {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
 }
 impl DeleteMissionProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
-    pub fn builder(
-    ) -> crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder {
+    pub fn builder() -> crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder {
         crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder::default()
     }
 }
@@ -35,24 +34,17 @@ impl DeleteMissionProfileInputBuilder {
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.mission_profile_id = input;
-        self
+    pub fn set_mission_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.mission_profile_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_mission_profile::DeleteMissionProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_mission_profile::DeleteMissionProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_mission_profile::DeleteMissionProfileInput {
-                mission_profile_id: self.mission_profile_id,
-            },
+                mission_profile_id: self.mission_profile_id
+                ,
+            }
         )
     }
 }
+

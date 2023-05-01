@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverConfigOutput {
+pub struct GetResolverConfigOutput  {
     /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::types::ResolverConfig>,
@@ -10,19 +10,18 @@ pub struct GetResolverConfigOutput {
 }
 impl GetResolverConfigOutput {
     /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
-    pub fn resolver_config(&self) -> std::option::Option<&crate::types::ResolverConfig> {
+    pub fn resolver_config(&self) -> std::option::Option<& crate::types::ResolverConfig> {
         self.resolver_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetResolverConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResolverConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_config::builders::GetResolverConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_resolver_config::builders::GetResolverConfigOutputBuilder {
         crate::operation::get_resolver_config::builders::GetResolverConfigOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetResolverConfigOutputBuilder {
         self
     }
     /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
-    pub fn set_resolver_config(
-        mut self,
-        input: std::option::Option<crate::types::ResolverConfig>,
-    ) -> Self {
-        self.resolver_config = input;
-        self
+    pub fn set_resolver_config(mut self, input: std::option::Option<crate::types::ResolverConfig>) -> Self {
+        self.resolver_config = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput).
     pub fn build(self) -> crate::operation::get_resolver_config::GetResolverConfigOutput {
         crate::operation::get_resolver_config::GetResolverConfigOutput {
-            resolver_config: self.resolver_config,
+            resolver_config: self.resolver_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

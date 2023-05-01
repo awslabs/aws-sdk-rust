@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStudioComponentInput {
+pub struct UpdateStudioComponentInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -17,15 +17,13 @@ pub struct UpdateStudioComponentInput {
     pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
     #[doc(hidden)]
-    pub initialization_scripts:
-        std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub initialization_scripts: std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     /// <p>The name for the studio component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
     #[doc(hidden)]
-    pub script_parameters:
-        std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub script_parameters: std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     /// <p>The studio component ID.</p>
     #[doc(hidden)]
     pub studio_component_id: std::option::Option<std::string::String>,
@@ -47,65 +45,59 @@ pub struct UpdateStudioComponentInput {
 }
 impl UpdateStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::StudioComponentConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::types::StudioComponentConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ec2_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ec2_security_group_ids.as_deref()
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(
-        &self,
-    ) -> std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
+    pub fn initialization_scripts(&self) -> std::option::Option<& [crate::types::StudioComponentInitializationScript]> {
         self.initialization_scripts.as_deref()
     }
     /// <p>The name for the studio component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn script_parameters(
-        &self,
-    ) -> std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
+    pub fn script_parameters(&self) -> std::option::Option<& [crate::types::ScriptParameterKeyValue]> {
         self.script_parameters.as_deref()
     }
     /// <p>The studio component ID.</p>
-    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+    pub fn studio_component_id(&self) -> std::option::Option<& str> {
         self.studio_component_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn subtype(&self) -> std::option::Option<&crate::types::StudioComponentSubtype> {
+    pub fn subtype(&self) -> std::option::Option<& crate::types::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
     /// <p>The type of the studio component.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::StudioComponentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::StudioComponentType> {
         self.r#type.as_ref()
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
+    pub fn secure_initialization_role_arn(&self) -> std::option::Option<& str> {
         self.secure_initialization_role_arn.as_deref()
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+    pub fn runtime_role_arn(&self) -> std::option::Option<& str> {
         self.runtime_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStudioComponentInput {
+impl  std::fmt::Debug for UpdateStudioComponentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioComponentInput");
         formatter.field("client_token", &self.client_token);
@@ -119,19 +111,14 @@ impl std::fmt::Debug for UpdateStudioComponentInput {
         formatter.field("studio_id", &self.studio_id);
         formatter.field("subtype", &self.subtype);
         formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "secure_initialization_role_arn",
-            &self.secure_initialization_role_arn,
-        );
+        formatter.field("secure_initialization_role_arn", &self.secure_initialization_role_arn);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }
 impl UpdateStudioComponentInput {
     /// Creates a new builder-style object to manufacture [`UpdateStudioComponentInput`](crate::operation::update_studio_component::UpdateStudioComponentInput).
-    pub fn builder(
-    ) -> crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder {
         crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder::default()
     }
 }
@@ -144,11 +131,9 @@ pub struct UpdateStudioComponentInputBuilder {
     pub(crate) configuration: std::option::Option<crate::types::StudioComponentConfiguration>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) initialization_scripts:
-        std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub(crate) initialization_scripts: std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) script_parameters:
-        std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub(crate) script_parameters: std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     pub(crate) studio_component_id: std::option::Option<std::string::String>,
     pub(crate) studio_id: std::option::Option<std::string::String>,
     pub(crate) subtype: std::option::Option<crate::types::StudioComponentSubtype>,
@@ -164,8 +149,7 @@ impl UpdateStudioComponentInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn configuration(mut self, input: crate::types::StudioComponentConfiguration) -> Self {
@@ -173,12 +157,8 @@ impl UpdateStudioComponentInputBuilder {
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn set_configuration(
-        mut self,
-        input: std::option::Option<crate::types::StudioComponentConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: std::option::Option<crate::types::StudioComponentConfiguration>) -> Self {
+        self.configuration = input; self
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,8 +167,7 @@ impl UpdateStudioComponentInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `ec2_security_group_ids`.
     ///
@@ -197,41 +176,28 @@ impl UpdateStudioComponentInputBuilder {
     /// <p>The EC2 security groups that control access to the studio component.</p>
     pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ec2_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.ec2_security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ec2_security_group_ids = Some(v);
+                        self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn set_ec2_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ec2_security_group_ids = input;
-        self
+    pub fn set_ec2_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ec2_security_group_ids = input; self
     }
     /// Appends an item to `initialization_scripts`.
     ///
     /// To override the contents of this collection use [`set_initialization_scripts`](Self::set_initialization_scripts).
     ///
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(
-        mut self,
-        input: crate::types::StudioComponentInitializationScript,
-    ) -> Self {
+    pub fn initialization_scripts(mut self, input: crate::types::StudioComponentInitializationScript) -> Self {
         let mut v = self.initialization_scripts.unwrap_or_default();
-        v.push(input);
-        self.initialization_scripts = Some(v);
-        self
+                        v.push(input);
+                        self.initialization_scripts = Some(v);
+                        self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn set_initialization_scripts(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::StudioComponentInitializationScript>,
-        >,
-    ) -> Self {
-        self.initialization_scripts = input;
-        self
+    pub fn set_initialization_scripts(mut self, input: std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>) -> Self {
+        self.initialization_scripts = input; self
     }
     /// <p>The name for the studio component.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,8 +206,7 @@ impl UpdateStudioComponentInputBuilder {
     }
     /// <p>The name for the studio component.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `script_parameters`.
     ///
@@ -250,17 +215,13 @@ impl UpdateStudioComponentInputBuilder {
     /// <p>Parameters for the studio component scripts.</p>
     pub fn script_parameters(mut self, input: crate::types::ScriptParameterKeyValue) -> Self {
         let mut v = self.script_parameters.unwrap_or_default();
-        v.push(input);
-        self.script_parameters = Some(v);
-        self
+                        v.push(input);
+                        self.script_parameters = Some(v);
+                        self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn set_script_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
-    ) -> Self {
-        self.script_parameters = input;
-        self
+    pub fn set_script_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>) -> Self {
+        self.script_parameters = input; self
     }
     /// <p>The studio component ID.</p>
     pub fn studio_component_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,12 +229,8 @@ impl UpdateStudioComponentInputBuilder {
         self
     }
     /// <p>The studio component ID.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.studio_component_id = input;
-        self
+    pub fn set_studio_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.studio_component_id = input; self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -282,8 +239,7 @@ impl UpdateStudioComponentInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn subtype(mut self, input: crate::types::StudioComponentSubtype) -> Self {
@@ -291,12 +247,8 @@ impl UpdateStudioComponentInputBuilder {
         self
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn set_subtype(
-        mut self,
-        input: std::option::Option<crate::types::StudioComponentSubtype>,
-    ) -> Self {
-        self.subtype = input;
-        self
+    pub fn set_subtype(mut self, input: std::option::Option<crate::types::StudioComponentSubtype>) -> Self {
+        self.subtype = input; self
     }
     /// <p>The type of the studio component.</p>
     pub fn r#type(mut self, input: crate::types::StudioComponentType) -> Self {
@@ -304,12 +256,8 @@ impl UpdateStudioComponentInputBuilder {
         self
     }
     /// <p>The type of the studio component.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::StudioComponentType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::StudioComponentType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn secure_initialization_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -317,12 +265,8 @@ impl UpdateStudioComponentInputBuilder {
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn set_secure_initialization_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secure_initialization_role_arn = input;
-        self
+    pub fn set_secure_initialization_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secure_initialization_role_arn = input; self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -331,32 +275,39 @@ impl UpdateStudioComponentInputBuilder {
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     pub fn set_runtime_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime_role_arn = input;
-        self
+        self.runtime_role_arn = input; self
     }
     /// Consumes the builder and constructs a [`UpdateStudioComponentInput`](crate::operation::update_studio_component::UpdateStudioComponentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_studio_component::UpdateStudioComponentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_studio_component::UpdateStudioComponentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_studio_component::UpdateStudioComponentInput {
-                client_token: self.client_token,
-                configuration: self.configuration,
-                description: self.description,
-                ec2_security_group_ids: self.ec2_security_group_ids,
-                initialization_scripts: self.initialization_scripts,
-                name: self.name,
-                script_parameters: self.script_parameters,
-                studio_component_id: self.studio_component_id,
-                studio_id: self.studio_id,
-                subtype: self.subtype,
-                r#type: self.r#type,
-                secure_initialization_role_arn: self.secure_initialization_role_arn,
-                runtime_role_arn: self.runtime_role_arn,
-            },
+                client_token: self.client_token
+                ,
+                configuration: self.configuration
+                ,
+                description: self.description
+                ,
+                ec2_security_group_ids: self.ec2_security_group_ids
+                ,
+                initialization_scripts: self.initialization_scripts
+                ,
+                name: self.name
+                ,
+                script_parameters: self.script_parameters
+                ,
+                studio_component_id: self.studio_component_id
+                ,
+                studio_id: self.studio_id
+                ,
+                subtype: self.subtype
+                ,
+                r#type: self.r#type
+                ,
+                secure_initialization_role_arn: self.secure_initialization_role_arn
+                ,
+                runtime_role_arn: self.runtime_role_arn
+                ,
+            }
         )
     }
 }
@@ -374,11 +325,9 @@ impl std::fmt::Debug for UpdateStudioComponentInputBuilder {
         formatter.field("studio_id", &self.studio_id);
         formatter.field("subtype", &self.subtype);
         formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "secure_initialization_role_arn",
-            &self.secure_initialization_role_arn,
-        );
+        formatter.field("secure_initialization_role_arn", &self.secure_initialization_role_arn);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }
+

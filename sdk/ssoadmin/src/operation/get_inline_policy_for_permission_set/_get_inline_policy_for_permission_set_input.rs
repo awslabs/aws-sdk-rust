@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInlinePolicyForPermissionSetInput {
+pub struct GetInlinePolicyForPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetInlinePolicyForPermissionSetInput {
 }
 impl GetInlinePolicyForPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
 impl GetInlinePolicyForPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetInput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput).
-    pub fn builder() -> crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetInputBuilder {
         crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl GetInlinePolicyForPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the permission set.</p>
     pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,15 +50,11 @@ impl GetInlinePolicyForPermissionSetInputBuilder {
         self
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_set_arn = input;
-        self
+    pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_set_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetInlinePolicyForPermissionSetInput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput).
-    pub fn build(self) -> Result<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput {
                 instance_arn: self.instance_arn
@@ -70,3 +65,4 @@ impl GetInlinePolicyForPermissionSetInputBuilder {
         )
     }
 }
+

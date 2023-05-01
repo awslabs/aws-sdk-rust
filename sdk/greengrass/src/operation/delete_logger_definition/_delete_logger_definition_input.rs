@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggerDefinitionInput {
+pub struct DeleteLoggerDefinitionInput  {
     /// The ID of the logger definition.
     #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteLoggerDefinitionInput {
     /// The ID of the logger definition.
-    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+    pub fn logger_definition_id(&self) -> std::option::Option<& str> {
         self.logger_definition_id.as_deref()
     }
 }
 impl DeleteLoggerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggerDefinitionInput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionInputBuilder {
         crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteLoggerDefinitionInputBuilder {
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.logger_definition_id = input;
-        self
+    pub fn set_logger_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.logger_definition_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLoggerDefinitionInput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_logger_definition::DeleteLoggerDefinitionInput {
-                logger_definition_id: self.logger_definition_id,
-            },
+                logger_definition_id: self.logger_definition_id
+                ,
+            }
         )
     }
 }
+

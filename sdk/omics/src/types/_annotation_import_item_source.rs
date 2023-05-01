@@ -3,14 +3,14 @@
 /// <p>A source for an annotation import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnnotationImportItemSource {
+pub struct AnnotationImportItemSource  {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl AnnotationImportItemSource {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl AnnotationImportItemSourceBuilder {
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// Consumes the builder and constructs a [`AnnotationImportItemSource`](crate::types::AnnotationImportItemSource).
     pub fn build(self) -> crate::types::AnnotationImportItemSource {
         crate::types::AnnotationImportItemSource {
-            source: self.source,
+            source: self.source
+            ,
         }
     }
 }
+

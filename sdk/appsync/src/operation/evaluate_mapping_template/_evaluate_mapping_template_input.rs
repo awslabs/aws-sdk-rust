@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateMappingTemplateInput {
+pub struct EvaluateMappingTemplateInput  {
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
     #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct EvaluateMappingTemplateInput {
 }
 impl EvaluateMappingTemplateInput {
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
-    pub fn context(&self) -> std::option::Option<&str> {
+    pub fn context(&self) -> std::option::Option<& str> {
         self.context.as_deref()
     }
 }
 impl EvaluateMappingTemplateInput {
     /// Creates a new builder-style object to manufacture [`EvaluateMappingTemplateInput`](crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder {
         crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl EvaluateMappingTemplateInputBuilder {
     }
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl EvaluateMappingTemplateInputBuilder {
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// Consumes the builder and constructs a [`EvaluateMappingTemplateInput`](crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput {
-                template: self.template,
-                context: self.context,
-            },
+                template: self.template
+                ,
+                context: self.context
+                ,
+            }
         )
     }
 }
+

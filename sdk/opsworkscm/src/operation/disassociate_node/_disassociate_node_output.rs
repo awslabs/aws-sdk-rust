@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateNodeOutput {
+pub struct DisassociateNodeOutput  {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     #[doc(hidden)]
     pub node_association_status_token: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct DisassociateNodeOutput {
 }
 impl DisassociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
-    pub fn node_association_status_token(&self) -> std::option::Option<&str> {
+    pub fn node_association_status_token(&self) -> std::option::Option<& str> {
         self.node_association_status_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateNodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateNodeOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateNodeOutput`](crate::operation::disassociate_node::DisassociateNodeOutput).
-    pub fn builder() -> crate::operation::disassociate_node::builders::DisassociateNodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_node::builders::DisassociateNodeOutputBuilder {
         crate::operation::disassociate_node::builders::DisassociateNodeOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DisassociateNodeOutputBuilder {
         self
     }
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
-    pub fn set_node_association_status_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.node_association_status_token = input;
-        self
+    pub fn set_node_association_status_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.node_association_status_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateNodeOutput`](crate::operation::disassociate_node::DisassociateNodeOutput).
     pub fn build(self) -> crate::operation::disassociate_node::DisassociateNodeOutput {
         crate::operation::disassociate_node::DisassociateNodeOutput {
-            node_association_status_token: self.node_association_status_token,
+            node_association_status_token: self.node_association_status_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

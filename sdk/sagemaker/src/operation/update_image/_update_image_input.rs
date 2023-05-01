@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateImageInput {
+pub struct UpdateImageInput  {
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
     #[doc(hidden)]
     pub delete_properties: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21,23 +21,23 @@ pub struct UpdateImageInput {
 }
 impl UpdateImageInput {
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn delete_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn delete_properties(&self) -> std::option::Option<& [std::string::String]> {
         self.delete_properties.as_deref()
     }
     /// <p>The new description for the image.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The new display name for the image.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The name of the image to update.</p>
-    pub fn image_name(&self) -> std::option::Option<&str> {
+    pub fn image_name(&self) -> std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -66,17 +66,13 @@ impl UpdateImageInputBuilder {
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
     pub fn delete_properties(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.delete_properties.unwrap_or_default();
-        v.push(input.into());
-        self.delete_properties = Some(v);
-        self
+                        v.push(input.into());
+                        self.delete_properties = Some(v);
+                        self
     }
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn set_delete_properties(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.delete_properties = input;
-        self
+    pub fn set_delete_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.delete_properties = input; self
     }
     /// <p>The new description for the image.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +81,7 @@ impl UpdateImageInputBuilder {
     }
     /// <p>The new description for the image.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new display name for the image.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +90,7 @@ impl UpdateImageInputBuilder {
     }
     /// <p>The new display name for the image.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the image to update.</p>
     pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +99,7 @@ impl UpdateImageInputBuilder {
     }
     /// <p>The name of the image to update.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,22 +108,24 @@ impl UpdateImageInputBuilder {
     }
     /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`UpdateImageInput`](crate::operation::update_image::UpdateImageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_image::UpdateImageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_image::UpdateImageInput {
-            delete_properties: self.delete_properties,
-            description: self.description,
-            display_name: self.display_name,
-            image_name: self.image_name,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::update_image::UpdateImageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_image::UpdateImageInput {
+                delete_properties: self.delete_properties
+                ,
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                image_name: self.image_name
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

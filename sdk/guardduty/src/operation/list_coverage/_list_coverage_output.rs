@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoverageOutput {
+pub struct ListCoverageOutput  {
     /// <p>A list of resources and their attributes providing cluster details.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::types::CoverageResource>>,
@@ -13,19 +13,19 @@ pub struct ListCoverageOutput {
 }
 impl ListCoverageOutput {
     /// <p>A list of resources and their attributes providing cluster details.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::CoverageResource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::types::CoverageResource]> {
         self.resources.as_deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCoverageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCoverageOutput {
     /// Creates a new builder-style object to manufacture [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput).
     pub fn builder() -> crate::operation::list_coverage::builders::ListCoverageOutputBuilder {
@@ -49,17 +49,13 @@ impl ListCoverageOutputBuilder {
     /// <p>A list of resources and their attributes providing cluster details.</p>
     pub fn resources(mut self, input: crate::types::CoverageResource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = Some(v);
-        self
+                        v.push(input);
+                        self.resources = Some(v);
+                        self
     }
     /// <p>A list of resources and their attributes providing cluster details.</p>
-    pub fn set_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CoverageResource>>,
-    ) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::CoverageResource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListCoverageOutputBuilder {
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput).
     pub fn build(self) -> crate::operation::list_coverage::ListCoverageOutput {
         crate::operation::list_coverage::ListCoverageOutput {
-            resources: self.resources,
-            next_token: self.next_token,
+            resources: self.resources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

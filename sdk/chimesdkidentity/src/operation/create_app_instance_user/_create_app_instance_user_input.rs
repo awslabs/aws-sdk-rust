@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAppInstanceUserInput {
+pub struct CreateAppInstanceUserInput  {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -27,35 +27,35 @@ pub struct CreateAppInstanceUserInput {
 }
 impl CreateAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
-    pub fn app_instance_user_id(&self) -> std::option::Option<&str> {
+    pub fn app_instance_user_id(&self) -> std::option::Option<& str> {
         self.app_instance_user_id.as_deref()
     }
     /// <p>The user's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
+    pub fn expiration_settings(&self) -> std::option::Option<& crate::types::ExpirationSettings> {
         self.expiration_settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAppInstanceUserInput {
+impl  std::fmt::Debug for CreateAppInstanceUserInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceUserInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -70,9 +70,7 @@ impl std::fmt::Debug for CreateAppInstanceUserInput {
 }
 impl CreateAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceUserInput`](crate::operation::create_app_instance_user::CreateAppInstanceUserInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserInputBuilder {
         crate::operation::create_app_instance_user::builders::CreateAppInstanceUserInputBuilder::default()
     }
 }
@@ -97,8 +95,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
     pub fn app_instance_user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,12 +103,8 @@ impl CreateAppInstanceUserInputBuilder {
         self
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_user_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_instance_user_id = input;
-        self
+    pub fn set_app_instance_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_instance_user_id = input; self
     }
     /// <p>The user's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +113,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The user's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +122,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,12 +130,8 @@ impl CreateAppInstanceUserInputBuilder {
         self
     }
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -153,17 +140,13 @@ impl CreateAppInstanceUserInputBuilder {
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
@@ -171,30 +154,28 @@ impl CreateAppInstanceUserInputBuilder {
         self
     }
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
-        self.expiration_settings = input;
-        self
+    pub fn set_expiration_settings(mut self, input: std::option::Option<crate::types::ExpirationSettings>) -> Self {
+        self.expiration_settings = input; self
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceUserInput`](crate::operation::create_app_instance_user::CreateAppInstanceUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_app_instance_user::CreateAppInstanceUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_app_instance_user::CreateAppInstanceUserInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_app_instance_user::CreateAppInstanceUserInput {
-                app_instance_arn: self.app_instance_arn,
-                app_instance_user_id: self.app_instance_user_id,
-                name: self.name,
-                metadata: self.metadata,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-                expiration_settings: self.expiration_settings,
-            },
+                app_instance_arn: self.app_instance_arn
+                ,
+                app_instance_user_id: self.app_instance_user_id
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                expiration_settings: self.expiration_settings
+                ,
+            }
         )
     }
 }
@@ -211,3 +192,4 @@ impl std::fmt::Debug for CreateAppInstanceUserInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExplainabilityInput {
+pub struct DeleteExplainabilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
     #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
 }
 impl DeleteExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn explainability_arn(&self) -> std::option::Option<&str> {
+    pub fn explainability_arn(&self) -> std::option::Option<& str> {
         self.explainability_arn.as_deref()
     }
 }
 impl DeleteExplainabilityInput {
     /// Creates a new builder-style object to manufacture [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
-    pub fn builder(
-    ) -> crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder {
-        crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder {
+        crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder::default()
     }
 }
 
@@ -35,24 +33,17 @@ impl DeleteExplainabilityInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.explainability_arn = input;
-        self
+    pub fn set_explainability_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.explainability_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_explainability::DeleteExplainabilityInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_explainability::DeleteExplainabilityInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_explainability::DeleteExplainabilityInput {
-                explainability_arn: self.explainability_arn,
-            },
+                explainability_arn: self.explainability_arn
+                ,
+            }
         )
     }
 }
+

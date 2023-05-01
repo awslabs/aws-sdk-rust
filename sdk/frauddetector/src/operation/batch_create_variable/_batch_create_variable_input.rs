@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateVariableInput {
+pub struct BatchCreateVariableInput  {
     /// <p>The list of variables for the batch create variable request.</p>
     #[doc(hidden)]
     pub variable_entries: std::option::Option<std::vec::Vec<crate::types::VariableEntry>>,
@@ -12,20 +12,18 @@ pub struct BatchCreateVariableInput {
 }
 impl BatchCreateVariableInput {
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn variable_entries(&self) -> std::option::Option<&[crate::types::VariableEntry]> {
+    pub fn variable_entries(&self) -> std::option::Option<& [crate::types::VariableEntry]> {
         self.variable_entries.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl BatchCreateVariableInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
-        crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
+        crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder::default()
     }
 }
 
@@ -44,17 +42,13 @@ impl BatchCreateVariableInputBuilder {
     /// <p>The list of variables for the batch create variable request.</p>
     pub fn variable_entries(mut self, input: crate::types::VariableEntry) -> Self {
         let mut v = self.variable_entries.unwrap_or_default();
-        v.push(input);
-        self.variable_entries = Some(v);
-        self
+                        v.push(input);
+                        self.variable_entries = Some(v);
+                        self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn set_variable_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VariableEntry>>,
-    ) -> Self {
-        self.variable_entries = input;
-        self
+    pub fn set_variable_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariableEntry>>) -> Self {
+        self.variable_entries = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -63,30 +57,24 @@ impl BatchCreateVariableInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_create_variable::BatchCreateVariableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_create_variable::BatchCreateVariableInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_create_variable::BatchCreateVariableInput {
-                variable_entries: self.variable_entries,
-                tags: self.tags,
-            },
+                variable_entries: self.variable_entries
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

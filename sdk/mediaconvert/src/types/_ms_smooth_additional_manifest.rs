@@ -3,7 +3,7 @@
 /// Specify the details for each additional Microsoft Smooth Streaming manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MsSmoothAdditionalManifest {
+pub struct MsSmoothAdditionalManifest  {
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your Microsoft Smooth group is film-name.ismv. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.ismv.
     #[doc(hidden)]
     pub manifest_name_modifier: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MsSmoothAdditionalManifest {
 }
 impl MsSmoothAdditionalManifest {
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your Microsoft Smooth group is film-name.ismv. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.ismv.
-    pub fn manifest_name_modifier(&self) -> std::option::Option<&str> {
+    pub fn manifest_name_modifier(&self) -> std::option::Option<& str> {
         self.manifest_name_modifier.as_deref()
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn selected_outputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn selected_outputs(&self) -> std::option::Option<& [std::string::String]> {
         self.selected_outputs.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl MsSmoothAdditionalManifestBuilder {
         self
     }
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your Microsoft Smooth group is film-name.ismv. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.ismv.
-    pub fn set_manifest_name_modifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.manifest_name_modifier = input;
-        self
+    pub fn set_manifest_name_modifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.manifest_name_modifier = input; self
     }
     /// Appends an item to `selected_outputs`.
     ///
@@ -56,23 +52,22 @@ impl MsSmoothAdditionalManifestBuilder {
     /// Specify the outputs that you want this additional top-level manifest to reference.
     pub fn selected_outputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.selected_outputs.unwrap_or_default();
-        v.push(input.into());
-        self.selected_outputs = Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_outputs = Some(v);
+                        self
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn set_selected_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.selected_outputs = input;
-        self
+    pub fn set_selected_outputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.selected_outputs = input; self
     }
     /// Consumes the builder and constructs a [`MsSmoothAdditionalManifest`](crate::types::MsSmoothAdditionalManifest).
     pub fn build(self) -> crate::types::MsSmoothAdditionalManifest {
         crate::types::MsSmoothAdditionalManifest {
-            manifest_name_modifier: self.manifest_name_modifier,
-            selected_outputs: self.selected_outputs,
+            manifest_name_modifier: self.manifest_name_modifier
+            ,
+            selected_outputs: self.selected_outputs
+            ,
         }
     }
 }
+

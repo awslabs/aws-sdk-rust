@@ -198,3 +198,4 @@ pub use crate::types::_batch_statement_response::BatchStatementResponseBuilder;
 pub use crate::types::_batch_statement_error::BatchStatementErrorBuilder;
 
 pub use crate::types::_batch_statement_request::BatchStatementRequestBuilder;
+

@@ -4,92 +4,62 @@ pub use crate::operation::list_protected_queries::_list_protected_queries_output
 pub use crate::operation::list_protected_queries::_list_protected_queries_input::ListProtectedQueriesInputBuilder;
 
 /// Fluent builder constructing a request to `ListProtectedQueries`.
-///
+/// 
 /// <p>Lists protected queries, sorted by the most recent query.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProtectedQueriesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder,
-}
-impl ListProtectedQueriesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder
+            }
+impl ListProtectedQueriesFluentBuilder  {
     /// Creates a new `ListProtectedQueries`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_protected_queries::ListProtectedQueries,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_queries::ListProtectedQueriesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_protected_queries::ListProtectedQueriesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_queries::ListProtectedQueriesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_protected_queries::ListProtectedQueries, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesOutput, aws_smithy_http::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator {
-        crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator {
+                            crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The identifier for the membership in the collaboration.</p>
     pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -99,10 +69,7 @@ impl ListProtectedQueriesFluentBuilder {
         self
     }
     /// <p>A filter on the status of the protected query.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ProtectedQueryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -127,3 +94,4 @@ impl ListProtectedQueriesFluentBuilder {
         self
     }
 }
+

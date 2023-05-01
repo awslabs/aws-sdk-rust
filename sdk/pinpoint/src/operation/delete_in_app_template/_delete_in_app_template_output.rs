@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInAppTemplateOutput {
+pub struct DeleteInAppTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::types::MessageBody>,
@@ -10,19 +10,18 @@ pub struct DeleteInAppTemplateOutput {
 }
 impl DeleteInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::types::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::types::MessageBody> {
         self.message_body.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteInAppTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInAppTemplateOutput`](crate::operation::delete_in_app_template::DeleteInAppTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_in_app_template::builders::DeleteInAppTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_in_app_template::builders::DeleteInAppTemplateOutputBuilder {
         crate::operation::delete_in_app_template::builders::DeleteInAppTemplateOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DeleteInAppTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
-        self.message_body = input;
-        self
+    pub fn set_message_body(mut self, input: std::option::Option<crate::types::MessageBody>) -> Self {
+        self.message_body = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteInAppTemplateOutput`](crate::operation::delete_in_app_template::DeleteInAppTemplateOutput).
     pub fn build(self) -> crate::operation::delete_in_app_template::DeleteInAppTemplateOutput {
         crate::operation::delete_in_app_template::DeleteInAppTemplateOutput {
-            message_body: self.message_body,
+            message_body: self.message_body
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

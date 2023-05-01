@@ -3,23 +3,21 @@
 /// <p>CancelTaskExecutionRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelTaskExecutionInput {
+pub struct CancelTaskExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
 }
 impl CancelTaskExecutionInput {
     /// Creates a new builder-style object to manufacture [`CancelTaskExecutionInput`](crate::operation::cancel_task_execution::CancelTaskExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_task_execution::builders::CancelTaskExecutionInputBuilder {
-        crate::operation::cancel_task_execution::builders::CancelTaskExecutionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_task_execution::builders::CancelTaskExecutionInputBuilder {
+        crate::operation::cancel_task_execution::builders::CancelTaskExecutionInputBuilder::default()
     }
 }
 
@@ -36,24 +34,17 @@ impl CancelTaskExecutionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.task_execution_arn = input;
-        self
+    pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.task_execution_arn = input; self
     }
     /// Consumes the builder and constructs a [`CancelTaskExecutionInput`](crate::operation::cancel_task_execution::CancelTaskExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_task_execution::CancelTaskExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_task_execution::CancelTaskExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_task_execution::CancelTaskExecutionInput {
-                task_execution_arn: self.task_execution_arn,
-            },
+                task_execution_arn: self.task_execution_arn
+                ,
+            }
         )
     }
 }
+

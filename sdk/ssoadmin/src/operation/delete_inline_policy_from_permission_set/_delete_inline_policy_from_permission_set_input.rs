@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInlinePolicyFromPermissionSetInput {
+pub struct DeleteInlinePolicyFromPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteInlinePolicyFromPermissionSetInput {
 }
 impl DeleteInlinePolicyFromPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
 impl DeleteInlinePolicyFromPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetInput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput).
-    pub fn builder() -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetInputBuilder {
         crate::operation::delete_inline_policy_from_permission_set::builders::DeleteInlinePolicyFromPermissionSetInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteInlinePolicyFromPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
     pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,15 +50,11 @@ impl DeleteInlinePolicyFromPermissionSetInputBuilder {
         self
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_set_arn = input;
-        self
+    pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_set_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInlinePolicyFromPermissionSetInput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput).
-    pub fn build(self) -> Result<crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput {
                 instance_arn: self.instance_arn
@@ -70,3 +65,4 @@ impl DeleteInlinePolicyFromPermissionSetInputBuilder {
         )
     }
 }
+

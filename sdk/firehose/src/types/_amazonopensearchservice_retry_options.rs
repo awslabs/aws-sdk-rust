@@ -3,7 +3,7 @@
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmazonopensearchserviceRetryOptions {
+pub struct AmazonopensearchserviceRetryOptions  {
     /// <p>After an initial failure to deliver to Amazon OpenSearch Service, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries. </p>
     #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl AmazonopensearchserviceRetryOptionsBuilder {
     }
     /// <p>After an initial failure to deliver to Amazon OpenSearch Service, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries. </p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`AmazonopensearchserviceRetryOptions`](crate::types::AmazonopensearchserviceRetryOptions).
     pub fn build(self) -> crate::types::AmazonopensearchserviceRetryOptions {
         crate::types::AmazonopensearchserviceRetryOptions {
-            duration_in_seconds: self.duration_in_seconds,
+            duration_in_seconds: self.duration_in_seconds
+            ,
         }
     }
 }
+

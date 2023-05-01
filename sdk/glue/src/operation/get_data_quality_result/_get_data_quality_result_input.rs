@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataQualityResultInput {
+pub struct GetDataQualityResultInput  {
     /// <p>A unique result ID for the data quality result.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
 }
 impl GetDataQualityResultInput {
     /// <p>A unique result ID for the data quality result.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> std::option::Option<& str> {
         self.result_id.as_deref()
     }
 }
 impl GetDataQualityResultInput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder {
+    pub fn builder() -> crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder {
         crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetDataQualityResultInputBuilder {
     }
     /// <p>A unique result ID for the data quality result.</p>
     pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_data_quality_result::GetDataQualityResultInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_data_quality_result::GetDataQualityResultInput {
-                result_id: self.result_id,
-            },
+                result_id: self.result_id
+                ,
+            }
         )
     }
 }
+

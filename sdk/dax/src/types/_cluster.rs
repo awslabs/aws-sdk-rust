@@ -3,7 +3,7 @@
 /// <p>Contains all of the attributes of a specific DAX cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The name of the DAX cluster.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -55,25 +55,24 @@ pub struct Cluster {
     /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
     #[doc(hidden)]
     pub sse_description: std::option::Option<crate::types::SseDescription>,
-    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub cluster_endpoint_encryption_type:
-        std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    pub cluster_endpoint_encryption_type: std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
 impl Cluster {
     /// <p>The name of the DAX cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The description of the cluster.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The total number of nodes in the cluster.</p>
@@ -85,62 +84,58 @@ impl Cluster {
         self.active_nodes
     }
     /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The current status of the cluster.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use the URL to configure the DAX client to find their cluster.</p>
-    pub fn cluster_discovery_endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
+    pub fn cluster_discovery_endpoint(&self) -> std::option::Option<& crate::types::Endpoint> {
         self.cluster_discovery_endpoint.as_ref()
     }
     /// <p>A list of nodes to be removed from the cluster.</p>
-    pub fn node_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn node_ids_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.node_ids_to_remove.as_deref()
     }
     /// <p>A list of nodes that are currently in the cluster.</p>
-    pub fn nodes(&self) -> std::option::Option<&[crate::types::Node]> {
+    pub fn nodes(&self) -> std::option::Option<& [crate::types::Node]> {
         self.nodes.as_deref()
     }
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
-    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>The subnet group where the DAX cluster is running.</p>
-    pub fn subnet_group(&self) -> std::option::Option<&str> {
+    pub fn subnet_group(&self) -> std::option::Option<& str> {
         self.subnet_group.as_deref()
     }
     /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroupMembership]> {
+    pub fn security_groups(&self) -> std::option::Option<& [crate::types::SecurityGroupMembership]> {
         self.security_groups.as_deref()
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The parameter group being used by nodes in the cluster.</p>
-    pub fn parameter_group(&self) -> std::option::Option<&crate::types::ParameterGroupStatus> {
+    pub fn parameter_group(&self) -> std::option::Option<& crate::types::ParameterGroupStatus> {
         self.parameter_group.as_ref()
     }
     /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
-    pub fn sse_description(&self) -> std::option::Option<&crate::types::SseDescription> {
+    pub fn sse_description(&self) -> std::option::Option<& crate::types::SseDescription> {
         self.sse_description.as_ref()
     }
-    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li> 
     /// </ul>
-    pub fn cluster_endpoint_encryption_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
+    pub fn cluster_endpoint_encryption_type(&self) -> std::option::Option<& crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
     }
 }
@@ -166,16 +161,13 @@ pub struct ClusterBuilder {
     pub(crate) node_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) nodes: std::option::Option<std::vec::Vec<crate::types::Node>>,
     pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
-    pub(crate) notification_configuration:
-        std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: std::option::Option<crate::types::NotificationConfiguration>,
     pub(crate) subnet_group: std::option::Option<std::string::String>,
-    pub(crate) security_groups:
-        std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>,
+    pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>,
     pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     pub(crate) parameter_group: std::option::Option<crate::types::ParameterGroupStatus>,
     pub(crate) sse_description: std::option::Option<crate::types::SseDescription>,
-    pub(crate) cluster_endpoint_encryption_type:
-        std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    pub(crate) cluster_endpoint_encryption_type: std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
 impl ClusterBuilder {
     /// <p>The name of the DAX cluster.</p>
@@ -185,8 +177,7 @@ impl ClusterBuilder {
     }
     /// <p>The name of the DAX cluster.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The description of the cluster.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +186,7 @@ impl ClusterBuilder {
     }
     /// <p>The description of the cluster.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,8 +195,7 @@ impl ClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The total number of nodes in the cluster.</p>
     pub fn total_nodes(mut self, input: i32) -> Self {
@@ -215,8 +204,7 @@ impl ClusterBuilder {
     }
     /// <p>The total number of nodes in the cluster.</p>
     pub fn set_total_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_nodes = input;
-        self
+        self.total_nodes = input; self
     }
     /// <p>The number of nodes in the cluster that are active (i.e., capable of serving requests).</p>
     pub fn active_nodes(mut self, input: i32) -> Self {
@@ -225,8 +213,7 @@ impl ClusterBuilder {
     }
     /// <p>The number of nodes in the cluster that are active (i.e., capable of serving requests).</p>
     pub fn set_active_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.active_nodes = input;
-        self
+        self.active_nodes = input; self
     }
     /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>
     pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,8 +222,7 @@ impl ClusterBuilder {
     }
     /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The current status of the cluster.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,8 +231,7 @@ impl ClusterBuilder {
     }
     /// <p>The current status of the cluster.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use the URL to configure the DAX client to find their cluster.</p>
     pub fn cluster_discovery_endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -254,12 +239,8 @@ impl ClusterBuilder {
         self
     }
     /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use the URL to configure the DAX client to find their cluster.</p>
-    pub fn set_cluster_discovery_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
-        self.cluster_discovery_endpoint = input;
-        self
+    pub fn set_cluster_discovery_endpoint(mut self, input: std::option::Option<crate::types::Endpoint>) -> Self {
+        self.cluster_discovery_endpoint = input; self
     }
     /// Appends an item to `node_ids_to_remove`.
     ///
@@ -268,17 +249,13 @@ impl ClusterBuilder {
     /// <p>A list of nodes to be removed from the cluster.</p>
     pub fn node_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.node_ids_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.node_ids_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.node_ids_to_remove = Some(v);
+                        self
     }
     /// <p>A list of nodes to be removed from the cluster.</p>
-    pub fn set_node_ids_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.node_ids_to_remove = input;
-        self
+    pub fn set_node_ids_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.node_ids_to_remove = input; self
     }
     /// Appends an item to `nodes`.
     ///
@@ -287,17 +264,13 @@ impl ClusterBuilder {
     /// <p>A list of nodes that are currently in the cluster.</p>
     pub fn nodes(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes.unwrap_or_default();
-        v.push(input);
-        self.nodes = Some(v);
-        self
+                        v.push(input);
+                        self.nodes = Some(v);
+                        self
     }
     /// <p>A list of nodes that are currently in the cluster.</p>
-    pub fn set_nodes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
-        self.nodes = input;
-        self
+    pub fn set_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Node>>) -> Self {
+        self.nodes = input; self
     }
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
@@ -305,28 +278,17 @@ impl ClusterBuilder {
         self
     }
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+    pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = Some(input);
         self
     }
     /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
-        self.notification_configuration = input;
-        self
+    pub fn set_notification_configuration(mut self, input: std::option::Option<crate::types::NotificationConfiguration>) -> Self {
+        self.notification_configuration = input; self
     }
     /// <p>The subnet group where the DAX cluster is running.</p>
     pub fn subnet_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -335,8 +297,7 @@ impl ClusterBuilder {
     }
     /// <p>The subnet group where the DAX cluster is running.</p>
     pub fn set_subnet_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_group = input;
-        self
+        self.subnet_group = input; self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -345,17 +306,13 @@ impl ClusterBuilder {
     /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
     pub fn security_groups(mut self, input: crate::types::SecurityGroupMembership) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input);
-        self.security_groups = Some(v);
-        self
+                        v.push(input);
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -364,8 +321,7 @@ impl ClusterBuilder {
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The parameter group being used by nodes in the cluster.</p>
     pub fn parameter_group(mut self, input: crate::types::ParameterGroupStatus) -> Self {
@@ -373,12 +329,8 @@ impl ClusterBuilder {
         self
     }
     /// <p>The parameter group being used by nodes in the cluster.</p>
-    pub fn set_parameter_group(
-        mut self,
-        input: std::option::Option<crate::types::ParameterGroupStatus>,
-    ) -> Self {
-        self.parameter_group = input;
-        self
+    pub fn set_parameter_group(mut self, input: std::option::Option<crate::types::ParameterGroupStatus>) -> Self {
+        self.parameter_group = input; self
     }
     /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
     pub fn sse_description(mut self, input: crate::types::SseDescription) -> Self {
@@ -386,56 +338,64 @@ impl ClusterBuilder {
         self
     }
     /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
-    pub fn set_sse_description(
-        mut self,
-        input: std::option::Option<crate::types::SseDescription>,
-    ) -> Self {
-        self.sse_description = input;
-        self
+    pub fn set_sse_description(mut self, input: std::option::Option<crate::types::SseDescription>) -> Self {
+        self.sse_description = input; self
     }
-    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li> 
     /// </ul>
-    pub fn cluster_endpoint_encryption_type(
-        mut self,
-        input: crate::types::ClusterEndpointEncryptionType,
-    ) -> Self {
+    pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.cluster_endpoint_encryption_type = Some(input);
         self
     }
-    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code> for no encryption</p> <p> <code>TLS</code> for Transport Layer Security</p> </li> 
     /// </ul>
-    pub fn set_cluster_endpoint_encryption_type(
-        mut self,
-        input: std::option::Option<crate::types::ClusterEndpointEncryptionType>,
-    ) -> Self {
-        self.cluster_endpoint_encryption_type = input;
-        self
+    pub fn set_cluster_endpoint_encryption_type(mut self, input: std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
+        self.cluster_endpoint_encryption_type = input; self
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
-            cluster_name: self.cluster_name,
-            description: self.description,
-            cluster_arn: self.cluster_arn,
-            total_nodes: self.total_nodes,
-            active_nodes: self.active_nodes,
-            node_type: self.node_type,
-            status: self.status,
-            cluster_discovery_endpoint: self.cluster_discovery_endpoint,
-            node_ids_to_remove: self.node_ids_to_remove,
-            nodes: self.nodes,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            notification_configuration: self.notification_configuration,
-            subnet_group: self.subnet_group,
-            security_groups: self.security_groups,
-            iam_role_arn: self.iam_role_arn,
-            parameter_group: self.parameter_group,
-            sse_description: self.sse_description,
-            cluster_endpoint_encryption_type: self.cluster_endpoint_encryption_type,
+            cluster_name: self.cluster_name
+            ,
+            description: self.description
+            ,
+            cluster_arn: self.cluster_arn
+            ,
+            total_nodes: self.total_nodes
+            ,
+            active_nodes: self.active_nodes
+            ,
+            node_type: self.node_type
+            ,
+            status: self.status
+            ,
+            cluster_discovery_endpoint: self.cluster_discovery_endpoint
+            ,
+            node_ids_to_remove: self.node_ids_to_remove
+            ,
+            nodes: self.nodes
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            notification_configuration: self.notification_configuration
+            ,
+            subnet_group: self.subnet_group
+            ,
+            security_groups: self.security_groups
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            parameter_group: self.parameter_group
+            ,
+            sse_description: self.sse_description
+            ,
+            cluster_endpoint_encryption_type: self.cluster_endpoint_encryption_type
+            ,
         }
     }
 }
+

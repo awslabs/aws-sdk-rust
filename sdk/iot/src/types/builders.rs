@@ -404,3 +404,4 @@ pub use crate::types::_aws_job_timeout_config::AwsJobTimeoutConfigBuilder;
 pub use crate::types::_aws_job_abort_config::AwsJobAbortConfigBuilder;
 
 pub use crate::types::_aws_job_abort_criteria::AwsJobAbortCriteriaBuilder;
+

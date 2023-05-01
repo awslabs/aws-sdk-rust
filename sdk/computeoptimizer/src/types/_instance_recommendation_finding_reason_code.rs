@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancerecommendationfindingreasoncode = unimplemented!();
 /// match instancerecommendationfindingreasoncode {
@@ -44,22 +44,14 @@
 /// Specifically, when `instancerecommendationfindingreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceRecommendationFindingReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CpuOverProvisioned,
@@ -94,143 +86,69 @@ pub enum InstanceRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     NetworkPpsUnderProvisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceRecommendationFindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
-            "CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
-            "DiskIOPSOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
+"CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
+"DiskIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned,
+"DiskIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned,
+"DiskThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned,
+"DiskThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned,
+"EBSIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned,
+"EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
+"EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
+"EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
+"MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
+"MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
+"NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
+"NetworkBandwidthUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned,
+"NetworkPPSOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned,
+"NetworkPPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned,
+other => InstanceRecommendationFindingReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "DiskIOPSUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned
-            }
-            "DiskThroughputOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned
-            }
-            "DiskThroughputUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned
-            }
-            "EBSIOPSOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned
-            }
-            "EBSIOPSUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned
-            }
-            "EBSThroughputOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned
-            }
-            "EBSThroughputUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned
-            }
-            "MemoryOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::MemoryOverProvisioned
-            }
-            "MemoryUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned
-            }
-            "NetworkBandwidthOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned
-            }
-            "NetworkBandwidthUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned
-            }
-            "NetworkPPSOverprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned
-            }
-            "NetworkPPSUnderprovisioned" => {
-                InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned
-            }
-            other => InstanceRecommendationFindingReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
 impl std::str::FromStr for InstanceRecommendationFindingReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceRecommendationFindingReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceRecommendationFindingReasonCode::from(s))
+                }
+            }
 impl InstanceRecommendationFindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
-            InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => {
-                "DiskIOPSOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => {
-                "DiskIOPSUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => {
-                "DiskThroughputOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => {
-                "DiskThroughputUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => {
-                "EBSIOPSOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => {
-                "EBSIOPSUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => {
-                "EBSThroughputOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => {
-                "EBSThroughputUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => {
-                "MemoryOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => {
-                "MemoryUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => {
-                "NetworkBandwidthOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => {
-                "NetworkBandwidthUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => {
-                "NetworkPPSOverprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => {
-                "NetworkPPSUnderprovisioned"
-            }
-            InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPUOverprovisioned",
-            "CPUUnderprovisioned",
-            "DiskIOPSOverprovisioned",
-            "DiskIOPSUnderprovisioned",
-            "DiskThroughputOverprovisioned",
-            "DiskThroughputUnderprovisioned",
-            "EBSIOPSOverprovisioned",
-            "EBSIOPSUnderprovisioned",
-            "EBSThroughputOverprovisioned",
-            "EBSThroughputUnderprovisioned",
-            "MemoryOverprovisioned",
-            "MemoryUnderprovisioned",
-            "NetworkBandwidthOverprovisioned",
-            "NetworkBandwidthUnderprovisioned",
-            "NetworkPPSOverprovisioned",
-            "NetworkPPSUnderprovisioned",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
+    InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => "DiskIOPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => "DiskIOPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => "DiskThroughputOverprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => "DiskThroughputUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+    InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => "NetworkPPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => "NetworkPPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPUOverprovisioned", "CPUUnderprovisioned", "DiskIOPSOverprovisioned", "DiskIOPSUnderprovisioned", "DiskThroughputOverprovisioned", "DiskThroughputUnderprovisioned", "EBSIOPSOverprovisioned", "EBSIOPSUnderprovisioned", "EBSThroughputOverprovisioned", "EBSThroughputUnderprovisioned", "MemoryOverprovisioned", "MemoryUnderprovisioned", "NetworkBandwidthOverprovisioned", "NetworkBandwidthUnderprovisioned", "NetworkPPSOverprovisioned", "NetworkPPSUnderprovisioned"]
+                }
+            }
 impl AsRef<str> for InstanceRecommendationFindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

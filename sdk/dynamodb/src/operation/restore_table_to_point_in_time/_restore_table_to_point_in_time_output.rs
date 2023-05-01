@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableToPointInTimeOutput {
+pub struct RestoreTableToPointInTimeOutput  {
     /// <p>Represents the properties of a table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::types::TableDescription>,
@@ -10,18 +10,18 @@ pub struct RestoreTableToPointInTimeOutput {
 }
 impl RestoreTableToPointInTimeOutput {
     /// <p>Represents the properties of a table.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::types::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<& crate::types::TableDescription> {
         self.table_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RestoreTableToPointInTimeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RestoreTableToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableToPointInTimeOutput`](crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput).
-    pub fn builder() -> crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeOutputBuilder{
+    pub fn builder() -> crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeOutputBuilder {
         crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl RestoreTableToPointInTimeOutputBuilder {
         self
     }
     /// <p>Represents the properties of a table.</p>
-    pub fn set_table_description(
-        mut self,
-        input: std::option::Option<crate::types::TableDescription>,
-    ) -> Self {
-        self.table_description = input;
-        self
+    pub fn set_table_description(mut self, input: std::option::Option<crate::types::TableDescription>) -> Self {
+        self.table_description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RestoreTableToPointInTimeOutput`](crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput {
+    pub fn build(self) -> crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput {
         crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput {
-            table_description: self.table_description,
+            table_description: self.table_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

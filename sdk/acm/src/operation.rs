@@ -45,3 +45,4 @@ pub mod resend_validation_email;
 
 /// Types for the `UpdateCertificateOptions` operation.
 pub mod update_certificate_options;
+

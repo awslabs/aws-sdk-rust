@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssessmentInput {
+pub struct CreateAssessmentInput  {
     /// <p> The name of the assessment to be created. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -11,8 +11,7 @@ pub struct CreateAssessmentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
     #[doc(hidden)]
-    pub assessment_reports_destination:
-        std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub assessment_reports_destination: std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::Scope>,
@@ -24,48 +23,41 @@ pub struct CreateAssessmentInput {
     pub framework_id: std::option::Option<std::string::String>,
     /// <p> The tags that are associated with the assessment. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAssessmentInput {
     /// <p> The name of the assessment to be created. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The optional description of the assessment to be created. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn assessment_reports_destination(
-        &self,
-    ) -> std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn assessment_reports_destination(&self) -> std::option::Option<& crate::types::AssessmentReportsDestination> {
         self.assessment_reports_destination.as_ref()
     }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
-    pub fn scope(&self) -> std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn roles(&self) -> std::option::Option<&[crate::types::Role]> {
+    pub fn roles(&self) -> std::option::Option<& [crate::types::Role]> {
         self.roles.as_deref()
     }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
-    pub fn framework_id(&self) -> std::option::Option<&str> {
+    pub fn framework_id(&self) -> std::option::Option<& str> {
         self.framework_id.as_deref()
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateAssessmentInput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentInput`](crate::operation::create_assessment::CreateAssessmentInput).
-    pub fn builder() -> crate::operation::create_assessment::builders::CreateAssessmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_assessment::builders::CreateAssessmentInputBuilder {
         crate::operation::create_assessment::builders::CreateAssessmentInputBuilder::default()
     }
 }
@@ -76,13 +68,11 @@ impl CreateAssessmentInput {
 pub struct CreateAssessmentInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) assessment_reports_destination:
-        std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub(crate) assessment_reports_destination: std::option::Option<crate::types::AssessmentReportsDestination>,
     pub(crate) scope: std::option::Option<crate::types::Scope>,
     pub(crate) roles: std::option::Option<std::vec::Vec<crate::types::Role>>,
     pub(crate) framework_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAssessmentInputBuilder {
     /// <p> The name of the assessment to be created. </p>
@@ -92,8 +82,7 @@ impl CreateAssessmentInputBuilder {
     }
     /// <p> The name of the assessment to be created. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The optional description of the assessment to be created. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,24 +91,16 @@ impl CreateAssessmentInputBuilder {
     }
     /// <p> The optional description of the assessment to be created. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.assessment_reports_destination = Some(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    pub fn set_assessment_reports_destination(
-        mut self,
-        input: std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
-        self.assessment_reports_destination = input;
-        self
+    pub fn set_assessment_reports_destination(mut self, input: std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
+        self.assessment_reports_destination = input; self
     }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -128,8 +109,7 @@ impl CreateAssessmentInputBuilder {
     }
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// Appends an item to `roles`.
     ///
@@ -138,17 +118,13 @@ impl CreateAssessmentInputBuilder {
     /// <p> The list of roles for the assessment. </p>
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = Some(v);
-        self
+                        v.push(input);
+                        self.roles = Some(v);
+                        self
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn set_roles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::types::Role>>) -> Self {
+        self.roles = input; self
     }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,49 +133,43 @@ impl CreateAssessmentInputBuilder {
     }
     /// <p> The identifier for the framework that the assessment will be created from. </p>
     pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_id = input;
-        self
+        self.framework_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateAssessmentInput`](crate::operation::create_assessment::CreateAssessmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_assessment::CreateAssessmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_assessment::CreateAssessmentInput {
-            name: self.name,
-            description: self.description,
-            assessment_reports_destination: self.assessment_reports_destination,
-            scope: self.scope,
-            roles: self.roles,
-            framework_id: self.framework_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_assessment::CreateAssessmentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_assessment::CreateAssessmentInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                assessment_reports_destination: self.assessment_reports_destination
+                ,
+                scope: self.scope
+                ,
+                roles: self.roles
+                ,
+                framework_id: self.framework_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

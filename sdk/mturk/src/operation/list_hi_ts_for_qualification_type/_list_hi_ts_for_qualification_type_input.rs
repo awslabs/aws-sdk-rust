@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHiTsForQualificationTypeInput {
+pub struct ListHiTsForQualificationTypeInput  {
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListHiTsForQualificationTypeInput {
 }
 impl ListHiTsForQualificationTypeInput {
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
-    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>Pagination Token</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Limit the number of results returned. </p>
@@ -29,7 +29,7 @@ impl ListHiTsForQualificationTypeInput {
 }
 impl ListHiTsForQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeInput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput).
-    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder{
+    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder {
         crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl ListHiTsForQualificationTypeInputBuilder {
         self
     }
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.qualification_type_id = input;
-        self
+    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.qualification_type_id = input; self
     }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl ListHiTsForQualificationTypeInputBuilder {
     }
     /// <p>Pagination Token</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,16 +68,10 @@ impl ListHiTsForQualificationTypeInputBuilder {
     }
     /// <p> Limit the number of results returned. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListHiTsForQualificationTypeInput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id
@@ -95,3 +84,4 @@ impl ListHiTsForQualificationTypeInputBuilder {
         )
     }
 }
+

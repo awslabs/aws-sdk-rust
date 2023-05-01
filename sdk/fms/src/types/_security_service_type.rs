@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let securityservicetype = unimplemented!();
 /// match securityservicetype {
@@ -38,22 +38,14 @@
 /// Specifically, when `securityservicetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SecurityServiceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SecurityServiceType {
     #[allow(missing_docs)] // documentation missing in model
     DnsFirewall,
@@ -76,69 +68,57 @@ pub enum SecurityServiceType {
     #[allow(missing_docs)] // documentation missing in model
     Wafv2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SecurityServiceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DNS_FIREWALL" => SecurityServiceType::DnsFirewall,
-            "IMPORT_NETWORK_FIREWALL" => SecurityServiceType::ImportNetworkFirewall,
-            "NETWORK_FIREWALL" => SecurityServiceType::NetworkFirewall,
-            "SECURITY_GROUPS_COMMON" => SecurityServiceType::SecurityGroupsCommon,
-            "SECURITY_GROUPS_CONTENT_AUDIT" => SecurityServiceType::SecurityGroupsContentAudit,
-            "SECURITY_GROUPS_USAGE_AUDIT" => SecurityServiceType::SecurityGroupsUsageAudit,
-            "SHIELD_ADVANCED" => SecurityServiceType::ShieldAdvanced,
-            "THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
-            "WAF" => SecurityServiceType::Waf,
-            "WAFV2" => SecurityServiceType::Wafv2,
-            other => SecurityServiceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DNS_FIREWALL" => SecurityServiceType::DnsFirewall,
+"IMPORT_NETWORK_FIREWALL" => SecurityServiceType::ImportNetworkFirewall,
+"NETWORK_FIREWALL" => SecurityServiceType::NetworkFirewall,
+"SECURITY_GROUPS_COMMON" => SecurityServiceType::SecurityGroupsCommon,
+"SECURITY_GROUPS_CONTENT_AUDIT" => SecurityServiceType::SecurityGroupsContentAudit,
+"SECURITY_GROUPS_USAGE_AUDIT" => SecurityServiceType::SecurityGroupsUsageAudit,
+"SHIELD_ADVANCED" => SecurityServiceType::ShieldAdvanced,
+"THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
+"WAF" => SecurityServiceType::Waf,
+"WAFV2" => SecurityServiceType::Wafv2,
+other => SecurityServiceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SecurityServiceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SecurityServiceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SecurityServiceType::from(s))
+                }
+            }
 impl SecurityServiceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SecurityServiceType::DnsFirewall => "DNS_FIREWALL",
-            SecurityServiceType::ImportNetworkFirewall => "IMPORT_NETWORK_FIREWALL",
-            SecurityServiceType::NetworkFirewall => "NETWORK_FIREWALL",
-            SecurityServiceType::SecurityGroupsCommon => "SECURITY_GROUPS_COMMON",
-            SecurityServiceType::SecurityGroupsContentAudit => "SECURITY_GROUPS_CONTENT_AUDIT",
-            SecurityServiceType::SecurityGroupsUsageAudit => "SECURITY_GROUPS_USAGE_AUDIT",
-            SecurityServiceType::ShieldAdvanced => "SHIELD_ADVANCED",
-            SecurityServiceType::ThirdPartyFirewall => "THIRD_PARTY_FIREWALL",
-            SecurityServiceType::Waf => "WAF",
-            SecurityServiceType::Wafv2 => "WAFV2",
-            SecurityServiceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DNS_FIREWALL",
-            "IMPORT_NETWORK_FIREWALL",
-            "NETWORK_FIREWALL",
-            "SECURITY_GROUPS_COMMON",
-            "SECURITY_GROUPS_CONTENT_AUDIT",
-            "SECURITY_GROUPS_USAGE_AUDIT",
-            "SHIELD_ADVANCED",
-            "THIRD_PARTY_FIREWALL",
-            "WAF",
-            "WAFV2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SecurityServiceType::DnsFirewall => "DNS_FIREWALL",
+    SecurityServiceType::ImportNetworkFirewall => "IMPORT_NETWORK_FIREWALL",
+    SecurityServiceType::NetworkFirewall => "NETWORK_FIREWALL",
+    SecurityServiceType::SecurityGroupsCommon => "SECURITY_GROUPS_COMMON",
+    SecurityServiceType::SecurityGroupsContentAudit => "SECURITY_GROUPS_CONTENT_AUDIT",
+    SecurityServiceType::SecurityGroupsUsageAudit => "SECURITY_GROUPS_USAGE_AUDIT",
+    SecurityServiceType::ShieldAdvanced => "SHIELD_ADVANCED",
+    SecurityServiceType::ThirdPartyFirewall => "THIRD_PARTY_FIREWALL",
+    SecurityServiceType::Waf => "WAF",
+    SecurityServiceType::Wafv2 => "WAFV2",
+    SecurityServiceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DNS_FIREWALL", "IMPORT_NETWORK_FIREWALL", "NETWORK_FIREWALL", "SECURITY_GROUPS_COMMON", "SECURITY_GROUPS_CONTENT_AUDIT", "SECURITY_GROUPS_USAGE_AUDIT", "SHIELD_ADVANCED", "THIRD_PARTY_FIREWALL", "WAF", "WAFV2"]
+                }
+            }
 impl AsRef<str> for SecurityServiceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

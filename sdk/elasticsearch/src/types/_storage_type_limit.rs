@@ -3,16 +3,16 @@
 /// <p>Limits that are applicable for given storage type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageTypeLimit {
+pub struct StorageTypeLimit  {
     /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
-    /// <ol>
-    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// </ol>
+    /// <ol> 
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// </ol> 
     /// <p></p>
     #[doc(hidden)]
     pub limit_name: std::option::Option<std::string::String>,
@@ -22,20 +22,20 @@ pub struct StorageTypeLimit {
 }
 impl StorageTypeLimit {
     /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
-    /// <ol>
-    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// </ol>
+    /// <ol> 
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// </ol> 
     /// <p></p>
-    pub fn limit_name(&self) -> std::option::Option<&str> {
+    pub fn limit_name(&self) -> std::option::Option<& str> {
         self.limit_name.as_deref()
     }
     /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
-    pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn limit_values(&self) -> std::option::Option<& [std::string::String]> {
         self.limit_values.as_deref()
     }
 }
@@ -55,32 +55,31 @@ pub struct StorageTypeLimitBuilder {
 }
 impl StorageTypeLimitBuilder {
     /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
-    /// <ol>
-    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// </ol>
+    /// <ol> 
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// </ol> 
     /// <p></p>
     pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.limit_name = Some(input.into());
         self
     }
     /// <p> Name of storage limits that are applicable for given storage type. If <code> <code>StorageType</code> </code> is ebs, following storage options are applicable </p>
-    /// <ol>
-    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable.
-    /// </ol>
+    /// <ol> 
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given storage type.It can be empty if it is not applicable. 
+    /// </ol> 
     /// <p></p>
     pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.limit_name = input;
-        self
+        self.limit_name = input; self
     }
     /// Appends an item to `limit_values`.
     ///
@@ -89,23 +88,22 @@ impl StorageTypeLimitBuilder {
     /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
     pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.limit_values.unwrap_or_default();
-        v.push(input.into());
-        self.limit_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.limit_values = Some(v);
+                        self
     }
     /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
-    pub fn set_limit_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.limit_values = input;
-        self
+    pub fn set_limit_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.limit_values = input; self
     }
     /// Consumes the builder and constructs a [`StorageTypeLimit`](crate::types::StorageTypeLimit).
     pub fn build(self) -> crate::types::StorageTypeLimit {
         crate::types::StorageTypeLimit {
-            limit_name: self.limit_name,
-            limit_values: self.limit_values,
+            limit_name: self.limit_name
+            ,
+            limit_values: self.limit_values
+            ,
         }
     }
 }
+

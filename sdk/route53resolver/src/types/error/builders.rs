@@ -30,3 +30,4 @@ pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExce
 pub use crate::types::error::_resource_exists_exception::ResourceExistsExceptionBuilder;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+

@@ -3,7 +3,7 @@
 /// <p>Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportJobResource {
+pub struct ExportJobResource  {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -23,7 +23,7 @@ pub struct ExportJobResource {
 }
 impl ExportJobResource {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>
@@ -31,11 +31,11 @@ impl ExportJobResource {
     /// </replaceable>/<replaceable>
     /// folder-name
     /// </replaceable>/.</p>
-    pub fn s3_url_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_url_prefix(&self) -> std::option::Option<& str> {
         self.s3_url_prefix.as_deref()
     }
     /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
-    pub fn segment_id(&self) -> std::option::Option<&str> {
+    pub fn segment_id(&self) -> std::option::Option<& str> {
         self.segment_id.as_deref()
     }
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
@@ -67,8 +67,7 @@ impl ExportJobResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>
     /// bucket-name
@@ -85,8 +84,7 @@ impl ExportJobResourceBuilder {
     /// folder-name
     /// </replaceable>/.</p>
     pub fn set_s3_url_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_url_prefix = input;
-        self
+        self.s3_url_prefix = input; self
     }
     /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
     pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl ExportJobResourceBuilder {
     }
     /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
     pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.segment_id = input;
-        self
+        self.segment_id = input; self
     }
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
     pub fn segment_version(mut self, input: i32) -> Self {
@@ -105,16 +102,21 @@ impl ExportJobResourceBuilder {
     }
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
     pub fn set_segment_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.segment_version = input;
-        self
+        self.segment_version = input; self
     }
     /// Consumes the builder and constructs a [`ExportJobResource`](crate::types::ExportJobResource).
     pub fn build(self) -> crate::types::ExportJobResource {
         crate::types::ExportJobResource {
-            role_arn: self.role_arn,
-            s3_url_prefix: self.s3_url_prefix,
-            segment_id: self.segment_id,
-            segment_version: self.segment_version.unwrap_or_default(),
+            role_arn: self.role_arn
+            ,
+            s3_url_prefix: self.s3_url_prefix
+            ,
+            segment_id: self.segment_id
+            ,
+            segment_version: self.segment_version
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

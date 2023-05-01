@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLiveSourceInput {
+pub struct UpdateLiveSourceInput  {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
     #[doc(hidden)]
-    pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub http_package_configurations: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The name of the live source.</p>
     #[doc(hidden)]
     pub live_source_name: std::option::Option<std::string::String>,
@@ -16,24 +15,21 @@ pub struct UpdateLiveSourceInput {
 }
 impl UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn http_package_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::HttpPackageConfiguration]> {
+    pub fn http_package_configurations(&self) -> std::option::Option<& [crate::types::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
+    pub fn live_source_name(&self) -> std::option::Option<& str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
 }
 impl UpdateLiveSourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateLiveSourceInput`](crate::operation::update_live_source::UpdateLiveSourceInput).
-    pub fn builder() -> crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder {
         crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder::default()
     }
 }
@@ -42,8 +38,7 @@ impl UpdateLiveSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLiveSourceInputBuilder {
-    pub(crate) http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub(crate) http_package_configurations: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     pub(crate) live_source_name: std::option::Option<std::string::String>,
     pub(crate) source_location_name: std::option::Option<std::string::String>,
 }
@@ -53,22 +48,15 @@ impl UpdateLiveSourceInputBuilder {
     /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
     ///
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn http_package_configurations(
-        mut self,
-        input: crate::types::HttpPackageConfiguration,
-    ) -> Self {
+    pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
         let mut v = self.http_package_configurations.unwrap_or_default();
-        v.push(input);
-        self.http_package_configurations = Some(v);
-        self
+                        v.push(input);
+                        self.http_package_configurations = Some(v);
+                        self
     }
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn set_http_package_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
-    ) -> Self {
-        self.http_package_configurations = input;
-        self
+    pub fn set_http_package_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
+        self.http_package_configurations = input; self
     }
     /// <p>The name of the live source.</p>
     pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +65,7 @@ impl UpdateLiveSourceInputBuilder {
     }
     /// <p>The name of the live source.</p>
     pub fn set_live_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.live_source_name = input;
-        self
+        self.live_source_name = input; self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
     pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,26 +73,21 @@ impl UpdateLiveSourceInputBuilder {
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_location_name = input;
-        self
+    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_location_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateLiveSourceInput`](crate::operation::update_live_source::UpdateLiveSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_live_source::UpdateLiveSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_live_source::UpdateLiveSourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_live_source::UpdateLiveSourceInput {
-                http_package_configurations: self.http_package_configurations,
-                live_source_name: self.live_source_name,
-                source_location_name: self.source_location_name,
-            },
+                http_package_configurations: self.http_package_configurations
+                ,
+                live_source_name: self.live_source_name
+                ,
+                source_location_name: self.source_location_name
+                ,
+            }
         )
     }
 }
+

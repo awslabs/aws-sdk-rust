@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterOutput {
+pub struct CreateClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateClusterOutput {
 }
 impl CreateClusterOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the MSK cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ClusterState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ClusterState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::operation::create_cluster::CreateClusterOutput).
     pub fn builder() -> crate::operation::create_cluster::builders::CreateClusterOutputBuilder {
@@ -57,8 +57,7 @@ impl CreateClusterOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The name of the MSK cluster.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl CreateClusterOutputBuilder {
     }
     /// <p>The name of the MSK cluster.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn state(mut self, input: crate::types::ClusterState) -> Self {
@@ -77,25 +75,28 @@ impl CreateClusterOutputBuilder {
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ClusterState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::operation::create_cluster::CreateClusterOutput).
     pub fn build(self) -> crate::operation::create_cluster::CreateClusterOutput {
         crate::operation::create_cluster::CreateClusterOutput {
-            cluster_arn: self.cluster_arn,
-            cluster_name: self.cluster_name,
-            state: self.state,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_name: self.cluster_name
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

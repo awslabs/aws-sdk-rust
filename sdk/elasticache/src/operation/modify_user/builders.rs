@@ -4,67 +4,49 @@ pub use crate::operation::modify_user::_modify_user_output::ModifyUserOutputBuil
 pub use crate::operation::modify_user::_modify_user_input::ModifyUserInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyUser`.
-///
+/// 
 /// <p>Changes user password(s) and/or access string.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyUserFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_user::builders::ModifyUserInputBuilder,
-}
-impl ModifyUserFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::modify_user::builders::ModifyUserInputBuilder
+            }
+impl ModifyUserFluentBuilder  {
     /// Creates a new `ModifyUser`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_user::ModifyUser,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::modify_user::ModifyUserOutput,
-        aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::modify_user::ModifyUser, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::modify_user::ModifyUserOutput, aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the user.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -91,10 +73,7 @@ impl ModifyUserFluentBuilder {
         self
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn set_append_access_string(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_append_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_append_access_string(input);
         self
     }
@@ -108,10 +87,7 @@ impl ModifyUserFluentBuilder {
         self
     }
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    pub fn set_passwords(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_passwords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_passwords(input);
         self
     }
@@ -131,11 +107,9 @@ impl ModifyUserFluentBuilder {
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
+    pub fn set_authentication_mode(mut self, input: std::option::Option<crate::types::AuthenticationMode>) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
     }
 }
+

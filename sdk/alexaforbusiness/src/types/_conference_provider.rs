@@ -3,7 +3,7 @@
 /// <p>An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConferenceProvider {
+pub struct ConferenceProvider  {
     /// <p>The ARN of the newly created conference provider.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ConferenceProvider {
 }
 impl ConferenceProvider {
     /// <p>The ARN of the newly created conference provider.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the conference provider.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of conference providers.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ConferenceProviderType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ConferenceProviderType> {
         self.r#type.as_ref()
     }
     /// <p>The IP endpoint and protocol for calling.</p>
-    pub fn ip_dial_in(&self) -> std::option::Option<&crate::types::IpDialIn> {
+    pub fn ip_dial_in(&self) -> std::option::Option<& crate::types::IpDialIn> {
         self.ip_dial_in.as_ref()
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn pstn_dial_in(&self) -> std::option::Option<&crate::types::PstnDialIn> {
+    pub fn pstn_dial_in(&self) -> std::option::Option<& crate::types::PstnDialIn> {
         self.pstn_dial_in.as_ref()
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn meeting_setting(&self) -> std::option::Option<&crate::types::MeetingSetting> {
+    pub fn meeting_setting(&self) -> std::option::Option<& crate::types::MeetingSetting> {
         self.meeting_setting.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ConferenceProviderBuilder {
     }
     /// <p>The ARN of the newly created conference provider.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the conference provider.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl ConferenceProviderBuilder {
     }
     /// <p>The name of the conference provider.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of conference providers.</p>
     pub fn r#type(mut self, input: crate::types::ConferenceProviderType) -> Self {
@@ -94,12 +92,8 @@ impl ConferenceProviderBuilder {
         self
     }
     /// <p>The type of conference providers.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ConferenceProviderType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ConferenceProviderType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The IP endpoint and protocol for calling.</p>
     pub fn ip_dial_in(mut self, input: crate::types::IpDialIn) -> Self {
@@ -108,8 +102,7 @@ impl ConferenceProviderBuilder {
     }
     /// <p>The IP endpoint and protocol for calling.</p>
     pub fn set_ip_dial_in(mut self, input: std::option::Option<crate::types::IpDialIn>) -> Self {
-        self.ip_dial_in = input;
-        self
+        self.ip_dial_in = input; self
     }
     /// <p>The information for PSTN conferencing.</p>
     pub fn pstn_dial_in(mut self, input: crate::types::PstnDialIn) -> Self {
@@ -117,12 +110,8 @@ impl ConferenceProviderBuilder {
         self
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn set_pstn_dial_in(
-        mut self,
-        input: std::option::Option<crate::types::PstnDialIn>,
-    ) -> Self {
-        self.pstn_dial_in = input;
-        self
+    pub fn set_pstn_dial_in(mut self, input: std::option::Option<crate::types::PstnDialIn>) -> Self {
+        self.pstn_dial_in = input; self
     }
     /// <p>The meeting settings for the conference provider.</p>
     pub fn meeting_setting(mut self, input: crate::types::MeetingSetting) -> Self {
@@ -130,22 +119,25 @@ impl ConferenceProviderBuilder {
         self
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn set_meeting_setting(
-        mut self,
-        input: std::option::Option<crate::types::MeetingSetting>,
-    ) -> Self {
-        self.meeting_setting = input;
-        self
+    pub fn set_meeting_setting(mut self, input: std::option::Option<crate::types::MeetingSetting>) -> Self {
+        self.meeting_setting = input; self
     }
     /// Consumes the builder and constructs a [`ConferenceProvider`](crate::types::ConferenceProvider).
     pub fn build(self) -> crate::types::ConferenceProvider {
         crate::types::ConferenceProvider {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            ip_dial_in: self.ip_dial_in,
-            pstn_dial_in: self.pstn_dial_in,
-            meeting_setting: self.meeting_setting,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            ip_dial_in: self.ip_dial_in
+            ,
+            pstn_dial_in: self.pstn_dial_in
+            ,
+            meeting_setting: self.meeting_setting
+            ,
         }
     }
 }
+

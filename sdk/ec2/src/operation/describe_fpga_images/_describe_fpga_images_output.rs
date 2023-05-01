@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFpgaImagesOutput {
+pub struct DescribeFpgaImagesOutput  {
     /// <p>Information about the FPGA images.</p>
     #[doc(hidden)]
     pub fpga_images: std::option::Option<std::vec::Vec<crate::types::FpgaImage>>,
@@ -13,23 +13,22 @@ pub struct DescribeFpgaImagesOutput {
 }
 impl DescribeFpgaImagesOutput {
     /// <p>Information about the FPGA images.</p>
-    pub fn fpga_images(&self) -> std::option::Option<&[crate::types::FpgaImage]> {
+    pub fn fpga_images(&self) -> std::option::Option<& [crate::types::FpgaImage]> {
         self.fpga_images.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFpgaImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeFpgaImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder {
         crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl DescribeFpgaImagesOutputBuilder {
     /// <p>Information about the FPGA images.</p>
     pub fn fpga_images(mut self, input: crate::types::FpgaImage) -> Self {
         let mut v = self.fpga_images.unwrap_or_default();
-        v.push(input);
-        self.fpga_images = Some(v);
-        self
+                        v.push(input);
+                        self.fpga_images = Some(v);
+                        self
     }
     /// <p>Information about the FPGA images.</p>
-    pub fn set_fpga_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FpgaImage>>,
-    ) -> Self {
-        self.fpga_images = input;
-        self
+    pub fn set_fpga_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::FpgaImage>>) -> Self {
+        self.fpga_images = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl DescribeFpgaImagesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
     pub fn build(self) -> crate::operation::describe_fpga_images::DescribeFpgaImagesOutput {
         crate::operation::describe_fpga_images::DescribeFpgaImagesOutput {
-            fpga_images: self.fpga_images,
-            next_token: self.next_token,
+            fpga_images: self.fpga_images
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>The request parameters represent the input of a request to run one or more SQL statements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteSqlInput {
+pub struct ExecuteSqlInput  {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_or_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> 
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     #[doc(hidden)]
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
-    /// <p>One or more SQL statements to run on the DB cluster.</p>
+    /// <p>One or more SQL statements to run on the DB cluster.</p> 
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     #[doc(hidden)]
     pub sql_statements: std::option::Option<std::string::String>,
@@ -24,25 +24,25 @@ pub struct ExecuteSqlInput {
 }
 impl ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    pub fn db_cluster_or_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_or_instance_arn(&self) -> std::option::Option<& str> {
         self.db_cluster_or_instance_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> 
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn aws_secret_store_arn(&self) -> std::option::Option<&str> {
+    pub fn aws_secret_store_arn(&self) -> std::option::Option<& str> {
         self.aws_secret_store_arn.as_deref()
     }
-    /// <p>One or more SQL statements to run on the DB cluster.</p>
+    /// <p>One or more SQL statements to run on the DB cluster.</p> 
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    pub fn sql_statements(&self) -> std::option::Option<&str> {
+    pub fn sql_statements(&self) -> std::option::Option<& str> {
         self.sql_statements.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The name of the database schema.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
@@ -70,39 +70,30 @@ impl ExecuteSqlInputBuilder {
         self
     }
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    pub fn set_db_cluster_or_instance_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_or_instance_arn = input;
-        self
+    pub fn set_db_cluster_or_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_or_instance_arn = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> 
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.aws_secret_store_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p> 
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn set_aws_secret_store_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.aws_secret_store_arn = input;
-        self
+    pub fn set_aws_secret_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.aws_secret_store_arn = input; self
     }
-    /// <p>One or more SQL statements to run on the DB cluster.</p>
+    /// <p>One or more SQL statements to run on the DB cluster.</p> 
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
         self.sql_statements = Some(input.into());
         self
     }
-    /// <p>One or more SQL statements to run on the DB cluster.</p>
+    /// <p>One or more SQL statements to run on the DB cluster.</p> 
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn set_sql_statements(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sql_statements = input;
-        self
+        self.sql_statements = input; self
     }
     /// <p>The name of the database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +102,7 @@ impl ExecuteSqlInputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database schema.</p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,22 +111,24 @@ impl ExecuteSqlInputBuilder {
     }
     /// <p>The name of the database schema.</p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::operation::execute_sql::ExecuteSqlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::execute_sql::ExecuteSqlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::execute_sql::ExecuteSqlInput {
-            db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
-            aws_secret_store_arn: self.aws_secret_store_arn,
-            sql_statements: self.sql_statements,
-            database: self.database,
-            schema: self.schema,
-        })
+    pub fn build(self) -> Result<crate::operation::execute_sql::ExecuteSqlInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::execute_sql::ExecuteSqlInput {
+                db_cluster_or_instance_arn: self.db_cluster_or_instance_arn
+                ,
+                aws_secret_store_arn: self.aws_secret_store_arn
+                ,
+                sql_statements: self.sql_statements
+                ,
+                database: self.database
+                ,
+                schema: self.schema
+                ,
+            }
+        )
     }
 }
+

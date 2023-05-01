@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetChannelOutput {
+pub struct BatchGetChannelOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::types::Channel>>,
@@ -13,23 +13,22 @@ pub struct BatchGetChannelOutput {
 }
 impl BatchGetChannelOutput {
     /// <p></p>
-    pub fn channels(&self) -> std::option::Option<&[crate::types::Channel]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::types::Channel]> {
         self.channels.as_deref()
     }
     /// <p>Each error object is related to a specific ARN in the request.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetChannelOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput).
-    pub fn builder() -> crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder {
         crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl BatchGetChannelOutputBuilder {
     /// <p></p>
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = Some(v);
-        self
+                        v.push(input);
+                        self.channels = Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_channels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Channel>>,
-    ) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::types::Channel>>) -> Self {
+        self.channels = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -69,33 +64,32 @@ impl BatchGetChannelOutputBuilder {
     /// <p>Each error object is related to a specific ARN in the request.</p>
     pub fn errors(mut self, input: crate::types::BatchError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>Each error object is related to a specific ARN in the request.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput).
     pub fn build(self) -> crate::operation::batch_get_channel::BatchGetChannelOutput {
         crate::operation::batch_get_channel::BatchGetChannelOutput {
-            channels: self.channels,
-            errors: self.errors,
+            channels: self.channels
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

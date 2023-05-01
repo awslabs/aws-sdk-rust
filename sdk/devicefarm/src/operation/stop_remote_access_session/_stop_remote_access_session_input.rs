@@ -3,22 +3,20 @@
 /// <p>Represents the request to stop the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRemoteAccessSessionInput {
+pub struct StopRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StopRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl StopRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`StopRemoteAccessSessionInput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder {
         crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl StopRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`StopRemoteAccessSessionInput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

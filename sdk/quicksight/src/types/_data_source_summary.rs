@@ -3,7 +3,7 @@
 /// <p>A <code>DataSourceSummary</code> object that returns a summary of a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSourceSummary {
+pub struct DataSourceSummary  {
     /// <p>The arn of the datasource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct DataSourceSummary {
 }
 impl DataSourceSummary {
     /// <p>The arn of the datasource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique ID of the data source.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the data source.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the data source was created. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time the data source was last updated. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The arn of the datasource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique ID of the data source.</p>
     pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The unique ID of the data source.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of the data source.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
@@ -105,8 +102,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The type of the data source.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The date and time that the data source was created. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,12 +110,8 @@ impl DataSourceSummaryBuilder {
         self
     }
     /// <p>The date and time that the data source was created. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The date and time the data source was last updated. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,22 +119,25 @@ impl DataSourceSummaryBuilder {
         self
     }
     /// <p>The date and time the data source was last updated. This value is expressed in MM-DD-YYYY HH:MM:SS format.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// Consumes the builder and constructs a [`DataSourceSummary`](crate::types::DataSourceSummary).
     pub fn build(self) -> crate::types::DataSourceSummary {
         crate::types::DataSourceSummary {
-            arn: self.arn,
-            data_source_id: self.data_source_id,
-            name: self.name,
-            r#type: self.r#type,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            arn: self.arn
+            ,
+            data_source_id: self.data_source_id
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

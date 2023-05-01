@@ -3,7 +3,7 @@
 /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
+pub struct BatchGetAssetPropertyValueHistoryErrorEntry  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
@@ -16,17 +16,15 @@ pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
 }
@@ -41,27 +39,19 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
-    pub(crate) error_code:
-        std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
+    pub(crate) error_code: std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
     pub(crate) error_message: std::option::Option<std::string::String>,
     pub(crate) entry_id: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     /// <p>The error code.</p>
-    pub fn error_code(
-        mut self,
-        input: crate::types::BatchGetAssetPropertyValueHistoryErrorCode,
-    ) -> Self {
+    pub fn error_code(mut self, input: crate::types::BatchGetAssetPropertyValueHistoryErrorCode) -> Self {
         self.error_code = Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
-    ) -> Self {
-        self.error_code = input;
-        self
+    pub fn set_error_code(mut self, input: std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>) -> Self {
+        self.error_code = input; self
     }
     /// <p>The associated error message.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +60,7 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     }
     /// <p>The associated error message.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The ID of the entry.</p>
     pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +69,18 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::types::BatchGetAssetPropertyValueHistoryErrorEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueHistoryErrorEntry {
         crate::types::BatchGetAssetPropertyValueHistoryErrorEntry {
-            error_code: self.error_code,
-            error_message: self.error_message,
-            entry_id: self.entry_id,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
+            entry_id: self.entry_id
+            ,
         }
     }
 }
+

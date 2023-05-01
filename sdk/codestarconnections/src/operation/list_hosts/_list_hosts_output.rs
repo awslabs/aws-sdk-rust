@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHostsOutput {
+pub struct ListHostsOutput  {
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
     #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<crate::types::Host>>,
@@ -13,19 +13,19 @@ pub struct ListHostsOutput {
 }
 impl ListHostsOutput {
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
-    pub fn hosts(&self) -> std::option::Option<&[crate::types::Host]> {
+    pub fn hosts(&self) -> std::option::Option<& [crate::types::Host]> {
         self.hosts.as_deref()
     }
     /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListHostsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListHostsOutput {
     /// Creates a new builder-style object to manufacture [`ListHostsOutput`](crate::operation::list_hosts::ListHostsOutput).
     pub fn builder() -> crate::operation::list_hosts::builders::ListHostsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListHostsOutputBuilder {
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
     pub fn hosts(mut self, input: crate::types::Host) -> Self {
         let mut v = self.hosts.unwrap_or_default();
-        v.push(input);
-        self.hosts = Some(v);
-        self
+                        v.push(input);
+                        self.hosts = Some(v);
+                        self
     }
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
-    pub fn set_hosts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Host>>,
-    ) -> Self {
-        self.hosts = input;
-        self
+    pub fn set_hosts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Host>>) -> Self {
+        self.hosts = input; self
     }
     /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListHostsOutputBuilder {
     }
     /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListHostsOutput`](crate::operation::list_hosts::ListHostsOutput).
     pub fn build(self) -> crate::operation::list_hosts::ListHostsOutput {
         crate::operation::list_hosts::ListHostsOutput {
-            hosts: self.hosts,
-            next_token: self.next_token,
+            hosts: self.hosts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

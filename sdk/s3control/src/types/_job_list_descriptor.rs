@@ -3,7 +3,7 @@
 /// <p>Contains the configuration and status information for a single job retrieved as part of a job list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobListDescriptor {
+pub struct JobListDescriptor  {
     /// <p>The ID for the specified job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -31,15 +31,15 @@ pub struct JobListDescriptor {
 }
 impl JobListDescriptor {
     /// <p>The ID for the specified job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::types::OperationName> {
+    pub fn operation(&self) -> std::option::Option<& crate::types::OperationName> {
         self.operation.as_ref()
     }
     /// <p>The current priority for the specified job.</p>
@@ -47,19 +47,19 @@ impl JobListDescriptor {
         self.priority
     }
     /// <p>The specified job's current status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn termination_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.termination_date.as_ref()
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    pub fn progress_summary(&self) -> std::option::Option<&crate::types::JobProgressSummary> {
+    pub fn progress_summary(&self) -> std::option::Option<& crate::types::JobProgressSummary> {
         self.progress_summary.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl JobListDescriptorBuilder {
     }
     /// <p>The ID for the specified job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl JobListDescriptorBuilder {
     }
     /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
     pub fn operation(mut self, input: crate::types::OperationName) -> Self {
@@ -110,12 +108,8 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
-    pub fn set_operation(
-        mut self,
-        input: std::option::Option<crate::types::OperationName>,
-    ) -> Self {
-        self.operation = input;
-        self
+    pub fn set_operation(mut self, input: std::option::Option<crate::types::OperationName>) -> Self {
+        self.operation = input; self
     }
     /// <p>The current priority for the specified job.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -124,8 +118,7 @@ impl JobListDescriptorBuilder {
     }
     /// <p>The current priority for the specified job.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The specified job's current status.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -134,8 +127,7 @@ impl JobListDescriptorBuilder {
     }
     /// <p>The specified job's current status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,12 +135,8 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
     pub fn termination_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +144,8 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn set_termination_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.termination_date = input;
-        self
+    pub fn set_termination_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.termination_date = input; self
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
     pub fn progress_summary(mut self, input: crate::types::JobProgressSummary) -> Self {
@@ -169,24 +153,30 @@ impl JobListDescriptorBuilder {
         self
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    pub fn set_progress_summary(
-        mut self,
-        input: std::option::Option<crate::types::JobProgressSummary>,
-    ) -> Self {
-        self.progress_summary = input;
-        self
+    pub fn set_progress_summary(mut self, input: std::option::Option<crate::types::JobProgressSummary>) -> Self {
+        self.progress_summary = input; self
     }
     /// Consumes the builder and constructs a [`JobListDescriptor`](crate::types::JobListDescriptor).
     pub fn build(self) -> crate::types::JobListDescriptor {
         crate::types::JobListDescriptor {
-            job_id: self.job_id,
-            description: self.description,
-            operation: self.operation,
-            priority: self.priority.unwrap_or_default(),
-            status: self.status,
-            creation_time: self.creation_time,
-            termination_date: self.termination_date,
-            progress_summary: self.progress_summary,
+            job_id: self.job_id
+            ,
+            description: self.description
+            ,
+            operation: self.operation
+            ,
+            priority: self.priority
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            termination_date: self.termination_date
+            ,
+            progress_summary: self.progress_summary
+            ,
         }
     }
 }
+

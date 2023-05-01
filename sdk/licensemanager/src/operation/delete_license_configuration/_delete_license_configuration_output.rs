@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseConfigurationOutput {
+pub struct DeleteLicenseConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteLicenseConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationOutputBuilder {
         crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeleteLicenseConfigurationOutputBuilder {
 }
 impl DeleteLicenseConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput {
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

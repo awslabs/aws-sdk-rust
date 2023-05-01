@@ -3,7 +3,7 @@
 /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MappedResourceConfigurationListItem {
+pub struct MappedResourceConfigurationListItem  {
     /// <p>The type of the associated resource for the kinesis video stream.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MappedResourceConfigurationListItem {
 }
 impl MappedResourceConfigurationListItem {
     /// <p>The type of the associated resource for the kinesis video stream.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl MappedResourceConfigurationListItemBuilder {
     }
     /// <p>The type of the associated resource for the kinesis video stream.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl MappedResourceConfigurationListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`MappedResourceConfigurationListItem`](crate::types::MappedResourceConfigurationListItem).
     pub fn build(self) -> crate::types::MappedResourceConfigurationListItem {
         crate::types::MappedResourceConfigurationListItem {
-            r#type: self.r#type,
-            arn: self.arn,
+            r#type: self.r#type
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

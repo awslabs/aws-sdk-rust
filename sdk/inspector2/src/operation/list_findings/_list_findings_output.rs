@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsOutput {
+pub struct ListFindingsOutput  {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListFindingsOutput {
 }
 impl ListFindingsOutput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Contains details on the findings in your environment.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::types::Finding]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::types::Finding]> {
         self.findings.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
     pub fn builder() -> crate::operation::list_findings::builders::ListFindingsOutputBuilder {
@@ -49,8 +49,7 @@ impl ListFindingsOutputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `findings`.
     ///
@@ -59,33 +58,32 @@ impl ListFindingsOutputBuilder {
     /// <p>Contains details on the findings in your environment.</p>
     pub fn findings(mut self, input: crate::types::Finding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = Some(v);
-        self
+                        v.push(input);
+                        self.findings = Some(v);
+                        self
     }
     /// <p>Contains details on the findings in your environment.</p>
-    pub fn set_findings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Finding>>,
-    ) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::types::Finding>>) -> Self {
+        self.findings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
     pub fn build(self) -> crate::operation::list_findings::ListFindingsOutput {
         crate::operation::list_findings::ListFindingsOutput {
-            next_token: self.next_token,
-            findings: self.findings,
+            next_token: self.next_token
+            ,
+            findings: self.findings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

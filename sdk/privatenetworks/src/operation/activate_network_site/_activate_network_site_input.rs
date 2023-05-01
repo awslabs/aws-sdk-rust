@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateNetworkSiteInput {
+pub struct ActivateNetworkSiteInput  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
     pub network_site_arn: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct ActivateNetworkSiteInput {
 }
 impl ActivateNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The shipping address of the network site.</p>
-    pub fn shipping_address(&self) -> std::option::Option<&crate::types::Address> {
+    pub fn shipping_address(&self) -> std::option::Option<& crate::types::Address> {
         self.shipping_address.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ActivateNetworkSiteInput {
     /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteInput`](crate::operation::activate_network_site::ActivateNetworkSiteInput).
-    pub fn builder(
-    ) -> crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
-        crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
+        crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl ActivateNetworkSiteInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn set_network_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_site_arn = input;
-        self
+        self.network_site_arn = input; self
     }
     /// <p>The shipping address of the network site.</p>
     pub fn shipping_address(mut self, input: crate::types::Address) -> Self {
@@ -61,12 +58,8 @@ impl ActivateNetworkSiteInputBuilder {
         self
     }
     /// <p>The shipping address of the network site.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: std::option::Option<crate::types::Address>,
-    ) -> Self {
-        self.shipping_address = input;
-        self
+    pub fn set_shipping_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
+        self.shipping_address = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl ActivateNetworkSiteInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`ActivateNetworkSiteInput`](crate::operation::activate_network_site::ActivateNetworkSiteInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::activate_network_site::ActivateNetworkSiteInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::activate_network_site::ActivateNetworkSiteInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::activate_network_site::ActivateNetworkSiteInput {
-                network_site_arn: self.network_site_arn,
-                shipping_address: self.shipping_address,
-                client_token: self.client_token,
-            },
+                network_site_arn: self.network_site_arn
+                ,
+                shipping_address: self.shipping_address
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

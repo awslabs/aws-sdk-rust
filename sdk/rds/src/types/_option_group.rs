@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionGroup {
+pub struct OptionGroup  {
     /// <p>Specifies the name of the option group.</p>
     #[doc(hidden)]
     pub option_group_name: std::option::Option<std::string::String>,
@@ -40,23 +40,23 @@ pub struct OptionGroup {
 }
 impl OptionGroup {
     /// <p>Specifies the name of the option group.</p>
-    pub fn option_group_name(&self) -> std::option::Option<&str> {
+    pub fn option_group_name(&self) -> std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>Provides a description of the option group.</p>
-    pub fn option_group_description(&self) -> std::option::Option<&str> {
+    pub fn option_group_description(&self) -> std::option::Option<& str> {
         self.option_group_description.as_deref()
     }
     /// <p>Indicates the name of the engine that this option group can be applied to.</p>
-    pub fn engine_name(&self) -> std::option::Option<&str> {
+    pub fn engine_name(&self) -> std::option::Option<& str> {
         self.engine_name.as_deref()
     }
     /// <p>Indicates the major engine version associated with this option group.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>Indicates what options are available in the option group.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::types::Option]> {
+    pub fn options(&self) -> std::option::Option<& [crate::types::Option]> {
         self.options.as_deref()
     }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
@@ -64,23 +64,23 @@ impl OptionGroup {
         self.allows_vpc_and_non_vpc_instance_memberships
     }
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
-    pub fn option_group_arn(&self) -> std::option::Option<&str> {
+    pub fn option_group_arn(&self) -> std::option::Option<& str> {
         self.option_group_arn.as_deref()
     }
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
-    pub fn source_option_group(&self) -> std::option::Option<&str> {
+    pub fn source_option_group(&self) -> std::option::Option<& str> {
         self.source_option_group.as_deref()
     }
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
-    pub fn source_account_id(&self) -> std::option::Option<&str> {
+    pub fn source_account_id(&self) -> std::option::Option<& str> {
         self.source_account_id.as_deref()
     }
     /// <p>Indicates when the option group was copied.</p>
-    pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn copy_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.copy_timestamp.as_ref()
     }
 }
@@ -114,12 +114,8 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Specifies the name of the option group.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.option_group_name = input;
-        self
+    pub fn set_option_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.option_group_name = input; self
     }
     /// <p>Provides a description of the option group.</p>
     pub fn option_group_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,12 +123,8 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Provides a description of the option group.</p>
-    pub fn set_option_group_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.option_group_description = input;
-        self
+    pub fn set_option_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.option_group_description = input; self
     }
     /// <p>Indicates the name of the engine that this option group can be applied to.</p>
     pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +133,7 @@ impl OptionGroupBuilder {
     }
     /// <p>Indicates the name of the engine that this option group can be applied to.</p>
     pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_name = input;
-        self
+        self.engine_name = input; self
     }
     /// <p>Indicates the major engine version associated with this option group.</p>
     pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,12 +141,8 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Indicates the major engine version associated with this option group.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.major_engine_version = input;
-        self
+    pub fn set_major_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.major_engine_version = input; self
     }
     /// Appends an item to `options`.
     ///
@@ -164,17 +151,13 @@ impl OptionGroupBuilder {
     /// <p>Indicates what options are available in the option group.</p>
     pub fn options(mut self, input: crate::types::Option) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = Some(v);
-        self
+                        v.push(input);
+                        self.options = Some(v);
+                        self
     }
     /// <p>Indicates what options are available in the option group.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Option>>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::Option>>) -> Self {
+        self.options = input; self
     }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
     pub fn allows_vpc_and_non_vpc_instance_memberships(mut self, input: bool) -> Self {
@@ -182,12 +165,8 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
-    pub fn set_allows_vpc_and_non_vpc_instance_memberships(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.allows_vpc_and_non_vpc_instance_memberships = input;
-        self
+    pub fn set_allows_vpc_and_non_vpc_instance_memberships(mut self, input: std::option::Option<bool>) -> Self {
+        self.allows_vpc_and_non_vpc_instance_memberships = input; self
     }
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,8 +175,7 @@ impl OptionGroupBuilder {
     }
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
     pub fn option_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,8 +184,7 @@ impl OptionGroupBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
     pub fn set_option_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.option_group_arn = input;
-        self
+        self.option_group_arn = input; self
     }
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
     pub fn source_option_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,12 +192,8 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
-    pub fn set_source_option_group(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_option_group = input;
-        self
+    pub fn set_source_option_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_option_group = input; self
     }
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
     pub fn source_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,12 +201,8 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
-    pub fn set_source_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_account_id = input;
-        self
+    pub fn set_source_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_account_id = input; self
     }
     /// <p>Indicates when the option group was copied.</p>
     pub fn copy_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -241,29 +210,36 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Indicates when the option group was copied.</p>
-    pub fn set_copy_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.copy_timestamp = input;
-        self
+    pub fn set_copy_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.copy_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`OptionGroup`](crate::types::OptionGroup).
     pub fn build(self) -> crate::types::OptionGroup {
         crate::types::OptionGroup {
-            option_group_name: self.option_group_name,
-            option_group_description: self.option_group_description,
-            engine_name: self.engine_name,
-            major_engine_version: self.major_engine_version,
-            options: self.options,
-            allows_vpc_and_non_vpc_instance_memberships: self
-                .allows_vpc_and_non_vpc_instance_memberships
-                .unwrap_or_default(),
-            vpc_id: self.vpc_id,
-            option_group_arn: self.option_group_arn,
-            source_option_group: self.source_option_group,
-            source_account_id: self.source_account_id,
-            copy_timestamp: self.copy_timestamp,
+            option_group_name: self.option_group_name
+            ,
+            option_group_description: self.option_group_description
+            ,
+            engine_name: self.engine_name
+            ,
+            major_engine_version: self.major_engine_version
+            ,
+            options: self.options
+            ,
+            allows_vpc_and_non_vpc_instance_memberships: self.allows_vpc_and_non_vpc_instance_memberships
+                .unwrap_or_default()
+            ,
+            vpc_id: self.vpc_id
+            ,
+            option_group_arn: self.option_group_arn
+            ,
+            source_option_group: self.source_option_group
+            ,
+            source_account_id: self.source_account_id
+            ,
+            copy_timestamp: self.copy_timestamp
+            ,
         }
     }
 }
+

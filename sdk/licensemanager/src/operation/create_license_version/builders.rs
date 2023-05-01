@@ -4,71 +4,49 @@ pub use crate::operation::create_license_version::_create_license_version_output
 pub use crate::operation::create_license_version::_create_license_version_input::CreateLicenseVersionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateLicenseVersion`.
-///
+/// 
 /// <p>Creates a new version of the specified license.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLicenseVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_license_version::builders::CreateLicenseVersionInputBuilder,
-}
-impl CreateLicenseVersionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_license_version::builders::CreateLicenseVersionInputBuilder
+            }
+impl CreateLicenseVersionFluentBuilder  {
     /// Creates a new `CreateLicenseVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_license_version::CreateLicenseVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_license_version::CreateLicenseVersionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_license_version::CreateLicenseVersionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_license_version::CreateLicenseVersionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_license_version::CreateLicenseVersion, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_license_version::CreateLicenseVersionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_license_version::CreateLicenseVersionOutput, aws_smithy_http::result::SdkError<crate::operation::create_license_version::CreateLicenseVersionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.license_arn(input.into());
@@ -139,10 +117,7 @@ impl CreateLicenseVersionFluentBuilder {
         self
     }
     /// <p>Information about the license.</p>
-    pub fn set_license_metadata(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_license_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.inner = self.inner.set_license_metadata(input);
         self
     }
@@ -156,26 +131,17 @@ impl CreateLicenseVersionFluentBuilder {
         self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn consumption_configuration(
-        mut self,
-        input: crate::types::ConsumptionConfiguration,
-    ) -> Self {
+    pub fn consumption_configuration(mut self, input: crate::types::ConsumptionConfiguration) -> Self {
         self.inner = self.inner.consumption_configuration(input);
         self
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn set_consumption_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ConsumptionConfiguration>,
-    ) -> Self {
+    pub fn set_consumption_configuration(mut self, input: std::option::Option<crate::types::ConsumptionConfiguration>) -> Self {
         self.inner = self.inner.set_consumption_configuration(input);
         self
     }
@@ -210,3 +176,4 @@ impl CreateLicenseVersionFluentBuilder {
         self
     }
 }
+

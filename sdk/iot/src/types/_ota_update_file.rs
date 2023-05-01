@@ -3,7 +3,7 @@
 /// <p>Describes a file to be associated with an OTA update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OtaUpdateFile {
+pub struct OtaUpdateFile  {
     /// <p>The name of the file.</p>
     #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
@@ -21,12 +21,11 @@ pub struct OtaUpdateFile {
     pub code_signing: std::option::Option<crate::types::CodeSigning>,
     /// <p>A list of name/attribute pairs.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl OtaUpdateFile {
     /// <p>The name of the file.</p>
-    pub fn file_name(&self) -> std::option::Option<&str> {
+    pub fn file_name(&self) -> std::option::Option<& str> {
         self.file_name.as_deref()
     }
     /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
@@ -34,22 +33,19 @@ impl OtaUpdateFile {
         self.file_type
     }
     /// <p>The file version.</p>
-    pub fn file_version(&self) -> std::option::Option<&str> {
+    pub fn file_version(&self) -> std::option::Option<& str> {
         self.file_version.as_deref()
     }
     /// <p>The location of the updated firmware.</p>
-    pub fn file_location(&self) -> std::option::Option<&crate::types::FileLocation> {
+    pub fn file_location(&self) -> std::option::Option<& crate::types::FileLocation> {
         self.file_location.as_ref()
     }
     /// <p>The code signing method of the file.</p>
-    pub fn code_signing(&self) -> std::option::Option<&crate::types::CodeSigning> {
+    pub fn code_signing(&self) -> std::option::Option<& crate::types::CodeSigning> {
         self.code_signing.as_ref()
     }
     /// <p>A list of name/attribute pairs.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -69,8 +65,7 @@ pub struct OtaUpdateFileBuilder {
     pub(crate) file_version: std::option::Option<std::string::String>,
     pub(crate) file_location: std::option::Option<crate::types::FileLocation>,
     pub(crate) code_signing: std::option::Option<crate::types::CodeSigning>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl OtaUpdateFileBuilder {
     /// <p>The name of the file.</p>
@@ -80,8 +75,7 @@ impl OtaUpdateFileBuilder {
     }
     /// <p>The name of the file.</p>
     pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
     pub fn file_type(mut self, input: i32) -> Self {
@@ -90,8 +84,7 @@ impl OtaUpdateFileBuilder {
     }
     /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
     pub fn set_file_type(mut self, input: std::option::Option<i32>) -> Self {
-        self.file_type = input;
-        self
+        self.file_type = input; self
     }
     /// <p>The file version.</p>
     pub fn file_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +93,7 @@ impl OtaUpdateFileBuilder {
     }
     /// <p>The file version.</p>
     pub fn set_file_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_version = input;
-        self
+        self.file_version = input; self
     }
     /// <p>The location of the updated firmware.</p>
     pub fn file_location(mut self, input: crate::types::FileLocation) -> Self {
@@ -109,12 +101,8 @@ impl OtaUpdateFileBuilder {
         self
     }
     /// <p>The location of the updated firmware.</p>
-    pub fn set_file_location(
-        mut self,
-        input: std::option::Option<crate::types::FileLocation>,
-    ) -> Self {
-        self.file_location = input;
-        self
+    pub fn set_file_location(mut self, input: std::option::Option<crate::types::FileLocation>) -> Self {
+        self.file_location = input; self
     }
     /// <p>The code signing method of the file.</p>
     pub fn code_signing(mut self, input: crate::types::CodeSigning) -> Self {
@@ -122,47 +110,40 @@ impl OtaUpdateFileBuilder {
         self
     }
     /// <p>The code signing method of the file.</p>
-    pub fn set_code_signing(
-        mut self,
-        input: std::option::Option<crate::types::CodeSigning>,
-    ) -> Self {
-        self.code_signing = input;
-        self
+    pub fn set_code_signing(mut self, input: std::option::Option<crate::types::CodeSigning>) -> Self {
+        self.code_signing = input; self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A list of name/attribute pairs.</p>
-    pub fn attributes(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = Some(hash_map);
+                        self
     }
     /// <p>A list of name/attribute pairs.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`OtaUpdateFile`](crate::types::OtaUpdateFile).
     pub fn build(self) -> crate::types::OtaUpdateFile {
         crate::types::OtaUpdateFile {
-            file_name: self.file_name,
-            file_type: self.file_type,
-            file_version: self.file_version,
-            file_location: self.file_location,
-            code_signing: self.code_signing,
-            attributes: self.attributes,
+            file_name: self.file_name
+            ,
+            file_type: self.file_type
+            ,
+            file_version: self.file_version
+            ,
+            file_location: self.file_location
+            ,
+            code_signing: self.code_signing
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

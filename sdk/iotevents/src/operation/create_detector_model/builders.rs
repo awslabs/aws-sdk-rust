@@ -4,97 +4,66 @@ pub use crate::operation::create_detector_model::_create_detector_model_output::
 pub use crate::operation::create_detector_model::_create_detector_model_input::CreateDetectorModelInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDetectorModel`.
-///
+/// 
 /// <p>Creates a detector model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDetectorModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder,
-}
-impl CreateDetectorModelFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder
+            }
+impl CreateDetectorModelFluentBuilder  {
     /// Creates a new `CreateDetectorModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_detector_model::CreateDetectorModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_detector_model::CreateDetectorModelError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_detector_model::CreateDetectorModelOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_detector_model::CreateDetectorModelError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_detector_model::CreateDetectorModel, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_detector_model::CreateDetectorModelError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_detector_model::CreateDetectorModelOutput, aws_smithy_http::result::SdkError<crate::operation::create_detector_model::CreateDetectorModelError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the detector model.</p>
     pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_model_name(input.into());
         self
     }
     /// <p>The name of the detector model.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }
     /// <p>Information that defines how the detectors operate.</p>
-    pub fn detector_model_definition(
-        mut self,
-        input: crate::types::DetectorModelDefinition,
-    ) -> Self {
+    pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.inner = self.inner.detector_model_definition(input);
         self
     }
     /// <p>Information that defines how the detectors operate.</p>
-    pub fn set_detector_model_definition(
-        mut self,
-        input: std::option::Option<crate::types::DetectorModelDefinition>,
-    ) -> Self {
+    pub fn set_detector_model_definition(mut self, input: std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
     }
@@ -104,10 +73,7 @@ impl CreateDetectorModelFluentBuilder {
         self
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn set_detector_model_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_description(input);
         self
     }
@@ -141,10 +107,7 @@ impl CreateDetectorModelFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the detector model.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -154,11 +117,9 @@ impl CreateDetectorModelFluentBuilder {
         self
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    pub fn set_evaluation_method(
-        mut self,
-        input: std::option::Option<crate::types::EvaluationMethod>,
-    ) -> Self {
+    pub fn set_evaluation_method(mut self, input: std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.inner = self.inner.set_evaluation_method(input);
         self
     }
 }
+

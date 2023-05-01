@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUpdateDirectoryOutput {
+pub struct DescribeUpdateDirectoryOutput  {
     /// <p> The list of update activities on a directory for the requested update type. </p>
     #[doc(hidden)]
     pub update_activities: std::option::Option<std::vec::Vec<crate::types::UpdateInfoEntry>>,
@@ -13,24 +13,22 @@ pub struct DescribeUpdateDirectoryOutput {
 }
 impl DescribeUpdateDirectoryOutput {
     /// <p> The list of update activities on a directory for the requested update type. </p>
-    pub fn update_activities(&self) -> std::option::Option<&[crate::types::UpdateInfoEntry]> {
+    pub fn update_activities(&self) -> std::option::Option<& [crate::types::UpdateInfoEntry]> {
         self.update_activities.as_deref()
     }
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUpdateDirectoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeUpdateDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateDirectoryOutput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryOutputBuilder {
         crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl DescribeUpdateDirectoryOutputBuilder {
     /// <p> The list of update activities on a directory for the requested update type. </p>
     pub fn update_activities(mut self, input: crate::types::UpdateInfoEntry) -> Self {
         let mut v = self.update_activities.unwrap_or_default();
-        v.push(input);
-        self.update_activities = Some(v);
-        self
+                        v.push(input);
+                        self.update_activities = Some(v);
+                        self
     }
     /// <p> The list of update activities on a directory for the requested update type. </p>
-    pub fn set_update_activities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateInfoEntry>>,
-    ) -> Self {
-        self.update_activities = input;
-        self
+    pub fn set_update_activities(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateInfoEntry>>) -> Self {
+        self.update_activities = input; self
     }
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl DescribeUpdateDirectoryOutputBuilder {
     }
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeUpdateDirectoryOutput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput {
+    pub fn build(self) -> crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput {
         crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput {
-            update_activities: self.update_activities,
-            next_token: self.next_token,
+            update_activities: self.update_activities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

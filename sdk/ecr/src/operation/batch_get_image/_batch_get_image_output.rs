@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetImageOutput {
+pub struct BatchGetImageOutput  {
     /// <p>A list of image objects corresponding to the image references in the request.</p>
     #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::types::Image>>,
@@ -13,19 +13,19 @@ pub struct BatchGetImageOutput {
 }
 impl BatchGetImageOutput {
     /// <p>A list of image objects corresponding to the image references in the request.</p>
-    pub fn images(&self) -> std::option::Option<&[crate::types::Image]> {
+    pub fn images(&self) -> std::option::Option<& [crate::types::Image]> {
         self.images.as_deref()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::ImageFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::types::ImageFailure]> {
         self.failures.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetImageOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetImageOutput`](crate::operation::batch_get_image::BatchGetImageOutput).
     pub fn builder() -> crate::operation::batch_get_image::builders::BatchGetImageOutputBuilder {
@@ -49,17 +49,13 @@ impl BatchGetImageOutputBuilder {
     /// <p>A list of image objects corresponding to the image references in the request.</p>
     pub fn images(mut self, input: crate::types::Image) -> Self {
         let mut v = self.images.unwrap_or_default();
-        v.push(input);
-        self.images = Some(v);
-        self
+                        v.push(input);
+                        self.images = Some(v);
+                        self
     }
     /// <p>A list of image objects corresponding to the image references in the request.</p>
-    pub fn set_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Image>>,
-    ) -> Self {
-        self.images = input;
-        self
+    pub fn set_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::Image>>) -> Self {
+        self.images = input; self
     }
     /// Appends an item to `failures`.
     ///
@@ -68,33 +64,32 @@ impl BatchGetImageOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::ImageFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = Some(v);
-        self
+                        v.push(input);
+                        self.failures = Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImageFailure>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageFailure>>) -> Self {
+        self.failures = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetImageOutput`](crate::operation::batch_get_image::BatchGetImageOutput).
     pub fn build(self) -> crate::operation::batch_get_image::BatchGetImageOutput {
         crate::operation::batch_get_image::BatchGetImageOutput {
-            images: self.images,
-            failures: self.failures,
+            images: self.images
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

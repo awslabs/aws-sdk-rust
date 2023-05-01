@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>LookupPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchLookupPolicyResponse {
+pub struct BatchLookupPolicyResponse  {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::types::PolicyToPath>>,
@@ -13,11 +13,11 @@ pub struct BatchLookupPolicyResponse {
 }
 impl BatchLookupPolicyResponse {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::types::PolicyToPath]> {
+    pub fn policy_to_path_list(&self) -> std::option::Option<& [crate::types::PolicyToPath]> {
         self.policy_to_path_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl BatchLookupPolicyResponseBuilder {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     pub fn policy_to_path_list(mut self, input: crate::types::PolicyToPath) -> Self {
         let mut v = self.policy_to_path_list.unwrap_or_default();
-        v.push(input);
-        self.policy_to_path_list = Some(v);
-        self
+                        v.push(input);
+                        self.policy_to_path_list = Some(v);
+                        self
     }
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn set_policy_to_path_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyToPath>>,
-    ) -> Self {
-        self.policy_to_path_list = input;
-        self
+    pub fn set_policy_to_path_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::PolicyToPath>>) -> Self {
+        self.policy_to_path_list = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,14 +58,16 @@ impl BatchLookupPolicyResponseBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`BatchLookupPolicyResponse`](crate::types::BatchLookupPolicyResponse).
     pub fn build(self) -> crate::types::BatchLookupPolicyResponse {
         crate::types::BatchLookupPolicyResponse {
-            policy_to_path_list: self.policy_to_path_list,
-            next_token: self.next_token,
+            policy_to_path_list: self.policy_to_path_list
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

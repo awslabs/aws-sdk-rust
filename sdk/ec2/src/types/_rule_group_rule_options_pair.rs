@@ -3,7 +3,7 @@
 /// <p>Describes the rule options for a stateful rule group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupRuleOptionsPair {
+pub struct RuleGroupRuleOptionsPair  {
     /// <p>The ARN of the rule group.</p>
     #[doc(hidden)]
     pub rule_group_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RuleGroupRuleOptionsPair {
 }
 impl RuleGroupRuleOptionsPair {
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The rule options.</p>
-    pub fn rule_options(&self) -> std::option::Option<&[crate::types::RuleOption]> {
+    pub fn rule_options(&self) -> std::option::Option<& [crate::types::RuleOption]> {
         self.rule_options.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RuleGroupRuleOptionsPairBuilder {
     }
     /// <p>The ARN of the rule group.</p>
     pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_group_arn = input;
-        self
+        self.rule_group_arn = input; self
     }
     /// Appends an item to `rule_options`.
     ///
@@ -53,23 +52,22 @@ impl RuleGroupRuleOptionsPairBuilder {
     /// <p>The rule options.</p>
     pub fn rule_options(mut self, input: crate::types::RuleOption) -> Self {
         let mut v = self.rule_options.unwrap_or_default();
-        v.push(input);
-        self.rule_options = Some(v);
-        self
+                        v.push(input);
+                        self.rule_options = Some(v);
+                        self
     }
     /// <p>The rule options.</p>
-    pub fn set_rule_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RuleOption>>,
-    ) -> Self {
-        self.rule_options = input;
-        self
+    pub fn set_rule_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleOption>>) -> Self {
+        self.rule_options = input; self
     }
     /// Consumes the builder and constructs a [`RuleGroupRuleOptionsPair`](crate::types::RuleGroupRuleOptionsPair).
     pub fn build(self) -> crate::types::RuleGroupRuleOptionsPair {
         crate::types::RuleGroupRuleOptionsPair {
-            rule_group_arn: self.rule_group_arn,
-            rule_options: self.rule_options,
+            rule_group_arn: self.rule_group_arn
+            ,
+            rule_options: self.rule_options
+            ,
         }
     }
 }
+

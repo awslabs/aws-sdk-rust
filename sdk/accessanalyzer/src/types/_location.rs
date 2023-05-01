@@ -3,7 +3,7 @@
 /// <p>A location in a policy that is represented as a path through the JSON representation and a corresponding span.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Location {
+pub struct Location  {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::vec::Vec<crate::types::PathElement>>,
@@ -13,11 +13,11 @@ pub struct Location {
 }
 impl Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn path(&self) -> std::option::Option<&[crate::types::PathElement]> {
+    pub fn path(&self) -> std::option::Option<& [crate::types::PathElement]> {
         self.path.as_deref()
     }
     /// <p>A span in a policy.</p>
-    pub fn span(&self) -> std::option::Option<&crate::types::Span> {
+    pub fn span(&self) -> std::option::Option<& crate::types::Span> {
         self.span.as_ref()
     }
 }
@@ -43,17 +43,13 @@ impl LocationBuilder {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
     pub fn path(mut self, input: crate::types::PathElement) -> Self {
         let mut v = self.path.unwrap_or_default();
-        v.push(input);
-        self.path = Some(v);
-        self
+                        v.push(input);
+                        self.path = Some(v);
+                        self
     }
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn set_path(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PathElement>>,
-    ) -> Self {
-        self.path = input;
-        self
+    pub fn set_path(mut self, input: std::option::Option<std::vec::Vec<crate::types::PathElement>>) -> Self {
+        self.path = input; self
     }
     /// <p>A span in a policy.</p>
     pub fn span(mut self, input: crate::types::Span) -> Self {
@@ -62,14 +58,16 @@ impl LocationBuilder {
     }
     /// <p>A span in a policy.</p>
     pub fn set_span(mut self, input: std::option::Option<crate::types::Span>) -> Self {
-        self.span = input;
-        self
+        self.span = input; self
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {
         crate::types::Location {
-            path: self.path,
-            span: self.span,
+            path: self.path
+            ,
+            span: self.span
+            ,
         }
     }
 }
+

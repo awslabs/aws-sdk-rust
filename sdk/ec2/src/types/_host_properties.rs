@@ -3,7 +3,7 @@
 /// <p>Describes the properties of a Dedicated Host.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostProperties {
+pub struct HostProperties  {
     /// <p>The number of cores on the Dedicated Host.</p>
     #[doc(hidden)]
     pub cores: std::option::Option<i32>,
@@ -26,11 +26,11 @@ impl HostProperties {
         self.cores
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    pub fn instance_family(&self) -> std::option::Option<&str> {
+    pub fn instance_family(&self) -> std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The number of sockets on the Dedicated Host.</p>
@@ -67,8 +67,7 @@ impl HostPropertiesBuilder {
     }
     /// <p>The number of cores on the Dedicated Host.</p>
     pub fn set_cores(mut self, input: std::option::Option<i32>) -> Self {
-        self.cores = input;
-        self
+        self.cores = input; self
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl HostPropertiesBuilder {
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
     pub fn instance_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl HostPropertiesBuilder {
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
     pub fn set_instance_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>The number of sockets on the Dedicated Host.</p>
     pub fn sockets(mut self, input: i32) -> Self {
@@ -97,8 +94,7 @@ impl HostPropertiesBuilder {
     }
     /// <p>The number of sockets on the Dedicated Host.</p>
     pub fn set_sockets(mut self, input: std::option::Option<i32>) -> Self {
-        self.sockets = input;
-        self
+        self.sockets = input; self
     }
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
     pub fn total_v_cpus(mut self, input: i32) -> Self {
@@ -107,17 +103,22 @@ impl HostPropertiesBuilder {
     }
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
     pub fn set_total_v_cpus(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_v_cpus = input;
-        self
+        self.total_v_cpus = input; self
     }
     /// Consumes the builder and constructs a [`HostProperties`](crate::types::HostProperties).
     pub fn build(self) -> crate::types::HostProperties {
         crate::types::HostProperties {
-            cores: self.cores,
-            instance_type: self.instance_type,
-            instance_family: self.instance_family,
-            sockets: self.sockets,
-            total_v_cpus: self.total_v_cpus,
+            cores: self.cores
+            ,
+            instance_type: self.instance_type
+            ,
+            instance_family: self.instance_family
+            ,
+            sockets: self.sockets
+            ,
+            total_v_cpus: self.total_v_cpus
+            ,
         }
     }
 }
+

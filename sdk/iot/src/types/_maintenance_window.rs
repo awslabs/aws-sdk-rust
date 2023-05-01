@@ -3,7 +3,7 @@
 /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaintenanceWindow {
+pub struct MaintenanceWindow  {
     /// <p>Displays the start time of the next maintenance window.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct MaintenanceWindow {
 }
 impl MaintenanceWindow {
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>Displays the duration of the next maintenance window.</p>
@@ -43,8 +43,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>Displays the start time of the next maintenance window.</p>
     pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// Consumes the builder and constructs a [`MaintenanceWindow`](crate::types::MaintenanceWindow).
     pub fn build(self) -> crate::types::MaintenanceWindow {
         crate::types::MaintenanceWindow {
-            start_time: self.start_time,
-            duration_in_minutes: self.duration_in_minutes,
+            start_time: self.start_time
+            ,
+            duration_in_minutes: self.duration_in_minutes
+            ,
         }
     }
 }
+

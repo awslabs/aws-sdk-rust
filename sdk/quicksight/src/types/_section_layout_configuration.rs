@@ -3,16 +3,14 @@
 /// <p>The layout configuration of a section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SectionLayoutConfiguration {
+pub struct SectionLayoutConfiguration  {
     /// <p>The free-form layout configuration of a section.</p>
     #[doc(hidden)]
     pub free_form_layout: std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
 }
 impl SectionLayoutConfiguration {
     /// <p>The free-form layout configuration of a section.</p>
-    pub fn free_form_layout(
-        &self,
-    ) -> std::option::Option<&crate::types::FreeFormSectionLayoutConfiguration> {
+    pub fn free_form_layout(&self) -> std::option::Option<& crate::types::FreeFormSectionLayoutConfiguration> {
         self.free_form_layout.as_ref()
     }
 }
@@ -27,30 +25,24 @@ impl SectionLayoutConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SectionLayoutConfigurationBuilder {
-    pub(crate) free_form_layout:
-        std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
+    pub(crate) free_form_layout: std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
 }
 impl SectionLayoutConfigurationBuilder {
     /// <p>The free-form layout configuration of a section.</p>
-    pub fn free_form_layout(
-        mut self,
-        input: crate::types::FreeFormSectionLayoutConfiguration,
-    ) -> Self {
+    pub fn free_form_layout(mut self, input: crate::types::FreeFormSectionLayoutConfiguration) -> Self {
         self.free_form_layout = Some(input);
         self
     }
     /// <p>The free-form layout configuration of a section.</p>
-    pub fn set_free_form_layout(
-        mut self,
-        input: std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
-    ) -> Self {
-        self.free_form_layout = input;
-        self
+    pub fn set_free_form_layout(mut self, input: std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>) -> Self {
+        self.free_form_layout = input; self
     }
     /// Consumes the builder and constructs a [`SectionLayoutConfiguration`](crate::types::SectionLayoutConfiguration).
     pub fn build(self) -> crate::types::SectionLayoutConfiguration {
         crate::types::SectionLayoutConfiguration {
-            free_form_layout: self.free_form_layout,
+            free_form_layout: self.free_form_layout
+            ,
         }
     }
 }
+

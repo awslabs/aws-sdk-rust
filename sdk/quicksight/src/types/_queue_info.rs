@@ -3,7 +3,7 @@
 /// <p>Information about a queued dataset SPICE ingestion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueueInfo {
+pub struct QueueInfo  {
     /// <p>The ID of the queued ingestion.</p>
     #[doc(hidden)]
     pub waiting_on_ingestion: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct QueueInfo {
 }
 impl QueueInfo {
     /// <p>The ID of the queued ingestion.</p>
-    pub fn waiting_on_ingestion(&self) -> std::option::Option<&str> {
+    pub fn waiting_on_ingestion(&self) -> std::option::Option<& str> {
         self.waiting_on_ingestion.as_deref()
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
-    pub fn queued_ingestion(&self) -> std::option::Option<&str> {
+    pub fn queued_ingestion(&self) -> std::option::Option<& str> {
         self.queued_ingestion.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl QueueInfoBuilder {
         self
     }
     /// <p>The ID of the queued ingestion.</p>
-    pub fn set_waiting_on_ingestion(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.waiting_on_ingestion = input;
-        self
+    pub fn set_waiting_on_ingestion(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.waiting_on_ingestion = input; self
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn queued_ingestion(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl QueueInfoBuilder {
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn set_queued_ingestion(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queued_ingestion = input;
-        self
+        self.queued_ingestion = input; self
     }
     /// Consumes the builder and constructs a [`QueueInfo`](crate::types::QueueInfo).
     pub fn build(self) -> crate::types::QueueInfo {
         crate::types::QueueInfo {
-            waiting_on_ingestion: self.waiting_on_ingestion,
-            queued_ingestion: self.queued_ingestion,
+            waiting_on_ingestion: self.waiting_on_ingestion
+            ,
+            queued_ingestion: self.queued_ingestion
+            ,
         }
     }
 }
+

@@ -220,3 +220,4 @@ pub mod builders;
 
 /// Error types that AWS AppSync can respond with.
 pub mod error;
+

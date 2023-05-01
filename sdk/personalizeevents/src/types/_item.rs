@@ -3,27 +3,27 @@
 /// <p>Represents item metadata added to an Items dataset using the <code>PutItems</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Item {
+pub struct Item  {
     /// <p>The ID associated with the item.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
-    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::string::String>,
 }
 impl Item {
     /// <p>The ID associated with the item.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
-    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for Item {
+impl  std::fmt::Debug for Item  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Item");
         formatter.field("item_id", &self.item_id);
@@ -53,26 +53,26 @@ impl ItemBuilder {
     }
     /// <p>The ID associated with the item.</p>
     pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.item_id = input;
-        self
+        self.item_id = input; self
     }
-    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
         self.properties = Some(input.into());
         self
     }
-    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
     }
     /// Consumes the builder and constructs a [`Item`](crate::types::Item).
     pub fn build(self) -> crate::types::Item {
         crate::types::Item {
-            item_id: self.item_id,
-            properties: self.properties,
+            item_id: self.item_id
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
@@ -84,3 +84,4 @@ impl std::fmt::Debug for ItemBuilder {
         formatter.finish()
     }
 }
+

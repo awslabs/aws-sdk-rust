@@ -171,6 +171,8 @@ pub use crate::types::_managed_rule_group_version::ManagedRuleGroupVersionBuilde
 
 pub use crate::types::_managed_rule_group_summary::ManagedRuleGroupSummaryBuilder;
 
+pub use crate::types::_api_key_summary::ApiKeySummaryBuilder;
+
 pub use crate::types::_web_acl::WebAclBuilder;
 
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroupBuilder;
@@ -206,3 +208,4 @@ pub use crate::types::_managed_rule_set_version::ManagedRuleSetVersionBuilder;
 pub use crate::types::_ip_set::IpSetBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
+

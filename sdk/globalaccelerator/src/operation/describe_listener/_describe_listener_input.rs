@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeListenerInput {
+pub struct DescribeListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
 }
 impl DescribeListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
 }
 impl DescribeListenerInput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
-    pub fn builder() -> crate::operation::describe_listener::builders::DescribeListenerInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_listener::builders::DescribeListenerInputBuilder {
         crate::operation::describe_listener::builders::DescribeListenerInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl DescribeListenerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_listener::DescribeListenerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_listener::DescribeListenerInput {
-            listener_arn: self.listener_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_listener::DescribeListenerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_listener::DescribeListenerInput {
+                listener_arn: self.listener_arn
+                ,
+            }
+        )
     }
 }
+

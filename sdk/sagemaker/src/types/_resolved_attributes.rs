@@ -3,7 +3,7 @@
 /// <p>The resolved attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolvedAttributes {
+pub struct ResolvedAttributes  {
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
     #[doc(hidden)]
     pub auto_ml_job_objective: std::option::Option<crate::types::AutoMlJobObjective>,
@@ -16,17 +16,15 @@ pub struct ResolvedAttributes {
 }
 impl ResolvedAttributes {
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
-    pub fn auto_ml_job_objective(&self) -> std::option::Option<&crate::types::AutoMlJobObjective> {
+    pub fn auto_ml_job_objective(&self) -> std::option::Option<& crate::types::AutoMlJobObjective> {
         self.auto_ml_job_objective.as_ref()
     }
     /// <p>The problem type.</p>
-    pub fn problem_type(&self) -> std::option::Option<&crate::types::ProblemType> {
+    pub fn problem_type(&self) -> std::option::Option<& crate::types::ProblemType> {
         self.problem_type.as_ref()
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn completion_criteria(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> std::option::Option<& crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
 }
@@ -52,12 +50,8 @@ impl ResolvedAttributesBuilder {
         self
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
-    pub fn set_auto_ml_job_objective(
-        mut self,
-        input: std::option::Option<crate::types::AutoMlJobObjective>,
-    ) -> Self {
-        self.auto_ml_job_objective = input;
-        self
+    pub fn set_auto_ml_job_objective(mut self, input: std::option::Option<crate::types::AutoMlJobObjective>) -> Self {
+        self.auto_ml_job_objective = input; self
     }
     /// <p>The problem type.</p>
     pub fn problem_type(mut self, input: crate::types::ProblemType) -> Self {
@@ -65,12 +59,8 @@ impl ResolvedAttributesBuilder {
         self
     }
     /// <p>The problem type.</p>
-    pub fn set_problem_type(
-        mut self,
-        input: std::option::Option<crate::types::ProblemType>,
-    ) -> Self {
-        self.problem_type = input;
-        self
+    pub fn set_problem_type(mut self, input: std::option::Option<crate::types::ProblemType>) -> Self {
+        self.problem_type = input; self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn completion_criteria(mut self, input: crate::types::AutoMlJobCompletionCriteria) -> Self {
@@ -78,19 +68,19 @@ impl ResolvedAttributesBuilder {
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn set_completion_criteria(
-        mut self,
-        input: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
-    ) -> Self {
-        self.completion_criteria = input;
-        self
+    pub fn set_completion_criteria(mut self, input: std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
+        self.completion_criteria = input; self
     }
     /// Consumes the builder and constructs a [`ResolvedAttributes`](crate::types::ResolvedAttributes).
     pub fn build(self) -> crate::types::ResolvedAttributes {
         crate::types::ResolvedAttributes {
-            auto_ml_job_objective: self.auto_ml_job_objective,
-            problem_type: self.problem_type,
-            completion_criteria: self.completion_criteria,
+            auto_ml_job_objective: self.auto_ml_job_objective
+            ,
+            problem_type: self.problem_type
+            ,
+            completion_criteria: self.completion_criteria
+            ,
         }
     }
 }
+

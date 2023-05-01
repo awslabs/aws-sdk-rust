@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVehicleOutput {
+pub struct DeleteVehicleOutput  {
     /// <p>The ID of the deleted vehicle.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct DeleteVehicleOutput {
 }
 impl DeleteVehicleOutput {
     /// <p>The ID of the deleted vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVehicleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVehicleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVehicleOutput`](crate::operation::delete_vehicle::DeleteVehicleOutput).
     pub fn builder() -> crate::operation::delete_vehicle::builders::DeleteVehicleOutputBuilder {
@@ -49,8 +49,7 @@ impl DeleteVehicleOutputBuilder {
     }
     /// <p>The ID of the deleted vehicle.</p>
     pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl DeleteVehicleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVehicleOutput`](crate::operation::delete_vehicle::DeleteVehicleOutput).
     pub fn build(self) -> crate::operation::delete_vehicle::DeleteVehicleOutput {
         crate::operation::delete_vehicle::DeleteVehicleOutput {
-            vehicle_name: self.vehicle_name,
-            arn: self.arn,
+            vehicle_name: self.vehicle_name
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cdiinputresolution = unimplemented!();
 /// match cdiinputresolution {
@@ -32,22 +32,14 @@
 /// Specifically, when `cdiinputresolution` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CdiInputResolution::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Maximum CDI input resolution; SD is 480i and 576i up to 30 frames-per-second (fps), HD is 720p up to 60 fps / 1080i up to 30 fps, FHD is 1080p up to 60 fps, UHD is 2160p up to 60 fps
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CdiInputResolution {
     #[allow(missing_docs)] // documentation missing in model
     Fhd,
@@ -58,46 +50,45 @@ pub enum CdiInputResolution {
     #[allow(missing_docs)] // documentation missing in model
     Uhd,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CdiInputResolution {
-    fn from(s: &str) -> Self {
-        match s {
-            "FHD" => CdiInputResolution::Fhd,
-            "HD" => CdiInputResolution::Hd,
-            "SD" => CdiInputResolution::Sd,
-            "UHD" => CdiInputResolution::Uhd,
-            other => CdiInputResolution::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FHD" => CdiInputResolution::Fhd,
+"HD" => CdiInputResolution::Hd,
+"SD" => CdiInputResolution::Sd,
+"UHD" => CdiInputResolution::Uhd,
+other => CdiInputResolution::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CdiInputResolution {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CdiInputResolution::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CdiInputResolution::from(s))
+                }
+            }
 impl CdiInputResolution {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CdiInputResolution::Fhd => "FHD",
-            CdiInputResolution::Hd => "HD",
-            CdiInputResolution::Sd => "SD",
-            CdiInputResolution::Uhd => "UHD",
-            CdiInputResolution::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FHD", "HD", "SD", "UHD"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CdiInputResolution::Fhd => "FHD",
+    CdiInputResolution::Hd => "HD",
+    CdiInputResolution::Sd => "SD",
+    CdiInputResolution::Uhd => "UHD",
+    CdiInputResolution::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FHD", "HD", "SD", "UHD"]
+                }
+            }
 impl AsRef<str> for CdiInputResolution {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

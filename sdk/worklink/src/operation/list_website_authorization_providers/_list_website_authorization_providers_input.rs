@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebsiteAuthorizationProvidersInput {
+pub struct ListWebsiteAuthorizationProvidersInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListWebsiteAuthorizationProvidersInput {
 }
 impl ListWebsiteAuthorizationProvidersInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be included in the next page.</p>
@@ -29,7 +29,7 @@ impl ListWebsiteAuthorizationProvidersInput {
 }
 impl ListWebsiteAuthorizationProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteAuthorizationProvidersInput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput).
-    pub fn builder() -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersInputBuilder{
+    pub fn builder() -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersInputBuilder {
         crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,11 +68,10 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListWebsiteAuthorizationProvidersInput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput).
-    pub fn build(self) -> Result<crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput {
                 fleet_arn: self.fleet_arn
@@ -87,3 +84,4 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
         )
     }
 }
+

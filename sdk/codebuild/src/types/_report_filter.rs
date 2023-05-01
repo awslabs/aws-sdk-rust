@@ -3,14 +3,14 @@
 /// <p> A filter used to return reports with the status specified by the input <code>status</code> parameter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportFilter {
+pub struct ReportFilter  {
     /// <p> The status used to filter reports. You can filter using one status only. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ReportStatusType>,
 }
 impl ReportFilter {
     /// <p> The status used to filter reports. You can filter using one status only. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReportStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ReportStatusType> {
         self.status.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl ReportFilterBuilder {
         self
     }
     /// <p> The status used to filter reports. You can filter using one status only. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ReportStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ReportStatusType>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ReportFilter`](crate::types::ReportFilter).
     pub fn build(self) -> crate::types::ReportFilter {
         crate::types::ReportFilter {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

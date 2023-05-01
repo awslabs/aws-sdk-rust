@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAttributeGroupOutput {
+pub struct UpdateAttributeGroupOutput  {
     /// <p>The updated information of the attribute group.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::types::AttributeGroup>,
@@ -10,19 +10,18 @@ pub struct UpdateAttributeGroupOutput {
 }
 impl UpdateAttributeGroupOutput {
     /// <p>The updated information of the attribute group.</p>
-    pub fn attribute_group(&self) -> std::option::Option<&crate::types::AttributeGroup> {
+    pub fn attribute_group(&self) -> std::option::Option<& crate::types::AttributeGroup> {
         self.attribute_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAttributeGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAttributeGroupOutput`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_attribute_group::builders::UpdateAttributeGroupOutputBuilder {
         crate::operation::update_attribute_group::builders::UpdateAttributeGroupOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateAttributeGroupOutputBuilder {
         self
     }
     /// <p>The updated information of the attribute group.</p>
-    pub fn set_attribute_group(
-        mut self,
-        input: std::option::Option<crate::types::AttributeGroup>,
-    ) -> Self {
-        self.attribute_group = input;
-        self
+    pub fn set_attribute_group(mut self, input: std::option::Option<crate::types::AttributeGroup>) -> Self {
+        self.attribute_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAttributeGroupOutput`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput).
     pub fn build(self) -> crate::operation::update_attribute_group::UpdateAttributeGroupOutput {
         crate::operation::update_attribute_group::UpdateAttributeGroupOutput {
-            attribute_group: self.attribute_group,
+            attribute_group: self.attribute_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

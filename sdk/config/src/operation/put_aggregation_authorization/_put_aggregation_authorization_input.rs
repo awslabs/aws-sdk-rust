@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAggregationAuthorizationInput {
+pub struct PutAggregationAuthorizationInput  {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     #[doc(hidden)]
     pub authorized_account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct PutAggregationAuthorizationInput {
 }
 impl PutAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn authorized_account_id(&self) -> std::option::Option<&str> {
+    pub fn authorized_account_id(&self) -> std::option::Option<& str> {
         self.authorized_account_id.as_deref()
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn authorized_aws_region(&self) -> std::option::Option<&str> {
+    pub fn authorized_aws_region(&self) -> std::option::Option<& str> {
         self.authorized_aws_region.as_deref()
     }
     /// <p>An array of tag object.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl PutAggregationAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`PutAggregationAuthorizationInput`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput).
-    pub fn builder() -> crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder {
         crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl PutAggregationAuthorizationInputBuilder {
         self
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn set_authorized_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorized_account_id = input;
-        self
+    pub fn set_authorized_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorized_account_id = input; self
     }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn authorized_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,12 +58,8 @@ impl PutAggregationAuthorizationInputBuilder {
         self
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn set_authorized_aws_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorized_aws_region = input;
-        self
+    pub fn set_authorized_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorized_aws_region = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -76,31 +68,26 @@ impl PutAggregationAuthorizationInputBuilder {
     /// <p>An array of tag object.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of tag object.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`PutAggregationAuthorizationInput`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput {
-                authorized_account_id: self.authorized_account_id,
-                authorized_aws_region: self.authorized_aws_region,
-                tags: self.tags,
-            },
+                authorized_account_id: self.authorized_account_id
+                ,
+                authorized_aws_region: self.authorized_aws_region
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

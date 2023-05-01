@@ -3,7 +3,7 @@
 /// <p>Information about the state of the load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancerState {
+pub struct LoadBalancerState  {
     /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::LoadBalancerStateEnum>,
@@ -13,11 +13,11 @@ pub struct LoadBalancerState {
 }
 impl LoadBalancerState {
     /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::LoadBalancerStateEnum> {
+    pub fn code(&self) -> std::option::Option<& crate::types::LoadBalancerStateEnum> {
         self.code.as_ref()
     }
     /// <p>A description of the state.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl LoadBalancerStateBuilder {
         self
     }
     /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::LoadBalancerStateEnum>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::LoadBalancerStateEnum>) -> Self {
+        self.code = input; self
     }
     /// <p>A description of the state.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl LoadBalancerStateBuilder {
     }
     /// <p>A description of the state.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`LoadBalancerState`](crate::types::LoadBalancerState).
     pub fn build(self) -> crate::types::LoadBalancerState {
         crate::types::LoadBalancerState {
-            code: self.code,
-            reason: self.reason,
+            code: self.code
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

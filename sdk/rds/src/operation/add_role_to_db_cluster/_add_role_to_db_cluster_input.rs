@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRoleToDbClusterInput {
+pub struct AddRoleToDbClusterInput  {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct AddRoleToDbClusterInput {
 }
 impl AddRoleToDbClusterInput {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
-    pub fn feature_name(&self) -> std::option::Option<&str> {
+    pub fn feature_name(&self) -> std::option::Option<& str> {
         self.feature_name.as_deref()
     }
 }
 impl AddRoleToDbClusterInput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder {
-        crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder {
+        crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder::default()
     }
 }
 
@@ -51,12 +49,8 @@ impl AddRoleToDbClusterInputBuilder {
         self
     }
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_identifier = input;
-        self
+    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl AddRoleToDbClusterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl AddRoleToDbClusterInputBuilder {
     }
     /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_name = input;
-        self
+        self.feature_name = input; self
     }
     /// Consumes the builder and constructs a [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                role_arn: self.role_arn,
-                feature_name: self.feature_name,
-            },
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                role_arn: self.role_arn
+                ,
+                feature_name: self.feature_name
+                ,
+            }
         )
     }
 }
+

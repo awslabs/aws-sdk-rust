@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCollectionOutput {
+pub struct CreateCollectionOutput  {
     /// <p>Details about the collection.</p>
     #[doc(hidden)]
     pub create_collection_detail: std::option::Option<crate::types::CreateCollectionDetail>,
@@ -10,21 +10,18 @@ pub struct CreateCollectionOutput {
 }
 impl CreateCollectionOutput {
     /// <p>Details about the collection.</p>
-    pub fn create_collection_detail(
-        &self,
-    ) -> std::option::Option<&crate::types::CreateCollectionDetail> {
+    pub fn create_collection_detail(&self) -> std::option::Option<& crate::types::CreateCollectionDetail> {
         self.create_collection_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
-    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionOutputBuilder {
         crate::operation::create_collection::builders::CreateCollectionOutputBuilder::default()
     }
 }
@@ -43,27 +40,25 @@ impl CreateCollectionOutputBuilder {
         self
     }
     /// <p>Details about the collection.</p>
-    pub fn set_create_collection_detail(
-        mut self,
-        input: std::option::Option<crate::types::CreateCollectionDetail>,
-    ) -> Self {
-        self.create_collection_detail = input;
-        self
+    pub fn set_create_collection_detail(mut self, input: std::option::Option<crate::types::CreateCollectionDetail>) -> Self {
+        self.create_collection_detail = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
     pub fn build(self) -> crate::operation::create_collection::CreateCollectionOutput {
         crate::operation::create_collection::CreateCollectionOutput {
-            create_collection_detail: self.create_collection_detail,
+            create_collection_detail: self.create_collection_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

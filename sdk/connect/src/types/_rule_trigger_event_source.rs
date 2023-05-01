@@ -3,7 +3,7 @@
 /// <p>The name of the event source. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleTriggerEventSource {
+pub struct RuleTriggerEventSource  {
     /// <p>The name of the event source.</p>
     #[doc(hidden)]
     pub event_source_name: std::option::Option<crate::types::EventSourceName>,
@@ -13,11 +13,11 @@ pub struct RuleTriggerEventSource {
 }
 impl RuleTriggerEventSource {
     /// <p>The name of the event source.</p>
-    pub fn event_source_name(&self) -> std::option::Option<&crate::types::EventSourceName> {
+    pub fn event_source_name(&self) -> std::option::Option<& crate::types::EventSourceName> {
         self.event_source_name.as_ref()
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+    pub fn integration_association_id(&self) -> std::option::Option<& str> {
         self.integration_association_id.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl RuleTriggerEventSourceBuilder {
         self
     }
     /// <p>The name of the event source.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: std::option::Option<crate::types::EventSourceName>,
-    ) -> Self {
-        self.event_source_name = input;
-        self
+    pub fn set_event_source_name(mut self, input: std::option::Option<crate::types::EventSourceName>) -> Self {
+        self.event_source_name = input; self
     }
     /// <p>The identifier for the integration association.</p>
     pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl RuleTriggerEventSourceBuilder {
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.integration_association_id = input;
-        self
+    pub fn set_integration_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.integration_association_id = input; self
     }
     /// Consumes the builder and constructs a [`RuleTriggerEventSource`](crate::types::RuleTriggerEventSource).
     pub fn build(self) -> crate::types::RuleTriggerEventSource {
         crate::types::RuleTriggerEventSource {
-            event_source_name: self.event_source_name,
-            integration_association_id: self.integration_association_id,
+            event_source_name: self.event_source_name
+            ,
+            integration_association_id: self.integration_association_id
+            ,
         }
     }
 }
+

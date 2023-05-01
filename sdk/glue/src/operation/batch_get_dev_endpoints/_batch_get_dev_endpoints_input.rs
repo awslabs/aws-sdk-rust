@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDevEndpointsInput {
+pub struct BatchGetDevEndpointsInput  {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
     #[doc(hidden)]
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDevEndpointsInput {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dev_endpoint_names(&self) -> std::option::Option<& [std::string::String]> {
         self.dev_endpoint_names.as_deref()
     }
 }
 impl BatchGetDevEndpointsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevEndpointsInput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder {
         crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder::default()
     }
 }
@@ -35,29 +34,22 @@ impl BatchGetDevEndpointsInputBuilder {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
     pub fn dev_endpoint_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dev_endpoint_names.unwrap_or_default();
-        v.push(input.into());
-        self.dev_endpoint_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.dev_endpoint_names = Some(v);
+                        self
     }
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn set_dev_endpoint_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.dev_endpoint_names = input;
-        self
+    pub fn set_dev_endpoint_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.dev_endpoint_names = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetDevEndpointsInput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput {
-                dev_endpoint_names: self.dev_endpoint_names,
-            },
+                dev_endpoint_names: self.dev_endpoint_names
+                ,
+            }
         )
     }
 }
+

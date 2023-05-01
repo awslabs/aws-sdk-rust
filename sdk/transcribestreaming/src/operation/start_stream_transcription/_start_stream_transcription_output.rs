@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct StartStreamTranscriptionOutput {
+pub struct StartStreamTranscriptionOutput  {
     /// <p>Provides the identifier for your streaming request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -22,10 +22,7 @@ pub struct StartStreamTranscriptionOutput {
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
-    pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
-        crate::types::TranscriptResultStream,
-        crate::types::error::TranscriptResultStreamError,
-    >,
+    pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -78,11 +75,11 @@ pub struct StartStreamTranscriptionOutput {
 }
 impl StartStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Provides the language code that you specified in your request.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Provides the sample rate that you specified in your request.</p>
@@ -90,34 +87,27 @@ impl StartStreamTranscriptionOutput {
         self.media_sample_rate_hertz
     }
     /// <p>Provides the media encoding you specified in your request.</p>
-    pub fn media_encoding(&self) -> std::option::Option<&crate::types::MediaEncoding> {
+    pub fn media_encoding(&self) -> std::option::Option<& crate::types::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>Provides the identifier for your transcription session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Provides detailed information about your streaming session.</p>
-    pub fn transcript_result_stream(
-        &self,
-    ) -> &aws_smithy_http::event_stream::Receiver<
-        crate::types::TranscriptResultStream,
-        crate::types::error::TranscriptResultStreamError,
-    > {
+    pub fn transcript_result_stream(&self) -> & aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError> {
         &self.transcript_result_stream
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
-    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Provides the vocabulary filtering method used in your transcription.</p>
-    pub fn vocabulary_filter_method(
-        &self,
-    ) -> std::option::Option<&crate::types::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> std::option::Option<& crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
@@ -137,29 +127,23 @@ impl StartStreamTranscriptionOutput {
         self.enable_partial_results_stabilization
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn partial_results_stability(
-        &self,
-    ) -> std::option::Option<&crate::types::PartialResultsStability> {
+    pub fn partial_results_stability(&self) -> std::option::Option<& crate::types::PartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ContentIdentificationType> {
+    pub fn content_identification_type(&self) -> std::option::Option<& crate::types::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Shows whether content redaction was enabled for your transcription.</p>
-    pub fn content_redaction_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ContentRedactionType> {
+    pub fn content_redaction_type(&self) -> std::option::Option<& crate::types::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you specified in your request.</p>
-    pub fn pii_entity_types(&self) -> std::option::Option<&str> {
+    pub fn pii_entity_types(&self) -> std::option::Option<& str> {
         self.pii_entity_types.as_deref()
     }
     /// <p>Provides the name of the custom language model that you specified in your request.</p>
-    pub fn language_model_name(&self) -> std::option::Option<&str> {
+    pub fn language_model_name(&self) -> std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
     /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
@@ -167,32 +151,30 @@ impl StartStreamTranscriptionOutput {
         self.identify_language
     }
     /// <p>Provides the language codes that you specified in your request.</p>
-    pub fn language_options(&self) -> std::option::Option<&str> {
+    pub fn language_options(&self) -> std::option::Option<& str> {
         self.language_options.as_deref()
     }
     /// <p>Provides the preferred language that you specified in your request.</p>
-    pub fn preferred_language(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn preferred_language(&self) -> std::option::Option<& crate::types::LanguageCode> {
         self.preferred_language.as_ref()
     }
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
-    pub fn vocabulary_names(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_names(&self) -> std::option::Option<& str> {
         self.vocabulary_names.as_deref()
     }
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
-    pub fn vocabulary_filter_names(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_filter_names(&self) -> std::option::Option<& str> {
         self.vocabulary_filter_names.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartStreamTranscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartStreamTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionOutput`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_stream_transcription::builders::StartStreamTranscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_stream_transcription::builders::StartStreamTranscriptionOutputBuilder {
         crate::operation::start_stream_transcription::builders::StartStreamTranscriptionOutputBuilder::default()
     }
 }
@@ -207,22 +189,15 @@ pub struct StartStreamTranscriptionOutputBuilder {
     pub(crate) media_encoding: std::option::Option<crate::types::MediaEncoding>,
     pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     pub(crate) session_id: std::option::Option<std::string::String>,
-    pub(crate) transcript_result_stream: std::option::Option<
-        aws_smithy_http::event_stream::Receiver<
-            crate::types::TranscriptResultStream,
-            crate::types::error::TranscriptResultStreamError,
-        >,
-    >,
+    pub(crate) transcript_result_stream: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>>,
     pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
     pub(crate) vocabulary_filter_method: std::option::Option<crate::types::VocabularyFilterMethod>,
     pub(crate) show_speaker_label: std::option::Option<bool>,
     pub(crate) enable_channel_identification: std::option::Option<bool>,
     pub(crate) number_of_channels: std::option::Option<i32>,
     pub(crate) enable_partial_results_stabilization: std::option::Option<bool>,
-    pub(crate) partial_results_stability:
-        std::option::Option<crate::types::PartialResultsStability>,
-    pub(crate) content_identification_type:
-        std::option::Option<crate::types::ContentIdentificationType>,
+    pub(crate) partial_results_stability: std::option::Option<crate::types::PartialResultsStability>,
+    pub(crate) content_identification_type: std::option::Option<crate::types::ContentIdentificationType>,
     pub(crate) content_redaction_type: std::option::Option<crate::types::ContentRedactionType>,
     pub(crate) pii_entity_types: std::option::Option<std::string::String>,
     pub(crate) language_model_name: std::option::Option<std::string::String>,
@@ -241,8 +216,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the identifier for your streaming request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>Provides the language code that you specified in your request.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -250,12 +224,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the language code that you specified in your request.</p>
-    pub fn set_language_code(
-        mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
     }
     /// <p>Provides the sample rate that you specified in your request.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
@@ -264,8 +234,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the sample rate that you specified in your request.</p>
     pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
-        self.media_sample_rate_hertz = input;
-        self
+        self.media_sample_rate_hertz = input; self
     }
     /// <p>Provides the media encoding you specified in your request.</p>
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
@@ -273,12 +242,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the media encoding you specified in your request.</p>
-    pub fn set_media_encoding(
-        mut self,
-        input: std::option::Option<crate::types::MediaEncoding>,
-    ) -> Self {
-        self.media_encoding = input;
-        self
+    pub fn set_media_encoding(mut self, input: std::option::Option<crate::types::MediaEncoding>) -> Self {
+        self.media_encoding = input; self
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
     pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -287,8 +252,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
     pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>Provides the identifier for your transcription session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -297,32 +261,16 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the identifier for your transcription session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>Provides detailed information about your streaming session.</p>
-    pub fn transcript_result_stream(
-        mut self,
-        input: aws_smithy_http::event_stream::Receiver<
-            crate::types::TranscriptResultStream,
-            crate::types::error::TranscriptResultStreamError,
-        >,
-    ) -> Self {
+    pub fn transcript_result_stream(mut self, input: aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>) -> Self {
         self.transcript_result_stream = Some(input);
         self
     }
     /// <p>Provides detailed information about your streaming session.</p>
-    pub fn set_transcript_result_stream(
-        mut self,
-        input: std::option::Option<
-            aws_smithy_http::event_stream::Receiver<
-                crate::types::TranscriptResultStream,
-                crate::types::error::TranscriptResultStreamError,
-            >,
-        >,
-    ) -> Self {
-        self.transcript_result_stream = input;
-        self
+    pub fn set_transcript_result_stream(mut self, input: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>>) -> Self {
+        self.transcript_result_stream = input; self
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
     pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -330,12 +278,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+    pub fn set_vocabulary_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vocabulary_filter_name = input; self
     }
     /// <p>Provides the vocabulary filtering method used in your transcription.</p>
     pub fn vocabulary_filter_method(mut self, input: crate::types::VocabularyFilterMethod) -> Self {
@@ -343,12 +287,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the vocabulary filtering method used in your transcription.</p>
-    pub fn set_vocabulary_filter_method(
-        mut self,
-        input: std::option::Option<crate::types::VocabularyFilterMethod>,
-    ) -> Self {
-        self.vocabulary_filter_method = input;
-        self
+    pub fn set_vocabulary_filter_method(mut self, input: std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
+        self.vocabulary_filter_method = input; self
     }
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
     pub fn show_speaker_label(mut self, input: bool) -> Self {
@@ -357,8 +297,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
     pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
-        self.show_speaker_label = input;
-        self
+        self.show_speaker_label = input; self
     }
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
     pub fn enable_channel_identification(mut self, input: bool) -> Self {
@@ -367,8 +306,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
     pub fn set_enable_channel_identification(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_channel_identification = input;
-        self
+        self.enable_channel_identification = input; self
     }
     /// <p>Provides the number of channels that you specified in your request.</p>
     pub fn number_of_channels(mut self, input: i32) -> Self {
@@ -377,8 +315,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the number of channels that you specified in your request.</p>
     pub fn set_number_of_channels(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_channels = input;
-        self
+        self.number_of_channels = input; self
     }
     /// <p>Shows whether partial results stabilization was enabled for your transcription.</p>
     pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
@@ -386,44 +323,26 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Shows whether partial results stabilization was enabled for your transcription.</p>
-    pub fn set_enable_partial_results_stabilization(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.enable_partial_results_stabilization = input;
-        self
+    pub fn set_enable_partial_results_stabilization(mut self, input: std::option::Option<bool>) -> Self {
+        self.enable_partial_results_stabilization = input; self
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn partial_results_stability(
-        mut self,
-        input: crate::types::PartialResultsStability,
-    ) -> Self {
+    pub fn partial_results_stability(mut self, input: crate::types::PartialResultsStability) -> Self {
         self.partial_results_stability = Some(input);
         self
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn set_partial_results_stability(
-        mut self,
-        input: std::option::Option<crate::types::PartialResultsStability>,
-    ) -> Self {
-        self.partial_results_stability = input;
-        self
+    pub fn set_partial_results_stability(mut self, input: std::option::Option<crate::types::PartialResultsStability>) -> Self {
+        self.partial_results_stability = input; self
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::ContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::ContentIdentificationType) -> Self {
         self.content_identification_type = Some(input);
         self
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: std::option::Option<crate::types::ContentIdentificationType>,
-    ) -> Self {
-        self.content_identification_type = input;
-        self
+    pub fn set_content_identification_type(mut self, input: std::option::Option<crate::types::ContentIdentificationType>) -> Self {
+        self.content_identification_type = input; self
     }
     /// <p>Shows whether content redaction was enabled for your transcription.</p>
     pub fn content_redaction_type(mut self, input: crate::types::ContentRedactionType) -> Self {
@@ -431,12 +350,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Shows whether content redaction was enabled for your transcription.</p>
-    pub fn set_content_redaction_type(
-        mut self,
-        input: std::option::Option<crate::types::ContentRedactionType>,
-    ) -> Self {
-        self.content_redaction_type = input;
-        self
+    pub fn set_content_redaction_type(mut self, input: std::option::Option<crate::types::ContentRedactionType>) -> Self {
+        self.content_redaction_type = input; self
     }
     /// <p>Lists the PII entity types you specified in your request.</p>
     pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
@@ -445,8 +360,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Lists the PII entity types you specified in your request.</p>
     pub fn set_pii_entity_types(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pii_entity_types = input;
-        self
+        self.pii_entity_types = input; self
     }
     /// <p>Provides the name of the custom language model that you specified in your request.</p>
     pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -454,12 +368,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the name of the custom language model that you specified in your request.</p>
-    pub fn set_language_model_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.language_model_name = input;
-        self
+    pub fn set_language_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.language_model_name = input; self
     }
     /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
     pub fn identify_language(mut self, input: bool) -> Self {
@@ -468,8 +378,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
     pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
-        self.identify_language = input;
-        self
+        self.identify_language = input; self
     }
     /// <p>Provides the language codes that you specified in your request.</p>
     pub fn language_options(mut self, input: impl Into<std::string::String>) -> Self {
@@ -478,8 +387,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the language codes that you specified in your request.</p>
     pub fn set_language_options(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_options = input;
-        self
+        self.language_options = input; self
     }
     /// <p>Provides the preferred language that you specified in your request.</p>
     pub fn preferred_language(mut self, input: crate::types::LanguageCode) -> Self {
@@ -487,12 +395,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the preferred language that you specified in your request.</p>
-    pub fn set_preferred_language(
-        mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.preferred_language = input;
-        self
+    pub fn set_preferred_language(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.preferred_language = input; self
     }
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
     pub fn vocabulary_names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -501,8 +405,7 @@ impl StartStreamTranscriptionOutputBuilder {
     }
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
     pub fn set_vocabulary_names(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_names = input;
-        self
+        self.vocabulary_names = input; self
     }
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
     pub fn vocabulary_filter_names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -510,29 +413,20 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
-    pub fn set_vocabulary_filter_names(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vocabulary_filter_names = input;
-        self
+    pub fn set_vocabulary_filter_names(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vocabulary_filter_names = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_stream_transcription::StartStreamTranscriptionOutput {
                 request_id: self.request_id
@@ -593,3 +487,4 @@ impl StartStreamTranscriptionOutputBuilder {
         )
     }
 }
+

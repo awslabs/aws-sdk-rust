@@ -3,7 +3,7 @@
 /// <p>The output of the DescribeCertificate operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificateOutput {
+pub struct DescribeCertificateOutput  {
     /// <p>The description of the certificate.</p>
     #[doc(hidden)]
     pub certificate_description: std::option::Option<crate::types::CertificateDescription>,
@@ -11,23 +11,19 @@ pub struct DescribeCertificateOutput {
 }
 impl DescribeCertificateOutput {
     /// <p>The description of the certificate.</p>
-    pub fn certificate_description(
-        &self,
-    ) -> std::option::Option<&crate::types::CertificateDescription> {
+    pub fn certificate_description(&self) -> std::option::Option<& crate::types::CertificateDescription> {
         self.certificate_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder {
-        crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder {
+        crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder::default()
     }
 }
 
@@ -45,27 +41,25 @@ impl DescribeCertificateOutputBuilder {
         self
     }
     /// <p>The description of the certificate.</p>
-    pub fn set_certificate_description(
-        mut self,
-        input: std::option::Option<crate::types::CertificateDescription>,
-    ) -> Self {
-        self.certificate_description = input;
-        self
+    pub fn set_certificate_description(mut self, input: std::option::Option<crate::types::CertificateDescription>) -> Self {
+        self.certificate_description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput).
     pub fn build(self) -> crate::operation::describe_certificate::DescribeCertificateOutput {
         crate::operation::describe_certificate::DescribeCertificateOutput {
-            certificate_description: self.certificate_description,
+            certificate_description: self.certificate_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

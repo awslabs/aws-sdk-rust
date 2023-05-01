@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDevEnvironmentOutput {
+pub struct StartDevEnvironmentOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -19,33 +19,31 @@ pub struct StartDevEnvironmentOutput {
 }
 impl StartDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DevEnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DevEnvironmentStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartDevEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentOutput`](crate::operation::start_dev_environment::StartDevEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder {
-        crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder {
+        crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::default()
     }
 }
 
@@ -67,8 +65,7 @@ impl StartDevEnvironmentOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +74,7 @@ impl StartDevEnvironmentOutputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +83,7 @@ impl StartDevEnvironmentOutputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The status of the Dev Environment. </p>
     pub fn status(mut self, input: crate::types::DevEnvironmentStatus) -> Self {
@@ -96,30 +91,31 @@ impl StartDevEnvironmentOutputBuilder {
         self
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DevEnvironmentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DevEnvironmentStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartDevEnvironmentOutput`](crate::operation::start_dev_environment::StartDevEnvironmentOutput).
     pub fn build(self) -> crate::operation::start_dev_environment::StartDevEnvironmentOutput {
         crate::operation::start_dev_environment::StartDevEnvironmentOutput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            id: self.id,
-            status: self.status,
+            space_name: self.space_name
+            ,
+            project_name: self.project_name
+            ,
+            id: self.id
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

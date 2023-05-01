@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRelatedItemsInput {
+pub struct ListRelatedItemsInput  {
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListRelatedItemsInput {
 }
 impl ListRelatedItemsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The maximum number of related items per page.</p>
@@ -23,14 +23,13 @@ impl ListRelatedItemsInput {
         self.max_results
     }
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListRelatedItemsInput {
     /// Creates a new builder-style object to manufacture [`ListRelatedItemsInput`](crate::operation::list_related_items::ListRelatedItemsInput).
-    pub fn builder() -> crate::operation::list_related_items::builders::ListRelatedItemsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_related_items::builders::ListRelatedItemsInputBuilder {
         crate::operation::list_related_items::builders::ListRelatedItemsInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl ListRelatedItemsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.incident_record_arn = input;
-        self
+    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.incident_record_arn = input; self
     }
     /// <p>The maximum number of related items per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -64,8 +59,7 @@ impl ListRelatedItemsInputBuilder {
     }
     /// <p>The maximum number of related items per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,22 +68,20 @@ impl ListRelatedItemsInputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListRelatedItemsInput`](crate::operation::list_related_items::ListRelatedItemsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_related_items::ListRelatedItemsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_related_items::ListRelatedItemsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_related_items::ListRelatedItemsInput {
-                incident_record_arn: self.incident_record_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                incident_record_arn: self.incident_record_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

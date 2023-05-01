@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateOriginationIdentityInput {
+pub struct DisassociateOriginationIdentityInput  {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct DisassociateOriginationIdentityInput {
 }
 impl DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DisassociateOriginationIdentityInput {
     /// Creates a new builder-style object to manufacture [`DisassociateOriginationIdentityInput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput).
-    pub fn builder() -> crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder {
         crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DisassociateOriginationIdentityInputBuilder {
     }
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
     pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl DisassociateOriginationIdentityInputBuilder {
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.origination_identity = input;
-        self
+    pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.origination_identity = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl DisassociateOriginationIdentityInputBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,16 +85,10 @@ impl DisassociateOriginationIdentityInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateOriginationIdentityInput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput {
                 pool_id: self.pool_id
@@ -115,3 +103,4 @@ impl DisassociateOriginationIdentityInputBuilder {
         )
     }
 }
+

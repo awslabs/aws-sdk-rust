@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterEcsClusterOutput {
+pub struct RegisterEcsClusterOutput  {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
@@ -11,19 +11,18 @@ pub struct RegisterEcsClusterOutput {
 }
 impl RegisterEcsClusterOutput {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<& str> {
         self.ecs_cluster_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterEcsClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterEcsClusterOutput {
     /// Creates a new builder-style object to manufacture [`RegisterEcsClusterOutput`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterOutputBuilder {
+    pub fn builder() -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterOutputBuilder {
         crate::operation::register_ecs_cluster::builders::RegisterEcsClusterOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl RegisterEcsClusterOutputBuilder {
     }
     /// <p>The cluster's ARN.</p>
     pub fn set_ecs_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ecs_cluster_arn = input;
-        self
+        self.ecs_cluster_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterEcsClusterOutput`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput).
     pub fn build(self) -> crate::operation::register_ecs_cluster::RegisterEcsClusterOutput {
         crate::operation::register_ecs_cluster::RegisterEcsClusterOutput {
-            ecs_cluster_arn: self.ecs_cluster_arn,
+            ecs_cluster_arn: self.ecs_cluster_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

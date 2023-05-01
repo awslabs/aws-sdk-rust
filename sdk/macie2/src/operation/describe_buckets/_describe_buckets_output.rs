@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBucketsOutput {
+pub struct DescribeBucketsOutput  {
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::types::BucketMetadata>>,
@@ -13,19 +13,19 @@ pub struct DescribeBucketsOutput {
 }
 impl DescribeBucketsOutput {
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::types::BucketMetadata]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::types::BucketMetadata]> {
         self.buckets.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBucketsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeBucketsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBucketsOutput`](crate::operation::describe_buckets::DescribeBucketsOutput).
     pub fn builder() -> crate::operation::describe_buckets::builders::DescribeBucketsOutputBuilder {
@@ -49,17 +49,13 @@ impl DescribeBucketsOutputBuilder {
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     pub fn buckets(mut self, input: crate::types::BucketMetadata) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input);
-        self.buckets = Some(v);
-        self
+                        v.push(input);
+                        self.buckets = Some(v);
+                        self
     }
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
-    pub fn set_buckets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BucketMetadata>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::types::BucketMetadata>>) -> Self {
+        self.buckets = input; self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl DescribeBucketsOutputBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeBucketsOutput`](crate::operation::describe_buckets::DescribeBucketsOutput).
     pub fn build(self) -> crate::operation::describe_buckets::DescribeBucketsOutput {
         crate::operation::describe_buckets::DescribeBucketsOutput {
-            buckets: self.buckets,
-            next_token: self.next_token,
+            buckets: self.buckets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

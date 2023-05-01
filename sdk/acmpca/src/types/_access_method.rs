@@ -3,7 +3,7 @@
 /// <p>Describes the type and format of extension access. Only one of <code>CustomObjectIdentifier</code> or <code>AccessMethodType</code> may be provided. Providing both results in <code>InvalidArgsException</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessMethod {
+pub struct AccessMethod  {
     /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     #[doc(hidden)]
     pub custom_object_identifier: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccessMethod {
 }
 impl AccessMethod {
     /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
-    pub fn custom_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn custom_object_identifier(&self) -> std::option::Option<& str> {
         self.custom_object_identifier.as_deref()
     }
     /// <p>Specifies the <code>AccessMethod</code>.</p>
-    pub fn access_method_type(&self) -> std::option::Option<&crate::types::AccessMethodType> {
+    pub fn access_method_type(&self) -> std::option::Option<& crate::types::AccessMethodType> {
         self.access_method_type.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl AccessMethodBuilder {
         self
     }
     /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
-    pub fn set_custom_object_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.custom_object_identifier = input;
-        self
+    pub fn set_custom_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.custom_object_identifier = input; self
     }
     /// <p>Specifies the <code>AccessMethod</code>.</p>
     pub fn access_method_type(mut self, input: crate::types::AccessMethodType) -> Self {
@@ -55,18 +51,17 @@ impl AccessMethodBuilder {
         self
     }
     /// <p>Specifies the <code>AccessMethod</code>.</p>
-    pub fn set_access_method_type(
-        mut self,
-        input: std::option::Option<crate::types::AccessMethodType>,
-    ) -> Self {
-        self.access_method_type = input;
-        self
+    pub fn set_access_method_type(mut self, input: std::option::Option<crate::types::AccessMethodType>) -> Self {
+        self.access_method_type = input; self
     }
     /// Consumes the builder and constructs a [`AccessMethod`](crate::types::AccessMethod).
     pub fn build(self) -> crate::types::AccessMethod {
         crate::types::AccessMethod {
-            custom_object_identifier: self.custom_object_identifier,
-            access_method_type: self.access_method_type,
+            custom_object_identifier: self.custom_object_identifier
+            ,
+            access_method_type: self.access_method_type
+            ,
         }
     }
 }
+

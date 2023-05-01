@@ -3,7 +3,7 @@
 /// <p>A mount point for the data volumes in the container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails  {
     /// <p>The path on the container to mount the host volume at.</p>
     #[doc(hidden)]
     pub container_path: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
     /// <p>The path on the container to mount the host volume at.</p>
-    pub fn container_path(&self) -> std::option::Option<&str> {
+    pub fn container_path(&self) -> std::option::Option<& str> {
         self.container_path.as_deref()
     }
     /// <p>Whether the container has read-only access to the volume.</p>
@@ -24,15 +24,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
         self.read_only
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
-    pub fn source_volume(&self) -> std::option::Option<&str> {
+    pub fn source_volume(&self) -> std::option::Option<& str> {
         self.source_volume.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder::default()
     }
 }
@@ -53,8 +51,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     }
     /// <p>The path on the container to mount the host volume at.</p>
     pub fn set_container_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_path = input;
-        self
+        self.container_path = input; self
     }
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn read_only(mut self, input: bool) -> Self {
@@ -63,8 +60,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     }
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.read_only = input;
-        self
+        self.read_only = input; self
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
     pub fn source_volume(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,15 +69,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
     pub fn set_source_volume(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_volume = input;
-        self
+        self.source_volume = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
-            container_path: self.container_path,
-            read_only: self.read_only.unwrap_or_default(),
-            source_volume: self.source_volume,
+            container_path: self.container_path
+            ,
+            read_only: self.read_only
+                .unwrap_or_default()
+            ,
+            source_volume: self.source_volume
+            ,
         }
     }
 }
+

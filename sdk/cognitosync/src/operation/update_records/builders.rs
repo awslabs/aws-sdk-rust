@@ -4,70 +4,52 @@ pub use crate::operation::update_records::_update_records_output::UpdateRecordsO
 pub use crate::operation::update_records::_update_records_input::UpdateRecordsInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateRecords`.
-///
-/// <p>Posts updates to records and adds and deletes records for a dataset and user.</p>
+/// 
+/// <p>Posts updates to records and adds and deletes records for a dataset and user.</p> 
 /// <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p>
-/// <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p>
+/// <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> 
 /// <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRecordsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_records::builders::UpdateRecordsInputBuilder,
-}
-impl UpdateRecordsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_records::builders::UpdateRecordsInputBuilder
+            }
+impl UpdateRecordsFluentBuilder  {
     /// Creates a new `UpdateRecords`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_records::UpdateRecords,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_records::UpdateRecordsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_records::UpdateRecordsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_records::UpdateRecordsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_records::UpdateRecords, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_records::UpdateRecordsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_records::UpdateRecordsOutput, aws_smithy_http::result::SdkError<crate::operation::update_records::UpdateRecordsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -118,10 +100,7 @@ impl UpdateRecordsFluentBuilder {
         self
     }
     /// A list of patch operations.
-    pub fn set_record_patches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecordPatch>>,
-    ) -> Self {
+    pub fn set_record_patches(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecordPatch>>) -> Self {
         self.inner = self.inner.set_record_patches(input);
         self
     }
@@ -131,10 +110,7 @@ impl UpdateRecordsFluentBuilder {
         self
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    pub fn set_sync_session_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_sync_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sync_session_token(input);
         self
     }
@@ -149,3 +125,4 @@ impl UpdateRecordsFluentBuilder {
         self
     }
 }
+

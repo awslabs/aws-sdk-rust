@@ -3,24 +3,20 @@
 /// <p>Determines the icon display configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalFormattingIconDisplayConfiguration {
+pub struct ConditionalFormattingIconDisplayConfiguration  {
     /// <p>Determines the icon display configuration.</p>
     #[doc(hidden)]
-    pub icon_display_option:
-        std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
+    pub icon_display_option: std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
 }
 impl ConditionalFormattingIconDisplayConfiguration {
     /// <p>Determines the icon display configuration.</p>
-    pub fn icon_display_option(
-        &self,
-    ) -> std::option::Option<&crate::types::ConditionalFormattingIconDisplayOption> {
+    pub fn icon_display_option(&self) -> std::option::Option<& crate::types::ConditionalFormattingIconDisplayOption> {
         self.icon_display_option.as_ref()
     }
 }
 impl ConditionalFormattingIconDisplayConfiguration {
     /// Creates a new builder-style object to manufacture [`ConditionalFormattingIconDisplayConfiguration`](crate::types::ConditionalFormattingIconDisplayConfiguration).
-    pub fn builder() -> crate::types::builders::ConditionalFormattingIconDisplayConfigurationBuilder
-    {
+    pub fn builder() -> crate::types::builders::ConditionalFormattingIconDisplayConfigurationBuilder {
         crate::types::builders::ConditionalFormattingIconDisplayConfigurationBuilder::default()
     }
 }
@@ -29,30 +25,24 @@ impl ConditionalFormattingIconDisplayConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConditionalFormattingIconDisplayConfigurationBuilder {
-    pub(crate) icon_display_option:
-        std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
+    pub(crate) icon_display_option: std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
 }
 impl ConditionalFormattingIconDisplayConfigurationBuilder {
     /// <p>Determines the icon display configuration.</p>
-    pub fn icon_display_option(
-        mut self,
-        input: crate::types::ConditionalFormattingIconDisplayOption,
-    ) -> Self {
+    pub fn icon_display_option(mut self, input: crate::types::ConditionalFormattingIconDisplayOption) -> Self {
         self.icon_display_option = Some(input);
         self
     }
     /// <p>Determines the icon display configuration.</p>
-    pub fn set_icon_display_option(
-        mut self,
-        input: std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
-    ) -> Self {
-        self.icon_display_option = input;
-        self
+    pub fn set_icon_display_option(mut self, input: std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>) -> Self {
+        self.icon_display_option = input; self
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingIconDisplayConfiguration`](crate::types::ConditionalFormattingIconDisplayConfiguration).
     pub fn build(self) -> crate::types::ConditionalFormattingIconDisplayConfiguration {
         crate::types::ConditionalFormattingIconDisplayConfiguration {
-            icon_display_option: self.icon_display_option,
+            icon_display_option: self.icon_display_option
+            ,
         }
     }
 }
+

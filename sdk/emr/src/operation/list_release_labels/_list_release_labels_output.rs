@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReleaseLabelsOutput {
+pub struct ListReleaseLabelsOutput  {
     /// <p>The returned release labels.</p>
     #[doc(hidden)]
     pub release_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,23 +13,22 @@ pub struct ListReleaseLabelsOutput {
 }
 impl ListReleaseLabelsOutput {
     /// <p>The returned release labels.</p>
-    pub fn release_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn release_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.release_labels.as_deref()
     }
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReleaseLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListReleaseLabelsOutput {
     /// Creates a new builder-style object to manufacture [`ListReleaseLabelsOutput`](crate::operation::list_release_labels::ListReleaseLabelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_release_labels::builders::ListReleaseLabelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_release_labels::builders::ListReleaseLabelsOutputBuilder {
         crate::operation::list_release_labels::builders::ListReleaseLabelsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListReleaseLabelsOutputBuilder {
     /// <p>The returned release labels.</p>
     pub fn release_labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.release_labels.unwrap_or_default();
-        v.push(input.into());
-        self.release_labels = Some(v);
-        self
+                        v.push(input.into());
+                        self.release_labels = Some(v);
+                        self
     }
     /// <p>The returned release labels.</p>
-    pub fn set_release_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.release_labels = input;
-        self
+    pub fn set_release_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.release_labels = input; self
     }
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListReleaseLabelsOutputBuilder {
     }
     /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListReleaseLabelsOutput`](crate::operation::list_release_labels::ListReleaseLabelsOutput).
     pub fn build(self) -> crate::operation::list_release_labels::ListReleaseLabelsOutput {
         crate::operation::list_release_labels::ListReleaseLabelsOutput {
-            release_labels: self.release_labels,
-            next_token: self.next_token,
+            release_labels: self.release_labels
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceProfileOutput {
+pub struct DeleteServiceProfileOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteServiceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::operation::delete_service_profile::DeleteServiceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_profile::builders::DeleteServiceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::delete_service_profile::builders::DeleteServiceProfileOutputBuilder {
         crate::operation::delete_service_profile::builders::DeleteServiceProfileOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteServiceProfileOutputBuilder {
 }
 impl DeleteServiceProfileOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteServiceProfileOutput`](crate::operation::delete_service_profile::DeleteServiceProfileOutput).
     pub fn build(self) -> crate::operation::delete_service_profile::DeleteServiceProfileOutput {
         crate::operation::delete_service_profile::DeleteServiceProfileOutput {
@@ -41,3 +40,4 @@ impl DeleteServiceProfileOutputBuilder {
         }
     }
 }
+

@@ -4,86 +4,67 @@ pub use crate::operation::describe_transit_gateway_route_table_announcements::_d
 pub use crate::operation::describe_transit_gateway_route_table_announcements::_describe_transit_gateway_route_table_announcements_input::DescribeTransitGatewayRouteTableAnnouncementsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTransitGatewayRouteTableAnnouncements`.
-///
+/// 
 /// <p>Describes one or more transit gateway route table advertisements.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsInputBuilder
             }
-impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
+impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder  {
     /// Creates a new `DescribeTransitGatewayRouteTableAnnouncements`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncements, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator{
-        crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator {
+                            crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `TransitGatewayRouteTableAnnouncementIds`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_route_table_announcement_ids`](Self::set_transit_gateway_route_table_announcement_ids).
     ///
     /// <p>The IDs of the transit gateway route tables that are being advertised.</p>
-    pub fn transit_gateway_route_table_announcement_ids(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .transit_gateway_route_table_announcement_ids(input.into());
+    pub fn transit_gateway_route_table_announcement_ids(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.transit_gateway_route_table_announcement_ids(input.into());
         self
     }
     /// <p>The IDs of the transit gateway route tables that are being advertised.</p>
-    pub fn set_transit_gateway_route_table_announcement_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_transit_gateway_route_table_announcement_ids(input);
+    pub fn set_transit_gateway_route_table_announcement_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.inner = self.inner.set_transit_gateway_route_table_announcement_ids(input);
         self
     }
     /// Appends an item to `Filters`.
@@ -96,10 +77,7 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
         self
     }
     /// <p>The filters associated with the transit gateway policy table.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -134,3 +112,4 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Represents the output of a <code>GetDeploymentInstance</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentInstanceOutput {
+pub struct GetDeploymentInstanceOutput  {
     /// <p> Information about the instance. </p>
     #[doc(hidden)]
     pub instance_summary: std::option::Option<crate::types::InstanceSummary>,
@@ -11,20 +11,18 @@ pub struct GetDeploymentInstanceOutput {
 }
 impl GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
-    pub fn instance_summary(&self) -> std::option::Option<&crate::types::InstanceSummary> {
+    pub fn instance_summary(&self) -> std::option::Option<& crate::types::InstanceSummary> {
         self.instance_summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeploymentInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDeploymentInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentInstanceOutput`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_instance::builders::GetDeploymentInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_deployment_instance::builders::GetDeploymentInstanceOutputBuilder {
         crate::operation::get_deployment_instance::builders::GetDeploymentInstanceOutputBuilder::default()
     }
 }
@@ -43,27 +41,25 @@ impl GetDeploymentInstanceOutputBuilder {
         self
     }
     /// <p> Information about the instance. </p>
-    pub fn set_instance_summary(
-        mut self,
-        input: std::option::Option<crate::types::InstanceSummary>,
-    ) -> Self {
-        self.instance_summary = input;
-        self
+    pub fn set_instance_summary(mut self, input: std::option::Option<crate::types::InstanceSummary>) -> Self {
+        self.instance_summary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDeploymentInstanceOutput`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput).
     pub fn build(self) -> crate::operation::get_deployment_instance::GetDeploymentInstanceOutput {
         crate::operation::get_deployment_instance::GetDeploymentInstanceOutput {
-            instance_summary: self.instance_summary,
+            instance_summary: self.instance_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

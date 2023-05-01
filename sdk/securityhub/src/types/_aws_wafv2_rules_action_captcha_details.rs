@@ -3,17 +3,14 @@
 /// <p> Specifies that WAF should run a CAPTCHA check against the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsWafv2RulesActionCaptchaDetails {
+pub struct AwsWafv2RulesActionCaptchaDetails  {
     /// <p> Defines custom handling for the web request, used when the CAPTCHA inspection determines that the request's token is valid and unexpired. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
     #[doc(hidden)]
-    pub custom_request_handling:
-        std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
+    pub custom_request_handling: std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
 }
 impl AwsWafv2RulesActionCaptchaDetails {
     /// <p> Defines custom handling for the web request, used when the CAPTCHA inspection determines that the request's token is valid and unexpired. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    pub fn custom_request_handling(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsWafv2CustomRequestHandlingDetails> {
+    pub fn custom_request_handling(&self) -> std::option::Option<& crate::types::AwsWafv2CustomRequestHandlingDetails> {
         self.custom_request_handling.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl AwsWafv2RulesActionCaptchaDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsWafv2RulesActionCaptchaDetailsBuilder {
-    pub(crate) custom_request_handling:
-        std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
+    pub(crate) custom_request_handling: std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
 }
 impl AwsWafv2RulesActionCaptchaDetailsBuilder {
     /// <p> Defines custom handling for the web request, used when the CAPTCHA inspection determines that the request's token is valid and unexpired. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    pub fn custom_request_handling(
-        mut self,
-        input: crate::types::AwsWafv2CustomRequestHandlingDetails,
-    ) -> Self {
+    pub fn custom_request_handling(mut self, input: crate::types::AwsWafv2CustomRequestHandlingDetails) -> Self {
         self.custom_request_handling = Some(input);
         self
     }
     /// <p> Defines custom handling for the web request, used when the CAPTCHA inspection determines that the request's token is valid and unexpired. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    pub fn set_custom_request_handling(
-        mut self,
-        input: std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
-    ) -> Self {
-        self.custom_request_handling = input;
-        self
+    pub fn set_custom_request_handling(mut self, input: std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>) -> Self {
+        self.custom_request_handling = input; self
     }
     /// Consumes the builder and constructs a [`AwsWafv2RulesActionCaptchaDetails`](crate::types::AwsWafv2RulesActionCaptchaDetails).
     pub fn build(self) -> crate::types::AwsWafv2RulesActionCaptchaDetails {
         crate::types::AwsWafv2RulesActionCaptchaDetails {
-            custom_request_handling: self.custom_request_handling,
+            custom_request_handling: self.custom_request_handling
+            ,
         }
     }
 }
+

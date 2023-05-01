@@ -3,7 +3,7 @@
 /// <p>An object that represents an Amazon ECR image failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageFailure {
+pub struct ImageFailure  {
     /// <p>The image ID that's associated with the failure.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<crate::types::ImageIdentifier>,
@@ -16,15 +16,15 @@ pub struct ImageFailure {
 }
 impl ImageFailure {
     /// <p>The image ID that's associated with the failure.</p>
-    pub fn image_id(&self) -> std::option::Option<&crate::types::ImageIdentifier> {
+    pub fn image_id(&self) -> std::option::Option<& crate::types::ImageIdentifier> {
         self.image_id.as_ref()
     }
     /// <p>The code that's associated with the failure.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::ImageFailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::ImageFailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl ImageFailureBuilder {
         self
     }
     /// <p>The image ID that's associated with the failure.</p>
-    pub fn set_image_id(
-        mut self,
-        input: std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
-        self.image_id = input;
-        self
+    pub fn set_image_id(mut self, input: std::option::Option<crate::types::ImageIdentifier>) -> Self {
+        self.image_id = input; self
     }
     /// <p>The code that's associated with the failure.</p>
     pub fn failure_code(mut self, input: crate::types::ImageFailureCode) -> Self {
@@ -63,12 +59,8 @@ impl ImageFailureBuilder {
         self
     }
     /// <p>The code that's associated with the failure.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::ImageFailureCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::ImageFailureCode>) -> Self {
+        self.failure_code = input; self
     }
     /// <p>The reason for the failure.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,15 +69,18 @@ impl ImageFailureBuilder {
     }
     /// <p>The reason for the failure.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// Consumes the builder and constructs a [`ImageFailure`](crate::types::ImageFailure).
     pub fn build(self) -> crate::types::ImageFailure {
         crate::types::ImageFailure {
-            image_id: self.image_id,
-            failure_code: self.failure_code,
-            failure_reason: self.failure_reason,
+            image_id: self.image_id
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

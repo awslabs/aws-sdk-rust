@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminSetUserPasswordInput {
+pub struct AdminSetUserPasswordInput  {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct AdminSetUserPasswordInput {
 }
 impl AdminSetUserPasswordInput {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name of the user whose password you want to set.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password for the user.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
@@ -34,7 +34,7 @@ impl AdminSetUserPasswordInput {
         self.permanent
     }
 }
-impl std::fmt::Debug for AdminSetUserPasswordInput {
+impl  std::fmt::Debug for AdminSetUserPasswordInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserPasswordInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -46,8 +46,7 @@ impl std::fmt::Debug for AdminSetUserPasswordInput {
 }
 impl AdminSetUserPasswordInput {
     /// Creates a new builder-style object to manufacture [`AdminSetUserPasswordInput`](crate::operation::admin_set_user_password::AdminSetUserPasswordInput).
-    pub fn builder(
-    ) -> crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder {
+    pub fn builder() -> crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder {
         crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder::default()
     }
 }
@@ -69,8 +68,7 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user name of the user whose password you want to set.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p>The user name of the user whose password you want to set.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The password for the user.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +86,7 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p>The password for the user.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn permanent(mut self, input: bool) -> Self {
@@ -99,23 +95,22 @@ impl AdminSetUserPasswordInputBuilder {
     }
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
-        self.permanent = input;
-        self
+        self.permanent = input; self
     }
     /// Consumes the builder and constructs a [`AdminSetUserPasswordInput`](crate::operation::admin_set_user_password::AdminSetUserPasswordInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_set_user_password::AdminSetUserPasswordInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_set_user_password::AdminSetUserPasswordInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_set_user_password::AdminSetUserPasswordInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                password: self.password,
-                permanent: self.permanent.unwrap_or_default(),
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                permanent: self.permanent
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
@@ -129,3 +124,4 @@ impl std::fmt::Debug for AdminSetUserPasswordInputBuilder {
         formatter.finish()
     }
 }
+

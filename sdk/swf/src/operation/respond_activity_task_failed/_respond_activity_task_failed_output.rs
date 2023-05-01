@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskFailedOutput {
+pub struct RespondActivityTaskFailedOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RespondActivityTaskFailedOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RespondActivityTaskFailedOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput).
-    pub fn builder() -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedOutputBuilder{
+    pub fn builder() -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedOutputBuilder {
         crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct RespondActivityTaskFailedOutputBuilder {
 }
 impl RespondActivityTaskFailedOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput {
+    pub fn build(self) -> crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput {
         crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput {
             _request_id: self._request_id,
         }
     }
 }
+

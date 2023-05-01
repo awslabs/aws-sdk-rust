@@ -3,7 +3,7 @@
 /// <p> Request of DescribeSubscribersForNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSubscribersForNotificationInput {
+pub struct DescribeSubscribersForNotificationInput  {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct DescribeSubscribersForNotificationInput {
 }
 impl DescribeSubscribersForNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p>The notification whose subscribers you want to list.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -38,13 +38,13 @@ impl DescribeSubscribersForNotificationInput {
         self.max_results
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeSubscribersForNotificationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
-    pub fn builder() -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder{
+    pub fn builder() -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder {
         crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder::default()
     }
 }
@@ -67,8 +67,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>The notification whose subscribers you want to list.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -86,12 +84,8 @@ impl DescribeSubscribersForNotificationInputBuilder {
         self
     }
     /// <p>The notification whose subscribers you want to list.</p>
-    pub fn set_notification(
-        mut self,
-        input: std::option::Option<crate::types::Notification>,
-    ) -> Self {
-        self.notification = input;
-        self
+    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
+        self.notification = input; self
     }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -100,8 +94,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,11 +103,10 @@ impl DescribeSubscribersForNotificationInputBuilder {
     }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
-    pub fn build(self) -> Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput {
                 account_id: self.account_id
@@ -131,3 +123,4 @@ impl DescribeSubscribersForNotificationInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContainerAgentInput {
+pub struct UpdateContainerAgentInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct UpdateContainerAgentInput {
 }
 impl UpdateContainerAgentInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> std::option::Option<&str> {
+    pub fn cluster(&self) -> std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
-    pub fn container_instance(&self) -> std::option::Option<&str> {
+    pub fn container_instance(&self) -> std::option::Option<& str> {
         self.container_instance.as_deref()
     }
 }
 impl UpdateContainerAgentInput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
-    pub fn builder(
-    ) -> crate::operation::update_container_agent::builders::UpdateContainerAgentInputBuilder {
+    pub fn builder() -> crate::operation::update_container_agent::builders::UpdateContainerAgentInputBuilder {
         crate::operation::update_container_agent::builders::UpdateContainerAgentInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl UpdateContainerAgentInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
     pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,25 +50,19 @@ impl UpdateContainerAgentInputBuilder {
         self
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.container_instance = input;
-        self
+    pub fn set_container_instance(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.container_instance = input; self
     }
     /// Consumes the builder and constructs a [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_container_agent::UpdateContainerAgentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_container_agent::UpdateContainerAgentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_container_agent::UpdateContainerAgentInput {
-                cluster: self.cluster,
-                container_instance: self.container_instance,
-            },
+                cluster: self.cluster
+                ,
+                container_instance: self.container_instance
+                ,
+            }
         )
     }
 }
+

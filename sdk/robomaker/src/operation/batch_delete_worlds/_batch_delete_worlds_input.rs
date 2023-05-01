@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteWorldsInput {
+pub struct BatchDeleteWorldsInput  {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
     #[doc(hidden)]
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn worlds(&self) -> std::option::Option<& [std::string::String]> {
         self.worlds.as_deref()
     }
 }
 impl BatchDeleteWorldsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder {
         crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder::default()
     }
 }
@@ -35,29 +34,22 @@ impl BatchDeleteWorldsInputBuilder {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
     pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.worlds.unwrap_or_default();
-        v.push(input.into());
-        self.worlds = Some(v);
-        self
+                        v.push(input.into());
+                        self.worlds = Some(v);
+                        self
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    pub fn set_worlds(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.worlds = input;
-        self
+    pub fn set_worlds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.worlds = input; self
     }
     /// Consumes the builder and constructs a [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_delete_worlds::BatchDeleteWorldsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_delete_worlds::BatchDeleteWorldsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_delete_worlds::BatchDeleteWorldsInput {
-                worlds: self.worlds,
-            },
+                worlds: self.worlds
+                ,
+            }
         )
     }
 }
+

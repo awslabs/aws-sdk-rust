@@ -3,24 +3,24 @@
 /// <p>The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindMatchesMetrics {
-    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+pub struct FindMatchesMetrics  {
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     #[doc(hidden)]
     pub area_under_pr_curve: std::option::Option<f64>,
-    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
+    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     #[doc(hidden)]
     pub precision: std::option::Option<f64>,
-    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     #[doc(hidden)]
     pub recall: std::option::Option<f64>,
-    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
+    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
     #[doc(hidden)]
     pub f1: std::option::Option<f64>,
-    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
     #[doc(hidden)]
     pub confusion_matrix: std::option::Option<crate::types::ConfusionMatrix>,
@@ -29,33 +29,33 @@ pub struct FindMatchesMetrics {
     pub column_importances: std::option::Option<std::vec::Vec<crate::types::ColumnImportance>>,
 }
 impl FindMatchesMetrics {
-    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn area_under_pr_curve(&self) -> std::option::Option<f64> {
         self.area_under_pr_curve
     }
-    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
+    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn precision(&self) -> std::option::Option<f64> {
         self.precision
     }
-    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn recall(&self) -> std::option::Option<f64> {
         self.recall
     }
-    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
+    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
     pub fn f1(&self) -> std::option::Option<f64> {
         self.f1
     }
-    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
-    pub fn confusion_matrix(&self) -> std::option::Option<&crate::types::ConfusionMatrix> {
+    pub fn confusion_matrix(&self) -> std::option::Option<& crate::types::ConfusionMatrix> {
         self.confusion_matrix.as_ref()
     }
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
-    pub fn column_importances(&self) -> std::option::Option<&[crate::types::ColumnImportance]> {
+    pub fn column_importances(&self) -> std::option::Option<& [crate::types::ColumnImportance]> {
         self.column_importances.as_deref()
     }
 }
@@ -75,72 +75,63 @@ pub struct FindMatchesMetricsBuilder {
     pub(crate) recall: std::option::Option<f64>,
     pub(crate) f1: std::option::Option<f64>,
     pub(crate) confusion_matrix: std::option::Option<crate::types::ConfusionMatrix>,
-    pub(crate) column_importances:
-        std::option::Option<std::vec::Vec<crate::types::ColumnImportance>>,
+    pub(crate) column_importances: std::option::Option<std::vec::Vec<crate::types::ColumnImportance>>,
 }
 impl FindMatchesMetricsBuilder {
-    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn area_under_pr_curve(mut self, input: f64) -> Self {
         self.area_under_pr_curve = Some(input);
         self
     }
-    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn set_area_under_pr_curve(mut self, input: std::option::Option<f64>) -> Self {
-        self.area_under_pr_curve = input;
-        self
+        self.area_under_pr_curve = input; self
     }
-    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
+    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn precision(mut self, input: f64) -> Self {
         self.precision = Some(input);
         self
     }
-    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
+    /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn set_precision(mut self, input: std::option::Option<f64>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
-    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn recall(mut self, input: f64) -> Self {
         self.recall = Some(input);
         self
     }
-    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
-        self.recall = input;
-        self
+        self.recall = input; self
     }
-    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
+    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
     pub fn f1(mut self, input: f64) -> Self {
         self.f1 = Some(input);
         self
     }
-    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
+    /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
     pub fn set_f1(mut self, input: std::option::Option<f64>) -> Self {
-        self.f1 = input;
-        self
+        self.f1 = input; self
     }
-    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
     pub fn confusion_matrix(mut self, input: crate::types::ConfusionMatrix) -> Self {
         self.confusion_matrix = Some(input);
         self
     }
-    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+    /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> 
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
-    pub fn set_confusion_matrix(
-        mut self,
-        input: std::option::Option<crate::types::ConfusionMatrix>,
-    ) -> Self {
-        self.confusion_matrix = input;
-        self
+    pub fn set_confusion_matrix(mut self, input: std::option::Option<crate::types::ConfusionMatrix>) -> Self {
+        self.confusion_matrix = input; self
     }
     /// Appends an item to `column_importances`.
     ///
@@ -149,27 +140,30 @@ impl FindMatchesMetricsBuilder {
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
     pub fn column_importances(mut self, input: crate::types::ColumnImportance) -> Self {
         let mut v = self.column_importances.unwrap_or_default();
-        v.push(input);
-        self.column_importances = Some(v);
-        self
+                        v.push(input);
+                        self.column_importances = Some(v);
+                        self
     }
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
-    pub fn set_column_importances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnImportance>>,
-    ) -> Self {
-        self.column_importances = input;
-        self
+    pub fn set_column_importances(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnImportance>>) -> Self {
+        self.column_importances = input; self
     }
     /// Consumes the builder and constructs a [`FindMatchesMetrics`](crate::types::FindMatchesMetrics).
     pub fn build(self) -> crate::types::FindMatchesMetrics {
         crate::types::FindMatchesMetrics {
-            area_under_pr_curve: self.area_under_pr_curve,
-            precision: self.precision,
-            recall: self.recall,
-            f1: self.f1,
-            confusion_matrix: self.confusion_matrix,
-            column_importances: self.column_importances,
+            area_under_pr_curve: self.area_under_pr_curve
+            ,
+            precision: self.precision
+            ,
+            recall: self.recall
+            ,
+            f1: self.f1
+            ,
+            confusion_matrix: self.confusion_matrix
+            ,
+            column_importances: self.column_importances
+            ,
         }
     }
 }
+

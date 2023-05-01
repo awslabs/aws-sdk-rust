@@ -3,14 +3,14 @@
 /// <p>Information about an import task created for an individual Sidewalk device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkSingleStartImportInfo {
+pub struct SidewalkSingleStartImportInfo  {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
     #[doc(hidden)]
     pub sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
 }
 impl SidewalkSingleStartImportInfo {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
-    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<& str> {
         self.sidewalk_manufacturing_sn.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl SidewalkSingleStartImportInfoBuilder {
         self
     }
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
-    pub fn set_sidewalk_manufacturing_sn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sidewalk_manufacturing_sn = input;
-        self
+    pub fn set_sidewalk_manufacturing_sn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sidewalk_manufacturing_sn = input; self
     }
     /// Consumes the builder and constructs a [`SidewalkSingleStartImportInfo`](crate::types::SidewalkSingleStartImportInfo).
     pub fn build(self) -> crate::types::SidewalkSingleStartImportInfo {
         crate::types::SidewalkSingleStartImportInfo {
-            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
+            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn
+            ,
         }
     }
 }
+

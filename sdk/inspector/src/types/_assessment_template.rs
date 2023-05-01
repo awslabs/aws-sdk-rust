@@ -3,7 +3,7 @@
 /// <p>Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <code>DescribeAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTemplate {
+pub struct AssessmentTemplate  {
     /// <p>The ARN of the assessment template.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -34,15 +34,15 @@ pub struct AssessmentTemplate {
 }
 impl AssessmentTemplate {
     /// <p>The ARN of the assessment template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the assessment template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_target_arn(&self) -> std::option::Option<& str> {
         self.assessment_target_arn.as_deref()
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
@@ -50,15 +50,15 @@ impl AssessmentTemplate {
         self.duration_in_seconds
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<& [crate::types::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-    pub fn last_assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn last_assessment_run_arn(&self) -> std::option::Option<& str> {
         self.last_assessment_run_arn.as_deref()
     }
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
@@ -66,7 +66,7 @@ impl AssessmentTemplate {
         self.assessment_run_count
     }
     /// <p>The time at which the assessment template is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -86,8 +86,7 @@ pub struct AssessmentTemplateBuilder {
     pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
     pub(crate) duration_in_seconds: std::option::Option<i32>,
     pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) user_attributes_for_findings:
-        std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
     pub(crate) last_assessment_run_arn: std::option::Option<std::string::String>,
     pub(crate) assessment_run_count: std::option::Option<i32>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -100,8 +99,7 @@ impl AssessmentTemplateBuilder {
     }
     /// <p>The ARN of the assessment template.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the assessment template.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +108,7 @@ impl AssessmentTemplateBuilder {
     }
     /// <p>The name of the assessment template.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
     pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,12 +116,8 @@ impl AssessmentTemplateBuilder {
         self
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_target_arn = input;
-        self
+    pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_target_arn = input; self
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -133,8 +126,7 @@ impl AssessmentTemplateBuilder {
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// Appends an item to `rules_package_arns`.
     ///
@@ -143,17 +135,13 @@ impl AssessmentTemplateBuilder {
     /// <p>The rules packages that are specified for this assessment template.</p>
     pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
-        v.push(input.into());
-        self.rules_package_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.rules_package_arns = Some(v);
+                        self
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.rules_package_arns = input;
-        self
+    pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.rules_package_arns = input; self
     }
     /// Appends an item to `user_attributes_for_findings`.
     ///
@@ -162,17 +150,13 @@ impl AssessmentTemplateBuilder {
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
     pub fn user_attributes_for_findings(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.user_attributes_for_findings.unwrap_or_default();
-        v.push(input);
-        self.user_attributes_for_findings = Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes_for_findings = Some(v);
+                        self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn set_user_attributes_for_findings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.user_attributes_for_findings = input;
-        self
+    pub fn set_user_attributes_for_findings(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.user_attributes_for_findings = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
     pub fn last_assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,12 +164,8 @@ impl AssessmentTemplateBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-    pub fn set_last_assessment_run_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.last_assessment_run_arn = input;
-        self
+    pub fn set_last_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.last_assessment_run_arn = input; self
     }
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
     pub fn assessment_run_count(mut self, input: i32) -> Self {
@@ -194,8 +174,7 @@ impl AssessmentTemplateBuilder {
     }
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
     pub fn set_assessment_run_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.assessment_run_count = input;
-        self
+        self.assessment_run_count = input; self
     }
     /// <p>The time at which the assessment template is created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -203,25 +182,32 @@ impl AssessmentTemplateBuilder {
         self
     }
     /// <p>The time at which the assessment template is created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Consumes the builder and constructs a [`AssessmentTemplate`](crate::types::AssessmentTemplate).
     pub fn build(self) -> crate::types::AssessmentTemplate {
         crate::types::AssessmentTemplate {
-            arn: self.arn,
-            name: self.name,
-            assessment_target_arn: self.assessment_target_arn,
-            duration_in_seconds: self.duration_in_seconds.unwrap_or_default(),
-            rules_package_arns: self.rules_package_arns,
-            user_attributes_for_findings: self.user_attributes_for_findings,
-            last_assessment_run_arn: self.last_assessment_run_arn,
-            assessment_run_count: self.assessment_run_count,
-            created_at: self.created_at,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            assessment_target_arn: self.assessment_target_arn
+            ,
+            duration_in_seconds: self.duration_in_seconds
+                .unwrap_or_default()
+            ,
+            rules_package_arns: self.rules_package_arns
+            ,
+            user_attributes_for_findings: self.user_attributes_for_findings
+            ,
+            last_assessment_run_arn: self.last_assessment_run_arn
+            ,
+            assessment_run_count: self.assessment_run_count
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

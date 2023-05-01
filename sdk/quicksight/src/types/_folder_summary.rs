@@ -3,7 +3,7 @@
 /// <p>A summary of information about an existing Amazon QuickSight folder. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FolderSummary {
+pub struct FolderSummary  {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct FolderSummary {
 }
 impl FolderSummary {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The display name of the folder.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of folder.</p>
-    pub fn folder_type(&self) -> std::option::Option<&crate::types::FolderType> {
+    pub fn folder_type(&self) -> std::option::Option<& crate::types::FolderType> {
         self.folder_type.as_ref()
     }
     /// <p>The time that the folder was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The display name of the folder.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The display name of the folder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of folder.</p>
     pub fn folder_type(mut self, input: crate::types::FolderType) -> Self {
@@ -105,8 +102,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The type of folder.</p>
     pub fn set_folder_type(mut self, input: std::option::Option<crate::types::FolderType>) -> Self {
-        self.folder_type = input;
-        self
+        self.folder_type = input; self
     }
     /// <p>The time that the folder was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,12 +110,8 @@ impl FolderSummaryBuilder {
         self
     }
     /// <p>The time that the folder was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The time that the folder was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,22 +119,25 @@ impl FolderSummaryBuilder {
         self
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// Consumes the builder and constructs a [`FolderSummary`](crate::types::FolderSummary).
     pub fn build(self) -> crate::types::FolderSummary {
         crate::types::FolderSummary {
-            arn: self.arn,
-            folder_id: self.folder_id,
-            name: self.name,
-            folder_type: self.folder_type,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            arn: self.arn
+            ,
+            folder_id: self.folder_id
+            ,
+            name: self.name
+            ,
+            folder_type: self.folder_type
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

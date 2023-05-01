@@ -3,14 +3,14 @@
 /// <p>The constraints resource for a monitoring job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitoringConstraintsResource {
+pub struct MonitoringConstraintsResource  {
     /// <p>The Amazon S3 URI for the constraints resource.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl MonitoringConstraintsResource {
     /// <p>The Amazon S3 URI for the constraints resource.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl MonitoringConstraintsResourceBuilder {
     }
     /// <p>The Amazon S3 URI for the constraints resource.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// Consumes the builder and constructs a [`MonitoringConstraintsResource`](crate::types::MonitoringConstraintsResource).
     pub fn build(self) -> crate::types::MonitoringConstraintsResource {
         crate::types::MonitoringConstraintsResource {
-            s3_uri: self.s3_uri,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

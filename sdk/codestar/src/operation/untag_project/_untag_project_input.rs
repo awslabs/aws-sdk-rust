@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagProjectInput {
+pub struct UntagProjectInput  {
     /// <p>The ID of the project to remove tags from.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagProjectInput {
 }
 impl UntagProjectInput {
     /// <p>The ID of the project to remove tags from.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The tags to remove from the project.</p>
-    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tags(&self) -> std::option::Option<& [std::string::String]> {
         self.tags.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl UntagProjectInputBuilder {
     }
     /// <p>The ID of the project to remove tags from.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -52,28 +51,24 @@ impl UntagProjectInputBuilder {
     /// <p>The tags to remove from the project.</p>
     pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input.into());
-        self.tags = Some(v);
-        self
+                        v.push(input.into());
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to remove from the project.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`UntagProjectInput`](crate::operation::untag_project::UntagProjectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::untag_project::UntagProjectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::untag_project::UntagProjectInput {
-            id: self.id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::untag_project::UntagProjectInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::untag_project::UntagProjectInput {
+                id: self.id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

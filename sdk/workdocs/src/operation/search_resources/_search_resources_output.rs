@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchResourcesOutput {
+pub struct SearchResourcesOutput  {
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::ResponseItem>>,
@@ -13,19 +13,19 @@ pub struct SearchResourcesOutput {
 }
 impl SearchResourcesOutput {
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::ResponseItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::ResponseItem]> {
         self.items.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchResourcesOutput {
     /// Creates a new builder-style object to manufacture [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
     pub fn builder() -> crate::operation::search_resources::builders::SearchResourcesOutputBuilder {
@@ -49,17 +49,13 @@ impl SearchResourcesOutputBuilder {
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
     pub fn items(mut self, input: crate::types::ResponseItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResponseItem>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResponseItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl SearchResourcesOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
     pub fn build(self) -> crate::operation::search_resources::SearchResourcesOutput {
         crate::operation::search_resources::SearchResourcesOutput {
-            items: self.items,
-            marker: self.marker,
+            items: self.items
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAssignmentDeletionStatusInput {
+pub struct DescribeAccountAssignmentDeletionStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeAccountAssignmentDeletionStatusInput {
 }
 impl DescribeAccountAssignmentDeletionStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn account_assignment_deletion_request_id(&self) -> std::option::Option<&str> {
+    pub fn account_assignment_deletion_request_id(&self) -> std::option::Option<& str> {
         self.account_assignment_deletion_request_id.as_deref()
     }
 }
 impl DescribeAccountAssignmentDeletionStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusInput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput).
-    pub fn builder() -> crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder {
         crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder::default()
     }
 }
@@ -42,27 +42,19 @@ impl DescribeAccountAssignmentDeletionStatusInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn account_assignment_deletion_request_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn account_assignment_deletion_request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.account_assignment_deletion_request_id = Some(input.into());
         self
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn set_account_assignment_deletion_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.account_assignment_deletion_request_id = input;
-        self
+    pub fn set_account_assignment_deletion_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.account_assignment_deletion_request_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAccountAssignmentDeletionStatusInput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput {
                 instance_arn: self.instance_arn
@@ -73,3 +65,4 @@ impl DescribeAccountAssignmentDeletionStatusInputBuilder {
         )
     }
 }
+

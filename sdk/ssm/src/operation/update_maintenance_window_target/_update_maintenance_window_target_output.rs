@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateMaintenanceWindowTargetOutput {
+pub struct UpdateMaintenanceWindowTargetOutput  {
     /// <p>The maintenance window ID specified in the update request.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -25,31 +25,31 @@ pub struct UpdateMaintenanceWindowTargetOutput {
 }
 impl UpdateMaintenanceWindowTargetOutput {
     /// <p>The maintenance window ID specified in the update request.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The target ID specified in the update request.</p>
-    pub fn window_target_id(&self) -> std::option::Option<&str> {
+    pub fn window_target_id(&self) -> std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
     /// <p>The updated targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
         self.targets.as_deref()
     }
     /// <p>The updated owner.</p>
-    pub fn owner_information(&self) -> std::option::Option<&str> {
+    pub fn owner_information(&self) -> std::option::Option<& str> {
         self.owner_information.as_deref()
     }
     /// <p>The updated name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutput {
+impl  std::fmt::Debug for UpdateMaintenanceWindowTargetOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowTargetOutput");
         formatter.field("window_id", &self.window_id);
@@ -63,13 +63,13 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutput {
     }
 }
 impl aws_http::request_id::RequestId for UpdateMaintenanceWindowTargetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateMaintenanceWindowTargetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTargetOutput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput).
-    pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetOutputBuilder{
+    pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetOutputBuilder {
         crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetOutputBuilder::default()
     }
 }
@@ -94,8 +94,7 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     }
     /// <p>The maintenance window ID specified in the update request.</p>
     pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The target ID specified in the update request.</p>
     pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +103,7 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     }
     /// <p>The target ID specified in the update request.</p>
     pub fn set_window_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_target_id = input;
-        self
+        self.window_target_id = input; self
     }
     /// Appends an item to `targets`.
     ///
@@ -114,17 +112,13 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     /// <p>The updated targets.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = Some(v);
-        self
+                        v.push(input);
+                        self.targets = Some(v);
+                        self
     }
     /// <p>The updated targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The updated owner.</p>
     pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,12 +126,8 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
         self
     }
     /// <p>The updated owner.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.owner_information = input;
-        self
+    pub fn set_owner_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.owner_information = input; self
     }
     /// <p>The updated name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +136,7 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     }
     /// <p>The updated name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,30 +145,32 @@ impl UpdateMaintenanceWindowTargetOutputBuilder {
     }
     /// <p>The updated description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTargetOutput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput
-    {
+    pub fn build(self) -> crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput {
         crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput {
-            window_id: self.window_id,
-            window_target_id: self.window_target_id,
-            targets: self.targets,
-            owner_information: self.owner_information,
-            name: self.name,
-            description: self.description,
+            window_id: self.window_id
+            ,
+            window_target_id: self.window_target_id
+            ,
+            targets: self.targets
+            ,
+            owner_information: self.owner_information
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
@@ -197,3 +188,4 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutputBuilder {
         formatter.finish()
     }
 }
+

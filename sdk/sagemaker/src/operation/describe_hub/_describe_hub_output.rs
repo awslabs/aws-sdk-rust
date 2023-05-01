@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHubOutput {
+pub struct DescribeHubOutput  {
     /// <p>The name of the hub.</p>
     #[doc(hidden)]
     pub hub_name: std::option::Option<std::string::String>,
@@ -37,51 +37,51 @@ pub struct DescribeHubOutput {
 }
 impl DescribeHubOutput {
     /// <p>The name of the hub.</p>
-    pub fn hub_name(&self) -> std::option::Option<&str> {
+    pub fn hub_name(&self) -> std::option::Option<& str> {
         self.hub_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
-    pub fn hub_arn(&self) -> std::option::Option<&str> {
+    pub fn hub_arn(&self) -> std::option::Option<& str> {
         self.hub_arn.as_deref()
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(&self) -> std::option::Option<&str> {
+    pub fn hub_display_name(&self) -> std::option::Option<& str> {
         self.hub_display_name.as_deref()
     }
     /// <p>A description of the hub.</p>
-    pub fn hub_description(&self) -> std::option::Option<&str> {
+    pub fn hub_description(&self) -> std::option::Option<& str> {
         self.hub_description.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hub_search_keywords(&self) -> std::option::Option<& [std::string::String]> {
         self.hub_search_keywords.as_deref()
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn s3_storage_config(&self) -> std::option::Option<&crate::types::HubS3StorageConfig> {
+    pub fn s3_storage_config(&self) -> std::option::Option<& crate::types::HubS3StorageConfig> {
         self.s3_storage_config.as_ref()
     }
     /// <p>The status of the hub.</p>
-    pub fn hub_status(&self) -> std::option::Option<&crate::types::HubStatus> {
+    pub fn hub_status(&self) -> std::option::Option<& crate::types::HubStatus> {
         self.hub_status.as_ref()
     }
     /// <p>The failure reason if importing hub content failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time that the hub was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the hub was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeHubOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeHubOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHubOutput`](crate::operation::describe_hub::DescribeHubOutput).
     pub fn builder() -> crate::operation::describe_hub::builders::DescribeHubOutputBuilder {
@@ -113,8 +113,7 @@ impl DescribeHubOutputBuilder {
     }
     /// <p>The name of the hub.</p>
     pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
     pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +122,7 @@ impl DescribeHubOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
     pub fn set_hub_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_arn = input;
-        self
+        self.hub_arn = input; self
     }
     /// <p>The display name of the hub.</p>
     pub fn hub_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +131,7 @@ impl DescribeHubOutputBuilder {
     }
     /// <p>The display name of the hub.</p>
     pub fn set_hub_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_display_name = input;
-        self
+        self.hub_display_name = input; self
     }
     /// <p>A description of the hub.</p>
     pub fn hub_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +140,7 @@ impl DescribeHubOutputBuilder {
     }
     /// <p>A description of the hub.</p>
     pub fn set_hub_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_description = input;
-        self
+        self.hub_description = input; self
     }
     /// Appends an item to `hub_search_keywords`.
     ///
@@ -153,17 +149,13 @@ impl DescribeHubOutputBuilder {
     /// <p>The searchable keywords for the hub.</p>
     pub fn hub_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.hub_search_keywords.unwrap_or_default();
-        v.push(input.into());
-        self.hub_search_keywords = Some(v);
-        self
+                        v.push(input.into());
+                        self.hub_search_keywords = Some(v);
+                        self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.hub_search_keywords = input;
-        self
+    pub fn set_hub_search_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.hub_search_keywords = input; self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
     pub fn s3_storage_config(mut self, input: crate::types::HubS3StorageConfig) -> Self {
@@ -171,12 +163,8 @@ impl DescribeHubOutputBuilder {
         self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn set_s3_storage_config(
-        mut self,
-        input: std::option::Option<crate::types::HubS3StorageConfig>,
-    ) -> Self {
-        self.s3_storage_config = input;
-        self
+    pub fn set_s3_storage_config(mut self, input: std::option::Option<crate::types::HubS3StorageConfig>) -> Self {
+        self.s3_storage_config = input; self
     }
     /// <p>The status of the hub.</p>
     pub fn hub_status(mut self, input: crate::types::HubStatus) -> Self {
@@ -185,8 +173,7 @@ impl DescribeHubOutputBuilder {
     }
     /// <p>The status of the hub.</p>
     pub fn set_hub_status(mut self, input: std::option::Option<crate::types::HubStatus>) -> Self {
-        self.hub_status = input;
-        self
+        self.hub_status = input; self
     }
     /// <p>The failure reason if importing hub content failed.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +182,7 @@ impl DescribeHubOutputBuilder {
     }
     /// <p>The failure reason if importing hub content failed.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The date and time that the hub was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -204,12 +190,8 @@ impl DescribeHubOutputBuilder {
         self
     }
     /// <p>The date and time that the hub was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The date and time that the hub was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -217,36 +199,43 @@ impl DescribeHubOutputBuilder {
         self
     }
     /// <p>The date and time that the hub was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeHubOutput`](crate::operation::describe_hub::DescribeHubOutput).
     pub fn build(self) -> crate::operation::describe_hub::DescribeHubOutput {
         crate::operation::describe_hub::DescribeHubOutput {
-            hub_name: self.hub_name,
-            hub_arn: self.hub_arn,
-            hub_display_name: self.hub_display_name,
-            hub_description: self.hub_description,
-            hub_search_keywords: self.hub_search_keywords,
-            s3_storage_config: self.s3_storage_config,
-            hub_status: self.hub_status,
-            failure_reason: self.failure_reason,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            hub_name: self.hub_name
+            ,
+            hub_arn: self.hub_arn
+            ,
+            hub_display_name: self.hub_display_name
+            ,
+            hub_description: self.hub_description
+            ,
+            hub_search_keywords: self.hub_search_keywords
+            ,
+            s3_storage_config: self.s3_storage_config
+            ,
+            hub_status: self.hub_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

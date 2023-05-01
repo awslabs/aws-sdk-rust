@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowSourceOutput {
+pub struct UpdateFlowSourceOutput  {
     /// The ARN of the flow that you want to update.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct UpdateFlowSourceOutput {
 }
 impl UpdateFlowSourceOutput {
     /// The ARN of the flow that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The settings for the source of the flow.
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFlowSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateFlowSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowSourceOutput`](crate::operation::update_flow_source::UpdateFlowSourceOutput).
-    pub fn builder() -> crate::operation::update_flow_source::builders::UpdateFlowSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_flow_source::builders::UpdateFlowSourceOutputBuilder {
         crate::operation::update_flow_source::builders::UpdateFlowSourceOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl UpdateFlowSourceOutputBuilder {
     }
     /// The ARN of the flow that you want to update.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The settings for the source of the flow.
     pub fn source(mut self, input: crate::types::Source) -> Self {
@@ -60,24 +58,26 @@ impl UpdateFlowSourceOutputBuilder {
     }
     /// The settings for the source of the flow.
     pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateFlowSourceOutput`](crate::operation::update_flow_source::UpdateFlowSourceOutput).
     pub fn build(self) -> crate::operation::update_flow_source::UpdateFlowSourceOutput {
         crate::operation::update_flow_source::UpdateFlowSourceOutput {
-            flow_arn: self.flow_arn,
-            source: self.source,
+            flow_arn: self.flow_arn
+            ,
+            source: self.source
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

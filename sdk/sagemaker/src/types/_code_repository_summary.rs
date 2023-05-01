@@ -3,7 +3,7 @@
 /// <p>Specifies summary information about a Git repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeRepositorySummary {
+pub struct CodeRepositorySummary  {
     /// <p>The name of the Git repository.</p>
     #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct CodeRepositorySummary {
 }
 impl CodeRepositorySummary {
     /// <p>The name of the Git repository.</p>
-    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+    pub fn code_repository_name(&self) -> std::option::Option<& str> {
         self.code_repository_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
-    pub fn code_repository_arn(&self) -> std::option::Option<&str> {
+    pub fn code_repository_arn(&self) -> std::option::Option<& str> {
         self.code_repository_arn.as_deref()
     }
     /// <p>The date and time that the Git repository was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the Git repository was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
-    pub fn git_config(&self) -> std::option::Option<&crate::types::GitConfig> {
+    pub fn git_config(&self) -> std::option::Option<& crate::types::GitConfig> {
         self.git_config.as_ref()
     }
 }
@@ -66,12 +66,8 @@ impl CodeRepositorySummaryBuilder {
         self
     }
     /// <p>The name of the Git repository.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_repository_name = input;
-        self
+    pub fn set_code_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_repository_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
     pub fn code_repository_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,12 +75,8 @@ impl CodeRepositorySummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
-    pub fn set_code_repository_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_repository_arn = input;
-        self
+    pub fn set_code_repository_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_repository_arn = input; self
     }
     /// <p>The date and time that the Git repository was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,12 +84,8 @@ impl CodeRepositorySummaryBuilder {
         self
     }
     /// <p>The date and time that the Git repository was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The date and time that the Git repository was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -105,12 +93,8 @@ impl CodeRepositorySummaryBuilder {
         self
     }
     /// <p>The date and time that the Git repository was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
     pub fn git_config(mut self, input: crate::types::GitConfig) -> Self {
@@ -119,17 +103,22 @@ impl CodeRepositorySummaryBuilder {
     }
     /// <p>Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
     pub fn set_git_config(mut self, input: std::option::Option<crate::types::GitConfig>) -> Self {
-        self.git_config = input;
-        self
+        self.git_config = input; self
     }
     /// Consumes the builder and constructs a [`CodeRepositorySummary`](crate::types::CodeRepositorySummary).
     pub fn build(self) -> crate::types::CodeRepositorySummary {
         crate::types::CodeRepositorySummary {
-            code_repository_name: self.code_repository_name,
-            code_repository_arn: self.code_repository_arn,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            git_config: self.git_config,
+            code_repository_name: self.code_repository_name
+            ,
+            code_repository_arn: self.code_repository_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            git_config: self.git_config
+            ,
         }
     }
 }
+

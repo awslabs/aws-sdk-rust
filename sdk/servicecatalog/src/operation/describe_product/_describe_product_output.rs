@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductOutput {
+pub struct DescribeProductOutput  {
     /// <p>Summary information about the product view.</p>
     #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::types::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the specified product.</p>
     #[doc(hidden)]
-    pub provisioning_artifacts:
-        std::option::Option<std::vec::Vec<crate::types::ProvisioningArtifact>>,
+    pub provisioning_artifacts: std::option::Option<std::vec::Vec<crate::types::ProvisioningArtifact>>,
     /// <p>Information about the associated budgets.</p>
     #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>,
@@ -20,29 +19,27 @@ pub struct DescribeProductOutput {
 }
 impl DescribeProductOutput {
     /// <p>Summary information about the product view.</p>
-    pub fn product_view_summary(&self) -> std::option::Option<&crate::types::ProductViewSummary> {
+    pub fn product_view_summary(&self) -> std::option::Option<& crate::types::ProductViewSummary> {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the specified product.</p>
-    pub fn provisioning_artifacts(
-        &self,
-    ) -> std::option::Option<&[crate::types::ProvisioningArtifact]> {
+    pub fn provisioning_artifacts(&self) -> std::option::Option<& [crate::types::ProvisioningArtifact]> {
         self.provisioning_artifacts.as_deref()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::types::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<& [crate::types::BudgetDetail]> {
         self.budgets.as_deref()
     }
     /// <p>Information about the associated launch paths.</p>
-    pub fn launch_paths(&self) -> std::option::Option<&[crate::types::LaunchPath]> {
+    pub fn launch_paths(&self) -> std::option::Option<& [crate::types::LaunchPath]> {
         self.launch_paths.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProductOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeProductOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductOutput`](crate::operation::describe_product::DescribeProductOutput).
     pub fn builder() -> crate::operation::describe_product::builders::DescribeProductOutputBuilder {
@@ -55,8 +52,7 @@ impl DescribeProductOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProductOutputBuilder {
     pub(crate) product_view_summary: std::option::Option<crate::types::ProductViewSummary>,
-    pub(crate) provisioning_artifacts:
-        std::option::Option<std::vec::Vec<crate::types::ProvisioningArtifact>>,
+    pub(crate) provisioning_artifacts: std::option::Option<std::vec::Vec<crate::types::ProvisioningArtifact>>,
     pub(crate) budgets: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>,
     pub(crate) launch_paths: std::option::Option<std::vec::Vec<crate::types::LaunchPath>>,
     _request_id: Option<String>,
@@ -68,12 +64,8 @@ impl DescribeProductOutputBuilder {
         self
     }
     /// <p>Summary information about the product view.</p>
-    pub fn set_product_view_summary(
-        mut self,
-        input: std::option::Option<crate::types::ProductViewSummary>,
-    ) -> Self {
-        self.product_view_summary = input;
-        self
+    pub fn set_product_view_summary(mut self, input: std::option::Option<crate::types::ProductViewSummary>) -> Self {
+        self.product_view_summary = input; self
     }
     /// Appends an item to `provisioning_artifacts`.
     ///
@@ -82,17 +74,13 @@ impl DescribeProductOutputBuilder {
     /// <p>Information about the provisioning artifacts for the specified product.</p>
     pub fn provisioning_artifacts(mut self, input: crate::types::ProvisioningArtifact) -> Self {
         let mut v = self.provisioning_artifacts.unwrap_or_default();
-        v.push(input);
-        self.provisioning_artifacts = Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_artifacts = Some(v);
+                        self
     }
     /// <p>Information about the provisioning artifacts for the specified product.</p>
-    pub fn set_provisioning_artifacts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProvisioningArtifact>>,
-    ) -> Self {
-        self.provisioning_artifacts = input;
-        self
+    pub fn set_provisioning_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProvisioningArtifact>>) -> Self {
+        self.provisioning_artifacts = input; self
     }
     /// Appends an item to `budgets`.
     ///
@@ -101,17 +89,13 @@ impl DescribeProductOutputBuilder {
     /// <p>Information about the associated budgets.</p>
     pub fn budgets(mut self, input: crate::types::BudgetDetail) -> Self {
         let mut v = self.budgets.unwrap_or_default();
-        v.push(input);
-        self.budgets = Some(v);
-        self
+                        v.push(input);
+                        self.budgets = Some(v);
+                        self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>,
-    ) -> Self {
-        self.budgets = input;
-        self
+    pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
+        self.budgets = input; self
     }
     /// Appends an item to `launch_paths`.
     ///
@@ -120,35 +104,36 @@ impl DescribeProductOutputBuilder {
     /// <p>Information about the associated launch paths.</p>
     pub fn launch_paths(mut self, input: crate::types::LaunchPath) -> Self {
         let mut v = self.launch_paths.unwrap_or_default();
-        v.push(input);
-        self.launch_paths = Some(v);
-        self
+                        v.push(input);
+                        self.launch_paths = Some(v);
+                        self
     }
     /// <p>Information about the associated launch paths.</p>
-    pub fn set_launch_paths(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LaunchPath>>,
-    ) -> Self {
-        self.launch_paths = input;
-        self
+    pub fn set_launch_paths(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchPath>>) -> Self {
+        self.launch_paths = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeProductOutput`](crate::operation::describe_product::DescribeProductOutput).
     pub fn build(self) -> crate::operation::describe_product::DescribeProductOutput {
         crate::operation::describe_product::DescribeProductOutput {
-            product_view_summary: self.product_view_summary,
-            provisioning_artifacts: self.provisioning_artifacts,
-            budgets: self.budgets,
-            launch_paths: self.launch_paths,
+            product_view_summary: self.product_view_summary
+            ,
+            provisioning_artifacts: self.provisioning_artifacts
+            ,
+            budgets: self.budgets
+            ,
+            launch_paths: self.launch_paths
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

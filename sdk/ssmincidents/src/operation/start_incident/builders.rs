@@ -4,67 +4,49 @@ pub use crate::operation::start_incident::_start_incident_output::StartIncidentO
 pub use crate::operation::start_incident::_start_incident_input::StartIncidentInputBuilder;
 
 /// Fluent builder constructing a request to `StartIncident`.
-///
+/// 
 /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or manually. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartIncidentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_incident::builders::StartIncidentInputBuilder,
-}
-impl StartIncidentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::start_incident::builders::StartIncidentInputBuilder
+            }
+impl StartIncidentFluentBuilder  {
     /// Creates a new `StartIncident`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_incident::StartIncident,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::start_incident::StartIncidentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::start_incident::StartIncident, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::start_incident::StartIncidentOutput, aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -81,10 +63,7 @@ impl StartIncidentFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn set_response_plan_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_response_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_response_plan_arn(input);
         self
     }
@@ -98,27 +77,27 @@ impl StartIncidentFluentBuilder {
         self.inner = self.inner.set_title(input);
         self
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"> <b>Possible impacts:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p> 
+    /// <p class="title"> <b>Possible impacts:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li> 
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li> 
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li> 
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li> 
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li> 
     /// </ul>
     pub fn impact(mut self, input: i32) -> Self {
         self.inner = self.inner.impact(input);
         self
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"> <b>Possible impacts:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p> 
+    /// <p class="title"> <b>Possible impacts:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li> 
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li> 
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li> 
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li> 
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li> 
     /// </ul>
     pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_impact(input);
@@ -130,10 +109,7 @@ impl StartIncidentFluentBuilder {
         self
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    pub fn set_trigger_details(
-        mut self,
-        input: std::option::Option<crate::types::TriggerDetails>,
-    ) -> Self {
+    pub fn set_trigger_details(mut self, input: std::option::Option<crate::types::TriggerDetails>) -> Self {
         self.inner = self.inner.set_trigger_details(input);
         self
     }
@@ -147,11 +123,9 @@ impl StartIncidentFluentBuilder {
         self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn set_related_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>,
-    ) -> Self {
+    pub fn set_related_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>) -> Self {
         self.inner = self.inner.set_related_items(input);
         self
     }
 }
+

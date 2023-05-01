@@ -3,7 +3,7 @@
 /// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartOfSpeechTag {
+pub struct PartOfSpeechTag  {
     /// <p>Identifies the part of speech that the token represents.</p>
     #[doc(hidden)]
     pub tag: std::option::Option<crate::types::PartOfSpeechTagType>,
@@ -13,7 +13,7 @@ pub struct PartOfSpeechTag {
 }
 impl PartOfSpeechTag {
     /// <p>Identifies the part of speech that the token represents.</p>
-    pub fn tag(&self) -> std::option::Option<&crate::types::PartOfSpeechTagType> {
+    pub fn tag(&self) -> std::option::Option<& crate::types::PartOfSpeechTagType> {
         self.tag.as_ref()
     }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
@@ -42,12 +42,8 @@ impl PartOfSpeechTagBuilder {
         self
     }
     /// <p>Identifies the part of speech that the token represents.</p>
-    pub fn set_tag(
-        mut self,
-        input: std::option::Option<crate::types::PartOfSpeechTagType>,
-    ) -> Self {
-        self.tag = input;
-        self
+    pub fn set_tag(mut self, input: std::option::Option<crate::types::PartOfSpeechTagType>) -> Self {
+        self.tag = input; self
     }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -56,14 +52,16 @@ impl PartOfSpeechTagBuilder {
     }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// Consumes the builder and constructs a [`PartOfSpeechTag`](crate::types::PartOfSpeechTag).
     pub fn build(self) -> crate::types::PartOfSpeechTag {
         crate::types::PartOfSpeechTag {
-            tag: self.tag,
-            score: self.score,
+            tag: self.tag
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

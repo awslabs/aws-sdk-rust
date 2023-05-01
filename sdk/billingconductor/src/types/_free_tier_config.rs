@@ -3,7 +3,7 @@
 /// <p> The possible Amazon Web Services Free Tier configurations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FreeTierConfig {
+pub struct FreeTierConfig  {
     /// <p> Activate or deactivate Amazon Web Services Free Tier application. </p>
     #[doc(hidden)]
     pub activated: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl FreeTierConfigBuilder {
     }
     /// <p> Activate or deactivate Amazon Web Services Free Tier application. </p>
     pub fn set_activated(mut self, input: std::option::Option<bool>) -> Self {
-        self.activated = input;
-        self
+        self.activated = input; self
     }
     /// Consumes the builder and constructs a [`FreeTierConfig`](crate::types::FreeTierConfig).
     pub fn build(self) -> crate::types::FreeTierConfig {
         crate::types::FreeTierConfig {
-            activated: self.activated,
+            activated: self.activated
+            ,
         }
     }
 }
+

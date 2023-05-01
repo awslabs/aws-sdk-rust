@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrafficPolicyVersionOutput {
+pub struct CreateTrafficPolicyVersionOutput  {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
     #[doc(hidden)]
     pub traffic_policy: std::option::Option<crate::types::TrafficPolicy>,
@@ -14,22 +14,22 @@ pub struct CreateTrafficPolicyVersionOutput {
 }
 impl CreateTrafficPolicyVersionOutput {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
-    pub fn traffic_policy(&self) -> std::option::Option<&crate::types::TrafficPolicy> {
+    pub fn traffic_policy(&self) -> std::option::Option<& crate::types::TrafficPolicy> {
         self.traffic_policy.as_ref()
     }
     /// <p>A unique URL that represents a new traffic policy version.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrafficPolicyVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTrafficPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionOutput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput).
-    pub fn builder() -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionOutputBuilder {
         crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionOutputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl CreateTrafficPolicyVersionOutputBuilder {
         self
     }
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
-    pub fn set_traffic_policy(
-        mut self,
-        input: std::option::Option<crate::types::TrafficPolicy>,
-    ) -> Self {
-        self.traffic_policy = input;
-        self
+    pub fn set_traffic_policy(mut self, input: std::option::Option<crate::types::TrafficPolicy>) -> Self {
+        self.traffic_policy = input; self
     }
     /// <p>A unique URL that represents a new traffic policy version.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,26 +59,26 @@ impl CreateTrafficPolicyVersionOutputBuilder {
     }
     /// <p>A unique URL that represents a new traffic policy version.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyVersionOutput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput {
+    pub fn build(self) -> crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput {
         crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput {
-            traffic_policy: self.traffic_policy,
-            location: self.location,
+            traffic_policy: self.traffic_policy
+            ,
+            location: self.location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

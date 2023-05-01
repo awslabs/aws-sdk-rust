@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetListElementsInput {
+pub struct GetListElementsInput  {
     /// <p> The name of the list. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetListElementsInput {
 }
 impl GetListElementsInput {
     /// <p> The name of the list. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The next token for the subsequent request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of objects to return for the request. </p>
@@ -50,8 +50,7 @@ impl GetListElementsInputBuilder {
     }
     /// <p> The name of the list. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The next token for the subsequent request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetListElementsInputBuilder {
     }
     /// <p> The next token for the subsequent request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The maximum number of objects to return for the request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl GetListElementsInputBuilder {
     }
     /// <p> The maximum number of objects to return for the request. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetListElementsInput`](crate::operation::get_list_elements::GetListElementsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_list_elements::GetListElementsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_list_elements::GetListElementsInput {
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::get_list_elements::GetListElementsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_list_elements::GetListElementsInput {
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

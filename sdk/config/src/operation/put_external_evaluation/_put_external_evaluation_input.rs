@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutExternalEvaluationInput {
+pub struct PutExternalEvaluationInput  {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct PutExternalEvaluationInput {
 }
 impl PutExternalEvaluationInput {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-    pub fn external_evaluation(&self) -> std::option::Option<&crate::types::ExternalEvaluation> {
+    pub fn external_evaluation(&self) -> std::option::Option<& crate::types::ExternalEvaluation> {
         self.external_evaluation.as_ref()
     }
 }
 impl PutExternalEvaluationInput {
     /// Creates a new builder-style object to manufacture [`PutExternalEvaluationInput`](crate::operation::put_external_evaluation::PutExternalEvaluationInput).
-    pub fn builder(
-    ) -> crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder {
         crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl PutExternalEvaluationInputBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
     pub fn external_evaluation(mut self, input: crate::types::ExternalEvaluation) -> Self {
@@ -53,25 +50,19 @@ impl PutExternalEvaluationInputBuilder {
         self
     }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-    pub fn set_external_evaluation(
-        mut self,
-        input: std::option::Option<crate::types::ExternalEvaluation>,
-    ) -> Self {
-        self.external_evaluation = input;
-        self
+    pub fn set_external_evaluation(mut self, input: std::option::Option<crate::types::ExternalEvaluation>) -> Self {
+        self.external_evaluation = input; self
     }
     /// Consumes the builder and constructs a [`PutExternalEvaluationInput`](crate::operation::put_external_evaluation::PutExternalEvaluationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_external_evaluation::PutExternalEvaluationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_external_evaluation::PutExternalEvaluationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_external_evaluation::PutExternalEvaluationInput {
-                config_rule_name: self.config_rule_name,
-                external_evaluation: self.external_evaluation,
-            },
+                config_rule_name: self.config_rule_name
+                ,
+                external_evaluation: self.external_evaluation
+                ,
+            }
         )
     }
 }
+

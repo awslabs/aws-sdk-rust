@@ -3,7 +3,7 @@
 /// <p>A collection of accounts and regions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAggregationSource {
+pub struct AccountAggregationSource  {
     /// <p>The 12-digit account ID of the account being aggregated. </p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,7 +16,7 @@ pub struct AccountAggregationSource {
 }
 impl AccountAggregationSource {
     /// <p>The 12-digit account ID of the account being aggregated. </p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
@@ -24,7 +24,7 @@ impl AccountAggregationSource {
         self.all_aws_regions
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn aws_regions(&self) -> std::option::Option<& [std::string::String]> {
         self.aws_regions.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl AccountAggregationSourceBuilder {
     /// <p>The 12-digit account ID of the account being aggregated. </p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = Some(v);
+                        self
     }
     /// <p>The 12-digit account ID of the account being aggregated. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(mut self, input: bool) -> Self {
@@ -70,8 +66,7 @@ impl AccountAggregationSourceBuilder {
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn set_all_aws_regions(mut self, input: std::option::Option<bool>) -> Self {
-        self.all_aws_regions = input;
-        self
+        self.all_aws_regions = input; self
     }
     /// Appends an item to `aws_regions`.
     ///
@@ -80,24 +75,25 @@ impl AccountAggregationSourceBuilder {
     /// <p>The source regions being aggregated.</p>
     pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.aws_regions.unwrap_or_default();
-        v.push(input.into());
-        self.aws_regions = Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_regions = Some(v);
+                        self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn set_aws_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.aws_regions = input;
-        self
+    pub fn set_aws_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.aws_regions = input; self
     }
     /// Consumes the builder and constructs a [`AccountAggregationSource`](crate::types::AccountAggregationSource).
     pub fn build(self) -> crate::types::AccountAggregationSource {
         crate::types::AccountAggregationSource {
-            account_ids: self.account_ids,
-            all_aws_regions: self.all_aws_regions.unwrap_or_default(),
-            aws_regions: self.aws_regions,
+            account_ids: self.account_ids
+            ,
+            all_aws_regions: self.all_aws_regions
+                .unwrap_or_default()
+            ,
+            aws_regions: self.aws_regions
+            ,
         }
     }
 }
+
