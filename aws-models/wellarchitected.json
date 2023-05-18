@@ -1491,6 +1491,23 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.wellarchitected#DefinitionType": {
+            "type": "enum",
+            "members": {
+                "WORKLOAD_METADATA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WORKLOAD_METADATA"
+                    }
+                },
+                "APP_REGISTRY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "APP_REGISTRY"
+                    }
+                }
+            }
+        },
         "com.amazonaws.wellarchitected#DeleteLens": {
             "type": "operation",
             "input": {
@@ -1835,6 +1852,23 @@
             "traits": {
                 "smithy.api#documentation": "<p>Input to disassociate lens reviews.</p>",
                 "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.wellarchitected#DiscoveryIntegrationStatus": {
+            "type": "enum",
+            "members": {
+                "ENABLED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ENABLED"
+                    }
+                },
+                "DISABLED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DISABLED"
+                    }
+                }
             }
         },
         "com.amazonaws.wellarchitected#DisplayText": {
@@ -5701,7 +5735,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Updates whether the Amazon Web Services account is opted into organization sharing features.</p>",
+                "smithy.api#documentation": "<p>Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration features.</p>",
                 "smithy.api#http": {
                     "method": "PATCH",
                     "uri": "/global-settings",
@@ -5716,6 +5750,12 @@
                     "target": "com.amazonaws.wellarchitected#OrganizationSharingStatus",
                     "traits": {
                         "smithy.api#documentation": "<p>The status of organization sharing settings.</p>"
+                    }
+                },
+                "DiscoveryIntegrationStatus": {
+                    "target": "com.amazonaws.wellarchitected#DiscoveryIntegrationStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of discovery support settings.</p>"
                     }
                 }
             },
@@ -7466,6 +7506,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Discovery integration status in respect to Trusted Advisor for the workload.</p>"
                     }
+                },
+                "WorkloadResourceDefinition": {
+                    "target": "com.amazonaws.wellarchitected#WorkloadResourceDefinition",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The mode to use for identifying resources associated with the workload.</p>\n         <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>"
+                    }
                 }
             },
             "traits": {
@@ -7615,6 +7661,12 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The priorities of the pillars, which are used to order items in the improvement plan.\n            Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>"
+            }
+        },
+        "com.amazonaws.wellarchitected#WorkloadResourceDefinition": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.wellarchitected#DefinitionType"
             }
         },
         "com.amazonaws.wellarchitected#WorkloadReviewOwner": {

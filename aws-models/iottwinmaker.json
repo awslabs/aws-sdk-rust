@@ -3719,6 +3719,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The generated scene metadata.</p>"
                     }
+                },
+                "error": {
+                    "target": "com.amazonaws.iottwinmaker#SceneError",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SceneResponse error.</p>"
+                    }
                 }
             }
         },
@@ -5631,6 +5637,37 @@
                     "max": 256
                 },
                 "smithy.api#pattern": ".*"
+            }
+        },
+        "com.amazonaws.iottwinmaker#SceneError": {
+            "type": "structure",
+            "members": {
+                "code": {
+                    "target": "com.amazonaws.iottwinmaker#SceneErrorCode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SceneError code.</p>"
+                    }
+                },
+                "message": {
+                    "target": "com.amazonaws.iottwinmaker#ErrorMessage",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SceneError message.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The scene error.</p>"
+            }
+        },
+        "com.amazonaws.iottwinmaker#SceneErrorCode": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "name": "MATTERPORT_ERROR",
+                        "value": "MATTERPORT_ERROR"
+                    }
+                ]
             }
         },
         "com.amazonaws.iottwinmaker#SceneMetadataMap": {

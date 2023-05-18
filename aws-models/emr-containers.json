@@ -77,6 +77,9 @@
                     "target": "com.amazonaws.emrcontainers#DescribeVirtualCluster"
                 },
                 {
+                    "target": "com.amazonaws.emrcontainers#GetManagedEndpointSessionCredentials"
+                },
+                {
                     "target": "com.amazonaws.emrcontainers#ListJobRuns"
                 },
                 {
@@ -1618,6 +1621,30 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.emrcontainers#CredentialType": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 64
+                },
+                "smithy.api#pattern": "^.*\\S.*$"
+            }
+        },
+        "com.amazonaws.emrcontainers#Credentials": {
+            "type": "union",
+            "members": {
+                "token": {
+                    "target": "com.amazonaws.emrcontainers#Token",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The actual session token being returned.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The structure containing the session token being returned.</p>"
+            }
+        },
         "com.amazonaws.emrcontainers#Date": {
             "type": "timestamp",
             "traits": {
@@ -2324,6 +2351,120 @@
                         "smithy.api#enumValue": "CLUSTER_UNAVAILABLE"
                     }
                 }
+            }
+        },
+        "com.amazonaws.emrcontainers#GetManagedEndpointSessionCredentials": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.emrcontainers#GetManagedEndpointSessionCredentialsRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.emrcontainers#GetManagedEndpointSessionCredentialsResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.emrcontainers#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.emrcontainers#RequestThrottledException"
+                },
+                {
+                    "target": "com.amazonaws.emrcontainers#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.emrcontainers#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Generate a session token to connect to a managed endpoint. </p>",
+                "smithy.api#http": {
+                    "method": "POST",
+                    "uri": "/virtualclusters/{virtualClusterIdentifier}/endpoints/{endpointIdentifier}/credentials",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.emrcontainers#GetManagedEndpointSessionCredentialsRequest": {
+            "type": "structure",
+            "members": {
+                "endpointIdentifier": {
+                    "target": "com.amazonaws.emrcontainers#String2048",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the managed endpoint for which the request is submitted. </p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "virtualClusterIdentifier": {
+                    "target": "com.amazonaws.emrcontainers#String2048",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "executionRoleArn": {
+                    "target": "com.amazonaws.emrcontainers#IAMRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The IAM Execution Role ARN that will be used by the job run. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "credentialType": {
+                    "target": "com.amazonaws.emrcontainers#CredentialType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Type of the token requested. Currently supported and default value of this field is\n         “TOKEN.”</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "durationInSeconds": {
+                    "target": "com.amazonaws.emrcontainers#JavaInteger",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Duration in seconds for which the session token is valid. The default duration is 15\n         minutes and the maximum is 12 hours.</p>"
+                    }
+                },
+                "logContext": {
+                    "target": "com.amazonaws.emrcontainers#LogContext",
+                    "traits": {
+                        "smithy.api#documentation": "<p>String identifier used to separate sections of the execution logs uploaded to S3.</p>"
+                    }
+                },
+                "clientToken": {
+                    "target": "com.amazonaws.emrcontainers#ClientToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The client idempotency token of the job run request.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.emrcontainers#GetManagedEndpointSessionCredentialsResponse": {
+            "type": "structure",
+            "members": {
+                "id": {
+                    "target": "com.amazonaws.emrcontainers#ResourceIdString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the session token returned.</p>"
+                    }
+                },
+                "credentials": {
+                    "target": "com.amazonaws.emrcontainers#Credentials",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The structure containing the session credentials.</p>"
+                    }
+                },
+                "expiresAt": {
+                    "target": "com.amazonaws.emrcontainers#Date",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time when the session token will expire.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.emrcontainers#IAMRoleArn": {
@@ -3179,6 +3320,16 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.emrcontainers#LogContext": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 3,
+                    "max": 63
+                },
+                "smithy.api#pattern": "^((?!.*-s3alias)(?!xn--.*)[a-z0-9][-a-z0-9.]*)?[a-z0-9]$"
+            }
+        },
         "com.amazonaws.emrcontainers#LogGroupName": {
             "type": "string",
             "traits": {
@@ -3360,6 +3511,19 @@
                     "max": 2048
                 },
                 "smithy.api#pattern": "^arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\\d{12})?:[\\w/+=,.@-]+$"
+            }
+        },
+        "com.amazonaws.emrcontainers#RequestThrottledException": {
+            "type": "structure",
+            "members": {
+                "message": {
+                    "target": "com.amazonaws.emrcontainers#String1024"
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The request throttled.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
             }
         },
         "com.amazonaws.emrcontainers#ResourceIdString": {
@@ -3899,6 +4063,16 @@
                     "max": 512
                 },
                 "smithy.api#pattern": "^[\\.\\-_\\#A-Za-z0-9]+$"
+            }
+        },
+        "com.amazonaws.emrcontainers#Token": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1
+                },
+                "smithy.api#pattern": "^.*\\S.*$",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.emrcontainers#UntagResource": {

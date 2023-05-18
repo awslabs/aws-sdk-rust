@@ -52,19 +52,23 @@
             }
         },
         "com.amazonaws.mq#AuthenticationStrategy": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>",
-                "smithy.api#enum": [
-                    {
-                        "value": "SIMPLE",
-                        "name": "SIMPLE"
-                    },
-                    {
-                        "value": "LDAP",
-                        "name": "LDAP"
+            "type": "enum",
+            "members": {
+                "SIMPLE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SIMPLE"
                     }
-                ]
+                },
+                "LDAP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "LDAP"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>"
             }
         },
         "com.amazonaws.mq#AvailabilityZone": {
@@ -208,51 +212,67 @@
             }
         },
         "com.amazonaws.mq#BrokerState": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>The broker's status.</p>",
-                "smithy.api#enum": [
-                    {
-                        "value": "CREATION_IN_PROGRESS",
-                        "name": "CREATION_IN_PROGRESS"
-                    },
-                    {
-                        "value": "CREATION_FAILED",
-                        "name": "CREATION_FAILED"
-                    },
-                    {
-                        "value": "DELETION_IN_PROGRESS",
-                        "name": "DELETION_IN_PROGRESS"
-                    },
-                    {
-                        "value": "RUNNING",
-                        "name": "RUNNING"
-                    },
-                    {
-                        "value": "REBOOT_IN_PROGRESS",
-                        "name": "REBOOT_IN_PROGRESS"
-                    },
-                    {
-                        "value": "CRITICAL_ACTION_REQUIRED",
-                        "name": "CRITICAL_ACTION_REQUIRED"
+            "type": "enum",
+            "members": {
+                "CREATION_IN_PROGRESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CREATION_IN_PROGRESS"
                     }
-                ]
+                },
+                "CREATION_FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CREATION_FAILED"
+                    }
+                },
+                "DELETION_IN_PROGRESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DELETION_IN_PROGRESS"
+                    }
+                },
+                "RUNNING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RUNNING"
+                    }
+                },
+                "REBOOT_IN_PROGRESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "REBOOT_IN_PROGRESS"
+                    }
+                },
+                "CRITICAL_ACTION_REQUIRED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CRITICAL_ACTION_REQUIRED"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The broker's status.</p>"
             }
         },
         "com.amazonaws.mq#BrokerStorageType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>The broker's storage type.</p> <important><p>EFS is not supported for RabbitMQ engine type.</p></important>",
-                "smithy.api#enum": [
-                    {
-                        "value": "EBS",
-                        "name": "EBS"
-                    },
-                    {
-                        "value": "EFS",
-                        "name": "EFS"
+            "type": "enum",
+            "members": {
+                "EBS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EBS"
                     }
-                ]
+                },
+                "EFS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EFS"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The broker's storage type.</p> <important><p>EFS is not supported for RabbitMQ engine type.</p></important>"
             }
         },
         "com.amazonaws.mq#BrokerSummary": {
@@ -322,23 +342,29 @@
             }
         },
         "com.amazonaws.mq#ChangeType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>The type of change pending for the ActiveMQ user.</p>",
-                "smithy.api#enum": [
-                    {
-                        "value": "CREATE",
-                        "name": "CREATE"
-                    },
-                    {
-                        "value": "UPDATE",
-                        "name": "UPDATE"
-                    },
-                    {
-                        "value": "DELETE",
-                        "name": "DELETE"
+            "type": "enum",
+            "members": {
+                "CREATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CREATE"
                     }
-                ]
+                },
+                "UPDATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "UPDATE"
+                    }
+                },
+                "DELETE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DELETE"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The type of change pending for the ActiveMQ user.</p>"
             }
         },
         "com.amazonaws.mq#Configuration": {
@@ -442,7 +468,6 @@
                 "Revision": {
                     "target": "com.amazonaws.mq#__integer",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The revision number of the configuration.</p>",
                         "smithy.api#jsonName": "revision"
                     }
@@ -473,7 +498,6 @@
                 "Revision": {
                     "target": "com.amazonaws.mq#__integer",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>Required. The revision number of the configuration.</p>",
                         "smithy.api#jsonName": "revision",
                         "smithy.api#required": {}
@@ -584,7 +608,6 @@
                 "AutoMinorVersionUpgrade": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>",
                         "smithy.api#jsonName": "autoMinorVersionUpgrade",
                         "smithy.api#required": {}
@@ -676,7 +699,6 @@
                 "PubliclyAccessible": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>",
                         "smithy.api#jsonName": "publiclyAccessible",
                         "smithy.api#required": {}
@@ -720,7 +742,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Creates a broker using the specified properties.</p>"
+                "smithy.api#documentation": "<p>Creates a broker using the specified properties.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#CreateBrokerResponse": {
@@ -740,6 +763,9 @@
                         "smithy.api#jsonName": "brokerId"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#CreateConfiguration": {
@@ -816,7 +842,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).</p>"
+                "smithy.api#documentation": "<p>Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#CreateConfigurationResponse": {
@@ -864,6 +891,9 @@
                         "smithy.api#jsonName": "name"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#CreateTags": {
@@ -917,7 +947,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>A map of the key-value pairs for the resource tag.</p>"
+                "smithy.api#documentation": "<p>A map of the key-value pairs for the resource tag.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#CreateUser": {
@@ -968,7 +999,6 @@
                 "ConsoleAccess": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>",
                         "smithy.api#jsonName": "consoleAccess"
                     }
@@ -998,46 +1028,62 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Creates a new ActiveMQ user.</p>"
+                "smithy.api#documentation": "<p>Creates a new ActiveMQ user.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#CreateUserResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.mq#DayOfWeek": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "MONDAY",
-                        "name": "MONDAY"
-                    },
-                    {
-                        "value": "TUESDAY",
-                        "name": "TUESDAY"
-                    },
-                    {
-                        "value": "WEDNESDAY",
-                        "name": "WEDNESDAY"
-                    },
-                    {
-                        "value": "THURSDAY",
-                        "name": "THURSDAY"
-                    },
-                    {
-                        "value": "FRIDAY",
-                        "name": "FRIDAY"
-                    },
-                    {
-                        "value": "SATURDAY",
-                        "name": "SATURDAY"
-                    },
-                    {
-                        "value": "SUNDAY",
-                        "name": "SUNDAY"
+            "type": "enum",
+            "members": {
+                "MONDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MONDAY"
                     }
-                ]
+                },
+                "TUESDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "TUESDAY"
+                    }
+                },
+                "WEDNESDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WEDNESDAY"
+                    }
+                },
+                "THURSDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "THURSDAY"
+                    }
+                },
+                "FRIDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FRIDAY"
+                    }
+                },
+                "SATURDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SATURDAY"
+                    }
+                },
+                "SUNDAY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SUNDAY"
+                    }
+                }
             }
         },
         "com.amazonaws.mq#DeleteBroker": {
@@ -1082,6 +1128,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DeleteBrokerResponse": {
@@ -1094,6 +1143,9 @@
                         "smithy.api#jsonName": "brokerId"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#DeleteTags": {
@@ -1146,6 +1198,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DeleteUser": {
@@ -1198,30 +1253,42 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DeleteUserResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.mq#DeploymentMode": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>The broker's deployment mode.</p>",
-                "smithy.api#enum": [
-                    {
-                        "value": "SINGLE_INSTANCE",
-                        "name": "SINGLE_INSTANCE"
-                    },
-                    {
-                        "value": "ACTIVE_STANDBY_MULTI_AZ",
-                        "name": "ACTIVE_STANDBY_MULTI_AZ"
-                    },
-                    {
-                        "value": "CLUSTER_MULTI_AZ",
-                        "name": "CLUSTER_MULTI_AZ"
+            "type": "enum",
+            "members": {
+                "SINGLE_INSTANCE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SINGLE_INSTANCE"
                     }
-                ]
+                },
+                "ACTIVE_STANDBY_MULTI_AZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ACTIVE_STANDBY_MULTI_AZ"
+                    }
+                },
+                "CLUSTER_MULTI_AZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CLUSTER_MULTI_AZ"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The broker's deployment mode.</p>"
             }
         },
         "com.amazonaws.mq#DescribeBroker": {
@@ -1296,7 +1363,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#MaxResults",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#httpQuery": "maxResults"
                     }
@@ -1308,6 +1374,9 @@
                         "smithy.api#httpQuery": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DescribeBrokerEngineTypesResponse": {
@@ -1323,7 +1392,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#__integerMin5Max100",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#jsonName": "maxResults"
                     }
@@ -1335,6 +1403,9 @@
                         "smithy.api#jsonName": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#DescribeBrokerInstanceOptions": {
@@ -1385,7 +1456,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#MaxResults",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#httpQuery": "maxResults"
                     }
@@ -1404,6 +1474,9 @@
                         "smithy.api#httpQuery": "storageType"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DescribeBrokerInstanceOptionsResponse": {
@@ -1419,7 +1492,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#__integerMin5Max100",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#jsonName": "maxResults"
                     }
@@ -1431,6 +1503,9 @@
                         "smithy.api#jsonName": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#DescribeBrokerRequest": {
@@ -1444,6 +1519,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DescribeBrokerResponse": {
@@ -1466,7 +1544,6 @@
                 "AutoMinorVersionUpgrade": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>",
                         "smithy.api#jsonName": "autoMinorVersionUpgrade"
                     }
@@ -1614,7 +1691,6 @@
                 "PubliclyAccessible": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>",
                         "smithy.api#jsonName": "publiclyAccessible"
                     }
@@ -1654,6 +1730,9 @@
                         "smithy.api#jsonName": "users"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#DescribeConfiguration": {
@@ -1698,6 +1777,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DescribeConfigurationResponse": {
@@ -1773,6 +1855,9 @@
                         "smithy.api#jsonName": "tags"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#DescribeConfigurationRevision": {
@@ -1825,6 +1910,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DescribeConfigurationRevisionResponse": {
@@ -1858,6 +1946,9 @@
                         "smithy.api#jsonName": "description"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#DescribeUser": {
@@ -1910,6 +2001,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#DescribeUserResponse": {
@@ -1925,7 +2019,6 @@
                 "ConsoleAccess": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>",
                         "smithy.api#jsonName": "consoleAccess"
                     }
@@ -1951,6 +2044,9 @@
                         "smithy.api#jsonName": "username"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#EncryptionOptions": {
@@ -1966,7 +2062,6 @@
                 "UseAwsOwnedKey": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>",
                         "smithy.api#jsonName": "useAwsOwnedKey",
                         "smithy.api#required": {}
@@ -1978,19 +2073,23 @@
             }
         },
         "com.amazonaws.mq#EngineType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.</p>",
-                "smithy.api#enum": [
-                    {
-                        "value": "ACTIVEMQ",
-                        "name": "ACTIVEMQ"
-                    },
-                    {
-                        "value": "RABBITMQ",
-                        "name": "RABBITMQ"
+            "type": "enum",
+            "members": {
+                "ACTIVEMQ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ACTIVEMQ"
                     }
-                ]
+                },
+                "RABBITMQ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RABBITMQ"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.</p>"
             }
         },
         "com.amazonaws.mq#EngineVersion": {
@@ -2093,7 +2192,6 @@
                 "RoleSearchSubtree": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>",
                         "smithy.api#jsonName": "roleSearchSubtree"
                     }
@@ -2140,7 +2238,6 @@
                 "UserSearchSubtree": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>",
                         "smithy.api#jsonName": "userSearchSubtree"
                     }
@@ -2187,7 +2284,6 @@
                 "RoleSearchSubtree": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>",
                         "smithy.api#jsonName": "roleSearchSubtree"
                     }
@@ -2226,7 +2322,6 @@
                 "UserSearchSubtree": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>",
                         "smithy.api#jsonName": "userSearchSubtree"
                     }
@@ -2276,7 +2371,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#MaxResults",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#httpQuery": "maxResults"
                     }
@@ -2288,6 +2382,9 @@
                         "smithy.api#httpQuery": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#ListBrokersResponse": {
@@ -2307,6 +2404,9 @@
                         "smithy.api#jsonName": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#ListConfigurationRevisions": {
@@ -2354,7 +2454,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#MaxResults",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#httpQuery": "maxResults"
                     }
@@ -2366,6 +2465,9 @@
                         "smithy.api#httpQuery": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#ListConfigurationRevisionsResponse": {
@@ -2381,7 +2483,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#__integer",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#jsonName": "maxResults"
                     }
@@ -2400,6 +2501,9 @@
                         "smithy.api#jsonName": "revisions"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#ListConfigurations": {
@@ -2436,7 +2540,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#MaxResults",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#httpQuery": "maxResults"
                     }
@@ -2448,6 +2551,9 @@
                         "smithy.api#httpQuery": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#ListConfigurationsResponse": {
@@ -2463,7 +2569,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#__integer",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#jsonName": "maxResults"
                     }
@@ -2475,6 +2580,9 @@
                         "smithy.api#jsonName": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#ListTags": {
@@ -2519,6 +2627,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#ListTagsResponse": {
@@ -2531,6 +2642,9 @@
                         "smithy.api#jsonName": "tags"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#ListUsers": {
@@ -2578,7 +2692,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#MaxResults",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#httpQuery": "maxResults"
                     }
@@ -2590,6 +2703,9 @@
                         "smithy.api#httpQuery": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#ListUsersResponse": {
@@ -2605,7 +2721,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.mq#__integerMin5Max100",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>",
                         "smithy.api#jsonName": "maxResults"
                     }
@@ -2624,6 +2739,9 @@
                         "smithy.api#jsonName": "users"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#Logs": {
@@ -2632,7 +2750,6 @@
                 "Audit": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>",
                         "smithy.api#jsonName": "audit"
                     }
@@ -2640,7 +2757,6 @@
                 "General": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables general logging.</p>",
                         "smithy.api#jsonName": "general"
                     }
@@ -2656,7 +2772,6 @@
                 "Audit": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>",
                         "smithy.api#jsonName": "audit"
                     }
@@ -2671,7 +2786,6 @@
                 "General": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables general logging.</p>",
                         "smithy.api#jsonName": "general",
                         "smithy.api#required": {}
@@ -2700,7 +2814,6 @@
         "com.amazonaws.mq#MaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 100
@@ -2737,7 +2850,6 @@
                 "Audit": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>",
                         "smithy.api#jsonName": "audit"
                     }
@@ -2745,7 +2857,6 @@
                 "General": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables general logging.</p>",
                         "smithy.api#jsonName": "general"
                     }
@@ -2797,11 +2908,17 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#RebootBrokerResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.mq#SanitizationWarning": {
             "type": "structure",
@@ -2834,23 +2951,29 @@
             }
         },
         "com.amazonaws.mq#SanitizationWarningReason": {
-            "type": "string",
-            "traits": {
-                "smithy.api#documentation": "<p>The reason for which the XML elements or attributes were sanitized.</p>",
-                "smithy.api#enum": [
-                    {
-                        "value": "DISALLOWED_ELEMENT_REMOVED",
-                        "name": "DISALLOWED_ELEMENT_REMOVED"
-                    },
-                    {
-                        "value": "DISALLOWED_ATTRIBUTE_REMOVED",
-                        "name": "DISALLOWED_ATTRIBUTE_REMOVED"
-                    },
-                    {
-                        "value": "INVALID_ATTRIBUTE_VALUE_REMOVED",
-                        "name": "INVALID_ATTRIBUTE_VALUE_REMOVED"
+            "type": "enum",
+            "members": {
+                "DISALLOWED_ELEMENT_REMOVED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DISALLOWED_ELEMENT_REMOVED"
                     }
-                ]
+                },
+                "DISALLOWED_ATTRIBUTE_REMOVED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DISALLOWED_ATTRIBUTE_REMOVED"
+                    }
+                },
+                "INVALID_ATTRIBUTE_VALUE_REMOVED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "INVALID_ATTRIBUTE_VALUE_REMOVED"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The reason for which the XML elements or attributes were sanitized.</p>"
             }
         },
         "com.amazonaws.mq#UnauthorizedException": {
@@ -2924,7 +3047,6 @@
                 "AutoMinorVersionUpgrade": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>",
                         "smithy.api#jsonName": "autoMinorVersionUpgrade"
                     }
@@ -2988,7 +3110,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Updates the broker using the specified properties.</p>"
+                "smithy.api#documentation": "<p>Updates the broker using the specified properties.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#UpdateBrokerResponse": {
@@ -3004,7 +3127,6 @@
                 "AutoMinorVersionUpgrade": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>",
                         "smithy.api#jsonName": "autoMinorVersionUpgrade"
                     }
@@ -3065,6 +3187,9 @@
                         "smithy.api#jsonName": "securityGroups"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#UpdateConfiguration": {
@@ -3129,7 +3254,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Updates the specified configuration.</p>"
+                "smithy.api#documentation": "<p>Updates the specified configuration.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#UpdateConfigurationResponse": {
@@ -3177,6 +3303,9 @@
                         "smithy.api#jsonName": "warnings"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mq#UpdateUser": {
@@ -3227,7 +3356,6 @@
                 "ConsoleAccess": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>",
                         "smithy.api#jsonName": "consoleAccess"
                     }
@@ -3256,12 +3384,16 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Updates the information for an ActiveMQ user.</p>"
+                "smithy.api#documentation": "<p>Updates the information for an ActiveMQ user.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mq#UpdateUserResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.mq#User": {
             "type": "structure",
@@ -3269,7 +3401,6 @@
                 "ConsoleAccess": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>",
                         "smithy.api#jsonName": "consoleAccess"
                     }
@@ -3308,7 +3439,6 @@
                 "ConsoleAccess": {
                     "target": "com.amazonaws.mq#__boolean",
                     "traits": {
-                        "smithy.api#default": false,
                         "smithy.api#documentation": "<p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>",
                         "smithy.api#jsonName": "consoleAccess"
                     }
@@ -3388,21 +3518,14 @@
             }
         },
         "com.amazonaws.mq#__boolean": {
-            "type": "boolean",
-            "traits": {
-                "smithy.api#default": false
-            }
+            "type": "boolean"
         },
         "com.amazonaws.mq#__integer": {
-            "type": "integer",
-            "traits": {
-                "smithy.api#default": 0
-            }
+            "type": "integer"
         },
         "com.amazonaws.mq#__integerMin5Max100": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 5,
                     "max": 100

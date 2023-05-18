@@ -3785,7 +3785,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Imports the specified Windows 10 Bring Your Own License (BYOL) \n         image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is \n         in your Amazon Web Services account, and you must own the image. For more information about \n         creating BYOL images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html\"> Bring Your Own Windows\n            Desktop Licenses</a>.</p>"
+                "smithy.api#documentation": "<p>Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) \n         image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is \n         in your Amazon Web Services account, and you must own the image. For more information about \n         creating BYOL images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html\"> Bring Your Own Windows\n            Desktop Licenses</a>.</p>"
             }
         },
         "com.amazonaws.workspaces#ImportWorkspaceImageRequest": {
@@ -3828,7 +3828,7 @@
                 "Applications": {
                     "target": "com.amazonaws.workspaces#ApplicationList",
                     "traits": {
-                        "smithy.api#documentation": "<p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10\n         BYOL images. For more information about subscribing to Office for BYOL images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html\"> Bring\n            Your Own Windows Desktop Licenses</a>.</p>\n         <note>\n            <p>Although this parameter is an array, only one item is allowed at this time.</p>\n         </note>"
+                        "smithy.api#documentation": "<p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11\n         BYOL images. For more information about subscribing to Office for BYOL images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html\"> Bring\n            Your Own Windows Desktop Licenses</a>.</p>\n         <note>\n            <ul>\n               <li>\n                  <p>Although this parameter is an array, only one item is allowed at this time.</p>\n               </li>\n               <li>\n                  <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p>\n               </li>\n            </ul>\n         </note>"
                     }
                 }
             },

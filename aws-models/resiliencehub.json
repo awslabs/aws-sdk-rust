@@ -768,7 +768,7 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
-                    "max": 204800
+                    "max": 409600
                 },
                 "smithy.api#pattern": "^[\\w\\s:,-\\.'\\/{}\\[\\]:\"\\\\]+$"
             }
@@ -2250,7 +2250,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates an Resilience Hub application. An Resilience Hub application is a\n      collection of Amazon Web Services resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience Hub application, you provide an\n      application name, resources from one or more–up to 20–CloudFormation stacks, and an appropriate\n      resiliency policy.</p>\n         <p>After you create an Resilience Hub application, you publish it so that you can run a resiliency\n      assessment on it. You can then use recommendations from the assessment to improve resiliency\n      by running another assessment, comparing results, and then iterating the process until you\n      achieve your goals for recovery time objective (RTO) and recovery point objective\n      (RPO).</p>",
+                "smithy.api#documentation": "<p>Creates an Resilience Hub application. An Resilience Hub application is a\n      collection of Amazon Web Services resources structured to prevent and recover Amazon Web Services application disruptions. To describe an Resilience Hub application, you provide an\n      application name, resources from one or more CloudFormation stacks, Resource Groups,\n      Terraform state files, AppRegistry applications, and an appropriate resiliency policy. For\n      more information about the number of resources supported per application, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub\">Service Quotas</a>.</p>\n         <p>After you create an Resilience Hub application, you publish it so that you can run a resiliency\n      assessment on it. You can then use recommendations from the assessment to improve resiliency\n      by running another assessment, comparing results, and then iterating the process until you\n      achieve your goals for recovery time objective (RTO) and recovery point objective\n      (RPO).</p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/create-app",
@@ -2476,8 +2476,7 @@
                 "resourceName": {
                     "target": "com.amazonaws.resiliencehub#EntityName",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the resource.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The name of the resource.</p>"
                     }
                 },
                 "logicalResourceId": {
@@ -6166,6 +6165,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Indicates if a resource is included or excluded from the assessment.</p>"
                     }
+                },
+                "sourceType": {
+                    "target": "com.amazonaws.resiliencehub#ResourceSourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of input source.</p>"
+                    }
+                },
+                "parentResourceName": {
+                    "target": "com.amazonaws.resiliencehub#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the parent resource.</p>"
+                    }
                 }
             },
             "traits": {
@@ -7185,6 +7196,21 @@
                     {
                         "value": "Success",
                         "name": "SUCCESS"
+                    }
+                ]
+            }
+        },
+        "com.amazonaws.resiliencehub#ResourceSourceType": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "AppTemplate",
+                        "name": "APP_TEMPLATE"
+                    },
+                    {
+                        "value": "Discovered",
+                        "name": "DISCOVERED"
                     }
                 ]
             }

@@ -2925,7 +2925,7 @@
                 "maxResults": {
                     "target": "com.amazonaws.iotsitewise#BatchGetAssetPropertyAggregatesMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is less than 1 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is less than the value of\n            <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is equal to 1 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is equal to the value of\n          <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p>\n            </li>\n         </ul>"
                     }
                 }
             },
@@ -3396,7 +3396,7 @@
                 "maxResults": {
                     "target": "com.amazonaws.iotsitewise#BatchGetAssetPropertyValueHistoryMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is less than 1 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is less than the value of\n            <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is equal to 4 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is equal to the value of\n            <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p>\n            </li>\n         </ul>"
                     }
                 }
             },
@@ -7944,9 +7944,9 @@
                     }
                 },
                 "maxResults": {
-                    "target": "com.amazonaws.iotsitewise#MaxResults",
+                    "target": "com.amazonaws.iotsitewise#GetAssetPropertyValueAggregatesMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request.</p>\n         <p>Default: 100</p>",
+                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is equal to 1 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is equal to the value of\n          <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p>\n            </li>\n         </ul>",
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
@@ -8013,6 +8013,14 @@
                 }
             }
         },
+        "com.amazonaws.iotsitewise#GetAssetPropertyValueAggregatesMaxResults": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1
+                }
+            }
+        },
         "com.amazonaws.iotsitewise#GetAssetPropertyValueHistory": {
             "type": "operation",
             "input": {
@@ -8053,6 +8061,14 @@
                     "outputToken": "nextToken",
                     "items": "assetPropertyValueHistory",
                     "pageSize": "maxResults"
+                }
+            }
+        },
+        "com.amazonaws.iotsitewise#GetAssetPropertyValueHistoryMaxResults": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1
                 }
             }
         },
@@ -8116,9 +8132,9 @@
                     }
                 },
                 "maxResults": {
-                    "target": "com.amazonaws.iotsitewise#MaxResults",
+                    "target": "com.amazonaws.iotsitewise#GetAssetPropertyValueHistoryMaxResults",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request.</p>\n         <p>Default: 100</p>",
+                        "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is equal to 4 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is equal to the value of\n          <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p>\n            </li>\n         </ul>",
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
@@ -11331,9 +11347,9 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 2,
-                    "max": 2
+                    "max": 3
                 },
-                "smithy.api#pattern": "^1m|1h|1d$"
+                "smithy.api#pattern": "^1m|15m|1h|1d$"
             }
         },
         "com.amazonaws.iotsitewise#Resource": {

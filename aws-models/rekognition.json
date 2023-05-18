@@ -101,6 +101,78 @@
                     "traits": {
                         "smithy.api#enumValue": "ALL"
                     }
+                },
+                "AGE_RANGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AGE_RANGE"
+                    }
+                },
+                "BEARD": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "BEARD"
+                    }
+                },
+                "EMOTIONS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EMOTIONS"
+                    }
+                },
+                "EYE_DIRECTION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EYE_DIRECTION"
+                    }
+                },
+                "EYEGLASSES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EYEGLASSES"
+                    }
+                },
+                "EYES_OPEN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EYES_OPEN"
+                    }
+                },
+                "GENDER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "GENDER"
+                    }
+                },
+                "MOUTH_OPEN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MOUTH_OPEN"
+                    }
+                },
+                "MUSTACHE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MUSTACHE"
+                    }
+                },
+                "FACE_OCCLUDED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FACE_OCCLUDED"
+                    }
+                },
+                "SMILE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SMILE"
+                    }
+                },
+                "SUNGLASSES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SUNGLASSES"
+                    }
                 }
             }
         },
@@ -785,6 +857,23 @@
                 }
             }
         },
+        "com.amazonaws.rekognition#ContentModerationAggregateBy": {
+            "type": "enum",
+            "members": {
+                "TIMESTAMPS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "TIMESTAMPS"
+                    }
+                },
+                "SEGMENTS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SEGMENTS"
+                    }
+                }
+            }
+        },
         "com.amazonaws.rekognition#ContentModerationDetection": {
             "type": "structure",
             "members": {
@@ -799,6 +888,24 @@
                     "target": "com.amazonaws.rekognition#ModerationLabel",
                     "traits": {
                         "smithy.api#documentation": "<p>The content moderation label detected by in the stored video.</p>"
+                    }
+                },
+                "StartTimestampMillis": {
+                    "target": "com.amazonaws.rekognition#ULong",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time in milliseconds defining the start of the timeline \n      segment containing a continuously detected moderation label.</p>"
+                    }
+                },
+                "EndTimestampMillis": {
+                    "target": "com.amazonaws.rekognition#ULong",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The time in milliseconds defining the end of the \n      timeline segment containing a continuously detected moderation label. </p>"
+                    }
+                },
+                "DurationMillis": {
+                    "target": "com.amazonaws.rekognition#ULong",
+                    "traits": {
+                        "smithy.api#documentation": "<p> The time duration of a segment in milliseconds, \n      I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>"
                     }
                 }
             },
@@ -1187,7 +1294,7 @@
                 "OutputConfig": {
                     "target": "com.amazonaws.rekognition#LivenessOutputConfig",
                     "traits": {
-                        "smithy.api#documentation": "<p>Can specify the  location of an Amazon S3 bucket, where reference and audit images will be\n      stored. Note that the Amazon S3 bucket must be located in the caller's AWS account and in the same\n      region as the Face Liveness end-point. Additionally, the Amazon S3 object keys are auto-generated by\n      the Face Liveness system.</p>"
+                        "smithy.api#documentation": "<p>Can specify the location of an Amazon S3 bucket, where reference and audit images will be\n      stored. Note that the Amazon S3 bucket must be located in the caller's AWS account and in the\n      same region as the Face Liveness end-point. Additionally, the Amazon S3 object keys are\n      auto-generated by the Face Liveness system. Requires that the caller has the\n        <code>s3:PutObject</code> permission on the Amazon S3 bucket.</p>"
                     }
                 },
                 "AuditImagesLimit": {
@@ -2974,7 +3081,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Detects faces within an image that is provided as input.</p>\n         <p>\n            <code>DetectFaces</code> detects the 100 largest faces in the image. For each face\n      detected, the operation returns face details. These details include a bounding box of the\n      face, a confidence value (that the bounding box contains a face), and a fixed set of\n      attributes such as facial landmarks (for example, coordinates of eye and mouth), presence of\n      beard, sunglasses, and so on. </p>\n         <p>The face-detection algorithm is most effective on frontal faces. For non-frontal or\n      obscured faces, the algorithm might not detect the faces or might detect faces with lower\n      confidence. </p>\n         <p>You pass the input image either as base64-encoded image bytes or as a reference to an\n      image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,\n      passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>\n         <note>\n            <p>This is a stateless API operation. That is, the operation does not persist any\n        data.</p>\n         </note>\n         <p>This operation requires permissions to perform the <code>rekognition:DetectFaces</code>\n      action. </p>"
+                "smithy.api#documentation": "<p>Detects faces within an image that is provided as input.</p>\n         <p>\n            <code>DetectFaces</code> detects the 100 largest faces in the image. For each face\n      detected, the operation returns face details. These details include a bounding box of the\n      face, a confidence value (that the bounding box contains a face), and a fixed set of\n      attributes such as facial landmarks (for example, coordinates of eye and mouth), pose,\n      presence of facial occlusion, and so on.</p>\n         <p>The face-detection algorithm is most effective on frontal faces. For non-frontal or\n      obscured faces, the algorithm might not detect the faces or might detect faces with lower\n      confidence. </p>\n         <p>You pass the input image either as base64-encoded image bytes or as a reference to an\n      image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,\n      passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>\n         <note>\n            <p>This is a stateless API operation. That is, the operation does not persist any\n        data.</p>\n         </note>\n         <p>This operation requires permissions to perform the <code>rekognition:DetectFaces</code>\n      action. </p>"
             }
         },
         "com.amazonaws.rekognition#DetectFacesRequest": {
@@ -2990,7 +3097,7 @@
                 "Attributes": {
                     "target": "com.amazonaws.rekognition#Attributes",
                     "traits": {
-                        "smithy.api#documentation": "<p>An array of facial attributes you want to be returned. This can be the default list of\n      attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if\n      you specify <code>[\"DEFAULT\"]</code>, the API returns the following subset of facial\n      attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,\n        <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>[\"ALL\"]</code>, all\n      facial attributes are returned, but the operation takes longer to complete.</p>\n         <p>If you provide both, <code>[\"ALL\", \"DEFAULT\"]</code>, the service uses a logical AND\n      operator to determine which attributes to return (in this case, all attributes). </p>"
+                        "smithy.api#documentation": "<p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of\n      facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,\n        <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request\n      for specific facial attributes (in addition to the default list) - by using [<code>\"DEFAULT\",\n        \"FACE_OCCLUDED\"</code>] or just [<code>\"FACE_OCCLUDED\"</code>]. You can request for all\n      facial attributes by using [<code>\"ALL\"]</code>. Requesting more attributes may increase\n      response time.</p>\n         <p>If you provide both, <code>[\"ALL\", \"DEFAULT\"]</code>, the service uses a logical \"AND\"\n      operator to determine which attributes to return (in this case, all attributes). </p>"
                     }
                 }
             },
@@ -3902,6 +4009,32 @@
                 "smithy.api#pattern": "^[a-zA-Z0-9_.\\-:]+$"
             }
         },
+        "com.amazonaws.rekognition#EyeDirection": {
+            "type": "structure",
+            "members": {
+                "Yaw": {
+                    "target": "com.amazonaws.rekognition#Degree",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Value representing eye direction on the yaw axis.</p>"
+                    }
+                },
+                "Pitch": {
+                    "target": "com.amazonaws.rekognition#Degree",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Value representing eye direction on the pitch axis.</p>"
+                    }
+                },
+                "Confidence": {
+                    "target": "com.amazonaws.rekognition#Percent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The confidence that the service has in its predicted eye direction.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Indicates the direction the eyes are gazing in (independent of the head pose) as determined by its pitch and yaw. </p>"
+            }
+        },
         "com.amazonaws.rekognition#EyeOpen": {
             "type": "structure",
             "members": {
@@ -4097,6 +4230,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Confidence level that the bounding box contains a face (and not a different object such\n      as a tree). Default attribute.</p>"
                     }
+                },
+                "FaceOccluded": {
+                    "target": "com.amazonaws.rekognition#FaceOccluded",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n            <code>FaceOccluded</code> should return \"true\" with a high confidence score if a detected\n      face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark\n      sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return\n      \"false\" with a high confidence score if common occurrences that do not impact face\n      verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair,\n      and others. </p>"
+                    }
+                },
+                "EyeDirection": {
+                    "target": "com.amazonaws.rekognition#EyeDirection",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>"
+                    }
                 }
             },
             "traits": {
@@ -4190,6 +4335,27 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.rekognition#String"
+            }
+        },
+        "com.amazonaws.rekognition#FaceOccluded": {
+            "type": "structure",
+            "members": {
+                "Value": {
+                    "target": "com.amazonaws.rekognition#Boolean",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "<p>True if a detected face’s eyes, nose, and mouth are partially captured or if they are\n      covered by masks, dark sunglasses, cell phones, hands, or other objects. False if common\n      occurrences that do not impact face verification are detected, such as eye glasses, lightly\n      tinted sunglasses, strands of hair, and others.</p>"
+                    }
+                },
+                "Confidence": {
+                    "target": "com.amazonaws.rekognition#Percent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The confidence that the service has detected the presence of a face occlusion.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>\n            <code>FaceOccluded</code> should return \"true\" with a high confidence score if a detected\n      face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark\n      sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return\n      \"false\" with a high confidence score if common occurrences that do not impact face\n      verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair,\n      and others. </p>\n         <p>You can use <code>FaceOccluded</code> to determine if an obstruction on a face negatively\n      impacts using the image for face matching.</p>"
             }
         },
         "com.amazonaws.rekognition#FaceRecord": {
@@ -4556,6 +4722,21 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Array of celebrities recognized in the video.</p>"
                     }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the celebrity recognition operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartCelebrityRecognition.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartCelebrityRecognition and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
+                    }
                 }
             },
             "traits": {
@@ -4629,10 +4810,36 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.\n       Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.\n       Use <code>NAME</code> to alphabetically group elements for a label together.\n       Within each label group, the array element are sorted by detection confidence.\n       The default sort is by <code>TIMESTAMP</code>.</p>"
                     }
+                },
+                "AggregateBy": {
+                    "target": "com.amazonaws.rekognition#ContentModerationAggregateBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Defines how to aggregate results of the StartContentModeration request. \n      Default aggregation option is TIMESTAMPS. \n      SEGMENTS mode aggregates moderation labels over time.</p>"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.rekognition#GetContentModerationRequestMetadata": {
+            "type": "structure",
+            "members": {
+                "SortBy": {
+                    "target": "com.amazonaws.rekognition#ContentModerationSortBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The sorting method chosen for a GetContentModeration request.</p>"
+                    }
+                },
+                "AggregateBy": {
+                    "target": "com.amazonaws.rekognition#ContentModerationAggregateBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The aggregation method chosen for a GetContentModeration request.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains metadata about a content moderation request, \n      including the SortBy and AggregateBy options.</p>"
             }
         },
         "com.amazonaws.rekognition#GetContentModerationResponse": {
@@ -4672,6 +4879,27 @@
                     "target": "com.amazonaws.rekognition#String",
                     "traits": {
                         "smithy.api#documentation": "<p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>"
+                    }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the content moderation operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartContentModeration.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartContentModeration and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
+                    }
+                },
+                "GetRequestMetadata": {
+                    "target": "com.amazonaws.rekognition#GetContentModerationRequestMetadata",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the paramters used when getting a response. Includes \n      information on aggregation and sorting methods.</p>"
                     }
                 }
             },
@@ -4777,6 +5005,21 @@
                     "target": "com.amazonaws.rekognition#FaceDetections",
                     "traits": {
                         "smithy.api#documentation": "<p>An array of faces detected in the video. Each element contains a detected face's details and the time,\n       in milliseconds from the start of the video, the face was detected. </p>"
+                    }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the face detection operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartFaceDetection.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartFaceDetection and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
                     }
                 }
             },
@@ -4976,6 +5219,21 @@
                     "traits": {
                         "smithy.api#documentation": "<p>An array of persons,  <a>PersonMatch</a>,\n      in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information\n       for when persons are matched in the video.\n      You specify the input collection in an initial call to <code>StartFaceSearch</code>.\n      Each  <code>Persons</code> element includes a time the person was matched,\n      face match details (<code>FaceMatches</code>) for matching faces in the collection,\n       and person information (<code>Person</code>) for the matched person. </p>"
                     }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the face search operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartFaceSearch.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartFaceSearch and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
+                    }
                 }
             },
             "traits": {
@@ -5061,6 +5319,26 @@
                 "smithy.api#input": {}
             }
         },
+        "com.amazonaws.rekognition#GetLabelDetectionRequestMetadata": {
+            "type": "structure",
+            "members": {
+                "SortBy": {
+                    "target": "com.amazonaws.rekognition#LabelDetectionSortBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The sorting method chosen for a GetLabelDetection request.</p>"
+                    }
+                },
+                "AggregateBy": {
+                    "target": "com.amazonaws.rekognition#LabelDetectionAggregateBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The aggregation method chosen for a GetLabelDetection request.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains metadata about a label detection request, \n      including the SortBy and AggregateBy options.</p>"
+            }
+        },
         "com.amazonaws.rekognition#GetLabelDetectionResponse": {
             "type": "structure",
             "members": {
@@ -5098,6 +5376,27 @@
                     "target": "com.amazonaws.rekognition#String",
                     "traits": {
                         "smithy.api#documentation": "<p>Version number of the label detection model that was used to detect labels.</p>"
+                    }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the label detection operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartLabelDetection.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartLabelDetection and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
+                    }
+                },
+                "GetRequestMetadata": {
+                    "target": "com.amazonaws.rekognition#GetLabelDetectionRequestMetadata",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the paramters used when getting a response. Includes \n      information on aggregation and sorting methods.</p>"
                     }
                 }
             },
@@ -5209,6 +5508,21 @@
                     "target": "com.amazonaws.rekognition#PersonDetections",
                     "traits": {
                         "smithy.api#documentation": "<p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.\n        An array element will exist for each time a person's path is tracked. </p>"
+                    }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the person tracking operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartPersonTracking.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartCelebrityRecognition and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
                     }
                 }
             },
@@ -5327,6 +5641,21 @@
                     "traits": {
                         "smithy.api#documentation": "<p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.\n    </p>"
                     }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the segment detection operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartSegmentDetection.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartSegmentDetection and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
+                    }
                 }
             },
             "traits": {
@@ -5434,6 +5763,21 @@
                     "target": "com.amazonaws.rekognition#String",
                     "traits": {
                         "smithy.api#documentation": "<p>Version number of the text detection model that was used to detect text.</p>"
+                    }
+                },
+                "JobId": {
+                    "target": "com.amazonaws.rekognition#JobId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Job identifier for the text detection operation for which you \n      want to obtain results. The job identifer is returned by an initial call \n      to StartTextDetection.</p>"
+                    }
+                },
+                "Video": {
+                    "target": "com.amazonaws.rekognition#Video"
+                },
+                "JobTag": {
+                    "target": "com.amazonaws.rekognition#JobTag",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A job identifier specified in the call to StartTextDetection and \n      returned in the job completion notification sent to your \n      Amazon Simple Notification Service topic.</p>"
                     }
                 }
             },
@@ -5743,7 +6087,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Detects faces in the input image and adds them to the specified collection. </p>\n         <p>Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying\n      detection algorithm first detects the faces in the input image. For each face, the algorithm\n      extracts facial features into a feature vector, and stores it in the backend database.\n      Amazon Rekognition uses feature vectors when it performs face match and search operations using the\n        <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.</p>\n         <p>For more information, see Adding faces to a collection in the Amazon Rekognition\n      Developer Guide.</p>\n         <p>To get the number of faces in a collection, call <a>DescribeCollection</a>. </p>\n         <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code>\n      indexes the 15 largest faces in the input image. Later versions of the face detection model\n      index the 100 largest faces in the input image. </p>\n         <p>If you're using version 4 or later of the face model, image orientation information is not\n      returned in the <code>OrientationCorrection</code> field. </p>\n         <p>To determine which version of the model you're using, call <a>DescribeCollection</a> and supply the collection ID. You can also get the model\n      version from the value of <code>FaceModelVersion</code> in the response from\n        <code>IndexFaces</code>\n         </p>\n         <p>For more information, see Model Versioning in the Amazon Rekognition Developer\n      Guide.</p>\n         <p>If you provide the optional <code>ExternalImageId</code> for the input image you\n      provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response returns the external ID. You can use this\n      external image ID to create a client-side index to associate the faces with each image. You\n      can then use the index to find all faces in an image.</p>\n         <p>You can specify the maximum number of faces to index with the <code>MaxFaces</code> input\n      parameter. This is useful when you want to index the largest faces in an image and don't want\n      to index smaller faces, such as those belonging to people standing in the background.</p>\n         <p>The <code>QualityFilter</code> input parameter allows you to filter out detected faces\n      that don’t meet a required quality bar. The quality bar is based on a variety of common use\n      cases. By default, <code>IndexFaces</code> chooses the quality bar that's used to filter\n      faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>, to set\n      the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If\n      you do not want to filter detected faces, specify <code>NONE</code>. </p>\n         <note>\n            <p>To use quality filtering, you need a collection associated with version 3 of the face\n        model or higher. To get the version of the face model associated with a collection, call\n          <a>DescribeCollection</a>. </p>\n         </note>\n         <p>Information about faces detected in an image, but not indexed, is returned in an array of\n        <a>UnindexedFace</a> objects, <code>UnindexedFaces</code>. Faces aren't indexed\n      for reasons such as:</p>\n         <ul>\n            <li>\n               <p>The number of faces detected exceeds the value of the <code>MaxFaces</code> request\n          parameter.</p>\n            </li>\n            <li>\n               <p>The face is too small compared to the image dimensions.</p>\n            </li>\n            <li>\n               <p>The face is too blurry.</p>\n            </li>\n            <li>\n               <p>The image is too dark.</p>\n            </li>\n            <li>\n               <p>The face has an extreme pose.</p>\n            </li>\n            <li>\n               <p>The face doesn’t have enough detail to be suitable for face search.</p>\n            </li>\n         </ul>\n         <p>In response, the <code>IndexFaces</code> operation returns an array of metadata for all\n      detected faces, <code>FaceRecords</code>. This includes: </p>\n         <ul>\n            <li>\n               <p>The bounding box, <code>BoundingBox</code>, of the detected face. </p>\n            </li>\n            <li>\n               <p>A confidence value, <code>Confidence</code>, which indicates the confidence that the\n          bounding box contains a face.</p>\n            </li>\n            <li>\n               <p>A face ID, <code>FaceId</code>, assigned by the service for each face that's detected\n          and stored.</p>\n            </li>\n            <li>\n               <p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p>\n            </li>\n         </ul>\n         <p>If you request all facial attributes (by using the <code>detectionAttributes</code>\n      parameter), Amazon Rekognition returns detailed facial attributes, such as facial landmarks (for\n      example, location of eye and mouth) and other facial attributes. If you provide the same\n      image, specify the same collection, and use the same external ID in the\n        <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.</p>\n         <p></p>\n         <p>The input image is passed either as base64-encoded image bytes, or as a reference to an\n      image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,\n      passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>\n         <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code>\n      action.</p>"
+                "smithy.api#documentation": "<p>Detects faces in the input image and adds them to the specified collection. </p>\n         <p>Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying\n      detection algorithm first detects the faces in the input image. For each face, the algorithm\n      extracts facial features into a feature vector, and stores it in the backend database.\n      Amazon Rekognition uses feature vectors when it performs face match and search operations using the\n        <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.</p>\n         <p>For more information, see Adding faces to a collection in the Amazon Rekognition\n      Developer Guide.</p>\n         <p>To get the number of faces in a collection, call <a>DescribeCollection</a>. </p>\n         <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code>\n      indexes the 15 largest faces in the input image. Later versions of the face detection model\n      index the 100 largest faces in the input image. </p>\n         <p>If you're using version 4 or later of the face model, image orientation information is not\n      returned in the <code>OrientationCorrection</code> field. </p>\n         <p>To determine which version of the model you're using, call <a>DescribeCollection</a> and supply the collection ID. You can also get the model\n      version from the value of <code>FaceModelVersion</code> in the response from\n        <code>IndexFaces</code>\n         </p>\n         <p>For more information, see Model Versioning in the Amazon Rekognition Developer\n      Guide.</p>\n         <p>If you provide the optional <code>ExternalImageId</code> for the input image you\n      provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response returns the external ID. You can use this\n      external image ID to create a client-side index to associate the faces with each image. You\n      can then use the index to find all faces in an image.</p>\n         <p>You can specify the maximum number of faces to index with the <code>MaxFaces</code> input\n      parameter. This is useful when you want to index the largest faces in an image and don't want\n      to index smaller faces, such as those belonging to people standing in the background.</p>\n         <p>The <code>QualityFilter</code> input parameter allows you to filter out detected faces\n      that don’t meet a required quality bar. The quality bar is based on a variety of common use\n      cases. By default, <code>IndexFaces</code> chooses the quality bar that's used to filter\n      faces. You can also explicitly choose the quality bar. Use <code>QualityFilter</code>, to set\n      the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If\n      you do not want to filter detected faces, specify <code>NONE</code>. </p>\n         <note>\n            <p>To use quality filtering, you need a collection associated with version 3 of the face\n        model or higher. To get the version of the face model associated with a collection, call\n          <a>DescribeCollection</a>. </p>\n         </note>\n         <p>Information about faces detected in an image, but not indexed, is returned in an array of\n        <a>UnindexedFace</a> objects, <code>UnindexedFaces</code>. Faces aren't indexed\n      for reasons such as:</p>\n         <ul>\n            <li>\n               <p>The number of faces detected exceeds the value of the <code>MaxFaces</code> request\n          parameter.</p>\n            </li>\n            <li>\n               <p>The face is too small compared to the image dimensions.</p>\n            </li>\n            <li>\n               <p>The face is too blurry.</p>\n            </li>\n            <li>\n               <p>The image is too dark.</p>\n            </li>\n            <li>\n               <p>The face has an extreme pose.</p>\n            </li>\n            <li>\n               <p>The face doesn’t have enough detail to be suitable for face search.</p>\n            </li>\n         </ul>\n         <p>In response, the <code>IndexFaces</code> operation returns an array of metadata for all\n      detected faces, <code>FaceRecords</code>. This includes: </p>\n         <ul>\n            <li>\n               <p>The bounding box, <code>BoundingBox</code>, of the detected face. </p>\n            </li>\n            <li>\n               <p>A confidence value, <code>Confidence</code>, which indicates the confidence that the\n          bounding box contains a face.</p>\n            </li>\n            <li>\n               <p>A face ID, <code>FaceId</code>, assigned by the service for each face that's detected\n          and stored.</p>\n            </li>\n            <li>\n               <p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p>\n            </li>\n         </ul>\n         <p>If you request <code>ALL</code> or specific facial attributes (e.g.,\n        <code>FACE_OCCLUDED</code>) by using the detectionAttributes parameter, Amazon Rekognition\n      returns detailed facial attributes, such as facial landmarks (for example, location of eye and\n      mouth), facial occlusion, and other facial attributes.</p>\n         <p>If you provide the same image, specify the same collection, and use the same external ID\n      in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face\n      metadata.</p>\n         <p></p>\n         <p>The input image is passed either as base64-encoded image bytes, or as a reference to an\n      image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,\n      passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>\n         <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code>\n      action.</p>"
             }
         },
         "com.amazonaws.rekognition#IndexFacesModelVersion": {
@@ -5778,7 +6122,7 @@
                 "DetectionAttributes": {
                     "target": "com.amazonaws.rekognition#Attributes",
                     "traits": {
-                        "smithy.api#documentation": "<p>An array of facial attributes that you want to be returned. This can be the default\n      list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>\n      or if you specify <code>[\"DEFAULT\"]</code>, the API returns the following subset of facial\n      attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,\n        <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>[\"ALL\"]</code>, all\n      facial attributes are returned, but the operation takes longer to complete.</p>\n         <p>If you provide both, <code>[\"ALL\", \"DEFAULT\"]</code>, the service uses a logical AND\n      operator to determine which attributes to return (in this case, all attributes). </p>"
+                        "smithy.api#documentation": "<p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of\n      facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,\n        <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request\n      for specific facial attributes (in addition to the default list) - by using <code>[\"DEFAULT\",\n        \"FACE_OCCLUDED\"]</code> or just <code>[\"FACE_OCCLUDED\"]</code>. You can request for all\n      facial attributes by using <code>[\"ALL\"]</code>. Requesting more attributes may increase\n      response time.</p>\n         <p>If you provide both, <code>[\"ALL\", \"DEFAULT\"]</code>, the service uses a logical AND\n      operator to determine which attributes to return (in this case, all attributes). </p>"
                     }
                 },
                 "MaxFaces": {
@@ -6014,9 +6358,9 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 1,
-                    "max": 256
+                    "max": 1024
                 },
-                "smithy.api#pattern": "^[a-zA-Z0-9_.\\-:]+$"
+                "smithy.api#pattern": "^[a-zA-Z0-9_.\\-:+=\\/]+$"
             }
         },
         "com.amazonaws.rekognition#KinesisDataArn": {
