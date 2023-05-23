@@ -2137,7 +2137,7 @@
                 "imageDigest": {
                     "target": "com.amazonaws.ecs#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The container image manifest digest.</p>\n         <note>\n            <p>The <code>imageDigest</code> is only returned if the container is using an image\n\t\t\t\thosted in Amazon ECR, otherwise it is omitted.</p>\n         </note>"
+                        "smithy.api#documentation": "<p>The container image manifest digest.</p>"
                     }
                 },
                 "runtimeId": {
@@ -2938,6 +2938,9 @@
                     "target": "com.amazonaws.ecs#InvalidParameterException"
                 },
                 {
+                    "target": "com.amazonaws.ecs#NamespaceNotFoundException"
+                },
+                {
                     "target": "com.amazonaws.ecs#ServerException"
                 }
             ],
@@ -3087,7 +3090,7 @@
                 "desiredCount": {
                     "target": "com.amazonaws.ecs#BoxedInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of instantiations of the specified task definition to place and keep\n\t\t\trunning on your cluster.</p>\n         <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't\n\t\t\tspecified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't\n\t\t\trequired.</p>"
+                        "smithy.api#documentation": "<p>The number of instantiations of the specified task definition to place and keep running in your service.</p>\n         <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't\n\t\t\tspecified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't\n\t\t\trequired.</p>"
                     }
                 },
                 "clientToken": {
@@ -7847,7 +7850,7 @@
                 "value": {
                     "target": "com.amazonaws.ecs#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The account setting value for the specified principal ARN. Accepted values are\n\t\t\t\t<code>enabled</code> and <code>disabled</code>.</p>",
+                        "smithy.api#documentation": "<p>The account setting value for the specified principal ARN. Accepted values are\n\t\t\t\t<code>enabled</code>, <code>disabled</code>, <code>on</code>, and\n\t\t\t<code>off</code>.</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -7883,7 +7886,7 @@
                 "value": {
                     "target": "com.amazonaws.ecs#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The account setting value for the specified principal ARN. Accepted values are\n\t\t\t\t<code>enabled</code> and <code>disabled</code>.</p>",
+                        "smithy.api#documentation": "<p>The account setting value for the specified principal ARN. Accepted values are\n\t\t\t\t<code>enabled</code>, <code>disabled</code>, <code>on</code>, and\n\t\t\t<code>off</code>.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -11111,6 +11114,9 @@
                 },
                 {
                     "target": "com.amazonaws.ecs#InvalidParameterException"
+                },
+                {
+                    "target": "com.amazonaws.ecs#NamespaceNotFoundException"
                 },
                 {
                     "target": "com.amazonaws.ecs#ServerException"

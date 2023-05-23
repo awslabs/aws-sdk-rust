@@ -4558,6 +4558,18 @@
                     "traits": {
                         "smithy.api#enumValue": "ERROR"
                     }
+                },
+                "PAUSED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PAUSED"
+                    }
+                },
+                "PAUSING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PAUSING"
+                    }
                 }
             }
         },

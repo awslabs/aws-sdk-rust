@@ -1462,6 +1462,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Configuration for network access to your workspace.</p>\n         <p>When this is configured, only listed IP addresses and VPC endpoints will be able to\n            access your workspace. Standard Grafana authentication and authorization will still be\n            required.</p>\n         <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will\n            be allowed. Standard Grafana authentication and authorization will still be\n            required.</p>"
                     }
+                },
+                "grafanaVersion": {
+                    "target": "com.amazonaws.grafana#GrafanaVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the version of Grafana to support in the new workspace.</p>\n         <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>"
+                    }
                 }
             }
         },

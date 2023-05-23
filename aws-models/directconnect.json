@@ -1787,7 +1787,7 @@
                     "target": "com.amazonaws.directconnect#Count",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "<p>The number of physical dedicated connections initially provisioned and bundled by the\n      LAG.</p>",
+                        "smithy.api#documentation": "<p>The number of physical dedicated connections initially provisioned and bundled by the\n      LAG.  You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -4831,7 +4831,7 @@
                 "mtu": {
                     "target": "com.amazonaws.directconnect#MTU",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>"
+                        "smithy.api#documentation": "<p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>"
                     }
                 },
                 "authKey": {
@@ -4907,7 +4907,7 @@
                 "mtu": {
                     "target": "com.amazonaws.directconnect#MTU",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500. </p>"
+                        "smithy.api#documentation": "<p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500 </p>"
                     }
                 },
                 "authKey": {
@@ -7071,7 +7071,7 @@
                 "mtu": {
                     "target": "com.amazonaws.directconnect#MTU",
                     "traits": {
-                        "smithy.api#documentation": "<p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>"
+                        "smithy.api#documentation": "<p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>"
                     }
                 },
                 "jumboFrameCapable": {

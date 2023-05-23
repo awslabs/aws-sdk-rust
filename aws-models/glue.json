@@ -1930,6 +1930,243 @@
                 "smithy.api#error": "client"
             }
         },
+        "com.amazonaws.glue#AmazonRedshiftAdvancedOption": {
+            "type": "structure",
+            "members": {
+                "Key": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The key when specifying a key-value pair.</p>"
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The value when specifying a key-value pair.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies an Amazon Redshift data store.</p>"
+            }
+        },
+        "com.amazonaws.glue#AmazonRedshiftAdvancedOptions": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.glue#AmazonRedshiftAdvancedOption"
+            }
+        },
+        "com.amazonaws.glue#AmazonRedshiftNodeData": {
+            "type": "structure",
+            "members": {
+                "AccessType": {
+                    "target": "com.amazonaws.glue#GenericLimitedString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The access type for the Redshift connection. Can be a direct connection or catalog connections.</p>"
+                    }
+                },
+                "SourceType": {
+                    "target": "com.amazonaws.glue#GenericLimitedString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The source type to specify whether a specific table is the source or a custom query.</p>"
+                    }
+                },
+                "Connection": {
+                    "target": "com.amazonaws.glue#Option",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Glue connection to the Redshift cluster.</p>"
+                    }
+                },
+                "Schema": {
+                    "target": "com.amazonaws.glue#Option",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Redshift schema name when working with a direct connection.</p>"
+                    }
+                },
+                "Table": {
+                    "target": "com.amazonaws.glue#Option",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Redshift table name when working with a direct connection.</p>"
+                    }
+                },
+                "CatalogDatabase": {
+                    "target": "com.amazonaws.glue#Option",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Glue Data Catalog database when working with a data catalog.</p>"
+                    }
+                },
+                "CatalogTable": {
+                    "target": "com.amazonaws.glue#Option",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Glue Data Catalog table name when working with a data catalog.</p>"
+                    }
+                },
+                "CatalogRedshiftSchema": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Redshift schema name when working with a data catalog.</p>"
+                    }
+                },
+                "CatalogRedshiftTable": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The database table to read from.</p>"
+                    }
+                },
+                "TempDir": {
+                    "target": "com.amazonaws.glue#EnclosedInStringProperty",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>"
+                    }
+                },
+                "IamRole": {
+                    "target": "com.amazonaws.glue#Option",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional. The role name use when connection to S3. The IAM role ill default to the role on the job when left blank.</p>"
+                    }
+                },
+                "AdvancedOptions": {
+                    "target": "com.amazonaws.glue#AmazonRedshiftAdvancedOptions",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional values when connecting to the Redshift cluster.</p>"
+                    }
+                },
+                "SampleQuery": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SQL used to fetch the data from a Redshift sources when the SourceType is 'query'.</p>"
+                    }
+                },
+                "PreAction": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SQL used before a MERGE or APPEND with upsert is run.</p>"
+                    }
+                },
+                "PostAction": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SQL used before a MERGE or APPEND with upsert is run.</p>"
+                    }
+                },
+                "Action": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies how writing to a Redshift cluser will occur.</p>"
+                    }
+                },
+                "TablePrefix": {
+                    "target": "com.amazonaws.glue#GenericLimitedString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the prefix to a table.</p>"
+                    }
+                },
+                "Upsert": {
+                    "target": "com.amazonaws.glue#BooleanValue",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "<p>The action used on Redshift sinks when doing an APPEND.</p>"
+                    }
+                },
+                "MergeAction": {
+                    "target": "com.amazonaws.glue#GenericLimitedString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The action used when to detemine how a MERGE in a Redshift sink will be handled.</p>"
+                    }
+                },
+                "MergeWhenMatched": {
+                    "target": "com.amazonaws.glue#GenericLimitedString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record matches a new record.</p>"
+                    }
+                },
+                "MergeWhenNotMatched": {
+                    "target": "com.amazonaws.glue#GenericLimitedString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record doesn't match a new record.</p>"
+                    }
+                },
+                "MergeClause": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SQL used in a custom merge to deal with matching records.</p>"
+                    }
+                },
+                "CrawlerConnection": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the name of the connection that is associated with the catalog table used.</p>"
+                    }
+                },
+                "TableSchema": {
+                    "target": "com.amazonaws.glue#OptionList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The array of schema output for a given node.</p>"
+                    }
+                },
+                "StagingTable": {
+                    "target": "com.amazonaws.glue#GenericString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the temporary staging table that is used when doing a MERGE or APPEND with upsert.</p>"
+                    }
+                },
+                "SelectedColumns": {
+                    "target": "com.amazonaws.glue#OptionList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The list of column names used to determine a matching record when doing a MERGE or APPEND with upsert.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies an Amazon Redshift node.</p>"
+            }
+        },
+        "com.amazonaws.glue#AmazonRedshiftSource": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.glue#NodeName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Amazon Redshift source.</p>"
+                    }
+                },
+                "Data": {
+                    "target": "com.amazonaws.glue#AmazonRedshiftNodeData",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the data of the Amazon Reshift source node.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies an Amazon Redshift source.</p>"
+            }
+        },
+        "com.amazonaws.glue#AmazonRedshiftTarget": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.glue#NodeName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Amazon Redshift target.</p>"
+                    }
+                },
+                "Data": {
+                    "target": "com.amazonaws.glue#AmazonRedshiftNodeData",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the data of the Amazon Reshift target node.</p>"
+                    }
+                },
+                "Inputs": {
+                    "target": "com.amazonaws.glue#OneInput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The nodes that are inputs to the data target.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies an Amazon Redshift target.</p>"
+            }
+        },
         "com.amazonaws.glue#ApplyMapping": {
             "type": "structure",
             "members": {
@@ -5016,6 +5253,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>"
                     }
+                },
+                "AmazonRedshiftSource": {
+                    "target": "com.amazonaws.glue#AmazonRedshiftSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies a target that writes to a data source in Amazon Redshift.</p>"
+                    }
+                },
+                "AmazonRedshiftTarget": {
+                    "target": "com.amazonaws.glue#AmazonRedshiftTarget",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies a target that writes to a data target in Amazon Redshift.</p>"
+                    }
                 }
             },
             "traits": {
@@ -7207,6 +7456,12 @@
                     "target": "com.amazonaws.glue#ContextWords",
                     "traits": {
                         "smithy.api#documentation": "<p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>\n         <p>If no context words are passed only a regular expression is checked.</p>"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.glue#TagsMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of tags applied to the custom entity type.</p>"
                     }
                 }
             },
@@ -12526,6 +12781,12 @@
                     "target": "com.amazonaws.glue#EnclosedInStringProperty",
                     "traits": {
                         "smithy.api#documentation": "<p>This field is not used and will be deprecated in future release.</p>"
+                    }
+                },
+                "OutputSchemas": {
+                    "target": "com.amazonaws.glue#GlueSchemas",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the data schema for the dynamic transform.</p>"
                     }
                 }
             },
@@ -20189,13 +20450,13 @@
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n      pricing page</a>.</p>\n         <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL\n      job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n            Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. \n            The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\n         <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
+                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n      pricing page</a>.</p>\n         <p>For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>.\n      Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\n         <p>Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL\n      job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n            Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. \n            The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n         <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n         <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "NumberOfWorkers": {
@@ -21661,6 +21922,12 @@
                     "target": "com.amazonaws.glue#PageSize",
                     "traits": {
                         "smithy.api#documentation": "<p>The maximum number of results to return.</p>"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.glue#TagsMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of key-value pair tags.</p>"
                     }
                 }
             },
@@ -23849,6 +24116,38 @@
             "traits": {
                 "smithy.api#documentation": "<p>The operation timed out.</p>",
                 "smithy.api#error": "client"
+            }
+        },
+        "com.amazonaws.glue#Option": {
+            "type": "structure",
+            "members": {
+                "Value": {
+                    "target": "com.amazonaws.glue#EnclosedInStringProperty",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the value of the option.</p>"
+                    }
+                },
+                "Label": {
+                    "target": "com.amazonaws.glue#EnclosedInStringProperty",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the label of the option.</p>"
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.glue#EnclosedInStringProperty",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the description of the option.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies an option value.</p>"
+            }
+        },
+        "com.amazonaws.glue#OptionList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.glue#Option"
             }
         },
         "com.amazonaws.glue#OracleSQLCatalogSource": {
@@ -33777,6 +34076,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "G.025X"
+                    }
+                },
+                "G_4X": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "G.4X"
+                    }
+                },
+                "G_8X": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "G.8X"
                     }
                 }
             }
