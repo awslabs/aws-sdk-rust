@@ -25,5 +25,8 @@ pub mod recursion_detection;
 /// Supporting code for user agent headers in the AWS SDK.
 pub mod user_agent;
 
+/// Supporting code for retry behavior specific to the AWS SDK.
+pub mod retries;
+
 /// Supporting code for invocation ID headers in the AWS SDK.
 pub mod invocation_id;

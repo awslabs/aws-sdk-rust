@@ -13,6 +13,7 @@ use aws_smithy_runtime_api::client::interceptors::{InterceptorContext, Intercept
 use aws_smithy_runtime_api::client::orchestrator::{
     BoxError, ConfigBagAccessors, HttpRequest, HttpResponse,
 };
+use aws_smithy_runtime_api::client::retries::ShouldAttempt;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use tracing::{debug_span, Instrument};
@@ -61,9 +62,18 @@ pub async fn invoke(
         let retry_strategy = cfg.retry_strategy();
         match retry_strategy.should_attempt_initial_request(cfg) {
             // Yes, let's make a request
-            Ok(_) => {}
+            Ok(ShouldAttempt::Yes) => {}
+            // No, this request shouldn't be sent
+            Ok(ShouldAttempt::No) => {
+                return Err(Phase::dispatch(context).fail(
+                    "The retry strategy indicates that an initial request shouldn't be made, but it didn't specify why.",
+                ))
+            }
             // No, we shouldn't make a request because...
             Err(err) => return Err(Phase::dispatch(context).fail(err)),
+            Ok(ShouldAttempt::YesAfterDelay(_)) => {
+                unreachable!("Delaying the initial request is currently unsupported. If this feature is important to you, please file an issue in GitHub.")
+            }
         }
     }
 
@@ -79,9 +89,12 @@ pub async fn invoke(
         let retry_strategy = cfg.retry_strategy();
         match retry_strategy.should_attempt_retry(&context, cfg) {
             // Yes, let's retry the request
-            Ok(true) => continue,
+            Ok(ShouldAttempt::Yes) => continue,
             // No, this request shouldn't be retried
-            Ok(false) => {}
+            Ok(ShouldAttempt::No) => {}
+            Ok(ShouldAttempt::YesAfterDelay(_delay)) => {
+                todo!("implement retries with an explicit delay.")
+            }
             // I couldn't determine if the request should be retried because an error occurred.
             Err(err) => {
                 return Err(Phase::response_handling(context).fail(err));

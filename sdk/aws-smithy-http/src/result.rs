@@ -5,14 +5,16 @@
 
 //! `Result` wrapper types for [success](SdkSuccess) and [failure](SdkError) responses.
 
-use crate::connection::ConnectionMetadata;
-use crate::operation;
-use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
-use aws_smithy_types::error::ErrorMetadata;
-use aws_smithy_types::retry::ErrorKind;
 use std::error::Error;
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
+
+use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
+use aws_smithy_types::error::ErrorMetadata;
+use aws_smithy_types::retry::ErrorKind;
+
+use crate::connection::ConnectionMetadata;
+use crate::operation;
 
 type BoxError = Box<dyn Error + Send + Sync>;
 
@@ -431,6 +433,15 @@ impl<E, R> SdkError<E, R> {
             ResponseError(context) => Ok(context.source),
             DispatchFailure(context) => Ok(context.source.into()),
             ServiceError(context) => Ok(context.source.into()),
+        }
+    }
+
+    /// Return a reference to this error's raw response, if it contains one. Otherwise, return `None`.
+    pub fn raw_response(&self) -> Option<&R> {
+        match self {
+            Self::ServiceError(inner) => Some(inner.raw()),
+            Self::ResponseError(inner) => Some(inner.raw()),
+            _ => None,
         }
     }
 

@@ -6,7 +6,8 @@
 use super::identity::{IdentityResolver, IdentityResolvers};
 use crate::client::identity::Identity;
 use crate::client::interceptors::context::{Input, OutputOrError};
-use crate::client::interceptors::InterceptorContext;
+use crate::client::retries::RetryClassifiers;
+use crate::client::retries::RetryStrategy;
 use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_async::future::now_or_later::NowOrLater;
@@ -52,16 +53,6 @@ impl Connection for Box<dyn Connection> {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         (**self).call(request)
     }
-}
-
-pub trait RetryStrategy: Send + Sync + Debug {
-    fn should_attempt_initial_request(&self, cfg: &ConfigBag) -> Result<(), BoxError>;
-
-    fn should_attempt_retry(
-        &self,
-        context: &InterceptorContext<HttpRequest, HttpResponse>,
-        cfg: &ConfigBag,
-    ) -> Result<bool, BoxError>;
 }
 
 #[derive(Debug)]
@@ -241,6 +232,9 @@ pub trait ConfigBagAccessors {
         response_serializer: impl ResponseDeserializer + 'static,
     );
 
+    fn retry_classifiers(&self) -> &RetryClassifiers;
+    fn set_retry_classifiers(&mut self, retry_classifier: RetryClassifiers);
+
     fn retry_strategy(&self) -> &dyn RetryStrategy;
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static);
 
@@ -275,25 +269,6 @@ impl ConfigBagAccessors for ConfigBag {
         auth_option_resolver: impl AuthOptionResolver + 'static,
     ) {
         self.put::<Box<dyn AuthOptionResolver>>(Box::new(auth_option_resolver));
-    }
-
-    fn http_auth_schemes(&self) -> &HttpAuthSchemes {
-        self.get::<HttpAuthSchemes>()
-            .expect("auth schemes must be set")
-    }
-
-    fn set_http_auth_schemes(&mut self, http_auth_schemes: HttpAuthSchemes) {
-        self.put::<HttpAuthSchemes>(http_auth_schemes);
-    }
-
-    fn retry_strategy(&self) -> &dyn RetryStrategy {
-        &**self
-            .get::<Box<dyn RetryStrategy>>()
-            .expect("a retry strategy must be set")
-    }
-
-    fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static) {
-        self.put::<Box<dyn RetryStrategy>>(Box::new(retry_strategy));
     }
 
     fn endpoint_resolver_params(&self) -> &EndpointResolverParams {
@@ -334,6 +309,15 @@ impl ConfigBagAccessors for ConfigBag {
         self.put::<Box<dyn Connection>>(Box::new(connection));
     }
 
+    fn http_auth_schemes(&self) -> &HttpAuthSchemes {
+        self.get::<HttpAuthSchemes>()
+            .expect("auth schemes must be set")
+    }
+
+    fn set_http_auth_schemes(&mut self, http_auth_schemes: HttpAuthSchemes) {
+        self.put::<HttpAuthSchemes>(http_auth_schemes);
+    }
+
     fn request_serializer(&self) -> &dyn RequestSerializer {
         &**self
             .get::<Box<dyn RequestSerializer>>()
@@ -355,6 +339,25 @@ impl ConfigBagAccessors for ConfigBag {
         response_deserializer: impl ResponseDeserializer + 'static,
     ) {
         self.put::<Box<dyn ResponseDeserializer>>(Box::new(response_deserializer));
+    }
+
+    fn retry_classifiers(&self) -> &RetryClassifiers {
+        self.get::<RetryClassifiers>()
+            .expect("retry classifiers must be set")
+    }
+
+    fn set_retry_classifiers(&mut self, retry_classifiers: RetryClassifiers) {
+        self.put::<RetryClassifiers>(retry_classifiers);
+    }
+
+    fn retry_strategy(&self) -> &dyn RetryStrategy {
+        &**self
+            .get::<Box<dyn RetryStrategy>>()
+            .expect("a retry strategy must be set")
+    }
+
+    fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static) {
+        self.put::<Box<dyn RetryStrategy>>(Box::new(retry_strategy));
     }
 
     fn trace_probe(&self) -> &dyn TraceProbe {
