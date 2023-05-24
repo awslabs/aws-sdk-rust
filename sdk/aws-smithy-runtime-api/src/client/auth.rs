@@ -7,9 +7,8 @@ use crate::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use crate::client::orchestrator::{BoxError, HttpRequest};
 use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
-use std::any::Any;
 use std::borrow::Cow;
-use std::fmt::Debug;
+use std::fmt;
 use std::sync::Arc;
 
 #[cfg(feature = "http-auth")]
@@ -39,16 +38,16 @@ impl AuthSchemeId {
 pub struct AuthOptionResolverParams(TypeErasedBox);
 
 impl AuthOptionResolverParams {
-    pub fn new<T: Any + Send + Sync + 'static>(params: T) -> Self {
+    pub fn new<T: fmt::Debug + Send + Sync + 'static>(params: T) -> Self {
         Self(TypedBox::new(params).erase())
     }
 
-    pub fn get<T: 'static>(&self) -> Option<&T> {
+    pub fn get<T: fmt::Debug + Send + Sync + 'static>(&self) -> Option<&T> {
         self.0.downcast_ref()
     }
 }
 
-pub trait AuthOptionResolver: Send + Sync + Debug {
+pub trait AuthOptionResolver: Send + Sync + fmt::Debug {
     fn resolve_auth_options<'a>(
         &'a self,
         params: &AuthOptionResolverParams,
@@ -87,7 +86,7 @@ impl HttpAuthSchemes {
     }
 }
 
-pub trait HttpAuthScheme: Send + Sync + Debug {
+pub trait HttpAuthScheme: Send + Sync + fmt::Debug {
     fn scheme_id(&self) -> AuthSchemeId;
 
     fn identity_resolver<'a>(
@@ -98,7 +97,7 @@ pub trait HttpAuthScheme: Send + Sync + Debug {
     fn request_signer(&self) -> &dyn HttpRequestSigner;
 }
 
-pub trait HttpRequestSigner: Send + Sync + Debug {
+pub trait HttpRequestSigner: Send + Sync + fmt::Debug {
     /// Return a signed version of the given request using the given identity.
     ///
     /// If the provided identity is incompatible with this signer, an error must be returned.

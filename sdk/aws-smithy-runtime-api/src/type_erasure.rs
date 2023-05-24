@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::any::Any;
+use std::any::{type_name, Any};
+use std::fmt;
 use std::marker::PhantomData;
 use std::ops::{Deref, DerefMut};
 
@@ -18,7 +19,6 @@ use std::ops::{Deref, DerefMut};
 /// and to avoid the monomorphization that brings with it. This `TypedBox` will primarily be useful
 /// for operation-specific or service-specific interceptors that need to operate on the actual
 /// input/output/error types.
-#[derive(Debug)]
 pub struct TypedBox<T> {
     inner: TypeErasedBox,
     _phantom: PhantomData<T>,
@@ -26,12 +26,12 @@ pub struct TypedBox<T> {
 
 impl<T> TypedBox<T>
 where
-    T: Send + Sync + 'static,
+    T: fmt::Debug + Send + Sync + 'static,
 {
     // Creates a new `TypedBox`.
     pub fn new(inner: T) -> Self {
         Self {
-            inner: TypeErasedBox::new(Box::new(inner) as _),
+            inner: TypeErasedBox::new(inner),
             _phantom: Default::default(),
         }
     }
@@ -62,7 +62,17 @@ where
     }
 }
 
-impl<T: 'static> Deref for TypedBox<T> {
+impl<T> fmt::Debug for TypedBox<T>
+where
+    T: Send + Sync + 'static,
+{
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("TypedBox:")?;
+        (self.inner.debug)(&self.inner, f)
+    }
+}
+
+impl<T: fmt::Debug + Send + Sync + 'static> Deref for TypedBox<T> {
     type Target = T;
 
     fn deref(&self) -> &Self::Target {
@@ -70,67 +80,66 @@ impl<T: 'static> Deref for TypedBox<T> {
     }
 }
 
-impl<T: 'static> DerefMut for TypedBox<T> {
+impl<T: fmt::Debug + Send + Sync + 'static> DerefMut for TypedBox<T> {
     fn deref_mut(&mut self) -> &mut Self::Target {
         self.inner.downcast_mut().expect("type checked")
     }
 }
 
-#[derive(Debug)]
-pub struct TypedRef<'a, T> {
-    inner: &'a TypeErasedBox,
-    _phantom: PhantomData<T>,
-}
-
-impl<'a, T: 'static> TypedRef<'a, T> {
-    pub fn assume_from(type_erased: &'a TypeErasedBox) -> Option<TypedRef<'a, T>> {
-        if type_erased.downcast_ref::<T>().is_some() {
-            Some(TypedRef {
-                inner: type_erased,
-                _phantom: Default::default(),
-            })
-        } else {
-            None
-        }
-    }
-}
-
-impl<'a, T: 'static> Deref for TypedRef<'a, T> {
-    type Target = T;
-
-    fn deref(&self) -> &Self::Target {
-        self.inner.downcast_ref().expect("type checked")
-    }
-}
-
-/// A new-type around `Box<dyn Any + Send + Sync>`
-#[derive(Debug)]
+/// A new-type around `Box<dyn Debug + Send + Sync>`
 pub struct TypeErasedBox {
-    inner: Box<dyn Any + Send + Sync>,
+    field: Box<dyn Any + Send + Sync>,
+    #[allow(dead_code)]
+    type_name: &'static str,
+    #[allow(clippy::type_complexity)]
+    debug: Box<dyn Fn(&TypeErasedBox, &mut fmt::Formatter<'_>) -> fmt::Result + Send + Sync>,
+}
+
+impl fmt::Debug for TypeErasedBox {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("TypeErasedBox:")?;
+        (self.debug)(self, f)
+    }
 }
 
 impl TypeErasedBox {
-    // Creates a new `TypeErasedBox`.
-    pub fn new(inner: Box<dyn Any + Send + Sync>) -> Self {
-        Self { inner }
+    pub fn new<T: Send + Sync + fmt::Debug + 'static>(value: T) -> Self {
+        let debug = |value: &TypeErasedBox, f: &mut fmt::Formatter<'_>| {
+            fmt::Debug::fmt(value.downcast_ref::<T>().expect("typechecked"), f)
+        };
+        let name = type_name::<T>();
+        Self {
+            field: Box::new(value),
+            type_name: name,
+            debug: Box::new(debug),
+        }
     }
 
     // Downcast into a `Box<T>`, or return `Self` if it is not a `T`.
-    pub fn downcast<T: 'static>(self) -> Result<Box<T>, Self> {
-        match self.inner.downcast() {
+    pub fn downcast<T: fmt::Debug + Send + Sync + 'static>(self) -> Result<Box<T>, Self> {
+        let TypeErasedBox {
+            field,
+            type_name,
+            debug,
+        } = self;
+        match field.downcast() {
             Ok(t) => Ok(t),
-            Err(s) => Err(Self { inner: s }),
+            Err(s) => Err(Self {
+                field: s,
+                type_name,
+                debug,
+            }),
         }
     }
 
     /// Downcast as a `&T`, or return `None` if it is not a `T`.
-    pub fn downcast_ref<T: 'static>(&self) -> Option<&T> {
-        self.inner.downcast_ref()
+    pub fn downcast_ref<T: fmt::Debug + Send + Sync + 'static>(&self) -> Option<&T> {
+        self.field.downcast_ref()
     }
 
     /// Downcast as a `&mut T`, or return `None` if it is not a `T`.
-    pub fn downcast_mut<T: 'static>(&mut self) -> Option<&mut T> {
-        self.inner.downcast_mut()
+    pub fn downcast_mut<T: fmt::Debug + Send + Sync + 'static>(&mut self) -> Option<&mut T> {
+        self.field.downcast_mut()
     }
 }
 
@@ -148,6 +157,9 @@ mod tests {
         let foo = TypedBox::new(Foo("1"));
         let bar = TypedBox::new(Bar(2));
 
+        assert_eq!("TypedBox:Foo(\"1\")", format!("{foo:?}"));
+        assert_eq!("TypedBox:Bar(2)", format!("{bar:?}"));
+
         let mut foo_erased = foo.erase();
         foo_erased
             .downcast_mut::<Foo>()
@@ -155,6 +167,8 @@ mod tests {
             .0 = "3";
 
         let bar_erased = bar.erase();
+        assert_eq!("TypeErasedBox:Foo(\"3\")", format!("{foo_erased:?}"));
+        assert_eq!("TypeErasedBox:Bar(2)", format!("{bar_erased:?}"));
 
         let bar_erased = TypedBox::<Foo>::assume_from(bar_erased).expect_err("it's not a Foo");
         let mut bar = TypedBox::<Bar>::assume_from(bar_erased).expect("it's a Bar");

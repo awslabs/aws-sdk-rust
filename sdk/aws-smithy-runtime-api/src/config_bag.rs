@@ -12,10 +12,9 @@
 mod typeid_map;
 
 use crate::config_bag::typeid_map::TypeIdMap;
-
-use std::any::{type_name, Any, TypeId};
+use crate::type_erasure::TypeErasedBox;
+use std::any::{type_name, TypeId};
 use std::borrow::Cow;
-
 use std::fmt::{Debug, Formatter};
 use std::iter::Rev;
 use std::marker::PhantomData;
@@ -77,45 +76,9 @@ impl<T: Default> Default for Value<T> {
     }
 }
 
-struct DebugErased {
-    field: Box<dyn Any + Send + Sync>,
-    #[allow(dead_code)]
-    type_name: &'static str,
-    #[allow(clippy::type_complexity)]
-    debug: Box<dyn Fn(&DebugErased, &mut Formatter<'_>) -> std::fmt::Result + Send + Sync>,
-}
-
-impl Debug for DebugErased {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        (self.debug)(self, f)
-    }
-}
-
-impl DebugErased {
-    fn new<T: Send + Sync + Debug + 'static>(value: T) -> Self {
-        let debug = |value: &DebugErased, f: &mut Formatter<'_>| {
-            Debug::fmt(value.as_ref::<T>().expect("typechecked"), f)
-        };
-        let name = type_name::<T>();
-        Self {
-            field: Box::new(value),
-            type_name: name,
-            debug: Box::new(debug),
-        }
-    }
-
-    fn as_ref<T: Send + Sync + 'static>(&self) -> Option<&T> {
-        self.field.downcast_ref()
-    }
-
-    fn as_mut<T: Send + Sync + 'static>(&mut self) -> Option<&mut T> {
-        self.field.downcast_mut()
-    }
-}
-
 pub struct Layer {
     name: Cow<'static, str>,
-    props: TypeIdMap<DebugErased>,
+    props: TypeIdMap<TypeErasedBox>,
 }
 
 /// Trait defining how types can be stored and loaded from the config bag
@@ -211,20 +174,20 @@ impl Debug for Layer {
 impl Layer {
     pub fn put<T: Store>(&mut self, value: T::StoredType) -> &mut Self {
         self.props
-            .insert(TypeId::of::<T>(), DebugErased::new(value));
+            .insert(TypeId::of::<T>(), TypeErasedBox::new(value));
         self
     }
 
     pub fn get<T: Send + Sync + Store + 'static>(&self) -> Option<&T::StoredType> {
         self.props
             .get(&TypeId::of::<T>())
-            .map(|t| t.as_ref().expect("typechecked"))
+            .map(|t| t.downcast_ref().expect("typechecked"))
     }
 
     pub fn get_mut<T: Send + Sync + Store + 'static>(&mut self) -> Option<&mut T::StoredType> {
         self.props
             .get_mut(&TypeId::of::<T>())
-            .map(|t| t.as_mut().expect("typechecked"))
+            .map(|t| t.downcast_mut().expect("typechecked"))
     }
 
     pub fn get_mut_or_default<T: Send + Sync + Store + 'static>(&mut self) -> &mut T::StoredType
@@ -233,8 +196,8 @@ impl Layer {
     {
         self.props
             .entry(TypeId::of::<T>())
-            .or_insert_with(|| DebugErased::new(T::StoredType::default()))
-            .as_mut()
+            .or_insert_with(|| TypeErasedBox::new(T::StoredType::default()))
+            .downcast_mut()
             .expect("typechecked")
     }
 
