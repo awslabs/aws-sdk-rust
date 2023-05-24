@@ -5,10 +5,11 @@
 
 pub mod auth;
 
-pub mod orchestrator;
-
 /// Smithy connector runtime plugins
 pub mod connections;
+
+/// The client orchestrator implementation
+pub mod orchestrator;
 
 /// Smithy code related to retry handling and token buckets.
 ///

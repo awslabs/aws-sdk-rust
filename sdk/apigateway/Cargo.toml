@@ -83,9 +83,29 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "0.55.2"
 
+[dev-dependencies.aws-smithy-client]
+path = "../aws-smithy-client"
+features = ["test-util"]
+version = "0.55.2"
+
+[dev-dependencies.aws-smithy-protocol-test]
+path = "../aws-smithy-protocol-test"
+version = "0.55.2"
+
+[dev-dependencies.futures-util]
+version = "0.3.25"
+default-features = false
+
+[dev-dependencies.serde_json]
+version = "1.0.0"
+
 [dev-dependencies.tokio]
 version = "1.23.1"
 features = ["macros", "test-util", "rt-multi-thread"]
+
+[dev-dependencies.tracing-subscriber]
+version = "0.3.16"
+features = ["env-filter", "json"]
 
 [features]
 rustls = ["aws-smithy-client/rustls"]
